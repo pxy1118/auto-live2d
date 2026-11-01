@@ -1,0 +1,10 @@
+{
+  "datasets/vtuber-v2": {
+    "files": 2866,
+    "verified": true
+  },
+  "experiments/vtuber-v2": {
+    "files": 49,
+    "verified": true
+  }
+}

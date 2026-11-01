@@ -1,0 +1,34 @@
+{
+  "run_id": "0e963f93e4e04ff89c77c32571e41ce4",
+  "reason": "Ctrl+C",
+  "workers": {
+    "run_id": "0e963f93e4e04ff89c77c32571e41ce4",
+    "status": "stopped",
+    "phase": "stopped",
+    "host_pid": 18725,
+    "workers": [
+      {
+        "name": "dependency-sync",
+        "pid": 18727,
+        "start": "5562383"
+      },
+      {
+        "name": "latent",
+        "pid": 18730,
+        "start": "5562395"
+      },
+      {
+        "name": "tts",
+        "pid": 18788,
+        "start": "5563305"
+      }
+    ],
+    "error": null
+  },
+  "all_stopped": true,
+  "node_pid": 39464,
+  "verified_shutdown": {
+    "listeners": [],
+    "live_owned_pids": []
+  }
+}

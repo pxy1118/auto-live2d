@@ -1,0 +1,18 @@
+{
+  "datasets/vtuber-v2": {
+    "verified": true,
+    "files": 2866
+  },
+  "experiments/vtuber-v2": {
+    "verified": true,
+    "files": 49
+  },
+  "datasets/vtuber-v3": {
+    "verified": true,
+    "files": 3408
+  },
+  "experiments/vtuber-v3": {
+    "verified": true,
+    "files": 99
+  }
+}

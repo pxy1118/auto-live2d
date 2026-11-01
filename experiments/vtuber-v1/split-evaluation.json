@@ -1,0 +1,99 @@
+{
+  "dataset_sha256": "d95f17b87f21d53b27c2834294f925d325840c7753736387927a3b5fc1babddb",
+  "supervision": "program_authored_assistant_reviewed",
+  "human_reviewed": false,
+  "scope": "held-out synthetic choreography families; same native style asset and authoring code",
+  "splits": {
+    "train": {
+      "samples": 132,
+      "families": [
+        "agree_nod",
+        "celebrate",
+        "curious",
+        "deny_playful",
+        "explain",
+        "greeting",
+        "listen",
+        "reassure",
+        "shy",
+        "tease_grass",
+        "thanks",
+        "think"
+      ],
+      "models": {
+        "regression": {
+          "all_axis_mae": 0.009279114194214344,
+          "motion_only_mae": 0.011357719078660011,
+          "raw_out_of_range_fraction": 0.0,
+          "right_frame_accuracy": 1.0,
+          "left_frame_accuracy": 1.0,
+          "right_nondefault_recall": 0.9999999403953552,
+          "left_nondefault_recall": 1.0
+        },
+        "flow": {
+          "all_axis_mae": 0.022828035056591034,
+          "motion_only_mae": 0.02898126095533371,
+          "raw_out_of_range_fraction": 0.004771839827299118,
+          "right_frame_accuracy": 1.0,
+          "left_frame_accuracy": 1.0,
+          "right_nondefault_recall": 0.9999999403953552,
+          "left_nondefault_recall": 1.0
+        }
+      }
+    },
+    "validation": {
+      "samples": 22,
+      "families": [
+        "surprise",
+        "wink_joke"
+      ],
+      "models": {
+        "regression": {
+          "all_axis_mae": 0.09885148704051971,
+          "motion_only_mae": 0.16461189091205597,
+          "raw_out_of_range_fraction": 0.0,
+          "right_frame_accuracy": 0.8011363744735718,
+          "left_frame_accuracy": 0.8707386255264282,
+          "right_nondefault_recall": 0.330143541097641,
+          "left_nondefault_recall": null
+        },
+        "flow": {
+          "all_axis_mae": 0.10569377988576889,
+          "motion_only_mae": 0.16838069260120392,
+          "raw_out_of_range_fraction": 0.005015980452299118,
+          "right_frame_accuracy": 0.8629261255264282,
+          "left_frame_accuracy": 0.8686079382896423,
+          "right_nondefault_recall": 0.5382775068283081,
+          "left_nondefault_recall": null
+        }
+      }
+    },
+    "test": {
+      "samples": 22,
+      "families": [
+        "gentle_bye",
+        "welcome_back"
+      ],
+      "models": {
+        "regression": {
+          "all_axis_mae": 0.065238356590271,
+          "motion_only_mae": 0.10904733836650848,
+          "raw_out_of_range_fraction": 0.0,
+          "right_frame_accuracy": 1.0,
+          "left_frame_accuracy": 1.0,
+          "right_nondefault_recall": null,
+          "left_nondefault_recall": 0.9999999403953552
+        },
+        "flow": {
+          "all_axis_mae": 0.07928794622421265,
+          "motion_only_mae": 0.1273726224899292,
+          "raw_out_of_range_fraction": 0.003728693351149559,
+          "right_frame_accuracy": 1.0,
+          "left_frame_accuracy": 1.0,
+          "right_nondefault_recall": null,
+          "left_nondefault_recall": 0.9999999403953552
+        }
+      }
+    }
+  }
+}

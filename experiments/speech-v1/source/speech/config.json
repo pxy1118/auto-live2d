@@ -1,0 +1,10 @@
+{
+  "repository": "D:/Workplace/Qwen3-TTS",
+  "checkpoint": "D:/Workplace/Qwen3-TTS/runs/da_fei_yu/checkpoint-best",
+  "python": "/home/cola/miniconda3/envs/qwen3-tts/bin/python",
+  "speaker": "da_fei_yu",
+  "language": "Chinese",
+  "port": 8769,
+  "max_text_length": 300,
+  "max_audio_seconds": 90
+}

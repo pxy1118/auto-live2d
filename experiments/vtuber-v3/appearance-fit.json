@@ -1,0 +1,23 @@
+{
+  "selection": "train only",
+  "split_ids_sha256": "1ec507288b66c99ff1359667c86042ff0b194180e6e1566d5b95e48fc524a5f8",
+  "base": "experiments/vtuber-v3",
+  "models": {
+    "regression": {
+      "base_sha256": "1588d33210bd6cff03d15e26cdcaa75a692125a2c019c38fb351e4c4e438b6f0",
+      "steps": 200,
+      "seconds": 0.410780213999999,
+      "unchanged_nonappearance_weights": true,
+      "correct_training_frames": 11264,
+      "total_training_frames": 11264
+    },
+    "flow": {
+      "base_sha256": "5477c78d89b6a09faaab25c88e533d787278367271a82f7e063d1440a4b57832",
+      "steps": 200,
+      "seconds": 0.2176582069999995,
+      "unchanged_nonappearance_weights": true,
+      "correct_training_frames": 11264,
+      "total_training_frames": 11264
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "version": "0.3.2",
+  "files": [
+    {
+      "file": "LICENSE",
+      "sha256": "442472a518bf71e371f2581aa0fcaf6ee2ef6854f78c340fdbe87c099950ea82"
+    },
+    {
+      "file": "README.md",
+      "sha256": "949bc79c41183e8a49a0d8b9f2c93a59b31bcb38097818d4a7b49a387b7bf64f"
+    },
+    {
+      "file": "pyproject.toml",
+      "sha256": "4140b9aa43233aa300975a1a1399136b18b172eec41fd3fdc6231c66ebe7552b"
+    },
+    {
+      "file": "faster_qwen3_tts/__init__.py",
+      "sha256": "f6f09484a9fb77e68e8bcb9ccd079d7cbfc1db2c7584b55674f759dbc5486252"
+    },
+    {
+      "file": "faster_qwen3_tts/model.py",
+      "sha256": "8ffa4f39708c4d22e6707323cf102d128eff05595fe2229919cdb495fef612dc"
+    },
+    {
+      "file": "faster_qwen3_tts/generate.py",
+      "sha256": "972d167ff41cb10593fe5dcfa9a4fd07d7a0ec680e86d86b9fd394bf2280c35f"
+    },
+    {
+      "file": "faster_qwen3_tts/predictor_graph.py",
+      "sha256": "9f74155040fb6ac2381375331f76fb4efcd5b3c0761ebfc4977717223145cb76"
+    },
+    {
+      "file": "faster_qwen3_tts/sampling.py",
+      "sha256": "d52f136cb5d985f532239cb3f74ce5e8b9bfd269080e99295f09ce5f87bac988"
+    },
+    {
+      "file": "faster_qwen3_tts/streaming.py",
+      "sha256": "39a1420626c49b87f3cda486f5a3f0fb8a82238f9a052114970ada40d1959010"
+    },
+    {
+      "file": "faster_qwen3_tts/talker_graph.py",
+      "sha256": "2e402ef29d80b076481ab55dc6d20f1c55cae56604b5c3540c24a13f674b3d73"
+    },
+    {
+      "file": "faster_qwen3_tts/utils.py",
+      "sha256": "58b3bd9cfaa2eb7c054adfcff1116159f858e9932f79f29d0a3aa01503c9430e"
+    },
+    {
+      "file": "faster_qwen3_tts/ggml_backend.py",
+      "sha256": "34f7c4f34df00db8b312f4d73f81e93afeeebe00d0735b23c4f4901c362cadbd"
+    }
+  ],
+  "repository": "https://github.com/andimarafioti/faster-qwen3-tts",
+  "license": "MIT",
+  "revision": "b84dc773b2199a85cb421eb76857e4475e03e8c4"
+}

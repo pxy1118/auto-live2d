@@ -1,0 +1,241 @@
+{
+  "base": "http://127.0.0.1:8765",
+  "experiment": "D:\\Workplace\\auto-live2d\\experiments\\latent-study\\activity-balanced",
+  "checked": [
+    "both neural heads -> bounded 64x12 trajectory -> native physics/hand animation -> changed mesh and screenshot",
+    "predictions have checkpoint provenance and execute only once",
+    "generated trajectory recording retains provenance and replays; convenience reset protects active recording",
+    "visible prediction/execute controls, retired routes absent, 390px mobile layout"
+  ],
+  "cases": [
+    {
+      "kind": "regression",
+      "label": "nod",
+      "sample_id": "0a8fcb90-a127-4b92-af11-40a2ce2b23bc",
+      "timing": {
+        "tokens": 34,
+        "encoder_ms": 29.002736000620644,
+        "head_ms": 1.4958750007281196,
+        "total_compute_ms": 31.187845999738784
+      },
+      "constraints": {
+        "raw_out_of_range_fraction": 0,
+        "raw_normalized_excess_mean": 0,
+        "raw_normalized_excess_max": 0,
+        "gesture_candidates": 0,
+        "gesture_accepted": 0,
+        "gesture_suppressed": 0
+      },
+      "milliseconds": 800,
+      "geometry_delta": 420.540437518757,
+      "driver": {
+        "AngleX": -0.2127,
+        "AngleY": -5.4898,
+        "AngleZ": -0.21398,
+        "PositionX": 0.05894,
+        "PositionY": -0.04026,
+        "PositionZ": -0.03271,
+        "LeanInput": -0.39112,
+        "ParamEyeBallX": -0.01106,
+        "ParamEyeBallY": -0.00413,
+        "EyeSmile": 0.03934,
+        "ParamBrowLY": -0.0109,
+        "ParamBrowRY": -0.01342
+      },
+      "native_angle_y": -5.759268760681152,
+      "movement2": 0,
+      "movement3": 0
+    },
+    {
+      "kind": "regression",
+      "label": "smile",
+      "sample_id": "0968b28c-c8c6-40cd-8372-20214294893b",
+      "timing": {
+        "tokens": 32,
+        "encoder_ms": 29.796775999784586,
+        "head_ms": 1.4563469994754996,
+        "total_compute_ms": 32.00914599983662
+      },
+      "constraints": {
+        "raw_out_of_range_fraction": 0,
+        "raw_normalized_excess_mean": 0,
+        "raw_normalized_excess_max": 0,
+        "gesture_candidates": 0,
+        "gesture_accepted": 0,
+        "gesture_suppressed": 0
+      },
+      "milliseconds": 1200,
+      "geometry_delta": 4596.972649561608,
+      "driver": {
+        "AngleX": 0.37539,
+        "AngleY": 0.89403,
+        "AngleZ": -0.55687,
+        "PositionX": 0.00459,
+        "PositionY": 0.01019,
+        "PositionZ": 0.01337,
+        "LeanInput": -1.55172,
+        "ParamEyeBallX": -0.0023700000000000006,
+        "ParamEyeBallY": -0.00173,
+        "EyeSmile": 0.41995,
+        "ParamBrowLY": 0.0191,
+        "ParamBrowRY": 0.01467
+      },
+      "native_angle_y": 0.928916335105896,
+      "movement2": 0,
+      "movement3": 0
+    },
+    {
+      "kind": "regression",
+      "label": "point_index",
+      "sample_id": "12c56251-9ab5-4025-8eeb-13cf80a6ab07",
+      "timing": {
+        "tokens": 36,
+        "encoder_ms": 30.397337000067637,
+        "head_ms": 1.577906999955303,
+        "total_compute_ms": 32.672256999831006
+      },
+      "constraints": {
+        "raw_out_of_range_fraction": 0,
+        "raw_normalized_excess_mean": 0,
+        "raw_normalized_excess_max": 0,
+        "gesture_candidates": 2,
+        "gesture_accepted": 2,
+        "gesture_suppressed": 0
+      },
+      "milliseconds": 1450,
+      "geometry_delta": 14521.515464561437,
+      "driver": {
+        "AngleX": 0.3634250000000002,
+        "AngleY": 0.29925000000000046,
+        "AngleZ": -0.03805500000000005,
+        "PositionX": 0.08280499999999999,
+        "PositionY": -0.008979999999999993,
+        "PositionZ": -0.010250000000000007,
+        "LeanInput": -0.025145,
+        "ParamEyeBallX": 0.007019999999999997,
+        "ParamEyeBallY": -0.00249,
+        "EyeSmile": 0.001705,
+        "ParamBrowLY": -0.009774999999999995,
+        "ParamBrowRY": -0.018344999999999997
+      },
+      "native_angle_y": 0.36139583587646484,
+      "movement2": 0,
+      "movement3": 1
+    },
+    {
+      "kind": "regression",
+      "label": "hand_chest",
+      "sample_id": "07bf8efd-99df-4dbf-991b-f6627593f664",
+      "timing": {
+        "tokens": 33,
+        "encoder_ms": 28.36313100033294,
+        "head_ms": 1.5577969998048502,
+        "total_compute_ms": 30.635762000201794
+      },
+      "constraints": {
+        "raw_out_of_range_fraction": 0,
+        "raw_normalized_excess_mean": 0,
+        "raw_normalized_excess_max": 0,
+        "gesture_candidates": 2,
+        "gesture_accepted": 2,
+        "gesture_suppressed": 0
+      },
+      "milliseconds": 1550,
+      "geometry_delta": 21996.70808408214,
+      "driver": {
+        "AngleX": -0.10912999999999949,
+        "AngleY": -0.12573999999999988,
+        "AngleZ": -0.0766999999999998,
+        "PositionX": 0.088565,
+        "PositionY": -0.023849999999999982,
+        "PositionZ": -0.045635,
+        "LeanInput": -0.067035,
+        "ParamEyeBallX": -0.01098000000000001,
+        "ParamEyeBallY": -0.00351,
+        "EyeSmile": 0.003985,
+        "ParamBrowLY": -0.012485000000000007,
+        "ParamBrowRY": -0.017705000000000005
+      },
+      "native_angle_y": -0.12236801534891129,
+      "movement2": 1,
+      "movement3": 0
+    },
+    {
+      "kind": "flow",
+      "label": "nod",
+      "sample_id": "0a8fcb90-a127-4b92-af11-40a2ce2b23bc",
+      "timing": {
+        "tokens": 34,
+        "encoder_ms": 38.96132599948032,
+        "head_ms": 10.704458000873274,
+        "total_compute_ms": 50.41398599951208
+      },
+      "constraints": {
+        "raw_out_of_range_fraction": 0.0833333358168602,
+        "raw_normalized_excess_mean": 0.0021668949630111456,
+        "raw_normalized_excess_max": 0.05191540718078613,
+        "gesture_candidates": 0,
+        "gesture_accepted": 0,
+        "gesture_suppressed": 0
+      },
+      "milliseconds": 700,
+      "geometry_delta": 295.9425365992388,
+      "driver": {
+        "AngleX": 0.37178,
+        "AngleY": -5.18543,
+        "AngleZ": 0.05904,
+        "PositionX": -0.04103,
+        "PositionY": 0.35326,
+        "PositionZ": 0.18215,
+        "LeanInput": 0,
+        "ParamEyeBallX": 0.02114,
+        "ParamEyeBallY": 0.01095,
+        "EyeSmile": 0.02397,
+        "ParamBrowLY": -0.0067,
+        "ParamBrowRY": -0.00888
+      },
+      "native_angle_y": -5.240748405456543,
+      "movement2": 0,
+      "movement3": 0
+    }
+  ],
+  "started": "2026-10-31T07:57:14.721Z",
+  "held_out_evaluation": false,
+  "worker": {
+    "ready": true,
+    "encoder": "Qwen/Qwen3.5-0.8B",
+    "encoder_revision": "2fc06364715b967f1860aea9cf38778875588b17",
+    "profile_sha256": "a64531bfbd787ec7385114a63f7dc1dd3f6764a420c5b5761bcb2d2d0d7cdca3",
+    "asset_hash": "77bea8c13820edd4167ebda37c5a5bd78b782186bdf6c58a5c47bf5efff79df6",
+    "experiment": "experiments/latent-study/activity-balanced",
+    "models": [
+      "regression",
+      "flow"
+    ],
+    "supervision": "program_authored_unreviewed",
+    "held_out_evaluation": false,
+    "neutral_start_only": true,
+    "output_shape": [
+      64,
+      12
+    ],
+    "sample_hz": 10
+  },
+  "visible_prediction": {
+    "kind": "regression",
+    "constraints": {
+      "raw_out_of_range_fraction": 0,
+      "raw_normalized_excess_mean": 0,
+      "raw_normalized_excess_max": 0,
+      "gesture_candidates": 0,
+      "gesture_accepted": 0,
+      "gesture_suppressed": 0
+    },
+    "gestures": {
+      "left": "default",
+      "right": "default"
+    }
+  },
+  "ok": true,
+  "browser_errors": []
+}

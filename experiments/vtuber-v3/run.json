@@ -1,0 +1,472 @@
+{
+  "schema": "latent_pilot.v1",
+  "supervision": "program_authored_assistant_reviewed",
+  "experimental_only": true,
+  "held_out_evaluation": true,
+  "dataset_path": "datasets/vtuber-v3",
+  "selection": {
+    "split": "train",
+    "sample_count": 176,
+    "ids_sha256": "1ec507288b66c99ff1359667c86042ff0b194180e6e1566d5b95e48fc524a5f8"
+  },
+  "dataset_sha256": "2e18fa16e32a98669d67d5ce2cb0081eba1030db6d6b59176595b8c146587808",
+  "encoder": {
+    "repo_id": "Qwen/Qwen3.5-0.8B",
+    "revision": "2fc06364715b967f1860aea9cf38778875588b17",
+    "license": "Apache-2.0",
+    "source_url": "https://huggingface.co/Qwen/Qwen3.5-0.8B",
+    "weights": [
+      {
+        "file": "model.safetensors-00001-of-00001.safetensors",
+        "sha256": "04b1c301231dd422b8860db31311ab2721511346a32cb1e079c4c4e5f1fe4696",
+        "bytes": 1746942600
+      }
+    ]
+  },
+  "profile_sha256": "12584dec9c5c23dbb739796e57ded00cade3fb94067720d17b77ca7c7c289485",
+  "asset_hash": "77bea8c13820edd4167ebda37c5a5bd78b782186bdf6c58a5c47bf5efff79df6",
+  "samples": 176,
+  "seed": 41,
+  "input_fields": [
+    "utterance",
+    "context",
+    "style",
+    "initial_control_and_gesture_state"
+  ],
+  "target_not_in_encoder_input": [
+    "primary_action",
+    "intensity",
+    "command_log",
+    "sample_id"
+  ],
+  "horizon": 64,
+  "sample_hz": 10,
+  "action_dim": 16,
+  "expression_names": [
+    "爱心眼",
+    "＞＜",
+    "屑屑眼",
+    "圈圈眼",
+    "脸红",
+    "兔牙",
+    "流冷汗",
+    "流泪",
+    "加载",
+    "黑脸",
+    "黑框眼镜",
+    "单片眼镜",
+    "钢盆",
+    "裙子切换",
+    "脱鞋",
+    "尾巴开关",
+    "胸口衣服"
+  ],
+  "observed_axes": [
+    "AngleX",
+    "AngleY",
+    "AngleZ",
+    "PositionX",
+    "PositionY",
+    "PositionZ",
+    "LeanInput",
+    "ParamEyeBallX",
+    "ParamEyeBallY",
+    "EyeSmile",
+    "ParamBrowLY",
+    "ParamBrowRY",
+    "ParamEyeLOpen",
+    "ParamMouthForm"
+  ],
+  "loss_variant": "balanced",
+  "models": {
+    "regression": {
+      "parameters": 792619,
+      "steps": 2000,
+      "losses": [
+        {
+          "step": 1,
+          "loss": 1.7725188732147217
+        },
+        {
+          "step": 101,
+          "loss": 0.2922983765602112
+        },
+        {
+          "step": 201,
+          "loss": 0.12470076233148575
+        },
+        {
+          "step": 301,
+          "loss": 0.07829499244689941
+        },
+        {
+          "step": 401,
+          "loss": 0.059387512505054474
+        },
+        {
+          "step": 501,
+          "loss": 0.04993125796318054
+        },
+        {
+          "step": 601,
+          "loss": 0.052160777151584625
+        },
+        {
+          "step": 701,
+          "loss": 0.03937077894806862
+        },
+        {
+          "step": 801,
+          "loss": 0.03830122947692871
+        },
+        {
+          "step": 901,
+          "loss": 0.036134831607341766
+        },
+        {
+          "step": 1001,
+          "loss": 0.032451264560222626
+        },
+        {
+          "step": 1101,
+          "loss": 0.03403601050376892
+        },
+        {
+          "step": 1201,
+          "loss": 0.0315711610019207
+        },
+        {
+          "step": 1301,
+          "loss": 0.035676438361406326
+        },
+        {
+          "step": 1401,
+          "loss": 0.027857528999447823
+        },
+        {
+          "step": 1501,
+          "loss": 0.02906828373670578
+        },
+        {
+          "step": 1601,
+          "loss": 0.022603638470172882
+        },
+        {
+          "step": 1701,
+          "loss": 0.02086237072944641
+        },
+        {
+          "step": 1801,
+          "loss": 0.017923709005117416
+        },
+        {
+          "step": 1901,
+          "loss": 0.019037311896681786
+        },
+        {
+          "step": 2000,
+          "loss": 0.01840229518711567
+        }
+      ],
+      "seconds": 23.32690481499958,
+      "checkpoint": "regression.pt",
+      "checkpoint_sha256": "f976c517fb26145dfe3dbc6652cd597d6565d8f0614208bb4a0efd776adb479d",
+      "weights_roundtrip": true,
+      "appearance_refinement": {
+        "base_sha256": "1588d33210bd6cff03d15e26cdcaa75a692125a2c019c38fb351e4c4e438b6f0",
+        "steps": 200,
+        "seconds": 0.410780213999999,
+        "unchanged_nonappearance_weights": true,
+        "correct_training_frames": 11264,
+        "total_training_frames": 11264
+      },
+      "motion_refinement": {
+        "steps": 1000,
+        "seconds": 7.468676886999901,
+        "frozen_semantic_and_categorical_weights_unchanged": true,
+        "base_sha256": "b1f771a8729cd0b38da66bf474ba980545649eb8655221bb5e6d2591dd73147b",
+        "train_lean_peak": -19.156230926513672
+      },
+      "base_training_set_metrics": {
+        "all_axis_normalized_mae": 0.009717052802443504,
+        "motion_only_normalized_mae": 0.01227848045527935,
+        "observed_axis_normalized_mae": 0.0109498156234622,
+        "shuffled_features_observed_axis_mae": 0.04332490265369415,
+        "raw_out_of_range_fraction": 0.0,
+        "right_frame_accuracy": 1.0,
+        "left_frame_accuracy": 1.0
+      },
+      "final_training_metrics": {
+        "all_axis_mae": 0.008064337074756622,
+        "motion_only_mae": 0.00981322955340147,
+        "raw_out_of_range_fraction": 0.0,
+        "right_frame_accuracy": 1.0,
+        "left_frame_accuracy": 1.0,
+        "right_nondefault_recall": 1.0,
+        "left_nondefault_recall": 1.0,
+        "expression_positive_f1": 0.999655544757843,
+        "per_expression_f1": {
+          "爱心眼": 1.0,
+          "＞＜": 1.0,
+          "屑屑眼": 1.0,
+          "圈圈眼": 1.0,
+          "脸红": 0.9970149397850037,
+          "兔牙": 1.0,
+          "流冷汗": 1.0,
+          "流泪": 1.0,
+          "加载": 1.0,
+          "黑脸": 1.0,
+          "黑框眼镜": 1.0,
+          "单片眼镜": 1.0,
+          "钢盆": 1.0,
+          "裙子切换": 1.0,
+          "脱鞋": 1.0,
+          "尾巴开关": 1.0,
+          "胸口衣服": 1.0
+        },
+        "appearance_frame_accuracy": 1.0,
+        "appearance_nondefault_recall": 1.0,
+        "native_accuracy": 1.0,
+        "native_positive_recall": 1.0
+      }
+    },
+    "flow": {
+      "parameters": 813483,
+      "steps": 3000,
+      "losses": [
+        {
+          "step": 1,
+          "loss": 3.1121058464050293
+        },
+        {
+          "step": 101,
+          "loss": 0.4689239263534546
+        },
+        {
+          "step": 201,
+          "loss": 0.20536035299301147
+        },
+        {
+          "step": 301,
+          "loss": 0.1311078816652298
+        },
+        {
+          "step": 401,
+          "loss": 0.113962821662426
+        },
+        {
+          "step": 501,
+          "loss": 0.1629781424999237
+        },
+        {
+          "step": 601,
+          "loss": 0.1181432232260704
+        },
+        {
+          "step": 701,
+          "loss": 0.08817219734191895
+        },
+        {
+          "step": 801,
+          "loss": 0.1098676472902298
+        },
+        {
+          "step": 901,
+          "loss": 0.15938334167003632
+        },
+        {
+          "step": 1001,
+          "loss": 0.13256442546844482
+        },
+        {
+          "step": 1101,
+          "loss": 0.09892849624156952
+        },
+        {
+          "step": 1201,
+          "loss": 0.05662063509225845
+        },
+        {
+          "step": 1301,
+          "loss": 0.06175503507256508
+        },
+        {
+          "step": 1401,
+          "loss": 0.06817953288555145
+        },
+        {
+          "step": 1501,
+          "loss": 0.06903484463691711
+        },
+        {
+          "step": 1601,
+          "loss": 0.05850653722882271
+        },
+        {
+          "step": 1701,
+          "loss": 0.05376969650387764
+        },
+        {
+          "step": 1801,
+          "loss": 0.03683125600218773
+        },
+        {
+          "step": 1901,
+          "loss": 0.08235576748847961
+        },
+        {
+          "step": 2001,
+          "loss": 0.04811592027544975
+        },
+        {
+          "step": 2101,
+          "loss": 0.05765964835882187
+        },
+        {
+          "step": 2201,
+          "loss": 0.05081575736403465
+        },
+        {
+          "step": 2301,
+          "loss": 0.03849055618047714
+        },
+        {
+          "step": 2401,
+          "loss": 0.0627378299832344
+        },
+        {
+          "step": 2501,
+          "loss": 0.04785998538136482
+        },
+        {
+          "step": 2601,
+          "loss": 0.036104436963796616
+        },
+        {
+          "step": 2701,
+          "loss": 0.05070534721016884
+        },
+        {
+          "step": 2801,
+          "loss": 0.036768630146980286
+        },
+        {
+          "step": 2901,
+          "loss": 0.07399740070104599
+        },
+        {
+          "step": 3000,
+          "loss": 0.05410714074969292
+        }
+      ],
+      "seconds": 37.34707849000188,
+      "checkpoint": "flow.pt",
+      "checkpoint_sha256": "4e6ad4e5a338d27effcd4b12feffd1a108dd68d8733052fbad732e520d725076",
+      "weights_roundtrip": true,
+      "appearance_refinement": {
+        "base_sha256": "5477c78d89b6a09faaab25c88e533d787278367271a82f7e063d1440a4b57832",
+        "steps": 200,
+        "seconds": 0.2176582069999995,
+        "unchanged_nonappearance_weights": true,
+        "correct_training_frames": 11264,
+        "total_training_frames": 11264
+      },
+      "motion_refinement": {
+        "steps": 1500,
+        "seconds": 12.07725970599995,
+        "frozen_semantic_and_categorical_weights_unchanged": true,
+        "base_sha256": "1f1cdc4135ea30aa346c13b060937e967f890a5169193801b14bca162435c7aa",
+        "train_lean_peak": -18.703109741210938
+      },
+      "base_training_set_metrics": {
+        "all_axis_normalized_mae": 0.020816413685679436,
+        "motion_only_normalized_mae": 0.026809800416231155,
+        "observed_axis_normalized_mae": 0.021820008754730225,
+        "shuffled_features_observed_axis_mae": 0.04583216458559036,
+        "raw_out_of_range_fraction": 0.024746982380747795,
+        "right_frame_accuracy": 1.0,
+        "left_frame_accuracy": 1.0
+      },
+      "final_training_metrics": {
+        "all_axis_mae": 0.012581771239638329,
+        "motion_only_mae": 0.01719513349235058,
+        "raw_out_of_range_fraction": 0.06316029280424118,
+        "right_frame_accuracy": 1.0,
+        "left_frame_accuracy": 1.0,
+        "right_nondefault_recall": 1.0,
+        "left_nondefault_recall": 1.0,
+        "expression_positive_f1": 0.9972375631332397,
+        "per_expression_f1": {
+          "爱心眼": 1.0,
+          "＞＜": 0.9940119981765747,
+          "屑屑眼": 1.0,
+          "圈圈眼": 1.0,
+          "脸红": 1.0,
+          "兔牙": 1.0,
+          "流冷汗": 1.0,
+          "流泪": 0.9699570536613464,
+          "加载": 1.0,
+          "黑脸": 1.0,
+          "黑框眼镜": 1.0,
+          "单片眼镜": 1.0,
+          "钢盆": 1.0,
+          "裙子切换": 1.0,
+          "脱鞋": 1.0,
+          "尾巴开关": 1.0,
+          "胸口衣服": 1.0
+        },
+        "appearance_frame_accuracy": 1.0,
+        "appearance_nondefault_recall": 1.0,
+        "native_accuracy": 1.0,
+        "native_positive_recall": 1.0
+      }
+    }
+  },
+  "appearance_refinement": {
+    "selection": "train only",
+    "split_ids_sha256": "1ec507288b66c99ff1359667c86042ff0b194180e6e1566d5b95e48fc524a5f8",
+    "base": "archive/2026-10-31-vtuber-v3-training-controls/vtuber-v3",
+    "models": {
+      "regression": {
+        "base_sha256": "1588d33210bd6cff03d15e26cdcaa75a692125a2c019c38fb351e4c4e438b6f0",
+        "steps": 200,
+        "seconds": 0.410780213999999,
+        "unchanged_nonappearance_weights": true,
+        "correct_training_frames": 11264,
+        "total_training_frames": 11264
+      },
+      "flow": {
+        "base_sha256": "5477c78d89b6a09faaab25c88e533d787278367271a82f7e063d1440a4b57832",
+        "steps": 200,
+        "seconds": 0.2176582069999995,
+        "unchanged_nonappearance_weights": true,
+        "correct_training_frames": 11264,
+        "total_training_frames": 11264
+      }
+    },
+    "base_at_fit": "experiments/vtuber-v3"
+  },
+  "motion_refinement": {
+    "selection": "train only",
+    "reason": "large forward lean absent in trained explicit configuration example",
+    "base": "archive/2026-10-31-vtuber-v3-training-controls/vtuber-v3-before-motion",
+    "models": {
+      "regression": {
+        "steps": 1000,
+        "seconds": 7.468676886999901,
+        "frozen_semantic_and_categorical_weights_unchanged": true,
+        "base_sha256": "b1f771a8729cd0b38da66bf474ba980545649eb8655221bb5e6d2591dd73147b",
+        "train_lean_peak": -19.156230926513672
+      },
+      "flow": {
+        "steps": 1500,
+        "seconds": 12.07725970599995,
+        "frozen_semantic_and_categorical_weights_unchanged": true,
+        "base_sha256": "1f1cdc4135ea30aa346c13b060937e967f890a5169193801b14bca162435c7aa",
+        "train_lean_peak": -18.703109741210938
+      }
+    },
+    "base_at_fit": "experiments/vtuber-v3"
+  },
+  "evaluation_scope": "same procedural source and asset; no independent human validation"
+}

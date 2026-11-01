@@ -1,0 +1,603 @@
+{
+  "scope": "behavioral regression cases; known during development, not held-out quality",
+  "cases": [
+    {
+      "id": "hello",
+      "expected": {
+        "blush": false,
+        "black": false,
+        "hand": false
+      },
+      "predicted": {
+        "blush": true,
+        "black": false,
+        "hand": true
+      },
+      "active_expressions": [
+        "兔牙",
+        "爱心眼",
+        "脸红"
+      ],
+      "constraints": {
+        "raw_out_of_range_fraction": 0,
+        "raw_normalized_excess_mean": 0,
+        "raw_normalized_excess_max": 0,
+        "gesture_candidates": 2,
+        "gesture_accepted": 2,
+        "gesture_suppressed": 0,
+        "expression_events": 6,
+        "expression_flickers_suppressed": 0,
+        "exclusive_eye_conflicts_resolved": 0,
+        "expression_end_cleanup": 0
+      }
+    },
+    {
+      "id": "thanks",
+      "expected": {
+        "blush": false,
+        "black": false,
+        "hand": false
+      },
+      "predicted": {
+        "blush": true,
+        "black": false,
+        "hand": true
+      },
+      "active_expressions": [
+        "兔牙",
+        "爱心眼",
+        "脸红"
+      ],
+      "constraints": {
+        "raw_out_of_range_fraction": 0,
+        "raw_normalized_excess_mean": 0,
+        "raw_normalized_excess_max": 0,
+        "gesture_candidates": 2,
+        "gesture_accepted": 2,
+        "gesture_suppressed": 0,
+        "expression_events": 8,
+        "expression_flickers_suppressed": 2,
+        "exclusive_eye_conflicts_resolved": 0,
+        "expression_end_cleanup": 0
+      }
+    },
+    {
+      "id": "explain",
+      "expected": {
+        "blush": false,
+        "black": false,
+        "hand": false
+      },
+      "predicted": {
+        "blush": false,
+        "black": false,
+        "hand": false
+      },
+      "active_expressions": [
+        "加载"
+      ],
+      "constraints": {
+        "raw_out_of_range_fraction": 0,
+        "raw_normalized_excess_mean": 0,
+        "raw_normalized_excess_max": 0,
+        "gesture_candidates": 0,
+        "gesture_accepted": 0,
+        "gesture_suppressed": 0,
+        "expression_events": 2,
+        "expression_flickers_suppressed": 1,
+        "exclusive_eye_conflicts_resolved": 0,
+        "expression_end_cleanup": 0
+      }
+    },
+    {
+      "id": "ack",
+      "expected": {
+        "blush": false,
+        "black": false,
+        "hand": false
+      },
+      "predicted": {
+        "blush": true,
+        "black": false,
+        "hand": false
+      },
+      "active_expressions": [
+        "兔牙",
+        "脸红"
+      ],
+      "constraints": {
+        "raw_out_of_range_fraction": 0,
+        "raw_normalized_excess_mean": 0,
+        "raw_normalized_excess_max": 0,
+        "gesture_candidates": 0,
+        "gesture_accepted": 0,
+        "gesture_suppressed": 0,
+        "expression_events": 6,
+        "expression_flickers_suppressed": 2,
+        "exclusive_eye_conflicts_resolved": 0,
+        "expression_end_cleanup": 0
+      }
+    },
+    {
+      "id": "listen",
+      "expected": {
+        "blush": false,
+        "black": false,
+        "hand": false
+      },
+      "predicted": {
+        "blush": false,
+        "black": false,
+        "hand": false
+      },
+      "active_expressions": [],
+      "constraints": {
+        "raw_out_of_range_fraction": 0,
+        "raw_normalized_excess_mean": 0,
+        "raw_normalized_excess_max": 0,
+        "gesture_candidates": 0,
+        "gesture_accepted": 0,
+        "gesture_suppressed": 0,
+        "expression_events": 0,
+        "expression_flickers_suppressed": 0,
+        "exclusive_eye_conflicts_resolved": 0,
+        "expression_end_cleanup": 0
+      }
+    },
+    {
+      "id": "status",
+      "expected": {
+        "blush": false,
+        "black": false,
+        "hand": false
+      },
+      "predicted": {
+        "blush": true,
+        "black": false,
+        "hand": true
+      },
+      "active_expressions": [
+        "兔牙",
+        "脸红"
+      ],
+      "constraints": {
+        "raw_out_of_range_fraction": 0,
+        "raw_normalized_excess_mean": 0,
+        "raw_normalized_excess_max": 0,
+        "gesture_candidates": 2,
+        "gesture_accepted": 2,
+        "gesture_suppressed": 0,
+        "expression_events": 6,
+        "expression_flickers_suppressed": 0,
+        "exclusive_eye_conflicts_resolved": 0,
+        "expression_end_cleanup": 0
+      }
+    },
+    {
+      "id": "weather",
+      "expected": {
+        "blush": false,
+        "black": false,
+        "hand": false
+      },
+      "predicted": {
+        "blush": true,
+        "black": false,
+        "hand": true
+      },
+      "active_expressions": [
+        "脸红"
+      ],
+      "constraints": {
+        "raw_out_of_range_fraction": 0,
+        "raw_normalized_excess_mean": 0,
+        "raw_normalized_excess_max": 0,
+        "gesture_candidates": 2,
+        "gesture_accepted": 2,
+        "gesture_suppressed": 0,
+        "expression_events": 2,
+        "expression_flickers_suppressed": 1,
+        "exclusive_eye_conflicts_resolved": 0,
+        "expression_end_cleanup": 0
+      }
+    },
+    {
+      "id": "reassure",
+      "expected": {
+        "blush": false,
+        "black": false,
+        "hand": false
+      },
+      "predicted": {
+        "blush": true,
+        "black": false,
+        "hand": true
+      },
+      "active_expressions": [
+        "脸红"
+      ],
+      "constraints": {
+        "raw_out_of_range_fraction": 0,
+        "raw_normalized_excess_mean": 0,
+        "raw_normalized_excess_max": 0,
+        "gesture_candidates": 2,
+        "gesture_accepted": 2,
+        "gesture_suppressed": 0,
+        "expression_events": 2,
+        "expression_flickers_suppressed": 1,
+        "exclusive_eye_conflicts_resolved": 0,
+        "expression_end_cleanup": 0
+      }
+    },
+    {
+      "id": "think",
+      "expected": {
+        "blush": false,
+        "black": false,
+        "hand": false
+      },
+      "predicted": {
+        "blush": false,
+        "black": false,
+        "hand": false
+      },
+      "active_expressions": [
+        "加载"
+      ],
+      "constraints": {
+        "raw_out_of_range_fraction": 0,
+        "raw_normalized_excess_mean": 0,
+        "raw_normalized_excess_max": 0,
+        "gesture_candidates": 0,
+        "gesture_accepted": 0,
+        "gesture_suppressed": 0,
+        "expression_events": 2,
+        "expression_flickers_suppressed": 0,
+        "exclusive_eye_conflicts_resolved": 0,
+        "expression_end_cleanup": 0
+      }
+    },
+    {
+      "id": "bye",
+      "expected": {
+        "blush": false,
+        "black": false,
+        "hand": false
+      },
+      "predicted": {
+        "blush": true,
+        "black": false,
+        "hand": true
+      },
+      "active_expressions": [
+        "兔牙",
+        "脸红"
+      ],
+      "constraints": {
+        "raw_out_of_range_fraction": 0,
+        "raw_normalized_excess_mean": 0,
+        "raw_normalized_excess_max": 0,
+        "gesture_candidates": 2,
+        "gesture_accepted": 2,
+        "gesture_suppressed": 0,
+        "expression_events": 4,
+        "expression_flickers_suppressed": 2,
+        "exclusive_eye_conflicts_resolved": 0,
+        "expression_end_cleanup": 0
+      }
+    },
+    {
+      "id": "happy",
+      "expected": {
+        "blush": false,
+        "black": false,
+        "hand": false
+      },
+      "predicted": {
+        "blush": true,
+        "black": false,
+        "hand": true
+      },
+      "active_expressions": [
+        "爱心眼",
+        "脸红",
+        "＞＜"
+      ],
+      "constraints": {
+        "raw_out_of_range_fraction": 0,
+        "raw_normalized_excess_mean": 0,
+        "raw_normalized_excess_max": 0,
+        "gesture_candidates": 2,
+        "gesture_accepted": 2,
+        "gesture_suppressed": 0,
+        "expression_events": 6,
+        "expression_flickers_suppressed": 0,
+        "exclusive_eye_conflicts_resolved": 5,
+        "expression_end_cleanup": 0
+      }
+    },
+    {
+      "id": "playful",
+      "expected": {
+        "blush": false,
+        "black": false,
+        "hand": false
+      },
+      "predicted": {
+        "blush": true,
+        "black": false,
+        "hand": true
+      },
+      "active_expressions": [
+        "兔牙",
+        "屑屑眼",
+        "脸红",
+        "＞＜"
+      ],
+      "constraints": {
+        "raw_out_of_range_fraction": 0,
+        "raw_normalized_excess_mean": 0,
+        "raw_normalized_excess_max": 0,
+        "gesture_candidates": 2,
+        "gesture_accepted": 2,
+        "gesture_suppressed": 0,
+        "expression_events": 8,
+        "expression_flickers_suppressed": 3,
+        "exclusive_eye_conflicts_resolved": 4,
+        "expression_end_cleanup": 0
+      }
+    },
+    {
+      "id": "angry_boundary",
+      "expected": {
+        "blush": false,
+        "black": true,
+        "hand": false
+      },
+      "predicted": {
+        "blush": false,
+        "black": false,
+        "hand": true
+      },
+      "active_expressions": [
+        "＞＜"
+      ],
+      "constraints": {
+        "raw_out_of_range_fraction": 0,
+        "raw_normalized_excess_mean": 0,
+        "raw_normalized_excess_max": 0,
+        "gesture_candidates": 2,
+        "gesture_accepted": 2,
+        "gesture_suppressed": 0,
+        "expression_events": 2,
+        "expression_flickers_suppressed": 0,
+        "exclusive_eye_conflicts_resolved": 0,
+        "expression_end_cleanup": 0
+      }
+    },
+    {
+      "id": "angry_unfair",
+      "expected": {
+        "blush": false,
+        "black": true,
+        "hand": false
+      },
+      "predicted": {
+        "blush": true,
+        "black": false,
+        "hand": true
+      },
+      "active_expressions": [
+        "脸红",
+        "＞＜"
+      ],
+      "constraints": {
+        "raw_out_of_range_fraction": 0,
+        "raw_normalized_excess_mean": 0,
+        "raw_normalized_excess_max": 0,
+        "gesture_candidates": 2,
+        "gesture_accepted": 2,
+        "gesture_suppressed": 0,
+        "expression_events": 6,
+        "expression_flickers_suppressed": 1,
+        "exclusive_eye_conflicts_resolved": 0,
+        "expression_end_cleanup": 0
+      }
+    },
+    {
+      "id": "angry_repeat",
+      "expected": {
+        "blush": false,
+        "black": true,
+        "hand": false
+      },
+      "predicted": {
+        "blush": false,
+        "black": false,
+        "hand": false
+      },
+      "active_expressions": [
+        "加载",
+        "＞＜"
+      ],
+      "constraints": {
+        "raw_out_of_range_fraction": 0,
+        "raw_normalized_excess_mean": 0,
+        "raw_normalized_excess_max": 0,
+        "gesture_candidates": 0,
+        "gesture_accepted": 0,
+        "gesture_suppressed": 0,
+        "expression_events": 4,
+        "expression_flickers_suppressed": 0,
+        "exclusive_eye_conflicts_resolved": 0,
+        "expression_end_cleanup": 0
+      }
+    },
+    {
+      "id": "angry_game",
+      "expected": {
+        "blush": false,
+        "black": true,
+        "hand": false
+      },
+      "predicted": {
+        "blush": true,
+        "black": false,
+        "hand": true
+      },
+      "active_expressions": [
+        "加载",
+        "圈圈眼",
+        "脸红"
+      ],
+      "constraints": {
+        "raw_out_of_range_fraction": 0,
+        "raw_normalized_excess_mean": 0,
+        "raw_normalized_excess_max": 0,
+        "gesture_candidates": 2,
+        "gesture_accepted": 2,
+        "gesture_suppressed": 0,
+        "expression_events": 6,
+        "expression_flickers_suppressed": 1,
+        "exclusive_eye_conflicts_resolved": 0,
+        "expression_end_cleanup": 0
+      }
+    },
+    {
+      "id": "shy_praise",
+      "expected": {
+        "blush": true,
+        "black": false,
+        "hand": false
+      },
+      "predicted": {
+        "blush": true,
+        "black": false,
+        "hand": true
+      },
+      "active_expressions": [
+        "脸红",
+        "＞＜"
+      ],
+      "constraints": {
+        "raw_out_of_range_fraction": 0,
+        "raw_normalized_excess_mean": 0,
+        "raw_normalized_excess_max": 0,
+        "gesture_candidates": 2,
+        "gesture_accepted": 2,
+        "gesture_suppressed": 0,
+        "expression_events": 4,
+        "expression_flickers_suppressed": 1,
+        "exclusive_eye_conflicts_resolved": 0,
+        "expression_end_cleanup": 0
+      }
+    },
+    {
+      "id": "shy_secret",
+      "expected": {
+        "blush": true,
+        "black": false,
+        "hand": false
+      },
+      "predicted": {
+        "blush": true,
+        "black": false,
+        "hand": true
+      },
+      "active_expressions": [
+        "脸红",
+        "＞＜"
+      ],
+      "constraints": {
+        "raw_out_of_range_fraction": 0,
+        "raw_normalized_excess_mean": 0,
+        "raw_normalized_excess_max": 0,
+        "gesture_candidates": 2,
+        "gesture_accepted": 2,
+        "gesture_suppressed": 0,
+        "expression_events": 4,
+        "expression_flickers_suppressed": 0,
+        "exclusive_eye_conflicts_resolved": 0,
+        "expression_end_cleanup": 0
+      }
+    },
+    {
+      "id": "point",
+      "expected": {
+        "blush": false,
+        "black": false,
+        "hand": true
+      },
+      "predicted": {
+        "blush": false,
+        "black": false,
+        "hand": true
+      },
+      "active_expressions": [
+        "兔牙"
+      ],
+      "constraints": {
+        "raw_out_of_range_fraction": 0,
+        "raw_normalized_excess_mean": 0,
+        "raw_normalized_excess_max": 0,
+        "gesture_candidates": 2,
+        "gesture_accepted": 2,
+        "gesture_suppressed": 0,
+        "expression_events": 2,
+        "expression_flickers_suppressed": 1,
+        "exclusive_eye_conflicts_resolved": 0,
+        "expression_end_cleanup": 0
+      }
+    },
+    {
+      "id": "grass",
+      "expected": {
+        "blush": false,
+        "black": false,
+        "hand": true
+      },
+      "predicted": {
+        "blush": true,
+        "black": false,
+        "hand": true
+      },
+      "active_expressions": [
+        "兔牙",
+        "屑屑眼",
+        "脸红"
+      ],
+      "constraints": {
+        "raw_out_of_range_fraction": 0,
+        "raw_normalized_excess_mean": 0,
+        "raw_normalized_excess_max": 0,
+        "gesture_candidates": 2,
+        "gesture_accepted": 2,
+        "gesture_suppressed": 0,
+        "expression_events": 6,
+        "expression_flickers_suppressed": 0,
+        "exclusive_eye_conflicts_resolved": 0,
+        "expression_end_cleanup": 0
+      }
+    }
+  ],
+  "metrics": {
+    "blush": {
+      "false_positives": 12,
+      "negative_cases": 18,
+      "true_positives": 2,
+      "positive_cases": 2
+    },
+    "black": {
+      "false_positives": 0,
+      "negative_cases": 16,
+      "true_positives": 0,
+      "positive_cases": 4
+    },
+    "hand": {
+      "false_positives": 13,
+      "negative_cases": 18,
+      "true_positives": 2,
+      "positive_cases": 2
+    }
+  }
+}

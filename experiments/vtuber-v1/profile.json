@@ -1,0 +1,121 @@
+{
+  "id": "dafeiyu-vtuber.v2",
+  "sampling_hz": 10,
+  "scope": "coupled head/body/gaze/eyelids/mouth with native hand transitions",
+  "channels": [
+    {
+      "id": "AngleX",
+      "label": "头部水平",
+      "min": -18,
+      "max": 18,
+      "neutral": 0
+    },
+    {
+      "id": "AngleY",
+      "label": "头部俯仰",
+      "min": -12,
+      "max": 12,
+      "neutral": 0
+    },
+    {
+      "id": "AngleZ",
+      "label": "头部歪头",
+      "min": -12,
+      "max": 12,
+      "neutral": 0
+    },
+    {
+      "id": "PositionX",
+      "label": "身体水平",
+      "min": -12,
+      "max": 12,
+      "neutral": 0
+    },
+    {
+      "id": "PositionY",
+      "label": "身体俯仰",
+      "min": -10,
+      "max": 10,
+      "neutral": 0
+    },
+    {
+      "id": "PositionZ",
+      "label": "身体侧倾",
+      "min": -10,
+      "max": 10,
+      "neutral": 0
+    },
+    {
+      "id": "LeanInput",
+      "label": "前倾",
+      "min": -15,
+      "max": 0,
+      "neutral": 0
+    },
+    {
+      "id": "ParamEyeBallX",
+      "label": "注视水平",
+      "min": -0.7,
+      "max": 0.7,
+      "neutral": 0
+    },
+    {
+      "id": "ParamEyeBallY",
+      "label": "注视垂直",
+      "min": -0.6,
+      "max": 0.6,
+      "neutral": 0
+    },
+    {
+      "id": "EyeSmile",
+      "label": "笑眼",
+      "min": 0,
+      "max": 0.8,
+      "neutral": 0
+    },
+    {
+      "id": "ParamBrowLY",
+      "label": "左眉",
+      "min": -0.5,
+      "max": 0.5,
+      "neutral": 0
+    },
+    {
+      "id": "ParamBrowRY",
+      "label": "右眉",
+      "min": -0.5,
+      "max": 0.5,
+      "neutral": 0
+    },
+    {
+      "id": "ParamEyeLOpen",
+      "label": "左眼睑",
+      "min": 0,
+      "max": 1.25,
+      "neutral": 1
+    },
+    {
+      "id": "ParamEyeROpen",
+      "label": "右眼睑",
+      "min": 0,
+      "max": 1.25,
+      "neutral": 1
+    },
+    {
+      "id": "ParamMouthForm",
+      "label": "嘴形",
+      "min": -0.6,
+      "max": 0.8,
+      "neutral": 0
+    },
+    {
+      "id": "ParamMouthOpenY",
+      "label": "表演开口",
+      "min": 0,
+      "max": 0.65,
+      "neutral": 0
+    }
+  ],
+  "source": "program_authored_native_motion_inspired",
+  "sha256": "246daa8f0599e63eb9c1fcaf89494aa488505006bb1aa287c86208de16a4f57d"
+}

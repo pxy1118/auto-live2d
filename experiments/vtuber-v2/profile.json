@@ -1,0 +1,138 @@
+{
+  "id": "dafeiyu-vtuber.v3",
+  "sampling_hz": 10,
+  "scope": "larger cute coupled motion and learned original-expression switching",
+  "channels": [
+    {
+      "id": "AngleX",
+      "label": "头部水平",
+      "min": -24,
+      "max": 24,
+      "neutral": 0
+    },
+    {
+      "id": "AngleY",
+      "label": "头部俯仰",
+      "min": -20,
+      "max": 20,
+      "neutral": 0
+    },
+    {
+      "id": "AngleZ",
+      "label": "头部歪头",
+      "min": -24,
+      "max": 24,
+      "neutral": 0
+    },
+    {
+      "id": "PositionX",
+      "label": "身体水平",
+      "min": -24,
+      "max": 24,
+      "neutral": 0
+    },
+    {
+      "id": "PositionY",
+      "label": "身体俯仰",
+      "min": -20,
+      "max": 20,
+      "neutral": 0
+    },
+    {
+      "id": "PositionZ",
+      "label": "身体侧倾",
+      "min": -24,
+      "max": 24,
+      "neutral": 0
+    },
+    {
+      "id": "LeanInput",
+      "label": "前倾",
+      "min": -24,
+      "max": 0,
+      "neutral": 0
+    },
+    {
+      "id": "ParamEyeBallX",
+      "label": "注视水平",
+      "min": -0.85,
+      "max": 0.85,
+      "neutral": 0
+    },
+    {
+      "id": "ParamEyeBallY",
+      "label": "注视垂直",
+      "min": -0.75,
+      "max": 0.75,
+      "neutral": 0
+    },
+    {
+      "id": "EyeSmile",
+      "label": "笑眼",
+      "min": 0,
+      "max": 0.95,
+      "neutral": 0
+    },
+    {
+      "id": "ParamBrowLY",
+      "label": "左眉",
+      "min": -0.5,
+      "max": 0.5,
+      "neutral": 0
+    },
+    {
+      "id": "ParamBrowRY",
+      "label": "右眉",
+      "min": -0.5,
+      "max": 0.5,
+      "neutral": 0
+    },
+    {
+      "id": "ParamEyeLOpen",
+      "label": "左眼睑",
+      "min": 0,
+      "max": 1.25,
+      "neutral": 1
+    },
+    {
+      "id": "ParamEyeROpen",
+      "label": "右眼睑",
+      "min": 0,
+      "max": 1.25,
+      "neutral": 1
+    },
+    {
+      "id": "ParamMouthForm",
+      "label": "嘴形",
+      "min": -0.6,
+      "max": 0.95,
+      "neutral": 0
+    },
+    {
+      "id": "ParamMouthOpenY",
+      "label": "表演开口",
+      "min": 0,
+      "max": 0.85,
+      "neutral": 0
+    }
+  ],
+  "expressions": [
+    "爱心眼",
+    "＞＜",
+    "屑屑眼",
+    "圈圈眼",
+    "脸红",
+    "兔牙",
+    "流冷汗",
+    "流泪",
+    "加载"
+  ],
+  "exclusive_eye_expressions": [
+    "爱心眼",
+    "＞＜",
+    "屑屑眼",
+    "圈圈眼"
+  ],
+  "source": "program_authored_native_motion_inspired",
+  "sha256": "41bd84038b72a62200b35b8bf1d82bad226d0068744c9791d24b49e49eb85103"
+}

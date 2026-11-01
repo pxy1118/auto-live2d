@@ -1,0 +1,297 @@
+{
+  "schema": "latent_pilot.v1",
+  "supervision": "program_authored_unreviewed",
+  "experimental_only": true,
+  "held_out_evaluation": false,
+  "dataset_sha256": "196897fc2b29c50735b5998059e8ae1049bde85f72d8824c9cf6a40852e7ccef",
+  "encoder": {
+    "repo_id": "Qwen/Qwen3.5-0.8B",
+    "revision": "2fc06364715b967f1860aea9cf38778875588b17",
+    "license": "Apache-2.0",
+    "source_url": "https://huggingface.co/Qwen/Qwen3.5-0.8B",
+    "weights": [
+      {
+        "file": "model.safetensors-00001-of-00001.safetensors",
+        "sha256": "04b1c301231dd422b8860db31311ab2721511346a32cb1e079c4c4e5f1fe4696",
+        "bytes": 1746942600
+      }
+    ]
+  },
+  "profile_sha256": "a64531bfbd787ec7385114a63f7dc1dd3f6764a420c5b5761bcb2d2d0d7cdca3",
+  "asset_hash": "77bea8c13820edd4167ebda37c5a5bd78b782186bdf6c58a5c47bf5efff79df6",
+  "samples": 100,
+  "seed": 41,
+  "input_fields": [
+    "utterance",
+    "context",
+    "style",
+    "initial_control_and_gesture_state"
+  ],
+  "target_not_in_encoder_input": [
+    "primary_action",
+    "intensity",
+    "command_log",
+    "sample_id"
+  ],
+  "horizon": 64,
+  "sample_hz": 10,
+  "observed_axes": [
+    "AngleX",
+    "AngleY",
+    "AngleZ",
+    "LeanInput",
+    "ParamEyeBallX",
+    "EyeSmile",
+    "ParamBrowLY",
+    "ParamBrowRY"
+  ],
+  "loss_variant": "original",
+  "models": {
+    "regression": {
+      "parameters": 706449,
+      "steps": 2000,
+      "losses": [
+        {
+          "step": 1,
+          "loss": 0.8779453635215759
+        },
+        {
+          "step": 101,
+          "loss": 0.21999773383140564
+        },
+        {
+          "step": 201,
+          "loss": 0.0951298251748085
+        },
+        {
+          "step": 301,
+          "loss": 0.11437647044658661
+        },
+        {
+          "step": 401,
+          "loss": 0.07774728536605835
+        },
+        {
+          "step": 501,
+          "loss": 0.09764052927494049
+        },
+        {
+          "step": 601,
+          "loss": 0.04635150730609894
+        },
+        {
+          "step": 701,
+          "loss": 0.05411984771490097
+        },
+        {
+          "step": 801,
+          "loss": 0.06740584969520569
+        },
+        {
+          "step": 901,
+          "loss": 0.05809501186013222
+        },
+        {
+          "step": 1001,
+          "loss": 0.06904590874910355
+        },
+        {
+          "step": 1101,
+          "loss": 0.04505081847310066
+        },
+        {
+          "step": 1201,
+          "loss": 0.06431955844163895
+        },
+        {
+          "step": 1301,
+          "loss": 0.04590924456715584
+        },
+        {
+          "step": 1401,
+          "loss": 0.021489709615707397
+        },
+        {
+          "step": 1501,
+          "loss": 0.02874949388206005
+        },
+        {
+          "step": 1601,
+          "loss": 0.06927572190761566
+        },
+        {
+          "step": 1701,
+          "loss": 0.02954385243356228
+        },
+        {
+          "step": 1801,
+          "loss": 0.06068525090813637
+        },
+        {
+          "step": 1901,
+          "loss": 0.04869420826435089
+        },
+        {
+          "step": 2000,
+          "loss": 0.06742590665817261
+        }
+      ],
+      "training_set_metrics": {
+        "all_axis_normalized_mae": 0.010268276557326317,
+        "motion_only_normalized_mae": 0.20718759298324585,
+        "observed_axis_normalized_mae": 0.014249248430132866,
+        "shuffled_features_observed_axis_mae": 0.04391228407621384,
+        "raw_out_of_range_fraction": 0.0,
+        "right_frame_accuracy": 0.9976562261581421,
+        "left_frame_accuracy": 0.9973437190055847
+      },
+      "seconds": 15.115778469999896,
+      "checkpoint": "regression.pt",
+      "checkpoint_sha256": "38630080b878e749b7848fb3418eb3fbb7d51b85f0cac187568f238a4dc93200",
+      "weights_roundtrip": true
+    },
+    "flow": {
+      "parameters": 726801,
+      "steps": 3000,
+      "losses": [
+        {
+          "step": 1,
+          "loss": 2.495997905731201
+        },
+        {
+          "step": 101,
+          "loss": 0.31085237860679626
+        },
+        {
+          "step": 201,
+          "loss": 0.11853726953268051
+        },
+        {
+          "step": 301,
+          "loss": 0.12040567398071289
+        },
+        {
+          "step": 401,
+          "loss": 0.08237523585557938
+        },
+        {
+          "step": 501,
+          "loss": 0.11844170093536377
+        },
+        {
+          "step": 601,
+          "loss": 0.0905662551522255
+        },
+        {
+          "step": 701,
+          "loss": 0.05744146555662155
+        },
+        {
+          "step": 801,
+          "loss": 0.07687626779079437
+        },
+        {
+          "step": 901,
+          "loss": 0.11059581488370895
+        },
+        {
+          "step": 1001,
+          "loss": 0.09525337815284729
+        },
+        {
+          "step": 1101,
+          "loss": 0.05618736147880554
+        },
+        {
+          "step": 1201,
+          "loss": 0.04993533343076706
+        },
+        {
+          "step": 1301,
+          "loss": 0.04460553079843521
+        },
+        {
+          "step": 1401,
+          "loss": 0.05413660779595375
+        },
+        {
+          "step": 1501,
+          "loss": 0.052336692810058594
+        },
+        {
+          "step": 1601,
+          "loss": 0.04398847371339798
+        },
+        {
+          "step": 1701,
+          "loss": 0.03430697321891785
+        },
+        {
+          "step": 1801,
+          "loss": 0.03925365209579468
+        },
+        {
+          "step": 1901,
+          "loss": 0.04943682253360748
+        },
+        {
+          "step": 2001,
+          "loss": 0.030557218939065933
+        },
+        {
+          "step": 2101,
+          "loss": 0.03847290948033333
+        },
+        {
+          "step": 2201,
+          "loss": 0.029524007812142372
+        },
+        {
+          "step": 2301,
+          "loss": 0.02786305546760559
+        },
+        {
+          "step": 2401,
+          "loss": 0.03461931645870209
+        },
+        {
+          "step": 2501,
+          "loss": 0.03336290270090103
+        },
+        {
+          "step": 2601,
+          "loss": 0.04006354510784149
+        },
+        {
+          "step": 2701,
+          "loss": 0.029538510367274284
+        },
+        {
+          "step": 2801,
+          "loss": 0.02967853471636772
+        },
+        {
+          "step": 2901,
+          "loss": 0.03226902335882187
+        },
+        {
+          "step": 3000,
+          "loss": 0.03602014109492302
+        }
+      ],
+      "training_set_metrics": {
+        "all_axis_normalized_mae": 0.009418733417987823,
+        "motion_only_normalized_mae": 0.050587449222803116,
+        "observed_axis_normalized_mae": 0.011294996365904808,
+        "shuffled_features_observed_axis_mae": 0.05536574870347977,
+        "raw_out_of_range_fraction": 0.08372396230697632,
+        "right_frame_accuracy": 0.9992187023162842,
+        "left_frame_accuracy": 0.9984374642372131
+      },
+      "seconds": 22.27846767600022,
+      "checkpoint": "flow.pt",
+      "checkpoint_sha256": "987b150d4822c72f249ba9ee67186c4ea4e0e74d8b5e760965ee8f99334641ef",
+      "weights_roundtrip": true
+    }
+  }
+}

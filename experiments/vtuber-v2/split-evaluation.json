@@ -1,0 +1,175 @@
+{
+  "dataset_sha256": "cb328b22390c1b60793816383f16c394c34bd3e87327742ef5c71d5ff1a46a09",
+  "supervision": "program_authored_assistant_reviewed",
+  "human_reviewed": false,
+  "scope": "held-out synthetic choreography families; same native style asset and authoring code",
+  "splits": {
+    "train": {
+      "samples": 176,
+      "families": [
+        "agree_nod",
+        "celebrate",
+        "confused",
+        "curious",
+        "deny_playful",
+        "explain",
+        "greeting",
+        "listen",
+        "moved",
+        "oops",
+        "pout",
+        "reassure",
+        "shy",
+        "tease_grass",
+        "thanks",
+        "think"
+      ],
+      "models": {
+        "regression": {
+          "all_axis_mae": 0.010770385153591633,
+          "motion_only_mae": 0.013257229700684547,
+          "raw_out_of_range_fraction": 0.0,
+          "right_frame_accuracy": 1.0,
+          "left_frame_accuracy": 1.0,
+          "right_nondefault_recall": 1.0,
+          "left_nondefault_recall": 1.0,
+          "expression_positive_f1": 1.0,
+          "per_expression_f1": {
+            "爱心眼": 1.0,
+            "＞＜": 1.0,
+            "屑屑眼": 1.0,
+            "圈圈眼": 1.0,
+            "脸红": 1.0,
+            "兔牙": 1.0,
+            "流冷汗": 1.0,
+            "流泪": 1.0,
+            "加载": 1.0
+          }
+        },
+        "flow": {
+          "all_axis_mae": 0.02401302196085453,
+          "motion_only_mae": 0.0313657708466053,
+          "raw_out_of_range_fraction": 0.026444869115948677,
+          "right_frame_accuracy": 1.0,
+          "left_frame_accuracy": 1.0,
+          "right_nondefault_recall": 1.0,
+          "left_nondefault_recall": 1.0,
+          "expression_positive_f1": 1.0,
+          "per_expression_f1": {
+            "爱心眼": 1.0,
+            "＞＜": 1.0,
+            "屑屑眼": 1.0,
+            "圈圈眼": 1.0,
+            "脸红": 1.0,
+            "兔牙": 1.0,
+            "流冷汗": 1.0,
+            "流泪": 1.0,
+            "加载": 1.0
+          }
+        }
+      }
+    },
+    "validation": {
+      "samples": 22,
+      "families": [
+        "surprise",
+        "wink_joke"
+      ],
+      "models": {
+        "regression": {
+          "all_axis_mae": 0.11749383062124252,
+          "motion_only_mae": 0.18794621527194977,
+          "raw_out_of_range_fraction": 0.0,
+          "right_frame_accuracy": 1.0,
+          "left_frame_accuracy": 0.8125,
+          "right_nondefault_recall": 0.9999999403953552,
+          "left_nondefault_recall": null,
+          "expression_positive_f1": 0.17694704234600067,
+          "per_expression_f1": {
+            "爱心眼": 0.0,
+            "＞＜": 0.0,
+            "屑屑眼": 0.0,
+            "圈圈眼": 0.671875,
+            "脸红": 0.10674156993627548,
+            "兔牙": 0.1184210553765297,
+            "流冷汗": 0.0,
+            "流泪": 0.0,
+            "加载": 0.0
+          }
+        },
+        "flow": {
+          "all_axis_mae": 0.12390606105327606,
+          "motion_only_mae": 0.19239944219589233,
+          "raw_out_of_range_fraction": 0.020285867154598236,
+          "right_frame_accuracy": 1.0,
+          "left_frame_accuracy": 0.8132102489471436,
+          "right_nondefault_recall": 0.9999999403953552,
+          "left_nondefault_recall": null,
+          "expression_positive_f1": 0.2195121943950653,
+          "per_expression_f1": {
+            "爱心眼": 0.0,
+            "＞＜": 0.0,
+            "屑屑眼": 0.0,
+            "圈圈眼": 0.6616541147232056,
+            "脸红": 0.10294117778539658,
+            "兔牙": 0.28486648201942444,
+            "流冷汗": 0.0,
+            "流泪": 0.0,
+            "加载": 0.0
+          }
+        }
+      }
+    },
+    "test": {
+      "samples": 22,
+      "families": [
+        "gentle_bye",
+        "welcome_back"
+      ],
+      "models": {
+        "regression": {
+          "all_axis_mae": 0.08595418930053711,
+          "motion_only_mae": 0.1387699693441391,
+          "raw_out_of_range_fraction": 0.0,
+          "right_frame_accuracy": 0.9247159361839294,
+          "left_frame_accuracy": 1.0,
+          "right_nondefault_recall": null,
+          "left_nondefault_recall": 0.9999999403953552,
+          "expression_positive_f1": 0.7647654414176941,
+          "per_expression_f1": {
+            "爱心眼": 0.5507246255874634,
+            "＞＜": 0.27586206793785095,
+            "屑屑眼": 0.0,
+            "圈圈眼": 0.0,
+            "脸红": 0.981249988079071,
+            "兔牙": 0.5419355034828186,
+            "流冷汗": 0.0,
+            "流泪": 0.0,
+            "加载": 0.0
+          }
+        },
+        "flow": {
+          "all_axis_mae": 0.09641987830400467,
+          "motion_only_mae": 0.15151187777519226,
+          "raw_out_of_range_fraction": 0.018998580053448677,
+          "right_frame_accuracy": 0.9382102489471436,
+          "left_frame_accuracy": 1.0,
+          "right_nondefault_recall": null,
+          "left_nondefault_recall": 0.9999999403953552,
+          "expression_positive_f1": 0.7415056824684143,
+          "per_expression_f1": {
+            "爱心眼": 0.5377358198165894,
+            "＞＜": 0.10126582533121109,
+            "屑屑眼": 0.0,
+            "圈圈眼": 0.0,
+            "脸红": 0.9812734127044678,
+            "兔牙": 0.5012224912643433,
+            "流冷汗": 0.0,
+            "流泪": 0.0,
+            "加载": 0.0
+          }
+        }
+      }
+    }
+  }
+}

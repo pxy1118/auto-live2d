@@ -1,0 +1,2903 @@
+{
+  "base": "http://127.0.0.1:8765",
+  "experiment": "D:\\Workplace\\auto-live2d\\experiments\\vtuber-v2",
+  "started": "2026-10-31T09:17:45.571Z",
+  "cases": [
+    {
+      "kind": "regression",
+      "family": "celebrate",
+      "timing": {
+        "tokens": 44,
+        "encoder_ms": 623.7956429995393,
+        "head_ms": 91.72337600102765,
+        "total_compute_ms": 724.8902020000969
+      },
+      "constraints": {
+        "raw_out_of_range_fraction": 0,
+        "raw_normalized_excess_mean": 0,
+        "raw_normalized_excess_max": 0,
+        "gesture_candidates": 4,
+        "gesture_accepted": 4,
+        "gesture_suppressed": 0,
+        "expression_events": 6,
+        "expression_flickers_suppressed": 0,
+        "exclusive_eye_conflicts_resolved": 0,
+        "expression_end_cleanup": 0
+      },
+      "body_peak": 4.735461711883545,
+      "mesh_delta": 26495.44815320528,
+      "trace": [
+        {
+          "time_ms": 500,
+          "body": [
+            0.44363564252853394,
+            1.064914584159851,
+            -0.045058250427246094
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": -4806.973688802773,
+            "weighted_y": 468786.19583073875,
+            "opacity_sum": 455.6223612446338,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 1000,
+          "body": [
+            0.7487920522689819,
+            0,
+            1.6239835023880005
+          ],
+          "expressions": [
+            {
+              "name": "脸红",
+              "strength": 1
+            },
+            {
+              "name": "兔牙",
+              "strength": 1
+            }
+          ],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0.5829904079437256,
+            "key8": 0,
+            "key9": 0.5829904079437256,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "chest",
+            "right": "point_index"
+          },
+          "geometry": {
+            "weighted_x": 7130.231644347647,
+            "weighted_y": 474316.7027477537,
+            "opacity_sum": 457.81681037368253,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 1500,
+          "body": [
+            -4.735461711883545,
+            3.4131650924682617,
+            -1.7317367792129517
+          ],
+          "expressions": [
+            {
+              "name": "脸红",
+              "strength": 1
+            },
+            {
+              "name": "兔牙",
+              "strength": 1
+            },
+            {
+              "name": "＞＜",
+              "strength": 1
+            }
+          ],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 1,
+            "key6": 0,
+            "key7": 1,
+            "key8": 0,
+            "key9": 1,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "chest",
+            "right": "point_index"
+          },
+          "geometry": {
+            "weighted_x": -19667.70915932127,
+            "weighted_y": 486810.56587962597,
+            "opacity_sum": 379.50498057715595,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 2000,
+          "body": [
+            -1.6537026166915894,
+            3.0021414756774902,
+            0.3937927186489105
+          ],
+          "expressions": [
+            {
+              "name": "脸红",
+              "strength": 1
+            },
+            {
+              "name": "兔牙",
+              "strength": 1
+            },
+            {
+              "name": "＞＜",
+              "strength": 1
+            }
+          ],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 1,
+            "key6": 0,
+            "key7": 1,
+            "key8": 0,
+            "key9": 1,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "chest",
+            "right": "point_index"
+          },
+          "geometry": {
+            "weighted_x": -2123.215609895644,
+            "weighted_y": 482062.75714559155,
+            "opacity_sum": 379.4991346318275,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 2500,
+          "body": [
+            0.7722299695014954,
+            0.10532262921333313,
+            1.733651041984558
+          ],
+          "expressions": [
+            {
+              "name": "脸红",
+              "strength": 1
+            },
+            {
+              "name": "兔牙",
+              "strength": 1
+            },
+            {
+              "name": "＞＜",
+              "strength": 1
+            }
+          ],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 1,
+            "key6": 0,
+            "key7": 1,
+            "key8": 0,
+            "key9": 1,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "chest",
+            "right": "point_index"
+          },
+          "geometry": {
+            "weighted_x": 9011.716698830598,
+            "weighted_y": 479082.09461974853,
+            "opacity_sum": 379.48493262194097,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 3000,
+          "body": [
+            0.30528149008750916,
+            0.19083143770694733,
+            1.7962998151779175
+          ],
+          "expressions": [
+            {
+              "name": "脸红",
+              "strength": 1
+            },
+            {
+              "name": "兔牙",
+              "strength": 1
+            },
+            {
+              "name": "＞＜",
+              "strength": 1
+            }
+          ],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 1,
+            "key6": 0,
+            "key7": 1,
+            "key8": 0,
+            "key9": 1,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "chest",
+            "right": "point_index"
+          },
+          "geometry": {
+            "weighted_x": 4813.371273881646,
+            "weighted_y": 480818.94096693565,
+            "opacity_sum": 379.48871038947254,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 3500,
+          "body": [
+            -1.0589817762374878,
+            1.9760724306106567,
+            0.4745517075061798
+          ],
+          "expressions": [
+            {
+              "name": "脸红",
+              "strength": 1
+            },
+            {
+              "name": "兔牙",
+              "strength": 1
+            }
+          ],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 1,
+            "key6": 0,
+            "key7": 1,
+            "key8": 0,
+            "key9": 1,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "chest",
+            "right": "point_index"
+          },
+          "geometry": {
+            "weighted_x": -2842.890821100809,
+            "weighted_y": 484797.4416460643,
+            "opacity_sum": 379.4997879900038,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 4000,
+          "body": [
+            -0.46854615211486816,
+            1.5646612644195557,
+            1.215010404586792
+          ],
+          "expressions": [
+            {
+              "name": "脸红",
+              "strength": 1
+            },
+            {
+              "name": "兔牙",
+              "strength": 1
+            }
+          ],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 1,
+            "key8": 0,
+            "key9": 1,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "chest",
+            "right": "point_index"
+          },
+          "geometry": {
+            "weighted_x": 2420.8028500790633,
+            "weighted_y": 492244.40466316615,
+            "opacity_sum": 457.649753825739,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 4500,
+          "body": [
+            1.5518114566802979,
+            0.0915243849158287,
+            3.3696444034576416
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 1,
+            "key8": 0,
+            "key9": 1,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": 13269.333850347699,
+            "weighted_y": 487747.8131795684,
+            "opacity_sum": 458.29149572737515,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 5000,
+          "body": [
+            1.5275825262069702,
+            0.06512405723333359,
+            3.8137218952178955
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": -12341.524117404697,
+            "weighted_y": 477128.7408726369,
+            "opacity_sum": 458.6343326307833,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 5500,
+          "body": [
+            1.6683785915374756,
+            0.5530216097831726,
+            3.377882719039917
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": 2670.5900055974325,
+            "weighted_y": 465979.84974058275,
+            "opacity_sum": 455.6251041954383,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 6000,
+          "body": [
+            0.3280731439590454,
+            0.8260111808776855,
+            0.7874199151992798
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": -4736.989117216221,
+            "weighted_y": 469094.9262313782,
+            "opacity_sum": 455.6223276136443,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 6500,
+          "body": [
+            0.42158043384552,
+            1.023514747619629,
+            0.4346996545791626
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": -4420.687243388002,
+            "weighted_y": 469265.6952967931,
+            "opacity_sum": 455.62233143206686,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 7000,
+          "body": [
+            0.42162105441093445,
+            1.0029308795928955,
+            0.4848209321498871
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": -4047.376584178321,
+            "weighted_y": 469217.9466829671,
+            "opacity_sum": 455.6223409520462,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 7500,
+          "body": [
+            0.42162105441093445,
+            1.0029574632644653,
+            0.48429790139198303
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": -4064.23025846985,
+            "weighted_y": 469262.35498465225,
+            "opacity_sum": 455.62235537637025,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 8000,
+          "body": [
+            0.42162105441093445,
+            1.0029714107513428,
+            0.4842737019062042
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": -4082.416088852122,
+            "weighted_y": 469248.68975461833,
+            "opacity_sum": 455.6223544823006,
+            "sampled_vertices": 8743
+          }
+        }
+      ]
+    },
+    {
+      "kind": "regression",
+      "family": "confused",
+      "timing": {
+        "tokens": 51,
+        "encoder_ms": 33.83415899952524,
+        "head_ms": 1.9517119999363786,
+        "total_compute_ms": 36.57921699959843
+      },
+      "constraints": {
+        "raw_out_of_range_fraction": 0,
+        "raw_normalized_excess_mean": 0,
+        "raw_normalized_excess_max": 0,
+        "gesture_candidates": 0,
+        "gesture_accepted": 0,
+        "gesture_suppressed": 0,
+        "expression_events": 6,
+        "expression_flickers_suppressed": 0,
+        "exclusive_eye_conflicts_resolved": 0,
+        "expression_end_cleanup": 0
+      },
+      "body_peak": 11.736018180847168,
+      "mesh_delta": 49860.21440553302,
+      "trace": [
+        {
+          "time_ms": 500,
+          "body": [
+            0.24720877408981323,
+            1.0464444160461426,
+            -0.024489164352416992
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": -5402.424634817691,
+            "weighted_y": 469107.9998410817,
+            "opacity_sum": 455.6190936965868,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 1000,
+          "body": [
+            0.42329105734825134,
+            0.6838104724884033,
+            0.3966740071773529
+          ],
+          "expressions": [
+            {
+              "name": "加载",
+              "strength": 1
+            }
+          ],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0.5829904079437256,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": -230.67762121245119,
+            "weighted_y": 468612.5342984074,
+            "opacity_sum": 460.2360177829396,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 1500,
+          "body": [
+            8.936473846435547,
+            -1.0909560918807983,
+            9.36337661743164
+          ],
+          "expressions": [
+            {
+              "name": "加载",
+              "strength": 1
+            }
+          ],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 1,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": 37643.58620918453,
+            "weighted_y": 444424.56705746916,
+            "opacity_sum": 464.6735364366323,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 2000,
+          "body": [
+            10.897477149963379,
+            -1.1019420623779297,
+            10.461533546447754
+          ],
+          "expressions": [
+            {
+              "name": "加载",
+              "strength": 1
+            }
+          ],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 1,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": 35543.50213520514,
+            "weighted_y": 453871.3095969369,
+            "opacity_sum": 464.6660494208336,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 2500,
+          "body": [
+            9.093594551086426,
+            -1.0795649290084839,
+            8.666769981384277
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": 24450.39892366691,
+            "weighted_y": 457495.19022482773,
+            "opacity_sum": 456.6531512159854,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 3000,
+          "body": [
+            9.324195861816406,
+            -1.0533781051635742,
+            8.79565715789795
+          ],
+          "expressions": [
+            {
+              "name": "圈圈眼",
+              "strength": 1
+            },
+            {
+              "name": "流冷汗",
+              "strength": 1
+            }
+          ],
+          "keys": {
+            "key2": 0,
+            "key3": 1,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 1
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": 27438.131307997137,
+            "weighted_y": 450418.5319069938,
+            "opacity_sum": 377.83571884501725,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 3500,
+          "body": [
+            11.736018180847168,
+            -1.3662832975387573,
+            10.611595153808594
+          ],
+          "expressions": [
+            {
+              "name": "圈圈眼",
+              "strength": 1
+            },
+            {
+              "name": "流冷汗",
+              "strength": 1
+            }
+          ],
+          "keys": {
+            "key2": 0,
+            "key3": 1,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 1
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": 36287.76749366661,
+            "weighted_y": 443775.920973115,
+            "opacity_sum": 377.85014284960926,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 4000,
+          "body": [
+            10.126005172729492,
+            -1.125656247138977,
+            9.660493850708008
+          ],
+          "expressions": [
+            {
+              "name": "圈圈眼",
+              "strength": 1
+            },
+            {
+              "name": "流冷汗",
+              "strength": 1
+            }
+          ],
+          "keys": {
+            "key2": 0,
+            "key3": 1,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 1
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": 28011.905367196334,
+            "weighted_y": 448665.679305793,
+            "opacity_sum": 377.8415578249842,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 4500,
+          "body": [
+            6.322873115539551,
+            -0.5347397923469543,
+            6.99105978012085
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": 13574.934536047449,
+            "weighted_y": 462430.40176602715,
+            "opacity_sum": 456.6409454382956,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 5000,
+          "body": [
+            4.735324382781982,
+            -0.33660390973091125,
+            6.341685771942139
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": 12790.763237982319,
+            "weighted_y": 463517.6831689358,
+            "opacity_sum": 456.63427985692397,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 5500,
+          "body": [
+            2.739821434020996,
+            0.4653359353542328,
+            4.243437767028809
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": 5766.643685295933,
+            "weighted_y": 465229.24964968703,
+            "opacity_sum": 456.62367671192624,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 6000,
+          "body": [
+            0.2515266239643097,
+            0.7463912963867188,
+            0.8398347496986389
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": -5677.1971118559295,
+            "weighted_y": 469772.2831579285,
+            "opacity_sum": 456.6194994384423,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 6500,
+          "body": [
+            0.25994208455085754,
+            1.010276198387146,
+            0.36482682824134827
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": -5558.467261158091,
+            "weighted_y": 469542.582191628,
+            "opacity_sum": 456.61923278309405,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 7000,
+          "body": [
+            0.2600191533565521,
+            0.9850121140480042,
+            0.4295245110988617
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": -4485.82172057327,
+            "weighted_y": 469499.57574010885,
+            "opacity_sum": 456.6192139526829,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 7500,
+          "body": [
+            0.2600191533565521,
+            0.9850719571113586,
+            0.42899009585380554
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": -4600.569630291571,
+            "weighted_y": 469555.73747369193,
+            "opacity_sum": 456.61922194063663,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 8000,
+          "body": [
+            0.2600191533565521,
+            0.9850881695747375,
+            0.4289553463459015
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": -4597.709564296045,
+            "weighted_y": 469545.012024647,
+            "opacity_sum": 456.6192404180765,
+            "sampled_vertices": 8743
+          }
+        }
+      ]
+    },
+    {
+      "kind": "regression",
+      "family": "tease_grass",
+      "timing": {
+        "tokens": 49,
+        "encoder_ms": 30.380176998733077,
+        "head_ms": 1.9002820008608978,
+        "total_compute_ms": 33.03661600148189
+      },
+      "constraints": {
+        "raw_out_of_range_fraction": 0,
+        "raw_normalized_excess_mean": 0,
+        "raw_normalized_excess_max": 0,
+        "gesture_candidates": 2,
+        "gesture_accepted": 2,
+        "gesture_suppressed": 0,
+        "expression_events": 6,
+        "expression_flickers_suppressed": 0,
+        "exclusive_eye_conflicts_resolved": 0,
+        "expression_end_cleanup": 0
+      },
+      "body_peak": 6.43126916885376,
+      "mesh_delta": 46503.8437856269,
+      "trace": [
+        {
+          "time_ms": 500,
+          "body": [
+            0.5313703417778015,
+            1.0307354927062988,
+            0.5549024939537048
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": -3196.4760309587255,
+            "weighted_y": 467680.7268418345,
+            "opacity_sum": 456.620920708403,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 1000,
+          "body": [
+            0.09117865562438965,
+            0.48398342728614807,
+            1.4829026460647583
+          ],
+          "expressions": [
+            {
+              "name": "屑屑眼",
+              "strength": 1
+            },
+            {
+              "name": "兔牙",
+              "strength": 1
+            }
+          ],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "grass"
+          },
+          "geometry": {
+            "weighted_x": -17358.754144902006,
+            "weighted_y": 461678.08476502367,
+            "opacity_sum": 457.58150321710855,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 1500,
+          "body": [
+            -6.43126916885376,
+            -0.5295503735542297,
+            -2.2487385272979736
+          ],
+          "expressions": [
+            {
+              "name": "屑屑眼",
+              "strength": 1
+            },
+            {
+              "name": "兔牙",
+              "strength": 1
+            }
+          ],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 1,
+            "key7": 0,
+            "key8": 0,
+            "key9": 1,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "grass"
+          },
+          "geometry": {
+            "weighted_x": -50901.57519798853,
+            "weighted_y": 458833.4255737228,
+            "opacity_sum": 375.8506093341857,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 2000,
+          "body": [
+            -3.8113160133361816,
+            -0.39256376028060913,
+            -0.8936915397644043
+          ],
+          "expressions": [
+            {
+              "name": "屑屑眼",
+              "strength": 1
+            },
+            {
+              "name": "兔牙",
+              "strength": 1
+            }
+          ],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 1,
+            "key7": 0,
+            "key8": 0,
+            "key9": 1,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "grass"
+          },
+          "geometry": {
+            "weighted_x": -36147.63566489321,
+            "weighted_y": 455922.65410404943,
+            "opacity_sum": 375.8476574458182,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 2500,
+          "body": [
+            -0.9302866458892822,
+            -0.6919063925743103,
+            1.19241201877594
+          ],
+          "expressions": [
+            {
+              "name": "屑屑眼",
+              "strength": 1
+            },
+            {
+              "name": "兔牙",
+              "strength": 1
+            }
+          ],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 1,
+            "key7": 0,
+            "key8": 0,
+            "key9": 1,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "grass"
+          },
+          "geometry": {
+            "weighted_x": -22579.833406980324,
+            "weighted_y": 455519.1193426674,
+            "opacity_sum": 375.83328632172197,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 3000,
+          "body": [
+            -1.3792296648025513,
+            -0.551314115524292,
+            1.3317503929138184
+          ],
+          "expressions": [
+            {
+              "name": "屑屑眼",
+              "strength": 1
+            },
+            {
+              "name": "兔牙",
+              "strength": 1
+            }
+          ],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 1,
+            "key7": 0,
+            "key8": 0,
+            "key9": 1,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "grass"
+          },
+          "geometry": {
+            "weighted_x": -27328.000285127982,
+            "weighted_y": 458825.6360514857,
+            "opacity_sum": 375.83399255760014,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 3500,
+          "body": [
+            -2.984917640686035,
+            -0.7200307250022888,
+            -0.4559033513069153
+          ],
+          "expressions": [
+            {
+              "name": "脸红",
+              "strength": 1
+            }
+          ],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 1,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "grass"
+          },
+          "geometry": {
+            "weighted_x": -35872.29866903994,
+            "weighted_y": 482993.7531897443,
+            "opacity_sum": 462.6710816435516,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 4000,
+          "body": [
+            -2.266209840774536,
+            -0.5809693932533264,
+            0.11367553472518921
+          ],
+          "expressions": [
+            {
+              "name": "脸红",
+              "strength": 1
+            }
+          ],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 1,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "grass"
+          },
+          "geometry": {
+            "weighted_x": -30172.52518391463,
+            "weighted_y": 481930.8977312776,
+            "opacity_sum": 461.96238067932427,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 4500,
+          "body": [
+            0.9401626586914062,
+            -0.31314975023269653,
+            2.8759889602661133
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 1,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": -8754.266881476211,
+            "weighted_y": 504615.3624361757,
+            "opacity_sum": 461.6403708681464,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 5000,
+          "body": [
+            1.1254215240478516,
+            -0.22386373579502106,
+            3.50498104095459
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": -14800.345196724349,
+            "weighted_y": 476535.637543072,
+            "opacity_sum": 457.6355756991543,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 5500,
+          "body": [
+            1.4880459308624268,
+            0.43233951926231384,
+            3.078050136566162
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": 2603.2455432656734,
+            "weighted_y": 466739.2875716372,
+            "opacity_sum": 457.62527552852407,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 6000,
+          "body": [
+            0.326244056224823,
+            0.739453911781311,
+            0.776827871799469
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": -4912.675164033143,
+            "weighted_y": 469666.6601796496,
+            "opacity_sum": 457.6212961608544,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 6500,
+          "body": [
+            0.48117685317993164,
+            0.9885595440864563,
+            0.46102985739707947
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": -4263.777856414068,
+            "weighted_y": 469712.9147583583,
+            "opacity_sum": 457.62107923813164,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 7000,
+          "body": [
+            0.481145441532135,
+            0.9645559191703796,
+            0.5041430592536926
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": -3966.6063995559566,
+            "weighted_y": 469713.60969612387,
+            "opacity_sum": 457.6210928559303,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 7500,
+          "body": [
+            0.481145441532135,
+            0.9646491408348083,
+            0.5035997629165649
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": -3990.8780422394975,
+            "weighted_y": 469747.5751580229,
+            "opacity_sum": 457.62113076634705,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 8000,
+          "body": [
+            0.481145441532135,
+            0.9646632671356201,
+            0.5035812258720398
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": -3998.290652368367,
+            "weighted_y": 469740.9136113997,
+            "opacity_sum": 457.6211186069995,
+            "sampled_vertices": 8743
+          }
+        }
+      ]
+    },
+    {
+      "kind": "regression",
+      "family": "moved",
+      "timing": {
+        "tokens": 53,
+        "encoder_ms": 31.455834998268983,
+        "head_ms": 3.3020699993357994,
+        "total_compute_ms": 35.60268199908023
+      },
+      "constraints": {
+        "raw_out_of_range_fraction": 0,
+        "raw_normalized_excess_mean": 0,
+        "raw_normalized_excess_max": 0,
+        "gesture_candidates": 2,
+        "gesture_accepted": 2,
+        "gesture_suppressed": 0,
+        "expression_events": 6,
+        "expression_flickers_suppressed": 0,
+        "exclusive_eye_conflicts_resolved": 0,
+        "expression_end_cleanup": 0
+      },
+      "body_peak": 3.95029354095459,
+      "mesh_delta": 40291.32495783086,
+      "trace": [
+        {
+          "time_ms": 500,
+          "body": [
+            0.4747041165828705,
+            0.9457734227180481,
+            -0.047881830483675
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": -5059.9701642696855,
+            "weighted_y": 469156.0330670059,
+            "opacity_sum": 457.6224369276315,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 1000,
+          "body": [
+            0.536930501461029,
+            0.1289786696434021,
+            1.1644099950790405
+          ],
+          "expressions": [
+            {
+              "name": "脸红",
+              "strength": 1
+            },
+            {
+              "name": "流泪",
+              "strength": 1
+            }
+          ],
+          "keys": {
+            "key2": 0.5829904079437256,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0.5829904079437256,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "chest",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": 14648.018184889326,
+            "weighted_y": 479793.022142333,
+            "opacity_sum": 465.57399574294686,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 1500,
+          "body": [
+            -3.441560983657837,
+            0,
+            -0.8663091063499451
+          ],
+          "expressions": [
+            {
+              "name": "脸红",
+              "strength": 1
+            },
+            {
+              "name": "流泪",
+              "strength": 1
+            }
+          ],
+          "keys": {
+            "key2": 1,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 1,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "chest",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": -1837.6423136777812,
+            "weighted_y": 498349.11441688496,
+            "opacity_sum": 472.48330686986446,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 2000,
+          "body": [
+            -0.6815589666366577,
+            0,
+            0.7122277617454529
+          ],
+          "expressions": [
+            {
+              "name": "脸红",
+              "strength": 1
+            },
+            {
+              "name": "流泪",
+              "strength": 1
+            }
+          ],
+          "keys": {
+            "key2": 1,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 1,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "chest",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": 11853.762188004142,
+            "weighted_y": 494327.60954139184,
+            "opacity_sum": 472.4649485722184,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 2500,
+          "body": [
+            1.5147167444229126,
+            0,
+            2.1605730056762695
+          ],
+          "expressions": [
+            {
+              "name": "脸红",
+              "strength": 1
+            },
+            {
+              "name": "流泪",
+              "strength": 1
+            },
+            {
+              "name": "爱心眼",
+              "strength": 1
+            }
+          ],
+          "keys": {
+            "key2": 1,
+            "key3": 0,
+            "key4": 1,
+            "key5": 0,
+            "key6": 0,
+            "key7": 1,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "chest",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": 22765.650401031875,
+            "weighted_y": 498312.89286542335,
+            "opacity_sum": 476.4031803943217,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 3000,
+          "body": [
+            1.014661431312561,
+            0,
+            1.9289335012435913
+          ],
+          "expressions": [
+            {
+              "name": "脸红",
+              "strength": 1
+            },
+            {
+              "name": "流泪",
+              "strength": 1
+            },
+            {
+              "name": "爱心眼",
+              "strength": 1
+            }
+          ],
+          "keys": {
+            "key2": 1,
+            "key3": 0,
+            "key4": 1,
+            "key5": 0,
+            "key6": 0,
+            "key7": 1,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "chest",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": 18556.03859731966,
+            "weighted_y": 500477.2177397392,
+            "opacity_sum": 476.41321424394846,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 3500,
+          "body": [
+            0.24674265086650848,
+            0,
+            0.7714346051216125
+          ],
+          "expressions": [
+            {
+              "name": "脸红",
+              "strength": 1
+            },
+            {
+              "name": "流泪",
+              "strength": 1
+            }
+          ],
+          "keys": {
+            "key2": 1,
+            "key3": 0,
+            "key4": 0.4170095920562744,
+            "key5": 0,
+            "key6": 0,
+            "key7": 1,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "chest",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": 12144.082924448203,
+            "weighted_y": 499649.05591808364,
+            "opacity_sum": 474.1380898198113,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 4000,
+          "body": [
+            0.9016289710998535,
+            0,
+            1.604542851448059
+          ],
+          "expressions": [
+            {
+              "name": "脸红",
+              "strength": 1
+            },
+            {
+              "name": "流泪",
+              "strength": 1
+            }
+          ],
+          "keys": {
+            "key2": 1,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 1,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "chest",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": 16943.725011345858,
+            "weighted_y": 494211.53334070765,
+            "opacity_sum": 471.7041665893048,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 4500,
+          "body": [
+            2.272460460662842,
+            -0.8772838115692139,
+            3.4902143478393555
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 1,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 1,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": 26016.154801581382,
+            "weighted_y": 485829.3170697137,
+            "opacity_sum": 472.3472799193114,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 5000,
+          "body": [
+            2.0777416229248047,
+            -0.48964619636535645,
+            3.95029354095459
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": -1625.4172564345772,
+            "weighted_y": 469913.84998499544,
+            "opacity_sum": 457.6713764630258,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 5500,
+          "body": [
+            2.1191465854644775,
+            0.3920273184776306,
+            3.5177900791168213
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": 4382.5796345939525,
+            "weighted_y": 466441.796226864,
+            "opacity_sum": 457.63553124759346,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 6000,
+          "body": [
+            0.37850069999694824,
+            0.6968705058097839,
+            0.7788451910018921
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": -4333.6179846804225,
+            "weighted_y": 469561.1792591495,
+            "opacity_sum": 457.6251559165539,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 6500,
+          "body": [
+            0.46326711773872375,
+            0.9152641296386719,
+            0.3911497890949249
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": -5118.359471694859,
+            "weighted_y": 469780.51855796704,
+            "opacity_sum": 457.6224267333746,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 7000,
+          "body": [
+            0.4633241295814514,
+            0.8933438062667847,
+            0.44460761547088623
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": -4369.321642584031,
+            "weighted_y": 469741.39114945894,
+            "opacity_sum": 457.622435846366,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 7500,
+          "body": [
+            0.4633241295814514,
+            0.8933637142181396,
+            0.44408944249153137
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": -4381.463303209097,
+            "weighted_y": 469788.164909653,
+            "opacity_sum": 457.62243870738894,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 8000,
+          "body": [
+            0.4633241295814514,
+            0.8933788537979126,
+            0.44406265020370483
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": -4407.0949572096015,
+            "weighted_y": 469779.80363982834,
+            "opacity_sum": 457.6224265480414,
+            "sampled_vertices": 8743
+          }
+        }
+      ]
+    },
+    {
+      "kind": "flow",
+      "family": "celebrate",
+      "timing": {
+        "tokens": 44,
+        "encoder_ms": 32.99733499989088,
+        "head_ms": 12.695219000306679,
+        "total_compute_ms": 46.53684900040389
+      },
+      "constraints": {
+        "raw_out_of_range_fraction": 0.0185546875,
+        "raw_normalized_excess_mean": 0.00023614894598722458,
+        "raw_normalized_excess_max": 0.026488661766052246,
+        "gesture_candidates": 4,
+        "gesture_accepted": 4,
+        "gesture_suppressed": 0,
+        "expression_events": 6,
+        "expression_flickers_suppressed": 0,
+        "exclusive_eye_conflicts_resolved": 0,
+        "expression_end_cleanup": 0
+      },
+      "body_peak": 4.271728515625,
+      "mesh_delta": 27472.98996691247,
+      "trace": [
+        {
+          "time_ms": 500,
+          "body": [
+            0.6084621548652649,
+            0.941402792930603,
+            -0.06328734755516052
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": -5056.148592794163,
+            "weighted_y": 468752.04711188376,
+            "opacity_sum": 457.6235171370208,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 1000,
+          "body": [
+            0.45329853892326355,
+            0.2345031201839447,
+            1.3524718284606934
+          ],
+          "expressions": [
+            {
+              "name": "脸红",
+              "strength": 1
+            },
+            {
+              "name": "兔牙",
+              "strength": 1
+            }
+          ],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0.5829904079437256,
+            "key8": 0,
+            "key9": 0.5829904079437256,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "chest",
+            "right": "point_index"
+          },
+          "geometry": {
+            "weighted_x": 6420.914695623684,
+            "weighted_y": 474588.7078841602,
+            "opacity_sum": 459.81964712799527,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 1500,
+          "body": [
+            -4.271728515625,
+            2.78471040725708,
+            -1.2136404514312744
+          ],
+          "expressions": [
+            {
+              "name": "脸红",
+              "strength": 1
+            },
+            {
+              "name": "兔牙",
+              "strength": 1
+            },
+            {
+              "name": "＞＜",
+              "strength": 1
+            }
+          ],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 1,
+            "key6": 0,
+            "key7": 1,
+            "key8": 0,
+            "key9": 1,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "chest",
+            "right": "point_index"
+          },
+          "geometry": {
+            "weighted_x": -17216.49379386794,
+            "weighted_y": 487812.71974761283,
+            "opacity_sum": 381.5188338942826,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 2000,
+          "body": [
+            -1.6788047552108765,
+            2.570953369140625,
+            0.1833420991897583
+          ],
+          "expressions": [
+            {
+              "name": "脸红",
+              "strength": 1
+            },
+            {
+              "name": "兔牙",
+              "strength": 1
+            },
+            {
+              "name": "＞＜",
+              "strength": 1
+            }
+          ],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 1,
+            "key6": 0,
+            "key7": 1,
+            "key8": 0,
+            "key9": 1,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "chest",
+            "right": "point_index"
+          },
+          "geometry": {
+            "weighted_x": -2499.203597620646,
+            "weighted_y": 484230.86883618776,
+            "opacity_sum": 381.5132050011307,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 2500,
+          "body": [
+            0.5188008546829224,
+            0.21971248090267181,
+            1.7124042510986328
+          ],
+          "expressions": [
+            {
+              "name": "脸红",
+              "strength": 1
+            },
+            {
+              "name": "兔牙",
+              "strength": 1
+            },
+            {
+              "name": "＞＜",
+              "strength": 1
+            }
+          ],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 1,
+            "key6": 0,
+            "key7": 1,
+            "key8": 0,
+            "key9": 1,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "chest",
+            "right": "point_index"
+          },
+          "geometry": {
+            "weighted_x": 8830.582549049335,
+            "weighted_y": 480716.8958660532,
+            "opacity_sum": 381.49157784692943,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 3000,
+          "body": [
+            -0.27525627613067627,
+            0.6070259213447571,
+            1.0405409336090088
+          ],
+          "expressions": [
+            {
+              "name": "脸红",
+              "strength": 1
+            },
+            {
+              "name": "兔牙",
+              "strength": 1
+            },
+            {
+              "name": "＞＜",
+              "strength": 1
+            }
+          ],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 1,
+            "key6": 0,
+            "key7": 1,
+            "key8": 0,
+            "key9": 1,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "chest",
+            "right": "point_index"
+          },
+          "geometry": {
+            "weighted_x": 2416.183763927553,
+            "weighted_y": 483469.10834807315,
+            "opacity_sum": 381.4972820468247,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 3500,
+          "body": [
+            -1.5575765371322632,
+            1.359816312789917,
+            0.5811304450035095
+          ],
+          "expressions": [
+            {
+              "name": "脸红",
+              "strength": 1
+            },
+            {
+              "name": "兔牙",
+              "strength": 1
+            }
+          ],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 1,
+            "key6": 0,
+            "key7": 1,
+            "key8": 0,
+            "key9": 1,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "chest",
+            "right": "point_index"
+          },
+          "geometry": {
+            "weighted_x": -4179.69953204197,
+            "weighted_y": 486855.31587212253,
+            "opacity_sum": 381.51931406371295,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 4000,
+          "body": [
+            -0.4118194580078125,
+            1.5295721292495728,
+            1.560771107673645
+          ],
+          "expressions": [
+            {
+              "name": "脸红",
+              "strength": 1
+            },
+            {
+              "name": "兔牙",
+              "strength": 1
+            }
+          ],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 1,
+            "key8": 0,
+            "key9": 1,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "chest",
+            "right": "point_index"
+          },
+          "geometry": {
+            "weighted_x": 3616.9335155424933,
+            "weighted_y": 492796.1787162888,
+            "opacity_sum": 459.64313776418567,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 4500,
+          "body": [
+            1.7780365943908691,
+            0.10814034938812256,
+            3.8656272888183594
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 1,
+            "key8": 0,
+            "key9": 1,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": 14837.359778613885,
+            "weighted_y": 488053.76630074566,
+            "opacity_sum": 460.29063830245286,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 5000,
+          "body": [
+            0.9404861927032471,
+            0.18791401386260986,
+            3.891385793685913
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": -14125.421754133185,
+            "weighted_y": 478417.375582982,
+            "opacity_sum": 460.6305576013401,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 5500,
+          "body": [
+            0.6745550036430359,
+            0.4356478750705719,
+            3.7112033367156982
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": -458.34266354654574,
+            "weighted_y": 466260.93997969094,
+            "opacity_sum": 457.62819677894004,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 6000,
+          "body": [
+            0.322462260723114,
+            0.6561483144760132,
+            0.7738833427429199
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": -5166.528680705662,
+            "weighted_y": 469559.3577093794,
+            "opacity_sum": 457.6235187035054,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 6500,
+          "body": [
+            0.8909851908683777,
+            1.0041593313217163,
+            0.7126634120941162
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": -2950.303162034174,
+            "weighted_y": 468702.3084004192,
+            "opacity_sum": 457.6257763408357,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 7000,
+          "body": [
+            0.8976261019706726,
+            0.9897406101226807,
+            0.7938980460166931
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": -2954.160761825935,
+            "weighted_y": 469399.67835642525,
+            "opacity_sum": 457.6257881388301,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 7500,
+          "body": [
+            0.8976261019706726,
+            0.9863715171813965,
+            0.7869968414306641
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": -3149.380101562343,
+            "weighted_y": 469506.7491755483,
+            "opacity_sum": 457.6257801518077,
+            "sampled_vertices": 8743
+          }
+        },
+        {
+          "time_ms": 8000,
+          "body": [
+            0.8976261019706726,
+            0.9864957332611084,
+            0.7871077060699463
+          ],
+          "expressions": [],
+          "keys": {
+            "key2": 0,
+            "key3": 0,
+            "key4": 0,
+            "key5": 0,
+            "key6": 0,
+            "key7": 0,
+            "key8": 0,
+            "key9": 0,
+            "key13": 0
+          },
+          "gesture": {
+            "left": "default",
+            "right": "default"
+          },
+          "geometry": {
+            "weighted_x": -3161.701536378552,
+            "weighted_y": 469496.75667100656,
+            "opacity_sum": 457.6257958874339,
+            "sampled_vertices": 8743
+          }
+        }
+      ]
+    }
+  ],
+  "checked": [
+    "both saved neural heads produce finite 16-axis trajectories and learned original-expression switches",
+    "native torso physics, real expression parameter entry/exit, eye exclusivity and changed rendered mesh",
+    "visible semantic prediction and execute controls; 160-clip review gallery, split filters, storyboards, animation assets and mobile layout"
+  ],
+  "status": {
+    "ready": true,
+    "encoder": "Qwen/Qwen3.5-0.8B",
+    "encoder_revision": "2fc06364715b967f1860aea9cf38778875588b17",
+    "profile_sha256": "41bd84038b72a62200b35b8bf1d82bad226d0068744c9791d24b49e49eb85103",
+    "asset_hash": "77bea8c13820edd4167ebda37c5a5bd78b782186bdf6c58a5c47bf5efff79df6",
+    "experiment": "experiments/vtuber-v2",
+    "models": [
+      "regression",
+      "flow"
+    ],
+    "supervision": "program_authored_assistant_reviewed",
+    "held_out_evaluation": false,
+    "neutral_start_only": true,
+    "output_shape": [
+      64,
+      16
+    ],
+    "sample_hz": 10,
+    "expression_names": [
+      "爱心眼",
+      "＞＜",
+      "屑屑眼",
+      "圈圈眼",
+      "脸红",
+      "兔牙",
+      "流冷汗",
+      "流泪",
+      "加载"
+    ],
+    "training_samples": 176,
+    "profile_id": "dafeiyu-vtuber.v3"
+  },
+  "ok": true,
+  "browser_errors": []
+}

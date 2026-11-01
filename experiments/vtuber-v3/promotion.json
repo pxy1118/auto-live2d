@@ -1,0 +1,6 @@
+{
+  "current": "experiments/vtuber-v3",
+  "dataset_unchanged": true,
+  "motion_base_archive": "archive/2026-10-31-vtuber-v3-training-controls/vtuber-v3-before-motion",
+  "appearance_base_archive": "archive/2026-10-31-vtuber-v3-training-controls/vtuber-v3"
+}

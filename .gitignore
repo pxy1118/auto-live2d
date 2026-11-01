@@ -1,0 +1,27 @@
+# Build and runtime artifacts
+node_modules/
+dist/
+.runtime/
+test-results/
+*.log
+__pycache__/
+*.pyc
+data/
+**/.venv/
+
+# Not redistributed in this repository (see README "仓库内容" section)
+# - Live2D Cubism SDK (Live2D proprietary Core license)
+# - "大肥鱼" Live2D character assets (free material, original art by 神宫凉子)
+# - Qwen3.5-0.8B weights and Qwen3-TTS checkpoints
+# - datasets and the archived 2026-10-31 exploration snapshot
+vendor/cubism/
+live2d/
+models/
+datasets/
+archive/
+
+# Editor / OS noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

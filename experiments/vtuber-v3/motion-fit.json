@@ -1,0 +1,21 @@
+{
+  "selection": "train only",
+  "reason": "large forward lean absent in trained explicit configuration example",
+  "base": "experiments/vtuber-v3",
+  "models": {
+    "regression": {
+      "steps": 1000,
+      "seconds": 7.468676886999901,
+      "frozen_semantic_and_categorical_weights_unchanged": true,
+      "base_sha256": "b1f771a8729cd0b38da66bf474ba980545649eb8655221bb5e6d2591dd73147b",
+      "train_lean_peak": -19.156230926513672
+    },
+    "flow": {
+      "steps": 1500,
+      "seconds": 12.07725970599995,
+      "frozen_semantic_and_categorical_weights_unchanged": true,
+      "base_sha256": "1f1cdc4135ea30aa346c13b060937e967f890a5169193801b14bca162435c7aa",
+      "train_lean_peak": -18.703109741210938
+    }
+  }
+}

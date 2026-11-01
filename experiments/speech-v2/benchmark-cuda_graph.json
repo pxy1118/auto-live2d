@@ -1,0 +1,62 @@
+{
+  "backend": "cuda_graph",
+  "load_ms": 40197,
+  "info": {
+    "ready": true,
+    "model": "Qwen3-TTS-12Hz-1.7B / fine-tuned",
+    "speaker": "da_fei_yu",
+    "language": "Chinese",
+    "max_text_length": 300,
+    "checkpoint_sha256": "b62a26f6c2ebd10582c088c318d1fe045f19861500caf7eae300b676d2f19a3d",
+    "mouth_method": "audio_rms_v1",
+    "streaming": false,
+    "backend": "cuda_graph",
+    "accelerator_source": {
+      "repository": "https://github.com/andimarafioti/faster-qwen3-tts",
+      "revision": "b84dc773b2199a85cb421eb76857e4475e03e8c4",
+      "version": "0.3.2"
+    },
+    "environment": {
+      "torch": "2.7.0+cu128",
+      "transformers": "4.57.3",
+      "soundfile": "0.13.1",
+      "numpy": "2.3.5",
+      "attention": "sdpa",
+      "device": "cuda"
+    }
+  },
+  "cases": [
+    {
+      "text": "大家晚上好，我是大肥鱼。很高兴又见到你。",
+      "duration_ms": 4320.0,
+      "synthesis_ms": 1390.17,
+      "audio_url": "/api/speech/audio/0fc1a65451e143b498b238dbef3320c8.wav",
+      "audio_sha256": "b05bf2402108a1f9211d65c6aab0c12875ca393733c230cf7c8934cbab52deb9",
+      "repeat": 0
+    },
+    {
+      "text": "大家晚上好，我是大肥鱼。很高兴又见到你。",
+      "duration_ms": 4320.0,
+      "synthesis_ms": 1362.92,
+      "audio_url": "/api/speech/audio/13e27ffc1b3d4cacb9d3619211bb4390.wav",
+      "audio_sha256": "b05bf2402108a1f9211d65c6aab0c12875ca393733c230cf7c8934cbab52deb9",
+      "repeat": 1
+    },
+    {
+      "text": "今天想和大家聊一聊开心的事情。先坐好，听我慢慢说。遇到困难也别着急，我们一起想办法，好不好？",
+      "duration_ms": 9280.0,
+      "synthesis_ms": 2703.45,
+      "audio_url": "/api/speech/audio/827336a8580441d185acd3c1c165832f.wav",
+      "audio_sha256": "7e3cfbe6792fd08effbcf085265a6df3d78ea94af09af22bbdc4e5938f381d01",
+      "repeat": 0
+    },
+    {
+      "text": "今天想和大家聊一聊开心的事情。先坐好，听我慢慢说。遇到困难也别着急，我们一起想办法，好不好？",
+      "duration_ms": 9280.0,
+      "synthesis_ms": 2838.77,
+      "audio_url": "/api/speech/audio/de3426172ccf44468908f23cbf88c9c0.wav",
+      "audio_sha256": "7e3cfbe6792fd08effbcf085265a6df3d78ea94af09af22bbdc4e5938f381d01",
+      "repeat": 1
+    }
+  ]
+}

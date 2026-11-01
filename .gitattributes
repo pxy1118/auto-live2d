@@ -1,0 +1,12 @@
+# Generated and binary artifacts
+*.pt binary
+*.safetensors binary
+*.png binary
+*.jpg binary
+*.wav binary
+*.moc3 binary
+
+# Scripts keep their line endings; everything else normalizes on commit
+* text=auto
+*.ps1 text eol=crlf
+*.cmd text eol=crlf

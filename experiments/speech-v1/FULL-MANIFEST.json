@@ -1,0 +1,186 @@
+{
+  "schema": "speech_integration.v1",
+  "files": [
+    {
+      "path": "REPORT.md",
+      "bytes": 2996,
+      "sha256": "622d950e90fad9a5f36d8884b73fd06f8bc886964ae316c17d1b8c0474618ae7"
+    },
+    {
+      "path": "browser/mouth-closed.png",
+      "bytes": 338361,
+      "sha256": "be4caf5b0769ec0e647236dc39776b3a5c60746a3d81001688af1c5506ab7212"
+    },
+    {
+      "path": "browser/mouth-open.png",
+      "bytes": 341838,
+      "sha256": "e6d9b6f644fcf52f9e3bfb7daa5d7683faf16cf3cfe2e8069926b69d755ac93d"
+    },
+    {
+      "path": "browser/speech-desktop.png",
+      "bytes": 494124,
+      "sha256": "ed58cda9418d97a6dc481f334fca481bdb050b53cf005b46fbf3003c2cd52969"
+    },
+    {
+      "path": "browser/speech-mobile.png",
+      "bytes": 349750,
+      "sha256": "8deb95fe1d071583ef198c75635fb986391837da48dc32721843b476a82a6627"
+    },
+    {
+      "path": "control-regression.json",
+      "bytes": 1030,
+      "sha256": "1b23f1bc5e41e1123a3c423a509901eacde891e07f456ab5ebd578eacb7903a7"
+    },
+    {
+      "path": "latent-regression.json",
+      "bytes": 2281151,
+      "sha256": "8eb97c300a6e34de023eb8d4afe4ff09aa8ab9c474101930b4cc32b29f1876e3"
+    },
+    {
+      "path": "sample.json",
+      "bytes": 4508,
+      "sha256": "bbda7779f177437d6871591f1152e2c82d7aac9ad918fe64b077369c5c5d4672"
+    },
+    {
+      "path": "sample.wav",
+      "bytes": 207404,
+      "sha256": "26dc7b044ae0e6d21d97f33d62fd3f60dfcbf676e02089ced9ddf3162186ffa8"
+    },
+    {
+      "path": "source/examples/speak_demo.py",
+      "bytes": 1543,
+      "sha256": "b759e62129e613db5fc00cab93a4b7afc0ab365b026176cbeeafae49f22eceb0"
+    },
+    {
+      "path": "source/package.json",
+      "bytes": 733,
+      "sha256": "02808956ec6175decfc4424fdd8a3569c4a61a4b507400988526a8a4bbd8929f"
+    },
+    {
+      "path": "source/scripts/speech/report.py",
+      "bytes": 6811,
+      "sha256": "c8141cbdbb1d55a40ec941888f68030ada5f349f5ce49bf008eb15427f48f447"
+    },
+    {
+      "path": "source/server/index.ts",
+      "bytes": 12526,
+      "sha256": "a6623e7232555c06a8eb2bb7ed7046fdc6a036ba4fcc315075088f83b69acbd6"
+    },
+    {
+      "path": "source/server/latent-bridge.ts",
+      "bytes": 2194,
+      "sha256": "b3dadf0f19720daf26eb4305cdc8a08b11b7a9f0c6960a6e781a8a890f06b581"
+    },
+    {
+      "path": "source/server/speech-bridge.ts",
+      "bytes": 2992,
+      "sha256": "51dcf8e321ced8f5e6563fce086a781c188de629cc19d61d9a0576ffb94fb59a"
+    },
+    {
+      "path": "source/speech/README.md",
+      "bytes": 3725,
+      "sha256": "7937241e6ec67e9a01a68ac91bc56b732c820465d3e29f125d5337013c6c00d3"
+    },
+    {
+      "path": "source/speech/__init__.py",
+      "bytes": 68,
+      "sha256": "15e4dd040fd969febf91752972e5a1177da8cb2b3454da61f05f68051810abb2"
+    },
+    {
+      "path": "source/speech/config.json",
+      "bytes": 301,
+      "sha256": "b90b3146cd6a4551d95e77fec680e80e268de5c3fdc412fce4d76432a5b74823"
+    },
+    {
+      "path": "source/speech/config.py",
+      "bytes": 691,
+      "sha256": "6a134eea1b00f3e1c45b6e1f3c6a1cdf09ca54e3957245dc9f42418bc130ac01"
+    },
+    {
+      "path": "source/speech/lips.py",
+      "bytes": 1291,
+      "sha256": "8035250a45d621afee1f8fb145154b944e2a8776b0dbd85a62e60d23b5f947f8"
+    },
+    {
+      "path": "source/speech/manage.py",
+      "bytes": 3078,
+      "sha256": "042b959b2d756dc239bc0270c93db239dcceb498c9a2b71066b0594e6d2e5d9d"
+    },
+    {
+      "path": "source/speech/model-source.json",
+      "bytes": 1091,
+      "sha256": "f6baf912ee950c5484294b0cc0fb400c9a41b47831f6de58a16a6dd68a624c20"
+    },
+    {
+      "path": "source/speech/runtime.py",
+      "bytes": 4347,
+      "sha256": "d3f798763b863a05d422b6ab05d2cce94180706c103ee6e112766e7f8e2e4df8"
+    },
+    {
+      "path": "source/speech/serve.py",
+      "bytes": 1735,
+      "sha256": "c2b075623b0dfc36345a751ba1553b8557823bef4788a041de97b6813ff57510"
+    },
+    {
+      "path": "source/speech/test_lips.py",
+      "bytes": 1052,
+      "sha256": "8b688d9f0becfb5246fbbae64b79036bd0aa5daca630cbf611513af08438f4ab"
+    },
+    {
+      "path": "source/src/engine.ts",
+      "bytes": 21226,
+      "sha256": "f8b08fe02c999b6fe68aa43990e3e286387eca3b508720f5e928ca60f1bae5d3"
+    },
+    {
+      "path": "source/src/latent-panel.ts",
+      "bytes": 4203,
+      "sha256": "82809208db888c73d7b4ba90c09e00ba637bfec0e371a68c698e4fb65c188364"
+    },
+    {
+      "path": "source/src/latent.css",
+      "bytes": 2205,
+      "sha256": "3eec6f6057515b98d328fcec52acae89d00103d0994f385db2eb5b3069c56196"
+    },
+    {
+      "path": "source/src/main.ts",
+      "bytes": 22029,
+      "sha256": "f0f6e87c7d2a2ad83725abdf807b1f55691864d3b80f99426d125e58f3290474"
+    },
+    {
+      "path": "source/src/speech-panel.ts",
+      "bytes": 3419,
+      "sha256": "753d27d7ad10266f49cde118d84c0532067f59e9c36a9973dd80d1bca0ed2493"
+    },
+    {
+      "path": "source/src/speech.ts",
+      "bytes": 4541,
+      "sha256": "889c3f18e24fd059eade1afed8cec118adc754e46a81b511fddef06dd1c7b52e"
+    },
+    {
+      "path": "source/start.ps1",
+      "bytes": 782,
+      "sha256": "5b73e7ad7351661710356e4c3dda90b8b39186eb0ccba46bd2b7158a832a36e8"
+    },
+    {
+      "path": "source/stop.ps1",
+      "bytes": 532,
+      "sha256": "d2efb149919b8cb58efa97ba96e96e9bec729f0527c1fcc0de593a691d23a78f"
+    },
+    {
+      "path": "source/tests/speech-browser.ts",
+      "bytes": 9282,
+      "sha256": "684cceece85ecb550c99705ad4e9270bebe510b7922bfc19bb16507e9bd1fae7"
+    },
+    {
+      "path": "speech-verification.json",
+      "bytes": 219644,
+      "sha256": "853cf66f3909536f1db12122fe325b5a06943c4b9372312a8756d29c91da3447"
+    },
+    {
+      "path": "sync.png",
+      "bytes": 177947,
+      "sha256": "1504fd3645bbe9e200fab49ca7d2349a42d8b93a8144997a32679a6370a1e7c7"
+    }
+  ],
+  "trained_action_dataset_modified": false
+}

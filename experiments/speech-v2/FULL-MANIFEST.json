@@ -1,0 +1,297 @@
+{
+  "schema": "speech_streaming.v2",
+  "trained_action_dataset_modified": false,
+  "tts_weights_modified": false,
+  "files": [
+    {
+      "path": "REPORT.md",
+      "bytes": 5766,
+      "sha256": "6fb7f7bf1915b8f77a70442418815c0aeb1f73332644cbd18d80a1ee03e51be9"
+    },
+    {
+      "path": "baseline.json",
+      "bytes": 4999,
+      "sha256": "e19415ec1daa40e3afd572904c0a9075de12e72e2544245cfb934768d9d4e24a"
+    },
+    {
+      "path": "benchmark-cuda_graph.json",
+      "bytes": 2303,
+      "sha256": "fbc61ec087a51cc913d3eb770638da375c6cdf74f5e3809e35891368d00a5932"
+    },
+    {
+      "path": "browser/stream-desktop.png",
+      "bytes": 400770,
+      "sha256": "ed52b137784b19b4e4658d47b28c59d08d10ef61190539f81764930ac9081e42"
+    },
+    {
+      "path": "browser/stream-mobile.png",
+      "bytes": 278028,
+      "sha256": "beafc7a8836e912dfa6a13dbf3b68a9b2b78a44b0ad81a63efaf5114f51c9018"
+    },
+    {
+      "path": "ctrl-c-verification.json",
+      "bytes": 691,
+      "sha256": "a54615ae0fc9515a94a322ffcc1294a91f1b80b51c48b3594ba8cb9d5fd72bd8"
+    },
+    {
+      "path": "final-shutdown-verification.json",
+      "bytes": 228,
+      "sha256": "408d81fc0b03634850852795e5681c13909aa810054a73c28f2a6bb67ce15099"
+    },
+    {
+      "path": "frozen-verification.json",
+      "bytes": 307,
+      "sha256": "4f1b74ac822d86fbc210550f7142993bbb39c3a62833ac1786303ee10380bbf9"
+    },
+    {
+      "path": "latent-regression.json",
+      "bytes": 2281150,
+      "sha256": "230ff2ba949bc1447c2b7414b9520ee7be452ba0024de0d4b3422e1a47524e86"
+    },
+    {
+      "path": "legacy-verification.json",
+      "bytes": 222821,
+      "sha256": "fad87d39326dcd4c57433c74f86442110d4ae8b7ebdb482db5153709c9a40fa4"
+    },
+    {
+      "path": "sample.json",
+      "bytes": 25421,
+      "sha256": "f2e96bbba18add50372f78cf4fdff8c4773735fdf2f45f199e04b1f67b7b4874"
+    },
+    {
+      "path": "sample.wav",
+      "bytes": 445484,
+      "sha256": "3e0d48c9829e7927a18dab249826345c51e4e11dd5795e983121ad4d699f5ec6"
+    },
+    {
+      "path": "shutdown.json",
+      "bytes": 610,
+      "sha256": "2426404a0a81c8c18fd2f68bb87aa0d9cde3a1fe5ed411132a8b091f293f0ffe"
+    },
+    {
+      "path": "source/README.md",
+      "bytes": 6375,
+      "sha256": "4e323beaacb8925479e9b1e3efdf1a32edeb7bc571c6da5e4b52fc2d61438ec4"
+    },
+    {
+      "path": "source/docs/api.md",
+      "bytes": 8821,
+      "sha256": "e95db8726acb0486f61c5eaa94a87183cab2d9a39c2357cb814d8ed1108a9bf8"
+    },
+    {
+      "path": "source/docs/architecture.md",
+      "bytes": 4704,
+      "sha256": "94f68ae94d344ec4c7b1b2a1207ed5e63713aeaf0654a3c6a8f20fecd16de8c0"
+    },
+    {
+      "path": "source/examples/speak_demo.py",
+      "bytes": 2695,
+      "sha256": "e87969ea3d58915d166589e8ed37a74fc03ae5ac98a02a3e3b058ce334a118c2"
+    },
+    {
+      "path": "source/latent/serve.py",
+      "bytes": 2061,
+      "sha256": "31fe93a11f73c9e261ba40d6153dd8fd49ffb7e4e1af24001369b2379e08c7af"
+    },
+    {
+      "path": "source/main.py",
+      "bytes": 19009,
+      "sha256": "dbc7b4376b0944804a6b8860717580734eda0d3e568fdfb49135b12845412482"
+    },
+    {
+      "path": "source/package-lock.json",
+      "bytes": 41831,
+      "sha256": "3fdf4d555c4ac7cabd801a15c99c144ec415612dfe1eb8eccb0c0586d206e0ba"
+    },
+    {
+      "path": "source/package.json",
+      "bytes": 825,
+      "sha256": "99b3ec38d1e42bd58532d09a0a5e0225615e216887fd37d7a4f0dce16c61f455"
+    },
+    {
+      "path": "source/scripts/speech/benchmark.py",
+      "bytes": 1661,
+      "sha256": "e64566e0ac80822a6412021f175b5008fcdf73569ad01be8753da0bb5b6d13f1"
+    },
+    {
+      "path": "source/scripts/speech/benchmark_stream.py",
+      "bytes": 2911,
+      "sha256": "a852ea2d9cf2fa46c84c165c254d5b22a5043add14f6afb6fb77fa22c8b59dff"
+    },
+    {
+      "path": "source/scripts/speech/report_v2.py",
+      "bytes": 13553,
+      "sha256": "a91a00c02abd2f4064a70f706895881449d9e3188dc90a60a262566e80d6f5fc"
+    },
+    {
+      "path": "source/server/index.ts",
+      "bytes": 13711,
+      "sha256": "6e620ecde918ddb350b4dd44428ef4d09c25f2b0f4f0a62420aa55c33f9ecb3b"
+    },
+    {
+      "path": "source/server/latent-bridge.ts",
+      "bytes": 2194,
+      "sha256": "b3dadf0f19720daf26eb4305cdc8a08b11b7a9f0c6960a6e781a8a890f06b581"
+    },
+    {
+      "path": "source/server/ndjson.ts",
+      "bytes": 723,
+      "sha256": "2c1deb8a67f53499f8a3dcaba279417b214fb5e44bc75a3ba759ac84356edd14"
+    },
+    {
+      "path": "source/server/speech-bridge.ts",
+      "bytes": 6396,
+      "sha256": "83b98fbac8473e97250a3bfa7c79af3f24aef19fb10a3355a09ef4c01f998c51"
+    },
+    {
+      "path": "source/speech/README.md",
+      "bytes": 6353,
+      "sha256": "1b34b200123a17b08cb22795a3cdc523fb16e7899c5ec6eb97466f697e619889"
+    },
+    {
+      "path": "source/speech/__init__.py",
+      "bytes": 68,
+      "sha256": "15e4dd040fd969febf91752972e5a1177da8cb2b3454da61f05f68051810abb2"
+    },
+    {
+      "path": "source/speech/accelerator.py",
+      "bytes": 1322,
+      "sha256": "075f33af32a15523d1469ac1114efd20b0f14e1df801513b17325df45443526b"
+    },
+    {
+      "path": "source/speech/config.json",
+      "bytes": 356,
+      "sha256": "5062a02b09cbb15753d3abc1c0185adde2f1dc51f384e2a83cc168b00b483cde"
+    },
+    {
+      "path": "source/speech/config.py",
+      "bytes": 691,
+      "sha256": "6a134eea1b00f3e1c45b6e1f3c6a1cdf09ca54e3957245dc9f42418bc130ac01"
+    },
+    {
+      "path": "source/speech/features.py",
+      "bytes": 2250,
+      "sha256": "a9c90b3ede6d64bb65529bdd536ec2c3f52e0713d70a938fd6f184c714b6ba47"
+    },
+    {
+      "path": "source/speech/lips.py",
+      "bytes": 1291,
+      "sha256": "8035250a45d621afee1f8fb145154b944e2a8776b0dbd85a62e60d23b5f947f8"
+    },
+    {
+      "path": "source/speech/manage.py",
+      "bytes": 3078,
+      "sha256": "042b959b2d756dc239bc0270c93db239dcceb498c9a2b71066b0594e6d2e5d9d"
+    },
+    {
+      "path": "source/speech/model-source.json",
+      "bytes": 1091,
+      "sha256": "f6baf912ee950c5484294b0cc0fb400c9a41b47831f6de58a16a6dd68a624c20"
+    },
+    {
+      "path": "source/speech/runtime.py",
+      "bytes": 8223,
+      "sha256": "4f06cd552ebf3ae88fbcb761782dc8a0b87ca44dfc6d1d73823da5063ae404b5"
+    },
+    {
+      "path": "source/speech/serve.py",
+      "bytes": 2779,
+      "sha256": "e6ee4ea609559338ccd7e4f9c95c86b1c06b63ff77ff68018b67231045631abf"
+    },
+    {
+      "path": "source/speech/test_features.py",
+      "bytes": 1284,
+      "sha256": "dc73aa4754b298e203cc07fb7c125a9ed72cc9bcdfdfe501301bba0c499e04f9"
+    },
+    {
+      "path": "source/speech/test_lips.py",
+      "bytes": 1052,
+      "sha256": "8b688d9f0becfb5246fbbae64b79036bd0aa5daca630cbf611513af08438f4ab"
+    },
+    {
+      "path": "source/src/controller.ts",
+      "bytes": 21256,
+      "sha256": "dbccef145167e8472808c848a785f6736324a4fb8dc5fcdb401fa9d7eae9c27d"
+    },
+    {
+      "path": "source/src/engine.ts",
+      "bytes": 22980,
+      "sha256": "5ad324b0e031c6b0ae51e9f375f194eb2d0f8632a038b0f9e4fe5bf1a875ae7f"
+    },
+    {
+      "path": "source/src/latent-panel.ts",
+      "bytes": 4203,
+      "sha256": "82809208db888c73d7b4ba90c09e00ba637bfec0e371a68c698e4fb65c188364"
+    },
+    {
+      "path": "source/src/main.ts",
+      "bytes": 22029,
+      "sha256": "f0f6e87c7d2a2ad83725abdf807b1f55691864d3b80f99426d125e58f3290474"
+    },
+    {
+      "path": "source/src/speech-motion.ts",
+      "bytes": 1229,
+      "sha256": "5e212c80d0dfa27c94a0767872d4c99f45400582731f21304384cf234c291eb7"
+    },
+    {
+      "path": "source/src/speech-panel.ts",
+      "bytes": 4829,
+      "sha256": "000e56c139d22a768d481e22769d9a472f20856a97561a93c8a15dcbb8a97815"
+    },
+    {
+      "path": "source/src/speech.ts",
+      "bytes": 10108,
+      "sha256": "98bb7a1bdf9a87c07b2d5e792c6eb0f83ec029aeca4c40e98550090b54b59660"
+    },
+    {
+      "path": "source/tests/speech-browser.ts",
+      "bytes": 9282,
+      "sha256": "684cceece85ecb550c99705ad4e9270bebe510b7922bfc19bb16507e9bd1fae7"
+    },
+    {
+      "path": "source/tests/speech-motion.test.ts",
+      "bytes": 3988,
+      "sha256": "12d0344941ec2b547391dbaba8eb5c86dbda55ae3f6c60a2ee7a79ea279cbba3"
+    },
+    {
+      "path": "source/tests/speech-stream-browser.ts",
+      "bytes": 13603,
+      "sha256": "ee76b130fc5c12ea19b25ab3bbb4a948705979839068c5ad344651b6e59f6b84"
+    },
+    {
+      "path": "source/tests/test_launcher.py",
+      "bytes": 7189,
+      "sha256": "6a99cd72df748354dd36fae657e81d019009483c6028e8502af159950646c5b8"
+    },
+    {
+      "path": "source/vendor/faster-qwen3-tts/LICENSE",
+      "bytes": 1073,
+      "sha256": "442472a518bf71e371f2581aa0fcaf6ee2ef6854f78c340fdbe87c099950ea82"
+    },
+    {
+      "path": "source/vendor/faster-qwen3-tts/SOURCE.json",
+      "bytes": 1905,
+      "sha256": "c2b7817b563bf4490d02823f7b9070891d3e0a7f402734ad5a1bb495cee5e3a9"
+    },
+    {
+      "path": "stop-command-verification.json",
+      "bytes": 699,
+      "sha256": "310d38ba4610717d8cfcfb2b15dde4b1a66d0648d47ae34c1267cae814850bab"
+    },
+    {
+      "path": "stream-benchmark.json",
+      "bytes": 5342,
+      "sha256": "e8c1e3735c7660410150df506b5ad8408156c0fa8f0a78da03dbfd918b4b942f"
+    },
+    {
+      "path": "stream-verification.json",
+      "bytes": 689995,
+      "sha256": "38fd9fc7dc4d31309711056d69c45dd00ddefedc4032a0f9cf15c214480320e7"
+    },
+    {
+      "path": "sync.png",
+      "bytes": 343561,
+      "sha256": "4b892e1afd7621c7397d99decaf80b3eecb94bbf9afd7a1b50dcbd37442dee46"
+    }
+  ]
+}

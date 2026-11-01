@@ -1,0 +1,34 @@
+{
+  "checkpoint": "D:/Workplace/Qwen3-TTS/runs/da_fei_yu/checkpoint-best",
+  "model_type": "custom_voice",
+  "files": [
+    {
+      "bytes": 3833402520,
+      "file": "model.safetensors",
+      "sha256": "b62a26f6c2ebd10582c088c318d1fe045f19861500caf7eae300b676d2f19a3d"
+    },
+    {
+      "bytes": 4530,
+      "file": "config.json",
+      "sha256": "5d3590271c9db03c515e48ba94cd3e2b832de8be952aa823eacd3e9b1dbc79c7"
+    },
+    {
+      "bytes": 245,
+      "file": "generation_config.json",
+      "sha256": "f1b90b4513f3b34c62851049e2492d7b4c5940daf1276f89c82b8ef04127f3aa"
+    },
+    {
+      "bytes": 682293092,
+      "file": "speech_tokenizer/model.safetensors",
+      "sha256": "836b7b357f5ea43e889936a3709af68dfe3751881acefe4ecf0dbd30ba571258"
+    },
+    {
+      "bytes": 2336,
+      "file": "speech_tokenizer/config.json",
+      "sha256": "ee65bb901c876664ab8707c487157aa1a6ee57c65969b28fb5ec9dc211e68167"
+    }
+  ],
+  "repository": "D:/Workplace/Qwen3-TTS",
+  "speaker": "da_fei_yu",
+  "repository_commit": "022e286b98fbec7e1e916cb940cdf532cd9f488e"
+}

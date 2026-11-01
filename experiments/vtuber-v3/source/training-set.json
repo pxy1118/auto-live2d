@@ -1,0 +1,7 @@
+{
+  "dataset": "datasets/vtuber-v3",
+  "split": "train",
+  "review_policy": "program_authored_assistant_reviewed",
+  "human_reviewed": false,
+  "exclude_unreviewed_pilot": true
+}

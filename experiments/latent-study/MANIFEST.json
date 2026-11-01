@@ -1,0 +1,447 @@
+{
+  "schema": "latent_study_manifest.v1",
+  "note": "Training fit only; frozen artifacts include source snapshots, checkpoints, metrics and rendered browser evidence.",
+  "created_utc": "2026-10-31T07:59:14.3825389Z",
+  "files": [
+    {
+      "path": "activity-balanced/browser-verification.json",
+      "bytes": 7421,
+      "sha256": "9119517a17a3f0d0a9059ebb0eb28f577144c873017ab8632c2df93281eb61a8"
+    },
+    {
+      "path": "activity-balanced/cold-prediction.json",
+      "bytes": 64925,
+      "sha256": "b545fd9627a32eec51a06a594591a527d7a2d24252d38eca446f3de96b5b5bce"
+    },
+    {
+      "path": "activity-balanced/dataset.json",
+      "bytes": 23427,
+      "sha256": "29ff6e77080f867e93e4dba64537607ff0ee43688a11f288ff641a856228859a"
+    },
+    {
+      "path": "activity-balanced/demo-desktop.png",
+      "bytes": 481993,
+      "sha256": "5f24f20f437d1c23cefec089038c768c2aadfb03d982f9ca48cc76f9ddd0610b"
+    },
+    {
+      "path": "activity-balanced/demo-mobile.png",
+      "bytes": 338038,
+      "sha256": "934141623d5a715fef54ca9b56cd5056465cd20e2462d50ea786f42075293c01"
+    },
+    {
+      "path": "activity-balanced/evaluation.json",
+      "bytes": 7319,
+      "sha256": "4eec468a7bca339e405c9fad813cb4d169edb9cd54f99cd1af91b15a7f3f212b"
+    },
+    {
+      "path": "activity-balanced/flow.pt",
+      "bytes": 2921531,
+      "sha256": "3cfed246affb5308370db26cbd22a80a05b9e9d1803bd3b750fc8287da5cd894"
+    },
+    {
+      "path": "activity-balanced/predictions.json",
+      "bytes": 747035,
+      "sha256": "8a15ac10e340f611300f6f622a961c60f24a28932c243a3fed2d9d4661bd0dd9"
+    },
+    {
+      "path": "activity-balanced/regression.pt",
+      "bytes": 2842293,
+      "sha256": "188a5061e564af8ab5f9864ae5cfa841e67ddb6cd3eea534055ed02689846275"
+    },
+    {
+      "path": "activity-balanced/rendered-flow-nod.png",
+      "bytes": 355722,
+      "sha256": "c65ad81b1fb84703e147bb615af79c6f0d1d2451cb5d940555e0a8f9ad0f383b"
+    },
+    {
+      "path": "activity-balanced/rendered-regression-hand_chest.png",
+      "bytes": 352274,
+      "sha256": "f3ce3a47978f6e04ecd6472d869fa89a3b733458c948717fdc6dc70900d44f60"
+    },
+    {
+      "path": "activity-balanced/rendered-regression-nod.png",
+      "bytes": 355077,
+      "sha256": "125b39ce2ebd4cae4a78fab14796c846469fe0ac4847dddadc49bd7fb4553d03"
+    },
+    {
+      "path": "activity-balanced/rendered-regression-point_index.png",
+      "bytes": 355043,
+      "sha256": "6c49f079da41f7d650c7b0a56cbda4661b3c52a77407902fa26b2988b9e01b1f"
+    },
+    {
+      "path": "activity-balanced/rendered-regression-smile.png",
+      "bytes": 356988,
+      "sha256": "523ac7ed6c4cc01eb12e12880d29dee97fed6a1d23c12b9db9f7dfe782b8eaaa"
+    },
+    {
+      "path": "activity-balanced/run.json",
+      "bytes": 7080,
+      "sha256": "317d152e4450b133a7e75bfe48771815a4529f9d8c7146c0e091587c10a2302f"
+    },
+    {
+      "path": "activity-balanced/source/.python-version",
+      "bytes": 5,
+      "sha256": "7b55f8e67b5623c4bef3fa691288da9437d79d3aba156de48d481db32ac7d16d"
+    },
+    {
+      "path": "activity-balanced/source/common.py",
+      "bytes": 1428,
+      "sha256": "bb3095c544ae271f40f9ec969b9d2d222ce5db2ea3c5206c4bdc7fd9fef5f50c"
+    },
+    {
+      "path": "activity-balanced/source/data.py",
+      "bytes": 3535,
+      "sha256": "28e18ede7ed9c6a5f67f7d8efb71a6f8771757d8c7290cf7a63f99082dcac29a"
+    },
+    {
+      "path": "activity-balanced/source/default-run.json",
+      "bytes": 54,
+      "sha256": "e443c36f4999009b4c40edce69ed6b05d80c9e0131292a9379e1b8b2f3778c94"
+    },
+    {
+      "path": "activity-balanced/source/encoder-source.json",
+      "bytes": 397,
+      "sha256": "0dbe5b0f8d31f63e4755767ec4deb9278238b7400e2e8aed65ab325a813d4753"
+    },
+    {
+      "path": "activity-balanced/source/encoder.py",
+      "bytes": 1884,
+      "sha256": "20655b921c2d5e6a817b19282319809addfd7e968a20dd85e53e58b92dafd8c5"
+    },
+    {
+      "path": "activity-balanced/source/evaluate.py",
+      "bytes": 3024,
+      "sha256": "798c44c5f95de3da03d9c31e8952af07a86cdfddfae35d9eec4c289ea651377f"
+    },
+    {
+      "path": "activity-balanced/source/manage.py",
+      "bytes": 4196,
+      "sha256": "46a41f2b1da8226f58bb95380a5bc7a9c2414a0333e8cb19b6d5ea86eedd1df9"
+    },
+    {
+      "path": "activity-balanced/source/networks.py",
+      "bytes": 2536,
+      "sha256": "a9f7f2b5bccc9245ffe5d81e7e92d7cf0027c0522067096838cf8b0238b3e265"
+    },
+    {
+      "path": "activity-balanced/source/prepare_encoder.py",
+      "bytes": 461,
+      "sha256": "c95937aca73d30dec38e1838a8c45bf62436e553184a1a05f33c58e763240a98"
+    },
+    {
+      "path": "activity-balanced/source/profile.json",
+      "bytes": 2673,
+      "sha256": "4619343821fd18a5bf8b8c002d6ef17ea15524183503efd01969e68060e05e08"
+    },
+    {
+      "path": "activity-balanced/source/pyproject.toml",
+      "bytes": 432,
+      "sha256": "8de7e788408988a660e082141ff228354a7a6ac34e938ff960e9f624c5ce4ada"
+    },
+    {
+      "path": "activity-balanced/source/runtime.py",
+      "bytes": 4123,
+      "sha256": "8173e352c07be9f26fc852e54da88845f021ae7483cf214644ba02f7190e6dd2"
+    },
+    {
+      "path": "activity-balanced/source/serve.py",
+      "bytes": 1728,
+      "sha256": "10ab2543b54c342e6c61593b21d0fd20ba7b78cfdf75550969cf9743d2d45fa9"
+    },
+    {
+      "path": "activity-balanced/source/test_pipeline.py",
+      "bytes": 3177,
+      "sha256": "c35ca80f2d9cb62ae59d850e73aed121e2902595ecd88a3727995e73fb60b5f5"
+    },
+    {
+      "path": "activity-balanced/source/train.py",
+      "bytes": 8554,
+      "sha256": "7499c15ccaabb41194be9612583f627c375d62c4a4a7cf6622d6b5fd1a92d0a8"
+    },
+    {
+      "path": "activity-balanced/source/trajectory.py",
+      "bytes": 2011,
+      "sha256": "99afe7242f0db01e3dbb34b0b6a67050a53532dbb877fe10fdc35d79fb38a23a"
+    },
+    {
+      "path": "activity-balanced/source/uv.lock",
+      "bytes": 95488,
+      "sha256": "f950ae91ea24660caf34128e9e902a50145341b2f5db75abcb6d9e2e74471ae9"
+    },
+    {
+      "path": "activity-balanced/trajectories.png",
+      "bytes": 242575,
+      "sha256": "28f95ea8b2f76fe359641ee72dcb8ca3cd8649f9de12dcc118b1d29f8ebbeded"
+    },
+    {
+      "path": "baseline/dataset.json",
+      "bytes": 23427,
+      "sha256": "29ff6e77080f867e93e4dba64537607ff0ee43688a11f288ff641a856228859a"
+    },
+    {
+      "path": "baseline/evaluation.json",
+      "bytes": 7294,
+      "sha256": "a19776e8ae23b65c3e8838cdcc1061c2d518f24f4d3e7a54519dedd6e951ad79"
+    },
+    {
+      "path": "baseline/flow.pt",
+      "bytes": 2921531,
+      "sha256": "93a147047eea33eae71637c5b6095ef46dd40af41eea93310a691cf637e59d38"
+    },
+    {
+      "path": "baseline/predictions.json",
+      "bytes": 744403,
+      "sha256": "a8fbfa70e9a5624402be6531386742cead04e48355cbc4600444fd0ce5c766b9"
+    },
+    {
+      "path": "baseline/regression.pt",
+      "bytes": 2842293,
+      "sha256": "8068fd00eaee8617b0581458138bdc54cbeb254d4487c01769c25aa5cd568e86"
+    },
+    {
+      "path": "baseline/run.json",
+      "bytes": 5270,
+      "sha256": "9c5de88bfc47788bc72e889476f8d9711771eaefacd3ed52599e2b9cf3190346"
+    },
+    {
+      "path": "baseline/source/.python-version",
+      "bytes": 5,
+      "sha256": "7b55f8e67b5623c4bef3fa691288da9437d79d3aba156de48d481db32ac7d16d"
+    },
+    {
+      "path": "baseline/source/common.py",
+      "bytes": 1428,
+      "sha256": "bb3095c544ae271f40f9ec969b9d2d222ce5db2ea3c5206c4bdc7fd9fef5f50c"
+    },
+    {
+      "path": "baseline/source/data.py",
+      "bytes": 3535,
+      "sha256": "28e18ede7ed9c6a5f67f7d8efb71a6f8771757d8c7290cf7a63f99082dcac29a"
+    },
+    {
+      "path": "baseline/source/default-run.json",
+      "bytes": 39,
+      "sha256": "ecb0e9a6862f2e62eee4ee78f2bb2bb522018ac793eb76b057306ac8d354a51e"
+    },
+    {
+      "path": "baseline/source/encoder-source.json",
+      "bytes": 397,
+      "sha256": "0dbe5b0f8d31f63e4755767ec4deb9278238b7400e2e8aed65ab325a813d4753"
+    },
+    {
+      "path": "baseline/source/encoder.py",
+      "bytes": 1884,
+      "sha256": "20655b921c2d5e6a817b19282319809addfd7e968a20dd85e53e58b92dafd8c5"
+    },
+    {
+      "path": "baseline/source/evaluate.py",
+      "bytes": 3024,
+      "sha256": "798c44c5f95de3da03d9c31e8952af07a86cdfddfae35d9eec4c289ea651377f"
+    },
+    {
+      "path": "baseline/source/manage.py",
+      "bytes": 4196,
+      "sha256": "46a41f2b1da8226f58bb95380a5bc7a9c2414a0333e8cb19b6d5ea86eedd1df9"
+    },
+    {
+      "path": "baseline/source/networks.py",
+      "bytes": 2536,
+      "sha256": "a9f7f2b5bccc9245ffe5d81e7e92d7cf0027c0522067096838cf8b0238b3e265"
+    },
+    {
+      "path": "baseline/source/prepare_encoder.py",
+      "bytes": 461,
+      "sha256": "c95937aca73d30dec38e1838a8c45bf62436e553184a1a05f33c58e763240a98"
+    },
+    {
+      "path": "baseline/source/profile.json",
+      "bytes": 2673,
+      "sha256": "4619343821fd18a5bf8b8c002d6ef17ea15524183503efd01969e68060e05e08"
+    },
+    {
+      "path": "baseline/source/pyproject.toml",
+      "bytes": 432,
+      "sha256": "8de7e788408988a660e082141ff228354a7a6ac34e938ff960e9f624c5ce4ada"
+    },
+    {
+      "path": "baseline/source/runtime.py",
+      "bytes": 4123,
+      "sha256": "8173e352c07be9f26fc852e54da88845f021ae7483cf214644ba02f7190e6dd2"
+    },
+    {
+      "path": "baseline/source/serve.py",
+      "bytes": 1728,
+      "sha256": "10ab2543b54c342e6c61593b21d0fd20ba7b78cfdf75550969cf9743d2d45fa9"
+    },
+    {
+      "path": "baseline/source/test_pipeline.py",
+      "bytes": 3177,
+      "sha256": "c35ca80f2d9cb62ae59d850e73aed121e2902595ecd88a3727995e73fb60b5f5"
+    },
+    {
+      "path": "baseline/source/train.py",
+      "bytes": 7321,
+      "sha256": "29b3226a062bad862e70de00dd3defe2f3b6ce60a0303a35bd87e4ac63f55dac"
+    },
+    {
+      "path": "baseline/source/trajectory.py",
+      "bytes": 2011,
+      "sha256": "99afe7242f0db01e3dbb34b0b6a67050a53532dbb877fe10fdc35d79fb38a23a"
+    },
+    {
+      "path": "baseline/source/uv.lock",
+      "bytes": 95488,
+      "sha256": "f950ae91ea24660caf34128e9e902a50145341b2f5db75abcb6d9e2e74471ae9"
+    },
+    {
+      "path": "baseline/trajectories.png",
+      "bytes": 221910,
+      "sha256": "50c310add42c67dc45308a765783aae23f13ef1a47ce7f9367f01af2fba87337"
+    },
+    {
+      "path": "comparison.json",
+      "bytes": 6691,
+      "sha256": "f9e0657f004fe2ff56f1721c97f917e019e0da8e193a4667a535aec0a95ab538"
+    },
+    {
+      "path": "core-browser-verification.json",
+      "bytes": 1030,
+      "sha256": "2f79b4d50fb0e62a30dd8eb892692251f3c94c201bdfdb8f034a892774cad453"
+    },
+    {
+      "path": "original-loss-control/dataset.json",
+      "bytes": 23427,
+      "sha256": "29ff6e77080f867e93e4dba64537607ff0ee43688a11f288ff641a856228859a"
+    },
+    {
+      "path": "original-loss-control/evaluation.json",
+      "bytes": 7313,
+      "sha256": "faa32547fca85cd7113ea566a5353f132c71fec349c2a9f67e3a85eb7dc43ead"
+    },
+    {
+      "path": "original-loss-control/flow.pt",
+      "bytes": 2921531,
+      "sha256": "987b150d4822c72f249ba9ee67186c4ea4e0e74d8b5e760965ee8f99334641ef"
+    },
+    {
+      "path": "original-loss-control/predictions.json",
+      "bytes": 745480,
+      "sha256": "d6b6422cb86ee84b8f591f50806d39091a141b2da3258440eaf8230c6f35581c"
+    },
+    {
+      "path": "original-loss-control/regression.pt",
+      "bytes": 2842293,
+      "sha256": "38630080b878e749b7848fb3418eb3fbb7d51b85f0cac187568f238a4dc93200"
+    },
+    {
+      "path": "original-loss-control/run.json",
+      "bytes": 7089,
+      "sha256": "3ab91a02cbd6e6efa27b7d893f39af22578fbaee7a7426d7dae3a450529fc24a"
+    },
+    {
+      "path": "original-loss-control/source/.python-version",
+      "bytes": 5,
+      "sha256": "7b55f8e67b5623c4bef3fa691288da9437d79d3aba156de48d481db32ac7d16d"
+    },
+    {
+      "path": "original-loss-control/source/common.py",
+      "bytes": 1428,
+      "sha256": "bb3095c544ae271f40f9ec969b9d2d222ce5db2ea3c5206c4bdc7fd9fef5f50c"
+    },
+    {
+      "path": "original-loss-control/source/data.py",
+      "bytes": 3535,
+      "sha256": "28e18ede7ed9c6a5f67f7d8efb71a6f8771757d8c7290cf7a63f99082dcac29a"
+    },
+    {
+      "path": "original-loss-control/source/default-run.json",
+      "bytes": 54,
+      "sha256": "e443c36f4999009b4c40edce69ed6b05d80c9e0131292a9379e1b8b2f3778c94"
+    },
+    {
+      "path": "original-loss-control/source/encoder-source.json",
+      "bytes": 397,
+      "sha256": "0dbe5b0f8d31f63e4755767ec4deb9278238b7400e2e8aed65ab325a813d4753"
+    },
+    {
+      "path": "original-loss-control/source/encoder.py",
+      "bytes": 1884,
+      "sha256": "20655b921c2d5e6a817b19282319809addfd7e968a20dd85e53e58b92dafd8c5"
+    },
+    {
+      "path": "original-loss-control/source/evaluate.py",
+      "bytes": 2124,
+      "sha256": "a83f0e645c992a8569c4c43f764d77386c32bf8007874d8581bd31dd643fde61"
+    },
+    {
+      "path": "original-loss-control/source/manage.py",
+      "bytes": 4196,
+      "sha256": "46a41f2b1da8226f58bb95380a5bc7a9c2414a0333e8cb19b6d5ea86eedd1df9"
+    },
+    {
+      "path": "original-loss-control/source/networks.py",
+      "bytes": 2536,
+      "sha256": "a9f7f2b5bccc9245ffe5d81e7e92d7cf0027c0522067096838cf8b0238b3e265"
+    },
+    {
+      "path": "original-loss-control/source/plot_run.py",
+      "bytes": 2187,
+      "sha256": "3a9aef31b21211fcb99df0729eb5062feadd3c891500fde69156fc3a0212c91a"
+    },
+    {
+      "path": "original-loss-control/source/prepare_encoder.py",
+      "bytes": 461,
+      "sha256": "c95937aca73d30dec38e1838a8c45bf62436e553184a1a05f33c58e763240a98"
+    },
+    {
+      "path": "original-loss-control/source/profile.json",
+      "bytes": 2673,
+      "sha256": "4619343821fd18a5bf8b8c002d6ef17ea15524183503efd01969e68060e05e08"
+    },
+    {
+      "path": "original-loss-control/source/pyproject.toml",
+      "bytes": 432,
+      "sha256": "8de7e788408988a660e082141ff228354a7a6ac34e938ff960e9f624c5ce4ada"
+    },
+    {
+      "path": "original-loss-control/source/runtime.py",
+      "bytes": 4123,
+      "sha256": "8173e352c07be9f26fc852e54da88845f021ae7483cf214644ba02f7190e6dd2"
+    },
+    {
+      "path": "original-loss-control/source/serve.py",
+      "bytes": 1728,
+      "sha256": "10ab2543b54c342e6c61593b21d0fd20ba7b78cfdf75550969cf9743d2d45fa9"
+    },
+    {
+      "path": "original-loss-control/source/test_pipeline.py",
+      "bytes": 3177,
+      "sha256": "c35ca80f2d9cb62ae59d850e73aed121e2902595ecd88a3727995e73fb60b5f5"
+    },
+    {
+      "path": "original-loss-control/source/train.py",
+      "bytes": 8483,
+      "sha256": "5848f4ef1261ab61fa004449fa3843e2db50155ef952642cc3b299c3780677c2"
+    },
+    {
+      "path": "original-loss-control/source/trajectory.py",
+      "bytes": 2011,
+      "sha256": "99afe7242f0db01e3dbb34b0b6a67050a53532dbb877fe10fdc35d79fb38a23a"
+    },
+    {
+      "path": "original-loss-control/source/uv.lock",
+      "bytes": 95488,
+      "sha256": "f950ae91ea24660caf34128e9e902a50145341b2f5db75abcb6d9e2e74471ae9"
+    },
+    {
+      "path": "original-loss-control/trajectories.png",
+      "bytes": 226626,
+      "sha256": "2286c6d613061bdf7b489206c62ed5ad474d07c5a622ce06f8095f8c76220f50"
+    },
+    {
+      "path": "REPORT.md",
+      "bytes": 6412,
+      "sha256": "3be0b7df9406b6d799969ba0c2b5aef5b8514dc45140e78328e33b61069e9f9b"
+    }
+  ]
+}

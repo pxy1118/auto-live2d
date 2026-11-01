@@ -1,0 +1,9 @@
+{
+  "latent_ready_exists": false,
+  "launcher_record_exists": false,
+  "all_stopped": true,
+  "linux_model_listeners": [],
+  "tts_ready_exists": false,
+  "windows_service_listeners": [],
+  "live_owned_linux_pids": []
+}

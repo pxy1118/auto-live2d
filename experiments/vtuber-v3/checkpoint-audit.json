@@ -1,0 +1,17 @@
+{
+  "ok": true,
+  "models": {
+    "regression": {
+      "sha256": "f976c517fb26145dfe3dbc6652cd597d6565d8f0614208bb4a0efd776adb479d",
+      "appearance_only_stage_verified": true,
+      "continuous_only_stage_verified": true,
+      "weight_roundtrip": true
+    },
+    "flow": {
+      "sha256": "4e6ad4e5a338d27effcd4b12feffd1a108dd68d8733052fbad732e520d725076",
+      "appearance_only_stage_verified": true,
+      "continuous_only_stage_verified": true,
+      "weight_roundtrip": true
+    }
+  }
+}

@@ -1,0 +1,22 @@
+[
+  {"id":"hello","text":"晚上好呀，今天也见到你们啦！","context":"普通开播问候，友好自然。","blush":false,"black":false,"hand":false},
+  {"id":"thanks","text":"谢谢你的支持，我们继续吧。","context":"观众给了普通建议，礼貌道谢。","blush":false,"black":false,"hand":false},
+  {"id":"explain","text":"这个设置保存以后，下次打开就会生效。","context":"平静地说明软件使用方法。","blush":false,"black":false,"hand":false},
+  {"id":"ack","text":"嗯嗯，我知道了。","context":"正常确认收到消息。","blush":false,"black":false,"hand":false},
+  {"id":"listen","text":"我在听，你慢慢说。","context":"安静听观众讲述，没有强调手势。","blush":false,"black":false,"hand":false},
+  {"id":"status","text":"我检查完了，文件都在。","context":"汇报普通工作进度。","blush":false,"black":false,"hand":false},
+  {"id":"weather","text":"今天天气不错，出去走走应该很舒服。","context":"日常闲聊。","blush":false,"black":false,"hand":false},
+  {"id":"reassure","text":"没关系，我们慢慢来就好。","context":"温和安慰观众，保持自然。","blush":false,"black":false,"hand":false},
+  {"id":"think","text":"让我再想一下，应该还有别的方案。","context":"安静思考问题。","blush":false,"black":false,"hand":false},
+  {"id":"bye","text":"今天先到这里，大家早点休息。","context":"自然告别，手臂保持放松。","blush":false,"black":false,"hand":false},
+  {"id":"happy","text":"这个结果真不错，我很开心。","context":"普通开心，不是害羞，也不需要抬手。","blush":false,"black":false,"hand":false},
+  {"id":"playful","text":"才没有偷懒呢，我一直都在认真做。","context":"熟人之间的轻松调侃，并非真生气或害羞。","blush":false,"black":false,"hand":false},
+  {"id":"angry_boundary","text":"请停止这种玩笑，我已经说过不喜欢了。","context":"认真生气，明确表达被冒犯和边界。","blush":false,"black":true,"hand":false},
+  {"id":"angry_unfair","text":"这也太不公平了，明明不是我做错。","context":"因不公平对待而生气，不是撒娇。","blush":false,"black":true,"hand":false},
+  {"id":"angry_repeat","text":"我不想再重复第三遍了。","context":"对反复被忽视感到恼火，严肃而克制。","blush":false,"black":true,"hand":false},
+  {"id":"angry_game","text":"可恶，刚才那次失败也太离谱了！","context":"游戏中真正懊恼生气，短暂黑脸。","blush":false,"black":true,"hand":false},
+  {"id":"shy_praise","text":"你突然这么夸我，我有点不好意思。","context":"被真诚夸奖，明确害羞脸红。","blush":true,"black":false,"hand":false},
+  {"id":"shy_secret","text":"说出来怪难为情的，我真的很喜欢你。","context":"含蓄告白，害羞，手臂放松。","blush":true,"black":false,"hand":false},
+  {"id":"point","text":"注意这个地方，这是最关键的一步。","context":"需要短暂竖食指强调重点。","blush":false,"black":false,"hand":true},
+  {"id":"grass","text":"看这个小草草，是不是很可爱？","context":"拿出角色的狗尾草道具给观众看。","blush":false,"black":false,"hand":true}
+]

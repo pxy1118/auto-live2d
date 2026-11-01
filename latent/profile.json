@@ -1,0 +1,145 @@
+{
+  "id": "dafeiyu-policy.v1",
+  "sampling_hz": 10,
+  "scope": "closed-vocabulary action selection and timing",
+  "channels": [
+    {
+      "id": "AngleX",
+      "label": "头部水平",
+      "min": -18,
+      "max": 18,
+      "neutral": 0
+    },
+    {
+      "id": "AngleY",
+      "label": "头部俯仰",
+      "min": -12,
+      "max": 12,
+      "neutral": 0
+    },
+    {
+      "id": "AngleZ",
+      "label": "头部歪头",
+      "min": -12,
+      "max": 12,
+      "neutral": 0
+    },
+    {
+      "id": "PositionX",
+      "label": "身体水平",
+      "min": -12,
+      "max": 12,
+      "neutral": 0
+    },
+    {
+      "id": "PositionY",
+      "label": "身体俯仰",
+      "min": -10,
+      "max": 10,
+      "neutral": 0
+    },
+    {
+      "id": "PositionZ",
+      "label": "身体侧倾",
+      "min": -10,
+      "max": 10,
+      "neutral": 0
+    },
+    {
+      "id": "LeanInput",
+      "label": "前倾",
+      "min": -15,
+      "max": 0,
+      "neutral": 0
+    },
+    {
+      "id": "ParamEyeBallX",
+      "label": "注视水平",
+      "min": -0.7,
+      "max": 0.7,
+      "neutral": 0
+    },
+    {
+      "id": "ParamEyeBallY",
+      "label": "注视垂直",
+      "min": -0.6,
+      "max": 0.6,
+      "neutral": 0
+    },
+    {
+      "id": "EyeSmile",
+      "label": "笑眼",
+      "min": 0,
+      "max": 0.8,
+      "neutral": 0
+    },
+    {
+      "id": "ParamBrowLY",
+      "label": "左眉",
+      "min": -0.5,
+      "max": 0.5,
+      "neutral": 0
+    },
+    {
+      "id": "ParamBrowRY",
+      "label": "右眉",
+      "min": -0.5,
+      "max": 0.5,
+      "neutral": 0
+    }
+  ],
+  "actions": [
+    {
+      "id": "neutral",
+      "label": "自然待机",
+      "duration_ms": 2500
+    },
+    {
+      "id": "nod",
+      "label": "轻微点头",
+      "duration_ms": 1800
+    },
+    {
+      "id": "shake_head",
+      "label": "轻微摇头",
+      "duration_ms": 2200
+    },
+    {
+      "id": "point_index",
+      "label": "竖食指强调",
+      "duration_ms": 4200
+    },
+    {
+      "id": "hand_chest",
+      "label": "抚胸",
+      "duration_ms": 4000
+    },
+    {
+      "id": "look_left",
+      "label": "向画面左侧看",
+      "duration_ms": 2800
+    },
+    {
+      "id": "look_right",
+      "label": "向画面右侧看",
+      "duration_ms": 2800
+    },
+    {
+      "id": "tilt_head",
+      "label": "思考歪头",
+      "duration_ms": 3000
+    },
+    {
+      "id": "lean_forward",
+      "label": "轻微前倾",
+      "duration_ms": 3000
+    },
+    {
+      "id": "smile",
+      "label": "微笑",
+      "duration_ms": 3000
+    }
+  ],
+  "source": "program_authored",
+  "sha256": "a64531bfbd787ec7385114a63f7dc1dd3f6764a420c5b5761bcb2d2d0d7cdca3"
+}

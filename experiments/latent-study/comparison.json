@@ -1,0 +1,167 @@
+{
+  "schema": "latent_comparison.v1",
+  "dataset_sha256": "196897fc2b29c50735b5998059e8ae1049bde85f72d8824c9cf6a40852e7ccef",
+  "held_out_evaluation": false,
+  "supervision": "program_authored_unreviewed",
+  "metric_range": "affine profile normalization [-1,1]; motion iff absolute displacement >0.03; motion/MAE exclude padded frames",
+  "all_neutral_motion_mae": 0.4943925142288208,
+  "motion_elements": 2639,
+  "runs": {
+    "baseline": {
+      "regression": {
+        "valid_all_axis_mae": 0.018643928691744804,
+        "valid_observed_axis_mae": 0.024966733530163765,
+        "motion_only_mae": 0.23228615522384644,
+        "per_axis_motion_mae": {
+          "AngleX": 0.0657680332660675,
+          "AngleY": 0.2704174816608429,
+          "AngleZ": 0.03867650404572487,
+          "LeanInput": 0.8788416385650635,
+          "ParamEyeBallX": 0.024538205936551094,
+          "EyeSmile": 0.9643355011940002,
+          "ParamBrowLY": 0.019638001918792725,
+          "ParamBrowRY": 0.03228382766246796
+        },
+        "first_difference_mae": 0.001858192728832364,
+        "raw_out_of_range_fraction": 0.0,
+        "raw_normalized_excess_mean": 0.0,
+        "raw_normalized_excess_max": 0.0,
+        "right_frame_accuracy": 0.9959375262260437,
+        "left_frame_accuracy": 0.9959375262260437,
+        "shuffled_features_motion_mae": 0.5066622495651245,
+        "parameters": 706449,
+        "steps": 1200,
+        "loss": "original"
+      },
+      "flow": {
+        "valid_all_axis_mae": 0.012548398226499557,
+        "valid_observed_axis_mae": 0.015104335732758045,
+        "motion_only_mae": 0.06896369159221649,
+        "per_axis_motion_mae": {
+          "AngleX": 0.08785098046064377,
+          "AngleY": 0.13220784068107605,
+          "AngleZ": 0.04324723407626152,
+          "LeanInput": 0.09912781417369843,
+          "ParamEyeBallX": 0.050026316195726395,
+          "EyeSmile": 0.08280320465564728,
+          "ParamBrowLY": 0.036251943558454514,
+          "ParamBrowRY": 0.03951399028301239
+        },
+        "first_difference_mae": 0.009427917189896107,
+        "raw_out_of_range_fraction": 0.09305989742279053,
+        "raw_normalized_excess_mean": 0.0017847797134891152,
+        "raw_normalized_excess_max": 0.15102052688598633,
+        "right_frame_accuracy": 0.9967187643051147,
+        "left_frame_accuracy": 0.996874988079071,
+        "shuffled_features_motion_mae": 0.49195560812950134,
+        "parameters": 726801,
+        "steps": 1800,
+        "loss": "original"
+      }
+    },
+    "original-loss-control": {
+      "regression": {
+        "valid_all_axis_mae": 0.015095025300979614,
+        "valid_observed_axis_mae": 0.021432559937238693,
+        "motion_only_mae": 0.20718759298324585,
+        "per_axis_motion_mae": {
+          "AngleX": 0.021663781255483627,
+          "AngleY": 0.04673115536570549,
+          "AngleZ": 0.023260897025465965,
+          "LeanInput": 0.8789101839065552,
+          "ParamEyeBallX": 0.01613139919936657,
+          "EyeSmile": 0.964352011680603,
+          "ParamBrowLY": 0.030383801087737083,
+          "ParamBrowRY": 0.02008715644478798
+        },
+        "first_difference_mae": 0.0014368601841852069,
+        "raw_out_of_range_fraction": 0.0,
+        "raw_normalized_excess_mean": 0.0,
+        "raw_normalized_excess_max": 0.0,
+        "right_frame_accuracy": 0.9976562261581421,
+        "left_frame_accuracy": 0.9973437786102295,
+        "shuffled_features_motion_mae": 0.508995532989502,
+        "parameters": 706449,
+        "steps": 2000,
+        "loss": "original"
+      },
+      "flow": {
+        "valid_all_axis_mae": 0.011607901193201542,
+        "valid_observed_axis_mae": 0.014326938427984715,
+        "motion_only_mae": 0.05058744549751282,
+        "per_axis_motion_mae": {
+          "AngleX": 0.06745990365743637,
+          "AngleY": 0.11332885175943375,
+          "AngleZ": 0.02946464717388153,
+          "LeanInput": 0.05802937224507332,
+          "ParamEyeBallX": 0.035916414111852646,
+          "EyeSmile": 0.06576884537935257,
+          "ParamBrowLY": 0.024999050423502922,
+          "ParamBrowRY": 0.028679709881544113
+        },
+        "first_difference_mae": 0.008033809252083302,
+        "raw_out_of_range_fraction": 0.08372396230697632,
+        "raw_normalized_excess_mean": 0.0009474589605815709,
+        "raw_normalized_excess_max": 0.08781659603118896,
+        "right_frame_accuracy": 0.999218761920929,
+        "left_frame_accuracy": 0.9984375238418579,
+        "shuffled_features_motion_mae": 0.4891650676727295,
+        "parameters": 726801,
+        "steps": 3000,
+        "loss": "original"
+      }
+    },
+    "activity-balanced": {
+      "regression": {
+        "valid_all_axis_mae": 0.0233174916356802,
+        "valid_observed_axis_mae": 0.03345252200961113,
+        "motion_only_mae": 0.02571891061961651,
+        "per_axis_motion_mae": {
+          "AngleX": 0.028761079534888268,
+          "AngleY": 0.02500282973051071,
+          "AngleZ": 0.023226408287882805,
+          "LeanInput": 0.042291123420000076,
+          "ParamEyeBallX": 0.01998334378004074,
+          "EyeSmile": 0.03509131819009781,
+          "ParamBrowLY": 0.014416852965950966,
+          "ParamBrowRY": 0.016099082306027412
+        },
+        "first_difference_mae": 0.0046569169498980045,
+        "raw_out_of_range_fraction": 0.0,
+        "raw_normalized_excess_mean": 0.0,
+        "raw_normalized_excess_max": 0.0,
+        "right_frame_accuracy": 0.9973437786102295,
+        "left_frame_accuracy": 0.9970312714576721,
+        "shuffled_features_motion_mae": 0.48168057203292847,
+        "parameters": 706449,
+        "steps": 2000,
+        "loss": "balanced"
+      },
+      "flow": {
+        "valid_all_axis_mae": 0.01967380754649639,
+        "valid_observed_axis_mae": 0.02336585521697998,
+        "motion_only_mae": 0.06682323664426804,
+        "per_axis_motion_mae": {
+          "AngleX": 0.07893631607294083,
+          "AngleY": 0.05048879608511925,
+          "AngleZ": 0.05431294068694115,
+          "LeanInput": 0.062152959406375885,
+          "ParamEyeBallX": 0.07118391990661621,
+          "EyeSmile": 0.09440398216247559,
+          "ParamBrowLY": 0.042888298630714417,
+          "ParamBrowRY": 0.047095395624637604
+        },
+        "first_difference_mae": 0.010239167138934135,
+        "raw_out_of_range_fraction": 0.06796874850988388,
+        "raw_normalized_excess_mean": 0.0014094602083787322,
+        "raw_normalized_excess_max": 0.09076964855194092,
+        "right_frame_accuracy": 0.999218761920929,
+        "left_frame_accuracy": 0.9976562261581421,
+        "shuffled_features_motion_mae": 0.48562854528427124,
+        "parameters": 726801,
+        "steps": 3000,
+        "loss": "balanced"
+      }
+    }
+  }
+}

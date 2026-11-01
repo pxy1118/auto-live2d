@@ -1,0 +1,224 @@
+{
+  "schema": "latent_evaluation.v1",
+  "supervision": "program_authored_unreviewed",
+  "held_out_evaluation": false,
+  "dataset_sha256": "196897fc2b29c50735b5998059e8ae1049bde85f72d8824c9cf6a40852e7ccef",
+  "cases": [
+    {
+      "key": "regression-nod",
+      "sample_id": "0a8fcb90-a127-4b92-af11-40a2ce2b23bc",
+      "text": "明白了，我会记住这个要求。",
+      "timing": {
+        "encoder_ms": 27.896988000065903,
+        "head_ms": 1.4859059992886614,
+        "total_compute_ms": 29.98412500073755
+      },
+      "constraints": {
+        "raw_out_of_range_fraction": 0.0,
+        "raw_normalized_excess_mean": 0.0,
+        "raw_normalized_excess_max": 0.0,
+        "gesture_candidates": 0,
+        "gesture_accepted": 0,
+        "gesture_suppressed": 0
+      }
+    },
+    {
+      "key": "regression-shake_head",
+      "sample_id": "1672972a-b3cb-4b45-8584-8ab9d7ff0d2c",
+      "text": "恐怕现在还不能得出这个结论。",
+      "timing": {
+        "encoder_ms": 27.1501380002519,
+        "head_ms": 1.4743700003236881,
+        "total_compute_ms": 29.34361000006902
+      },
+      "constraints": {
+        "raw_out_of_range_fraction": 0.0,
+        "raw_normalized_excess_mean": 0.0,
+        "raw_normalized_excess_max": 0.0,
+        "gesture_candidates": 0,
+        "gesture_accepted": 0,
+        "gesture_suppressed": 0
+      }
+    },
+    {
+      "key": "regression-look_left",
+      "sample_id": "03e4feb0-8970-49ea-a388-b73c4e837cb2",
+      "text": "请留意左边的第一项。",
+      "timing": {
+        "encoder_ms": 26.6431330001069,
+        "head_ms": 1.3745480000579846,
+        "total_compute_ms": 28.637877999244665
+      },
+      "constraints": {
+        "raw_out_of_range_fraction": 0.0,
+        "raw_normalized_excess_mean": 0.0,
+        "raw_normalized_excess_max": 0.0,
+        "gesture_candidates": 0,
+        "gesture_accepted": 0,
+        "gesture_suppressed": 0
+      }
+    },
+    {
+      "key": "regression-point_index",
+      "sample_id": "12c56251-9ab5-4025-8eeb-13cf80a6ab07",
+      "text": "有一点很关键：先检查连接状态。",
+      "timing": {
+        "encoder_ms": 27.27397699982248,
+        "head_ms": 1.5010209999672952,
+        "total_compute_ms": 29.34060200004751
+      },
+      "constraints": {
+        "raw_out_of_range_fraction": 0.0,
+        "raw_normalized_excess_mean": 0.0,
+        "raw_normalized_excess_max": 0.0,
+        "gesture_candidates": 2,
+        "gesture_accepted": 2,
+        "gesture_suppressed": 0
+      }
+    },
+    {
+      "key": "regression-hand_chest",
+      "sample_id": "07bf8efd-99df-4dbf-991b-f6627593f664",
+      "text": "我很珍惜你给出的建议。",
+      "timing": {
+        "encoder_ms": 26.65696999974898,
+        "head_ms": 1.4313330002551083,
+        "total_compute_ms": 28.75924100044358
+      },
+      "constraints": {
+        "raw_out_of_range_fraction": 0.0,
+        "raw_normalized_excess_mean": 0.0,
+        "raw_normalized_excess_max": 0.0,
+        "gesture_candidates": 2,
+        "gesture_accepted": 2,
+        "gesture_suppressed": 0
+      }
+    },
+    {
+      "key": "regression-smile",
+      "sample_id": "0968b28c-c8c6-40cd-8372-20214294893b",
+      "text": "这个结果看起来很棒。",
+      "timing": {
+        "encoder_ms": 27.022371999919415,
+        "head_ms": 1.459964000787295,
+        "total_compute_ms": 29.01383500011434
+      },
+      "constraints": {
+        "raw_out_of_range_fraction": 0.0,
+        "raw_normalized_excess_mean": 0.0,
+        "raw_normalized_excess_max": 0.0,
+        "gesture_candidates": 0,
+        "gesture_accepted": 0,
+        "gesture_suppressed": 0
+      }
+    },
+    {
+      "key": "flow-nod",
+      "sample_id": "0a8fcb90-a127-4b92-af11-40a2ce2b23bc",
+      "text": "明白了，我会记住这个要求。",
+      "timing": {
+        "encoder_ms": 27.64512000067043,
+        "head_ms": 9.958538000319095,
+        "total_compute_ms": 38.58323999975255
+      },
+      "constraints": {
+        "raw_out_of_range_fraction": 0.0755208358168602,
+        "raw_normalized_excess_mean": 0.0010908218100667,
+        "raw_normalized_excess_max": 0.041467905044555664,
+        "gesture_candidates": 0,
+        "gesture_accepted": 0,
+        "gesture_suppressed": 0
+      }
+    },
+    {
+      "key": "flow-shake_head",
+      "sample_id": "1672972a-b3cb-4b45-8584-8ab9d7ff0d2c",
+      "text": "恐怕现在还不能得出这个结论。",
+      "timing": {
+        "encoder_ms": 27.180267000403546,
+        "head_ms": 9.763570999894,
+        "total_compute_ms": 37.69250200002716
+      },
+      "constraints": {
+        "raw_out_of_range_fraction": 0.06640625,
+        "raw_normalized_excess_mean": 0.0007707180338911712,
+        "raw_normalized_excess_max": 0.030180692672729492,
+        "gesture_candidates": 0,
+        "gesture_accepted": 0,
+        "gesture_suppressed": 0
+      }
+    },
+    {
+      "key": "flow-look_left",
+      "sample_id": "03e4feb0-8970-49ea-a388-b73c4e837cb2",
+      "text": "请留意左边的第一项。",
+      "timing": {
+        "encoder_ms": 26.737307999610493,
+        "head_ms": 9.697354000309133,
+        "total_compute_ms": 37.24244800014276
+      },
+      "constraints": {
+        "raw_out_of_range_fraction": 0.109375,
+        "raw_normalized_excess_mean": 0.0022830821108072996,
+        "raw_normalized_excess_max": 0.0511322021484375,
+        "gesture_candidates": 0,
+        "gesture_accepted": 0,
+        "gesture_suppressed": 0
+      }
+    },
+    {
+      "key": "flow-point_index",
+      "sample_id": "12c56251-9ab5-4025-8eeb-13cf80a6ab07",
+      "text": "有一点很关键：先检查连接状态。",
+      "timing": {
+        "encoder_ms": 25.67365399954724,
+        "head_ms": 9.831481000219355,
+        "total_compute_ms": 36.32629200001247
+      },
+      "constraints": {
+        "raw_out_of_range_fraction": 0.0807291716337204,
+        "raw_normalized_excess_mean": 0.0012073138495907187,
+        "raw_normalized_excess_max": 0.032567501068115234,
+        "gesture_candidates": 2,
+        "gesture_accepted": 2,
+        "gesture_suppressed": 0
+      }
+    },
+    {
+      "key": "flow-hand_chest",
+      "sample_id": "07bf8efd-99df-4dbf-991b-f6627593f664",
+      "text": "我很珍惜你给出的建议。",
+      "timing": {
+        "encoder_ms": 27.207201999772224,
+        "head_ms": 9.650601999965147,
+        "total_compute_ms": 37.503975999243266
+      },
+      "constraints": {
+        "raw_out_of_range_fraction": 0.0794270858168602,
+        "raw_normalized_excess_mean": 0.0013099558418616652,
+        "raw_normalized_excess_max": 0.03654313087463379,
+        "gesture_candidates": 2,
+        "gesture_accepted": 2,
+        "gesture_suppressed": 0
+      }
+    },
+    {
+      "key": "flow-smile",
+      "sample_id": "0968b28c-c8c6-40cd-8372-20214294893b",
+      "text": "这个结果看起来很棒。",
+      "timing": {
+        "encoder_ms": 26.805923000210896,
+        "head_ms": 10.126506000233348,
+        "total_compute_ms": 37.727658999756386
+      },
+      "constraints": {
+        "raw_out_of_range_fraction": 0.0833333358168602,
+        "raw_normalized_excess_mean": 0.0030266097746789455,
+        "raw_normalized_excess_max": 0.09180164337158203,
+        "gesture_candidates": 0,
+        "gesture_accepted": 0,
+        "gesture_suppressed": 0
+      }
+    }
+  ]
+}

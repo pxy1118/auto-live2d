@@ -1,0 +1,1216 @@
+{
+  "schema": "reviewed_vtuber.v1",
+  "sha256": "d95f17b87f21d53b27c2834294f925d325840c7753736387927a3b5fc1babddb",
+  "files": [
+    {
+      "id": "agree_nod-01-caption-1",
+      "file": "agree_nod-01-caption-1.json",
+      "bytes": 1253091,
+      "sha256": "fa8d8ce3b530b928fd014f18e7ddf1ede735b5c411335ff45bdb0b2ced8c6683"
+    },
+    {
+      "id": "agree_nod-01-caption-2",
+      "file": "agree_nod-01-caption-2.json",
+      "bytes": 1253082,
+      "sha256": "e04c8f11dba2394702cc668fdd3eeddf5be22e0d9e26fe3c2b79ed932a5be9c6"
+    },
+    {
+      "id": "agree_nod-02-caption-2",
+      "file": "agree_nod-02-caption-2.json",
+      "bytes": 1252701,
+      "sha256": "264082419f70b79b50453723dd09fad068c207c3f89de2fb72e2e532192c5fe3"
+    },
+    {
+      "id": "agree_nod-03-caption-1",
+      "file": "agree_nod-03-caption-1.json",
+      "bytes": 1252868,
+      "sha256": "1532e7d3aa59094058d5ab0a625fb3f285395ef465120a510f278d248d2ed205"
+    },
+    {
+      "id": "agree_nod-03-caption-2",
+      "file": "agree_nod-03-caption-2.json",
+      "bytes": 1252868,
+      "sha256": "835bf954a6cd46991baddddcf54a02822f7e38c5df8f0841030542931cc94c24"
+    },
+    {
+      "id": "agree_nod-04-caption-2",
+      "file": "agree_nod-04-caption-2.json",
+      "bytes": 1251506,
+      "sha256": "6c89b00046be35626f3330e8a1abd1fe109d9cf64339bf62051af2ed96047f41"
+    },
+    {
+      "id": "agree_nod-05-caption-2",
+      "file": "agree_nod-05-caption-2.json",
+      "bytes": 1252157,
+      "sha256": "72dc4fa78be3d9a86b279f2c1d50e109916938b1642c923b92551ef81807de33"
+    },
+    {
+      "id": "agree_nod-06-caption-1",
+      "file": "agree_nod-06-caption-1.json",
+      "bytes": 1245932,
+      "sha256": "58fcb58e9b441eb1c6c72bb8f2c11d5298e772b5d0ce700cd58cdcd5f4ee444f"
+    },
+    {
+      "id": "agree_nod-06-caption-2",
+      "file": "agree_nod-06-caption-2.json",
+      "bytes": 1245941,
+      "sha256": "ef961d0bdc603d5f1b7403ca085f28092a73d89d40362d2aa3ada99b925635ed"
+    },
+    {
+      "id": "agree_nod-07-caption-2",
+      "file": "agree_nod-07-caption-2.json",
+      "bytes": 1252151,
+      "sha256": "cf2cc161f131d9a1a4d3c6982f034adbbdc6f62a8a55c307cb8df0e6aa1f6f9c"
+    },
+    {
+      "id": "agree_nod-08-caption-2",
+      "file": "agree_nod-08-caption-2.json",
+      "bytes": 1259437,
+      "sha256": "7df5d05bfd135be3f41325e69c416477748a1303d92b2e4b50020ec86125ff39"
+    },
+    {
+      "id": "celebrate-01-caption-1",
+      "file": "celebrate-01-caption-1.json",
+      "bytes": 1267113,
+      "sha256": "dd4fabd72d352e44cb4b98741472841b48491e9640796888b7af078f46c61830"
+    },
+    {
+      "id": "celebrate-01-caption-2",
+      "file": "celebrate-01-caption-2.json",
+      "bytes": 1267107,
+      "sha256": "06a762a113a60984ca237035376aa66f7bbd87ee26c5a5781142c3d430faef4b"
+    },
+    {
+      "id": "celebrate-02-caption-2",
+      "file": "celebrate-02-caption-2.json",
+      "bytes": 1261775,
+      "sha256": "2febf6fc83b6efe71fe2b1fdb96899c298db29bc9212c5d3369386177474245f"
+    },
+    {
+      "id": "celebrate-03-caption-1",
+      "file": "celebrate-03-caption-1.json",
+      "bytes": 1264175,
+      "sha256": "0df46ea48f790fe4597880e3f7c81ece6d3fd87e8b661d67e9b15339d22d1bdc"
+    },
+    {
+      "id": "celebrate-03-caption-2",
+      "file": "celebrate-03-caption-2.json",
+      "bytes": 1264175,
+      "sha256": "ae4d9130865203c6b7b53f3b7e99cc94fee5646d1a9cdf938da2d66d7d6e1a59"
+    },
+    {
+      "id": "celebrate-04-caption-2",
+      "file": "celebrate-04-caption-2.json",
+      "bytes": 1264779,
+      "sha256": "2f356d07e224ff49aadceb772456f24cbe864711da4132409e8b9d9d93d00b12"
+    },
+    {
+      "id": "celebrate-05-caption-2",
+      "file": "celebrate-05-caption-2.json",
+      "bytes": 1271783,
+      "sha256": "476dc7e2e940a08b534e847a83d1e7cebcc6501c52839962e275fb6f42de2161"
+    },
+    {
+      "id": "celebrate-06-caption-1",
+      "file": "celebrate-06-caption-1.json",
+      "bytes": 1269457,
+      "sha256": "db901fd9aaa232e0650a0e3a3321852f54f2747a2fe9c057ee7406bc0e483e49"
+    },
+    {
+      "id": "celebrate-06-caption-2",
+      "file": "celebrate-06-caption-2.json",
+      "bytes": 1269469,
+      "sha256": "cf3dbc74832f0b5b65862a34e1035c367518989c00e499712ef86f16dce031ca"
+    },
+    {
+      "id": "celebrate-07-caption-2",
+      "file": "celebrate-07-caption-2.json",
+      "bytes": 1273325,
+      "sha256": "0430a44f9223b790cd868571587d6d2bb495f3cb54a3d1c64f2f32a4dbf08850"
+    },
+    {
+      "id": "celebrate-08-caption-2",
+      "file": "celebrate-08-caption-2.json",
+      "bytes": 1276412,
+      "sha256": "331effd5a26da1ea477aa28749c83b677b8793847fed0f6f91a1e9eb2521acf8"
+    },
+    {
+      "id": "curious-01-caption-1",
+      "file": "curious-01-caption-1.json",
+      "bytes": 1261306,
+      "sha256": "2efd0dd79d95735cea8f6ea91c04e4cbdcb72606f709e0075fd0961c9fe7b1f5"
+    },
+    {
+      "id": "curious-01-caption-2",
+      "file": "curious-01-caption-2.json",
+      "bytes": 1261315,
+      "sha256": "313bc9dd19fa9819a5b3dfd5fd18a6d4ee9bf94c9338b0d4a82e99a40e4e9c20"
+    },
+    {
+      "id": "curious-02-caption-2",
+      "file": "curious-02-caption-2.json",
+      "bytes": 1261079,
+      "sha256": "7ed866c39bf699df80181947602b8e08e168d2bc1cf8c4c88bbe28e83167f5ed"
+    },
+    {
+      "id": "curious-03-caption-1",
+      "file": "curious-03-caption-1.json",
+      "bytes": 1266925,
+      "sha256": "b4afaaea8c28626f15c32d3bff103f1657379c88b897e233de96a7cea5d32d99"
+    },
+    {
+      "id": "curious-03-caption-2",
+      "file": "curious-03-caption-2.json",
+      "bytes": 1266937,
+      "sha256": "b9711180eef0984bba56fb950302cc41e0ac62d91f76d31ec82f91b31d770809"
+    },
+    {
+      "id": "curious-04-caption-2",
+      "file": "curious-04-caption-2.json",
+      "bytes": 1267990,
+      "sha256": "a93ad4a5e9da52672df9c7e3e097f96e633ff97d4d2ce189c2ac9763fc71e25a"
+    },
+    {
+      "id": "curious-05-caption-2",
+      "file": "curious-05-caption-2.json",
+      "bytes": 1269611,
+      "sha256": "e6908c990f4cc90a40ff8eba92717af964a10c9d5a3d323d8fe084851bc98e1a"
+    },
+    {
+      "id": "curious-06-caption-1",
+      "file": "curious-06-caption-1.json",
+      "bytes": 1260032,
+      "sha256": "5e9afdeca40965c4063eb25e885885df9e404bda1e5dab6130c5affbc776e790"
+    },
+    {
+      "id": "curious-06-caption-2",
+      "file": "curious-06-caption-2.json",
+      "bytes": 1260020,
+      "sha256": "14ffc1c3a51cc50e0bc876a7e4f1b87017aa3b19142940d0d873f24d1db9d372"
+    },
+    {
+      "id": "curious-07-caption-2",
+      "file": "curious-07-caption-2.json",
+      "bytes": 1256264,
+      "sha256": "4417382cf7758ab7e266b751ec7e4bfe7b379b475c95bfdeef437f30b719f617"
+    },
+    {
+      "id": "curious-08-caption-2",
+      "file": "curious-08-caption-2.json",
+      "bytes": 1256292,
+      "sha256": "a54bad3a03364d6bf9e79cacdca72f90ebc74e5419e391b653a01c5bbb92a820"
+    },
+    {
+      "id": "deny_playful-01-caption-1",
+      "file": "deny_playful-01-caption-1.json",
+      "bytes": 1260940,
+      "sha256": "3722e1ed5800749312169d57dd2b80c8080e4f22d0b8faf11be32cc5d9815942"
+    },
+    {
+      "id": "deny_playful-01-caption-2",
+      "file": "deny_playful-01-caption-2.json",
+      "bytes": 1260931,
+      "sha256": "68667f6ee5b1608196dcccd790ed26ffc964cfb77954ce656a7d20c4b21ff0f1"
+    },
+    {
+      "id": "deny_playful-02-caption-2",
+      "file": "deny_playful-02-caption-2.json",
+      "bytes": 1252962,
+      "sha256": "c766b3351c686f8ba44fd4f426f8d6717c65d28b3a3f5aca9ee4cb11c778aacd"
+    },
+    {
+      "id": "deny_playful-03-caption-1",
+      "file": "deny_playful-03-caption-1.json",
+      "bytes": 1252164,
+      "sha256": "d256eab7a44c3407b307ab9587f3234fc33311778949bb6bb2593f4f50ec4cca"
+    },
+    {
+      "id": "deny_playful-03-caption-2",
+      "file": "deny_playful-03-caption-2.json",
+      "bytes": 1252161,
+      "sha256": "1ee4649862660144f488b2d9fdc905f8ebb1d064ac423eab6825d563b62d9062"
+    },
+    {
+      "id": "deny_playful-04-caption-2",
+      "file": "deny_playful-04-caption-2.json",
+      "bytes": 1267329,
+      "sha256": "2a1f8f92c16c9000223383c0083fd4b38dfb3c7aa013b9c20e978dc5fd4fe264"
+    },
+    {
+      "id": "deny_playful-05-caption-2",
+      "file": "deny_playful-05-caption-2.json",
+      "bytes": 1273623,
+      "sha256": "ef8c28ac608c31e0414309e7061afaba6cac9f09bf91a01562145aec5a6b3683"
+    },
+    {
+      "id": "deny_playful-06-caption-1",
+      "file": "deny_playful-06-caption-1.json",
+      "bytes": 1279155,
+      "sha256": "7b6c12f194cb6fd5768980b5bc91ab61789987ce9ff6f4ecffa4d03bb1dcea41"
+    },
+    {
+      "id": "deny_playful-06-caption-2",
+      "file": "deny_playful-06-caption-2.json",
+      "bytes": 1279164,
+      "sha256": "807fe26837f6cbcaa878abf4a21b96c602b85ac2b8a0f7d9fa2e35cb19a369e9"
+    },
+    {
+      "id": "deny_playful-07-caption-2",
+      "file": "deny_playful-07-caption-2.json",
+      "bytes": 1269711,
+      "sha256": "8cff4843f2298a7afe900898d4f6e2981e3aeaabc59aeefada98eaf925f38ec4"
+    },
+    {
+      "id": "deny_playful-08-caption-2",
+      "file": "deny_playful-08-caption-2.json",
+      "bytes": 1276659,
+      "sha256": "4a257d4641a221ef269a8fadce4b80268a61738091008ba08c949c8d4b56af60"
+    },
+    {
+      "id": "explain-01-caption-1",
+      "file": "explain-01-caption-1.json",
+      "bytes": 1261138,
+      "sha256": "bd2895d6f35991211af8498068126e24825ebf10fb10b3491673f6c2f580841d"
+    },
+    {
+      "id": "explain-01-caption-2",
+      "file": "explain-01-caption-2.json",
+      "bytes": 1261144,
+      "sha256": "c4819a9664adb5635ed50416249348cf2eafb6492b0ba44a33b59a447bda754b"
+    },
+    {
+      "id": "explain-02-caption-2",
+      "file": "explain-02-caption-2.json",
+      "bytes": 1258296,
+      "sha256": "91cefc31ef50cf09f89faa1dcf6aadfb2ece4e0217b045be1cac482e6e44e4e6"
+    },
+    {
+      "id": "explain-03-caption-1",
+      "file": "explain-03-caption-1.json",
+      "bytes": 1256073,
+      "sha256": "4dae413d0aa7b51b084daacacd5405cb5e09a3b60aabe8b4a1c7715af11f20be"
+    },
+    {
+      "id": "explain-03-caption-2",
+      "file": "explain-03-caption-2.json",
+      "bytes": 1256082,
+      "sha256": "72afd6ddc57348a40f7ffebc92420f309dcc66f56bd1ee22bd049377f1928466"
+    },
+    {
+      "id": "explain-04-caption-2",
+      "file": "explain-04-caption-2.json",
+      "bytes": 1261073,
+      "sha256": "d2186b035a1a1265c454a88a3c64e213474ef933cdebdbef7626cea1fef8a14d"
+    },
+    {
+      "id": "explain-05-caption-2",
+      "file": "explain-05-caption-2.json",
+      "bytes": 1259251,
+      "sha256": "13fbff31b7e9923940437f61342d096a20d8410004b13bbb32b4a064fea9f4f5"
+    },
+    {
+      "id": "explain-06-caption-1",
+      "file": "explain-06-caption-1.json",
+      "bytes": 1261469,
+      "sha256": "11f54f3ff08808a268494a92d5284f22661860dbf5cc3d9d8876a887829d9283"
+    },
+    {
+      "id": "explain-06-caption-2",
+      "file": "explain-06-caption-2.json",
+      "bytes": 1261469,
+      "sha256": "036106d0d1b8a7c3d5904b19649bc05d2f9a22c2e0aaee0fc853d1550d08ba82"
+    },
+    {
+      "id": "explain-07-caption-2",
+      "file": "explain-07-caption-2.json",
+      "bytes": 1263619,
+      "sha256": "b9f7766e7418eb36536ef4a6b4aeb41f888fbb26c150d11668d91d8a22ba9490"
+    },
+    {
+      "id": "explain-08-caption-2",
+      "file": "explain-08-caption-2.json",
+      "bytes": 1264737,
+      "sha256": "7b34c61d46b4fcb13d787d85be9f80d07476fd4e286e4e5ca0d6eb1b35144579"
+    },
+    {
+      "id": "gentle_bye-01-caption-1",
+      "file": "gentle_bye-01-caption-1.json",
+      "bytes": 1260893,
+      "sha256": "d1e88c81c38582a38a4af6f492d4a9bcdb09883c2ad300238da107dfdfd19ee5"
+    },
+    {
+      "id": "gentle_bye-01-caption-2",
+      "file": "gentle_bye-01-caption-2.json",
+      "bytes": 1260896,
+      "sha256": "c79e553a381a8b397c3a02834b572d837f6dda4037e7796df1e4502d2f0ae088"
+    },
+    {
+      "id": "gentle_bye-02-caption-2",
+      "file": "gentle_bye-02-caption-2.json",
+      "bytes": 1257407,
+      "sha256": "2f98b486ef27fbcc014d64d81e6aaa971fa9b5fc2c727375333ad95a183cda88"
+    },
+    {
+      "id": "gentle_bye-03-caption-1",
+      "file": "gentle_bye-03-caption-1.json",
+      "bytes": 1259481,
+      "sha256": "4814cb3b1c3d7d114fd48087b53a726a05729d6799916eb770c9b5e0931ff399"
+    },
+    {
+      "id": "gentle_bye-03-caption-2",
+      "file": "gentle_bye-03-caption-2.json",
+      "bytes": 1259478,
+      "sha256": "0791a35d14c4b15ce26f8d74500c366b4713dbc425c7146cb11c4f590916c130"
+    },
+    {
+      "id": "gentle_bye-04-caption-2",
+      "file": "gentle_bye-04-caption-2.json",
+      "bytes": 1259095,
+      "sha256": "93baf320da825a62de84f58981a422b88d69d059d4c70f9fdde337341743190d"
+    },
+    {
+      "id": "gentle_bye-05-caption-2",
+      "file": "gentle_bye-05-caption-2.json",
+      "bytes": 1262003,
+      "sha256": "79861d43d53abf63331acf72b21de74c628103e3cad0950bef93c43b8314043b"
+    },
+    {
+      "id": "gentle_bye-06-caption-1",
+      "file": "gentle_bye-06-caption-1.json",
+      "bytes": 1263622,
+      "sha256": "d75cdc77bfb29611efd0f5c7a6ece6b28865cc2fe383f4b281ea99e4044b91b0"
+    },
+    {
+      "id": "gentle_bye-06-caption-2",
+      "file": "gentle_bye-06-caption-2.json",
+      "bytes": 1263625,
+      "sha256": "b27214eed5f48a0c6b882e84cbe4f96574d294da4ce6da0d1987a180b4a5f97c"
+    },
+    {
+      "id": "gentle_bye-07-caption-2",
+      "file": "gentle_bye-07-caption-2.json",
+      "bytes": 1264292,
+      "sha256": "7df2589935ae3b39331d79723acf53eaf127a4c84c61c5fad62c3eb919a89c3e"
+    },
+    {
+      "id": "gentle_bye-08-caption-2",
+      "file": "gentle_bye-08-caption-2.json",
+      "bytes": 1269001,
+      "sha256": "849591025bb8d5cc088c687987273bafba59f7ab5bef13217b200a35040c4fa7"
+    },
+    {
+      "id": "greeting-01-caption-1",
+      "file": "greeting-01-caption-1.json",
+      "bytes": 1260138,
+      "sha256": "8cdb1c44566de2cf0eae3f8c942814154a059dd3c9ba5136c3d141a31c3f65a2"
+    },
+    {
+      "id": "greeting-01-caption-2",
+      "file": "greeting-01-caption-2.json",
+      "bytes": 1260144,
+      "sha256": "82ad01e5cbff5b0af22016b548b9755612805fa68e7339a50b2b1b26e95cf2c3"
+    },
+    {
+      "id": "greeting-02-caption-2",
+      "file": "greeting-02-caption-2.json",
+      "bytes": 1256656,
+      "sha256": "99b2cda0ca87a95f07d88fcfe21d043fce55b66b583b6ad80a18e8270e42f2f2"
+    },
+    {
+      "id": "greeting-03-caption-1",
+      "file": "greeting-03-caption-1.json",
+      "bytes": 1255385,
+      "sha256": "a4f1988bef610cb49f84658460d423775c693c8a1a0cd54b406124e6fcec5e1c"
+    },
+    {
+      "id": "greeting-03-caption-2",
+      "file": "greeting-03-caption-2.json",
+      "bytes": 1255385,
+      "sha256": "c1187d116bba91611a5fecd9cc92870a63d7346897d27d3fc1c3e2a2a26a64fd"
+    },
+    {
+      "id": "greeting-04-caption-2",
+      "file": "greeting-04-caption-2.json",
+      "bytes": 1256161,
+      "sha256": "4c40d9da0e034b4e99d4d229be1f39ad93366d365243df207b71c4ea1c305833"
+    },
+    {
+      "id": "greeting-05-caption-2",
+      "file": "greeting-05-caption-2.json",
+      "bytes": 1262154,
+      "sha256": "055bb56591e74e287a989449afe065dd34227fea36be15f7e131d0bfe203532e"
+    },
+    {
+      "id": "greeting-06-caption-1",
+      "file": "greeting-06-caption-1.json",
+      "bytes": 1262664,
+      "sha256": "3f01fb1a1656fc9d493c222f2b18470759b75f22784354456c71575e2d3479e8"
+    },
+    {
+      "id": "greeting-06-caption-2",
+      "file": "greeting-06-caption-2.json",
+      "bytes": 1262661,
+      "sha256": "5a4c63db1cf2713624438b78ac62e69b3730f9c39bd58038369c68420f18507f"
+    },
+    {
+      "id": "greeting-07-caption-2",
+      "file": "greeting-07-caption-2.json",
+      "bytes": 1268509,
+      "sha256": "662359d52c03d7294a1e22c411dd1b27093d428c42c3c95225376b9aaef64871"
+    },
+    {
+      "id": "greeting-08-caption-2",
+      "file": "greeting-08-caption-2.json",
+      "bytes": 1271550,
+      "sha256": "e77f663e92778281e28c7267d78d5d753b3647e61792aa1e4264f95256f7046b"
+    },
+    {
+      "id": "listen-01-caption-1",
+      "file": "listen-01-caption-1.json",
+      "bytes": 1244853,
+      "sha256": "d0ed22b9834d62024a16d82fa233e396f5a69ab4f8e70ed9e5bd6f98b455f315"
+    },
+    {
+      "id": "listen-01-caption-2",
+      "file": "listen-01-caption-2.json",
+      "bytes": 1244874,
+      "sha256": "ad0c65b097478aa5c3277223239eea1dd431dccb6f4e44b467235764d45729cd"
+    },
+    {
+      "id": "listen-02-caption-2",
+      "file": "listen-02-caption-2.json",
+      "bytes": 1244873,
+      "sha256": "7ba5bcc32b13df89a1ffd040d52cf3c080654159355fb4e7bbf16ab4810b7222"
+    },
+    {
+      "id": "listen-03-caption-1",
+      "file": "listen-03-caption-1.json",
+      "bytes": 1245291,
+      "sha256": "d739fc27d2ca99bee8455a22de0d8422f5c3d9c3b659f571bbb3f9965df39bc9"
+    },
+    {
+      "id": "listen-03-caption-2",
+      "file": "listen-03-caption-2.json",
+      "bytes": 1245285,
+      "sha256": "c248666578c64c24fa695007e32d70a8e1593af94ea559e4813b25f9c2e00a45"
+    },
+    {
+      "id": "listen-04-caption-2",
+      "file": "listen-04-caption-2.json",
+      "bytes": 1251450,
+      "sha256": "d134cd19972133309c7744c07efc22c74a55db90ab1b51a6bfbb7747cccaaef1"
+    },
+    {
+      "id": "listen-05-caption-2",
+      "file": "listen-05-caption-2.json",
+      "bytes": 1249117,
+      "sha256": "67a4d3213f0767fbf240b6b078df6b13136b6dc2fc0bcec31e3401f31763417e"
+    },
+    {
+      "id": "listen-06-caption-1",
+      "file": "listen-06-caption-1.json",
+      "bytes": 1248596,
+      "sha256": "5dfcb808798de7f9f36f908c4aa447dcd591bd164c2ffe30714195b11cde6407"
+    },
+    {
+      "id": "listen-06-caption-2",
+      "file": "listen-06-caption-2.json",
+      "bytes": 1248590,
+      "sha256": "6e764fa2049cbca602354d2c17ccffddcef613d01d8b8e1000fb974e3ef5e39b"
+    },
+    {
+      "id": "listen-07-caption-2",
+      "file": "listen-07-caption-2.json",
+      "bytes": 1254619,
+      "sha256": "4db7342fad7e808e4973097ee7e4d10a665ad732aa58fa3c57d34639f045f030"
+    },
+    {
+      "id": "listen-08-caption-2",
+      "file": "listen-08-caption-2.json",
+      "bytes": 1257878,
+      "sha256": "43940ef65f776c77712452c2cc343d656806b9ffc861fa4c7529541cbbe0eb0a"
+    },
+    {
+      "id": "reassure-01-caption-1",
+      "file": "reassure-01-caption-1.json",
+      "bytes": 1256891,
+      "sha256": "c8de0a38a72d19bf2ea9921ade6761cdb20d537fa13bff30bc4e819e5b30932a"
+    },
+    {
+      "id": "reassure-01-caption-2",
+      "file": "reassure-01-caption-2.json",
+      "bytes": 1256915,
+      "sha256": "9dbe4f07ac2cf261cc00043715019c6dc673775e85ad2f6f7f01f4a6fbc7428f"
+    },
+    {
+      "id": "reassure-02-caption-2",
+      "file": "reassure-02-caption-2.json",
+      "bytes": 1249223,
+      "sha256": "f479fa5254958bb8e10d7620349e4115d0c65d9183a59fa2c01643bd59e1f0e7"
+    },
+    {
+      "id": "reassure-03-caption-1",
+      "file": "reassure-03-caption-1.json",
+      "bytes": 1250520,
+      "sha256": "d483c347e79cd8d12bf958a88dc182cd97809a6bff84a5fa625987d9067c32b3"
+    },
+    {
+      "id": "reassure-03-caption-2",
+      "file": "reassure-03-caption-2.json",
+      "bytes": 1250553,
+      "sha256": "56c9f15581da3735919a9ab8bb81080323c127ce208aa83a63c3a4139df72021"
+    },
+    {
+      "id": "reassure-04-caption-2",
+      "file": "reassure-04-caption-2.json",
+      "bytes": 1256890,
+      "sha256": "f36a33e682107a769a7e3082fbda836023ecef71b7b04ce34aa2c091baa17921"
+    },
+    {
+      "id": "reassure-05-caption-2",
+      "file": "reassure-05-caption-2.json",
+      "bytes": 1256536,
+      "sha256": "69fde0da37fbabfcbf98b356a2695d65f1e493c7e0f6bab49d4414ec40e55d1a"
+    },
+    {
+      "id": "reassure-06-caption-1",
+      "file": "reassure-06-caption-1.json",
+      "bytes": 1258331,
+      "sha256": "5945e265c5e0b675f770121a07b9fb6232197ee9f9054e24769214330d7eab6d"
+    },
+    {
+      "id": "reassure-06-caption-2",
+      "file": "reassure-06-caption-2.json",
+      "bytes": 1258304,
+      "sha256": "5c73f209405fd66571bebdace9d0a393a60b3d4782887fde54ebac1155e47c03"
+    },
+    {
+      "id": "reassure-07-caption-2",
+      "file": "reassure-07-caption-2.json",
+      "bytes": 1261006,
+      "sha256": "768d0187522715afbc3cb582617cd2b882878054fbf616dfac5c5f410436da82"
+    },
+    {
+      "id": "reassure-08-caption-2",
+      "file": "reassure-08-caption-2.json",
+      "bytes": 1261684,
+      "sha256": "6ae5538548a243cde24e96f1d6f15616aa8474e0360c1b37bfc9013b4d4b68f6"
+    },
+    {
+      "id": "shy-01-caption-1",
+      "file": "shy-01-caption-1.json",
+      "bytes": 1258779,
+      "sha256": "ee9b45036fee77461970756cb073ac7a4b573c690b04ecb213862a4ab30c2ec4"
+    },
+    {
+      "id": "shy-01-caption-2",
+      "file": "shy-01-caption-2.json",
+      "bytes": 1258770,
+      "sha256": "3e31cc2621fc5ddeb71a3d8e442fcadfc6604b68503a4dcdc561073b1b4e2f6a"
+    },
+    {
+      "id": "shy-02-caption-2",
+      "file": "shy-02-caption-2.json",
+      "bytes": 1262987,
+      "sha256": "4517fcfd2d69b90b4ec850c82a5d2f6289257037290b2ab33376388ed80b7ebd"
+    },
+    {
+      "id": "shy-03-caption-1",
+      "file": "shy-03-caption-1.json",
+      "bytes": 1263533,
+      "sha256": "17ce2cd90a7002ecb0964386330898f6d5478339327b1545b85e2337f63e2b67"
+    },
+    {
+      "id": "shy-03-caption-2",
+      "file": "shy-03-caption-2.json",
+      "bytes": 1263518,
+      "sha256": "dd28cf882a1a5f806a987aea44b0bd81e50b9bde0be5bde5e46d52cc9852838f"
+    },
+    {
+      "id": "shy-04-caption-2",
+      "file": "shy-04-caption-2.json",
+      "bytes": 1265232,
+      "sha256": "9d2fd3f842af7a7849fb0d0cf9dd40a8ac4a3ea4ab28b5dec2a9234b4cadd4de"
+    },
+    {
+      "id": "shy-05-caption-2",
+      "file": "shy-05-caption-2.json",
+      "bytes": 1258134,
+      "sha256": "8058d94f5c43c9e4393d4bbfae8f85cf7de7447543bfb8f14d7d4e916e01b77b"
+    },
+    {
+      "id": "shy-06-caption-1",
+      "file": "shy-06-caption-1.json",
+      "bytes": 1258888,
+      "sha256": "3248097b552575e58a4923b80cb5ec3dbf472f33a5e037653326cc48f0947766"
+    },
+    {
+      "id": "shy-06-caption-2",
+      "file": "shy-06-caption-2.json",
+      "bytes": 1258906,
+      "sha256": "2635d7553a291637a40ec2023b8d55ed36b2c4a58dcc0a3e6ba9c52e5a4e3fa9"
+    },
+    {
+      "id": "shy-07-caption-2",
+      "file": "shy-07-caption-2.json",
+      "bytes": 1258414,
+      "sha256": "874b760037eb1b57af423982678eee7d8f66cf76b33e15bebfb4d56ad4cd0e35"
+    },
+    {
+      "id": "shy-08-caption-2",
+      "file": "shy-08-caption-2.json",
+      "bytes": 1257946,
+      "sha256": "98cd52b2ae96649445c9d031a6f191ba39610fc78bb3533e027afe52d3011194"
+    },
+    {
+      "id": "surprise-01-caption-1",
+      "file": "surprise-01-caption-1.json",
+      "bytes": 1251705,
+      "sha256": "dddd4bd2b586482c62925fbf598425bb582388f719dd30a5b1b7a0e01549d182"
+    },
+    {
+      "id": "surprise-01-caption-2",
+      "file": "surprise-01-caption-2.json",
+      "bytes": 1251708,
+      "sha256": "4137676f6b3d874ea6f353b0155168249210dc794cf124d3ca3f2ec2f9fd6fa0"
+    },
+    {
+      "id": "surprise-02-caption-2",
+      "file": "surprise-02-caption-2.json",
+      "bytes": 1250727,
+      "sha256": "2b0295e72822c8247de97027b8a1a449adaab745549706e7246d3da9b51ef824"
+    },
+    {
+      "id": "surprise-03-caption-1",
+      "file": "surprise-03-caption-1.json",
+      "bytes": 1255017,
+      "sha256": "6830997a24beb87a249fe1d893153ebbd96893d603d40d37c0a46cc5ee36aa9d"
+    },
+    {
+      "id": "surprise-03-caption-2",
+      "file": "surprise-03-caption-2.json",
+      "bytes": 1255017,
+      "sha256": "f2f7944f99c72a093b2a8d5c7db7a767df84e4c8b157d25d373a4306b9502e8a"
+    },
+    {
+      "id": "surprise-04-caption-2",
+      "file": "surprise-04-caption-2.json",
+      "bytes": 1258781,
+      "sha256": "ece52e63b71a8fe15cddb224efef96d3309b73b2b342f9fbe7757314b0178e44"
+    },
+    {
+      "id": "surprise-05-caption-2",
+      "file": "surprise-05-caption-2.json",
+      "bytes": 1257363,
+      "sha256": "c88f3b0948acf858aba12f921e149be2c09f29ec64ad5ac17577b91c06868757"
+    },
+    {
+      "id": "surprise-06-caption-1",
+      "file": "surprise-06-caption-1.json",
+      "bytes": 1262777,
+      "sha256": "89e082698b3a3d902faaa98e3969cefe637909d9ff87f4dafd377f9fabcf322a"
+    },
+    {
+      "id": "surprise-06-caption-2",
+      "file": "surprise-06-caption-2.json",
+      "bytes": 1262780,
+      "sha256": "24932b2fe38426f742e0bd69893b04c030b8819ee9f1b766867328f17356b1ac"
+    },
+    {
+      "id": "surprise-07-caption-2",
+      "file": "surprise-07-caption-2.json",
+      "bytes": 1259496,
+      "sha256": "ffe129ab4ce45ff8cf6db1beaaf7152a5ecb18d816c7694d959ad7abe9238125"
+    },
+    {
+      "id": "surprise-08-caption-2",
+      "file": "surprise-08-caption-2.json",
+      "bytes": 1261487,
+      "sha256": "d93d02d75f5badf10664397ee620572c445744390b8185827a1c8afc3bc74522"
+    },
+    {
+      "id": "tease_grass-01-caption-1",
+      "file": "tease_grass-01-caption-1.json",
+      "bytes": 1260997,
+      "sha256": "310b5db7aa0a9106d671a2836b03eb1a44336e3692e98d77f4f3af22cea3ca3a"
+    },
+    {
+      "id": "tease_grass-01-caption-2",
+      "file": "tease_grass-01-caption-2.json",
+      "bytes": 1260997,
+      "sha256": "cb13319cdb2a1275af5b973c9a90eea994be661b71cf480d0e19e1eadfb385b6"
+    },
+    {
+      "id": "tease_grass-02-caption-2",
+      "file": "tease_grass-02-caption-2.json",
+      "bytes": 1253515,
+      "sha256": "6d6b73a47e6959f3d8f1e12e0a57f1ccd23ca03011013c7fa684344d6c258be3"
+    },
+    {
+      "id": "tease_grass-03-caption-1",
+      "file": "tease_grass-03-caption-1.json",
+      "bytes": 1251208,
+      "sha256": "e77b773735f02229f803299e7f9773fc95403ee71e0e3aad6cd1708e57262032"
+    },
+    {
+      "id": "tease_grass-03-caption-2",
+      "file": "tease_grass-03-caption-2.json",
+      "bytes": 1251214,
+      "sha256": "3e8e3060192a6637bc396c4858d8e457f84536ff9c4905c3ae3b9f63242873f0"
+    },
+    {
+      "id": "tease_grass-04-caption-2",
+      "file": "tease_grass-04-caption-2.json",
+      "bytes": 1256992,
+      "sha256": "2fd4652822ae8fb125ffee64f9c07f59d4d53dc67a836726b742b683cd42bfb9"
+    },
+    {
+      "id": "tease_grass-05-caption-2",
+      "file": "tease_grass-05-caption-2.json",
+      "bytes": 1269526,
+      "sha256": "0a1de5a394f5bc09af0442e22747917b2fb7d72b17fb1ec3d981aabed0097218"
+    },
+    {
+      "id": "tease_grass-06-caption-1",
+      "file": "tease_grass-06-caption-1.json",
+      "bytes": 1270187,
+      "sha256": "b06fbbfe06eef59341149815b6b4b07cea809a316c0450f059ba697186951b92"
+    },
+    {
+      "id": "tease_grass-06-caption-2",
+      "file": "tease_grass-06-caption-2.json",
+      "bytes": 1270184,
+      "sha256": "b03cdb618aa972004c58dbc49d7b2cab6fdd6b0a1e234877cd53b6afe2596116"
+    },
+    {
+      "id": "tease_grass-07-caption-2",
+      "file": "tease_grass-07-caption-2.json",
+      "bytes": 1268165,
+      "sha256": "04966ded77a17f648d906730e9f271c4c055aff24995f88eca8eab7cd8e4c99a"
+    },
+    {
+      "id": "tease_grass-08-caption-2",
+      "file": "tease_grass-08-caption-2.json",
+      "bytes": 1275254,
+      "sha256": "5f7b07d0e6b7bf6f38f9c0cfdb1602d45a05003b6539818ffa56ff8664cab81d"
+    },
+    {
+      "id": "thanks-01-caption-1",
+      "file": "thanks-01-caption-1.json",
+      "bytes": 1258288,
+      "sha256": "6c9fd39161daaa6a3040e7afe45c96f795db003346ce3ed313e09d35d6c2ed91"
+    },
+    {
+      "id": "thanks-01-caption-2",
+      "file": "thanks-01-caption-2.json",
+      "bytes": 1258288,
+      "sha256": "62f838c41f74db6833cc0594225fd5e2849162ca94d73d03f16d88ed9620876b"
+    },
+    {
+      "id": "thanks-02-caption-2",
+      "file": "thanks-02-caption-2.json",
+      "bytes": 1263906,
+      "sha256": "b19842b20a9bff46e004785cf3022a729d36d8d6a6c3bfa74edae2541dd9c181"
+    },
+    {
+      "id": "thanks-03-caption-1",
+      "file": "thanks-03-caption-1.json",
+      "bytes": 1260723,
+      "sha256": "4e7692bcc435d0517e9180cd77e647b155c73323e37c53ff8b217b1ad338a1e2"
+    },
+    {
+      "id": "thanks-03-caption-2",
+      "file": "thanks-03-caption-2.json",
+      "bytes": 1260735,
+      "sha256": "d5caf191388ae3b002a16b68b13e08db46702b34c09ee6a72f0e90002030affa"
+    },
+    {
+      "id": "thanks-04-caption-2",
+      "file": "thanks-04-caption-2.json",
+      "bytes": 1262597,
+      "sha256": "c09ebb005c607817ecdc7c8d6d39653359f697bfe70ed518e9e2af5ed3b15db7"
+    },
+    {
+      "id": "thanks-05-caption-2",
+      "file": "thanks-05-caption-2.json",
+      "bytes": 1262117,
+      "sha256": "11db003a54014261783804601ea9afa1d351dbf44efa349eabdb89fc77e3cdcb"
+    },
+    {
+      "id": "thanks-06-caption-1",
+      "file": "thanks-06-caption-1.json",
+      "bytes": 1260098,
+      "sha256": "afa9ef1a6537c67ff513e86f244c75712bf5fa15c430e6342f5678b3a415c0bb"
+    },
+    {
+      "id": "thanks-06-caption-2",
+      "file": "thanks-06-caption-2.json",
+      "bytes": 1260098,
+      "sha256": "b3dd1931d947307bdd849c4fd835bfe5005a3d6b1e993d4ad846f98b9c86e9a0"
+    },
+    {
+      "id": "thanks-07-caption-2",
+      "file": "thanks-07-caption-2.json",
+      "bytes": 1261835,
+      "sha256": "32a4f6799b3964dba91e5b14b469d607380ddbbafb5910e26ae15787da3e6789"
+    },
+    {
+      "id": "thanks-08-caption-2",
+      "file": "thanks-08-caption-2.json",
+      "bytes": 1262600,
+      "sha256": "2bf1825533213442f199a837485276127e22277c1f5a9efe6290d96f6d7792d1"
+    },
+    {
+      "id": "think-01-caption-1",
+      "file": "think-01-caption-1.json",
+      "bytes": 1247960,
+      "sha256": "5aa123ec608ff5d3fff9bc3e7b5a7f4f157a785829b50f174d65ea63f4009026"
+    },
+    {
+      "id": "think-01-caption-2",
+      "file": "think-01-caption-2.json",
+      "bytes": 1247957,
+      "sha256": "20456c47ad15f97dda506671706907e16a2550284f7fc10083c3e4acaa8fd511"
+    },
+    {
+      "id": "think-02-caption-2",
+      "file": "think-02-caption-2.json",
+      "bytes": 1248463,
+      "sha256": "d10efae943bdf9df44d1f626e42caa14c63821a436e9449e14b53de7efef3dfd"
+    },
+    {
+      "id": "think-03-caption-1",
+      "file": "think-03-caption-1.json",
+      "bytes": 1248180,
+      "sha256": "1fe63ae6b266c1a1f5f64f339e13406ab81621e6477ea35021f14d34ae008dd0"
+    },
+    {
+      "id": "think-03-caption-2",
+      "file": "think-03-caption-2.json",
+      "bytes": 1248174,
+      "sha256": "7756f9811eb1ebac4a25761de845970e247cc4f53ab18323f44721253ea67373"
+    },
+    {
+      "id": "think-04-caption-2",
+      "file": "think-04-caption-2.json",
+      "bytes": 1253476,
+      "sha256": "8e721e45cea20d4f4ef570e5588d169afbf150a077c94c2a9e43eede694349b6"
+    },
+    {
+      "id": "think-05-caption-2",
+      "file": "think-05-caption-2.json",
+      "bytes": 1260880,
+      "sha256": "5084b9ea1d3250577053bd66aff46835a6747bc683a1b7e369cb5aad625ff455"
+    },
+    {
+      "id": "think-06-caption-1",
+      "file": "think-06-caption-1.json",
+      "bytes": 1261900,
+      "sha256": "1dee6a3d8fc4dc5742e1dfe3d9d7e4a878af97513d74c62b4864314e7d7f5a4e"
+    },
+    {
+      "id": "think-06-caption-2",
+      "file": "think-06-caption-2.json",
+      "bytes": 1261900,
+      "sha256": "c970ac251dd885fb4ad1e3bedfdc67fb4e65c17b15fcbabfe26fc1ff2f142db5"
+    },
+    {
+      "id": "think-07-caption-2",
+      "file": "think-07-caption-2.json",
+      "bytes": 1263978,
+      "sha256": "9ba01debbc388a215b8702a358730eda1a50fac01a2a0731984285f1c6a5630c"
+    },
+    {
+      "id": "think-08-caption-2",
+      "file": "think-08-caption-2.json",
+      "bytes": 1265373,
+      "sha256": "e99076bf92c69b6696abae8f3138e0032eab699751b61694b2e272d23609eb1b"
+    },
+    {
+      "id": "welcome_back-01-caption-1",
+      "file": "welcome_back-01-caption-1.json",
+      "bytes": 1263420,
+      "sha256": "899d598583c540619543e7e3c534b928919d83306fafc9cad19b52f52dba6d70"
+    },
+    {
+      "id": "welcome_back-01-caption-2",
+      "file": "welcome_back-01-caption-2.json",
+      "bytes": 1263411,
+      "sha256": "1c9b8e1ea2cf42ea7f9e488e24034237386e1b002af1c08788c20ae921f2f552"
+    },
+    {
+      "id": "welcome_back-02-caption-2",
+      "file": "welcome_back-02-caption-2.json",
+      "bytes": 1271293,
+      "sha256": "758f82922cf6aee4b1aa95a7339ccf4296e1b8aaa87ab075ee0567b3795469a2"
+    },
+    {
+      "id": "welcome_back-03-caption-1",
+      "file": "welcome_back-03-caption-1.json",
+      "bytes": 1268911,
+      "sha256": "0723ae6127bcc063a35f88669b8fe64d1a453a7ea7391f4b2a37d25e0da6102f"
+    },
+    {
+      "id": "welcome_back-03-caption-2",
+      "file": "welcome_back-03-caption-2.json",
+      "bytes": 1268908,
+      "sha256": "431b5598208e994e71b1511f4ddebd7e414d758b7f6d2e63873f287daa680afa"
+    },
+    {
+      "id": "welcome_back-04-caption-2",
+      "file": "welcome_back-04-caption-2.json",
+      "bytes": 1270386,
+      "sha256": "ee59ec6fdaeaf7a0826ceb94924adefbc701a98622c4e88067c419e214359856"
+    },
+    {
+      "id": "welcome_back-05-caption-2",
+      "file": "welcome_back-05-caption-2.json",
+      "bytes": 1263934,
+      "sha256": "127acfeae3944b5444990869b2f1d213c7a2c905998ca00d87bb887544319aed"
+    },
+    {
+      "id": "welcome_back-06-caption-1",
+      "file": "welcome_back-06-caption-1.json",
+      "bytes": 1258825,
+      "sha256": "f7f8f833150e1de675a1f218507ac16d4ae09efccf71ebb433f55d45ab66932d"
+    },
+    {
+      "id": "welcome_back-06-caption-2",
+      "file": "welcome_back-06-caption-2.json",
+      "bytes": 1258831,
+      "sha256": "d94c49a224105de584b5f20e3b22b3f92a7d5a2a0eb1e131eae853d8735abb5a"
+    },
+    {
+      "id": "welcome_back-07-caption-2",
+      "file": "welcome_back-07-caption-2.json",
+      "bytes": 1264500,
+      "sha256": "39a65a0ec1cbff65e6bb8f77894d9ce49527439b8e38f9ff5519f50f8c791e25"
+    },
+    {
+      "id": "welcome_back-08-caption-2",
+      "file": "welcome_back-08-caption-2.json",
+      "bytes": 1263655,
+      "sha256": "ce1647a39a87f79190bc396a0c2ad89051116e0ae50a85e672956b91d03f8645"
+    },
+    {
+      "id": "wink_joke-01-caption-1",
+      "file": "wink_joke-01-caption-1.json",
+      "bytes": 1255453,
+      "sha256": "ee4850eb2ef3e380891ba0cca1c56c8866662d9fa816dadf686b2eb4c38fc2fb"
+    },
+    {
+      "id": "wink_joke-01-caption-2",
+      "file": "wink_joke-01-caption-2.json",
+      "bytes": 1255441,
+      "sha256": "766a80e49503e92a708d0d0f824cd701fd5f7d2016e44e21660dce8f5a5b0cb0"
+    },
+    {
+      "id": "wink_joke-02-caption-2",
+      "file": "wink_joke-02-caption-2.json",
+      "bytes": 1256723,
+      "sha256": "a9eb914481c76f64241615a1b8869249268fadaf434e869278ef1b9eb62076e7"
+    },
+    {
+      "id": "wink_joke-03-caption-1",
+      "file": "wink_joke-03-caption-1.json",
+      "bytes": 1253234,
+      "sha256": "a848709ca6a4f6e55d7955df3a2660b9a84fb20566c94747bcb4c753ee179f29"
+    },
+    {
+      "id": "wink_joke-03-caption-2",
+      "file": "wink_joke-03-caption-2.json",
+      "bytes": 1253216,
+      "sha256": "9708642e2c1a50bb42b60adfddeba6fe756caee9354841fc2a6d6c1c978dcaf9"
+    },
+    {
+      "id": "wink_joke-04-caption-2",
+      "file": "wink_joke-04-caption-2.json",
+      "bytes": 1254156,
+      "sha256": "c55816bb62930c4f50f12fa5be903764a416c5bd3a73acf18270251c3c396bdc"
+    },
+    {
+      "id": "wink_joke-05-caption-2",
+      "file": "wink_joke-05-caption-2.json",
+      "bytes": 1253535,
+      "sha256": "e8abd35a4671df15cab67d6d69aa3b695bc4e8e6266595066fd6af59eaf487ec"
+    },
+    {
+      "id": "wink_joke-06-caption-1",
+      "file": "wink_joke-06-caption-1.json",
+      "bytes": 1254411,
+      "sha256": "8ca10b5f326ee5e5fdd4b890ba00b74c2f9ed7280a5d75975f78e415b4464d6d"
+    },
+    {
+      "id": "wink_joke-06-caption-2",
+      "file": "wink_joke-06-caption-2.json",
+      "bytes": 1254420,
+      "sha256": "dead473d9a7863f97e17d13a28c8570d7e239ba181ef711935881241e66c54ce"
+    },
+    {
+      "id": "wink_joke-07-caption-2",
+      "file": "wink_joke-07-caption-2.json",
+      "bytes": 1257252,
+      "sha256": "bcbea2f55f972dd22af3ff862aaa874a458fed314fc1de28f9478c72132bc611"
+    },
+    {
+      "id": "wink_joke-08-caption-2",
+      "file": "wink_joke-08-caption-2.json",
+      "bytes": 1258020,
+      "sha256": "697b90a776701fc262eccd32cf0d9e5519e620ae705e79dc36a088455718975b"
+    }
+  ],
+  "sample_count": 176,
+  "profile_sha256": "246daa8f0599e63eb9c1fcaf89494aa488505006bb1aa287c86208de16a4f57d",
+  "asset_hash": "77bea8c13820edd4167ebda37c5a5bd78b782186bdf6c58a5c47bf5efff79df6",
+  "supervision": "program_authored_assistant_reviewed",
+  "independent_groups": 16,
+  "held_out_split": {
+    "key": "choreography_and_paraphrase_family",
+    "native_style_sources": 1,
+    "train": [
+      "agree_nod",
+      "celebrate",
+      "curious",
+      "deny_playful",
+      "explain",
+      "greeting",
+      "listen",
+      "reassure",
+      "shy",
+      "tease_grass",
+      "thanks",
+      "think"
+    ],
+    "meaning": "synthetic family holdout; not independent human motion generalization"
+  },
+  "reviews_sha256": "7a27a6f39ec34e7a206f11e68a419ff4ac085ac9b4778357fd2b97bb8606447e",
+  "native_style_sources": 1,
+  "human_reviewed": false,
+  "clip_count": 128,
+  "profile": {
+    "id": "dafeiyu-vtuber.v2",
+    "sampling_hz": 10,
+    "scope": "coupled head/body/gaze/eyelids/mouth with native hand transitions",
+    "channels": [
+      {
+        "id": "AngleX",
+        "label": "头部水平",
+        "min": -18,
+        "max": 18,
+        "neutral": 0
+      },
+      {
+        "id": "AngleY",
+        "label": "头部俯仰",
+        "min": -12,
+        "max": 12,
+        "neutral": 0
+      },
+      {
+        "id": "AngleZ",
+        "label": "头部歪头",
+        "min": -12,
+        "max": 12,
+        "neutral": 0
+      },
+      {
+        "id": "PositionX",
+        "label": "身体水平",
+        "min": -12,
+        "max": 12,
+        "neutral": 0
+      },
+      {
+        "id": "PositionY",
+        "label": "身体俯仰",
+        "min": -10,
+        "max": 10,
+        "neutral": 0
+      },
+      {
+        "id": "PositionZ",
+        "label": "身体侧倾",
+        "min": -10,
+        "max": 10,
+        "neutral": 0
+      },
+      {
+        "id": "LeanInput",
+        "label": "前倾",
+        "min": -15,
+        "max": 0,
+        "neutral": 0
+      },
+      {
+        "id": "ParamEyeBallX",
+        "label": "注视水平",
+        "min": -0.7,
+        "max": 0.7,
+        "neutral": 0
+      },
+      {
+        "id": "ParamEyeBallY",
+        "label": "注视垂直",
+        "min": -0.6,
+        "max": 0.6,
+        "neutral": 0
+      },
+      {
+        "id": "EyeSmile",
+        "label": "笑眼",
+        "min": 0,
+        "max": 0.8,
+        "neutral": 0
+      },
+      {
+        "id": "ParamBrowLY",
+        "label": "左眉",
+        "min": -0.5,
+        "max": 0.5,
+        "neutral": 0
+      },
+      {
+        "id": "ParamBrowRY",
+        "label": "右眉",
+        "min": -0.5,
+        "max": 0.5,
+        "neutral": 0
+      },
+      {
+        "id": "ParamEyeLOpen",
+        "label": "左眼睑",
+        "min": 0,
+        "max": 1.25,
+        "neutral": 1
+      },
+      {
+        "id": "ParamEyeROpen",
+        "label": "右眼睑",
+        "min": 0,
+        "max": 1.25,
+        "neutral": 1
+      },
+      {
+        "id": "ParamMouthForm",
+        "label": "嘴形",
+        "min": -0.6,
+        "max": 0.8,
+        "neutral": 0
+      },
+      {
+        "id": "ParamMouthOpenY",
+        "label": "表演开口",
+        "min": 0,
+        "max": 0.65,
+        "neutral": 0
+      }
+    ],
+    "source": "program_authored_native_motion_inspired",
+    "sha256": "246daa8f0599e63eb9c1fcaf89494aa488505006bb1aa287c86208de16a4f57d"
+  },
+  "selection": {
+    "split": "train",
+    "sample_count": 132,
+    "ids_sha256": "b9914a00bfbf95442d2af8b7b30b179d5faa332351b99e12e695cd028a41c7ac"
+  }
+}
