@@ -1,0 +1,39 @@
+{
+  "ok": true,
+  "reference": "01-A",
+  "wave": [
+    {
+      "variant": "A",
+      "joint_max_error": {
+        "Param36": 0,
+        "Param39": 0,
+        "Param41": 0
+      },
+      "open_palm_all_frames": true,
+      "wrist_range": 0.39973000000000003,
+      "actual_sha256": "403ec866f2f6c7d90040657085221f07c5d0e5746eb0869661173f3cc6542eec"
+    },
+    {
+      "variant": "B",
+      "joint_max_error": {
+        "Param36": 0,
+        "Param39": 0,
+        "Param41": 0
+      },
+      "open_palm_all_frames": true,
+      "wrist_range": 0.33992,
+      "actual_sha256": "c4519d115b0eeae1f73352bf9e5296d5ed752fc71e84bc61c955bfb8a14cc4f7"
+    },
+    {
+      "variant": "C",
+      "joint_max_error": {
+        "Param36": 0,
+        "Param39": 0,
+        "Param41": 0
+      },
+      "open_palm_all_frames": true,
+      "wrist_range": 0.35987,
+      "actual_sha256": "c3f9355dc2a24ed3728f2039b4634f64fd531f42d6ddcc07186b18bb11b4dd7d"
+    }
+  ]
+}

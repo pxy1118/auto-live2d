@@ -1,0 +1,8 @@
+{
+  "ok": true,
+  "runtime_version": "v4.13.0-clause-plan",
+  "checked": [
+    "four ablation rows; six audio/video demonstrations; explicit failed quality gate; media playback; mobile layout",
+    "24 original human votes unchanged; original comparison links to the research page"
+  ]
+}

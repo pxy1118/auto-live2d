@@ -1,0 +1,674 @@
+[
+  {
+    "index": 0,
+    "models": [
+      {
+        "label": "B",
+        "model": "v4-restrained-regression",
+        "provenance": {
+          "source": "streaming_policy_v4",
+          "checkpoint_sha256": "f9d7b2a0a64a146b296d71c54d6c30e95bf1b38eb6faaf007e1ea37e9cfe378e",
+          "kind": "regression",
+          "seed": 50,
+          "stage": "restrained_semantic_gate_candidate"
+        },
+        "gesture_policy": {
+          "phase": "idle",
+          "used_in_clause": false,
+          "count": 0,
+          "confidence": 0.25109100341796875,
+          "cooldown_ms": 0,
+          "style": "restrained"
+        }
+      },
+      {
+        "label": "A",
+        "model": "v3"
+      }
+    ]
+  },
+  {
+    "index": 1,
+    "models": [
+      {
+        "label": "A",
+        "model": "v4-restrained-regression",
+        "provenance": {
+          "source": "streaming_policy_v4",
+          "checkpoint_sha256": "f9d7b2a0a64a146b296d71c54d6c30e95bf1b38eb6faaf007e1ea37e9cfe378e",
+          "kind": "regression",
+          "seed": 49,
+          "stage": "restrained_semantic_gate_candidate"
+        },
+        "gesture_policy": {
+          "phase": "idle",
+          "used_in_clause": false,
+          "count": 0,
+          "confidence": 0.06303804367780685,
+          "cooldown_ms": 0,
+          "style": "restrained"
+        }
+      },
+      {
+        "label": "B",
+        "model": "v3"
+      }
+    ]
+  },
+  {
+    "index": 2,
+    "models": [
+      {
+        "label": "B",
+        "model": "v4-restrained-regression",
+        "provenance": {
+          "source": "streaming_policy_v4",
+          "checkpoint_sha256": "f9d7b2a0a64a146b296d71c54d6c30e95bf1b38eb6faaf007e1ea37e9cfe378e",
+          "kind": "regression",
+          "seed": 49,
+          "stage": "restrained_semantic_gate_candidate"
+        },
+        "gesture_policy": {
+          "phase": "idle",
+          "used_in_clause": false,
+          "count": 0,
+          "confidence": 0.0013111650478094816,
+          "cooldown_ms": 0,
+          "style": "restrained"
+        }
+      },
+      {
+        "label": "A",
+        "model": "v3"
+      }
+    ]
+  },
+  {
+    "index": 3,
+    "models": [
+      {
+        "label": "A",
+        "model": "v4-restrained-regression",
+        "provenance": {
+          "source": "streaming_policy_v4",
+          "checkpoint_sha256": "f9d7b2a0a64a146b296d71c54d6c30e95bf1b38eb6faaf007e1ea37e9cfe378e",
+          "kind": "regression",
+          "seed": 50,
+          "stage": "restrained_semantic_gate_candidate"
+        },
+        "gesture_policy": {
+          "phase": "idle",
+          "used_in_clause": true,
+          "count": 1,
+          "confidence": 0.9877871870994568,
+          "cooldown_ms": 2300,
+          "style": "restrained"
+        }
+      },
+      {
+        "label": "B",
+        "model": "v3"
+      }
+    ]
+  },
+  {
+    "index": 4,
+    "models": [
+      {
+        "label": "B",
+        "model": "v4-restrained-regression",
+        "provenance": {
+          "source": "streaming_policy_v4",
+          "checkpoint_sha256": "f9d7b2a0a64a146b296d71c54d6c30e95bf1b38eb6faaf007e1ea37e9cfe378e",
+          "kind": "regression",
+          "seed": 47,
+          "stage": "restrained_semantic_gate_candidate"
+        },
+        "gesture_policy": {
+          "phase": "idle",
+          "used_in_clause": false,
+          "count": 0,
+          "confidence": 0.4688110053539276,
+          "cooldown_ms": 0,
+          "style": "restrained"
+        }
+      },
+      {
+        "label": "A",
+        "model": "v3"
+      }
+    ]
+  },
+  {
+    "index": 5,
+    "models": [
+      {
+        "label": "A",
+        "model": "v4-restrained-regression",
+        "provenance": {
+          "source": "streaming_policy_v4",
+          "checkpoint_sha256": "f9d7b2a0a64a146b296d71c54d6c30e95bf1b38eb6faaf007e1ea37e9cfe378e",
+          "kind": "regression",
+          "seed": 52,
+          "stage": "restrained_semantic_gate_candidate"
+        },
+        "gesture_policy": {
+          "phase": "idle",
+          "used_in_clause": false,
+          "count": 0,
+          "confidence": 0.5946802496910095,
+          "cooldown_ms": 0,
+          "style": "restrained"
+        }
+      },
+      {
+        "label": "B",
+        "model": "v3"
+      }
+    ]
+  },
+  {
+    "index": 6,
+    "models": [
+      {
+        "label": "B",
+        "model": "v4-restrained-regression",
+        "provenance": {
+          "source": "streaming_policy_v4",
+          "checkpoint_sha256": "f9d7b2a0a64a146b296d71c54d6c30e95bf1b38eb6faaf007e1ea37e9cfe378e",
+          "kind": "regression",
+          "seed": 49,
+          "stage": "restrained_semantic_gate_candidate"
+        },
+        "gesture_policy": {
+          "phase": "idle",
+          "used_in_clause": false,
+          "count": 0,
+          "confidence": 0.12659090757369995,
+          "cooldown_ms": 0,
+          "style": "restrained"
+        }
+      },
+      {
+        "label": "A",
+        "model": "v3"
+      }
+    ]
+  },
+  {
+    "index": 7,
+    "models": [
+      {
+        "label": "A",
+        "model": "v4-restrained-regression",
+        "provenance": {
+          "source": "streaming_policy_v4",
+          "checkpoint_sha256": "f9d7b2a0a64a146b296d71c54d6c30e95bf1b38eb6faaf007e1ea37e9cfe378e",
+          "kind": "regression",
+          "seed": 52,
+          "stage": "restrained_semantic_gate_candidate"
+        },
+        "gesture_policy": {
+          "phase": "idle",
+          "used_in_clause": false,
+          "count": 0,
+          "confidence": 0.325246661901474,
+          "cooldown_ms": 0,
+          "style": "restrained"
+        }
+      },
+      {
+        "label": "B",
+        "model": "v3"
+      }
+    ]
+  },
+  {
+    "index": 8,
+    "models": [
+      {
+        "label": "B",
+        "model": "v4-restrained-regression",
+        "provenance": {
+          "source": "streaming_policy_v4",
+          "checkpoint_sha256": "f9d7b2a0a64a146b296d71c54d6c30e95bf1b38eb6faaf007e1ea37e9cfe378e",
+          "kind": "regression",
+          "seed": 48,
+          "stage": "restrained_semantic_gate_candidate"
+        },
+        "gesture_policy": {
+          "phase": "idle",
+          "used_in_clause": false,
+          "count": 0,
+          "confidence": 0.003332376480102539,
+          "cooldown_ms": 0,
+          "style": "restrained"
+        }
+      },
+      {
+        "label": "A",
+        "model": "v3"
+      }
+    ]
+  },
+  {
+    "index": 9,
+    "models": [
+      {
+        "label": "A",
+        "model": "v4-restrained-regression",
+        "provenance": {
+          "source": "streaming_policy_v4",
+          "checkpoint_sha256": "f9d7b2a0a64a146b296d71c54d6c30e95bf1b38eb6faaf007e1ea37e9cfe378e",
+          "kind": "regression",
+          "seed": 49,
+          "stage": "restrained_semantic_gate_candidate"
+        },
+        "gesture_policy": {
+          "phase": "idle",
+          "used_in_clause": false,
+          "count": 0,
+          "confidence": 0.8900870084762573,
+          "cooldown_ms": 0,
+          "style": "restrained"
+        }
+      },
+      {
+        "label": "B",
+        "model": "v3"
+      }
+    ]
+  },
+  {
+    "index": 10,
+    "models": [
+      {
+        "label": "B",
+        "model": "v4-restrained-regression",
+        "provenance": {
+          "source": "streaming_policy_v4",
+          "checkpoint_sha256": "f9d7b2a0a64a146b296d71c54d6c30e95bf1b38eb6faaf007e1ea37e9cfe378e",
+          "kind": "regression",
+          "seed": 49,
+          "stage": "restrained_semantic_gate_candidate"
+        },
+        "gesture_policy": {
+          "phase": "idle",
+          "used_in_clause": false,
+          "count": 0,
+          "confidence": 0.8384841680526733,
+          "cooldown_ms": 0,
+          "style": "restrained"
+        }
+      },
+      {
+        "label": "A",
+        "model": "v3"
+      }
+    ]
+  },
+  {
+    "index": 11,
+    "models": [
+      {
+        "label": "A",
+        "model": "v4-restrained-regression",
+        "provenance": {
+          "source": "streaming_policy_v4",
+          "checkpoint_sha256": "f9d7b2a0a64a146b296d71c54d6c30e95bf1b38eb6faaf007e1ea37e9cfe378e",
+          "kind": "regression",
+          "seed": 47,
+          "stage": "restrained_semantic_gate_candidate"
+        },
+        "gesture_policy": {
+          "phase": "idle",
+          "used_in_clause": true,
+          "count": 1,
+          "confidence": 0.9996993541717529,
+          "cooldown_ms": 3400,
+          "style": "restrained"
+        }
+      },
+      {
+        "label": "B",
+        "model": "v3"
+      }
+    ]
+  },
+  {
+    "index": 12,
+    "models": [
+      {
+        "label": "B",
+        "model": "v4-restrained-regression",
+        "provenance": {
+          "source": "streaming_policy_v4",
+          "checkpoint_sha256": "f9d7b2a0a64a146b296d71c54d6c30e95bf1b38eb6faaf007e1ea37e9cfe378e",
+          "kind": "regression",
+          "seed": 47,
+          "stage": "restrained_semantic_gate_candidate"
+        },
+        "gesture_policy": {
+          "phase": "idle",
+          "used_in_clause": false,
+          "count": 0,
+          "confidence": 0.524065375328064,
+          "cooldown_ms": 0,
+          "style": "restrained"
+        }
+      },
+      {
+        "label": "A",
+        "model": "v3"
+      }
+    ]
+  },
+  {
+    "index": 13,
+    "models": [
+      {
+        "label": "A",
+        "model": "v4-restrained-regression",
+        "provenance": {
+          "source": "streaming_policy_v4",
+          "checkpoint_sha256": "f9d7b2a0a64a146b296d71c54d6c30e95bf1b38eb6faaf007e1ea37e9cfe378e",
+          "kind": "regression",
+          "seed": 52,
+          "stage": "restrained_semantic_gate_candidate"
+        },
+        "gesture_policy": {
+          "phase": "idle",
+          "used_in_clause": false,
+          "count": 0,
+          "confidence": 0.013080630451440811,
+          "cooldown_ms": 0,
+          "style": "restrained"
+        }
+      },
+      {
+        "label": "B",
+        "model": "v3"
+      }
+    ]
+  },
+  {
+    "index": 14,
+    "models": [
+      {
+        "label": "B",
+        "model": "v4-restrained-regression",
+        "provenance": {
+          "source": "streaming_policy_v4",
+          "checkpoint_sha256": "f9d7b2a0a64a146b296d71c54d6c30e95bf1b38eb6faaf007e1ea37e9cfe378e",
+          "kind": "regression",
+          "seed": 48,
+          "stage": "restrained_semantic_gate_candidate"
+        },
+        "gesture_policy": {
+          "phase": "idle",
+          "used_in_clause": true,
+          "count": 1,
+          "confidence": 0.9951663017272949,
+          "cooldown_ms": 3000,
+          "style": "restrained"
+        }
+      },
+      {
+        "label": "A",
+        "model": "v3"
+      }
+    ]
+  },
+  {
+    "index": 15,
+    "models": [
+      {
+        "label": "A",
+        "model": "v4-restrained-regression",
+        "provenance": {
+          "source": "streaming_policy_v4",
+          "checkpoint_sha256": "f9d7b2a0a64a146b296d71c54d6c30e95bf1b38eb6faaf007e1ea37e9cfe378e",
+          "kind": "regression",
+          "seed": 47,
+          "stage": "restrained_semantic_gate_candidate"
+        },
+        "gesture_policy": {
+          "phase": "idle",
+          "used_in_clause": false,
+          "count": 0,
+          "confidence": 0.9604548811912537,
+          "cooldown_ms": 0,
+          "style": "restrained"
+        }
+      },
+      {
+        "label": "B",
+        "model": "v3"
+      }
+    ]
+  },
+  {
+    "index": 16,
+    "models": [
+      {
+        "label": "B",
+        "model": "v4-restrained-regression",
+        "provenance": {
+          "source": "streaming_policy_v4",
+          "checkpoint_sha256": "f9d7b2a0a64a146b296d71c54d6c30e95bf1b38eb6faaf007e1ea37e9cfe378e",
+          "kind": "regression",
+          "seed": 49,
+          "stage": "restrained_semantic_gate_candidate"
+        },
+        "gesture_policy": {
+          "phase": "idle",
+          "used_in_clause": true,
+          "count": 1,
+          "confidence": 0.9989752769470215,
+          "cooldown_ms": 2700,
+          "style": "restrained"
+        }
+      },
+      {
+        "label": "A",
+        "model": "v3"
+      }
+    ]
+  },
+  {
+    "index": 17,
+    "models": [
+      {
+        "label": "A",
+        "model": "v4-restrained-regression",
+        "provenance": {
+          "source": "streaming_policy_v4",
+          "checkpoint_sha256": "f9d7b2a0a64a146b296d71c54d6c30e95bf1b38eb6faaf007e1ea37e9cfe378e",
+          "kind": "regression",
+          "seed": 48,
+          "stage": "restrained_semantic_gate_candidate"
+        },
+        "gesture_policy": {
+          "phase": "idle",
+          "used_in_clause": false,
+          "count": 0,
+          "confidence": 0.9389303922653198,
+          "cooldown_ms": 0,
+          "style": "restrained"
+        }
+      },
+      {
+        "label": "B",
+        "model": "v3"
+      }
+    ]
+  },
+  {
+    "index": 18,
+    "models": [
+      {
+        "label": "B",
+        "model": "v4-restrained-regression",
+        "provenance": {
+          "source": "streaming_policy_v4",
+          "checkpoint_sha256": "f9d7b2a0a64a146b296d71c54d6c30e95bf1b38eb6faaf007e1ea37e9cfe378e",
+          "kind": "regression",
+          "seed": 49,
+          "stage": "restrained_semantic_gate_candidate"
+        },
+        "gesture_policy": {
+          "phase": "idle",
+          "used_in_clause": false,
+          "count": 0,
+          "confidence": 0.026176268234848976,
+          "cooldown_ms": 0,
+          "style": "restrained"
+        }
+      },
+      {
+        "label": "A",
+        "model": "v3"
+      }
+    ]
+  },
+  {
+    "index": 19,
+    "models": [
+      {
+        "label": "A",
+        "model": "v4-restrained-regression",
+        "provenance": {
+          "source": "streaming_policy_v4",
+          "checkpoint_sha256": "f9d7b2a0a64a146b296d71c54d6c30e95bf1b38eb6faaf007e1ea37e9cfe378e",
+          "kind": "regression",
+          "seed": 48,
+          "stage": "restrained_semantic_gate_candidate"
+        },
+        "gesture_policy": {
+          "phase": "idle",
+          "used_in_clause": false,
+          "count": 0,
+          "confidence": 0.24997425079345703,
+          "cooldown_ms": 0,
+          "style": "restrained"
+        }
+      },
+      {
+        "label": "B",
+        "model": "v3"
+      }
+    ]
+  },
+  {
+    "index": 20,
+    "models": [
+      {
+        "label": "B",
+        "model": "v4-restrained-regression",
+        "provenance": {
+          "source": "streaming_policy_v4",
+          "checkpoint_sha256": "f9d7b2a0a64a146b296d71c54d6c30e95bf1b38eb6faaf007e1ea37e9cfe378e",
+          "kind": "regression",
+          "seed": 47,
+          "stage": "restrained_semantic_gate_candidate"
+        },
+        "gesture_policy": {
+          "phase": "idle",
+          "used_in_clause": false,
+          "count": 0,
+          "confidence": 0.9677562713623047,
+          "cooldown_ms": 0,
+          "style": "restrained"
+        }
+      },
+      {
+        "label": "A",
+        "model": "v3"
+      }
+    ]
+  },
+  {
+    "index": 21,
+    "models": [
+      {
+        "label": "A",
+        "model": "v4-restrained-regression",
+        "provenance": {
+          "source": "streaming_policy_v4",
+          "checkpoint_sha256": "f9d7b2a0a64a146b296d71c54d6c30e95bf1b38eb6faaf007e1ea37e9cfe378e",
+          "kind": "regression",
+          "seed": 50,
+          "stage": "restrained_semantic_gate_candidate"
+        },
+        "gesture_policy": {
+          "phase": "idle",
+          "used_in_clause": false,
+          "count": 0,
+          "confidence": 0.17766641080379486,
+          "cooldown_ms": 0,
+          "style": "restrained"
+        }
+      },
+      {
+        "label": "B",
+        "model": "v3"
+      }
+    ]
+  },
+  {
+    "index": 22,
+    "models": [
+      {
+        "label": "B",
+        "model": "v4-restrained-regression",
+        "provenance": {
+          "source": "streaming_policy_v4",
+          "checkpoint_sha256": "f9d7b2a0a64a146b296d71c54d6c30e95bf1b38eb6faaf007e1ea37e9cfe378e",
+          "kind": "regression",
+          "seed": 46,
+          "stage": "restrained_semantic_gate_candidate"
+        },
+        "gesture_policy": {
+          "phase": "idle",
+          "used_in_clause": false,
+          "count": 0,
+          "confidence": 0.13052953779697418,
+          "cooldown_ms": 0,
+          "style": "restrained"
+        }
+      },
+      {
+        "label": "A",
+        "model": "v3"
+      }
+    ]
+  },
+  {
+    "index": 23,
+    "models": [
+      {
+        "label": "A",
+        "model": "v4-restrained-regression",
+        "provenance": {
+          "source": "streaming_policy_v4",
+          "checkpoint_sha256": "f9d7b2a0a64a146b296d71c54d6c30e95bf1b38eb6faaf007e1ea37e9cfe378e",
+          "kind": "regression",
+          "seed": 46,
+          "stage": "restrained_semantic_gate_candidate"
+        },
+        "gesture_policy": {
+          "phase": "return",
+          "used_in_clause": true,
+          "count": 1,
+          "confidence": 0.990020751953125,
+          "cooldown_ms": 3800,
+          "style": "restrained"
+        }
+      },
+      {
+        "label": "B",
+        "model": "v3"
+      }
+    ]
+  }
+]

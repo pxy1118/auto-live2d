@@ -1,0 +1,128 @@
+{
+  "protected": {
+    "src/body-motion.ts": "4463d8dd9c5c0b8be3f0185c08ee58213f39da8d1b211bf69279f22b74f3b010",
+    "src/controller.ts": "5683484f4fa5db8e130ae9b2dd82d103ac63d326d8d146fecbb9eed0ae9e9e21",
+    "src/engine.ts": "952cd00a70278d8f60833b193cefc54812ed2123898dd59af211ebd2f221db6a",
+    "src/eye-style.ts": "88c9f5964f5e7556e7fe9b7bd1e6455926f47781dad39ad9af75609183d82ebd",
+    "src/gesture-choreography.ts": "774f9ff7d021890c78ed8e12d39be51a75d49ad3615554a5314d2176e0526044",
+    "src/gesture-library.ts": "f653203bd7a9d40228818913fe74c447363ddef3dabaa0ec353bef674033f36b",
+    "src/latent-panel.ts": "b97240d60c7ae21d280a24da5f2bd00245fcea80af0ed0a864ca371bb182784f",
+    "src/latent.css": "3eec6f6057515b98d328fcec52acae89d00103d0994f385db2eb5b3069c56196",
+    "src/main.ts": "f0f6e87c7d2a2ad83725abdf807b1f55691864d3b80f99426d125e58f3290474",
+    "src/motion.ts": "6c6be23a5a3cf7b4bf5cfb3f9e06bf0b2d4fa73c400f1b0c72ae67d2bb48e4e0",
+    "src/motor.ts": "8e3faba800a953d271139f4c3f40aa54653ede634cae52de97611ea88bb85ac4",
+    "src/performance-coupling.ts": "352e99ebfc8e4afc333470437902b42f95aeaef539e0aaa7e573a8836109c644",
+    "src/performance-panel.ts": "3246692c0e275348fbb0c9fef55d8a7a890aa257c54d56a430d53b1e8876e7c5",
+    "src/performance-plan.ts": "0fff26a8beebaab58556870cf701bb0738565f718143b4f6a0fdad6c72c2e32f",
+    "src/performance-profile.ts": "6d8c8d6d0456c10533821762b16bb2cee530d0ccbae66f76d0b123b540567aa2",
+    "src/performance.css": "0732bd055a106d10bf275e684ad991593ebff91c84d4276cb3a8e9ff3f4b96c3",
+    "src/performance.ts": "a13b8e6b9caec5f93ca8039b68f9e2c943d3da74b07f78d9d71b5a478a12cc7a",
+    "src/speech-motion.ts": "5e212c80d0dfa27c94a0767872d4c99f45400582731f21304384cf234c291eb7",
+    "src/speech-panel.ts": "000e56c139d22a768d481e22769d9a472f20856a97561a93c8a15dcbb8a97815",
+    "src/speech.ts": "f48d741b2a3e1c0e5a308dda73ecb166e1f288d40a17f8b65619863757eb6933",
+    "src/style.css": "65653eafbcc0a9df82cc05c0126b5fc26d09ef1b122d87c18cf80339949cc499",
+    "server/index.ts": "3ae31844affba996dd9a29f5b7a416eefc50ceebe94184c0e2c6f083c7ef3503",
+    "server/latent-bridge.ts": "b3dadf0f19720daf26eb4305cdc8a08b11b7a9f0c6960a6e781a8a890f06b581",
+    "server/ndjson.ts": "2c1deb8a67f53499f8a3dcaba279417b214fb5e44bc75a3ba759ac84356edd14",
+    "server/performance-service.ts": "212c9a9fe06f58772e12b9915ae4e2c095dcf66ac543e6ca5662f951354795ed",
+    "server/request-ledger.ts": "0c37a9c0992aaf6f99cf60a7e765a321036128f2d8a16469c1e634aebb161baa",
+    "server/review-ratings.ts": "7b5043c962512cd37f2b56ec007aba771db9db33df65db97a0e32f48b1f004cd",
+    "server/semantic-clause.ts": "f524346224f10f094a4e7d8d2b9e814ff8a5b1f543145f6b639ad5882f44556b",
+    "server/speech-bridge.ts": "83b98fbac8473e97250a3bfa7c79af3f24aef19fb10a3355a09ef4c01f998c51",
+    "latent/stream-run.json": "f282c32dac8ff649401f79cbdf6b50e935c9d5afe74307c19aca6870a4f6ed9c",
+    "latent/default-run.json": "5e8dd3056b4041fa7eaa93adfa917901b62c14e9e709558061bbacd5a7efe5d9",
+    ".runtime/performance/ratings.json": "7f7d6b0ae58dff2355aec7cbe93dbe0c54f741cb41d7b688177d5d4a4ba16f47",
+    "speech/features.py": "5b0d0b586d72f14891b81bb06328de69ca23e66717a3dce10baa797aa0c4ec43",
+    "main.py": "b937fa73355f5987124f5654ec446314258d16e3295bc079cdd29842a66dfd9b",
+    "experiments/vtuber-v4-default-r1/run.json": "a3b7bdd70880eb94345bcb7f9a8a8b0503133f4440f08d81621829d7b3be6eed",
+    "experiments/vtuber-v4-default-r1/selection.json": "e69b60a016300659d8f075652467d029cbfeba80f03ecb7c9399bb4d93854e09",
+    "experiments/vtuber-v4-default-r1/performance-planner.pt": "053fd98de35fa065f50fd8e86f0031fa5d1730b8544785363c4b803192d5cfa8",
+    "experiments/vtuber-v4-default-r1/body-planner.pt": "acf721015bb3b54d6427fed16e122415226595148298ac51c449c395cb65e769",
+    "research/vtuber-v4-prosody-study/provenance.json": "ca88020ba751a7ee696901b220b45d43da5bb4f0ecd2cca6c0bb45d542c47681",
+    "research/vtuber-v4-playback-diagnosis-r1/provenance.json": "445843fd4a0379136da186275d7aa39b0ade42439f245e30eded965025949393",
+    "research/vtuber-v4-mapping-r1/provenance.json": "d82e8e6fa0bf5b9500c474fb9498b77622662da7e5de9f9d7d3e692859fb6dc1",
+    "live2d/DeepSeek/DeepSeek/大肥鱼.vtube.json": "c043da89d41ac372352614612edb11d9506251dc6e1fc45e1c4de74cf6df9566",
+    "research/my-neuro-audit-20261103/REPORT.md": "db7df72bef57a4e8182f72d813e63d6d7b0f57482afebe0fe5d2d460f9031983",
+    "research/vtuber-v4-online-coupling-r1/before.json": "a96fd54eb87575f3184edddc281731a25f796f5d1bf708aeb033beb7670a77f0"
+  },
+  "frozen_sources": {
+    "engine.ts": {
+      "source": "research/vtuber-v4-online-coupling-r1/baseline/src/engine.ts",
+      "source_sha256": "aa88f0fbe5de10a6100d05229d78bc1c478f8299a1f4c84a52588988a1487d2c",
+      "copy_sha256": "5f2dcdb28939fed1a426aa4ba957ef3516cc7eb2791d93c40bf77696ac0323b6",
+      "vendor_import_rebased": true
+    },
+    "eye-style.ts": {
+      "source": "src/eye-style.ts",
+      "source_sha256": "88c9f5964f5e7556e7fe9b7bd1e6455926f47781dad39ad9af75609183d82ebd",
+      "copy_sha256": "88c9f5964f5e7556e7fe9b7bd1e6455926f47781dad39ad9af75609183d82ebd",
+      "vendor_import_rebased": false
+    },
+    "gesture-library.ts": {
+      "source": "src/gesture-library.ts",
+      "source_sha256": "f653203bd7a9d40228818913fe74c447363ddef3dabaa0ec353bef674033f36b",
+      "copy_sha256": "f653203bd7a9d40228818913fe74c447363ddef3dabaa0ec353bef674033f36b",
+      "vendor_import_rebased": false
+    },
+    "gesture-choreography.ts": {
+      "source": "src/gesture-choreography.ts",
+      "source_sha256": "774f9ff7d021890c78ed8e12d39be51a75d49ad3615554a5314d2176e0526044",
+      "copy_sha256": "774f9ff7d021890c78ed8e12d39be51a75d49ad3615554a5314d2176e0526044",
+      "vendor_import_rebased": false
+    },
+    "body-motion.ts": {
+      "source": "src/body-motion.ts",
+      "source_sha256": "4463d8dd9c5c0b8be3f0185c08ee58213f39da8d1b211bf69279f22b74f3b010",
+      "copy_sha256": "4463d8dd9c5c0b8be3f0185c08ee58213f39da8d1b211bf69279f22b74f3b010",
+      "vendor_import_rebased": false
+    },
+    "controller.ts": {
+      "source": "src/controller.ts",
+      "source_sha256": "5683484f4fa5db8e130ae9b2dd82d103ac63d326d8d146fecbb9eed0ae9e9e21",
+      "copy_sha256": "5683484f4fa5db8e130ae9b2dd82d103ac63d326d8d146fecbb9eed0ae9e9e21",
+      "vendor_import_rebased": false
+    },
+    "motion.ts": {
+      "source": "src/motion.ts",
+      "source_sha256": "6c6be23a5a3cf7b4bf5cfb3f9e06bf0b2d4fa73c400f1b0c72ae67d2bb48e4e0",
+      "copy_sha256": "6c6be23a5a3cf7b4bf5cfb3f9e06bf0b2d4fa73c400f1b0c72ae67d2bb48e4e0",
+      "vendor_import_rebased": false
+    },
+    "performance-profile.ts": {
+      "source": "src/performance-profile.ts",
+      "source_sha256": "6d8c8d6d0456c10533821762b16bb2cee530d0ccbae66f76d0b123b540567aa2",
+      "copy_sha256": "6d8c8d6d0456c10533821762b16bb2cee530d0ccbae66f76d0b123b540567aa2",
+      "vendor_import_rebased": false
+    },
+    "performance.ts": {
+      "source": "research/vtuber-v4-online-coupling-r1/baseline/src/performance.ts",
+      "source_sha256": "db538ad6d3e1d00cb9067824aef480b6540a3d5dd41bd6f6540d43b786906498",
+      "copy_sha256": "db538ad6d3e1d00cb9067824aef480b6540a3d5dd41bd6f6540d43b786906498",
+      "vendor_import_rebased": false
+    },
+    "performance-plan.ts": {
+      "source": "src/performance-plan.ts",
+      "source_sha256": "0fff26a8beebaab58556870cf701bb0738565f718143b4f6a0fdad6c72c2e32f",
+      "copy_sha256": "0fff26a8beebaab58556870cf701bb0738565f718143b4f6a0fdad6c72c2e32f",
+      "vendor_import_rebased": false
+    },
+    "motor.ts": {
+      "source": "src/motor.ts",
+      "source_sha256": "8e3faba800a953d271139f4c3f40aa54653ede634cae52de97611ea88bb85ac4",
+      "copy_sha256": "8e3faba800a953d271139f4c3f40aa54653ede634cae52de97611ea88bb85ac4",
+      "vendor_import_rebased": false
+    },
+    "speech-motion.ts": {
+      "source": "src/speech-motion.ts",
+      "source_sha256": "5e212c80d0dfa27c94a0767872d4c99f45400582731f21304384cf234c291eb7",
+      "copy_sha256": "5e212c80d0dfa27c94a0767872d4c99f45400582731f21304384cf234c291eb7",
+      "vendor_import_rebased": false
+    },
+    "speech.ts": {
+      "source": "src/speech.ts",
+      "source_sha256": "f48d741b2a3e1c0e5a308dda73ecb166e1f288d40a17f8b65619863757eb6933",
+      "copy_sha256": "f48d741b2a3e1c0e5a308dda73ecb166e1f288d40a17f8b65619863757eb6933",
+      "vendor_import_rebased": false
+    }
+  }
+}

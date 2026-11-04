@@ -1,0 +1,15 @@
+{
+  "ok": true,
+  "runtime_version": "v4.8-native-palm",
+  "groups": [
+    "wave",
+    "chest",
+    "grass",
+    "point",
+    "thanks",
+    "explain",
+    "refuse"
+  ],
+  "retired_status": 400,
+  "selector_option_removed": true
+}

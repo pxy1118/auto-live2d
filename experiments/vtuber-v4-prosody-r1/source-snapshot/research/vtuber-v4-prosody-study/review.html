@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>语音节奏与连续姿态 · 首轮对比</title><link rel="icon" href="data:,">
+<style>
+:root{color-scheme:light;font-family:system-ui,"Microsoft YaHei",sans-serif;color:#203b32;background:#edf2ef}
+*{box-sizing:border-box}body{margin:0}main{max-width:1250px;margin:auto;padding:24px}h1{font-size:28px;margin:0 0 12px}p{line-height:1.7}
+.badge{display:inline-block;background:#dae7df;padding:5px 12px;border-radius:30px;font-size:13px}.muted{color:#51675e}nav{margin:18px 0}
+a{color:#275b46}button,select{font:inherit;border:1px solid #9bb3a6;border-radius:8px;padding:10px 15px;background:white;color:inherit;cursor:pointer}
+button.primary{background:#285e47;color:white}.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:16px 0}
+.card{padding:20px;background:#fff;border-radius:16px;margin:18px 0;box-shadow:0 3px 20px #284e3510}.videos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+figure{margin:0;background:#edf2ef;border-radius:12px;overflow:hidden}figcaption{padding:9px;text-align:center;font-weight:700}
+video{width:100%;display:block;aspect-ratio:2/3;object-fit:contain}fieldset{border:0;padding:8px 0;margin:14px 0;display:flex;gap:14px;flex-wrap:wrap}legend{font-weight:600;margin-bottom:8px}
+label{cursor:pointer}textarea{width:100%;min-height:80px;padding:10px;font:inherit;border:1px solid #adc1b5;border-radius:8px}table{width:100%;border-collapse:collapse}td,th{text-align:left;padding:9px;border-bottom:1px solid #dce6e0}
+.scroll{overflow:auto}.timeline{width:100%;accent-color:#285e47}.links{font-size:14px}details{margin:20px 0}summary{cursor:pointer}#message{min-height:22px}audio{display:none}
+@media(max-width:650px){main{padding:16px}h1{font-size:23px}.card{padding:12px}.videos{grid-template-columns:1fr}video{max-height:520px}figure{max-width:360px;width:100%;margin:auto}button,select{max-width:100%}}
+</style></head><body><main>
+<span class="badge">首轮机制研究 · 当前默认方案保持</span>
+<h1>同一句话，动作怎样更灵动？</h1>
+<p class="muted">8 组双句场景，每组 3 个隐藏版本。使用同一段真实语音、相同动作意图和表情，观察时机、节奏与句间姿态的区别。原图与原生物理参与实际渲染。</p>
+<nav class="links"><a href="/">返回主界面</a> · <a href="context-study.html">此前语境研究</a></nav>
+<div class="controls"><label for="scene">场景</label><select id="scene"></select><span id="count" class="muted"></span></div>
+<section class="card"><h2 id="title"></h2><div id="texts"></div>
+<div class="controls"><button id="play" class="primary">同步播放三版</button><button id="pause">暂停</button><button id="restart">从头播放</button><span id="clock">0:00</span></div>
+<input id="seek" class="timeline" type="range" min="0" max="1" step="0.01" value="0" aria-label="共同播放进度">
+<div class="videos" id="videos"></div><audio id="audio" preload="auto"></audio>
+<fieldset id="choices"><legend>哪一版整体更自然、灵动？</legend>
+<label><input type="radio" name="choice" value="A"> A</label><label><input type="radio" name="choice" value="B"> B</label><label><input type="radio" name="choice" value="C"> C</label>
+<label><input type="radio" name="choice" value="tie"> 差不多</label><label><input type="radio" name="choice" value="neither"> 都不满意</label></fieldset>
+<textarea id="note" placeholder="可选：动作太快、停得太久、衔接生硬，或者某个瞬间特别自然"></textarea>
+<div class="controls"><button id="previous">上一组</button><button id="next">下一组</button><button id="export">导出本轮选择</button></div>
+<p id="message" role="status" class="muted"></p><p class="muted">选择暂存在本页内存中，刷新会清空；导出可保留。不会改写以前的评分。</p></section>
+<details><summary>实验范围与工程检查</summary><p>本轮是执行机制对照，尚未训练新权重，也没有人工自然度结论。固定意图的对照不评价语义理解能力。音频预先合成，策略仅使用已到达的音频特征；这里不报告实时首音延迟。</p>
+<div class="scroll"><table><thead><tr><th>条件</th><th>实际参数帧</th><th>双臂同时抬起</th><th>越界输入</th></tr></thead><tbody id="diagnostics"></tbody></table></div>
+<p class="links">方法参考：<a href="https://arxiv.org/html/2604.10927v1">LiveGesture</a>、<a href="https://arxiv.org/html/2401.00374v5">EMAGE</a>、<a href="https://arxiv.org/html/2401.04747v2">DiffSHEG</a>。只借鉴方法思路；针对当前角色独立验证。</p></details>
+</main><script>
+const get=id=>document.getElementById(id),audio=get('audio');let scenes=[],report=null,current=0,votes={},videos=[],mediaURLs=[],loadSerial=0;
+const format=x=>Math.floor(x/60)+':'+String(Math.floor(x%60)).padStart(2,'0');
+function save(){if(!scenes.length)return;const choice=document.querySelector('[name=choice]:checked');if(choice||get('note').value.trim())votes[scenes[current].id]={choice:choice?.value??null,note:get('note').value,at:new Date().toISOString()};else delete votes[scenes[current].id];}
+function pause(){audio.pause();videos.forEach(v=>v.pause());}
+function sync(force=false){videos.forEach(v=>{if(Number.isFinite(v.duration)&&(force||Math.abs(v.currentTime-audio.currentTime)>.08))v.currentTime=Math.min(v.duration,audio.currentTime);});get('seek').value=audio.currentTime||0;get('clock').textContent=format(audio.currentTime||0)+' / '+format(scenes[current]?.duration_ms/1000||0);}
+async function play(){try{sync(true);await Promise.all([audio.play(),...videos.map(v=>v.play())]);sync(true);get('message').textContent='正在播放同一段语音，三版画面同步。';}catch(e){pause();get('message').textContent='播放未开始：'+e.message;}}
+function show(index){save();pause();const serial=++loadSerial;for(const url of mediaURLs)URL.revokeObjectURL(url);mediaURLs=[];audio.removeAttribute('src');audio.load();current=(index+scenes.length)%scenes.length;const s=scenes[current];get('scene').value=s.id;get('title').textContent=s.title;
+ get('count').textContent=(current+1)+' / '+scenes.length+' · 已选择 '+Object.values(votes).filter(v=>v.choice).length+' 组';
+ get('texts').replaceChildren(...s.texts.map(t=>{const p=document.createElement('p');p.textContent=t;return p;}));
+ get('videos').replaceChildren(...s.variants.map(v=>{const f=document.createElement('figure'),c=document.createElement('figcaption'),m=document.createElement('video');c.textContent='版本 '+v.label;m.poster=v.poster;m.preload='auto';m.muted=true;m.playsInline=true;m.setAttribute('aria-label','版本 '+v.label);f.append(c,m);return f;}));
+ videos=[...get('videos').querySelectorAll('video')];get('seek').max=s.duration_ms/1000;get('seek').value=0;
+ document.querySelectorAll('[name=choice]').forEach(r=>r.checked=r.value===votes[s.id]?.choice);get('note').value=votes[s.id]?.note??'';get('message').textContent='载入共同音频与三版画面…';sync();
+ for(const id of ['play','restart','seek'])get(id).disabled=true;
+ // Complete local media blobs support accurate seeking on the existing static
+ // server, which intentionally has no byte-range implementation.
+ Promise.all([s.audio,...s.variants.map(v=>v.video)].map(async path=>{const r=await fetch(path);if(!r.ok)throw Error('媒体载入失败');return r.blob();})).then(blobs=>{
+  if(serial!==loadSerial)return;mediaURLs=blobs.map(blob=>URL.createObjectURL(blob));audio.src=mediaURLs[0];audio.load();videos.forEach((v,i)=>{v.src=mediaURLs[i+1];v.load();});
+  for(const id of ['play','restart','seek'])get(id).disabled=false;get('message').textContent='';
+ }).catch(e=>{if(serial===loadSerial)get('message').textContent=e.message;});}
+get('play').onclick=play;get('pause').onclick=pause;get('restart').onclick=()=>{audio.currentTime=0;sync(true);play();};audio.onended=pause;audio.ontimeupdate=()=>sync();
+get('seek').oninput=()=>{audio.currentTime=Number(get('seek').value);sync(true);};get('scene').onchange=()=>show(scenes.findIndex(s=>s.id===get('scene').value));
+get('previous').onclick=()=>show(current-1);get('next').onclick=()=>show(current+1);get('choices').onchange=()=>{save();get('message').textContent='已暂存这一组选择；完成后可导出。';};get('note').oninput=save;
+get('export').onclick=()=>{save();const result={schema:'prosody-human-preferences.v1',study:'vtuber-v4-prosody-r1',protocol_sha256:report.protocol_sha256,exported_at:new Date().toISOString(),source:'user',votes};const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(result,null,2)],{type:'application/json'}));a.download='live2d-prosody-preferences.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);};
+Promise.all([fetch('prosody-study-scenes.json').then(r=>r.json()),fetch('prosody-study-report.json').then(r=>r.json())]).then(([s,r])=>{scenes=s;report=r;for(const item of scenes){const o=document.createElement('option');o.value=item.id;o.textContent=item.title;get('scene').append(o);}for(const row of r.rows){const tr=document.createElement('tr');for(const value of [row.condition,row.actual_frames,row.two_raised_arm_samples,row.out_of_range_inputs]){const td=document.createElement('td');td.textContent=value;tr.append(td);}get('diagnostics').append(tr);}show(0);}).catch(e=>get('message').textContent='载入失败：'+e.message);
+</script></body></html>

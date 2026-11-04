@@ -1,0 +1,28 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>动作播放修复与帧率对照</title><link rel="icon" href="data:,"><style>
+*{box-sizing:border-box}body{margin:0;background:#edf2ef;color:#203b32;font:16px system-ui,"Microsoft YaHei",sans-serif}main{max-width:960px;margin:auto;padding:24px}h1{font-size:27px}p{line-height:1.75}.notice{padding:16px 20px;background:#fff2dc;border-radius:12px}.card{background:white;border-radius:16px;padding:20px;margin-top:20px}.controls{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:16px 0}button,select{font:inherit;color:inherit;background:white;border:1px solid #9ab2a5;border-radius:8px;padding:10px 14px}button{cursor:pointer}button.primary{background:#285e47;color:white}video{display:block;width:100%;max-width:480px;max-height:70vh;aspect-ratio:2/3;object-fit:contain;background:#edf2ef;margin:auto;border-radius:12px}a{color:#275b46}.muted{color:#536b60}#message{min-height:24px}.texts p{margin:8px 0}@media(max-width:600px){main{padding:16px}.card{padding:12px}h1{font-size:23px}select{max-width:100%}}
+</style></head><body><main>
+<h1>动作播放修复与帧率对照</h1>
+<div class="notice"><strong>上一轮方案已按你的反馈判为未通过：动作卡顿。</strong><p>这里先修复观看条件：单路视频独立播放，移除播放中的反复跳转，并提供真实 60 fps 对照。动作与语音保持相同，当前默认方案保持。</p></div>
+<div class="controls"><a href="/">返回主界面</a><label for="scene">片段</label><select id="scene"></select><label for="fps">帧率</label><select id="fps"><option value="60">60 fps · 逐帧重渲染</option><option value="20">20 fps · 旧素材对照</option></select></div>
+<section class="card"><h2 id="title"></h2><div class="texts" id="texts"></div>
+<div class="controls"><button id="play" class="primary" disabled>播放</button><button id="pause">暂停</button><button id="restart" disabled>从头播放</button><span id="clock">0:00</span></div>
+<video id="video" aria-label="当前片段" controls playsinline preload="auto"></video><p id="message" role="status">载入片段…</p>
+<p class="muted">画面与声音来自同一视频。只有你拖动进度、切换片段或点击“从头播放”时才跳转。60 fps 版本使用实际逐帧渲染，没有插帧。</p></section>
+<details><summary>本次检查说明</summary><p>旧页面的时钟追赶反复触发视频跳转，影响连续呈现；20 fps 又限制了画面更新频率。这里用于排除播放器和帧率问题。原节奏原型仍保留为失败对照，没有据此认可其动作自然度，也没有重训或切换模型。</p><p>原始实验、参数、视频与用户否决记录均保留。这轮无需重新填写整套评分。</p></details>
+</main><script>
+const get=id=>document.getElementById(id),video=get('video');let scenes=[],serial=0,currentURL=null;
+const clock=x=>Math.floor(x/60)+':'+String(Math.floor(x%60)).padStart(2,'0');
+function pause(){video.pause();}
+function show(){pause();const token=++serial,s=scenes.find(x=>x.id===get('scene').value);if(!s)return;
+ get('play').disabled=true;get('restart').disabled=true;get('title').textContent=s.title;get('texts').replaceChildren(...s.texts.map(text=>{const p=document.createElement('p');p.textContent=text;return p;}));get('message').textContent='载入片段…';
+ video.removeAttribute('src');video.load();if(currentURL){URL.revokeObjectURL(currentURL);currentURL=null;}
+ fetch(s.videos[get('fps').value]).then(r=>{if(!r.ok)throw Error('视频载入失败');return r.blob();}).then(blob=>{if(token!==serial)return;currentURL=URL.createObjectURL(blob);video.src=currentURL;video.load();}).catch(e=>{if(token===serial)get('message').textContent=e.message;});}
+function updateClock(){get('clock').textContent=clock(video.currentTime)+' / '+clock(Number.isFinite(video.duration)?video.duration:0);}
+video.onloadeddata=()=>{get('play').disabled=false;get('restart').disabled=false;get('message').textContent='已就绪 · '+get('fps').value+' fps';updateClock();};
+video.onloadedmetadata=updateClock;video.ontimeupdate=updateClock;
+get('play').onclick=()=>video.play().catch(e=>get('message').textContent=e.message);get('pause').onclick=pause;
+get('restart').onclick=()=>{video.currentTime=0;video.play().catch(e=>get('message').textContent=e.message);};
+get('scene').onchange=show;get('fps').onchange=show;
+fetch('playback-check-scenes.json').then(r=>r.json()).then(rows=>{scenes=rows;for(const s of rows){const o=document.createElement('option');o.value=s.id;o.textContent=s.title;get('scene').append(o);}show();}).catch(e=>get('message').textContent=e.message);
+</script></body></html>

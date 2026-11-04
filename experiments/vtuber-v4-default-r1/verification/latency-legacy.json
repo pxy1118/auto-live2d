@@ -1,0 +1,46 @@
+{
+  "ok": true,
+  "phase": "legacy",
+  "worker": null,
+  "texts": [
+    "这里已经准备好了，我们先听一小段说明。",
+    "窗边那盆小花今天终于开了，颜色比昨天深了一点。",
+    "我把讨论的内容写到纸上，等会儿再一起看最后一项。",
+    "今天这段路走得很慢，不过沿途有不少新的发现。"
+  ],
+  "rows": [
+    {
+      "index": 0,
+      "warmup": true,
+      "text": "这里已经准备好了，我们先听一小段说明。",
+      "first_audio_ms": 542.6000000014901,
+      "setup_ms": 0,
+      "metrics": []
+    },
+    {
+      "index": 1,
+      "warmup": false,
+      "text": "窗边那盆小花今天终于开了，颜色比昨天深了一点。",
+      "first_audio_ms": 431.79999999701977,
+      "setup_ms": 0,
+      "metrics": []
+    },
+    {
+      "index": 2,
+      "warmup": false,
+      "text": "我把讨论的内容写到纸上，等会儿再一起看最后一项。",
+      "first_audio_ms": 481.80000000074506,
+      "setup_ms": 0,
+      "metrics": []
+    },
+    {
+      "index": 3,
+      "warmup": false,
+      "text": "今天这段路走得很慢，不过沿途有不少新的发现。",
+      "first_audio_ms": 469.8999999985099,
+      "setup_ms": 0,
+      "metrics": []
+    }
+  ],
+  "errors": []
+}

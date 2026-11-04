@@ -1,0 +1,396 @@
+{
+  "ok": true,
+  "pairs": 24,
+  "clips": 48,
+  "same_pcm_and_duration": true,
+  "both_30fps": true,
+  "candidate_two_raised_arm_frames": 0,
+  "candidate_wardrobe_changes": 0,
+  "records": [
+    {
+      "clip": "00-A",
+      "model": "v3",
+      "frames": 234,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "5292b4f86ce679f48ec859c81697ad54b10344ebeb714d93fdfc4b5d8f8c4fa3"
+    },
+    {
+      "clip": "00-B",
+      "model": "candidate",
+      "frames": 234,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "b4ab88f6dc6d39d958407def9e4b149972581693fc9d7712c9bf53a1020734b0"
+    },
+    {
+      "clip": "01-A",
+      "model": "v3",
+      "frames": 225,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "5d617794aabb18ff4f349767a906b741201406fe730aecba82eac2ecb3a28e36"
+    },
+    {
+      "clip": "01-B",
+      "model": "candidate",
+      "frames": 225,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "77c92bae2030d9f36ff02a9d3d25c9497581c2020a0ff3c6523521feeea77707"
+    },
+    {
+      "clip": "02-A",
+      "model": "v3",
+      "frames": 210,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "23e1772b78b118691ee314e2919a00b1c36535499d655dcf9cff03ce8c210926"
+    },
+    {
+      "clip": "02-B",
+      "model": "candidate",
+      "frames": 210,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "400d55c7bcdad05bb3f82f28dd28f8a5d975f2a3f84482dbbcd0c4de2696f4d0"
+    },
+    {
+      "clip": "03-A",
+      "model": "v3",
+      "frames": 263,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "e1fca32eaca697faebe158fe367f007a7871dfce7965eba106fdbf567c4ca641"
+    },
+    {
+      "clip": "03-B",
+      "model": "candidate",
+      "frames": 263,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "0db604e380b7f1436d5e8d7b33d9114eaac0c748b922548e3144ec96d1a9a42f"
+    },
+    {
+      "clip": "04-A",
+      "model": "candidate",
+      "frames": 182,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "13ac338efd41a0a8974e6e7cf0bd2360311997e49b52b64c11ed4ab9dcaf5994"
+    },
+    {
+      "clip": "04-B",
+      "model": "v3",
+      "frames": 182,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "bd82524fdc8462da4d35680e010e9742af173d1b0557a6b38d6f53930dae8974"
+    },
+    {
+      "clip": "05-A",
+      "model": "candidate",
+      "frames": 282,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "78d35e83e1a72073f157178233a862a82310509ee4af2896086b99f4a85d6b0d"
+    },
+    {
+      "clip": "05-B",
+      "model": "v3",
+      "frames": 282,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "c6fe9859e3bd21e934958a6d970975e1882912369ea4a2cf45848a74947d0772"
+    },
+    {
+      "clip": "06-A",
+      "model": "v3",
+      "frames": 301,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "4d6a72f79c92a210202c3a81dae10fed99de5a61fa796e613f2e17b406bbdac7"
+    },
+    {
+      "clip": "06-B",
+      "model": "candidate",
+      "frames": 301,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "b1c7a82551be30fc1edf51133edbad0d5e2aadfdd388161c684e7616680f50ee"
+    },
+    {
+      "clip": "07-A",
+      "model": "candidate",
+      "frames": 282,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "8e1d3c3bda7a7214de329b20c74dfd1bcfcb3a3f5954ee4254805b7ad04fd4a0"
+    },
+    {
+      "clip": "07-B",
+      "model": "v3",
+      "frames": 282,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "89a9a9e6dfa7978dde4e838fdafcc4d86693b465dfbcc06c82d8858fc342f27c"
+    },
+    {
+      "clip": "08-A",
+      "model": "candidate",
+      "frames": 201,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "da86eaa2cd7d9fbd82c5f1c4de941fe9e1aefeb64dfa56a0bc40900ddb8d2a2c"
+    },
+    {
+      "clip": "08-B",
+      "model": "v3",
+      "frames": 201,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "fe6d7c8d7d9aab876c0ab4316839b2115f2d1882db343d689358eda3ab5664a6"
+    },
+    {
+      "clip": "09-A",
+      "model": "candidate",
+      "frames": 225,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "ecd0245b8a39b38cf0de563c0900127cdcc4f166fcc075beea69590800e49066"
+    },
+    {
+      "clip": "09-B",
+      "model": "v3",
+      "frames": 225,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "cb842e58867ee51502680c06a182a55d71517386766ed6563fd8d7e8565c59fb"
+    },
+    {
+      "clip": "10-A",
+      "model": "candidate",
+      "frames": 239,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "dfd0c7d5d1187a8a7ef2aaa30a45c89edfbf216a9136e715d3d49ab0030e66c3"
+    },
+    {
+      "clip": "10-B",
+      "model": "v3",
+      "frames": 239,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "20c599fc508407cecc0509edc8f6afe15be4647d2f9187b50967897bfa3b4cdf"
+    },
+    {
+      "clip": "11-A",
+      "model": "candidate",
+      "frames": 182,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "13e198a8b46967efc0084e3ca21cbdb8cf38967e6de3972d790fda266894f1bd"
+    },
+    {
+      "clip": "11-B",
+      "model": "v3",
+      "frames": 182,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "ab16859408078a99fba158b5914d0acc762b9ec7486ba21ca0a229d074dfbac1"
+    },
+    {
+      "clip": "12-A",
+      "model": "v3",
+      "frames": 255,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "138145c41865e69ff7723f0f78d4d8744bfab7435d5b18073105f4680eddc1ae"
+    },
+    {
+      "clip": "12-B",
+      "model": "candidate",
+      "frames": 255,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "5be1850fe1d276f77bca61becee89fd91e2f169bb5ee473ac98b8fd140e0ce85"
+    },
+    {
+      "clip": "13-A",
+      "model": "candidate",
+      "frames": 292,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "c0fae9cb0b8c40c3c29040c04be6a25bc00c91603548f6d0c95f776334ac4b9f"
+    },
+    {
+      "clip": "13-B",
+      "model": "v3",
+      "frames": 292,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "d62ff6f82568bbbfc0899320a7e8064d117f91ed3d795539508d614ff17d1458"
+    },
+    {
+      "clip": "14-A",
+      "model": "candidate",
+      "frames": 271,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "66487f544e3a02a847c494c2a4a7dfa37a01e99c8914275447faea7c84c26f8f"
+    },
+    {
+      "clip": "14-B",
+      "model": "v3",
+      "frames": 271,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "e4b67ea16ec27d5770cb55e14f452e1a01f43e827f49c564c2ceec676bdfe75f"
+    },
+    {
+      "clip": "15-A",
+      "model": "candidate",
+      "frames": 261,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "2390df76efb139b3a7c21c7e2133d1dc6444dcf3c8ecb65ddce56a98d35096f6"
+    },
+    {
+      "clip": "15-B",
+      "model": "v3",
+      "frames": 261,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "a6edfb40640b366e68c8b96002ad6fa006b9a24fa93d389dd2b694d4547235e4"
+    },
+    {
+      "clip": "16-A",
+      "model": "v3",
+      "frames": 264,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "0755d1521f33bc204e3215778588023433de684d1e88b72d782e1d3fbf22f463"
+    },
+    {
+      "clip": "16-B",
+      "model": "candidate",
+      "frames": 264,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "96d472f354c3934b9e5bf42d70149fd2e749c1a29132533a4a5f4ae15b09bd45"
+    },
+    {
+      "clip": "17-A",
+      "model": "v3",
+      "frames": 246,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "bce5a5f0d04447c273b646c4bdc118758953234d442c80af56c291fb081b39c9"
+    },
+    {
+      "clip": "17-B",
+      "model": "candidate",
+      "frames": 246,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "dbdaaff071c178a48630c951231a93ac6d4556bdfc0bcda617ea22b67a6d707e"
+    },
+    {
+      "clip": "18-A",
+      "model": "v3",
+      "frames": 278,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "be0eb047252ffe7099428516ad6b1c5e5a08d12b21e8c505d7eed52fdcfa8b63"
+    },
+    {
+      "clip": "18-B",
+      "model": "candidate",
+      "frames": 278,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "63d3f0cd83e0d71c3fe57e46e67101c9028aa4f05f903fa883903f5864a86aa2"
+    },
+    {
+      "clip": "19-A",
+      "model": "candidate",
+      "frames": 206,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "81e579e2c7dd938f4372623e3068dcff0f8404e77f0a0ff9aee5500b2e5a80da"
+    },
+    {
+      "clip": "19-B",
+      "model": "v3",
+      "frames": 206,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "a24135103f8babde51e056b262a591ba495b633923ff8ab61e35e364a98327c9"
+    },
+    {
+      "clip": "20-A",
+      "model": "v3",
+      "frames": 256,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "cba28624d37e8d86720e2a6325827324559af8953ddee7b282b8bb1ec26aff31"
+    },
+    {
+      "clip": "20-B",
+      "model": "candidate",
+      "frames": 256,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "f1434a9c7c2df9865d9a7240a480573c4cf37b2ca0b09f94af53141171ec91c6"
+    },
+    {
+      "clip": "21-A",
+      "model": "v3",
+      "frames": 234,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "9c84f6a64ea57639eb572678a53a5d9ce5e47c470e7739af18116e6c63605c14"
+    },
+    {
+      "clip": "21-B",
+      "model": "candidate",
+      "frames": 234,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "42806d1fd1e192f47a56759e7f2a5e18e86ed2c7243329433868f7e35109e5af"
+    },
+    {
+      "clip": "22-A",
+      "model": "candidate",
+      "frames": 158,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "219c058ea628d2b5d826b6ac1e61854e1a6141713f06c12e3d7854b56f165232"
+    },
+    {
+      "clip": "22-B",
+      "model": "v3",
+      "frames": 158,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "e6839b248dbf3383f6b3b7ce002fa4e2ee9d4c16cf040b7f61035a6eda21a7be"
+    },
+    {
+      "clip": "23-A",
+      "model": "v3",
+      "frames": 158,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "8acdfb8f9251ce3849f5e2351f88fab02567e9f04d80fead5decc3d44b1cddfe"
+    },
+    {
+      "clip": "23-B",
+      "model": "candidate",
+      "frames": 158,
+      "two_raised_arm_frames": 0,
+      "wardrobe_max_change": 0.0,
+      "input_sha256": "84fd18ac6bb5042f8987ba7bb424ed42d404f717b54a0abb0fe2c447aaaba1b5"
+    }
+  ],
+  "human_votes_written": false
+}

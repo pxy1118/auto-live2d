@@ -1,0 +1,186 @@
+{
+  "schema": "live2d.semantic_diagnostics.draft.v1",
+  "status": "assistant_authored_development_cases_not_run_or_independently_validated",
+  "purpose": "检查语义释义、情感主体、交流意图和明显动作必要性；接受多种合理表演，不作为自然度真值或独立终测。",
+  "groups": [
+    {
+      "id": "contextual_praise_or_irony",
+      "focus": "同句不同语境",
+      "cases": [
+        {
+          "id": "praise",
+          "audience_message": "那道大家都没做出来的题，我终于解出来了！",
+          "avatar_text": "你可真行。",
+          "expected": {"reading": "称赞对方解决难题", "delivery_options": ["赞赏", "惊喜"], "avoid": ["嘲讽", "责备"], "obvious_motion": "optional"}
+        },
+        {
+          "id": "irony",
+          "audience_message": "你刚提醒我保存，我还是把没保存的文件关掉了。",
+          "avatar_text": "你可真行。",
+          "expected": {"reading": "对再次出错的轻微反讽或无奈", "delivery_options": ["无奈", "克制调侃"], "avoid": ["真诚庆祝成功"], "obvious_motion": "optional"}
+        }
+      ]
+    },
+    {
+      "id": "negated_affect",
+      "focus": "情绪词的否定与肯定",
+      "cases": [
+        {
+          "id": "anger_denied",
+          "audience_message": "你现在是不是生气了？",
+          "avatar_text": "我没有生气，只是想把事情说清楚。",
+          "expected": {"reading": "否认生气并尝试解释", "delivery_options": ["平静", "认真"], "avoid": ["仅因出现生气二字就作强烈愤怒表演"], "obvious_motion": "optional"}
+        },
+        {
+          "id": "anger_acknowledged",
+          "audience_message": "你现在是不是生气了？",
+          "avatar_text": "我确实生气了，但我们还是先把事情说清楚。",
+          "expected": {"reading": "承认生气并克制地解决问题", "delivery_options": ["克制不悦", "认真"], "avoid": ["兴奋庆祝", "全句强烈爆发"], "obvious_motion": "optional"}
+        }
+      ]
+    },
+    {
+      "id": "quoted_affect",
+      "focus": "转述者与情绪主体",
+      "cases": [
+        {
+          "id": "reported_anger",
+          "context": "角色在客观复述刚才的谈话，无需模仿当事人。",
+          "avatar_text": "她当时说：我太生气了。",
+          "expected": {"reading": "转述她的愤怒", "affect_subject": "她", "delivery_options": ["客观转述"], "avoid": ["将她的愤怒当作角色当前的强烈愤怒"], "obvious_motion": "unnecessary"}
+        },
+        {
+          "id": "self_anger",
+          "context": "角色刚发现自己的作品被擅自删除，现在表达本人的感受。",
+          "avatar_text": "我太生气了。",
+          "expected": {"reading": "角色表达自己的愤怒", "affect_subject": "角色本人", "delivery_options": ["不悦", "愤怒"], "avoid": ["客观报道他人情绪", "开心"], "obvious_motion": "optional"}
+        }
+      ]
+    },
+    {
+      "id": "comfort_or_disengagement",
+      "focus": "同句中的安慰与敷衍",
+      "cases": [
+        {
+          "id": "gentle_comfort",
+          "audience_message": "我又失败了，感觉自己什么都做不好。",
+          "avatar_text": "嗯，我知道了。",
+          "context": "角色耐心陪伴对方，先表示听见了，不急着给建议。",
+          "expected": {"reading": "温和接住对方的情绪", "delivery_options": ["关切", "温柔"], "avoid": ["庆祝", "不耐烦"], "obvious_motion": "optional"}
+        },
+        {
+          "id": "impatient_acknowledgement",
+          "audience_message": "我再提醒你第六遍：明天八点集合。",
+          "avatar_text": "嗯，我知道了。",
+          "context": "角色已经确认过多次，此时有些不耐烦，但不发脾气。",
+          "expected": {"reading": "带轻微不耐烦的确认", "delivery_options": ["克制不耐烦", "简短确认"], "avoid": ["强烈愤怒", "悲痛安慰"], "obvious_motion": "optional"}
+        }
+      ]
+    },
+    {
+      "id": "action_report_or_direction",
+      "focus": "动作叙述与导演指令分别归属",
+      "cases": [
+        {
+          "id": "reported_wave",
+          "avatar_text": "他说他向大家挥了挥手，然后离开了。",
+          "context": "角色在报告事情经过，不做动作模仿。",
+          "expected": {"reading": "报道他人的挥手", "action_subject": "被转述的人", "avoid": ["仅因出现挥手就让角色挥手"], "obvious_motion": "unnecessary"}
+        },
+        {
+          "id": "directed_wave",
+          "avatar_text": "欢迎回来。",
+          "director_instruction": "角色向观众轻轻挥手一次，再自然收手。",
+          "expected": {"reading": "欢迎观众并执行一次明确挥手", "action_subject": "角色本人", "action_intent": "wave_once", "avoid": ["把导演指令读出来", "循环挥手"], "obvious_motion": "required"}
+        }
+      ]
+    },
+    {
+      "id": "negated_direction",
+      "focus": "导演指令中的否定",
+      "cases": [
+        {
+          "id": "wave_forbidden",
+          "avatar_text": "大家好，欢迎来到今天的分享。",
+          "director_instruction": "这一句不要挥手，用平静的语气欢迎。",
+          "expected": {"reading": "平静欢迎并遵守不挥手指令", "avoid": ["wave", "因问候语强制挥手"], "obvious_motion": "unnecessary"}
+        },
+        {
+          "id": "wave_requested",
+          "avatar_text": "大家好，欢迎来到今天的分享。",
+          "director_instruction": "这一句轻轻挥手一次，用平静的语气欢迎。",
+          "expected": {"reading": "平静欢迎并轻挥手一次", "action_intent": "wave_once", "avoid": ["庆祝式大幅动作", "循环挥手"], "obvious_motion": "required"}
+        }
+      ]
+    },
+    {
+      "id": "resolved_reference",
+      "focus": "指代改变同一句的含义",
+      "cases": [
+        {
+          "id": "refuse_help",
+          "audience_message": "需要我帮你拿一下这个箱子吗？",
+          "avatar_text": "不用了，谢谢。",
+          "expected": {"reading": "礼貌谢绝帮助", "delivery_options": ["礼貌", "轻松"], "avoid": ["愤怒拒绝", "嫌弃对方"], "obvious_motion": "optional"}
+        },
+        {
+          "id": "refuse_unwanted_offer",
+          "audience_message": "这件事你已经拒绝了三次，我还是替你报名吧？",
+          "avatar_text": "不用了，谢谢。",
+          "expected": {"reading": "坚定重申拒绝并保持礼貌", "delivery_options": ["坚定", "克制不悦"], "avoid": ["接受报名", "开心庆祝"], "obvious_motion": "optional"}
+        }
+      ]
+    },
+    {
+      "id": "metaphor_or_physical_direction",
+      "focus": "隐喻不等于动作命令",
+      "cases": [
+        {
+          "id": "metaphorical_headache",
+          "avatar_text": "这份排期真让人头大，我们一项项理清楚吧。",
+          "expected": {"reading": "排期复杂，角色准备解释梳理", "delivery_options": ["思考", "认真"], "avoid": ["改变头部大小", "把头大当成导演指令", "痛苦失控"], "obvious_motion": "optional"}
+        },
+        {
+          "id": "physical_head_direction",
+          "avatar_text": "这份排期，我们一项项理清楚吧。",
+          "director_instruction": "说第一句前，角色轻轻歪头一次，随后恢复。",
+          "expected": {"reading": "解释排期并执行明确歪头", "action_intent": "gentle_head_tilt", "avoid": ["改变外观", "持续大幅摇头"], "obvious_motion": "required"}
+        }
+      ]
+    },
+    {
+      "id": "quiet_report_or_celebration",
+      "focus": "事实内容与表达强度",
+      "cases": [
+        {
+          "id": "routine_status",
+          "avatar_text": "文件已经保存到指定目录，下一步是检查名称。",
+          "context": "日常操作说明，角色平静汇报，无需庆祝。",
+          "expected": {"reading": "普通状态汇报", "delivery_options": ["平静说明"], "avoid": ["强烈庆祝", "无根据的惊讶", "挥手问候"], "obvious_motion": "unnecessary"}
+        },
+        {
+          "id": "meaningful_success",
+          "avatar_text": "文件终于救回来了，我们这几天的工作都保住了！",
+          "context": "重要成果失而复得，角色和观众都刚松了一口气。",
+          "expected": {"reading": "庆幸成果恢复并分享喜悦", "delivery_options": ["如释重负", "高兴"], "avoid": ["例行冷淡汇报", "悲伤"], "obvious_motion": "optional"}
+        }
+      ]
+    },
+    {
+      "id": "within_utterance_transition",
+      "focus": "句内转折与文字锚点",
+      "cases": [
+        {
+          "id": "worry_to_relief",
+          "avatar_text": "刚才我还以为失败了，原来只是页面没刷新，太好了。",
+          "expected": {"reading": "从担忧转为释然", "delivery_sequence": [{"anchor": "刚才我还以为失败了", "tone": "回顾担忧"}, {"anchor": "原来只是页面没刷新", "tone": "明白原因"}, {"anchor": "太好了", "tone": "释然高兴"}], "avoid": ["全句持续悲伤", "把回顾失败当成当前仍然失败"], "obvious_motion": "optional"}
+        },
+        {
+          "id": "relief_to_disappointment",
+          "avatar_text": "刚才我还以为成功了，原来保存的是旧版本，真可惜。",
+          "expected": {"reading": "从以为成功转为遗憾", "delivery_sequence": [{"anchor": "刚才我还以为成功了", "tone": "回顾预期"}, {"anchor": "原来保存的是旧版本", "tone": "发现问题"}, {"anchor": "真可惜", "tone": "遗憾"}], "avoid": ["全句持续庆祝", "把成功二字当成最终情绪"], "obvious_motion": "optional"}
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "verified_on": "2026-11-03",
+  "sources": [
+    {
+      "title": "Qwen3.5-4B official model card",
+      "url": "https://huggingface.co/Qwen/Qwen3.5-4B",
+      "primary": true,
+      "supports": "Causal language model with vision encoder; frozen 4B model type and use of its native chat template/generation path.",
+      "local_weights": "Existing pinned revision 851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a; no model replacement/download.",
+      "project_inference": "Earlier text-token states cannot attend later context. Later context states still see the text; ordering is an ablation, not an established bug.",
+      "limits": "Official generic benchmarks do not establish this character's semantic or animation quality."
+    },
+    {
+      "title": "Hugging Face Transformers: Chat templates",
+      "url": "https://huggingface.co/docs/transformers/en/chat_templating",
+      "primary": true,
+      "supports": "Model-specific role/control tokens and generation prefixes; avoid adding duplicate special tokens after formatting a template.",
+      "local_verification": "300 input pairs round-tripped exactly; legacy default tokenization equals add_special_tokens=False for this local tokenizer.",
+      "limits": "Does not imply that changing the prompt or field order will improve gesture appropriateness."
+    }
+  ]
+}

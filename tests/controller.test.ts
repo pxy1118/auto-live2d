@@ -66,6 +66,20 @@ test('eye styles are exclusive and repeated enable requests are idempotent', () 
   const values = c.evaluate(0).pre;
   assert.equal(values[c.indices.get('key3')!], 0); assert.equal(values[c.indices.get('key4')!], 1);
 });
+test('replacement eyes are full on/off even with weak expression strength, fades or conflicting raw stages', () => {
+  const c = make();
+  c.execute('expressions.set', {name:'＞＜',enabled:true,strength:.12,fade_ms:800});
+  assert.equal(c.evaluate(0).pre[c.indices.get('key5')!],1);
+  c.execute('expressions.set', {name:'屑屑眼',enabled:true,strength:.59,exclusive:false});
+  let values=c.evaluate(0).pre;assert.equal(values[c.indices.get('key5')!],0);assert.equal(values[c.indices.get('key6')!],1);
+  c.execute('expressions.set', {name:'屑屑眼',enabled:false,fade_ms:800});
+  assert.equal(c.evaluate(0).pre[c.indices.get('key6')!],0);
+  c.execute('parameters.set',{values:{key3:.8,key4:.2}});
+  c.execute('parameters.set',{values:{key5:.95},stage:'post'});
+  let frame=c.evaluate(0);assert.equal(frame.post.key5,1);assert.equal(frame.pre[c.indices.get('key3')!],0);
+  c.execute('parameters.release',{});c.execute('parameters.set',{values:{key3:.3,key4:.4,key5:.1,key6:.49}});
+  values=c.evaluate(0).pre;for(const id of ['key3','key4','key5','key6'])assert.equal(values[c.indices.get(id)!],0);
+});
 test('hand motion masks leave decorative channels to idle and support both arms', () => {
   const c = make();
   c.execute('gesture.set', { side: 'right', pose: 'point_index' });

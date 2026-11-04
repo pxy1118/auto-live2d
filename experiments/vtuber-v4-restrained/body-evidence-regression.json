@@ -1,0 +1,450 @@
+[
+  {
+    "family": "ordinary_calm",
+    "checkpoint_sha256": "f9d7b2a0a64a146b296d71c54d6c30e95bf1b38eb6faaf007e1ea37e9cfe378e",
+    "source": "streaming_policy_v4 plus restrained session compiler",
+    "held_out_split": "train",
+    "gesture_policy": {
+      "phase": "idle",
+      "used_in_clause": false,
+      "count": 0,
+      "confidence": 0.013353055343031883,
+      "cooldown_ms": 0,
+      "style": "restrained"
+    },
+    "motion": {
+      "Param36": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param41": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param42": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param62": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param60": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param61": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "PositionX": {
+        "min": -0.05521057493333334,
+        "max": 0.09489478764046204,
+        "range": 0.15010536257379536
+      },
+      "PositionZ": {
+        "min": -0.5343234011050668,
+        "max": 0,
+        "range": 0.5343234011050668
+      }
+    }
+  },
+  {
+    "family": "ordinary_shy",
+    "checkpoint_sha256": "f9d7b2a0a64a146b296d71c54d6c30e95bf1b38eb6faaf007e1ea37e9cfe378e",
+    "source": "streaming_policy_v4 plus restrained session compiler",
+    "held_out_split": "train",
+    "gesture_policy": {
+      "phase": "idle",
+      "used_in_clause": false,
+      "count": 0,
+      "confidence": 0.062055155634880066,
+      "cooldown_ms": 0,
+      "style": "restrained"
+    },
+    "motion": {
+      "Param36": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param41": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param42": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param62": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param60": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param61": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "PositionX": {
+        "min": -0.15478192578303973,
+        "max": 0.05784697860740741,
+        "range": 0.21262890439044713
+      },
+      "PositionZ": {
+        "min": -0.4692851303111111,
+        "max": 0,
+        "range": 0.4692851303111111
+      }
+    }
+  },
+  {
+    "family": "wave",
+    "checkpoint_sha256": "f9d7b2a0a64a146b296d71c54d6c30e95bf1b38eb6faaf007e1ea37e9cfe378e",
+    "source": "streaming_policy_v4 plus restrained session compiler",
+    "held_out_split": "validation",
+    "gesture_policy": {
+      "phase": "idle",
+      "used_in_clause": true,
+      "count": 1,
+      "confidence": 0.9999961853027344,
+      "cooldown_ms": 2800,
+      "style": "restrained"
+    },
+    "motion": {
+      "Param36": {
+        "min": 0,
+        "max": 0.29793011581539297,
+        "range": 0.29793011581539297
+      },
+      "Param41": {
+        "min": -0.06150234972878544,
+        "max": 0,
+        "range": 0.06150234972878544
+      },
+      "Param42": {
+        "min": 0,
+        "max": 0.014278792724285408,
+        "range": 0.014278792724285408
+      },
+      "Param62": {
+        "min": -0.0512848999307568,
+        "max": 0,
+        "range": 0.0512848999307568
+      },
+      "Param60": {
+        "min": -0.0047535833835510004,
+        "max": 0.026143149168591298,
+        "range": 0.0308967325521423
+      },
+      "Param61": {
+        "min": -0.002495176576247988,
+        "max": 0.0018953780618671092,
+        "range": 0.004390554638115097
+      },
+      "PositionX": {
+        "min": -1.0455543488000003,
+        "max": 0,
+        "range": 1.0455543488000003
+      },
+      "PositionZ": {
+        "min": 0,
+        "max": 1.314849168,
+        "range": 1.314849168
+      }
+    }
+  },
+  {
+    "family": "explain",
+    "checkpoint_sha256": "f9d7b2a0a64a146b296d71c54d6c30e95bf1b38eb6faaf007e1ea37e9cfe378e",
+    "source": "streaming_policy_v4 plus restrained session compiler",
+    "held_out_split": "validation",
+    "gesture_policy": {
+      "phase": "idle",
+      "used_in_clause": true,
+      "count": 1,
+      "confidence": 0.9994277358055115,
+      "cooldown_ms": 2950,
+      "style": "restrained"
+    },
+    "motion": {
+      "Param36": {
+        "min": 0,
+        "max": 0.1665613915050244,
+        "range": 0.1665613915050244
+      },
+      "Param41": {
+        "min": 0,
+        "max": 0.09910799105393997,
+        "range": 0.09910799105393997
+      },
+      "Param42": {
+        "min": 0,
+        "max": 0.013657524117960758,
+        "range": 0.013657524117960758
+      },
+      "Param62": {
+        "min": -0.04760484236535061,
+        "max": 0,
+        "range": 0.04760484236535061
+      },
+      "Param60": {
+        "min": -0.0003742633591659032,
+        "max": 0.02493198921015433,
+        "range": 0.02530625256932023
+      },
+      "Param61": {
+        "min": -0.0036947245109972514,
+        "max": 0.00594792417037689,
+        "range": 0.009642648681374141
+      },
+      "PositionX": {
+        "min": -1.0227586112000002,
+        "max": 0,
+        "range": 1.0227586112000002
+      },
+      "PositionZ": {
+        "min": 0,
+        "max": 1.3085666112,
+        "range": 1.3085666112
+      }
+    }
+  },
+  {
+    "family": "point",
+    "checkpoint_sha256": "f9d7b2a0a64a146b296d71c54d6c30e95bf1b38eb6faaf007e1ea37e9cfe378e",
+    "source": "streaming_policy_v4 plus restrained session compiler",
+    "held_out_split": "validation",
+    "gesture_policy": {
+      "phase": "idle",
+      "used_in_clause": true,
+      "count": 1,
+      "confidence": 0.9999641180038452,
+      "cooldown_ms": 3350,
+      "style": "restrained"
+    },
+    "motion": {
+      "Param36": {
+        "min": 0,
+        "max": 0.14268103411214791,
+        "range": 0.14268103411214791
+      },
+      "Param41": {
+        "min": 0,
+        "max": 0.1334355929018735,
+        "range": 0.1334355929018735
+      },
+      "Param42": {
+        "min": -0.012257990374512863,
+        "max": 0.015093119970921644,
+        "range": 0.027351110345434505
+      },
+      "Param62": {
+        "min": -0.0514834599051301,
+        "max": 0,
+        "range": 0.0514834599051301
+      },
+      "Param60": {
+        "min": 0,
+        "max": 0.17014327586564493,
+        "range": 0.17014327586564493
+      },
+      "Param61": {
+        "min": -0.0218830872453687,
+        "max": 0.002951262957719524,
+        "range": 0.024834350203088225
+      },
+      "PositionX": {
+        "min": -1.4632912864,
+        "max": 0,
+        "range": 1.4632912864
+      },
+      "PositionZ": {
+        "min": 0,
+        "max": 1.7276641281864553,
+        "range": 1.7276641281864553
+      }
+    }
+  },
+  {
+    "family": "chest",
+    "checkpoint_sha256": "f9d7b2a0a64a146b296d71c54d6c30e95bf1b38eb6faaf007e1ea37e9cfe378e",
+    "source": "streaming_policy_v4 plus restrained session compiler",
+    "held_out_split": "validation",
+    "gesture_policy": {
+      "phase": "idle",
+      "used_in_clause": true,
+      "count": 1,
+      "confidence": 0.9997988343238831,
+      "cooldown_ms": 3350,
+      "style": "restrained"
+    },
+    "motion": {
+      "Param36": {
+        "min": -0.024141662833053065,
+        "max": 0,
+        "range": 0.024141662833053065
+      },
+      "Param41": {
+        "min": 0,
+        "max": 0.03443301292761656,
+        "range": 0.03443301292761656
+      },
+      "Param42": {
+        "min": 0,
+        "max": 0.018134780521814796,
+        "range": 0.018134780521814796
+      },
+      "Param62": {
+        "min": 0,
+        "max": 0.06674947447304776,
+        "range": 0.06674947447304776
+      },
+      "Param60": {
+        "min": 0,
+        "max": 0.4229446027543049,
+        "range": 0.4229446027543049
+      },
+      "Param61": {
+        "min": -0.04204255156274138,
+        "max": 0,
+        "range": 0.04204255156274138
+      },
+      "PositionX": {
+        "min": -1.1060474623999998,
+        "max": 0,
+        "range": 1.1060474623999998
+      },
+      "PositionZ": {
+        "min": -0.0021164135111111106,
+        "max": 0.9089605120000002,
+        "range": 0.9110769255111113
+      }
+    }
+  },
+  {
+    "family": "cheer",
+    "checkpoint_sha256": "f9d7b2a0a64a146b296d71c54d6c30e95bf1b38eb6faaf007e1ea37e9cfe378e",
+    "source": "streaming_policy_v4 plus restrained session compiler",
+    "held_out_split": "validation",
+    "gesture_policy": {
+      "phase": "idle",
+      "used_in_clause": true,
+      "count": 1,
+      "confidence": 0.9999938011169434,
+      "cooldown_ms": 3450,
+      "style": "restrained"
+    },
+    "motion": {
+      "Param36": {
+        "min": 0,
+        "max": 0.2796122935311063,
+        "range": 0.2796122935311063
+      },
+      "Param41": {
+        "min": 0,
+        "max": 0.06293270327928323,
+        "range": 0.06293270327928323
+      },
+      "Param42": {
+        "min": 0,
+        "max": 0.014571609124021258,
+        "range": 0.014571609124021258
+      },
+      "Param62": {
+        "min": 0,
+        "max": 0.24190954104477538,
+        "range": 0.24190954104477538
+      },
+      "Param60": {
+        "min": 0,
+        "max": 0.08594517296544377,
+        "range": 0.08594517296544377
+      },
+      "Param61": {
+        "min": -0.019954765335520104,
+        "max": 0,
+        "range": 0.019954765335520104
+      },
+      "PositionX": {
+        "min": -1.0241016488723893,
+        "max": 0,
+        "range": 1.0241016488723893
+      },
+      "PositionZ": {
+        "min": 0,
+        "max": 1.1384001696000001,
+        "range": 1.1384001696000001
+      }
+    }
+  },
+  {
+    "family": "refuse",
+    "checkpoint_sha256": "f9d7b2a0a64a146b296d71c54d6c30e95bf1b38eb6faaf007e1ea37e9cfe378e",
+    "source": "streaming_policy_v4 plus restrained session compiler",
+    "held_out_split": "validation",
+    "gesture_policy": {
+      "phase": "idle",
+      "used_in_clause": true,
+      "count": 1,
+      "confidence": 0.9986878037452698,
+      "cooldown_ms": 3300,
+      "style": "restrained"
+    },
+    "motion": {
+      "Param36": {
+        "min": -0.0001664374597928429,
+        "max": 0.13898691922705156,
+        "range": 0.1391533566868444
+      },
+      "Param41": {
+        "min": 0,
+        "max": 0.1883430360704631,
+        "range": 0.1883430360704631
+      },
+      "Param42": {
+        "min": -0.00006449415215308295,
+        "max": 0.015381211662514264,
+        "range": 0.015445705814667348
+      },
+      "Param62": {
+        "min": -0.021447512348575597,
+        "max": 0.03229349271172232,
+        "range": 0.053741005060297914
+      },
+      "Param60": {
+        "min": 0,
+        "max": 0.06375015285461853,
+        "range": 0.06375015285461853
+      },
+      "Param61": {
+        "min": -0.01015179493522856,
+        "max": 0,
+        "range": 0.01015179493522856
+      },
+      "PositionX": {
+        "min": -0.9854262495999999,
+        "max": 0,
+        "range": 0.9854262495999999
+      },
+      "PositionZ": {
+        "min": 0,
+        "max": 1.1339225471999999,
+        "range": 1.1339225471999999
+      }
+    }
+  }
+]

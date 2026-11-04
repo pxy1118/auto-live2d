@@ -1,0 +1,33 @@
+{
+  "schema": "prosody-research-evidence.v1",
+  "promoted": false,
+  "trained": false,
+  "human_naturalness_accepted": false,
+  "final_test_loaded": false,
+  "observed_tests": {
+    "javascript": 6,
+    "python": 2,
+    "typescript_check": true
+  },
+  "browser_checks": [
+    "24 real videos with identical per-scene muxed audio; 8 three-way blinded scenes",
+    "actual audio playback and muted video clocks within 120 ms; pause and seek synchronized",
+    "scene navigation and note retention; five valid preference choices; no generated human votes",
+    "desktop/mobile without overflow or browser errors; no actor socket, no backend writes",
+    "default configuration, existing runtime source, original weights and human ratings hashes unchanged"
+  ],
+  "scenes": 8,
+  "real_tts_turns": 16,
+  "actual_cubism_clips": 24,
+  "actual_frames": 17829,
+  "original_default_and_human_ratings_unchanged": true,
+  "semantic_model_used": false,
+  "online_latency_measured": false,
+  "learned_timing_model_trained": false,
+  "failures_retained": [
+    "bootstrap-failure-detailed.json",
+    "encoding-first-failure.json",
+    "ui-selector-failure.json",
+    "ui-http-seek-failure.json"
+  ]
+}

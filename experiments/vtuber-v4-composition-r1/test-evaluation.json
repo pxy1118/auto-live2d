@@ -1,0 +1,4932 @@
+{
+  "split": "test",
+  "records": 906,
+  "unique_text_context": 286,
+  "checkpoint_sha256": "c9a9851e895068b157838f97a9ed938291b02b111f3159067498944fd4f62292",
+  "metrics": {
+    "arm": {
+      "accuracy": 0.8984547257423401,
+      "false_positive_rate": 0.07186544686555862,
+      "correct_active_recall": 0.8214285969734192,
+      "per_class_recall": {
+        "none": 0.928134560585022,
+        "wave": 1.0,
+        "chest": 1.0,
+        "grass": 1.0,
+        "point": 0.9090909361839294,
+        "thanks": 0.6875,
+        "explain": 0.7222222089767456,
+        "refuse": 0.6000000238418579
+      }
+    },
+    "body": {
+      "accuracy": 0.8167770504951477,
+      "false_positive_rate": 0.046434495598077774,
+      "correct_active_recall": 0.5445544719696045,
+      "per_class_recall": {
+        "none": 0.9535654783248901,
+        "lean": 0.31578946113586426,
+        "sway": 0.8974359035491943,
+        "nod": 0.6376811861991882,
+        "tilt": 0.625,
+        "turn": 0.6410256624221802,
+        "cajole": 0.2549019753932953
+      }
+    },
+    "emotion": {
+      "accuracy": 0.9116997718811035,
+      "false_positive_rate": 0.021346470341086388,
+      "correct_active_recall": 0.7744107842445374,
+      "per_class_recall": {
+        "keep": 0.9786535501480103,
+        "neutral": 0.5333333611488342,
+        "happy": 0.9130434989929199,
+        "angry": 0.6000000238418579,
+        "shy": 0.6363636255264282,
+        "sad": 0.6666666865348816,
+        "surprised": 0.5833333134651184,
+        "confused": 1.0
+      }
+    },
+    "eye": {
+      "accuracy": 0.9624723792076111,
+      "false_positive_rate": 0.019813518971204758,
+      "correct_active_recall": 0.6458333134651184,
+      "per_class_recall": {
+        "normal": 0.9801864624023438,
+        "＞＜": 0.2666666805744171,
+        "圈圈眼": 1.0,
+        "爱心眼": 0.3333333432674408,
+        "屑屑眼": 1.0
+      }
+    },
+    "regression": {
+      "normalized_mae": 0.029682889580726624,
+      "active_face_strength_mae": 0.2775577902793884,
+      "active_body_strength_mae": 0.11361493915319443
+    }
+  },
+  "not_used_for_selection": true,
+  "mistakes": [
+    {
+      "id": "p00120-h1",
+      "source": "authored",
+      "text": "我是真心珍惜和你聊天的时间。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "chest",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "chest",
+        "body": "lean",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p00124-h0",
+      "source": "authored",
+      "text": "我会认真对待我们的约定。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "chest",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "chest",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p00124-h1",
+      "source": "authored",
+      "text": "我会认真对待我们的约定。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "chest",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "chest",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p00124-h2",
+      "source": "authored",
+      "text": "我会认真对待我们的约定。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "chest",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "chest",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p00312-h0",
+      "source": "authored",
+      "text": "今天也被你温暖到了，谢谢你。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "thanks",
+        "body": "nod",
+        "emotion": "happy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "thanks",
+        "body": "sway",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p00312-h1",
+      "source": "authored",
+      "text": "今天也被你温暖到了，谢谢你。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "thanks",
+        "body": "nod",
+        "emotion": "happy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "thanks",
+        "body": "sway",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p00312-h2",
+      "source": "authored",
+      "text": "今天也被你温暖到了，谢谢你。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "thanks",
+        "body": "nod",
+        "emotion": "happy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "thanks",
+        "body": "sway",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p00316-h0",
+      "source": "authored",
+      "text": "多谢你耐心陪我聊完。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "thanks",
+        "body": "nod",
+        "emotion": "happy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "thanks",
+        "body": "none",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p00316-h1",
+      "source": "authored",
+      "text": "多谢你耐心陪我聊完。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "thanks",
+        "body": "nod",
+        "emotion": "happy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "thanks",
+        "body": "none",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p00316-h2",
+      "source": "authored",
+      "text": "多谢你耐心陪我聊完。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "thanks",
+        "body": "nod",
+        "emotion": "happy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "thanks",
+        "body": "none",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p00376-h0",
+      "source": "authored",
+      "text": "我换一种说法描述这个问题。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "explain",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "explain",
+        "body": "tilt",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p00376-h2",
+      "source": "authored",
+      "text": "我换一种说法描述这个问题。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "explain",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "explain",
+        "body": "tilt",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p00380-h0",
+      "source": "authored",
+      "text": "先让我把完整情况告诉你。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "explain",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "explain",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p00380-h1",
+      "source": "authored",
+      "text": "先让我把完整情况告诉你。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "explain",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "explain",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p00380-h2",
+      "source": "authored",
+      "text": "先让我把完整情况告诉你。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "explain",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "explain",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p00440-h0",
+      "source": "authored",
+      "text": "我不愿意，请尊重我的选择。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "refuse",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "refuse",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p00440-h2",
+      "source": "authored",
+      "text": "我不愿意，请尊重我的选择。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "refuse",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "refuse",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p00504-h0",
+      "source": "authored",
+      "text": "让我凑近一些，再看清楚一点。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p00504-h1",
+      "source": "authored",
+      "text": "让我凑近一些，再看清楚一点。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p00504-h2",
+      "source": "authored",
+      "text": "让我凑近一些，再看清楚一点。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p00696-h0",
+      "source": "authored",
+      "text": "让我再端详一下这个选择。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "tilt",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p00696-h1",
+      "source": "authored",
+      "text": "让我再端详一下这个选择。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "tilt",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p00696-h2",
+      "source": "authored",
+      "text": "让我再端详一下这个选择。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "tilt",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p00824-h0",
+      "source": "authored",
+      "text": "我想听你再说一声喜欢我。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "cajole",
+        "emotion": "shy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p00824-h1",
+      "source": "authored",
+      "text": "我想听你再说一声喜欢我。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "cajole",
+        "emotion": "shy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p00824-h2",
+      "source": "authored",
+      "text": "我想听你再说一声喜欢我。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "cajole",
+        "emotion": "shy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p00828-h0",
+      "source": "authored",
+      "text": "再给我一点鼓励嘛，我会开心的。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "cajole",
+        "emotion": "shy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "chest",
+        "body": "cajole",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p00828-h1",
+      "source": "authored",
+      "text": "再给我一点鼓励嘛，我会开心的。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "cajole",
+        "emotion": "shy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "chest",
+        "body": "cajole",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p00828-h2",
+      "source": "authored",
+      "text": "再给我一点鼓励嘛，我会开心的。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "cajole",
+        "emotion": "shy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "chest",
+        "body": "sway",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p00892-h0",
+      "source": "authored",
+      "text": "我想让你认真对待我的不满。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "angry",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p00892-h1",
+      "source": "authored",
+      "text": "我想让你认真对待我的不满。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "angry",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p00892-h2",
+      "source": "authored",
+      "text": "我想让你认真对待我的不满。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "angry",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p00952-h0",
+      "source": "authored",
+      "text": "你再这么看我，我真的会脸红。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "shy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "shy",
+        "eye": "＞＜"
+      }
+    },
+    {
+      "id": "p00952-h1",
+      "source": "authored",
+      "text": "你再这么看我，我真的会脸红。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "shy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "shy",
+        "eye": "＞＜"
+      }
+    },
+    {
+      "id": "p00952-h2",
+      "source": "authored",
+      "text": "你再这么看我，我真的会脸红。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "shy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "shy",
+        "eye": "＞＜"
+      }
+    },
+    {
+      "id": "p01016-h0",
+      "source": "authored",
+      "text": "我不想让你担心，只是有些难受。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "sad",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "refuse",
+        "body": "none",
+        "emotion": "sad",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01016-h1",
+      "source": "authored",
+      "text": "我不想让你担心，只是有些难受。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "sad",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "refuse",
+        "body": "none",
+        "emotion": "sad",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01016-h2",
+      "source": "authored",
+      "text": "我不想让你担心，只是有些难受。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "sad",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "refuse",
+        "body": "none",
+        "emotion": "sad",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01020-h0",
+      "source": "authored",
+      "text": "这一刻真的很想有人陪着。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "sad",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "sway",
+        "emotion": "sad",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01020-h1",
+      "source": "authored",
+      "text": "这一刻真的很想有人陪着。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "sad",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "sway",
+        "emotion": "shy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01020-h2",
+      "source": "authored",
+      "text": "这一刻真的很想有人陪着。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "sad",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "sway",
+        "emotion": "sad",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01148-h1",
+      "source": "authored",
+      "text": "我的脑子刚才短路了一下。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "confused",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "confused",
+        "eye": "圈圈眼"
+      }
+    },
+    {
+      "id": "p01148-h2",
+      "source": "authored",
+      "text": "我的脑子刚才短路了一下。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "confused",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "confused",
+        "eye": "圈圈眼"
+      }
+    },
+    {
+      "id": "p01208-h0",
+      "source": "authored",
+      "text": "我们重新开始，慢慢聊就好。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "neutral",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "explain",
+        "body": "none",
+        "emotion": "neutral",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01208-h1",
+      "source": "authored",
+      "text": "我们重新开始，慢慢聊就好。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "neutral",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "explain",
+        "body": "none",
+        "emotion": "neutral",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01208-h2",
+      "source": "authored",
+      "text": "我们重新开始，慢慢聊就好。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "neutral",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "explain",
+        "body": "none",
+        "emotion": "neutral",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01212-h2",
+      "source": "authored",
+      "text": "我已经整理好心情了。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "neutral",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "sway",
+        "emotion": "neutral",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01244-h1",
+      "source": "authored",
+      "text": "呜哇，你也太会夸了。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "shy",
+        "eye": "＞＜"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "shy",
+        "eye": "屑屑眼"
+      }
+    },
+    {
+      "id": "p01244-h2",
+      "source": "authored",
+      "text": "呜哇，你也太会夸了。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "shy",
+        "eye": "＞＜"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "shy",
+        "eye": "屑屑眼"
+      }
+    },
+    {
+      "id": "p01308-h0",
+      "source": "authored",
+      "text": "这是让我一眼就心动的东西。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "happy",
+        "eye": "爱心眼"
+      },
+      "predicted": {
+        "arm": "chest",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01308-h1",
+      "source": "authored",
+      "text": "这是让我一眼就心动的东西。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "happy",
+        "eye": "爱心眼"
+      },
+      "predicted": {
+        "arm": "chest",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01308-h2",
+      "source": "authored",
+      "text": "这是让我一眼就心动的东西。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "happy",
+        "eye": "爱心眼"
+      },
+      "predicted": {
+        "arm": "chest",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01340-h0",
+      "source": "authored",
+      "text": "看吧，我的小计划成功啦。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "happy",
+        "eye": "屑屑眼"
+      },
+      "predicted": {
+        "arm": "grass",
+        "body": "none",
+        "emotion": "happy",
+        "eye": "屑屑眼"
+      }
+    },
+    {
+      "id": "p01340-h1",
+      "source": "authored",
+      "text": "看吧，我的小计划成功啦。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "happy",
+        "eye": "屑屑眼"
+      },
+      "predicted": {
+        "arm": "grass",
+        "body": "none",
+        "emotion": "happy",
+        "eye": "屑屑眼"
+      }
+    },
+    {
+      "id": "p01340-h2",
+      "source": "authored",
+      "text": "看吧，我的小计划成功啦。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "happy",
+        "eye": "屑屑眼"
+      },
+      "predicted": {
+        "arm": "grass",
+        "body": "sway",
+        "emotion": "happy",
+        "eye": "屑屑眼"
+      }
+    },
+    {
+      "id": "p01359-h0",
+      "source": "authored",
+      "text": "事情的经过就是这样。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "explain",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01359-h1",
+      "source": "authored",
+      "text": "事情的经过就是这样。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "explain",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01359-h2",
+      "source": "authored",
+      "text": "事情的经过就是这样。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "explain",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01692-h0",
+      "source": "composition",
+      "text": "今天也被你温暖到了，谢谢你，我想听你再说一声喜欢我。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "thanks",
+        "body": "cajole",
+        "emotion": "happy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "sway",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01692-h1",
+      "source": "composition",
+      "text": "今天也被你温暖到了，谢谢你，我想听你再说一声喜欢我。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "thanks",
+        "body": "cajole",
+        "emotion": "happy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "sway",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01692-h2",
+      "source": "composition",
+      "text": "今天也被你温暖到了，谢谢你，我想听你再说一声喜欢我。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "thanks",
+        "body": "cajole",
+        "emotion": "happy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "sway",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01693-h0",
+      "source": "composition",
+      "text": "这次我要说不，你可以小声跟我讲。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "refuse",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "cajole",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01693-h1",
+      "source": "composition",
+      "text": "这次我要说不，你可以小声跟我讲。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "refuse",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "cajole",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01693-h2",
+      "source": "composition",
+      "text": "这次我要说不，你可以小声跟我讲。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "refuse",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "cajole",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01697-h0",
+      "source": "composition",
+      "text": "先让我把完整情况告诉你，该从哪里开始想比较好呢？",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "explain",
+        "body": "tilt",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "explain",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01697-h1",
+      "source": "composition",
+      "text": "先让我把完整情况告诉你，该从哪里开始想比较好呢？",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "explain",
+        "body": "tilt",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "explain",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01697-h2",
+      "source": "composition",
+      "text": "先让我把完整情况告诉你，该从哪里开始想比较好呢？",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "explain",
+        "body": "tilt",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "explain",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01701-h0",
+      "source": "composition",
+      "text": "我是真心珍惜和你聊天的时间，一切都顺利时，连空气都轻快了。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "chest",
+        "body": "sway",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "chest",
+        "body": "sway",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01701-h1",
+      "source": "composition",
+      "text": "我是真心珍惜和你聊天的时间，一切都顺利时，连空气都轻快了。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "chest",
+        "body": "sway",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "chest",
+        "body": "sway",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01701-h2",
+      "source": "composition",
+      "text": "我是真心珍惜和你聊天的时间，一切都顺利时，连空气都轻快了。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "chest",
+        "body": "sway",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "chest",
+        "body": "sway",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01703-h0",
+      "source": "composition",
+      "text": "今天也被你温暖到了，谢谢你，我想听你再说一声喜欢我。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "thanks",
+        "body": "cajole",
+        "emotion": "happy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "sway",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01703-h1",
+      "source": "composition",
+      "text": "今天也被你温暖到了，谢谢你，我想听你再说一声喜欢我。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "thanks",
+        "body": "cajole",
+        "emotion": "happy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "sway",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01703-h2",
+      "source": "composition",
+      "text": "今天也被你温暖到了，谢谢你，我想听你再说一声喜欢我。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "thanks",
+        "body": "cajole",
+        "emotion": "happy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "sway",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01704-h0",
+      "source": "composition",
+      "text": "今天也被你温暖到了，谢谢你，你可以小声跟我讲。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "thanks",
+        "body": "lean",
+        "emotion": "happy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "thanks",
+        "body": "sway",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01704-h1",
+      "source": "composition",
+      "text": "今天也被你温暖到了，谢谢你，你可以小声跟我讲。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "thanks",
+        "body": "lean",
+        "emotion": "happy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "thanks",
+        "body": "sway",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01704-h2",
+      "source": "composition",
+      "text": "今天也被你温暖到了，谢谢你，你可以小声跟我讲。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "thanks",
+        "body": "lean",
+        "emotion": "happy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "thanks",
+        "body": "sway",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01705-h0",
+      "source": "composition",
+      "text": "我是真心珍惜和你聊天的时间，我想听你再说一声喜欢我。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "chest",
+        "body": "cajole",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "chest",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01705-h2",
+      "source": "composition",
+      "text": "我是真心珍惜和你聊天的时间，我想听你再说一声喜欢我。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "chest",
+        "body": "cajole",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "chest",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01706-h0",
+      "source": "composition",
+      "text": "我换一种说法描述这个问题，你讲得很清楚，我理解了。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "explain",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "explain",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01706-h1",
+      "source": "composition",
+      "text": "我换一种说法描述这个问题，你讲得很清楚，我理解了。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "explain",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "explain",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01706-h2",
+      "source": "composition",
+      "text": "我换一种说法描述这个问题，你讲得很清楚，我理解了。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "explain",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "explain",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01707-h0",
+      "source": "composition",
+      "text": "最后再补充一个重点，你可以小声跟我讲。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "point",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "point",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01707-h1",
+      "source": "composition",
+      "text": "最后再补充一个重点，你可以小声跟我讲。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "point",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "point",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01707-h2",
+      "source": "composition",
+      "text": "最后再补充一个重点，你可以小声跟我讲。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "point",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "point",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01708-h0",
+      "source": "composition",
+      "text": "今天也被你温暖到了，谢谢你，我想听你再说一声喜欢我。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "thanks",
+        "body": "cajole",
+        "emotion": "happy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "sway",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01708-h1",
+      "source": "composition",
+      "text": "今天也被你温暖到了，谢谢你，我想听你再说一声喜欢我。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "thanks",
+        "body": "cajole",
+        "emotion": "happy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "sway",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01708-h2",
+      "source": "composition",
+      "text": "今天也被你温暖到了，谢谢你，我想听你再说一声喜欢我。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "thanks",
+        "body": "cajole",
+        "emotion": "happy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "sway",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01711-h0",
+      "source": "composition",
+      "text": "我换一种说法描述这个问题，你讲得很清楚，我理解了。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "explain",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "explain",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01711-h1",
+      "source": "composition",
+      "text": "我换一种说法描述这个问题，你讲得很清楚，我理解了。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "explain",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "explain",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01711-h2",
+      "source": "composition",
+      "text": "我换一种说法描述这个问题，你讲得很清楚，我理解了。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "explain",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "explain",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01712-h0",
+      "source": "composition",
+      "text": "我是真心珍惜和你聊天的时间，我确认一下，刚刚的内容已经记住了。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "chest",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "chest",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01712-h1",
+      "source": "composition",
+      "text": "我是真心珍惜和你聊天的时间，我确认一下，刚刚的内容已经记住了。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "chest",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "chest",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01712-h2",
+      "source": "composition",
+      "text": "我是真心珍惜和你聊天的时间，我确认一下，刚刚的内容已经记住了。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "chest",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "chest",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01713-h0",
+      "source": "composition",
+      "text": "我换一种说法描述这个问题，再给我一点鼓励嘛，我会开心的。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "explain",
+        "body": "cajole",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "explain",
+        "body": "tilt",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01713-h1",
+      "source": "composition",
+      "text": "我换一种说法描述这个问题，再给我一点鼓励嘛，我会开心的。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "explain",
+        "body": "cajole",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "explain",
+        "body": "tilt",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01713-h2",
+      "source": "composition",
+      "text": "我换一种说法描述这个问题，再给我一点鼓励嘛，我会开心的。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "explain",
+        "body": "cajole",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "explain",
+        "body": "tilt",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01714-h0",
+      "source": "composition",
+      "text": "先让我把完整情况告诉你，我想回顾一下另一边的进展。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "explain",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "point",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01714-h1",
+      "source": "composition",
+      "text": "先让我把完整情况告诉你，我想回顾一下另一边的进展。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "explain",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "point",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01714-h2",
+      "source": "composition",
+      "text": "先让我把完整情况告诉你，我想回顾一下另一边的进展。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "explain",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "point",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01715-h0",
+      "source": "composition",
+      "text": "今天也被你温暖到了，谢谢你，你可以小声跟我讲。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "thanks",
+        "body": "lean",
+        "emotion": "happy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "thanks",
+        "body": "sway",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01715-h1",
+      "source": "composition",
+      "text": "今天也被你温暖到了，谢谢你，你可以小声跟我讲。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "thanks",
+        "body": "lean",
+        "emotion": "happy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "thanks",
+        "body": "sway",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01715-h2",
+      "source": "composition",
+      "text": "今天也被你温暖到了，谢谢你，你可以小声跟我讲。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "thanks",
+        "body": "lean",
+        "emotion": "happy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "thanks",
+        "body": "sway",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01716-h0",
+      "source": "composition",
+      "text": "这根狗尾巴草让我想起了小时候，我把注意力转过来一点。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "grass",
+        "body": "turn",
+        "emotion": "happy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "grass",
+        "body": "tilt",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01716-h1",
+      "source": "composition",
+      "text": "这根狗尾巴草让我想起了小时候，我把注意力转过来一点。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "grass",
+        "body": "turn",
+        "emotion": "happy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "grass",
+        "body": "tilt",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01716-h2",
+      "source": "composition",
+      "text": "这根狗尾巴草让我想起了小时候，我把注意力转过来一点。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "grass",
+        "body": "turn",
+        "emotion": "happy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "grass",
+        "body": "tilt",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01718-h0",
+      "source": "composition",
+      "text": "今天也被你温暖到了，谢谢你，我想听你再说一声喜欢我。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "thanks",
+        "body": "cajole",
+        "emotion": "happy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "sway",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01718-h1",
+      "source": "composition",
+      "text": "今天也被你温暖到了，谢谢你，我想听你再说一声喜欢我。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "thanks",
+        "body": "cajole",
+        "emotion": "happy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "sway",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01718-h2",
+      "source": "composition",
+      "text": "今天也被你温暖到了，谢谢你，我想听你再说一声喜欢我。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "thanks",
+        "body": "cajole",
+        "emotion": "happy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "sway",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01719-h0",
+      "source": "composition",
+      "text": "最后再补充一个重点，一切都顺利时，连空气都轻快了。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "point",
+        "body": "sway",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "point",
+        "body": "nod",
+        "emotion": "neutral",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01719-h1",
+      "source": "composition",
+      "text": "最后再补充一个重点，一切都顺利时，连空气都轻快了。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "point",
+        "body": "sway",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "point",
+        "body": "sway",
+        "emotion": "neutral",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01719-h2",
+      "source": "composition",
+      "text": "最后再补充一个重点，一切都顺利时，连空气都轻快了。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "point",
+        "body": "sway",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "point",
+        "body": "sway",
+        "emotion": "neutral",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01720-h0",
+      "source": "composition",
+      "text": "这根狗尾巴草让我想起了小时候，我确认一下，刚刚的内容已经记住了。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "grass",
+        "body": "nod",
+        "emotion": "happy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "grass",
+        "body": "none",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01720-h1",
+      "source": "composition",
+      "text": "这根狗尾巴草让我想起了小时候，我确认一下，刚刚的内容已经记住了。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "grass",
+        "body": "nod",
+        "emotion": "happy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "grass",
+        "body": "none",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01720-h2",
+      "source": "composition",
+      "text": "这根狗尾巴草让我想起了小时候，我确认一下，刚刚的内容已经记住了。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "grass",
+        "body": "nod",
+        "emotion": "happy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "grass",
+        "body": "none",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01721-h0",
+      "source": "composition",
+      "text": "嘿，好久不见，你最近好吗，让我凑近一些，再看清楚一点。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "wave",
+        "body": "lean",
+        "emotion": "happy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "wave",
+        "body": "none",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01721-h1",
+      "source": "composition",
+      "text": "嘿，好久不见，你最近好吗，让我凑近一些，再看清楚一点。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "wave",
+        "body": "lean",
+        "emotion": "happy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "wave",
+        "body": "none",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01722-h0",
+      "source": "composition",
+      "text": "最后再补充一个重点，你可以小声跟我讲。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "point",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "point",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01722-h1",
+      "source": "composition",
+      "text": "最后再补充一个重点，你可以小声跟我讲。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "point",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "point",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01722-h2",
+      "source": "composition",
+      "text": "最后再补充一个重点，你可以小声跟我讲。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "point",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "point",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01723-h0",
+      "source": "composition",
+      "text": "先让我把完整情况告诉你，我想回顾一下另一边的进展。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "explain",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "point",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01723-h1",
+      "source": "composition",
+      "text": "先让我把完整情况告诉你，我想回顾一下另一边的进展。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "explain",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "point",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01723-h2",
+      "source": "composition",
+      "text": "先让我把完整情况告诉你，我想回顾一下另一边的进展。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "explain",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "point",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01726-h0",
+      "source": "composition",
+      "text": "今天也被你温暖到了，谢谢你，让我再端详一下这个选择。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "thanks",
+        "body": "tilt",
+        "emotion": "happy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "thanks",
+        "body": "sway",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01726-h1",
+      "source": "composition",
+      "text": "今天也被你温暖到了，谢谢你，让我再端详一下这个选择。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "thanks",
+        "body": "tilt",
+        "emotion": "happy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "thanks",
+        "body": "sway",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01726-h2",
+      "source": "composition",
+      "text": "今天也被你温暖到了，谢谢你，让我再端详一下这个选择。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "thanks",
+        "body": "tilt",
+        "emotion": "happy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "thanks",
+        "body": "sway",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01727-h0",
+      "source": "composition",
+      "text": "先让我把完整情况告诉你，再给我一点鼓励嘛，我会开心的。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "explain",
+        "body": "cajole",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "point",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01727-h1",
+      "source": "composition",
+      "text": "先让我把完整情况告诉你，再给我一点鼓励嘛，我会开心的。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "explain",
+        "body": "cajole",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "point",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01727-h2",
+      "source": "composition",
+      "text": "先让我把完整情况告诉你，再给我一点鼓励嘛，我会开心的。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "explain",
+        "body": "cajole",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "point",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01728-h0",
+      "source": "composition",
+      "text": "这就是刚才遗漏的关键，你可以小声跟我讲。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "point",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "point",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01728-h1",
+      "source": "composition",
+      "text": "这就是刚才遗漏的关键，你可以小声跟我讲。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "point",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "point",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01728-h2",
+      "source": "composition",
+      "text": "这就是刚才遗漏的关键，你可以小声跟我讲。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "point",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "point",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01729-h0",
+      "source": "composition",
+      "text": "先让我把完整情况告诉你，让我凑近一些，再看清楚一点。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "explain",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "explain",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01729-h1",
+      "source": "composition",
+      "text": "先让我把完整情况告诉你，让我凑近一些，再看清楚一点。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "explain",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "explain",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01729-h2",
+      "source": "composition",
+      "text": "先让我把完整情况告诉你，让我凑近一些，再看清楚一点。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "explain",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "explain",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01731-h0",
+      "source": "composition",
+      "text": "我是真心珍惜和你聊天的时间，我想跟着音乐轻轻摆动。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "chest",
+        "body": "sway",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "chest",
+        "body": "sway",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01731-h1",
+      "source": "composition",
+      "text": "我是真心珍惜和你聊天的时间，我想跟着音乐轻轻摆动。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "chest",
+        "body": "sway",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "chest",
+        "body": "sway",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01731-h2",
+      "source": "composition",
+      "text": "我是真心珍惜和你聊天的时间，我想跟着音乐轻轻摆动。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "chest",
+        "body": "sway",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "chest",
+        "body": "sway",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01732-h0",
+      "source": "composition",
+      "text": "我是真心珍惜和你聊天的时间，我想回顾一下另一边的进展。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "chest",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "chest",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01732-h2",
+      "source": "composition",
+      "text": "我是真心珍惜和你聊天的时间，我想回顾一下另一边的进展。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "chest",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "chest",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01734-h0",
+      "source": "composition",
+      "text": "我换一种说法描述这个问题，我确认一下，刚刚的内容已经记住了。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "explain",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "explain",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01734-h1",
+      "source": "composition",
+      "text": "我换一种说法描述这个问题，我确认一下，刚刚的内容已经记住了。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "explain",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "explain",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01734-h2",
+      "source": "composition",
+      "text": "我换一种说法描述这个问题，我确认一下，刚刚的内容已经记住了。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "explain",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "explain",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01735-h0",
+      "source": "composition",
+      "text": "先让我把完整情况告诉你，再给我一点鼓励嘛，我会开心的。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "explain",
+        "body": "cajole",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "point",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01735-h1",
+      "source": "composition",
+      "text": "先让我把完整情况告诉你，再给我一点鼓励嘛，我会开心的。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "explain",
+        "body": "cajole",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "point",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01735-h2",
+      "source": "composition",
+      "text": "先让我把完整情况告诉你，再给我一点鼓励嘛，我会开心的。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "explain",
+        "body": "cajole",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "point",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01736-h0",
+      "source": "held_out_composition",
+      "text": "今天也被你温暖到了，谢谢你，我想听你再说一声喜欢我。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "thanks",
+        "body": "cajole",
+        "emotion": "happy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "sway",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01736-h1",
+      "source": "held_out_composition",
+      "text": "今天也被你温暖到了，谢谢你，我想听你再说一声喜欢我。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "thanks",
+        "body": "cajole",
+        "emotion": "happy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "sway",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01736-h2",
+      "source": "held_out_composition",
+      "text": "今天也被你温暖到了，谢谢你，我想听你再说一声喜欢我。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "thanks",
+        "body": "cajole",
+        "emotion": "happy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "sway",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01737-h0",
+      "source": "held_out_composition",
+      "text": "这就是刚才遗漏的关键，让我再端详一下这个选择。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "point",
+        "body": "tilt",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "point",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01737-h1",
+      "source": "held_out_composition",
+      "text": "这就是刚才遗漏的关键，让我再端详一下这个选择。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "point",
+        "body": "tilt",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "point",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01737-h2",
+      "source": "held_out_composition",
+      "text": "这就是刚才遗漏的关键，让我再端详一下这个选择。",
+      "context": "和观众自然聊天。",
+      "expected": {
+        "arm": "point",
+        "body": "tilt",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "point",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01766-h0",
+      "source": "dialogue_context",
+      "text": "我会认真对待我们的约定。",
+      "context": "日常直播聊天。最后再补充一个重点。",
+      "expected": {
+        "arm": "chest",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "chest",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01766-h1",
+      "source": "dialogue_context",
+      "text": "我会认真对待我们的约定。",
+      "context": "日常直播聊天。最后再补充一个重点。",
+      "expected": {
+        "arm": "chest",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "chest",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01766-h2",
+      "source": "dialogue_context",
+      "text": "我会认真对待我们的约定。",
+      "context": "日常直播聊天。最后再补充一个重点。",
+      "expected": {
+        "arm": "chest",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "chest",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01797-h0",
+      "source": "dialogue_context",
+      "text": "事情的经过就是这样。",
+      "context": "日常直播聊天。我换一种说法描述这个问题。嘿，好久不见，你最近好吗？",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "explain",
+        "body": "none",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01797-h1",
+      "source": "dialogue_context",
+      "text": "事情的经过就是这样。",
+      "context": "日常直播聊天。我换一种说法描述这个问题。嘿，好久不见，你最近好吗？",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "explain",
+        "body": "none",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01797-h2",
+      "source": "dialogue_context",
+      "text": "事情的经过就是这样。",
+      "context": "日常直播聊天。我换一种说法描述这个问题。嘿，好久不见，你最近好吗？",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "explain",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01826-h0",
+      "source": "dialogue_context",
+      "text": "我很在意这件事，真的有些恼火。",
+      "context": "日常直播聊天。最后再补充一个重点。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "angry",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "point",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01826-h1",
+      "source": "dialogue_context",
+      "text": "我很在意这件事，真的有些恼火。",
+      "context": "日常直播聊天。最后再补充一个重点。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "angry",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "point",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01826-h2",
+      "source": "dialogue_context",
+      "text": "我很在意这件事，真的有些恼火。",
+      "context": "日常直播聊天。最后再补充一个重点。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "angry",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "point",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01855-h0",
+      "source": "dialogue_context",
+      "text": "这次我要说不。",
+      "context": "日常直播聊天。",
+      "expected": {
+        "arm": "refuse",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01855-h1",
+      "source": "dialogue_context",
+      "text": "这次我要说不。",
+      "context": "日常直播聊天。",
+      "expected": {
+        "arm": "refuse",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01855-h2",
+      "source": "dialogue_context",
+      "text": "这次我要说不。",
+      "context": "日常直播聊天。",
+      "expected": {
+        "arm": "refuse",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01857-h1",
+      "source": "dialogue_context",
+      "text": "你可以小声跟我讲。",
+      "context": "日常直播聊天。这次我要说不。看吧，我的小计划成功啦。",
+      "expected": {
+        "arm": "none",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01885-h0",
+      "source": "dialogue_context",
+      "text": "心里的话说出来，还有点难为情。",
+      "context": "日常直播聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "shy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "sad",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01885-h2",
+      "source": "dialogue_context",
+      "text": "心里的话说出来，还有点难为情。",
+      "context": "日常直播聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "shy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "sad",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01886-h0",
+      "source": "dialogue_context",
+      "text": "该从哪里开始想比较好呢？",
+      "context": "日常直播聊天。心里的话说出来，还有点难为情。",
+      "expected": {
+        "arm": "none",
+        "body": "tilt",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "explain",
+        "body": "tilt",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01886-h2",
+      "source": "dialogue_context",
+      "text": "该从哪里开始想比较好呢？",
+      "context": "日常直播聊天。心里的话说出来，还有点难为情。",
+      "expected": {
+        "arm": "none",
+        "body": "tilt",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "explain",
+        "body": "tilt",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01887-h0",
+      "source": "dialogue_context",
+      "text": "再给我一点鼓励嘛，我会开心的。",
+      "context": "日常直播聊天。心里的话说出来，还有点难为情。该从哪里开始想比较好呢？",
+      "expected": {
+        "arm": "none",
+        "body": "cajole",
+        "emotion": "shy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "cajole",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01887-h2",
+      "source": "dialogue_context",
+      "text": "再给我一点鼓励嘛，我会开心的。",
+      "context": "日常直播聊天。心里的话说出来，还有点难为情。该从哪里开始想比较好呢？",
+      "expected": {
+        "arm": "none",
+        "body": "cajole",
+        "emotion": "shy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "cajole",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01916-h0",
+      "source": "dialogue_context",
+      "text": "我想听你再说一声喜欢我。",
+      "context": "日常直播聊天。我是真心珍惜和你聊天的时间。",
+      "expected": {
+        "arm": "none",
+        "body": "cajole",
+        "emotion": "shy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "chest",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01916-h1",
+      "source": "dialogue_context",
+      "text": "我想听你再说一声喜欢我。",
+      "context": "日常直播聊天。我是真心珍惜和你聊天的时间。",
+      "expected": {
+        "arm": "none",
+        "body": "cajole",
+        "emotion": "shy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "chest",
+        "body": "cajole",
+        "emotion": "shy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01916-h2",
+      "source": "dialogue_context",
+      "text": "我想听你再说一声喜欢我。",
+      "context": "日常直播聊天。我是真心珍惜和你聊天的时间。",
+      "expected": {
+        "arm": "none",
+        "body": "cajole",
+        "emotion": "shy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "chest",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01917-h0",
+      "source": "dialogue_context",
+      "text": "心里的话说出来，还有点难为情。",
+      "context": "日常直播聊天。我是真心珍惜和你聊天的时间。我想听你再说一声喜欢我。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "shy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "chest",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01917-h1",
+      "source": "dialogue_context",
+      "text": "心里的话说出来，还有点难为情。",
+      "context": "日常直播聊天。我是真心珍惜和你聊天的时间。我想听你再说一声喜欢我。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "shy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "chest",
+        "body": "lean",
+        "emotion": "shy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01917-h2",
+      "source": "dialogue_context",
+      "text": "心里的话说出来，还有点难为情。",
+      "context": "日常直播聊天。我是真心珍惜和你聊天的时间。我想听你再说一声喜欢我。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "shy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "chest",
+        "body": "lean",
+        "emotion": "shy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01945-h0",
+      "source": "dialogue_context",
+      "text": "让我再端详一下这个选择。",
+      "context": "日常直播聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "tilt",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01945-h1",
+      "source": "dialogue_context",
+      "text": "让我再端详一下这个选择。",
+      "context": "日常直播聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "tilt",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01945-h2",
+      "source": "dialogue_context",
+      "text": "让我再端详一下这个选择。",
+      "context": "日常直播聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "tilt",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01947-h0",
+      "source": "dialogue_context",
+      "text": "这是让我一眼就心动的东西。",
+      "context": "日常直播聊天。让我再端详一下这个选择。呜哇，你也太会夸了。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "happy",
+        "eye": "爱心眼"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "shy",
+        "eye": "爱心眼"
+      }
+    },
+    {
+      "id": "p01947-h1",
+      "source": "dialogue_context",
+      "text": "这是让我一眼就心动的东西。",
+      "context": "日常直播聊天。让我再端详一下这个选择。呜哇，你也太会夸了。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "happy",
+        "eye": "爱心眼"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "shy",
+        "eye": "爱心眼"
+      }
+    },
+    {
+      "id": "p01947-h2",
+      "source": "dialogue_context",
+      "text": "这是让我一眼就心动的东西。",
+      "context": "日常直播聊天。让我再端详一下这个选择。呜哇，你也太会夸了。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "happy",
+        "eye": "爱心眼"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "shy",
+        "eye": "爱心眼"
+      }
+    },
+    {
+      "id": "p01975-h0",
+      "source": "dialogue_context",
+      "text": "这是让我一眼就心动的东西。",
+      "context": "日常直播聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "happy",
+        "eye": "爱心眼"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01975-h1",
+      "source": "dialogue_context",
+      "text": "这是让我一眼就心动的东西。",
+      "context": "日常直播聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "happy",
+        "eye": "爱心眼"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01975-h2",
+      "source": "dialogue_context",
+      "text": "这是让我一眼就心动的东西。",
+      "context": "日常直播聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "happy",
+        "eye": "爱心眼"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01976-h0",
+      "source": "dialogue_context",
+      "text": "我想听你再说一声喜欢我。",
+      "context": "日常直播聊天。这是让我一眼就心动的东西。",
+      "expected": {
+        "arm": "none",
+        "body": "cajole",
+        "emotion": "shy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "chest",
+        "body": "cajole",
+        "emotion": "shy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01976-h1",
+      "source": "dialogue_context",
+      "text": "我想听你再说一声喜欢我。",
+      "context": "日常直播聊天。这是让我一眼就心动的东西。",
+      "expected": {
+        "arm": "none",
+        "body": "cajole",
+        "emotion": "shy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "chest",
+        "body": "cajole",
+        "emotion": "shy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01976-h2",
+      "source": "dialogue_context",
+      "text": "我想听你再说一声喜欢我。",
+      "context": "日常直播聊天。这是让我一眼就心动的东西。",
+      "expected": {
+        "arm": "none",
+        "body": "cajole",
+        "emotion": "shy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "chest",
+        "body": "cajole",
+        "emotion": "shy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01977-h0",
+      "source": "dialogue_context",
+      "text": "该从哪里开始想比较好呢？",
+      "context": "日常直播聊天。这是让我一眼就心动的东西。我想听你再说一声喜欢我。",
+      "expected": {
+        "arm": "none",
+        "body": "tilt",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01977-h1",
+      "source": "dialogue_context",
+      "text": "该从哪里开始想比较好呢？",
+      "context": "日常直播聊天。这是让我一眼就心动的东西。我想听你再说一声喜欢我。",
+      "expected": {
+        "arm": "none",
+        "body": "tilt",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p01977-h2",
+      "source": "dialogue_context",
+      "text": "该从哪里开始想比较好呢？",
+      "context": "日常直播聊天。这是让我一眼就心动的东西。我想听你再说一声喜欢我。",
+      "expected": {
+        "arm": "none",
+        "body": "tilt",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02006-h0",
+      "source": "dialogue_context",
+      "text": "一切都顺利时，连空气都轻快了。",
+      "context": "日常直播聊天。我很在意这件事，真的有些恼火。",
+      "expected": {
+        "arm": "none",
+        "body": "sway",
+        "emotion": "happy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02006-h1",
+      "source": "dialogue_context",
+      "text": "一切都顺利时，连空气都轻快了。",
+      "context": "日常直播聊天。我很在意这件事，真的有些恼火。",
+      "expected": {
+        "arm": "none",
+        "body": "sway",
+        "emotion": "happy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "surprised",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02006-h2",
+      "source": "dialogue_context",
+      "text": "一切都顺利时，连空气都轻快了。",
+      "context": "日常直播聊天。我很在意这件事，真的有些恼火。",
+      "expected": {
+        "arm": "none",
+        "body": "sway",
+        "emotion": "happy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "surprised",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02035-h0",
+      "source": "dialogue_context",
+      "text": "呜哇，你也太会夸了。",
+      "context": "日常直播聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "shy",
+        "eye": "＞＜"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "shy",
+        "eye": "屑屑眼"
+      }
+    },
+    {
+      "id": "p02035-h1",
+      "source": "dialogue_context",
+      "text": "呜哇，你也太会夸了。",
+      "context": "日常直播聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "shy",
+        "eye": "＞＜"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "shy",
+        "eye": "屑屑眼"
+      }
+    },
+    {
+      "id": "p02035-h2",
+      "source": "dialogue_context",
+      "text": "呜哇，你也太会夸了。",
+      "context": "日常直播聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "shy",
+        "eye": "＞＜"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "shy",
+        "eye": "屑屑眼"
+      }
+    },
+    {
+      "id": "p02036-h2",
+      "source": "dialogue_context",
+      "text": "我想跟着音乐轻轻摆动。",
+      "context": "日常直播聊天。呜哇，你也太会夸了。",
+      "expected": {
+        "arm": "none",
+        "body": "sway",
+        "emotion": "happy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "sway",
+        "emotion": "happy",
+        "eye": "屑屑眼"
+      }
+    },
+    {
+      "id": "p02037-h0",
+      "source": "dialogue_context",
+      "text": "这就是刚才遗漏的关键。",
+      "context": "日常直播聊天。呜哇，你也太会夸了。我想跟着音乐轻轻摆动。",
+      "expected": {
+        "arm": "point",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "refuse",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02037-h1",
+      "source": "dialogue_context",
+      "text": "这就是刚才遗漏的关键。",
+      "context": "日常直播聊天。呜哇，你也太会夸了。我想跟着音乐轻轻摆动。",
+      "expected": {
+        "arm": "point",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "refuse",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02037-h2",
+      "source": "dialogue_context",
+      "text": "这就是刚才遗漏的关键。",
+      "context": "日常直播聊天。呜哇，你也太会夸了。我想跟着音乐轻轻摆动。",
+      "expected": {
+        "arm": "point",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "refuse",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02066-h0",
+      "source": "dialogue_context",
+      "text": "我不想让你担心，只是有些难受。",
+      "context": "日常直播聊天。我把注意力转过来一点。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "sad",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02066-h1",
+      "source": "dialogue_context",
+      "text": "我不想让你担心，只是有些难受。",
+      "context": "日常直播聊天。我把注意力转过来一点。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "sad",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02066-h2",
+      "source": "dialogue_context",
+      "text": "我不想让你担心，只是有些难受。",
+      "context": "日常直播聊天。我把注意力转过来一点。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "sad",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02095-h0",
+      "source": "dialogue_context",
+      "text": "我的脑子刚才短路了一下。",
+      "context": "日常直播聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "confused",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "confused",
+        "eye": "圈圈眼"
+      }
+    },
+    {
+      "id": "p02095-h1",
+      "source": "dialogue_context",
+      "text": "我的脑子刚才短路了一下。",
+      "context": "日常直播聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "confused",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "confused",
+        "eye": "圈圈眼"
+      }
+    },
+    {
+      "id": "p02095-h2",
+      "source": "dialogue_context",
+      "text": "我的脑子刚才短路了一下。",
+      "context": "日常直播聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "confused",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "confused",
+        "eye": "圈圈眼"
+      }
+    },
+    {
+      "id": "p02096-h1",
+      "source": "dialogue_context",
+      "text": "今天也被你温暖到了，谢谢你。",
+      "context": "日常直播聊天。我的脑子刚才短路了一下。",
+      "expected": {
+        "arm": "thanks",
+        "body": "nod",
+        "emotion": "happy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "thanks",
+        "body": "none",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02125-h0",
+      "source": "dialogue_context",
+      "text": "我不愿意，请尊重我的选择。",
+      "context": "日常直播聊天。",
+      "expected": {
+        "arm": "refuse",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "refuse",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02126-h0",
+      "source": "dialogue_context",
+      "text": "我想让你认真对待我的不满。",
+      "context": "日常直播聊天。我不愿意，请尊重我的选择。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "angry",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "refuse",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02126-h1",
+      "source": "dialogue_context",
+      "text": "我想让你认真对待我的不满。",
+      "context": "日常直播聊天。我不愿意，请尊重我的选择。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "angry",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "refuse",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02126-h2",
+      "source": "dialogue_context",
+      "text": "我想让你认真对待我的不满。",
+      "context": "日常直播聊天。我不愿意，请尊重我的选择。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "angry",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "refuse",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02127-h0",
+      "source": "dialogue_context",
+      "text": "让我凑近一些，再看清楚一点。",
+      "context": "日常直播聊天。我不愿意，请尊重我的选择。我想让你认真对待我的不满。",
+      "expected": {
+        "arm": "none",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "refuse",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02127-h1",
+      "source": "dialogue_context",
+      "text": "让我凑近一些，再看清楚一点。",
+      "context": "日常直播聊天。我不愿意，请尊重我的选择。我想让你认真对待我的不满。",
+      "expected": {
+        "arm": "none",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "refuse",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02127-h2",
+      "source": "dialogue_context",
+      "text": "让我凑近一些，再看清楚一点。",
+      "context": "日常直播聊天。我不愿意，请尊重我的选择。我想让你认真对待我的不满。",
+      "expected": {
+        "arm": "none",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "refuse",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02156-h0",
+      "source": "dialogue_context",
+      "text": "你给我的惊喜有点太突然啦。",
+      "context": "日常直播聊天。这根狗尾巴草让我想起了小时候。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "surprised",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02156-h1",
+      "source": "dialogue_context",
+      "text": "你给我的惊喜有点太突然啦。",
+      "context": "日常直播聊天。这根狗尾巴草让我想起了小时候。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "surprised",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02156-h2",
+      "source": "dialogue_context",
+      "text": "你给我的惊喜有点太突然啦。",
+      "context": "日常直播聊天。这根狗尾巴草让我想起了小时候。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "surprised",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02157-h2",
+      "source": "dialogue_context",
+      "text": "我换一种说法描述这个问题。",
+      "context": "日常直播聊天。这根狗尾巴草让我想起了小时候。你给我的惊喜有点太突然啦。",
+      "expected": {
+        "arm": "explain",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "explain",
+        "body": "tilt",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02185-h0",
+      "source": "dialogue_context",
+      "text": "我已经整理好心情了。",
+      "context": "日常直播聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "neutral",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02185-h1",
+      "source": "dialogue_context",
+      "text": "我已经整理好心情了。",
+      "context": "日常直播聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "neutral",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02185-h2",
+      "source": "dialogue_context",
+      "text": "我已经整理好心情了。",
+      "context": "日常直播聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "neutral",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02187-h0",
+      "source": "dialogue_context",
+      "text": "你给我的惊喜有点太突然啦。",
+      "context": "日常直播聊天。我已经整理好心情了。看吧，我的小计划成功啦。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "surprised",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "happy",
+        "eye": "屑屑眼"
+      }
+    },
+    {
+      "id": "p02187-h1",
+      "source": "dialogue_context",
+      "text": "你给我的惊喜有点太突然啦。",
+      "context": "日常直播聊天。我已经整理好心情了。看吧，我的小计划成功啦。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "surprised",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "happy",
+        "eye": "屑屑眼"
+      }
+    },
+    {
+      "id": "p02187-h2",
+      "source": "dialogue_context",
+      "text": "你给我的惊喜有点太突然啦。",
+      "context": "日常直播聊天。我已经整理好心情了。看吧，我的小计划成功啦。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "surprised",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "surprised",
+        "eye": "屑屑眼"
+      }
+    },
+    {
+      "id": "p02215-h0",
+      "source": "dialogue_context",
+      "text": "这次我要说不。",
+      "context": "日常直播聊天。",
+      "expected": {
+        "arm": "refuse",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02215-h1",
+      "source": "dialogue_context",
+      "text": "这次我要说不。",
+      "context": "日常直播聊天。",
+      "expected": {
+        "arm": "refuse",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02215-h2",
+      "source": "dialogue_context",
+      "text": "这次我要说不。",
+      "context": "日常直播聊天。",
+      "expected": {
+        "arm": "refuse",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02216-h0",
+      "source": "dialogue_context",
+      "text": "我是真心珍惜和你聊天的时间。",
+      "context": "日常直播聊天。这次我要说不。",
+      "expected": {
+        "arm": "chest",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "chest",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02216-h1",
+      "source": "dialogue_context",
+      "text": "我是真心珍惜和你聊天的时间。",
+      "context": "日常直播聊天。这次我要说不。",
+      "expected": {
+        "arm": "chest",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "chest",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02216-h2",
+      "source": "dialogue_context",
+      "text": "我是真心珍惜和你聊天的时间。",
+      "context": "日常直播聊天。这次我要说不。",
+      "expected": {
+        "arm": "chest",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "chest",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02217-h0",
+      "source": "dialogue_context",
+      "text": "先让我把完整情况告诉你。",
+      "context": "日常直播聊天。这次我要说不。我是真心珍惜和你聊天的时间。",
+      "expected": {
+        "arm": "explain",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02217-h1",
+      "source": "dialogue_context",
+      "text": "先让我把完整情况告诉你。",
+      "context": "日常直播聊天。这次我要说不。我是真心珍惜和你聊天的时间。",
+      "expected": {
+        "arm": "explain",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02217-h2",
+      "source": "dialogue_context",
+      "text": "先让我把完整情况告诉你。",
+      "context": "日常直播聊天。这次我要说不。我是真心珍惜和你聊天的时间。",
+      "expected": {
+        "arm": "explain",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "nod",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02276-h0",
+      "source": "dialogue_context",
+      "text": "我想听你再说一声喜欢我。",
+      "context": "日常直播聊天。我确认一下，刚刚的内容已经记住了。",
+      "expected": {
+        "arm": "none",
+        "body": "cajole",
+        "emotion": "shy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02276-h1",
+      "source": "dialogue_context",
+      "text": "我想听你再说一声喜欢我。",
+      "context": "日常直播聊天。我确认一下，刚刚的内容已经记住了。",
+      "expected": {
+        "arm": "none",
+        "body": "cajole",
+        "emotion": "shy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02276-h2",
+      "source": "dialogue_context",
+      "text": "我想听你再说一声喜欢我。",
+      "context": "日常直播聊天。我确认一下，刚刚的内容已经记住了。",
+      "expected": {
+        "arm": "none",
+        "body": "cajole",
+        "emotion": "shy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02277-h0",
+      "source": "dialogue_context",
+      "text": "我很在意这件事，真的有些恼火。",
+      "context": "日常直播聊天。我确认一下，刚刚的内容已经记住了。我想听你再说一声喜欢我。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "angry",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02277-h1",
+      "source": "dialogue_context",
+      "text": "我很在意这件事，真的有些恼火。",
+      "context": "日常直播聊天。我确认一下，刚刚的内容已经记住了。我想听你再说一声喜欢我。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "angry",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02277-h2",
+      "source": "dialogue_context",
+      "text": "我很在意这件事，真的有些恼火。",
+      "context": "日常直播聊天。我确认一下，刚刚的内容已经记住了。我想听你再说一声喜欢我。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "angry",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "lean",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02306-h0",
+      "source": "dialogue_context",
+      "text": "这次我要说不。",
+      "context": "日常直播聊天。这根狗尾巴草让我想起了小时候。",
+      "expected": {
+        "arm": "refuse",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02306-h1",
+      "source": "dialogue_context",
+      "text": "这次我要说不。",
+      "context": "日常直播聊天。这根狗尾巴草让我想起了小时候。",
+      "expected": {
+        "arm": "refuse",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02306-h2",
+      "source": "dialogue_context",
+      "text": "这次我要说不。",
+      "context": "日常直播聊天。这根狗尾巴草让我想起了小时候。",
+      "expected": {
+        "arm": "refuse",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02335-h0",
+      "source": "dialogue_context",
+      "text": "呜哇，你也太会夸了。",
+      "context": "日常直播聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "shy",
+        "eye": "＞＜"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "shy",
+        "eye": "屑屑眼"
+      }
+    },
+    {
+      "id": "p02335-h1",
+      "source": "dialogue_context",
+      "text": "呜哇，你也太会夸了。",
+      "context": "日常直播聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "shy",
+        "eye": "＞＜"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "shy",
+        "eye": "屑屑眼"
+      }
+    },
+    {
+      "id": "p02335-h2",
+      "source": "dialogue_context",
+      "text": "呜哇，你也太会夸了。",
+      "context": "日常直播聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "shy",
+        "eye": "＞＜"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "shy",
+        "eye": "屑屑眼"
+      }
+    },
+    {
+      "id": "p02337-h0",
+      "source": "dialogue_context",
+      "text": "心里的话说出来，还有点难为情。",
+      "context": "日常直播聊天。呜哇，你也太会夸了。看吧，我的小计划成功啦。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "shy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "happy",
+        "eye": "屑屑眼"
+      }
+    },
+    {
+      "id": "p02337-h1",
+      "source": "dialogue_context",
+      "text": "心里的话说出来，还有点难为情。",
+      "context": "日常直播聊天。呜哇，你也太会夸了。看吧，我的小计划成功啦。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "shy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "shy",
+        "eye": "屑屑眼"
+      }
+    },
+    {
+      "id": "p02337-h2",
+      "source": "dialogue_context",
+      "text": "心里的话说出来，还有点难为情。",
+      "context": "日常直播聊天。呜哇，你也太会夸了。看吧，我的小计划成功啦。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "shy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "shy",
+        "eye": "屑屑眼"
+      }
+    },
+    {
+      "id": "p02365-h0",
+      "source": "dialogue_context",
+      "text": "我们重新开始，慢慢聊就好。",
+      "context": "日常直播聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "neutral",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "explain",
+        "body": "none",
+        "emotion": "neutral",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02365-h1",
+      "source": "dialogue_context",
+      "text": "我们重新开始，慢慢聊就好。",
+      "context": "日常直播聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "neutral",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "explain",
+        "body": "none",
+        "emotion": "neutral",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02365-h2",
+      "source": "dialogue_context",
+      "text": "我们重新开始，慢慢聊就好。",
+      "context": "日常直播聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "neutral",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "explain",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02367-h0",
+      "source": "dialogue_context",
+      "text": "心里的话说出来，还有点难为情。",
+      "context": "日常直播聊天。我们重新开始，慢慢聊就好。看吧，我的小计划成功啦。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "shy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02367-h1",
+      "source": "dialogue_context",
+      "text": "心里的话说出来，还有点难为情。",
+      "context": "日常直播聊天。我们重新开始，慢慢聊就好。看吧，我的小计划成功啦。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "shy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02367-h2",
+      "source": "dialogue_context",
+      "text": "心里的话说出来，还有点难为情。",
+      "context": "日常直播聊天。我们重新开始，慢慢聊就好。看吧，我的小计划成功啦。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "shy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02396-h0",
+      "source": "dialogue_context",
+      "text": "再给我一点鼓励嘛，我会开心的。",
+      "context": "日常直播聊天。我把东西放回原来的位置了。",
+      "expected": {
+        "arm": "none",
+        "body": "cajole",
+        "emotion": "shy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "nod",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02396-h1",
+      "source": "dialogue_context",
+      "text": "再给我一点鼓励嘛，我会开心的。",
+      "context": "日常直播聊天。我把东西放回原来的位置了。",
+      "expected": {
+        "arm": "none",
+        "body": "cajole",
+        "emotion": "shy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "nod",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02396-h2",
+      "source": "dialogue_context",
+      "text": "再给我一点鼓励嘛，我会开心的。",
+      "context": "日常直播聊天。我把东西放回原来的位置了。",
+      "expected": {
+        "arm": "none",
+        "body": "cajole",
+        "emotion": "shy",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "nod",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02397-h0",
+      "source": "dialogue_context",
+      "text": "呜哇，你也太会夸了。",
+      "context": "日常直播聊天。我把东西放回原来的位置了。再给我一点鼓励嘛，我会开心的。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "shy",
+        "eye": "＞＜"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "happy",
+        "eye": "屑屑眼"
+      }
+    },
+    {
+      "id": "p02397-h1",
+      "source": "dialogue_context",
+      "text": "呜哇，你也太会夸了。",
+      "context": "日常直播聊天。我把东西放回原来的位置了。再给我一点鼓励嘛，我会开心的。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "shy",
+        "eye": "＞＜"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "shy",
+        "eye": "屑屑眼"
+      }
+    },
+    {
+      "id": "p02397-h2",
+      "source": "dialogue_context",
+      "text": "呜哇，你也太会夸了。",
+      "context": "日常直播聊天。我把东西放回原来的位置了。再给我一点鼓励嘛，我会开心的。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "shy",
+        "eye": "＞＜"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "shy",
+        "eye": "屑屑眼"
+      }
+    },
+    {
+      "id": "p02425-h0",
+      "source": "dialogue_context",
+      "text": "事情的经过就是这样。",
+      "context": "日常直播聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02425-h1",
+      "source": "dialogue_context",
+      "text": "事情的经过就是这样。",
+      "context": "日常直播聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02425-h2",
+      "source": "dialogue_context",
+      "text": "事情的经过就是这样。",
+      "context": "日常直播聊天。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "turn",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02426-h0",
+      "source": "dialogue_context",
+      "text": "我已经整理好心情了。",
+      "context": "日常直播聊天。事情的经过就是这样。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "neutral",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02426-h1",
+      "source": "dialogue_context",
+      "text": "我已经整理好心情了。",
+      "context": "日常直播聊天。事情的经过就是这样。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "neutral",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02426-h2",
+      "source": "dialogue_context",
+      "text": "我已经整理好心情了。",
+      "context": "日常直播聊天。事情的经过就是这样。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "neutral",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "happy",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02456-h0",
+      "source": "dialogue_context",
+      "text": "我不想让你担心，只是有些难受。",
+      "context": "日常直播聊天。看吧，我的小计划成功啦。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "sad",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "refuse",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "normal"
+      }
+    },
+    {
+      "id": "p02456-h1",
+      "source": "dialogue_context",
+      "text": "我不想让你担心，只是有些难受。",
+      "context": "日常直播聊天。看吧，我的小计划成功啦。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "sad",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "refuse",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "屑屑眼"
+      }
+    },
+    {
+      "id": "p02456-h2",
+      "source": "dialogue_context",
+      "text": "我不想让你担心，只是有些难受。",
+      "context": "日常直播聊天。看吧，我的小计划成功啦。",
+      "expected": {
+        "arm": "none",
+        "body": "none",
+        "emotion": "sad",
+        "eye": "normal"
+      },
+      "predicted": {
+        "arm": "refuse",
+        "body": "none",
+        "emotion": "keep",
+        "eye": "屑屑眼"
+      }
+    }
+  ]
+}

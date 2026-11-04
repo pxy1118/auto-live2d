@@ -1,0 +1,14 @@
+import assert from 'node:assert/strict';import {chromium} from 'playwright';import {existsSync,mkdirSync,writeFileSync} from 'node:fs';import {join} from 'node:path';
+const root=join(import.meta.dirname,'..'),base=process.env.DEMO_URL??'http://127.0.0.1:8765',out=join(root,'test-results/v4-composition');mkdirSync(out,{recursive:true});const executablePath=['C:/Users/Administrator/AppData/Local/ms-playwright/chromium-1208/chrome-win64/chrome.exe',process.env.BROWSER_EXECUTABLE].find(p=>p&&existsSync(p));
+const browser=await chromium.launch({headless:true,executablePath,args:['--autoplay-policy=no-user-gesture-required']}),page=await browser.newPage({viewport:{width:1440,height:1100}});await page.addInitScript('window.__name=target=>target;');
+const before=await(await fetch(base+'/api/performance/review')).json();
+try{
+ await page.goto(base+'/dataset/vtuber-v4/review/index.html#comparison');await page.waitForSelector('article video');assert.equal(await page.locator('article').count(),24);assert.equal(await page.locator('video').count(),48);assert.equal(await page.locator('[data-choice]').count(),96);assert.match(await page.locator('h1').innerText(),/24/);
+ const labels=await page.locator('.clip strong').allInnerTexts();assert.ok(labels.every(x=>x==='A'||x==='B'));assert.ok(!(await page.locator('#items').innerText()).includes('candidate'));
+ await page.locator('video').first().evaluate((v:HTMLVideoElement)=>v.play());await page.waitForFunction(()=>{const v=document.querySelector('video')!;return !v.paused&&v.videoWidth>0;});await page.screenshot({path:join(out,'blind-review-desktop.png'),fullPage:false});await page.locator('video').first().evaluate((v:HTMLVideoElement)=>v.pause());
+ const pairs=await(await fetch(base+'/dataset/vtuber-v4/review/comparison-pairs.json')).json();for(const pair of pairs)for(const c of pair.clips)for(const k of ['video','media','poster'])assert.ok((await fetch(base+'/dataset/vtuber-v4/review/'+c[k],{method:'HEAD'})).ok);
+ await page.setViewportSize({width:390,height:844});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+ const response=await fetch(base+'/api/performance/review',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({stage:'comparison',dataset_version:'expired-version',index:0,choice:'A'})});assert.equal(response.status,400);
+ assert.deepEqual(await(await fetch(base+'/api/performance/review')).json(),before,'read-only gallery and rejected stale vote must not change human choices');
+ const report={ok:true,pairs:24,videos:48,hidden_version_names:true,all_media_available:true,mobile_no_overflow:true,versioned_ratings:true,stale_version_rejected:true,human_votes_written:false};writeFileSync(join(out,'comparison-review.json'),JSON.stringify(report,null,2));console.log(JSON.stringify(report));
+}finally{await browser.close();}

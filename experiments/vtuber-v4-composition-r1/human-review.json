@@ -1,0 +1,165 @@
+{
+  "recorded_utc": "2026-11-02T08:39:50.675657+00:00",
+  "dataset_version": "composition-r1",
+  "complete": true,
+  "votes": 24,
+  "totals": {
+    "candidate": 11,
+    "v3": 2,
+    "tie": 9,
+    "neither": 2
+  },
+  "required_candidate_preferences": 16,
+  "preference_gate_passed": false,
+  "promoted": false,
+  "ratings_sha256": "7f7d6b0ae58dff2355aec7cbe93dbe0c54f741cb41d7b688177d5d4a4ba16f47",
+  "blind_key_sha256": "d72f2caf6380383c1f7a6fc4f173cb651a9e5f584f0e7dcc8e730a130677848b",
+  "model_weights_changed": false,
+  "usage": "Acceptance and runtime bug correction; no training or test-set tuning",
+  "groups": [
+    {
+      "group": 1,
+      "choice": "A",
+      "result": "v3",
+      "note": ""
+    },
+    {
+      "group": 2,
+      "choice": "B",
+      "result": "candidate",
+      "note": ""
+    },
+    {
+      "group": 3,
+      "choice": "tie",
+      "result": "tie",
+      "note": ""
+    },
+    {
+      "group": 4,
+      "choice": "tie",
+      "result": "tie",
+      "note": ""
+    },
+    {
+      "group": 5,
+      "choice": "A",
+      "result": "candidate",
+      "note": ""
+    },
+    {
+      "group": 6,
+      "choice": "A",
+      "result": "candidate",
+      "note": ""
+    },
+    {
+      "group": 7,
+      "choice": "B",
+      "result": "candidate",
+      "note": ""
+    },
+    {
+      "group": 8,
+      "choice": "A",
+      "result": "candidate",
+      "note": ""
+    },
+    {
+      "group": 9,
+      "choice": "B",
+      "result": "v3",
+      "note": ""
+    },
+    {
+      "group": 10,
+      "choice": "A",
+      "result": "candidate",
+      "note": ""
+    },
+    {
+      "group": 11,
+      "choice": "neither",
+      "result": "neither",
+      "note": "a两种眼睛怎么重叠了，这是不对的"
+    },
+    {
+      "group": 12,
+      "choice": "tie",
+      "result": "tie",
+      "note": ""
+    },
+    {
+      "group": 13,
+      "choice": "B",
+      "result": "candidate",
+      "note": ""
+    },
+    {
+      "group": 14,
+      "choice": "tie",
+      "result": "tie",
+      "note": ""
+    },
+    {
+      "group": 15,
+      "choice": "A",
+      "result": "candidate",
+      "note": ""
+    },
+    {
+      "group": 16,
+      "choice": "A",
+      "result": "candidate",
+      "note": ""
+    },
+    {
+      "group": 17,
+      "choice": "B",
+      "result": "candidate",
+      "note": ""
+    },
+    {
+      "group": 18,
+      "choice": "tie",
+      "result": "tie",
+      "note": ""
+    },
+    {
+      "group": 19,
+      "choice": "B",
+      "result": "candidate",
+      "note": ""
+    },
+    {
+      "group": 20,
+      "choice": "neither",
+      "result": "neither",
+      "note": "a的屑屑眼太淡了，这些眼睛都参数是都应该拉到底，用不上就变成0。"
+    },
+    {
+      "group": 21,
+      "choice": "tie",
+      "result": "tie",
+      "note": ""
+    },
+    {
+      "group": 22,
+      "choice": "tie",
+      "result": "tie",
+      "note": ""
+    },
+    {
+      "group": 23,
+      "choice": "tie",
+      "result": "tie",
+      "note": ""
+    },
+    {
+      "group": 24,
+      "choice": "tie",
+      "result": "tie",
+      "note": ""
+    }
+  ]
+}

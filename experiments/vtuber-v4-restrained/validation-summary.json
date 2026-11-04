@@ -1,0 +1,123 @@
+{
+  "engineering_checks_passed": true,
+  "promoted": false,
+  "naturalness_accepted": false,
+  "reason": "Body preference and final blind comparison remain human decisions.",
+  "dataset": {
+    "ok": true,
+    "clips": 1440,
+    "dialogues": 240,
+    "unique_texts": 105,
+    "unique_audio_files": 105,
+    "split": {
+      "train": 1022,
+      "test": 204,
+      "validation": 214
+    },
+    "actual_parameter_frames": 171942,
+    "audited_parameters": 509,
+    "visible_parameters": 466,
+    "cross_split_text_leaks": 0,
+    "cross_split_identical_target_leaks": 0,
+    "human_calibrated": true,
+    "promoted": false
+  },
+  "stability": {
+    "regression": {
+      "runtime_version": "v4.3-restrained",
+      "wall_ms": 600138,
+      "clauses": 68,
+      "explicit_gesture": {
+        "maximum_upper_arm": 0.14092139899730682,
+        "count": 1
+      },
+      "gesture_policy": null
+    },
+    "flow": {
+      "runtime_version": "v4.4-restrained",
+      "wall_ms": 600340,
+      "clauses": 68,
+      "explicit_gesture": {
+        "maximum_upper_arm": 0.19190192222595215,
+        "count": 1
+      },
+      "gesture_policy": {
+        "phase": "idle",
+        "used_in_clause": false,
+        "count": 0,
+        "confidence": 0.581994891166687,
+        "cooldown_ms": 0,
+        "style": "restrained"
+      }
+    }
+  },
+  "latency": {
+    "regression": {
+      "baseline_median_first_audio_ms": 471.40000000596046,
+      "v4_median_first_audio_ms": 515.7999999821186,
+      "increase_ms": 44.39999997615814,
+      "baseline_including_setup_ms": 471.40000000596046,
+      "v4_including_setup_ms": 571.3999999761581,
+      "increase_including_setup_ms": 99.99999997019768,
+      "action_update_p95_ms": 31.20387600210961,
+      "action_update_samples": 30
+    },
+    "flow": {
+      "baseline_median_first_audio_ms": 475.59999999403954,
+      "v4_median_first_audio_ms": 499.59999999403954,
+      "increase_ms": 24,
+      "baseline_including_setup_ms": 475.59999999403954,
+      "v4_including_setup_ms": 548,
+      "increase_including_setup_ms": 72.40000000596046,
+      "action_update_p95_ms": 74.30726299935486,
+      "action_update_samples": 30
+    }
+  },
+  "handoff": {
+    "ok": true,
+    "runtime_version": "v4.4-restrained",
+    "checked": [
+      "pause before PCM keeps future clause cue inactive; audio resume activates it and reports directed emotion",
+      "manual parameter, native gesture and explicit appearance ownership after cancellation",
+      "invalid params, cross-interface request ID conflict, verified capabilities",
+      "generated open-eye target retains resident blink on real Cubism parameters"
+    ],
+    "blink": {
+      "minimum": 0.1111111119389534,
+      "maximum": 1.25
+    }
+  },
+  "review": {
+    "ok": true,
+    "motion_groups": 8,
+    "blind_groups": 24,
+    "all_media_available": true,
+    "mobile_no_horizontal_overflow": true,
+    "ratings_unchanged": true
+  },
+  "combinations": {
+    "ok": true,
+    "cases": 11
+  },
+  "unit_checks": {
+    "ok": true,
+    "typescript_tests": 23,
+    "authoring_tests": 2,
+    "streaming_tests": 3,
+    "build": true,
+    "notes": "TypeScript tests and compiler rerun after final code changes; Python authoring and streaming source unchanged since successful runs. Startup rebuilt the current UI.",
+    "log_sha256": "e89ec3acbfeae96a61892bc64f2995a25bdd3b1432d664ed491399b16a0eb2db"
+  },
+  "human_review": {
+    "pilot_count": 16,
+    "comparison_count": 0,
+    "pilot_14_choice": "B",
+    "ratings_sha256": "b8d5f467a6d6819666ab17cf470e4d3498e87a608db913b1fc8973475573bb19"
+  },
+  "scope_notes": [
+    "Regression ten-minute run used v4.3; v4.4 corrects skirt naming and initial selection. Motor policy/checkpoints unchanged. Flow ten-minute run and final latency/handoff use v4.4.",
+    "Final state reporting, idempotency retirement and timing instrumentation have separate unit/integration checks; they do not change generated trajectories.",
+    "Latency uses one warmup pair and three measured pairs per candidate, not a large-sample benchmark.",
+    "Original synthetic data shared authoring assumptions; all subjective decisions remain pending."
+  ]
+}

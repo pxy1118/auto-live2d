@@ -1,0 +1,48 @@
+{
+  "ok": true,
+  "runtime_version": "v4.13.0-clause-plan",
+  "clips": [
+    {
+      "name": "00-A",
+      "frames": 537,
+      "two_raised_arm_frames": 0,
+      "fractional_special_eye_frames": 0,
+      "maximum_replay_parameter_error": 4.993472099298901e-06
+    },
+    {
+      "name": "01-A",
+      "frames": 524,
+      "two_raised_arm_frames": 0,
+      "fractional_special_eye_frames": 0,
+      "maximum_replay_parameter_error": 4.993113279345984e-06
+    },
+    {
+      "name": "02-A",
+      "frames": 517,
+      "two_raised_arm_frames": 0,
+      "fractional_special_eye_frames": 0,
+      "maximum_replay_parameter_error": 4.996776580834528e-06
+    },
+    {
+      "name": "03-A",
+      "frames": 380,
+      "two_raised_arm_frames": 0,
+      "fractional_special_eye_frames": 0,
+      "maximum_replay_parameter_error": 4.991559982292504e-06
+    },
+    {
+      "name": "04-A",
+      "frames": 432,
+      "two_raised_arm_frames": 0,
+      "fractional_special_eye_frames": 0,
+      "maximum_replay_parameter_error": 4.990893751382654e-06
+    },
+    {
+      "name": "05-A",
+      "frames": 613,
+      "two_raised_arm_frames": 0,
+      "fractional_special_eye_frames": 0,
+      "maximum_replay_parameter_error": 0.0
+    }
+  ]
+}

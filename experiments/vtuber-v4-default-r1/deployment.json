@@ -1,0 +1,108 @@
+{
+  "created_utc": "2026-11-03T05:19:11.521889+00:00",
+  "promoted": true,
+  "activation_basis": "explicit_user_request",
+  "functional_checks_passed": true,
+  "latency_targets_passed": false,
+  "latency": {
+    "baseline_first_audio_ms": 469.8999999985099,
+    "default_first_audio_ms": 638.1999999992549,
+    "increase_ms": 168.30000000074506,
+    "baseline_including_setup_ms": 469.8999999985099,
+    "default_including_setup_ms": 682.6000000014901,
+    "increase_including_setup_ms": 212.70000000298023,
+    "action_update_p95_ms": 42.233584000314295,
+    "action_updates": 43
+  },
+  "execution": {
+    "motor_device": "cpu",
+    "planner_device": "cuda",
+    "body_encoder_shared": true
+  },
+  "body_seed": 7137,
+  "stress": {
+    "wall_ms": 600550,
+    "clauses": 69,
+    "gesture_policy": {
+      "phase": "idle",
+      "used_in_clause": false,
+      "count": 0,
+      "confidence": 0,
+      "cooldown_ms": 0,
+      "style": "restrained",
+      "elapsed_ms": 0,
+      "duration_ms": 3200
+    },
+    "planner_enabled": true,
+    "unique_planned_clauses": 69,
+    "two_raised_arm_samples": 0
+  },
+  "ui_checks": [
+    "ordinary startup selects promoted 4B/native-groups/context-body profile; default UI and capabilities agree",
+    "long context keeps complete spoken clause and reports body token compression; real TTS succeeds; explicit wardrobe survives speech and cancellation",
+    "desktop/mobile UI; original human ratings unchanged"
+  ],
+  "observed_console_tests": {
+    "javascript": 56,
+    "python": 9,
+    "scope": "55 existing JS regressions plus 1 new concurrency test; 4 body runtime plus 5 profile-selection unit tests"
+  },
+  "excluded_broad_suite": {
+    "launcher_lifecycle_precondition_failures": 6,
+    "executed": false,
+    "reason": "Initial broad discovery hit the occupied-service guard; not counted as passed. Real owned legacy/default start-stop paths were exercised separately."
+  },
+  "weights": {
+    "body-planner.pt": "acf721015bb3b54d6427fed16e122415226595148298ac51c449c395cb65e769",
+    "flow.pt": "7f1b5de88a48da0253cd42849b255ee981c65d0650cfdf7e053a19c7155810c5",
+    "gesture-selector.pt": "78b19af95c3f6e6da28ee840d65486ddb0513f51e350efc181c6937b5382e70a",
+    "motor-gate.pt": "361e6b47fd8596f31ff9cfe075e6f83a890bc49346fb3576942fdb80309339ff",
+    "performance-planner.pt": "053fd98de35fa065f50fd8e86f0031fa5d1730b8544785363c4b803192d5cfa8",
+    "regression.pt": "e76c52e5ca3403b6b2da0b943bc82bd58ca7682928dc67ea2422f8625160d36d"
+  },
+  "sources": {
+    "main.py": "b937fa73355f5987124f5654ec446314258d16e3295bc079cdd29842a66dfd9b",
+    "README.md": "66f47c5328b914ce09b6161de15f6fddd2c56ab9513a864501506f1a6c6c3546",
+    "docs/v4-default.md": "9cfd275dd61943dfc43911261b31f97baf8de16ce64f5876fd4725236e95870b",
+    "latent/stream-run.json": "f282c32dac8ff649401f79cbdf6b50e935c9d5afe74307c19aca6870a4f6ed9c",
+    "latent/default-run.json": "5e8dd3056b4041fa7eaa93adfa917901b62c14e9e709558061bbacd5a7efe5d9",
+    "latent/streaming.py": "1a6b2cd6c442e08556f91df025e8273074f74591789c7f42184b89a4335cf8cf",
+    "latent/generalization_runtime.py": "a625ed73868926e6a15c03bc118561548077284de30de37491829c82b4ee69b8",
+    "latent/body_intent_runtime.py": "92f72046923c387e6e6585d910ed500d9fbdd2344bb72e106461eeadd195f914",
+    "latent/context_prompts.py": "e72ad2bd62884326d5d06507428913224ecc30c7e75c4c790189dbda9383021a",
+    "latent/semantic_tokens.py": "4ad410ff9ce974f9ea3c771f59a86ec3d7ea8f0041535c1f68fdec25af0f6d97",
+    "latent/intent_study.py": "7af5c745d3937a3c2237e5d64db75089b2b12e35e1e604a291888e6634eb1961",
+    "latent/planner_contract.py": "bd5102e1493ee68f66e10092d5fa6791844954c05a77a3689f0a9ffbcc6f5bb0",
+    "latent/encoders/qwen3.5-4b.json": "df2ceae3b3f4af9e1b314305a8e4b38aa49714a461967c525e7820f4d792cc52",
+    "server/performance-service.ts": "7aa3f4e3f1f179b54d4a992865f13c70c22b85af163f06e1cd41e4cbce4592d0",
+    "server/index.ts": "3ae31844affba996dd9a29f5b7a416eefc50ceebe94184c0e2c6f083c7ef3503",
+    "src/performance-panel.ts": "3246692c0e275348fbb0c9fef55d8a7a890aa257c54d56a430d53b1e8876e7c5",
+    "src/latent-panel.ts": "b97240d60c7ae21d280a24da5f2bd00245fcea80af0ed0a864ca371bb182784f",
+    "src/performance.ts": "db538ad6d3e1d00cb9067824aef480b6540a3d5dd41bd6f6540d43b786906498",
+    "src/body-motion.ts": "4463d8dd9c5c0b8be3f0185c08ee58213f39da8d1b211bf69279f22b74f3b010",
+    "src/gesture-library.ts": "f653203bd7a9d40228818913fe74c447363ddef3dabaa0ec353bef674033f36b",
+    "src/gesture-choreography.ts": "774f9ff7d021890c78ed8e12d39be51a75d49ad3615554a5314d2176e0526044",
+    "tests/test_default_launcher.py": "fbf9a59d438033cdb3f0f2eefe07275329b11b7a87388cd36ee69f9f3c5b78fd",
+    "latent/test_default_runtime.py": "bc125cb620038427712f0c844b2b4d264778a80dfff7db585aaf9d5399924131",
+    "tests/performance-default.test.ts": "75a6f594e8cb1d6a1bb073b266373b51d75823bb336663666151b95acee7847f",
+    "tests/performance-default-latency.ts": "9a0b3896db6f5efbb2724179e4831f9fdcdc702a3958cd4b8bebfd620726d4e5",
+    "tests/performance-default-ui.ts": "7e85e181d4adad2b8e001676bc94f15f795c54f5fac432e5a15b13e507dbc25f",
+    "tests/performance-browser.ts": "3cbd38a3cab8d4d1731ddafdf137eb56afc5fe5f1c01b10960d44cc81e1e8fc0",
+    "scripts/v4/prepare_default.py": "cf16084041533a04eba4440e5591359202e28e880106e6a30b0733eba5de4d68",
+    "scripts/v4/finalize_default.py": "9bdc664dacabcedd636cd47bd829d5d7808a4653947f7225790164db9d48dda0",
+    "package.json": "49ef14b46b763e2b20cb21a8026972a52421a708413c3644e81feeb0503f4961",
+    "package-lock.json": "3fdf4d555c4ac7cabd801a15c99c144ec415612dfe1eb8eccb0c0586d206e0ba",
+    "latent/pyproject.toml": "8de7e788408988a660e082141ff228354a7a6ac34e938ff960e9f624c5ce4ada",
+    "latent/uv.lock": "f950ae91ea24660caf34128e9e902a50145341b2f5db75abcb6d9e2e74471ae9"
+  },
+  "prior_intent_artifacts_preserved": 80,
+  "intentional_configuration_replacement": [
+    "latent/stream-run.json"
+  ],
+  "original_human_ratings_unchanged": true,
+  "scientific_reports_changed": false,
+  "final_test_loaded": false,
+  "tts_checkpoint_sha256": "b62a26f6c2ebd10582c088c318d1fe045f19861500caf7eae300b676d2f19a3d",
+  "original_source_backup": ".runtime/v4-default-change/backup",
+  "legacy_command": "python main.py --legacy"
+}

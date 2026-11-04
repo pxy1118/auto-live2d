@@ -7,7 +7,7 @@ const app = document.querySelector<HTMLDivElement>('#app')!;
 app.innerHTML = `
   <header class="topbar">
     <a class="brand" href="/"><span class="brand-mark">a<span>↗</span></span><span>动作实验台<small>LIVE2D CONTROL LAB</small></span></a>
-    <div class="top-right"><span class="version">DEMO / 01</span><span id="connection" class="connection"><i></i>正在载入</span></div>
+    <div class="top-right"><span class="version">DEMO / 01</span><button id="claim-runtime" class="runtime-claim" hidden>在此窗口控制</button><span id="connection" class="connection"><i></i>正在载入</span></div>
   </header>
   <main>
     <div class="intro"><div><span class="eyebrow">从语言，到每一个动作</span><h1>让角色动起来<span>。</span></h1><p>探索表情、编排动作，建立可被程序调用的控制接口。</p></div><div class="model-label"><span class="model-dot"></span><div>大肥鱼<small>Live2D · 原画：神宫凉子</small></div></div></div>
@@ -48,6 +48,7 @@ const engine = new Live2DEngine($<HTMLCanvasElement>('model-canvas'), (message, 
 let capabilities: any;
 let socket: WebSocket;
 let isConnected = false;
+let claimAttempt:{resolve:()=>void;reject:(error:Error)=>void;timer:ReturnType<typeof setTimeout>;promise:Promise<void>}|null=null;
 let renderedLimit = 35;
 let lastRecording: any = null;
 let lastState: any = null;
@@ -78,16 +79,34 @@ function connect() {
     const message = JSON.parse(event.data);
     if (message.type === 'connected') {
       isConnected = true; $('connection').innerHTML = '<i></i>本地已连接'; $('connection').classList.add('ready');
+      $('claim-runtime').hidden=true;if(claimAttempt){clearTimeout(claimAttempt.timer);claimAttempt.resolve();claimAttempt=null;}
       document.querySelectorAll<HTMLButtonElement>('button[disabled]').forEach(b => { if (b.id !== 'replay' && !b.closest('#latent-panel')) b.disabled = false; });
     } else if (message.type === 'command') {
       try { const response = await engine.command(message); socket.send(JSON.stringify({ type: 'result', request_id: message.request_id, response })); }
       catch (error: any) { socket.send(JSON.stringify({ type: 'result', request_id: message.request_id, error: { code: error.code ?? 'command_failed', message: error.message } })); }
     } else if (message.type === 'busy') {
+      isConnected=false;$('connection').classList.remove('ready');$('claim-runtime').hidden=false;
       $('connection').textContent = '已有其他模型窗口'; toast(message.message);
     }
   };
-  socket.onclose = () => { isConnected = false;engine.command({method:'speech.stop'}).catch(()=>{});$('connection').textContent = '连接已断开，正在重连'; setTimeout(connect, 1500); };
+  socket.onclose = () => { isConnected = false;engine.command({method:'speech.stop'}).catch(()=>{});if(claimAttempt){clearTimeout(claimAttempt.timer);claimAttempt.reject(new Error('角色连接已断开，请重试'));claimAttempt=null;}$('connection').textContent = '连接已断开，正在重连'; setTimeout(connect, 1500); };
 }
+function claimRuntime():Promise<void>{
+ if(isConnected)return Promise.resolve();
+ if(claimAttempt)return claimAttempt.promise;
+ if(!socket||socket.readyState!==WebSocket.OPEN)return Promise.reject(new Error('角色连接尚未就绪，请稍后重试'));
+ let resolve!:()=>void,reject!:(error:Error)=>void;
+ const promise=new Promise<void>((yes,no)=>{resolve=yes;reject=no;});
+ const timer=setTimeout(()=>{claimAttempt=null;reject(new Error('接管角色窗口超时，请重试'));},5000);
+ claimAttempt={promise,resolve,reject,timer};
+ socket.send(JSON.stringify({type:'hello',role:'runtime',capabilities,takeover:true}));return promise;
+}
+async function preparePerformance(){
+ // Run resume() synchronously inside the trusted click on this exact document.
+ const audio=engine.command({method:'speech.unlock'});
+ await Promise.all([audio,claimRuntime()]);
+}
+$('claim-runtime').onclick=()=>preparePerformance().catch((error:Error)=>toast(error.message));
 
 function slider(parameter: Parameter, quick = false) {
   const step = parameter.max === parameter.min ? 1 : Math.max((parameter.max - parameter.min) / 200, 0.001);
@@ -208,7 +227,7 @@ stage.onpointerup = stage.onpointercancel = () => { if (!dragging) return; dragg
 
 try {
   capabilities = await engine.initialize(); populate(); $('loading').hidden = true; connect();
-  mountLatent();
+  mountLatent(preparePerformance);
   setInterval(updateUI, 250);
 } catch (error: any) {
   console.error(error); $('loading').classList.add('failed'); $('loading-label').textContent = '模型载入失败';

@@ -1,0 +1,156 @@
+{
+  "repository": "https://github.com/Ssssshaiiko/WHALEL2D",
+  "commit": "1576fc34ddf9f061e91cbe56a37b488c0d0fcaae",
+  "source_snapshots": [
+    {
+      "path": "prompt/身体说明.md",
+      "upstream_path": "prompt/身体说明.md",
+      "git_blob_sha1": "8f3f1bf3bb51def78c8c4ed58b4ed4060e1e4063",
+      "sha256": "771c98ee017ce51bf30d6bda2d53af223f661bfee37181bf6c1e9a02333719b7",
+      "bytes": 7569
+    },
+    {
+      "path": "README.reference.md",
+      "upstream_path": "README.md",
+      "git_blob_sha1": "961eec799cff4b2ebb8df220e11a02d0ea1b7713",
+      "sha256": "8233a5b27447cf9c46ef4c5d03b452c47ca0f7ec3e18c57903028ee681685083",
+      "bytes": 4914
+    },
+    {
+      "path": "renderer/CMakeLists.txt",
+      "upstream_path": "renderer/CMakeLists.txt",
+      "git_blob_sha1": "881a385ea5e940a19d7a8c384b0e99d3ec59acde",
+      "sha256": "9598ad4c1c0399840d586486a32b65afb1bf4354fab7843407587f8b0ddfbcc2",
+      "bytes": 1977
+    },
+    {
+      "path": "renderer/main.cpp",
+      "upstream_path": "renderer/main.cpp",
+      "git_blob_sha1": "3374e284e7624f0ca56096d063e34b35e77eedbe",
+      "sha256": "481a1b086fa1de0501d54eabda3b3cd7af8ace5b16935da536a664302b313fb4",
+      "bytes": 54005
+    },
+    {
+      "path": "src/FishPet/Behavior.cs",
+      "upstream_path": "src/FishPet/Behavior.cs",
+      "git_blob_sha1": "d2fa39c07c0e9fcbcdee418f8dfbd43e801c2e0b",
+      "sha256": "2c6e136adead15df0df77157a913317be42ab156b963c8151faa9113da1d0699",
+      "bytes": 19702
+    },
+    {
+      "path": "src/FishPet/Body.cs",
+      "upstream_path": "src/FishPet/Body.cs",
+      "git_blob_sha1": "ec0cccb58871e03b8ecd2f20db30f44b925dbf9f",
+      "sha256": "e26183772a53a566332e28fe5964d55903cfbd40d47d1689d05bfba029f2eddc",
+      "bytes": 21046
+    },
+    {
+      "path": "src/FishPet/Bubble.cs",
+      "upstream_path": "src/FishPet/Bubble.cs",
+      "git_blob_sha1": "44d12d9dce5859304d1868f45466d55ecd8a10a6",
+      "sha256": "8bf05e57bfc8742a6f3420d4a3173d872ab961ba2d7d0ec4d58eea048689799a",
+      "bytes": 6839
+    },
+    {
+      "path": "src/FishPet/ControlServer.cs",
+      "upstream_path": "src/FishPet/ControlServer.cs",
+      "git_blob_sha1": "531c2589c59c8087e24ad2d6029e93baf7c57ca2",
+      "sha256": "be20ca9db57eb7bfa660bbf47fd6c3b1e2b4e6fe690997f6e9e6cf51da93c33f",
+      "bytes": 13601
+    },
+    {
+      "path": "src/FishPet/FishPet.csproj",
+      "upstream_path": "src/FishPet/FishPet.csproj",
+      "git_blob_sha1": "48b1f668fed15cd09a47b503d642b7807580301c",
+      "sha256": "604d95eb7838c3957e0d1da5258587e636fe2edce546fa71e5ac1e10ba9fb89e",
+      "bytes": 458
+    },
+    {
+      "path": "src/FishPet/HttpApi.cs",
+      "upstream_path": "src/FishPet/HttpApi.cs",
+      "git_blob_sha1": "0af1ab00c0b5e351e05d80855bbbbd963830576c",
+      "sha256": "a41e3d18e4516ec980b27ef9e20205d8320f51a687c9e46a189305fd59fa97ef",
+      "bytes": 10025
+    },
+    {
+      "path": "src/FishPet/Model.cs",
+      "upstream_path": "src/FishPet/Model.cs",
+      "git_blob_sha1": "8b5c9fa75e24435c9409c1a0aa3d3943caedee31",
+      "sha256": "2189755cdafdc71a18bda22235ba5e727e3e9d84460072cb310bf5ad920cb769",
+      "bytes": 3658
+    },
+    {
+      "path": "src/FishPet/PetWindow.cs",
+      "upstream_path": "src/FishPet/PetWindow.cs",
+      "git_blob_sha1": "68402f5a712849fa6efed6fc82c895d2c6d6ff2d",
+      "sha256": "f171d187b38cb49d889c70ba738647f536f076abc7783cd110287db209c55968",
+      "bytes": 32761
+    },
+    {
+      "path": "src/FishPet/Player.cs",
+      "upstream_path": "src/FishPet/Player.cs",
+      "git_blob_sha1": "d921514ac98e4358c655fa49b164fac9c4e151e9",
+      "sha256": "9563fda7d4cdc96fc8233bf14fbe2fd6ffd604d59260e5eb3022f048315371b2",
+      "bytes": 6516
+    },
+    {
+      "path": "src/FishPet/Settings.cs",
+      "upstream_path": "src/FishPet/Settings.cs",
+      "git_blob_sha1": "3c3023558059ec7641f1e02c1678cf75708f3d6e",
+      "sha256": "07296b1e5f7d205cf4dd0cf16454e0c3f2cd1605bb482c55912b0b5d45f58f68",
+      "bytes": 2668
+    },
+    {
+      "path": "src/FishPet/Tools.cs",
+      "upstream_path": "src/FishPet/Tools.cs",
+      "git_blob_sha1": "05b94184fa8de8990704e3dcf064708797c090fa",
+      "sha256": "efb1cb96c877e864e8a7e7df02b34e7a0a90c90989614873f40cfe7314561a6b",
+      "bytes": 7656
+    },
+    {
+      "path": "src/FishPet.Mcp/Check.cs",
+      "upstream_path": "src/FishPet.Mcp/Check.cs",
+      "git_blob_sha1": "f0d1081f5f42f87d465aa128b646be87e05ce7c5",
+      "sha256": "628dca5f9286859f02a696c72a40093c08f27feb16326c0e6b0a44cc146f9f06",
+      "bytes": 6806
+    },
+    {
+      "path": "src/FishPet.Mcp/Program.cs",
+      "upstream_path": "src/FishPet.Mcp/Program.cs",
+      "git_blob_sha1": "e1cae8b74cc3cabeb533b70e2e628086465b7ebe",
+      "sha256": "850ef4476a35c00c38f250f92fb7d04490c853aee5dc56f11b4ee7c9a6921570",
+      "bytes": 8916
+    },
+    {
+      "path": "src/FishPet.Tests/Program.cs",
+      "upstream_path": "src/FishPet.Tests/Program.cs",
+      "git_blob_sha1": "d4ec25b935074280fd4712d9799ed651600acbb8",
+      "sha256": "a5fb829f8daf3386a301336c416e7be52f2f2975650326b04746331fe981fe53",
+      "bytes": 16431
+    }
+  ],
+  "all_source_blobs_verified": true,
+  "local_vts_mapping_count": 40,
+  "remote_body_word_entries_including_aliases": 57,
+  "remote_code_executed": false,
+  "dependencies_installed": false,
+  "default_and_original_sources_unchanged": true,
+  "protected_files": {
+    "latent/stream-run.json": "f282c32dac8ff649401f79cbdf6b50e935c9d5afe74307c19aca6870a4f6ed9c",
+    "latent/default-run.json": "5e8dd3056b4041fa7eaa93adfa917901b62c14e9e709558061bbacd5a7efe5d9",
+    ".runtime/performance/ratings.json": "7f7d6b0ae58dff2355aec7cbe93dbe0c54f741cb41d7b688177d5d4a4ba16f47",
+    "src/gesture-library.ts": "f653203bd7a9d40228818913fe74c447363ddef3dabaa0ec353bef674033f36b",
+    "src/gesture-choreography.ts": "774f9ff7d021890c78ed8e12d39be51a75d49ad3615554a5314d2176e0526044",
+    "src/body-motion.ts": "4463d8dd9c5c0b8be3f0185c08ee58213f39da8d1b211bf69279f22b74f3b010",
+    "src/performance.ts": "db538ad6d3e1d00cb9067824aef480b6540a3d5dd41bd6f6540d43b786906498",
+    "src/engine.ts": "aa88f0fbe5de10a6100d05229d78bc1c478f8299a1f4c84a52588988a1487d2c",
+    "speech/features.py": "5b0d0b586d72f14891b81bb06328de69ca23e66717a3dce10baa797aa0c4ec43",
+    "main.py": "b937fa73355f5987124f5654ec446314258d16e3295bc079cdd29842a66dfd9b",
+    "server/performance-service.ts": "7aa3f4e3f1f179b54d4a992865f13c70c22b85af163f06e1cd41e4cbce4592d0",
+    "experiments/vtuber-v4-default-r1/run.json": "a3b7bdd70880eb94345bcb7f9a8a8b0503133f4440f08d81621829d7b3be6eed",
+    "experiments/vtuber-v4-default-r1/selection.json": "e69b60a016300659d8f075652467d029cbfeba80f03ecb7c9399bb4d93854e09",
+    "experiments/vtuber-v4-default-r1/performance-planner.pt": "053fd98de35fa065f50fd8e86f0031fa5d1730b8544785363c4b803192d5cfa8",
+    "experiments/vtuber-v4-default-r1/body-planner.pt": "acf721015bb3b54d6427fed16e122415226595148298ac51c449c395cb65e769"
+  },
+  "report_sha256": "bd635ba2c4592d5151d308b751800d9da1ff6f0cb2c7ce074b4ad11d4a352cee"
+}

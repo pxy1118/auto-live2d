@@ -1,0 +1,1242 @@
+[
+  {
+    "family": "ordinary_calm",
+    "kind": "regression",
+    "provenance": {
+      "source": "streaming_policy_v4",
+      "checkpoint_sha256": "9a91d564a67acf0ee70b6088d9ddfaf8ad87895d6ae56f890005e87519298f26",
+      "kind": "regression",
+      "seed": 79,
+      "stage": "native_calibrated_motion_candidate"
+    },
+    "gesture_policy": {
+      "phase": "idle",
+      "used_in_clause": false,
+      "count": 0,
+      "confidence": 0.013353055343031883,
+      "cooldown_ms": 0,
+      "style": "restrained",
+      "elapsed_ms": 0,
+      "duration_ms": 3200
+    },
+    "ranges": {
+      "Param36": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param41": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param42": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param62": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param60": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param61": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      }
+    }
+  },
+  {
+    "family": "ordinary_calm",
+    "kind": "flow",
+    "provenance": {
+      "source": "streaming_policy_v4",
+      "checkpoint_sha256": "7f1b5de88a48da0253cd42849b255ee981c65d0650cfdf7e053a19c7155810c5",
+      "kind": "flow",
+      "seed": 79,
+      "stage": "native_calibrated_motion_candidate"
+    },
+    "gesture_policy": {
+      "phase": "idle",
+      "used_in_clause": false,
+      "count": 0,
+      "confidence": 0.013353055343031883,
+      "cooldown_ms": 0,
+      "style": "restrained",
+      "elapsed_ms": 0,
+      "duration_ms": 3200
+    },
+    "ranges": {
+      "Param36": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param41": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param42": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param62": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param60": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param61": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      }
+    }
+  },
+  {
+    "family": "ordinary_calm",
+    "kind": "reference",
+    "provenance": {
+      "source": "native_calibrated_teacher_reference"
+    },
+    "gesture_policy": {
+      "phase": "idle",
+      "used_in_clause": false,
+      "count": 0,
+      "confidence": 0,
+      "cooldown_ms": 0,
+      "style": "restrained",
+      "elapsed_ms": 0,
+      "duration_ms": 3200
+    },
+    "ranges": {
+      "Param36": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param41": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param42": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param62": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param60": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param61": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      }
+    }
+  },
+  {
+    "family": "ordinary_shy",
+    "kind": "regression",
+    "provenance": {
+      "source": "streaming_policy_v4",
+      "checkpoint_sha256": "9a91d564a67acf0ee70b6088d9ddfaf8ad87895d6ae56f890005e87519298f26",
+      "kind": "regression",
+      "seed": 79,
+      "stage": "native_calibrated_motion_candidate"
+    },
+    "gesture_policy": {
+      "phase": "idle",
+      "used_in_clause": false,
+      "count": 0,
+      "confidence": 0.062055155634880066,
+      "cooldown_ms": 0,
+      "style": "restrained",
+      "elapsed_ms": 0,
+      "duration_ms": 3200
+    },
+    "ranges": {
+      "Param36": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param41": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param42": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param62": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param60": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param61": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      }
+    }
+  },
+  {
+    "family": "ordinary_shy",
+    "kind": "flow",
+    "provenance": {
+      "source": "streaming_policy_v4",
+      "checkpoint_sha256": "7f1b5de88a48da0253cd42849b255ee981c65d0650cfdf7e053a19c7155810c5",
+      "kind": "flow",
+      "seed": 79,
+      "stage": "native_calibrated_motion_candidate"
+    },
+    "gesture_policy": {
+      "phase": "idle",
+      "used_in_clause": false,
+      "count": 0,
+      "confidence": 0.062055155634880066,
+      "cooldown_ms": 0,
+      "style": "restrained",
+      "elapsed_ms": 0,
+      "duration_ms": 3200
+    },
+    "ranges": {
+      "Param36": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param41": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param42": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param62": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param60": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param61": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      }
+    }
+  },
+  {
+    "family": "ordinary_shy",
+    "kind": "reference",
+    "provenance": {
+      "source": "native_calibrated_teacher_reference"
+    },
+    "gesture_policy": {
+      "phase": "idle",
+      "used_in_clause": false,
+      "count": 0,
+      "confidence": 0,
+      "cooldown_ms": 0,
+      "style": "restrained",
+      "elapsed_ms": 0,
+      "duration_ms": 3200
+    },
+    "ranges": {
+      "Param36": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param41": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param42": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param62": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param60": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param61": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      }
+    }
+  },
+  {
+    "family": "wave",
+    "kind": "regression",
+    "provenance": {
+      "source": "streaming_policy_v4",
+      "checkpoint_sha256": "9a91d564a67acf0ee70b6088d9ddfaf8ad87895d6ae56f890005e87519298f26",
+      "kind": "regression",
+      "seed": 81,
+      "stage": "native_calibrated_motion_candidate"
+    },
+    "gesture_policy": {
+      "phase": "idle",
+      "used_in_clause": true,
+      "count": 1,
+      "confidence": 0.9999961853027344,
+      "cooldown_ms": 1750.00000000001,
+      "style": "restrained",
+      "elapsed_ms": 3950,
+      "duration_ms": 3200
+    },
+    "ranges": {
+      "Param36": {
+        "min": 0,
+        "max": 0.8947921086979903,
+        "range": 0.8947921086979903
+      },
+      "Param41": {
+        "min": 0,
+        "max": 0.15267145431550355,
+        "range": 0.15267145431550355
+      },
+      "Param42": {
+        "min": -0.15051342113145183,
+        "max": 0.2344052631636542,
+        "range": 0.384918684295106
+      },
+      "Param62": {
+        "min": -0.06478819584189915,
+        "max": 0.010033303787896894,
+        "range": 0.07482149962979605
+      },
+      "Param60": {
+        "min": -0.012136548562261672,
+        "max": 0.06660153062391269,
+        "range": 0.07873807918617437
+      },
+      "Param61": {
+        "min": -0.11066335246206818,
+        "max": 0,
+        "range": 0.11066335246206818
+      }
+    }
+  },
+  {
+    "family": "wave",
+    "kind": "flow",
+    "provenance": {
+      "source": "streaming_policy_v4",
+      "checkpoint_sha256": "7f1b5de88a48da0253cd42849b255ee981c65d0650cfdf7e053a19c7155810c5",
+      "kind": "flow",
+      "seed": 81,
+      "stage": "native_calibrated_motion_candidate"
+    },
+    "gesture_policy": {
+      "phase": "idle",
+      "used_in_clause": true,
+      "count": 1,
+      "confidence": 0.9999961853027344,
+      "cooldown_ms": 1750.00000000001,
+      "style": "restrained",
+      "elapsed_ms": 3950,
+      "duration_ms": 3200
+    },
+    "ranges": {
+      "Param36": {
+        "min": -0.033799283957070235,
+        "max": 0.7244841106390781,
+        "range": 0.7582833945961484
+      },
+      "Param41": {
+        "min": -0.10069433997612424,
+        "max": 0.027233125336266272,
+        "range": 0.12792746531239052
+      },
+      "Param42": {
+        "min": -0.2919683638750227,
+        "max": 0.14045593559053338,
+        "range": 0.43242429946555605
+      },
+      "Param62": {
+        "min": -0.17821042002912763,
+        "max": 0,
+        "range": 0.17821042002912763
+      },
+      "Param60": {
+        "min": -0.12665804677851944,
+        "max": 0.0011529482314842476,
+        "range": 0.12781099501000368
+      },
+      "Param61": {
+        "min": -0.003939049879098918,
+        "max": 0.1405154022582058,
+        "range": 0.1444544521373047
+      }
+    }
+  },
+  {
+    "family": "wave",
+    "kind": "reference",
+    "provenance": {
+      "source": "native_calibrated_teacher_reference"
+    },
+    "gesture_policy": {
+      "phase": "idle",
+      "used_in_clause": true,
+      "count": 1,
+      "confidence": 1,
+      "cooldown_ms": 1750.00000000001,
+      "style": "restrained",
+      "elapsed_ms": 3950,
+      "duration_ms": 3200
+    },
+    "ranges": {
+      "Param36": {
+        "min": -0.000004761925576399133,
+        "max": 0.9748068871963412,
+        "range": 0.9748116491219176
+      },
+      "Param41": {
+        "min": -0.04468717760798386,
+        "max": 0.04467382240495615,
+        "range": 0.08936100001294
+      },
+      "Param42": {
+        "min": -0.3033811822181506,
+        "max": 0.303389277284731,
+        "range": 0.6067704595028816
+      },
+      "Param62": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param60": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param61": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      }
+    }
+  },
+  {
+    "family": "cheer",
+    "kind": "regression",
+    "provenance": {
+      "source": "streaming_policy_v4",
+      "checkpoint_sha256": "9a91d564a67acf0ee70b6088d9ddfaf8ad87895d6ae56f890005e87519298f26",
+      "kind": "regression",
+      "seed": 81,
+      "stage": "native_calibrated_motion_candidate"
+    },
+    "gesture_policy": {
+      "phase": "idle",
+      "used_in_clause": true,
+      "count": 1,
+      "confidence": 0.9999938011169434,
+      "cooldown_ms": 1750.00000000001,
+      "style": "restrained",
+      "elapsed_ms": 3950,
+      "duration_ms": 3200
+    },
+    "ranges": {
+      "Param36": {
+        "min": 0,
+        "max": 0.9066249625276038,
+        "range": 0.9066249625276038
+      },
+      "Param41": {
+        "min": -0.02203040645184699,
+        "max": 0.12426840965255734,
+        "range": 0.14629881610440432
+      },
+      "Param42": {
+        "min": -0.042930528832540296,
+        "max": 0.17013213005152703,
+        "range": 0.21306265888406734
+      },
+      "Param62": {
+        "min": -0.08689274517603944,
+        "max": 0.8443489199397587,
+        "range": 0.9312416651157981
+      },
+      "Param60": {
+        "min": -0.029410018526875546,
+        "max": 0.09958872864981469,
+        "range": 0.12899874717669024
+      },
+      "Param61": {
+        "min": -0.23146148060334235,
+        "max": 0,
+        "range": 0.23146148060334235
+      }
+    }
+  },
+  {
+    "family": "cheer",
+    "kind": "flow",
+    "provenance": {
+      "source": "streaming_policy_v4",
+      "checkpoint_sha256": "7f1b5de88a48da0253cd42849b255ee981c65d0650cfdf7e053a19c7155810c5",
+      "kind": "flow",
+      "seed": 81,
+      "stage": "native_calibrated_motion_candidate"
+    },
+    "gesture_policy": {
+      "phase": "idle",
+      "used_in_clause": true,
+      "count": 1,
+      "confidence": 0.9999938011169434,
+      "cooldown_ms": 1750.00000000001,
+      "style": "restrained",
+      "elapsed_ms": 3950,
+      "duration_ms": 3200
+    },
+    "ranges": {
+      "Param36": {
+        "min": -0.01630763427813588,
+        "max": 0.7506246575865926,
+        "range": 0.7669322918647284
+      },
+      "Param41": {
+        "min": -0.12896041273761244,
+        "max": 0.017990647238282913,
+        "range": 0.14695105997589536
+      },
+      "Param42": {
+        "min": -0.28834780540628513,
+        "max": 0.03952723034644712,
+        "range": 0.32787503575273225
+      },
+      "Param62": {
+        "min": -0.19751987025976453,
+        "max": 0.5317622146500001,
+        "range": 0.7292820849097645
+      },
+      "Param60": {
+        "min": -0.13138407688627685,
+        "max": 0.020038795858880708,
+        "range": 0.15142287274515756
+      },
+      "Param61": {
+        "min": -0.004291448098124173,
+        "max": 0.22505833210268486,
+        "range": 0.22934978020080904
+      }
+    }
+  },
+  {
+    "family": "cheer",
+    "kind": "reference",
+    "provenance": {
+      "source": "native_calibrated_teacher_reference"
+    },
+    "gesture_policy": {
+      "phase": "idle",
+      "used_in_clause": true,
+      "count": 1,
+      "confidence": 1,
+      "cooldown_ms": 1750.00000000001,
+      "style": "restrained",
+      "elapsed_ms": 3950,
+      "duration_ms": 3200
+    },
+    "ranges": {
+      "Param36": {
+        "min": -0.00000491370497825071,
+        "max": 0.9986459682753744,
+        "range": 0.9986508819803527
+      },
+      "Param41": {
+        "min": -0.044118495334744115,
+        "max": 0.044127638946435725,
+        "range": 0.08824613428117983
+      },
+      "Param42": {
+        "min": -0.16726531401234648,
+        "max": 0.16735336918552488,
+        "range": 0.33461868319787136
+      },
+      "Param62": {
+        "min": -0.001827697454364675,
+        "max": 0.9986459682749795,
+        "range": 1.0004736657293443
+      },
+      "Param60": {
+        "min": -0.04413009006362686,
+        "max": 0.04412617120532793,
+        "range": 0.08825626126895478
+      },
+      "Param61": {
+        "min": -0.17703571353690192,
+        "max": 0.17716971631044545,
+        "range": 0.3542054298473474
+      }
+    }
+  },
+  {
+    "family": "point",
+    "kind": "regression",
+    "provenance": {
+      "source": "streaming_policy_v4",
+      "checkpoint_sha256": "9a91d564a67acf0ee70b6088d9ddfaf8ad87895d6ae56f890005e87519298f26",
+      "kind": "regression",
+      "seed": 81,
+      "stage": "native_calibrated_motion_candidate"
+    },
+    "gesture_policy": {
+      "phase": "idle",
+      "used_in_clause": true,
+      "count": 1,
+      "confidence": 0.9999641180038452,
+      "cooldown_ms": 1750.00000000001,
+      "style": "restrained",
+      "elapsed_ms": 3950,
+      "duration_ms": 3200
+    },
+    "ranges": {
+      "Param36": {
+        "min": 0,
+        "max": 0.11656968093161528,
+        "range": 0.11656968093161528
+      },
+      "Param41": {
+        "min": -0.039012195002161076,
+        "max": 0.7235639695826745,
+        "range": 0.7625761645848357
+      },
+      "Param42": {
+        "min": 0,
+        "max": 0.12222171702286048,
+        "range": 0.12222171702286048
+      },
+      "Param62": {
+        "min": -0.07319230843672368,
+        "max": 0.06144228459741937,
+        "range": 0.13463459303414305
+      },
+      "Param60": {
+        "min": -0.02632225258019066,
+        "max": 0.10738460172186116,
+        "range": 0.13370685430205181
+      },
+      "Param61": {
+        "min": -0.08113300302178973,
+        "max": 0,
+        "range": 0.08113300302178973
+      }
+    }
+  },
+  {
+    "family": "point",
+    "kind": "flow",
+    "provenance": {
+      "source": "streaming_policy_v4",
+      "checkpoint_sha256": "7f1b5de88a48da0253cd42849b255ee981c65d0650cfdf7e053a19c7155810c5",
+      "kind": "flow",
+      "seed": 81,
+      "stage": "native_calibrated_motion_candidate"
+    },
+    "gesture_policy": {
+      "phase": "idle",
+      "used_in_clause": true,
+      "count": 1,
+      "confidence": 0.9999641180038452,
+      "cooldown_ms": 1750.00000000001,
+      "style": "restrained",
+      "elapsed_ms": 3950,
+      "duration_ms": 3200
+    },
+    "ranges": {
+      "Param36": {
+        "min": -0.007714189743238989,
+        "max": 0.13665131214423773,
+        "range": 0.1443655018874767
+      },
+      "Param41": {
+        "min": -0.09635558176356626,
+        "max": 0.48709519001974527,
+        "range": 0.5834507717833115
+      },
+      "Param42": {
+        "min": -0.13744481043783466,
+        "max": 0.07326472318576432,
+        "range": 0.21070953362359898
+      },
+      "Param62": {
+        "min": -0.14994125834518918,
+        "max": 0.03646920342057944,
+        "range": 0.18641046176576861
+      },
+      "Param60": {
+        "min": -0.09496254219718016,
+        "max": 0.005780495536761483,
+        "range": 0.10074303773394164
+      },
+      "Param61": {
+        "min": -0.0045538373555394675,
+        "max": 0.1535843481221678,
+        "range": 0.15813818547770728
+      }
+    }
+  },
+  {
+    "family": "point",
+    "kind": "reference",
+    "provenance": {
+      "source": "native_calibrated_teacher_reference"
+    },
+    "gesture_policy": {
+      "phase": "idle",
+      "used_in_clause": true,
+      "count": 1,
+      "confidence": 1,
+      "cooldown_ms": 1750.00000000001,
+      "style": "restrained",
+      "elapsed_ms": 3950,
+      "duration_ms": 3200
+    },
+    "ranges": {
+      "Param36": {
+        "min": -0.0029382940613196856,
+        "max": 0.0038397945282279715,
+        "range": 0.006778088589547657
+      },
+      "Param41": {
+        "min": 0,
+        "max": 0.7574358187249869,
+        "range": 0.7574358187249869
+      },
+      "Param42": {
+        "min": -0.11956999446353112,
+        "max": 0.12936149468167937,
+        "range": 0.2489314891452105
+      },
+      "Param62": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param60": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param61": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      }
+    }
+  },
+  {
+    "family": "chest",
+    "kind": "regression",
+    "provenance": {
+      "source": "streaming_policy_v4",
+      "checkpoint_sha256": "9a91d564a67acf0ee70b6088d9ddfaf8ad87895d6ae56f890005e87519298f26",
+      "kind": "regression",
+      "seed": 81,
+      "stage": "native_calibrated_motion_candidate"
+    },
+    "gesture_policy": {
+      "phase": "idle",
+      "used_in_clause": true,
+      "count": 1,
+      "confidence": 0.9997988343238831,
+      "cooldown_ms": 1750.00000000001,
+      "style": "restrained",
+      "elapsed_ms": 3950,
+      "duration_ms": 3200
+    },
+    "ranges": {
+      "Param36": {
+        "min": -0.010189615319152152,
+        "max": 0.14623736014254915,
+        "range": 0.1564269754617013
+      },
+      "Param41": {
+        "min": -0.04770734319591648,
+        "max": 0.07304936662385893,
+        "range": 0.1207567098197754
+      },
+      "Param42": {
+        "min": -0.03421631143124786,
+        "max": 0.08093415474866276,
+        "range": 0.11515046617991062
+      },
+      "Param62": {
+        "min": -0.09637610951610795,
+        "max": 0.08203075636904983,
+        "range": 0.17840686588515778
+      },
+      "Param60": {
+        "min": -0.0055815946155272226,
+        "max": 0.8567275820446816,
+        "range": 0.8623091766602088
+      },
+      "Param61": {
+        "min": -0.08481204666903575,
+        "max": 0.09296709704526751,
+        "range": 0.17777914371430326
+      }
+    }
+  },
+  {
+    "family": "chest",
+    "kind": "flow",
+    "provenance": {
+      "source": "streaming_policy_v4",
+      "checkpoint_sha256": "7f1b5de88a48da0253cd42849b255ee981c65d0650cfdf7e053a19c7155810c5",
+      "kind": "flow",
+      "seed": 81,
+      "stage": "native_calibrated_motion_candidate"
+    },
+    "gesture_policy": {
+      "phase": "idle",
+      "used_in_clause": true,
+      "count": 1,
+      "confidence": 0.9997988343238831,
+      "cooldown_ms": 1750.00000000001,
+      "style": "restrained",
+      "elapsed_ms": 3950,
+      "duration_ms": 3200
+    },
+    "ranges": {
+      "Param36": {
+        "min": -0.04332067078691023,
+        "max": 0.10455528817514681,
+        "range": 0.14787595896205705
+      },
+      "Param41": {
+        "min": -0.10244873971901919,
+        "max": 0.05977481481398114,
+        "range": 0.16222355453300033
+      },
+      "Param42": {
+        "min": -0.15807526727078033,
+        "max": 0.021085125332033775,
+        "range": 0.1791603926028141
+      },
+      "Param62": {
+        "min": -0.13729175585041484,
+        "max": 0.11353468384257788,
+        "range": 0.25082643969299273
+      },
+      "Param60": {
+        "min": -0.10619882966370539,
+        "max": 0.5320663767236693,
+        "range": 0.6382652063873747
+      },
+      "Param61": {
+        "min": 0,
+        "max": 0.14872182977221435,
+        "range": 0.14872182977221435
+      }
+    }
+  },
+  {
+    "family": "chest",
+    "kind": "reference",
+    "provenance": {
+      "source": "native_calibrated_teacher_reference"
+    },
+    "gesture_policy": {
+      "phase": "idle",
+      "used_in_clause": true,
+      "count": 1,
+      "confidence": 1,
+      "cooldown_ms": 1750.00000000001,
+      "style": "restrained",
+      "elapsed_ms": 3950,
+      "duration_ms": 3200
+    },
+    "ranges": {
+      "Param36": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param41": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param42": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param62": {
+        "min": -0.02949131153000443,
+        "max": 0.03399999999998927,
+        "range": 0.0634913115299937
+      },
+      "Param60": {
+        "min": -0.0037520659843233,
+        "max": 0.8762272892803402,
+        "range": 0.8799793552646635
+      },
+      "Param61": {
+        "min": -0.0640838234060252,
+        "max": 0.23252021673493609,
+        "range": 0.2966040401409613
+      }
+    }
+  },
+  {
+    "family": "explain",
+    "kind": "regression",
+    "provenance": {
+      "source": "streaming_policy_v4",
+      "checkpoint_sha256": "9a91d564a67acf0ee70b6088d9ddfaf8ad87895d6ae56f890005e87519298f26",
+      "kind": "regression",
+      "seed": 81,
+      "stage": "native_calibrated_motion_candidate"
+    },
+    "gesture_policy": {
+      "phase": "idle",
+      "used_in_clause": true,
+      "count": 1,
+      "confidence": 0.9994277358055115,
+      "cooldown_ms": 1750.00000000001,
+      "style": "restrained",
+      "elapsed_ms": 3950,
+      "duration_ms": 3200
+    },
+    "ranges": {
+      "Param36": {
+        "min": 0,
+        "max": 0.27367638158590457,
+        "range": 0.27367638158590457
+      },
+      "Param41": {
+        "min": -0.014606865865309366,
+        "max": 0.42897816684800766,
+        "range": 0.443585032713317
+      },
+      "Param42": {
+        "min": -0.08305114501919483,
+        "max": 0.1462162329254705,
+        "range": 0.22926737794466534
+      },
+      "Param62": {
+        "min": -0.046202460057204714,
+        "max": 0,
+        "range": 0.046202460057204714
+      },
+      "Param60": {
+        "min": -0.01549302729222265,
+        "max": 0.04842939789319736,
+        "range": 0.06392242518542002
+      },
+      "Param61": {
+        "min": -0.07656345327650076,
+        "max": 0,
+        "range": 0.07656345327650076
+      }
+    }
+  },
+  {
+    "family": "explain",
+    "kind": "flow",
+    "provenance": {
+      "source": "streaming_policy_v4",
+      "checkpoint_sha256": "7f1b5de88a48da0253cd42849b255ee981c65d0650cfdf7e053a19c7155810c5",
+      "kind": "flow",
+      "seed": 81,
+      "stage": "native_calibrated_motion_candidate"
+    },
+    "gesture_policy": {
+      "phase": "idle",
+      "used_in_clause": true,
+      "count": 1,
+      "confidence": 0.9994277358055115,
+      "cooldown_ms": 1750.00000000001,
+      "style": "restrained",
+      "elapsed_ms": 3950,
+      "duration_ms": 3200
+    },
+    "ranges": {
+      "Param36": {
+        "min": 0,
+        "max": 0.2456850275253306,
+        "range": 0.2456850275253306
+      },
+      "Param41": {
+        "min": -0.07827636346437816,
+        "max": 0.24532476049705979,
+        "range": 0.3236011239614379
+      },
+      "Param42": {
+        "min": -0.15099281358702432,
+        "max": 0.0651253377441145,
+        "range": 0.21611815133113882
+      },
+      "Param62": {
+        "min": -0.14675403883641616,
+        "max": 0,
+        "range": 0.14675403883641616
+      },
+      "Param60": {
+        "min": -0.10704476110956733,
+        "max": 0.011801691257175667,
+        "range": 0.118846452366743
+      },
+      "Param61": {
+        "min": -0.005773254585231393,
+        "max": 0.12848847249292478,
+        "range": 0.13426172707815617
+      }
+    }
+  },
+  {
+    "family": "explain",
+    "kind": "reference",
+    "provenance": {
+      "source": "native_calibrated_teacher_reference"
+    },
+    "gesture_policy": {
+      "phase": "idle",
+      "used_in_clause": true,
+      "count": 1,
+      "confidence": 1,
+      "cooldown_ms": 1750.00000000001,
+      "style": "restrained",
+      "elapsed_ms": 3950,
+      "duration_ms": 3200
+    },
+    "ranges": {
+      "Param36": {
+        "min": -0.0000013679642902016387,
+        "max": 0.2701807693884561,
+        "range": 0.27018213735274627
+      },
+      "Param41": {
+        "min": -0.0007033896608646858,
+        "max": 0.46960072539133396,
+        "range": 0.47030411505219866
+      },
+      "Param42": {
+        "min": -0.12931723204916573,
+        "max": 0.1293803590638631,
+        "range": 0.2586975911130288
+      },
+      "Param62": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param60": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param61": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      }
+    }
+  },
+  {
+    "family": "refuse",
+    "kind": "regression",
+    "provenance": {
+      "source": "streaming_policy_v4",
+      "checkpoint_sha256": "9a91d564a67acf0ee70b6088d9ddfaf8ad87895d6ae56f890005e87519298f26",
+      "kind": "regression",
+      "seed": 81,
+      "stage": "native_calibrated_motion_candidate"
+    },
+    "gesture_policy": {
+      "phase": "idle",
+      "used_in_clause": true,
+      "count": 1,
+      "confidence": 0.9986878037452698,
+      "cooldown_ms": 1750.00000000001,
+      "style": "restrained",
+      "elapsed_ms": 3950,
+      "duration_ms": 3200
+    },
+    "ranges": {
+      "Param36": {
+        "min": 0,
+        "max": 0.3301108653022688,
+        "range": 0.3301108653022688
+      },
+      "Param41": {
+        "min": -0.011370680347951134,
+        "max": 0.4173088723720433,
+        "range": 0.4286795527199944
+      },
+      "Param42": {
+        "min": -0.06190811975301823,
+        "max": 0.1878990013523708,
+        "range": 0.24980712110538905
+      },
+      "Param62": {
+        "min": -0.06381603861828765,
+        "max": 0,
+        "range": 0.06381603861828765
+      },
+      "Param60": {
+        "min": -0.035322817327133785,
+        "max": 0.008293781835668809,
+        "range": 0.0436165991628026
+      },
+      "Param61": {
+        "min": -0.07537222640325984,
+        "max": 0,
+        "range": 0.07537222640325984
+      }
+    }
+  },
+  {
+    "family": "refuse",
+    "kind": "flow",
+    "provenance": {
+      "source": "streaming_policy_v4",
+      "checkpoint_sha256": "7f1b5de88a48da0253cd42849b255ee981c65d0650cfdf7e053a19c7155810c5",
+      "kind": "flow",
+      "seed": 81,
+      "stage": "native_calibrated_motion_candidate"
+    },
+    "gesture_policy": {
+      "phase": "idle",
+      "used_in_clause": true,
+      "count": 1,
+      "confidence": 0.9986878037452698,
+      "cooldown_ms": 1750.00000000001,
+      "style": "restrained",
+      "elapsed_ms": 3950,
+      "duration_ms": 3200
+    },
+    "ranges": {
+      "Param36": {
+        "min": 0,
+        "max": 0.3392446473302168,
+        "range": 0.3392446473302168
+      },
+      "Param41": {
+        "min": -0.11366657431524121,
+        "max": 0.26526558925491917,
+        "range": 0.37893216357016035
+      },
+      "Param42": {
+        "min": -0.1835278537911723,
+        "max": 0.07658564715389198,
+        "range": 0.2601135009450643
+      },
+      "Param62": {
+        "min": -0.14752922581997294,
+        "max": 0,
+        "range": 0.14752922581997294
+      },
+      "Param60": {
+        "min": -0.11562477990661985,
+        "max": 0,
+        "range": 0.11562477990661985
+      },
+      "Param61": {
+        "min": -0.0016864321650715342,
+        "max": 0.11876139052384238,
+        "range": 0.12044782268891391
+      }
+    }
+  },
+  {
+    "family": "refuse",
+    "kind": "reference",
+    "provenance": {
+      "source": "native_calibrated_teacher_reference"
+    },
+    "gesture_policy": {
+      "phase": "idle",
+      "used_in_clause": true,
+      "count": 1,
+      "confidence": 1,
+      "cooldown_ms": 1750.00000000001,
+      "style": "restrained",
+      "elapsed_ms": 3950,
+      "duration_ms": 3200
+    },
+    "ranges": {
+      "Param36": {
+        "min": -0.0000019246497458761104,
+        "max": 0.3802545233378602,
+        "range": 0.38025644798760605
+      },
+      "Param41": {
+        "min": -0.0007033896608646858,
+        "max": 0.46960072539133396,
+        "range": 0.47030411505219866
+      },
+      "Param42": {
+        "min": -0.1685728281448697,
+        "max": 0.16854276711598717,
+        "range": 0.3371155952608569
+      },
+      "Param62": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param60": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      },
+      "Param61": {
+        "min": 0,
+        "max": 0,
+        "range": 0
+      }
+    }
+  }
+]

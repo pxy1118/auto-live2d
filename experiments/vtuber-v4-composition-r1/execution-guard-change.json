@@ -1,0 +1,16 @@
+{
+  "reason": "Validation render found low-confidence grass on shy dialogue and weak-confidence mood on a negated statement",
+  "source_cases": [
+    6,
+    23
+  ],
+  "model_weights_changed": false,
+  "raw_test_evaluation_repeated": false,
+  "new_execution_confidence_min": {
+    "arm": 0.85,
+    "grass": 0.95,
+    "emotion": 0.7,
+    "eye": 0.6
+  },
+  "interrupted_stability_run": "pre-gate run deliberately stopped; not counted as passed"
+}

@@ -1,0 +1,11 @@
+[
+  "/home/cola/.local/share/auto-live2d/latent-venv/bin/python",
+  "/mnt/d/Workplace/auto-live2d/latent/serve.py",
+  "--device",
+  "cuda",
+  "--stream-experiment",
+  "experiments/vtuber-v4-composition-r2",
+  "--planner-device",
+  "cuda",
+  ""
+]

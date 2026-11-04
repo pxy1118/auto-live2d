@@ -1,0 +1,28 @@
+{
+  "version": "intent-study-r1",
+  "status": "preregistered before feature extraction and pilot fitting",
+  "scope": "development-only, assistant-authored labels; no default promotion",
+  "encoder": "frozen Qwen3.5-4B, pinned source latent/encoders/qwen3.5-4b.json",
+  "base": "experiments/vtuber-v4-generalization-r1/selected-planner.pt",
+  "base_sha256": "053fd98de35fa065f50fd8e86f0031fa5d1730b8544785363c4b803192d5cfa8",
+  "frozen_layers": "encoder, projection, history, attention, mix and all non-body task heads",
+  "trainable": "body linear head, conditional strength linear head, separate 3-class necessity MLP",
+  "splits": {"train_stories": 60, "development_stories": 20, "calibration_stories": 20, "final_test": "not created; previous final test never loaded"},
+  "independent_unit": "whole story family; all context contrasts and history variants stay together",
+  "arms_faces_appearance": "not fitted or changed in this study",
+  "seeds": [7137, 1741, 9283],
+  "optimizer": {"name": "AdamW", "lr": 0.001, "weight_decay": 0.025, "batch_size": 64, "steps": 1000},
+  "experiments": {
+    "preferred": "single preferred-label cross entropy plus conditional strength midpoint regression",
+    "acceptable": "negative log probability of acceptable set plus 0.25 preferred-label CE and conditional interval strength loss",
+    "necessity": "same type and strength prediction as acceptable, plus independent 128-64-3 necessity head CE; reject forbidden or restore required active proposal at inference"
+  },
+  "selection": "no hyperparameter search. Fixed 1000 steps. Report all seeds; do not pick best seed",
+  "temperature_candidates": [0.75, 1.0, 1.5, 2.0, 3.0],
+  "calibration": "fit necessity temperature by NLL only on calibration, then use same fixed threshold grid for all probe families; prior old-model threshold remains 0.4",
+  "threshold_grid": {"active": [0.0, 0.25, 0.4, 0.55, 0.7], "forbidden": [0.4, 0.55, 0.7, 0.85], "required": [0.4, 0.55, 0.7, 0.85]},
+  "calibration_objective": "0.5 * required acceptable recall + 0.5 * forbidden specificity, minus 0.1 * optional unacceptable fraction; ties favor required recall then higher active threshold",
+  "report": ["forbidden activation", "required acceptable success", "any acceptable decision", "strict preferred match", "optional activity", "active amplitude outside interval", "all-none and always-active degeneracy checks", "episode family bootstrap intervals", "necessity NLL and Brier before and after calibration"],
+  "inference_scope": "clause-level proposals only; busy/cooldown/execution eligibility and visual naturalness require separate runtime checks",
+  "limitations": "Small draft corpus and developer-selected policy. No OOD risk guarantee or human naturalness conclusion; fresh independent final scenes required after annotation review."
+}

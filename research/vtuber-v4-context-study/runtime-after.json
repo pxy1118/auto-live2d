@@ -1,0 +1,19 @@
+{
+  "files_unchanged": true,
+  "latent/status": {
+    "ready": true,
+    "encoder": "Qwen/Qwen3.5-0.8B",
+    "experiment": "experiments/vtuber-v3",
+    "checkpoint_sha256": null,
+    "backend": null,
+    "busy": null
+  },
+  "speech/status": {
+    "ready": true,
+    "encoder": null,
+    "experiment": null,
+    "checkpoint_sha256": "b62a26f6c2ebd10582c088c318d1fe045f19861500caf7eae300b676d2f19a3d",
+    "backend": "cuda_graph",
+    "busy": false
+  }
+}

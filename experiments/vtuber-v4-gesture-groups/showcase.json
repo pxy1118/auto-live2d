@@ -1,0 +1,178 @@
+[
+  {
+    "gesture": "chest",
+    "variant": 0,
+    "frames": 233,
+    "source": "performance.direct typed action-group tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    }
+  },
+  {
+    "gesture": "chest",
+    "variant": 1,
+    "frames": 235,
+    "source": "performance.direct typed action-group tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    }
+  },
+  {
+    "gesture": "grass",
+    "variant": 0,
+    "frames": 299,
+    "source": "performance.direct typed action-group tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    }
+  },
+  {
+    "gesture": "grass",
+    "variant": 1,
+    "frames": 309,
+    "source": "performance.direct typed action-group tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    }
+  },
+  {
+    "gesture": "wave",
+    "variant": 0,
+    "frames": 233,
+    "source": "performance.direct typed action-group tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    }
+  },
+  {
+    "gesture": "wave",
+    "variant": 1,
+    "frames": 233,
+    "source": "performance.direct typed action-group tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    }
+  },
+  {
+    "gesture": "cheer",
+    "variant": 0,
+    "frames": 233,
+    "source": "performance.direct typed action-group tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    }
+  },
+  {
+    "gesture": "cheer",
+    "variant": 1,
+    "frames": 233,
+    "source": "performance.direct typed action-group tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    }
+  },
+  {
+    "gesture": "point",
+    "variant": 0,
+    "frames": 248,
+    "source": "performance.direct typed action-group tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    }
+  },
+  {
+    "gesture": "point",
+    "variant": 1,
+    "frames": 257,
+    "source": "performance.direct typed action-group tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    }
+  },
+  {
+    "gesture": "thanks",
+    "variant": 0,
+    "frames": 233,
+    "source": "performance.direct typed action-group tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    }
+  },
+  {
+    "gesture": "thanks",
+    "variant": 1,
+    "frames": 235,
+    "source": "performance.direct typed action-group tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    }
+  },
+  {
+    "gesture": "explain",
+    "variant": 0,
+    "frames": 233,
+    "source": "performance.direct typed action-group tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    }
+  },
+  {
+    "gesture": "explain",
+    "variant": 1,
+    "frames": 235,
+    "source": "performance.direct typed action-group tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    }
+  },
+  {
+    "gesture": "refuse",
+    "variant": 0,
+    "frames": 248,
+    "source": "performance.direct typed action-group tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    }
+  },
+  {
+    "gesture": "refuse",
+    "variant": 1,
+    "frames": 257,
+    "source": "performance.direct typed action-group tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    }
+  }
+]

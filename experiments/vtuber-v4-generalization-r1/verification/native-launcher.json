@@ -1,0 +1,15 @@
+{
+  "ok": true,
+  "main_run_id": "24cc713c3b724935a520d762ac8ab164",
+  "stream_stage": "generalization_research_candidate",
+  "planner_sha256": "053fd98de35fa065f50fd8e86f0031fa5d1730b8544785363c4b803192d5cfa8",
+  "tts_checkpoint_sha256": "b62a26f6c2ebd10582c088c318d1fe045f19861500caf7eae300b676d2f19a3d",
+  "default_config": {
+    "path": "experiments/vtuber-v3"
+  },
+  "stream_config": {
+    "path": "experiments/vtuber-v4-composition-r2",
+    "promoted": false,
+    "reason": "Special eyes are exclusive full on/off after real human feedback. Parent missed the 16/24 preference gate; no default promotion."
+  }
+}

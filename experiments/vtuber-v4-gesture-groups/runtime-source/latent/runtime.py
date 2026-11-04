@@ -1,0 +1,69 @@
+from pathlib import Path
+import time
+import numpy as np
+import torch
+from common import ROOT, CHANNELS, PROFILE, ASSET_HASH, SOURCE, RIGHT, LEFT, read, sha
+from encoder import SemanticEncoder
+from networks import ActionExpert
+from trajectory import compile_trajectory
+
+
+class LatentPolicy:
+    def __init__(self, experiment=None, device='cuda'):
+        torch.set_num_threads(4)
+        self.folder=Path(experiment) if experiment else ROOT/read(ROOT/'latent/default-run.json')['path']
+        self.report=read(self.folder/'run.json'); self.device=device
+        self.profile=read(self.folder/'profile.json') if (self.folder/'profile.json').exists() else PROFILE
+        self.channels=self.profile['channels']
+        if self.report['profile_sha256']!=self.profile['sha256'] or self.report['encoder']['revision']!=SOURCE['revision']: raise ValueError("模型来源不匹配")
+        self.encoder=SemanticEncoder(device); self.models={}
+        for kind in ['regression','flow']:
+            file=self.folder/self.report['models'][kind]['checkpoint']
+            if sha(file)!=self.report['models'][kind]['checkpoint_sha256']: raise ValueError("检查点指纹不匹配")
+            saved=torch.load(file,map_location='cpu',weights_only=True)
+            model=ActionExpert(kind,saved['width'],saved['layers'],saved.get('action_dim',12),saved.get('expression_dim',0),saved.get('appearance_dim',0),saved.get('native_dim',0)); model.load_state_dict(saved['state_dict']); self.models[kind]=model.to(device).eval()
+        self.lo=torch.tensor([c['min'] for c in self.channels],device=device); self.hi=torch.tensor([c['max'] for c in self.channels],device=device)
+        u0=torch.tensor([c['neutral'] for c in self.channels],device=device); normalized=(u0-self.lo)/(self.hi-self.lo)*2-1
+        self.state=torch.cat([normalized,torch.tensor([1,0,0,1,0],device=device)])[None]
+
+    def info(self):
+        return {'ready':True,'encoder':SOURCE['repo_id'],'encoder_revision':SOURCE['revision'],'profile_sha256':self.profile['sha256'],'asset_hash':ASSET_HASH,
+                'experiment':str(self.folder.relative_to(ROOT)) if self.folder.is_relative_to(ROOT) else str(self.folder),'models':list(self.models),'supervision':self.report['supervision'],
+                'held_out_evaluation':self.report.get('held_out_evaluation',False),'neutral_start_only':True,'output_shape':[64,len(self.channels)],'sample_hz':10,
+                'expression_names':self.profile.get('expressions',[]),'appearance_poses':self.profile.get('appearance_poses',[]),'native_motions':self.profile.get('native_motions',[]),
+                'background_behavior':self.profile.get('background_behavior',{}),'training_samples':self.report.get('samples'),'profile_id':self.profile['id']}
+
+    def predict(self,text,context='',style='natural',kind='regression',seed=41):
+        if kind not in self.models: raise ValueError("请选择 regression 或 flow")
+        if not isinstance(seed,int) or isinstance(seed,bool) or not 0<=seed<2**31: raise ValueError("seed 不合法")
+        begin=time.perf_counter(); features,mask,timing=self.encoder.encode(text,context,style)
+        if self.device=='cuda': torch.cuda.synchronize()
+        head_start=time.perf_counter()
+        with torch.inference_mode():
+            raw,rr,ll=self.models[kind].sample(features[None],self.state,mask[None],steps=8,seed=seed)
+            expressions=self.models[kind].expression_logits(features[None],self.state,mask[None]).sigmoid()[0].cpu().tolist()
+            appearance_logits,native_logits=self.models[kind].configuration_logits(features[None],self.state,mask[None])
+        if not torch.isfinite(raw).all(): raise ValueError("预测出现非有限数值")
+        if self.device=='cuda': torch.cuda.synchronize()
+        timing['head_ms']=(time.perf_counter()-head_start)*1000
+        excess=(raw.abs()-1).clamp_min(0)
+        clipped=raw.clamp(-1,1); physical=((clipped[0]+1)/2*(self.hi-self.lo)+self.lo).cpu().numpy().astype(np.float64)
+        # Only tiny serialization rounding follows the explicitly reported clipping step.
+        physical=np.round(physical,5)
+        right_raw=rr[0].argmax(-1);left_raw=ll[0].argmax(-1)
+        threshold=self.profile.get('gesture_probability_threshold',0)
+        right_selected=torch.where(rr[0].softmax(-1).amax(-1)>=threshold,right_raw,0)
+        left_selected=torch.where(ll[0].softmax(-1).amax(-1)>=threshold,left_raw,0)
+        hand_suppressed=int(((right_selected!=right_raw)|(left_selected!=left_raw)).sum())
+        right=right_selected.cpu().tolist(); left=left_selected.cpu().tolist()
+        appearance=appearance_logits[0].argmax(-1).cpu().tolist() if appearance_logits.shape[-1] else None
+        native_index=int(native_logits[0].argmax()) if native_logits.shape[-1] and float(native_logits.softmax(-1)[0].amax())>=.95 else 0
+        native=self.profile.get('native_motions',['none'])[native_index]
+        provenance={'source':'latent_policy','kind':kind,'checkpoint_sha256':self.report['models'][kind]['checkpoint_sha256'],
+                    'dataset_sha256':self.report['dataset_sha256'],'supervision':self.report['supervision'],'seed':seed}
+        command,post=compile_trajectory(physical,right,left,provenance,self.profile,expressions,appearance,native)
+        timing['total_compute_ms']=(time.perf_counter()-begin)*1000
+        return {'profile_sha256':self.profile['sha256'],'asset_hash':ASSET_HASH,'kind':kind,'experimental_only':True,'neutral_start_only':True,'timing':timing,
+                'values':physical.tolist(),'right':right,'left':left,'appearance':appearance,'native_motion':native,'execution_mode':'native_motion' if native!='none' else 'generated_trajectory','expression_probabilities':expressions,'expression_names':self.profile.get('expressions',[]),'command':command,
+                'constraints':{'raw_out_of_range_fraction':float((excess>0).float().mean()),'raw_normalized_excess_mean':float(excess.mean()),'raw_normalized_excess_max':float(excess.max()),'hand_low_confidence_frames_suppressed':hand_suppressed,**post},
+                'provenance':provenance}

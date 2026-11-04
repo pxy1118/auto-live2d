@@ -1,0 +1,8 @@
+{
+  "python": "3.12.12",
+  "torch": "2.10.0+cu128",
+  "transformers": "5.22.1",
+  "cuda": "12.8",
+  "gpu": "NVIDIA GeForce RTX 5070 Ti",
+  "deterministic_algorithms": false
+}

@@ -20,6 +20,19 @@ models/
 datasets/
 archive/
 
+# Regenerable training features; keep the small trained runtime checkpoints.
+experiments/**/features/
+experiments/**/semantic-cache.pt
+experiments/**/*tokens.pt
+experiments/**/*.stop
+
+# Local credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
 # Editor / OS noise
 .DS_Store
 Thumbs.db

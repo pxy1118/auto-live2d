@@ -1,0 +1,99 @@
+{
+  "schema": "asset-mapping-study.v1",
+  "created_utc": "2026-11-03T12:27:07.953174+00:00",
+  "promoted": false,
+  "trained": false,
+  "semantic_model_used": false,
+  "final_test_loaded": false,
+  "human_quality_accepted": false,
+  "conditions": [
+    "current",
+    "mapped",
+    "mapped_micro"
+  ],
+  "scenes": [
+    {
+      "id": "welcome",
+      "title": "招呼 · 头身联动",
+      "framing": "full",
+      "frames": 808,
+      "audio_sha256": "0f2025984fec25734100784d8034848e225b430227ae0c7f3eace4507f2e70e8"
+    },
+    {
+      "id": "shy",
+      "title": "害羞 · 眉眼近景",
+      "framing": "portrait",
+      "frames": 718,
+      "audio_sha256": "b7de7fe1b64335e6f16e58e31c35b8206e634b330127540fc98f17e5597c72cd"
+    },
+    {
+      "id": "cajole",
+      "title": "撒娇 · 躯干与慢眨眼",
+      "framing": "full",
+      "frames": 682,
+      "audio_sha256": "3a3c5b66943e810ebcf0e1ede0789965e384c1cbcd7cceb6363522c533351a25"
+    },
+    {
+      "id": "neutral",
+      "title": "中性 · 安静保持",
+      "framing": "full",
+      "frames": 785,
+      "audio_sha256": "acba13e06d4d46cfbbac9fc8a906314f4d462045f239434ed170bbd11e2c4366"
+    }
+  ],
+  "parameter_hz": 60,
+  "physics_hz": 60,
+  "image_hz": 60,
+  "ownership": {
+    "mapped_outputs": [
+      "AngleX",
+      "AngleY",
+      "AngleZ",
+      "PositionX",
+      "PositionY",
+      "PositionZ",
+      "ParamEyeBallX",
+      "ParamEyeBallY"
+    ],
+    "replaces_not_adds": true,
+    "lean_input": "unchanged baseline",
+    "arm_finger_inputs": "bit-identical baseline",
+    "physics_outputs": "Cubism native physics",
+    "mouth_open": "same real PCM envelope",
+    "appearance": "unchanged explicit defaults"
+  },
+  "mapping_scope": {
+    "total_asset_entries": 40,
+    "active_entries": 8,
+    "inputs": [
+      "FaceAngleX",
+      "FaceAngleY",
+      "FaceAngleZ",
+      "EyeRightX",
+      "EyeRightY"
+    ],
+    "source": "Original local asset VTube Studio configuration",
+    "inverse_head_targets": true,
+    "inverse_reason": "Same unsmoothed head target amplitude as baseline before applying the mapping filter.",
+    "smoothing": "Independent exponential filters, tau = asset Smoothing * 5 ms; an experimental interpretation, not a VTube Studio fidelity claim."
+  },
+  "controls": [
+    "Identical audio PCM, mouth envelope, base face overlay, camera within each scene, arm/finger curves and action count.",
+    "mapped replaces all eight owned outputs; never adds mapped output to old torso offsets.",
+    "Micro reactions are newly authored, sparse, finite and minimum-jerk; neutral gets no extra reaction.",
+    "No acoustic energy modulation, periodic body noise or whole-gesture retiming."
+  ],
+  "limitations": [
+    "This tests execution, not semantic selection or generalization.",
+    "The eight head/gaze mappings are exercised; this is not a rendering audit of all 40 entries.",
+    "Micro event timing is authored relative to known clause onsets, not automatically aligned to individual words.",
+    "Same head target does not mean equal motion energy after different filters; diagnostics cannot select naturalness winners.",
+    "Local policy time excludes TTS, semantic inference, network and renderer; no concurrent latency acceptance."
+  ],
+  "reference": {
+    "project": "WHALEL2D",
+    "commit": "1576fc34ddf9f061e91cbe56a37b488c0d0fcaae",
+    "borrowed": "Design of asset-aware mapping, held states and short reactions.",
+    "implementation": "Independent local TypeScript implementation from asset settings and existing project primitives; no third-party code ported."
+  }
+}

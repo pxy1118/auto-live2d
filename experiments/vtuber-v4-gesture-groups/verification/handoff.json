@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "runtime_version": "v4.6-gesture-groups",
+  "checked": [
+    "pause before PCM keeps future clause cue inactive; audio resume activates it and reports directed emotion",
+    "manual parameter, native gesture and explicit appearance ownership after cancellation",
+    "invalid params, cross-interface request ID conflict, verified capabilities",
+    "generated open-eye target retains resident blink on real Cubism parameters"
+  ],
+  "blink": {
+    "minimum": 7.105427357601002e-14,
+    "maximum": 1.2531111240386963
+  }
+}

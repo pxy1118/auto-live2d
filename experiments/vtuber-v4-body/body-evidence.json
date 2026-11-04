@@ -1,0 +1,290 @@
+[
+  {
+    "family": "wave",
+    "checkpoint_sha256": "74cd7dbfd40c32b9c7cd928ee40be6beb84c284c7f4091725b2f33fff7ab9e29",
+    "source": "streaming_policy_v4 plus real session compiler",
+    "held_out_split": "validation",
+    "motion": {
+      "Param36": {
+        "min": -0.011115704,
+        "max": 0,
+        "range": 0.011115704
+      },
+      "Param41": {
+        "min": -0.004113871999999999,
+        "max": 0,
+        "range": 0.004113871999999999
+      },
+      "Param42": {
+        "min": -0.0127067290432,
+        "max": 0,
+        "range": 0.0127067290432
+      },
+      "Param62": {
+        "min": 0,
+        "max": 0.006878807999999999,
+        "range": 0.006878807999999999
+      },
+      "Param60": {
+        "min": 0,
+        "max": 0.008331920000000001,
+        "range": 0.008331920000000001
+      },
+      "Param61": {
+        "min": -0.007094948336711113,
+        "max": 0,
+        "range": 0.007094948336711113
+      },
+      "PositionX": {
+        "min": -1.4284486,
+        "max": 0,
+        "range": 1.4284486
+      },
+      "PositionZ": {
+        "min": 0,
+        "max": 2.3239160720000003,
+        "range": 2.3239160720000003
+      }
+    }
+  },
+  {
+    "family": "explain",
+    "checkpoint_sha256": "74cd7dbfd40c32b9c7cd928ee40be6beb84c284c7f4091725b2f33fff7ab9e29",
+    "source": "streaming_policy_v4 plus real session compiler",
+    "held_out_split": "validation",
+    "motion": {
+      "Param36": {
+        "min": -0.013881128,
+        "max": 0,
+        "range": 0.013881128
+      },
+      "Param41": {
+        "min": -0.013441135999999998,
+        "max": 0.0015785620740740738,
+        "range": 0.015019698074074071
+      },
+      "Param42": {
+        "min": -0.0015598880000000002,
+        "max": 0.00544652,
+        "range": 0.007006408
+      },
+      "Param62": {
+        "min": -0.0014858582332444464,
+        "max": 0.005798115348029628,
+        "range": 0.007283973581274075
+      },
+      "Param60": {
+        "min": 0,
+        "max": 0.008552495510755556,
+        "range": 0.008552495510755556
+      },
+      "Param61": {
+        "min": -0.006402114962962962,
+        "max": 0.006462519999999999,
+        "range": 0.012864634962962963
+      },
+      "PositionX": {
+        "min": -1.720823312,
+        "max": 0,
+        "range": 1.720823312
+      },
+      "PositionZ": {
+        "min": 0,
+        "max": 2.381312824,
+        "range": 2.381312824
+      }
+    }
+  },
+  {
+    "family": "point",
+    "checkpoint_sha256": "74cd7dbfd40c32b9c7cd928ee40be6beb84c284c7f4091725b2f33fff7ab9e29",
+    "source": "streaming_policy_v4 plus real session compiler",
+    "held_out_split": "validation",
+    "motion": {
+      "Param36": {
+        "min": -0.009421663999999998,
+        "max": 0.0024142044622222224,
+        "range": 0.01183586846222222
+      },
+      "Param41": {
+        "min": -0.020058833590637034,
+        "max": 0.002276592,
+        "range": 0.022335425590637035
+      },
+      "Param42": {
+        "min": -0.0006246606453333326,
+        "max": 0.004663260148148148,
+        "range": 0.005287920793481481
+      },
+      "Param62": {
+        "min": -0.011002136000000001,
+        "max": 0.006709361102340678,
+        "range": 0.017711497102340677
+      },
+      "Param60": {
+        "min": 0,
+        "max": 0.009000484324266667,
+        "range": 0.009000484324266667
+      },
+      "Param61": {
+        "min": 0,
+        "max": 0.015350144,
+        "range": 0.015350144
+      },
+      "PositionX": {
+        "min": -1.627576184,
+        "max": 0,
+        "range": 1.627576184
+      },
+      "PositionZ": {
+        "min": 0,
+        "max": 2.146863261422571,
+        "range": 2.146863261422571
+      }
+    }
+  },
+  {
+    "family": "chest",
+    "checkpoint_sha256": "74cd7dbfd40c32b9c7cd928ee40be6beb84c284c7f4091725b2f33fff7ab9e29",
+    "source": "streaming_policy_v4 plus real session compiler",
+    "held_out_split": "validation",
+    "motion": {
+      "Param36": {
+        "min": -0.01193676404171852,
+        "max": 0,
+        "range": 0.01193676404171852
+      },
+      "Param41": {
+        "min": -0.014516088,
+        "max": 0,
+        "range": 0.014516088
+      },
+      "Param42": {
+        "min": -0.001875664,
+        "max": 0.0036755439999999998,
+        "range": 0.005551208
+      },
+      "Param62": {
+        "min": -0.005641272000000001,
+        "max": 0.0030652835073185186,
+        "range": 0.00870655550731852
+      },
+      "Param60": {
+        "min": 0,
+        "max": 0.002543993801955556,
+        "range": 0.002543993801955556
+      },
+      "Param61": {
+        "min": 0,
+        "max": 0.010865896000000002,
+        "range": 0.010865896000000002
+      },
+      "PositionX": {
+        "min": -1.5003274540053335,
+        "max": 0,
+        "range": 1.5003274540053335
+      },
+      "PositionZ": {
+        "min": 0,
+        "max": 2.272227166188089,
+        "range": 2.272227166188089
+      }
+    }
+  },
+  {
+    "family": "cheer",
+    "checkpoint_sha256": "74cd7dbfd40c32b9c7cd928ee40be6beb84c284c7f4091725b2f33fff7ab9e29",
+    "source": "streaming_policy_v4 plus real session compiler",
+    "held_out_split": "validation",
+    "motion": {
+      "Param36": {
+        "min": -0.01409551438684442,
+        "max": 0,
+        "range": 0.01409551438684442
+      },
+      "Param41": {
+        "min": -0.00895881589688889,
+        "max": 0,
+        "range": 0.00895881589688889
+      },
+      "Param42": {
+        "min": -0.01781496972088889,
+        "max": 0,
+        "range": 0.01781496972088889
+      },
+      "Param62": {
+        "min": -0.0007823914944000001,
+        "max": 0.004980983111111111,
+        "range": 0.005763374605511112
+      },
+      "Param60": {
+        "min": 0,
+        "max": 0.005046027313303704,
+        "range": 0.005046027313303704
+      },
+      "Param61": {
+        "min": -0.0022420337826370373,
+        "max": 0.0005928432703999999,
+        "range": 0.002834877053037037
+      },
+      "PositionX": {
+        "min": -1.21527708,
+        "max": 0,
+        "range": 1.21527708
+      },
+      "PositionZ": {
+        "min": 0,
+        "max": 2.0535213653333337,
+        "range": 2.0535213653333337
+      }
+    }
+  },
+  {
+    "family": "refuse",
+    "checkpoint_sha256": "74cd7dbfd40c32b9c7cd928ee40be6beb84c284c7f4091725b2f33fff7ab9e29",
+    "source": "streaming_policy_v4 plus real session compiler",
+    "held_out_split": "validation",
+    "motion": {
+      "Param36": {
+        "min": -0.007214242503822222,
+        "max": 0.0002296094814814815,
+        "range": 0.007443851985303704
+      },
+      "Param41": {
+        "min": -0.017215352000000003,
+        "max": 0,
+        "range": 0.017215352000000003
+      },
+      "Param42": {
+        "min": 0,
+        "max": 0.007794424000000001,
+        "range": 0.007794424000000001
+      },
+      "Param62": {
+        "min": -0.007365192,
+        "max": 0,
+        "range": 0.007365192
+      },
+      "Param60": {
+        "min": 0,
+        "max": 0.007929991999999999,
+        "range": 0.007929991999999999
+      },
+      "Param61": {
+        "min": 0,
+        "max": 0.006168184584533333,
+        "range": 0.006168184584533333
+      },
+      "PositionX": {
+        "min": -1.1736581580202667,
+        "max": 0,
+        "range": 1.1736581580202667
+      },
+      "PositionZ": {
+        "min": 0,
+        "max": 1.93805112,
+        "range": 1.93805112
+      }
+    }
+  }
+]

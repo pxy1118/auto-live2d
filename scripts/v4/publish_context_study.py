@@ -1,0 +1,130 @@
+"""Publish new research without rewriting the earlier, frozen intent-study page."""
+import hashlib
+import json
+import shutil
+from pathlib import Path
+
+ROOT=Path(__file__).resolve().parents[2];STUDY=ROOT/'research/vtuber-v4-context-study';PUBLIC=ROOT/'datasets/vtuber-v4/review'
+def read(p):return json.loads(p.read_text(encoding='utf-8'))
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def write(p,v):p.write_text(json.dumps(v,ensure_ascii=False,indent=2,allow_nan=False)+'\n',encoding='utf-8')
+def pct(v):return '—' if v is None else f'{100*v:.1f}%'
+
+def main():
+    root=ROOT/'experiments/vtuber-v4-context-r1';code_root=ROOT/'experiments/vtuber-v4-context-code-r1'
+    r=read(root/'results.json');code=read(code_root/'results.json');audit=read(root/'input-audit.json')
+    refs=read(PUBLIC/'body-strength-references/manifest.json');rows=[]
+    names={'legacy_json':'原顺序：台词→语境','context_first':'语境→台词','task_context_first':'语境→台词＋任务说明'}
+    for mode in names:
+        rows.append(dict(id=mode,name=names[mode],kind='三训练种子均值',metrics={k:v['mean'] for k,v in r['summary'][mode]['metrics'].items()},
+                         intervals=r['summary'][mode]['family_bootstrap_95'],strength_source='学习输出'))
+    rows.append(dict(id='direct_json',name='4B 直接生成 JSON',kind='固定提示，无训练',metrics=r['direct_development']['metrics'],strength_source='模型生成'))
+    plain=[x for x in code['runs'] if x['mapping']!='ensemble'];ensemble=next(x for x in code['runs'] if x['mapping']=='ensemble')
+    for id,name,source in [('code_raw','单标签 · 未校准',[x['raw_development'] for x in plain]),('code_calibrated','单标签 · 校准',[x['development'] for x in plain])]:
+        rows.append(dict(id=id,name=name,kind='三标签排列均值',metrics={k:sum(x[k] for x in source)/len(source) for k in ['forbidden_activation','required_success','acceptable_rate','preferred_match']},strength_source='编辑默认值，非学习'))
+    for id,name,k in [('ensemble_raw','三排列概率平均 · 未校准','raw_development'),('ensemble_calibrated','三排列概率平均 · 校准','development')]:
+        rows.append(dict(id=id,name=name,kind='固定概率平均',metrics=ensemble[k],strength_source='编辑默认值，非学习'))
+    generation=read(root/'direct-generation.json');scenes=read(PUBLIC/'intent-study-scenes.json');dev_scenes=[s for s in scenes if s['split']=='development']
+    source_rows={}
+    for line in (ROOT/'datasets/vtuber-v4-intent-v1/development.jsonl').read_text(encoding='utf-8').splitlines():
+        x=json.loads(line)
+        if x['history_variant']=='canonical':source_rows[(x['scene_id'],x['turn'])]=x
+    decisions={}
+    for mode in names:
+        for seed in [7137,1741,9283]:
+            for d in read(root/f'{mode}-{seed}-decisions.json'):
+                decisions.setdefault(d['id'],{}).setdefault(mode,[]).append(dict(seed=seed,body=d['body'],strength=d['strength']))
+    code_decisions=read(code_root/'decisions.json')
+    ensemble_decisions={x['id']:x for x in code_decisions['ensemble']}
+    for scene in dev_scenes:
+        for i,t in enumerate(scene['turns']):
+            original=source_rows[(scene['id'],i+1)];id=original['id'];t['predictions']=decisions[id]
+            t['direct']=generation['records'][id];t['code']=ensemble_decisions[id]
+    report=dict(schema='context-study-publication.v1',promoted=False,old_test_loaded=False,new_final_test_created=False,
+        status='未通过，保留研究结果',rows=rows,input_audit=audit['summary'],training_runs=r['runs'],
+        direct=r['direct_development'],direct_calibration=r['direct_calibration'],code_runs=code['runs'],
+        ordering_delta_ci=r['context_minus_legacy_family_95'],task_delta_ci=r['task_minus_legacy_family_95'],
+        body_reference=dict(clips=len(refs['clips']),actual_frames=sum(c['frames'] for c in refs['clips']),
+                            source_sha256=refs['curve_sha256'],accepted=False),
+        source_hashes={str(p.relative_to(ROOT)).replace('\\','/'):sha(p) for p in [root/'results.json',code_root/'results.json',
+            root/'input-audit.json',STUDY/'protocol.json',STUDY/'code-protocol.json',PUBLIC/'body-strength-references/manifest.json']})
+    write(PUBLIC/'context-study-report.json',report);write(PUBLIC/'context-study-scenes.json',dev_scenes)
+    shutil.copyfile(STUDY/'review.html',PUBLIC/'context-study.html')
+    table='\n'.join('| '+x['name']+' | '+' | '.join(pct(x['metrics'][k]) for k in ['forbidden_activation','required_success','acceptable_rate'])+' |' for x in rows)
+    code_raw=plain[0]['raw_development'];interval=r['task_minus_legacy_family_95']['required_success']
+    text=f'''# Live2D v4 语境与决策方式研究 · 2026-11-03
+
+本轮结论：输入没有丢失；调整输入顺序和任务说明只有开发集上的有限收益。直接让同一 4B 输出动作 JSON 会过度启动身体动作。单标签读取速度足够作为后续研究方向，但动作偏好对标签排列敏感，校准后漏动作严重。目前仍需更可靠的风格监督与场景覆盖，不能把问题简单归因为“骨干太小”，也不能据此排除扩大骨干的后续价值。
+
+## 完整性与协议
+
+本轮保持 datasets/vtuber-v4-intent-v1 的 100 段三轮草案、家族划分和标签不变。读取的是训练、开发、校准；旧终测未加载，未创建新终测。开发仍为 20 段故事、60 分句、18 家族，其中 23 个不宜动作、24 个可选、13 个必要回应。标签由助手编写，尚未获得独立人工一致性验证。当前结果属于已看过开发集后的方法迭代。
+
+300 组输入均能完整转回原始文本和语境；没有截断，也没有重复添加特殊 token。原输入 50～121 token，语境前置仍为 50～121，加入任务说明为 302～373；单标签方法 395～464，均未超过本轮 512 限制。旧缓存长度与重新分词完全一致。
+
+[Qwen 官方模型卡](https://huggingface.co/Qwen/Qwen3.5-4B)将该模型描述为因果语言模型。基于这一因果结构，我们分析了字段顺序：原台词词元不能利用其后的语境；后面的语境和回答前缀仍可利用台词，所以该顺序并不自动构成程序错误。[Transformers 聊天模板说明](https://huggingface.co/docs/transformers/en/chat_templating)也强调消息格式与回答前缀。本轮核对了本地模板并完成逐条往返验证，没有把改序宣传成已证实的缺陷修复。
+
+主实验固定同一个 Qwen3.5-4B 和原选定动作专家，复制独立身体分支，以同一批次种子和完全相同的初始权重训练。三种输入各三种子，共九次、每次 1000 步。旧顺序三个种子的指标复现了上轮独立身体分支。对照只改语境顺序；任务说明组还额外提供通用任务定义，不能把它的改变只归于顺序。损失、学习率、校准网格与上轮一致，不挑最好种子或中间检查点。
+
+另对开发和校准的 120 个分句做固定提示直接 JSON 生成；没有标注示例、没有重试或正则修补。全部 120 条通过严格 JSON 合同，但格式正确并不代表动作合适。直接生成没有数值动作历史向量，不能当作与动作专家的严格同架构对照。
+
+## 全部开发结果
+
+| 方法 | 不宜场景误启动↓ | 必要场景合适回应↑ | 全部可接受决策↑ |
+|---|---:|---:|---:|
+{table}
+
+“可接受”依据同一份草案，包括可选场景选择 none。必要回应的成功必须选中草案接受的非 none 动作，不能只靠启动任意动作通过。
+
+任务说明组必要回应均值 41.0%，原顺序为 35.9%。按故事家族配对自助抽样，改善区间约 {pct(interval[0])}～{pct(interval[1])}，触及零；目前没有稳定必要动作增益的证据。三种输入均能高度拟合训练故事，改变输入没有解决样本少与风格迁移问题。
+
+直接生成 JSON 的必要回应 69.2%，不宜场景误启动 82.6%，全部可接受仅 45.0%；同句不同语境的两个开发家族均未做到两边都合适。因此“上层或同规模 LLM 可以直接决定动作”需要经过风格训练和约束验证，当前直接提示不宜接管执行。该结果不能外推到所有更大 LLM 或已充分训练的导演模型。
+
+## 单标签读取与延迟
+
+在观察到直接 JSON 过度动作后，另固定一份自适应后续协议：加强平静默认、引用者与角色本人分离的通用说明，将 14 个合法必要性/动作组合映射到 A～N。每个字母确认为单 token，只用一次语义前向和最后位置的 LM 输出头评分。约束解码保证结构合法，不能保证语义正确。这个方法与 JSON 提示不同，不能宣称单纯压缩输出就改善了语义。
+
+全部 120 个开发/校准分句在三种预先固定的标签排列上读取，共 360 次。三种排列全部报告；没有挑选最好的排列。限定标签的原始概率总质量约 99.7%，未约束最高分 token 均是合法字母，输出格式不是这里的主要问题。
+
+标签排列仍影响结果：未校准必要回应分别为 {', '.join(pct(x['raw_development']['required_success']) for x in plain)}，误启动分别 {', '.join(pct(x['raw_development']['forbidden_activation']) for x in plain)}。三排列概率平均可减小单排列偏差，但仍未通过质量门槛。使用独立校准故事的同一网格后，三排列均值必要回应降至 {pct(code['summary']['metrics']['required_success']['mean'])}；不能把误启动为零单独当作成功。
+
+直接 JSON 的孤立生成 P50/P95 为 {r['direct_development']['generation_ms']['p50']:.0f}/{r['direct_development']['generation_ms']['p95']:.0f} ms。单标签各排列 P95 为 {', '.join(f"{x['prefill_ms']['p95']:.0f}" for x in plain)} ms；顺序做三次的概率平均 P95 为 {ensemble['prefill_ms']['p95']:.0f} ms。首次预热不计入这些统计。它们均未与 TTS 同时测试，也不包含实际播放、网络或轨迹执行，因此不构成原计划实时性验收。
+
+单标签实验没有学习连续强度：none 使用 0；激活时按必要性边际分布的最大项给默认值，最大项为 required 时用 0.60，否则用 0.24。边际最大项与原始联合类别赢家可能不同，也不等同于阈值覆盖后的类别。它们是明确记录的编辑默认值，本报告不将其区间匹配分数与学习强度比较，也不宣称已经校准自然度。
+
+## 实际身体幅度参照
+
+对现有六种身体曲线（前倾、摇晃、点头、歪头、转向、撒娇）分别执行 0.2 / 0.5 / 0.8 强度，固定第一个变体和 4.2 秒时间轴，生成 18 段参照。原生 Cubism 参数变形、物理及几何均以 60 Hz 真正运行，记录 {sum(c['frames'] for c in refs['clips'])} 帧实际参数，再以 20 fps 保存视频。每段验证手臂关节与手型输入保持默认，未触发新手势。身体曲线文件哈希保持不变。
+
+这些是固定曲线的幅度测量参照，不是新训练模型的表演。没有配音，也没有判断语义贴合或给出人类自然度评分。它们让“幅度 0.2/0.5/0.8”可直接观看，供后续风格校准；不改写已冻结的草案范围或本轮得分。
+
+## 保留与验证
+
+旧 15 次意图实验、原评分页及其文件哈希保持；本轮发布独立 context-study.html。v3、原生动作与眼型、外观归属和语音权重没有改变。默认服务已按原配置恢复；没有把本轮任何方法接入真实聊天 LLM 或自动提升。
+
+检查包含输入完整性、严格输出合同、标签置换还原、概率边际和独立强度默认值测试、实际 Cubism 读取及桌面/手机研究页。原语义编码器、默认配置及用户评分的前后哈希逐项核对。全部新协议、源代码、缓存、权重、原始输出与失败结果独立版本化。
+
+下一轮优先做角色风格的人工一致性与渲染幅度校准，再新增独立场景和真实音频/参数示范，专门覆盖引用、普通汇报、必要动作和少数身体类别。直接输出或单标签方法可继续研究为有约束的语义教师，当前错误率不足以自动生成可信标签。未来泛化结论需在新采集、未参与开发的故事上判断；本轮没有自然度盲测、连续十分钟稳定性或新端到端延迟验收。
+
+## 复现入口
+
+```bash
+cd /mnt/d/Workplace/auto-live2d
+export UV_PROJECT_ENVIRONMENT="$HOME/.local/share/auto-live2d/latent-venv"
+uv run --project latent python -m unittest discover -s latent -p "test_context*.py" -v
+# 已完成的训练/单标签实验拒绝覆盖。代码和协议给出完整配方；复跑使用新实验版本。
+# uv run --project latent python latent/audit_context_inputs.py
+# uv run --project latent python latent/cache_context_features.py
+# uv run --project latent python latent/run_context_study.py
+# uv run --project latent python latent/run_context_code_study.py
+```
+
+```powershell
+# 参照使用空闲的本地 Cubism 浏览器执行，不能与其他渲染回归并发。
+# npx tsx scripts/v4/capture_body_calibration.ts
+# python -X utf8 scripts/v4/encode_body_calibration.py
+python -X utf8 scripts/v4/publish_context_study.py
+```
+'''
+    (STUDY/'REPORT.md').write_text(text,encoding='utf-8');print(json.dumps(dict(published=str(PUBLIC/'context-study.html'),rows=len(rows),stories=len(dev_scenes),body_refs=len(refs['clips']))))
+if __name__=='__main__':main()

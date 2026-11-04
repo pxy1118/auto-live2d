@@ -1,0 +1,2342 @@
+[
+  {
+    "id": "09-inventory/t1/canonical",
+    "text": "完整的有三卷，开过的有一卷。",
+    "annotation": {
+      "necessity": "forbidden",
+      "preferred": "none",
+      "acceptable": [
+        "none"
+      ],
+      "forbidden": [
+        "lean",
+        "sway",
+        "nod",
+        "tilt",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.0,
+        0.0
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      1.0,
+      3.692388463125834e-13,
+      2.1745746411785775e-14,
+      2.496996589056448e-15,
+      5.982206049970351e-12,
+      6.897220560528675e-14,
+      1.1182894887884487e-13
+    ],
+    "necessity_probabilities": [
+      0.9863488674163818,
+      0.013613833114504814,
+      3.727107105078176e-05
+    ]
+  },
+  {
+    "id": "09-inventory/t2/canonical",
+    "text": "没拆封的有两本。",
+    "annotation": {
+      "necessity": "forbidden",
+      "preferred": "none",
+      "acceptable": [
+        "none"
+      ],
+      "forbidden": [
+        "lean",
+        "sway",
+        "nod",
+        "tilt",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.0,
+        0.0
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      1.0,
+      2.1276119158575996e-13,
+      3.275373492529288e-15,
+      1.9491337729482354e-15,
+      1.3647611686595784e-12,
+      1.7186970163035609e-12,
+      7.093608706887963e-15
+    ],
+    "necessity_probabilities": [
+      0.9602003693580627,
+      0.03971146419644356,
+      8.809394057607278e-05
+    ]
+  },
+  {
+    "id": "09-inventory/t3/canonical",
+    "text": "那一项快用完了，补货时先看它。",
+    "annotation": {
+      "necessity": "required",
+      "preferred": "nod",
+      "acceptable": [
+        "nod",
+        "lean"
+      ],
+      "forbidden": [
+        "none",
+        "sway",
+        "tilt",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.45,
+        0.65
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      0.9997071623802185,
+      0.0002910918847192079,
+      7.418014363576655e-14,
+      1.7249238908334519e-06,
+      8.923491806589468e-11,
+      2.2576640557048222e-10,
+      1.1602532086138484e-12
+    ],
+    "necessity_probabilities": [
+      0.2535088062286377,
+      0.7407228350639343,
+      0.005768402945250273
+    ]
+  },
+  {
+    "id": "15-boundary/t1/canonical",
+    "text": "这个话题到这里，别再问了。",
+    "annotation": {
+      "necessity": "required",
+      "preferred": "turn",
+      "acceptable": [
+        "turn",
+        "lean"
+      ],
+      "forbidden": [
+        "none",
+        "sway",
+        "nod",
+        "tilt",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.5,
+        0.7
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      0.9999821186065674,
+      3.14677640744776e-06,
+      3.0579736520763845e-09,
+      1.7619850023464778e-09,
+      9.635817832531757e-07,
+      5.385713279792981e-07,
+      1.3182973816583399e-05
+    ],
+    "necessity_probabilities": [
+      0.9025726914405823,
+      0.08799618482589722,
+      0.009431114420294762
+    ]
+  },
+  {
+    "id": "15-boundary/t2/canonical",
+    "text": "我已经说得很清楚了。",
+    "annotation": {
+      "necessity": "optional",
+      "preferred": "none",
+      "acceptable": [
+        "none",
+        "nod"
+      ],
+      "forbidden": [
+        "lean",
+        "sway",
+        "tilt",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.12,
+        0.3
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      0.998059093952179,
+      2.5021554392878897e-05,
+      2.752462933131028e-07,
+      0.0006631965516135097,
+      1.516323955286225e-08,
+      0.001227844855748117,
+      2.4577242584200576e-05
+    ],
+    "necessity_probabilities": [
+      0.2515896260738373,
+      0.5940293073654175,
+      0.1543811410665512
+    ]
+  },
+  {
+    "id": "15-boundary/t3/canonical",
+    "text": "好，咱们回到刚才的游戏。",
+    "annotation": {
+      "necessity": "optional",
+      "preferred": "nod",
+      "acceptable": [
+        "none",
+        "nod"
+      ],
+      "forbidden": [
+        "lean",
+        "sway",
+        "tilt",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.12,
+        0.3
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      0.9314084053039551,
+      6.658385700575309e-07,
+      2.8916719685412318e-08,
+      0.06858640909194946,
+      2.6153907128900755e-07,
+      3.4603142466949066e-06,
+      8.597170904067752e-07
+    ],
+    "necessity_probabilities": [
+      0.051326099783182144,
+      0.9404872059822083,
+      0.008186779916286469
+    ]
+  },
+  {
+    "id": "17-stage/t1/canonical",
+    "text": "先把第一句讲出来，后面的咱们慢慢接。",
+    "annotation": {
+      "necessity": "required",
+      "preferred": "lean",
+      "acceptable": [
+        "lean",
+        "nod"
+      ],
+      "forbidden": [
+        "none",
+        "sway",
+        "tilt",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.5,
+        0.72
+      ]
+    },
+    "body": 5,
+    "amplitude": 0.4776379466056824,
+    "body_probabilities": [
+      3.6704971080325777e-06,
+      7.211013297592217e-08,
+      8.427836291957647e-06,
+      0.3496544659137726,
+      3.410393967229197e-09,
+      0.6503333449363708,
+      1.7117149711531887e-11
+    ],
+    "necessity_probabilities": [
+      1.3451716768031474e-05,
+      0.05972011014819145,
+      0.940266489982605
+    ]
+  },
+  {
+    "id": "17-stage/t2/canonical",
+    "text": "停一下也没关系，我会在台下听着。",
+    "annotation": {
+      "necessity": "optional",
+      "preferred": "nod",
+      "acceptable": [
+        "none",
+        "nod",
+        "lean"
+      ],
+      "forbidden": [
+        "sway",
+        "tilt",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.12,
+        0.3
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      1.0,
+      1.209117250766667e-10,
+      1.5176442325071093e-09,
+      9.470470935246666e-11,
+      2.4427693201545253e-09,
+      4.8811379826929624e-08,
+      1.465562393665465e-10
+    ],
+    "necessity_probabilities": [
+      0.44657114148139954,
+      0.543977677822113,
+      0.009451251477003098
+    ]
+  },
+  {
+    "id": "17-stage/t3/canonical",
+    "text": "去吧，你准备的那些我都听过，没问题。",
+    "annotation": {
+      "necessity": "required",
+      "preferred": "nod",
+      "acceptable": [
+        "nod",
+        "lean"
+      ],
+      "forbidden": [
+        "none",
+        "sway",
+        "tilt",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.45,
+        0.65
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      0.9777481555938721,
+      2.3292772224903224e-11,
+      2.28167573723681e-09,
+      0.022251777350902557,
+      5.78307013388013e-10,
+      7.692013137550191e-10,
+      5.393255175789591e-09
+    ],
+    "necessity_probabilities": [
+      0.08069168031215668,
+      0.9180089831352234,
+      0.0012993726413697004
+    ]
+  },
+  {
+    "id": "21-fineprint/t1/canonical",
+    "text": "你看最下面，还有一个时段限制。",
+    "annotation": {
+      "necessity": "required",
+      "preferred": "lean",
+      "acceptable": [
+        "lean",
+        "nod"
+      ],
+      "forbidden": [
+        "none",
+        "sway",
+        "tilt",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.5,
+        0.72
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      1.0,
+      1.2112362501870422e-10,
+      1.746606670600427e-14,
+      1.299933332634881e-13,
+      1.0205070566371433e-08,
+      3.1369725610533306e-13,
+      7.491526496372636e-12
+    ],
+    "necessity_probabilities": [
+      0.8573042154312134,
+      0.14248637855052948,
+      0.0002094397641485557
+    ]
+  },
+  {
+    "id": "21-fineprint/t2/canonical",
+    "text": "对，我们现在已经过了那个时间。",
+    "annotation": {
+      "necessity": "optional",
+      "preferred": "nod",
+      "acceptable": [
+        "none",
+        "nod"
+      ],
+      "forbidden": [
+        "lean",
+        "sway",
+        "tilt",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.12,
+        0.3
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      0.9999657869338989,
+      4.623566113304278e-11,
+      1.6685668471905224e-11,
+      3.418310734559782e-05,
+      1.856255982257693e-10,
+      2.2881722558376616e-11,
+      1.475175537279938e-11
+    ],
+    "necessity_probabilities": [
+      0.558056652545929,
+      0.44153568148612976,
+      0.00040767225436866283
+    ]
+  },
+  {
+    "id": "21-fineprint/t3/canonical",
+    "text": "有效期只到今天，明天也用不了。",
+    "annotation": {
+      "necessity": "forbidden",
+      "preferred": "none",
+      "acceptable": [
+        "none"
+      ],
+      "forbidden": [
+        "lean",
+        "sway",
+        "nod",
+        "tilt",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.0,
+        0.0
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      1.0,
+      2.4891000371951577e-10,
+      1.1398917833943534e-12,
+      1.4436714844412446e-11,
+      1.7381060479770838e-10,
+      3.1767844648269983e-13,
+      2.8589632397602038e-11
+    ],
+    "necessity_probabilities": [
+      0.986027717590332,
+      0.013887201435863972,
+      8.507112215738744e-05
+    ]
+  },
+  {
+    "id": "26-secret-botany/t1/canonical",
+    "text": "右边那片的叶脉是不是分叉得更早？",
+    "annotation": {
+      "necessity": "required",
+      "preferred": "lean",
+      "acceptable": [
+        "lean",
+        "tilt"
+      ],
+      "forbidden": [
+        "none",
+        "sway",
+        "nod",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.5,
+        0.72
+      ]
+    },
+    "body": 4,
+    "amplitude": 0.2805759012699127,
+    "body_probabilities": [
+      1.7175052846596373e-07,
+      0.0006583349895663559,
+      1.102899993554729e-10,
+      0.0003565230290405452,
+      0.9989839196205139,
+      1.0396538527857047e-06,
+      6.191996915205777e-11
+    ],
+    "necessity_probabilities": [
+      4.607506525644567e-06,
+      0.9869263172149658,
+      0.013069075532257557
+    ]
+  },
+  {
+    "id": "26-secret-botany/t2/canonical",
+    "text": "背面的纹路清楚多了，刚才那处确实不一样。",
+    "annotation": {
+      "necessity": "optional",
+      "preferred": "nod",
+      "acceptable": [
+        "none",
+        "nod",
+        "lean"
+      ],
+      "forbidden": [
+        "sway",
+        "tilt",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.12,
+        0.3
+      ]
+    },
+    "body": 5,
+    "amplitude": 0.4928998351097107,
+    "body_probabilities": [
+      0.0001399932079948485,
+      7.319407450268045e-05,
+      8.384477112599598e-09,
+      0.14786885678768158,
+      2.2688446676966123e-08,
+      0.8519179821014404,
+      1.7070937694571402e-14
+    ],
+    "necessity_probabilities": [
+      1.782761319191195e-05,
+      0.09659107029438019,
+      0.9033911228179932
+    ]
+  },
+  {
+    "id": "26-secret-botany/t3/canonical",
+    "text": "写在观察备注，标上左右两片就好。",
+    "annotation": {
+      "necessity": "forbidden",
+      "preferred": "none",
+      "acceptable": [
+        "none"
+      ],
+      "forbidden": [
+        "lean",
+        "sway",
+        "nod",
+        "tilt",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.0,
+        0.0
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      1.0,
+      6.8130770122798445e-12,
+      5.622624291510951e-16,
+      4.046166698267123e-15,
+      3.1102664423186908e-15,
+      3.257140176603397e-14,
+      7.068888050322346e-16
+    ],
+    "necessity_probabilities": [
+      0.9287582039833069,
+      0.07102923095226288,
+      0.00021259119966998696
+    ]
+  },
+  {
+    "id": "27-quiet-support/t1/canonical",
+    "text": "我听完了，你可以先喘口气。",
+    "annotation": {
+      "necessity": "optional",
+      "preferred": "nod",
+      "acceptable": [
+        "none",
+        "nod",
+        "lean"
+      ],
+      "forbidden": [
+        "sway",
+        "tilt",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.12,
+        0.3
+      ]
+    },
+    "body": 3,
+    "amplitude": 0.17578865587711334,
+    "body_probabilities": [
+      0.0011686127400025725,
+      2.7913403144452786e-08,
+      7.151070894906297e-05,
+      0.9987595081329346,
+      8.284321495466429e-08,
+      1.8244942623368843e-07,
+      5.705155792234962e-10
+    ],
+    "necessity_probabilities": [
+      0.0004190584004390985,
+      0.9990571141242981,
+      0.0005237797740846872
+    ]
+  },
+  {
+    "id": "27-quiet-support/t2/canonical",
+    "text": "好，那我们就先待一会儿。",
+    "annotation": {
+      "necessity": "forbidden",
+      "preferred": "none",
+      "acceptable": [
+        "none"
+      ],
+      "forbidden": [
+        "lean",
+        "sway",
+        "nod",
+        "tilt",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.0,
+        0.0
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      0.9999998807907104,
+      1.6932518755174986e-12,
+      8.664544082215286e-10,
+      6.487937298516044e-09,
+      7.116028686443565e-13,
+      3.7446109581174e-12,
+      6.542793329344931e-08
+    ],
+    "necessity_probabilities": [
+      0.800969123840332,
+      0.19812826812267303,
+      0.0009026340558193624
+    ]
+  },
+  {
+    "id": "27-quiet-support/t3/canonical",
+    "text": "嗯，你想说的时候我再听。",
+    "annotation": {
+      "necessity": "optional",
+      "preferred": "none",
+      "acceptable": [
+        "none",
+        "nod"
+      ],
+      "forbidden": [
+        "lean",
+        "sway",
+        "tilt",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.12,
+        0.3
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      0.7939770221710205,
+      0.19433321058750153,
+      2.7209399663941092e-11,
+      0.002335431519895792,
+      0.009331752546131611,
+      1.8979979358846322e-05,
+      3.533401240929379e-06
+    ],
+    "necessity_probabilities": [
+      2.5584980903659016e-05,
+      0.9219087362289429,
+      0.07806562632322311
+    ]
+  },
+  {
+    "id": "29-graph/t1/canonical",
+    "text": "先看纵轴，右边没有从零开始。",
+    "annotation": {
+      "necessity": "required",
+      "preferred": "lean",
+      "acceptable": [
+        "lean",
+        "nod"
+      ],
+      "forbidden": [
+        "none",
+        "sway",
+        "tilt",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.5,
+        0.72
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      0.43811097741127014,
+      9.747801959747449e-05,
+      0.0019217794761061668,
+      0.5450705289840698,
+      4.891424598696403e-09,
+      0.014799259603023529,
+      8.461858297392766e-11
+    ],
+    "necessity_probabilities": [
+      0.13806982338428497,
+      0.8297086358070374,
+      0.03222157433629036
+    ]
+  },
+  {
+    "id": "29-graph/t2/canonical",
+    "text": "把范围对齐以后，差距会更容易比较。",
+    "annotation": {
+      "necessity": "optional",
+      "preferred": "nod",
+      "acceptable": [
+        "none",
+        "nod"
+      ],
+      "forbidden": [
+        "lean",
+        "sway",
+        "tilt",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.12,
+        0.3
+      ]
+    },
+    "body": 3,
+    "amplitude": 0.1769610047340393,
+    "body_probabilities": [
+      0.0001439473417121917,
+      3.4949425753438845e-07,
+      1.730480079231711e-07,
+      0.999850869178772,
+      3.950878635805566e-06,
+      7.473096843568783e-07,
+      2.709702254244384e-12
+    ],
+    "necessity_probabilities": [
+      0.00010945979738608003,
+      0.9993973970413208,
+      0.00049315404612571
+    ]
+  },
+  {
+    "id": "29-graph/t3/canonical",
+    "text": "这次先用图片，原始数据也一并留着。",
+    "annotation": {
+      "necessity": "forbidden",
+      "preferred": "none",
+      "acceptable": [
+        "none"
+      ],
+      "forbidden": [
+        "lean",
+        "sway",
+        "nod",
+        "tilt",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.0,
+        0.0
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      0.9999896287918091,
+      4.718509112079661e-13,
+      2.8197848678246373e-07,
+      9.148540812020656e-06,
+      4.739493866812161e-11,
+      9.468287203162618e-07,
+      1.722714471075193e-10
+    ],
+    "necessity_probabilities": [
+      0.2841337025165558,
+      0.7148740291595459,
+      0.0009922580793499947
+    ]
+  },
+  {
+    "id": "32-rule-loop/t1/canonical",
+    "text": "等会儿，这两句放一起怎么对得上？",
+    "annotation": {
+      "necessity": "required",
+      "preferred": "tilt",
+      "acceptable": [
+        "tilt",
+        "lean"
+      ],
+      "forbidden": [
+        "none",
+        "sway",
+        "nod",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.45,
+        0.65
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      0.9997484087944031,
+      2.934085474581849e-10,
+      6.181610956446093e-08,
+      5.255862924968824e-05,
+      0.00018129675299860537,
+      1.7542906789458357e-05,
+      1.0190042587510106e-07
+    ],
+    "necessity_probabilities": [
+      0.002219537738710642,
+      0.9974175691604614,
+      0.00036286088288761675
+    ]
+  },
+  {
+    "id": "32-rule-loop/t2/canonical",
+    "text": "越听条件越多，我得从第一条重新捋。",
+    "annotation": {
+      "necessity": "optional",
+      "preferred": "tilt",
+      "acceptable": [
+        "none",
+        "tilt"
+      ],
+      "forbidden": [
+        "lean",
+        "sway",
+        "nod",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.14,
+        0.32
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      0.9999957084655762,
+      3.892378641623395e-10,
+      7.094371312632575e-07,
+      1.0463843125307903e-08,
+      2.901466586990864e-06,
+      1.1708610259120178e-07,
+      5.892730996492901e-07
+    ],
+    "necessity_probabilities": [
+      0.21098262071609497,
+      0.7880018353462219,
+      0.0010155502241104841
+    ]
+  },
+  {
+    "id": "32-rule-loop/t3/canonical",
+    "text": "原来如此，那按当前这一页来吧。",
+    "annotation": {
+      "necessity": "optional",
+      "preferred": "nod",
+      "acceptable": [
+        "none",
+        "nod"
+      ],
+      "forbidden": [
+        "lean",
+        "sway",
+        "tilt",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.12,
+        0.3
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      0.9651090502738953,
+      7.699407547079318e-07,
+      2.122705922147361e-08,
+      0.022330911830067635,
+      3.080686594714166e-09,
+      0.012559173628687859,
+      1.148009812212969e-11
+    ],
+    "necessity_probabilities": [
+      0.0016486909007653594,
+      0.9809751510620117,
+      0.017376180738210678
+    ]
+  },
+  {
+    "id": "39-number-read/t1/canonical",
+    "text": "第一组，三七零二。",
+    "annotation": {
+      "necessity": "forbidden",
+      "preferred": "none",
+      "acceptable": [
+        "none"
+      ],
+      "forbidden": [
+        "lean",
+        "sway",
+        "nod",
+        "tilt",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.0,
+        0.0
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      1.0,
+      5.392698509965044e-10,
+      4.082428839424779e-12,
+      4.789220669348948e-12,
+      1.3231352862311252e-12,
+      3.2767202579747634e-13,
+      2.683146239912393e-11
+    ],
+    "necessity_probabilities": [
+      0.9931522607803345,
+      0.0067254407331347466,
+      0.00012235474423505366
+    ]
+  },
+  {
+    "id": "39-number-read/t2/canonical",
+    "text": "第二组，八一四六。",
+    "annotation": {
+      "necessity": "forbidden",
+      "preferred": "none",
+      "acceptable": [
+        "none"
+      ],
+      "forbidden": [
+        "lean",
+        "sway",
+        "nod",
+        "tilt",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.0,
+        0.0
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      1.0,
+      5.397066040607745e-12,
+      4.07302365662901e-13,
+      7.126046680636013e-15,
+      4.401853366401212e-14,
+      1.3631839255491551e-13,
+      2.243267203938526e-12
+    ],
+    "necessity_probabilities": [
+      0.9955203533172607,
+      0.0044154212810099125,
+      6.417847180273384e-05
+    ]
+  },
+  {
+    "id": "39-number-read/t3/canonical",
+    "text": "最后一组，六六九零。",
+    "annotation": {
+      "necessity": "forbidden",
+      "preferred": "none",
+      "acceptable": [
+        "none"
+      ],
+      "forbidden": [
+        "lean",
+        "sway",
+        "nod",
+        "tilt",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.0,
+        0.0
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      1.0,
+      1.1302054847561749e-09,
+      4.324076686990086e-12,
+      3.0555384069284874e-13,
+      7.941912644020277e-13,
+      1.48003343521802e-12,
+      5.8244329498302605e-12
+    ],
+    "necessity_probabilities": [
+      0.9946771860122681,
+      0.00517668854445219,
+      0.0001460718922317028
+    ]
+  },
+  {
+    "id": "41-tea-stay/t1/canonical",
+    "text": "茶才泡好，再陪我坐一会儿嘛。",
+    "annotation": {
+      "necessity": "required",
+      "preferred": "cajole",
+      "acceptable": [
+        "cajole",
+        "lean"
+      ],
+      "forbidden": [
+        "none",
+        "sway",
+        "nod",
+        "tilt",
+        "turn"
+      ],
+      "active_strength_interval": [
+        0.5,
+        0.75
+      ]
+    },
+    "body": 6,
+    "amplitude": 0.6247172355651855,
+    "body_probabilities": [
+      1.1314856607214097e-08,
+      8.203875978551878e-08,
+      4.6737323344814286e-08,
+      1.3317942397766264e-13,
+      9.483093162998557e-05,
+      3.410778950940774e-11,
+      0.999904990196228
+    ],
+    "necessity_probabilities": [
+      0.0002692487614694983,
+      0.021332664415240288,
+      0.9783980846405029
+    ]
+  },
+  {
+    "id": "41-tea-stay/t2/canonical",
+    "text": "五分钟也好，先别把杯子放下。",
+    "annotation": {
+      "necessity": "optional",
+      "preferred": "tilt",
+      "acceptable": [
+        "none",
+        "tilt",
+        "cajole"
+      ],
+      "forbidden": [
+        "lean",
+        "sway",
+        "nod",
+        "turn"
+      ],
+      "active_strength_interval": [
+        0.14,
+        0.32
+      ]
+    },
+    "body": 1,
+    "amplitude": 0.3658030927181244,
+    "body_probabilities": [
+      2.6073468688991852e-05,
+      0.9954877495765686,
+      1.7742262571118772e-05,
+      0.0009981056209653616,
+      0.003462257096543908,
+      1.5149810295156385e-08,
+      7.945454854052514e-06
+    ],
+    "necessity_probabilities": [
+      0.0006182573270052671,
+      0.24991314113140106,
+      0.7494686245918274
+    ]
+  },
+  {
+    "id": "41-tea-stay/t3/canonical",
+    "text": "那我去拿刚才说的小点心。",
+    "annotation": {
+      "necessity": "forbidden",
+      "preferred": "none",
+      "acceptable": [
+        "none"
+      ],
+      "forbidden": [
+        "lean",
+        "sway",
+        "nod",
+        "tilt",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.0,
+        0.0
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      1.0,
+      2.1076118281171397e-12,
+      6.295843707482263e-11,
+      6.080289808967076e-14,
+      2.796718689968003e-10,
+      1.020023440712059e-10,
+      5.44213545755623e-12
+    ],
+    "necessity_probabilities": [
+      0.03827201947569847,
+      0.9610992670059204,
+      0.000628665613476187
+    ]
+  },
+  {
+    "id": "54-strong-blush/t1/canonical",
+    "text": "先等等，别一下子全念出来呀。",
+    "annotation": {
+      "necessity": "required",
+      "preferred": "tilt",
+      "acceptable": [
+        "tilt",
+        "turn"
+      ],
+      "forbidden": [
+        "none",
+        "lean",
+        "sway",
+        "nod",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.45,
+        0.65
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      0.9989792108535767,
+      8.248760536844202e-07,
+      2.3290981990276016e-11,
+      7.968072035513529e-11,
+      4.008717951364815e-06,
+      7.849357969158532e-11,
+      0.0010158910881727934
+    ],
+    "necessity_probabilities": [
+      0.009522484615445137,
+      0.9863901138305664,
+      0.004087299574166536
+    ]
+  },
+  {
+    "id": "54-strong-blush/t2/canonical",
+    "text": "你刚才那些话，我都听到了。",
+    "annotation": {
+      "necessity": "optional",
+      "preferred": "none",
+      "acceptable": [
+        "none",
+        "tilt"
+      ],
+      "forbidden": [
+        "lean",
+        "sway",
+        "nod",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.14,
+        0.32
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      0.7785264253616333,
+      0.17212876677513123,
+      4.496234939921351e-09,
+      5.793157470179722e-05,
+      0.04677638038992882,
+      0.0025031527038663626,
+      7.450684734067181e-06
+    ],
+    "necessity_probabilities": [
+      5.2897652494721115e-05,
+      0.6789026856422424,
+      0.32104435563087463
+    ]
+  },
+  {
+    "id": "54-strong-blush/t3/canonical",
+    "text": "嗯，我缓一下再继续聊。",
+    "annotation": {
+      "necessity": "forbidden",
+      "preferred": "none",
+      "acceptable": [
+        "none"
+      ],
+      "forbidden": [
+        "lean",
+        "sway",
+        "nod",
+        "tilt",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.0,
+        0.0
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      0.9999828338623047,
+      6.872880736752407e-12,
+      4.836353539872107e-10,
+      1.6341400455033295e-09,
+      1.703174530121032e-05,
+      4.489288940590086e-10,
+      1.5191473323739046e-07
+    ],
+    "necessity_probabilities": [
+      0.0336102657020092,
+      0.9661659002304077,
+      0.00022384431213140488
+    ]
+  },
+  {
+    "id": "56-surprise-work/t1/canonical",
+    "text": "已经全部做完了？我以为还差一大半呢。",
+    "annotation": {
+      "necessity": "required",
+      "preferred": "lean",
+      "acceptable": [
+        "lean",
+        "tilt"
+      ],
+      "forbidden": [
+        "none",
+        "sway",
+        "nod",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.5,
+        0.72
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      0.0104151526466012,
+      0.23628433048725128,
+      5.933558644422021e-10,
+      0.017125943675637245,
+      0.6478016972541809,
+      0.08837290108203888,
+      7.791611973673174e-12
+    ],
+    "necessity_probabilities": [
+      0.00014663473120890558,
+      0.8254351019859314,
+      0.17441825568675995
+    ]
+  },
+  {
+    "id": "56-surprise-work/t2/canonical",
+    "text": "这进度真快，连最后的边框都加上了。",
+    "annotation": {
+      "necessity": "optional",
+      "preferred": "nod",
+      "acceptable": [
+        "none",
+        "nod",
+        "lean"
+      ],
+      "forbidden": [
+        "sway",
+        "tilt",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.12,
+        0.3
+      ]
+    },
+    "body": 5,
+    "amplitude": 0.3259637653827667,
+    "body_probabilities": [
+      0.1248660758137703,
+      0.0009553965646773577,
+      2.7084444809588604e-05,
+      0.009767236188054085,
+      0.0008089091279543936,
+      0.863575279712677,
+      8.760210438996108e-12
+    ],
+    "necessity_probabilities": [
+      0.0005351213039830327,
+      0.8799824714660645,
+      0.11948239803314209
+    ]
+  },
+  {
+    "id": "56-surprise-work/t3/canonical",
+    "text": "普通的 zip 就可以，原文件也留着。",
+    "annotation": {
+      "necessity": "forbidden",
+      "preferred": "none",
+      "acceptable": [
+        "none"
+      ],
+      "forbidden": [
+        "lean",
+        "sway",
+        "nod",
+        "tilt",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.0,
+        0.0
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      0.9999997615814209,
+      5.643453911650942e-13,
+      5.5510803065317305e-08,
+      6.758363646497401e-09,
+      9.790771571260848e-08,
+      5.596533791951686e-10,
+      9.411616730403694e-08
+    ],
+    "necessity_probabilities": [
+      0.8880501389503479,
+      0.11170089244842529,
+      0.00024884656886570156
+    ]
+  },
+  {
+    "id": "59-mild-noise/t1/canonical",
+    "text": "键盘声有点响，我听不清后半句。",
+    "annotation": {
+      "necessity": "optional",
+      "preferred": "none",
+      "acceptable": [
+        "none",
+        "tilt"
+      ],
+      "forbidden": [
+        "lean",
+        "sway",
+        "nod",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.14,
+        0.32
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      0.46637335419654846,
+      0.5334014296531677,
+      7.229417585408182e-12,
+      4.078249915551169e-08,
+      0.00021931967057753354,
+      5.82784514335799e-06,
+      3.9775053910229285e-12
+    ],
+    "necessity_probabilities": [
+      0.0007497397600673139,
+      0.9945348501205444,
+      0.004715393763035536
+    ]
+  },
+  {
+    "id": "59-mild-noise/t2/canonical",
+    "text": "现在好很多，刚才那句你再说一遍。",
+    "annotation": {
+      "necessity": "optional",
+      "preferred": "nod",
+      "acceptable": [
+        "none",
+        "nod"
+      ],
+      "forbidden": [
+        "lean",
+        "sway",
+        "tilt",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.12,
+        0.3
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      0.9988018274307251,
+      0.0010376895079389215,
+      3.8406719471417716e-10,
+      0.0001580097887199372,
+      7.692546546422818e-07,
+      1.5726683386674267e-06,
+      2.3058785814100702e-07
+    ],
+    "necessity_probabilities": [
+      0.0004378698649816215,
+      0.995323121547699,
+      0.004239070229232311
+    ]
+  },
+  {
+    "id": "59-mild-noise/t3/canonical",
+    "text": "周末下午两点，链接还是原来的。",
+    "annotation": {
+      "necessity": "forbidden",
+      "preferred": "none",
+      "acceptable": [
+        "none"
+      ],
+      "forbidden": [
+        "lean",
+        "sway",
+        "nod",
+        "tilt",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.0,
+        0.0
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      0.9999997615814209,
+      7.075164065728501e-11,
+      4.082502114144404e-10,
+      2.1267109673317464e-07,
+      3.337146878279462e-11,
+      1.3747056271107283e-10,
+      2.665374691790401e-11
+    ],
+    "necessity_probabilities": [
+      0.7260717153549194,
+      0.27346307039260864,
+      0.0004652008065022528
+    ]
+  },
+  {
+    "id": "63-irony-delay/t1/canonical",
+    "text": "这可真是安排得周到啊。",
+    "annotation": {
+      "necessity": "required",
+      "preferred": "turn",
+      "acceptable": [
+        "turn",
+        "lean"
+      ],
+      "forbidden": [
+        "none",
+        "sway",
+        "nod",
+        "tilt",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.5,
+        0.7
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      0.4627436101436615,
+      0.4265710413455963,
+      1.0781423753769559e-07,
+      2.428910479863877e-13,
+      0.1106780394911766,
+      7.2225561780214775e-06,
+      1.6463098662100606e-09
+    ],
+    "necessity_probabilities": [
+      0.053316760808229446,
+      0.6068444848060608,
+      0.3398387134075165
+    ]
+  },
+  {
+    "id": "63-irony-delay/t2/canonical",
+    "text": "我在门口站着呢，你觉得呢。",
+    "annotation": {
+      "necessity": "optional",
+      "preferred": "none",
+      "acceptable": [
+        "none",
+        "tilt"
+      ],
+      "forbidden": [
+        "lean",
+        "sway",
+        "nod",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.14,
+        0.32
+      ]
+    },
+    "body": 4,
+    "amplitude": 0.2481803148984909,
+    "body_probabilities": [
+      6.160521297715604e-05,
+      2.1204701283750182e-07,
+      3.653130315611763e-12,
+      7.12986744297317e-13,
+      0.9999381303787231,
+      2.8014317532409905e-09,
+      6.6915162300063e-10
+    ],
+    "necessity_probabilities": [
+      6.918383587617427e-05,
+      0.9928877949714661,
+      0.007043036166578531
+    ]
+  },
+  {
+    "id": "63-irony-delay/t3/canonical",
+    "text": "好，我在入口右侧等。",
+    "annotation": {
+      "necessity": "forbidden",
+      "preferred": "none",
+      "acceptable": [
+        "none"
+      ],
+      "forbidden": [
+        "lean",
+        "sway",
+        "nod",
+        "tilt",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.0,
+        0.0
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      1.0,
+      8.00020405478108e-09,
+      2.5854676472675253e-13,
+      4.2572661840267756e-08,
+      5.744038134025686e-09,
+      4.4686792932679964e-08,
+      8.553169283942452e-10
+    ],
+    "necessity_probabilities": [
+      0.18346600234508514,
+      0.7848630547523499,
+      0.03167087957262993
+    ]
+  },
+  {
+    "id": "64-genuine-praise/t1/canonical",
+    "text": "这可真是安排得周到啊。",
+    "annotation": {
+      "necessity": "optional",
+      "preferred": "nod",
+      "acceptable": [
+        "none",
+        "nod",
+        "lean"
+      ],
+      "forbidden": [
+        "sway",
+        "tilt",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.12,
+        0.3
+      ]
+    },
+    "body": 1,
+    "amplitude": 0.2630869150161743,
+    "body_probabilities": [
+      0.0018881389405578375,
+      0.9957506656646729,
+      5.6789442481886e-08,
+      4.080331905687018e-11,
+      0.0023612610530108213,
+      4.539078002352426e-09,
+      7.446220029461159e-11
+    ],
+    "necessity_probabilities": [
+      0.003915054257959127,
+      0.9017438292503357,
+      0.09434113651514053
+    ]
+  },
+  {
+    "id": "64-genuine-praise/t2/canonical",
+    "text": "连这些都查过了，省了我好多事。",
+    "annotation": {
+      "necessity": "optional",
+      "preferred": "lean",
+      "acceptable": [
+        "none",
+        "lean",
+        "nod"
+      ],
+      "forbidden": [
+        "sway",
+        "tilt",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.18,
+        0.34
+      ]
+    },
+    "body": 3,
+    "amplitude": 0.1511041224002838,
+    "body_probabilities": [
+      0.00010087958798976615,
+      0.00018217282195109874,
+      7.51278037114389e-07,
+      0.9996891021728516,
+      2.689076791284606e-05,
+      2.5416898097319063e-07,
+      1.6640973043990925e-08
+    ],
+    "necessity_probabilities": [
+      0.00031714493525214493,
+      0.9985092282295227,
+      0.0011736663291230798
+    ]
+  },
+  {
+    "id": "64-genuine-praise/t3/canonical",
+    "text": "电子版就够，放大看也方便。",
+    "annotation": {
+      "necessity": "forbidden",
+      "preferred": "none",
+      "acceptable": [
+        "none"
+      ],
+      "forbidden": [
+        "lean",
+        "sway",
+        "nod",
+        "tilt",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.0,
+        0.0
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      0.5807868838310242,
+      2.580466968993278e-07,
+      1.5463355111933197e-06,
+      0.4192112982273102,
+      8.250236049889281e-09,
+      3.405526138866577e-10,
+      2.326980563793768e-08
+    ],
+    "necessity_probabilities": [
+      0.00928419642150402,
+      0.9903337359428406,
+      0.00038207790930755436
+    ]
+  },
+  {
+    "id": "65-not-romance/t1/canonical",
+    "text": "这个句子有点常见，可以换一个更具体的口感。",
+    "annotation": {
+      "necessity": "forbidden",
+      "preferred": "none",
+      "acceptable": [
+        "none"
+      ],
+      "forbidden": [
+        "lean",
+        "sway",
+        "nod",
+        "tilt",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.0,
+        0.0
+      ]
+    },
+    "body": 6,
+    "amplitude": 0.3657204806804657,
+    "body_probabilities": [
+      0.0037265606224536896,
+      2.7204475827602437e-07,
+      6.810326158301905e-05,
+      2.481874705750897e-10,
+      0.0005254849093034863,
+      1.4512712809278128e-08,
+      0.9956795573234558
+    ],
+    "necessity_probabilities": [
+      0.0012836186215281487,
+      0.834719181060791,
+      0.16399721801280975
+    ]
+  },
+  {
+    "id": "65-not-romance/t2/canonical",
+    "text": "我们是在讨论广告文案，先看它有没有说清味道。",
+    "annotation": {
+      "necessity": "forbidden",
+      "preferred": "none",
+      "acceptable": [
+        "none"
+      ],
+      "forbidden": [
+        "lean",
+        "sway",
+        "nod",
+        "tilt",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.0,
+        0.0
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      1.0,
+      1.2019100381621683e-08,
+      1.5120598106932448e-08,
+      8.387252004027346e-11,
+      3.942051763142218e-13,
+      1.1224014339478172e-12,
+      1.6835292049321993e-09
+    ],
+    "necessity_probabilities": [
+      0.9798738360404968,
+      0.01987343281507492,
+      0.0002526352764107287
+    ]
+  },
+  {
+    "id": "65-not-romance/t3/canonical",
+    "text": "这个更具体，读者能想到吃起来是什么感觉。",
+    "annotation": {
+      "necessity": "optional",
+      "preferred": "none",
+      "acceptable": [
+        "none",
+        "nod"
+      ],
+      "forbidden": [
+        "lean",
+        "sway",
+        "tilt",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.12,
+        0.3
+      ]
+    },
+    "body": 2,
+    "amplitude": 0.35038191080093384,
+    "body_probabilities": [
+      0.0030787379946559668,
+      0.020877815783023834,
+      0.9568082690238953,
+      9.387636964675039e-05,
+      0.00013248049071989954,
+      2.4560786187066697e-06,
+      0.019006304442882538
+    ],
+    "necessity_probabilities": [
+      0.0005732668214477599,
+      0.9185434579849243,
+      0.08088335394859314
+    ]
+  },
+  {
+    "id": "66-reported-success/t1/canonical",
+    "text": "新闻里给出的成绩是多少？",
+    "annotation": {
+      "necessity": "optional",
+      "preferred": "none",
+      "acceptable": [
+        "none",
+        "tilt"
+      ],
+      "forbidden": [
+        "lean",
+        "sway",
+        "nod",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.14,
+        0.32
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      0.9999992847442627,
+      7.073211349961639e-07,
+      8.912956635763469e-13,
+      7.061640497612459e-14,
+      1.5371384165518975e-09,
+      1.3095706702208332e-13,
+      6.114701301719594e-13
+    ],
+    "necessity_probabilities": [
+      0.9797583818435669,
+      0.020039327442646027,
+      0.00020234107796568424
+    ]
+  },
+  {
+    "id": "66-reported-success/t2/canonical",
+    "text": "两秒这个数字可以写在摘要里。",
+    "annotation": {
+      "necessity": "forbidden",
+      "preferred": "none",
+      "acceptable": [
+        "none"
+      ],
+      "forbidden": [
+        "lean",
+        "sway",
+        "nod",
+        "tilt",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.0,
+        0.0
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      1.0,
+      8.230708086929498e-15,
+      4.642341198957123e-12,
+      1.0416861160277274e-14,
+      3.1473389568376434e-14,
+      1.9152314825222894e-13,
+      1.8127765998368628e-12
+    ],
+    "necessity_probabilities": [
+      0.9945704340934753,
+      0.005408220458775759,
+      2.1287796698743477e-05
+    ]
+  },
+  {
+    "id": "66-reported-success/t3/canonical",
+    "text": "这是转述新闻，标题把冠军和纪录写清楚就好。",
+    "annotation": {
+      "necessity": "forbidden",
+      "preferred": "none",
+      "acceptable": [
+        "none"
+      ],
+      "forbidden": [
+        "lean",
+        "sway",
+        "nod",
+        "tilt",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.0,
+        0.0
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      1.0,
+      9.438879799289479e-14,
+      3.1414708074467557e-12,
+      2.2751660039461996e-13,
+      2.2470614778613562e-12,
+      8.603558437783685e-15,
+      1.4986682684778319e-12
+    ],
+    "necessity_probabilities": [
+      0.9790080785751343,
+      0.02095795050263405,
+      3.399415800231509e-05
+    ]
+  },
+  {
+    "id": "80-normal-ending/t1/canonical",
+    "text": "剩三条，都是今天上午收到的。",
+    "annotation": {
+      "necessity": "forbidden",
+      "preferred": "none",
+      "acceptable": [
+        "none"
+      ],
+      "forbidden": [
+        "lean",
+        "sway",
+        "nod",
+        "tilt",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.0,
+        0.0
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      1.0,
+      4.1481180469704615e-12,
+      2.8488900149538365e-13,
+      4.5381217230258675e-13,
+      1.9956114885588683e-11,
+      1.1815861602950534e-13,
+      2.0316642812545638e-10
+    ],
+    "necessity_probabilities": [
+      0.9879042506217957,
+      0.012002572417259216,
+      9.316005889559165e-05
+    ]
+  },
+  {
+    "id": "80-normal-ending/t2/canonical",
+    "text": "看到了，数量跟原表一致。",
+    "annotation": {
+      "necessity": "optional",
+      "preferred": "none",
+      "acceptable": [
+        "none",
+        "nod"
+      ],
+      "forbidden": [
+        "lean",
+        "sway",
+        "tilt",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.12,
+        0.3
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      0.9999779462814331,
+      1.5561576333089633e-11,
+      6.194694757155617e-11,
+      1.0854313359232037e-06,
+      1.4298105885032775e-13,
+      2.098427648888901e-05,
+      6.83367818170473e-14
+    ],
+    "necessity_probabilities": [
+      0.7234578728675842,
+      0.27035242319107056,
+      0.006189732812345028
+    ]
+  },
+  {
+    "id": "80-normal-ending/t3/canonical",
+    "text": "好，文件已经保存，下次接着用这一份。",
+    "annotation": {
+      "necessity": "optional",
+      "preferred": "nod",
+      "acceptable": [
+        "none",
+        "nod"
+      ],
+      "forbidden": [
+        "lean",
+        "sway",
+        "tilt",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.12,
+        0.3
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      1.0,
+      4.658275987168281e-10,
+      4.255430264232357e-16,
+      4.355714140064082e-12,
+      2.6415049076029817e-13,
+      2.4297442313345186e-13,
+      2.2934365723811106e-15
+    ],
+    "necessity_probabilities": [
+      0.8002275824546814,
+      0.1995410919189453,
+      0.00023134735238272697
+    ]
+  },
+  {
+    "id": "93-pair-praise-blush/t1/canonical",
+    "text": "你别这样看着我啦。",
+    "annotation": {
+      "necessity": "required",
+      "preferred": "tilt",
+      "acceptable": [
+        "tilt",
+        "turn"
+      ],
+      "forbidden": [
+        "none",
+        "lean",
+        "sway",
+        "nod",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.45,
+        0.65
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      0.8103364109992981,
+      2.3336781396210426e-06,
+      7.029796620372508e-07,
+      3.73812612808333e-12,
+      0.184682697057724,
+      2.3672316729062004e-06,
+      0.0049754357896745205
+    ],
+    "necessity_probabilities": [
+      0.018625427037477493,
+      0.8826451301574707,
+      0.09872943162918091
+    ]
+  },
+  {
+    "id": "93-pair-praise-blush/t2/canonical",
+    "text": "我知道，就是突然不知道怎么接。",
+    "annotation": {
+      "necessity": "optional",
+      "preferred": "none",
+      "acceptable": [
+        "none",
+        "tilt"
+      ],
+      "forbidden": [
+        "lean",
+        "sway",
+        "nod",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.14,
+        0.32
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      0.9997943043708801,
+      3.4069247423218485e-10,
+      2.0493184926806407e-10,
+      7.405500102031226e-10,
+      0.00020464030967559665,
+      3.736574001322879e-07,
+      6.80294817811955e-07
+    ],
+    "necessity_probabilities": [
+      0.0069079021923244,
+      0.9913721084594727,
+      0.001720049069263041
+    ]
+  },
+  {
+    "id": "93-pair-praise-blush/t3/canonical",
+    "text": "嗯，让我先缓一缓。",
+    "annotation": {
+      "necessity": "optional",
+      "preferred": "none",
+      "acceptable": [
+        "none",
+        "nod"
+      ],
+      "forbidden": [
+        "lean",
+        "sway",
+        "tilt",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.12,
+        0.3
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      0.9996250867843628,
+      1.3885451677353444e-09,
+      6.199716295895996e-08,
+      1.4491171596020536e-09,
+      0.0003742235421668738,
+      2.0794667321410998e-08,
+      6.431814085772203e-07
+    ],
+    "necessity_probabilities": [
+      0.004801904316991568,
+      0.9945916533470154,
+      0.0006064571789465845
+    ]
+  },
+  {
+    "id": "94-pair-praise-line/t1/canonical",
+    "text": "你别这样看着我啦。",
+    "annotation": {
+      "necessity": "forbidden",
+      "preferred": "none",
+      "acceptable": [
+        "none"
+      ],
+      "forbidden": [
+        "lean",
+        "sway",
+        "nod",
+        "tilt",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.0,
+        0.0
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      1.0,
+      8.426404539407795e-12,
+      6.676010113650099e-13,
+      3.7248897271757037e-14,
+      4.37894214161752e-14,
+      3.6245504752945024e-13,
+      1.1708815340905065e-11
+    ],
+    "necessity_probabilities": [
+      0.9937760829925537,
+      0.006114269606769085,
+      0.00010973148891935125
+    ]
+  },
+  {
+    "id": "94-pair-praise-line/t2/canonical",
+    "text": "下一句是“我还有别的事情要问你”。",
+    "annotation": {
+      "necessity": "forbidden",
+      "preferred": "none",
+      "acceptable": [
+        "none"
+      ],
+      "forbidden": [
+        "lean",
+        "sway",
+        "nod",
+        "tilt",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.0,
+        0.0
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      1.0,
+      3.756987776437626e-12,
+      1.938591431480119e-13,
+      1.2930802431685307e-14,
+      4.496392407710159e-14,
+      1.6320310988054976e-13,
+      3.578930771533373e-12
+    ],
+    "necessity_probabilities": [
+      0.9938923120498657,
+      0.0060259075835347176,
+      8.172680827556178e-05
+    ]
+  },
+  {
+    "id": "94-pair-praise-line/t3/canonical",
+    "text": "句子之间可以用句号，原意不会变。",
+    "annotation": {
+      "necessity": "forbidden",
+      "preferred": "none",
+      "acceptable": [
+        "none"
+      ],
+      "forbidden": [
+        "lean",
+        "sway",
+        "nod",
+        "tilt",
+        "turn",
+        "cajole"
+      ],
+      "active_strength_interval": [
+        0.0,
+        0.0
+      ]
+    },
+    "body": 0,
+    "amplitude": 0.0,
+    "body_probabilities": [
+      1.0,
+      2.333430927051617e-15,
+      6.259950782565304e-13,
+      2.764789401111037e-14,
+      9.907949027193608e-14,
+      5.96205214104667e-13,
+      2.275575127635987e-12
+    ],
+    "necessity_probabilities": [
+      0.9590601921081543,
+      0.04089582711458206,
+      4.400278703542426e-05
+    ]
+  }
+]

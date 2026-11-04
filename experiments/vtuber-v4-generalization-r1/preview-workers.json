@@ -1,0 +1,16 @@
+{
+  "phase": "stopped",
+  "host_pid": 412,
+  "workers": [
+    {
+      "name": "latent",
+      "pid": 418,
+      "running": false
+    },
+    {
+      "name": "tts",
+      "pid": 488,
+      "running": false
+    }
+  ]
+}

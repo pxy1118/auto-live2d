@@ -1,0 +1,19 @@
+{
+  "ok": true,
+  "clips": 1440,
+  "dialogues": 240,
+  "unique_texts": 105,
+  "unique_audio_files": 105,
+  "split": {
+    "train": 1022,
+    "test": 204,
+    "validation": 214
+  },
+  "actual_parameter_frames": 176166,
+  "audited_parameters": 509,
+  "visible_parameters": 466,
+  "cross_split_text_leaks": 0,
+  "cross_split_identical_target_leaks": 0,
+  "human_calibrated": true,
+  "promoted": false
+}

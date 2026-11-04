@@ -1,0 +1,695 @@
+{
+  "ok": true,
+  "phase": "default",
+  "worker": {
+    "motor_device": "cpu",
+    "planner_device": "cuda",
+    "body_encoder_shared": true
+  },
+  "texts": [
+    "这里已经准备好了，我们先听一小段说明。",
+    "窗边那盆小花今天终于开了，颜色比昨天深了一点。",
+    "我把讨论的内容写到纸上，等会儿再一起看最后一项。",
+    "今天这段路走得很慢，不过沿途有不少新的发现。"
+  ],
+  "rows": [
+    {
+      "index": 0,
+      "warmup": true,
+      "text": "这里已经准备好了，我们先听一小段说明。",
+      "first_audio_ms": 642.1000000014901,
+      "setup_ms": 40.5,
+      "metrics": [
+        {
+          "clause": 0,
+          "text_wait_ms": 0,
+          "queue_wait_ms": 46
+        },
+        {
+          "clause": 0,
+          "semantic_prefill_ms": 230.32642799989844,
+          "overlapped_with_tts": true,
+          "context_truncated": false,
+          "planner_timing": {
+            "total_ms": 224.34844100007467,
+            "tokens": 41,
+            "context_truncated": false,
+            "body": {
+              "tokens": 293,
+              "context_truncated": false,
+              "context_chars_used": 16,
+              "encoder_ms": 118.56746000012208,
+              "total_ms": 123.11264100026165
+            }
+          }
+        },
+        {
+          "clause": 0,
+          "compute_ms": 36.286090000430704,
+          "roundtrip_ms": 82.24079999999958,
+          "accepted": true,
+          "media_ms": 0
+        },
+        {
+          "clause": 0,
+          "first_chunk_ms": 503,
+          "synthesis_to_first_chunk_ms": 481
+        },
+        {
+          "clause": 0,
+          "compute_ms": 11.913459999959741,
+          "roundtrip_ms": 61.661400000004505,
+          "accepted": true,
+          "media_ms": 100
+        },
+        {
+          "clause": 0,
+          "synthesis_ms": 996
+        },
+        {
+          "clause": 0,
+          "compute_ms": 11.670149000565289,
+          "roundtrip_ms": 49.52610000000277,
+          "accepted": true,
+          "media_ms": 520
+        },
+        {
+          "clause": 0,
+          "compute_ms": 11.951804000091215,
+          "roundtrip_ms": 56.85899999999674,
+          "accepted": true,
+          "media_ms": 950
+        },
+        {
+          "clause": 0,
+          "compute_ms": 10.935905999758688,
+          "roundtrip_ms": 55.709200000004785,
+          "accepted": true,
+          "media_ms": 1390
+        },
+        {
+          "clause": 0,
+          "compute_ms": 11.433503000262135,
+          "roundtrip_ms": 49.505199999999604,
+          "accepted": true,
+          "media_ms": 1820
+        },
+        {
+          "clause": 1,
+          "text_wait_ms": 0,
+          "queue_wait_ms": 2559
+        },
+        {
+          "clause": 1,
+          "semantic_prefill_ms": 217.3590319998766,
+          "overlapped_with_tts": true,
+          "context_truncated": false,
+          "planner_timing": {
+            "total_ms": 212.70487099991442,
+            "tokens": 48,
+            "context_truncated": false,
+            "body": {
+              "tokens": 300,
+              "context_truncated": false,
+              "context_chars_used": 26,
+              "encoder_ms": 110.65468400011014,
+              "total_ms": 116.20859599952382
+            }
+          }
+        },
+        {
+          "clause": 1,
+          "compute_ms": 39.05464400031633,
+          "roundtrip_ms": 82.76469999999972,
+          "accepted": true,
+          "media_ms": 1840
+        },
+        {
+          "clause": 1,
+          "first_chunk_ms": 490,
+          "synthesis_to_first_chunk_ms": 464
+        },
+        {
+          "clause": 1,
+          "compute_ms": 35.73632600000565,
+          "roundtrip_ms": 82.49240000000282,
+          "accepted": true,
+          "media_ms": 1950
+        },
+        {
+          "clause": 1,
+          "synthesis_ms": 996
+        },
+        {
+          "clause": 1,
+          "compute_ms": 12.439131000064663,
+          "roundtrip_ms": 50.66049999999814,
+          "accepted": true,
+          "media_ms": 2380
+        },
+        {
+          "clause": 1,
+          "compute_ms": 11.926610000045912,
+          "roundtrip_ms": 55.6820000000007,
+          "accepted": true,
+          "media_ms": 2810
+        },
+        {
+          "clause": 1,
+          "compute_ms": 12.259782000000996,
+          "roundtrip_ms": 52.9007999999958,
+          "accepted": true,
+          "media_ms": 3240
+        },
+        {
+          "clause": 1,
+          "compute_ms": 11.749802999474923,
+          "roundtrip_ms": 50.394500000002154,
+          "accepted": true,
+          "media_ms": 3660
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "warmup": false,
+      "text": "窗边那盆小花今天终于开了，颜色比昨天深了一点。",
+      "first_audio_ms": 638.1999999992549,
+      "setup_ms": 59.600000001490116,
+      "metrics": [
+        {
+          "clause": 0,
+          "text_wait_ms": 0,
+          "queue_wait_ms": 46
+        },
+        {
+          "clause": 0,
+          "semantic_prefill_ms": 245.18251799963764,
+          "overlapped_with_tts": true,
+          "context_truncated": false,
+          "planner_timing": {
+            "total_ms": 240.47116199926677,
+            "tokens": 46,
+            "context_truncated": false,
+            "body": {
+              "tokens": 298,
+              "context_truncated": false,
+              "context_chars_used": 16,
+              "encoder_ms": 125.22695100051351,
+              "total_ms": 130.93799500074965
+            }
+          }
+        },
+        {
+          "clause": 0,
+          "compute_ms": 37.52236499985884,
+          "roundtrip_ms": 89.45910000000003,
+          "accepted": true,
+          "media_ms": 0
+        },
+        {
+          "clause": 0,
+          "first_chunk_ms": 486,
+          "synthesis_to_first_chunk_ms": 458
+        },
+        {
+          "clause": 0,
+          "compute_ms": 37.51795900006982,
+          "roundtrip_ms": 84.22469999999885,
+          "accepted": true,
+          "media_ms": 110
+        },
+        {
+          "clause": 0,
+          "compute_ms": 42.439453000042704,
+          "roundtrip_ms": 98.96129999999539,
+          "accepted": true,
+          "media_ms": 520
+        },
+        {
+          "clause": 0,
+          "synthesis_ms": 1348
+        },
+        {
+          "clause": 0,
+          "compute_ms": 13.882184000067355,
+          "roundtrip_ms": 74.21370000000024,
+          "accepted": true,
+          "media_ms": 920
+        },
+        {
+          "clause": 0,
+          "compute_ms": 10.844614999768964,
+          "roundtrip_ms": 58.72679999999673,
+          "accepted": true,
+          "media_ms": 1340
+        },
+        {
+          "clause": 0,
+          "compute_ms": 13.338722999833408,
+          "roundtrip_ms": 62.944500000005064,
+          "accepted": true,
+          "media_ms": 1740
+        },
+        {
+          "clause": 0,
+          "compute_ms": 12.206568999317824,
+          "roundtrip_ms": 58.40690000000177,
+          "accepted": true,
+          "media_ms": 2180
+        },
+        {
+          "clause": 0,
+          "compute_ms": 11.873200999616529,
+          "roundtrip_ms": 69.51299999999901,
+          "accepted": true,
+          "media_ms": 2630
+        },
+        {
+          "clause": 0,
+          "compute_ms": 12.387471999318223,
+          "roundtrip_ms": 76.31000000000495,
+          "accepted": true,
+          "media_ms": 3060
+        },
+        {
+          "clause": 1,
+          "text_wait_ms": 1,
+          "queue_wait_ms": 3953
+        },
+        {
+          "clause": 1,
+          "semantic_prefill_ms": 216.19552100037254,
+          "overlapped_with_tts": true,
+          "context_truncated": false,
+          "planner_timing": {
+            "total_ms": 211.6898840004069,
+            "tokens": 53,
+            "context_truncated": false,
+            "body": {
+              "tokens": 305,
+              "context_truncated": false,
+              "context_chars_used": 30,
+              "encoder_ms": 116.48194100052933,
+              "total_ms": 121.41570800031332
+            }
+          }
+        },
+        {
+          "clause": 1,
+          "compute_ms": 39.23037000004115,
+          "roundtrip_ms": 93.54950000000099,
+          "accepted": true,
+          "media_ms": 3200
+        },
+        {
+          "clause": 1,
+          "first_chunk_ms": 487,
+          "synthesis_to_first_chunk_ms": 458
+        },
+        {
+          "clause": 1,
+          "compute_ms": 39.48751200005063,
+          "roundtrip_ms": 84.30940000000555,
+          "accepted": true,
+          "media_ms": 3340
+        },
+        {
+          "clause": 1,
+          "synthesis_ms": 1153
+        },
+        {
+          "clause": 1,
+          "compute_ms": 14.261390999308787,
+          "roundtrip_ms": 105.56399999999849,
+          "accepted": true,
+          "media_ms": 3800
+        },
+        {
+          "clause": 1,
+          "compute_ms": 12.209090999931504,
+          "roundtrip_ms": 74.05099999999948,
+          "accepted": true,
+          "media_ms": 4200
+        },
+        {
+          "clause": 1,
+          "compute_ms": 11.143640999762283,
+          "roundtrip_ms": 80.77850000000035,
+          "accepted": true,
+          "media_ms": 4640
+        },
+        {
+          "clause": 1,
+          "compute_ms": 16.082621999885305,
+          "roundtrip_ms": 72.99289999999746,
+          "accepted": true,
+          "media_ms": 5080
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "warmup": false,
+      "text": "我把讨论的内容写到纸上，等会儿再一起看最后一项。",
+      "first_audio_ms": 632.7000000029802,
+      "setup_ms": 35,
+      "metrics": [
+        {
+          "clause": 0,
+          "text_wait_ms": 0,
+          "queue_wait_ms": 43
+        },
+        {
+          "clause": 0,
+          "semantic_prefill_ms": 227.27324800052884,
+          "overlapped_with_tts": true,
+          "context_truncated": false,
+          "planner_timing": {
+            "total_ms": 222.4884059996839,
+            "tokens": 43,
+            "context_truncated": false,
+            "body": {
+              "tokens": 295,
+              "context_truncated": false,
+              "context_chars_used": 16,
+              "encoder_ms": 117.71474599936482,
+              "total_ms": 122.85396900006162
+            }
+          }
+        },
+        {
+          "clause": 0,
+          "compute_ms": 38.2953729995279,
+          "roundtrip_ms": 91.26959999999963,
+          "accepted": true,
+          "media_ms": 0
+        },
+        {
+          "clause": 0,
+          "first_chunk_ms": 506,
+          "synthesis_to_first_chunk_ms": 487
+        },
+        {
+          "clause": 0,
+          "compute_ms": 32.233502000053704,
+          "roundtrip_ms": 70.64689999999973,
+          "accepted": true,
+          "media_ms": 80
+        },
+        {
+          "clause": 0,
+          "synthesis_ms": 1139
+        },
+        {
+          "clause": 0,
+          "compute_ms": 9.327739000582369,
+          "roundtrip_ms": 64.47379999999976,
+          "accepted": true,
+          "media_ms": 540
+        },
+        {
+          "clause": 0,
+          "compute_ms": 11.036081000384002,
+          "roundtrip_ms": 57.86570000000211,
+          "accepted": true,
+          "media_ms": 980
+        },
+        {
+          "clause": 0,
+          "compute_ms": 11.278128999947512,
+          "roundtrip_ms": 55.7019999999975,
+          "accepted": true,
+          "media_ms": 1400
+        },
+        {
+          "clause": 0,
+          "compute_ms": 11.876935999680427,
+          "roundtrip_ms": 59.65299999999843,
+          "accepted": true,
+          "media_ms": 1830
+        },
+        {
+          "clause": 0,
+          "compute_ms": 11.566607000531803,
+          "roundtrip_ms": 57.0254999999961,
+          "accepted": true,
+          "media_ms": 2270
+        },
+        {
+          "clause": 1,
+          "text_wait_ms": 0,
+          "queue_wait_ms": 3160
+        },
+        {
+          "clause": 1,
+          "semantic_prefill_ms": 312.52955899981316,
+          "overlapped_with_tts": true,
+          "context_truncated": false,
+          "planner_timing": {
+            "total_ms": 305.63652100045147,
+            "tokens": 52,
+            "context_truncated": false,
+            "body": {
+              "tokens": 304,
+              "context_truncated": false,
+              "context_chars_used": 29,
+              "encoder_ms": 176.32755399972666,
+              "total_ms": 191.3017779997972
+            }
+          }
+        },
+        {
+          "clause": 1,
+          "compute_ms": 42.233584000314295,
+          "roundtrip_ms": 90.55539999999746,
+          "accepted": true,
+          "media_ms": 2480
+        },
+        {
+          "clause": 1,
+          "first_chunk_ms": 490,
+          "synthesis_to_first_chunk_ms": 464
+        },
+        {
+          "clause": 1,
+          "compute_ms": 31.9631060001484,
+          "roundtrip_ms": 72.60439999999653,
+          "accepted": true,
+          "media_ms": 2670
+        },
+        {
+          "clause": 1,
+          "synthesis_ms": 1113
+        },
+        {
+          "clause": 1,
+          "compute_ms": 12.94132300063211,
+          "roundtrip_ms": 62.95209999999497,
+          "accepted": true,
+          "media_ms": 3120
+        },
+        {
+          "clause": 1,
+          "compute_ms": 11.652682999738317,
+          "roundtrip_ms": 57.82140000000072,
+          "accepted": true,
+          "media_ms": 3550
+        },
+        {
+          "clause": 1,
+          "compute_ms": 13.465042999996513,
+          "roundtrip_ms": 52.699799999994866,
+          "accepted": true,
+          "media_ms": 3980
+        },
+        {
+          "clause": 1,
+          "compute_ms": 9.757560000252852,
+          "roundtrip_ms": 64.64960000000428,
+          "accepted": true,
+          "media_ms": 4420
+        },
+        {
+          "clause": 1,
+          "compute_ms": 12.885762999758299,
+          "roundtrip_ms": 61.15610000000015,
+          "accepted": true,
+          "media_ms": 4850
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "warmup": false,
+      "text": "今天这段路走得很慢，不过沿途有不少新的发现。",
+      "first_audio_ms": 649.8000000007451,
+      "setup_ms": 32.80000000074506,
+      "metrics": [
+        {
+          "clause": 0,
+          "text_wait_ms": 0,
+          "queue_wait_ms": 45
+        },
+        {
+          "clause": 0,
+          "semantic_prefill_ms": 208.92442599961214,
+          "overlapped_with_tts": true,
+          "context_truncated": false,
+          "planner_timing": {
+            "total_ms": 203.7754919992949,
+            "tokens": 44,
+            "context_truncated": false,
+            "body": {
+              "tokens": 296,
+              "context_truncated": false,
+              "context_chars_used": 16,
+              "encoder_ms": 119.99531200035563,
+              "total_ms": 125.01326199981122
+            }
+          }
+        },
+        {
+          "clause": 0,
+          "compute_ms": 33.5862920001091,
+          "roundtrip_ms": 77.8981000000058,
+          "accepted": true,
+          "media_ms": 0
+        },
+        {
+          "clause": 0,
+          "first_chunk_ms": 505,
+          "synthesis_to_first_chunk_ms": 475
+        },
+        {
+          "clause": 0,
+          "compute_ms": 37.229847999697085,
+          "roundtrip_ms": 91.40879999999743,
+          "accepted": true,
+          "media_ms": 70
+        },
+        {
+          "clause": 0,
+          "synthesis_ms": 1058
+        },
+        {
+          "clause": 0,
+          "compute_ms": 9.60048800061486,
+          "roundtrip_ms": 49.59470000000147,
+          "accepted": true,
+          "media_ms": 470
+        },
+        {
+          "clause": 0,
+          "compute_ms": 10.192615000050864,
+          "roundtrip_ms": 69.806700000001,
+          "accepted": true,
+          "media_ms": 900
+        },
+        {
+          "clause": 0,
+          "compute_ms": 13.609447999442637,
+          "roundtrip_ms": 58.3208999999988,
+          "accepted": true,
+          "media_ms": 1340
+        },
+        {
+          "clause": 0,
+          "compute_ms": 11.474148999695899,
+          "roundtrip_ms": 50.6762000000017,
+          "accepted": true,
+          "media_ms": 1760
+        },
+        {
+          "clause": 0,
+          "compute_ms": 12.52830500015989,
+          "roundtrip_ms": 76.84459999999672,
+          "accepted": true,
+          "media_ms": 2170
+        },
+        {
+          "clause": 1,
+          "text_wait_ms": 0,
+          "queue_wait_ms": 2951
+        },
+        {
+          "clause": 1,
+          "semantic_prefill_ms": 233.28577499978564,
+          "overlapped_with_tts": true,
+          "context_truncated": false,
+          "planner_timing": {
+            "total_ms": 227.6323650003178,
+            "tokens": 51,
+            "context_truncated": false,
+            "body": {
+              "tokens": 303,
+              "context_truncated": false,
+              "context_chars_used": 27,
+              "encoder_ms": 119.51839000084874,
+              "total_ms": 125.53035800010548
+            }
+          }
+        },
+        {
+          "clause": 1,
+          "compute_ms": 50.79765699974814,
+          "roundtrip_ms": 76.17529999999533,
+          "accepted": true,
+          "media_ms": 2240
+        },
+        {
+          "clause": 1,
+          "first_chunk_ms": 506,
+          "synthesis_to_first_chunk_ms": 486
+        },
+        {
+          "clause": 1,
+          "compute_ms": 34.64413399979094,
+          "roundtrip_ms": 87.5,
+          "accepted": true,
+          "media_ms": 2360
+        },
+        {
+          "clause": 1,
+          "compute_ms": 10.220953000498412,
+          "roundtrip_ms": 49.19410000000062,
+          "accepted": true,
+          "media_ms": 2770
+        },
+        {
+          "clause": 1,
+          "synthesis_ms": 1146
+        },
+        {
+          "clause": 1,
+          "compute_ms": 11.244393000197306,
+          "roundtrip_ms": 59.302999999999884,
+          "accepted": true,
+          "media_ms": 3200
+        },
+        {
+          "clause": 1,
+          "compute_ms": 11.2800460001381,
+          "roundtrip_ms": 79.91549999999552,
+          "accepted": true,
+          "media_ms": 3630
+        },
+        {
+          "clause": 1,
+          "compute_ms": 12.092497000594449,
+          "roundtrip_ms": 50.49860000000626,
+          "accepted": true,
+          "media_ms": 4030
+        },
+        {
+          "clause": 1,
+          "compute_ms": 12.279925000257208,
+          "roundtrip_ms": 64.39250000000175,
+          "accepted": true,
+          "media_ms": 4460
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

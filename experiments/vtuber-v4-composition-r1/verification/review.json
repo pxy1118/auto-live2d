@@ -1,0 +1,11 @@
+{
+  "ok": true,
+  "pairs": 24,
+  "videos": 48,
+  "hidden_version_names": true,
+  "all_media_available": true,
+  "mobile_no_overflow": true,
+  "versioned_ratings": true,
+  "stale_version_rejected": true,
+  "human_votes_written": false
+}

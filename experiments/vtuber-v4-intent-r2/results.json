@@ -1,0 +1,984 @@
+{
+  "schema": "intent-adapter-study.v1",
+  "status": "adaptive_development_only",
+  "promoted": false,
+  "dataset_sha256": "a858b592784faeee9cf16688e541922cbb9590a01fbd23b788e0979e3f6a5bc9",
+  "protocol_sha256": "20f3f10c9ac6c4b2d2347304b9172690b22cf6ecab6a0bc0bda9f899e41e364f",
+  "tokens_sha256": "26582282680273165a3b9a13fda9ba75a30d8cb878224a22bc0e97396dce1b1a",
+  "runs": [
+    {
+      "method": "joint_heads_only",
+      "seed": 7137,
+      "development": {
+        "samples": 60,
+        "families": 18,
+        "forbidden_samples": 23,
+        "required_samples": 13,
+        "optional_samples": 24,
+        "forbidden_activation": 0.0,
+        "required_success": 0.07692307978868484,
+        "required_any_activity": 0.23076923191547394,
+        "acceptable_rate": 0.7333333492279053,
+        "preferred_match": 0.550000011920929,
+        "optional_activity": 0.2083333283662796,
+        "optional_unacceptable": 0.1666666716337204,
+        "active_amplitude_outside": 0.875,
+        "accepted_active_amplitude_outside": 0.5
+      },
+      "development_raw": {
+        "samples": 60,
+        "families": 18,
+        "forbidden_samples": 23,
+        "required_samples": 13,
+        "optional_samples": 24,
+        "forbidden_activation": 0.043478261679410934,
+        "required_success": 0.1538461595773697,
+        "required_any_activity": 0.23076923191547394,
+        "acceptable_rate": 0.6833333373069763,
+        "preferred_match": 0.5333333611488342,
+        "optional_activity": 0.4583333432674408,
+        "optional_unacceptable": 0.2916666567325592,
+        "active_amplitude_outside": 0.7333333492279053,
+        "accepted_active_amplitude_outside": 0.3333333432674408
+      },
+      "development_all_histories": {
+        "samples": 180,
+        "families": 18,
+        "forbidden_samples": 69,
+        "required_samples": 39,
+        "optional_samples": 72,
+        "forbidden_activation": 0.028985507786273956,
+        "required_success": 0.07692307978868484,
+        "required_any_activity": 0.23076923191547394,
+        "acceptable_rate": 0.7277777791023254,
+        "preferred_match": 0.5444444417953491,
+        "optional_activity": 0.1944444477558136,
+        "optional_unacceptable": 0.1527777761220932,
+        "active_amplitude_outside": 0.8799999952316284,
+        "accepted_active_amplitude_outside": 0.5
+      },
+      "train": {
+        "samples": 180,
+        "families": 53,
+        "forbidden_samples": 71,
+        "required_samples": 31,
+        "optional_samples": 78,
+        "forbidden_activation": 0.0,
+        "required_success": 0.7419354915618896,
+        "required_any_activity": 0.7419354915618896,
+        "acceptable_rate": 0.949999988079071,
+        "preferred_match": 0.7222222089767456,
+        "optional_activity": 0.14102564752101898,
+        "optional_unacceptable": 0.012820512987673283,
+        "active_amplitude_outside": 0.8235294222831726,
+        "accepted_active_amplitude_outside": 0.8181818127632141
+      },
+      "necessity_development_before": {
+        "nll": 3.6909828186035156,
+        "brier": 0.8355812430381775,
+        "accuracy": 0.5333333611488342
+      },
+      "necessity_development_after": {
+        "nll": 1.5376393795013428,
+        "brier": 0.7297042012214661,
+        "accuracy": 0.5333333611488342
+      },
+      "calibrated": {
+        "config": {
+          "active_threshold": 0.7,
+          "temperature": 3.0,
+          "forbidden_threshold": 0.4,
+          "required_threshold": 0.7
+        },
+        "calibration": {
+          "samples": 60,
+          "families": 18,
+          "forbidden_samples": 28,
+          "required_samples": 9,
+          "optional_samples": 23,
+          "forbidden_activation": 0.0357142873108387,
+          "required_success": 0.2222222238779068,
+          "required_any_activity": 0.3333333432674408,
+          "acceptable_rate": 0.800000011920929,
+          "preferred_match": 0.6333333253860474,
+          "optional_activity": 0.30434781312942505,
+          "optional_unacceptable": 0.17391304671764374,
+          "active_amplitude_outside": 0.9090909361839294,
+          "accepted_active_amplitude_outside": 0.800000011920929
+        },
+        "score": 0.5758626636
+      },
+      "trainable_parameters": 9483,
+      "trace": [
+        {
+          "step": 200,
+          "loss": 1.028245449066162
+        },
+        {
+          "step": 400,
+          "loss": 0.5478071570396423
+        },
+        {
+          "step": 600,
+          "loss": 0.5281621217727661
+        },
+        {
+          "step": 800,
+          "loss": 0.5463714599609375
+        },
+        {
+          "step": 1000,
+          "loss": 0.5450230240821838
+        }
+      ],
+      "elapsed_s": 3.32,
+      "checkpoint_sha256": "0b4bbadd97f0c11022811a745435793e8028c1127c7aa5e468ecc00cdbaa8697"
+    },
+    {
+      "method": "joint_body_adapter",
+      "seed": 7137,
+      "development": {
+        "samples": 60,
+        "families": 18,
+        "forbidden_samples": 23,
+        "required_samples": 13,
+        "optional_samples": 24,
+        "forbidden_activation": 0.043478261679410934,
+        "required_success": 0.4615384638309479,
+        "required_any_activity": 0.4615384638309479,
+        "acceptable_rate": 0.800000011920929,
+        "preferred_match": 0.5666666626930237,
+        "optional_activity": 0.4166666567325592,
+        "optional_unacceptable": 0.1666666716337204,
+        "active_amplitude_outside": 0.7058823704719543,
+        "accepted_active_amplitude_outside": 0.5833333134651184
+      },
+      "development_raw": {
+        "samples": 60,
+        "families": 18,
+        "forbidden_samples": 23,
+        "required_samples": 13,
+        "optional_samples": 24,
+        "forbidden_activation": 0.043478261679410934,
+        "required_success": 0.38461539149284363,
+        "required_any_activity": 0.38461539149284363,
+        "acceptable_rate": 0.7666666507720947,
+        "preferred_match": 0.550000011920929,
+        "optional_activity": 0.4583333432674408,
+        "optional_unacceptable": 0.2083333283662796,
+        "active_amplitude_outside": 0.7058823704719543,
+        "accepted_active_amplitude_outside": 0.5454545617103577
+      },
+      "development_all_histories": {
+        "samples": 180,
+        "families": 18,
+        "forbidden_samples": 69,
+        "required_samples": 39,
+        "optional_samples": 72,
+        "forbidden_activation": 0.043478261679410934,
+        "required_success": 0.4615384638309479,
+        "required_any_activity": 0.4615384638309479,
+        "acceptable_rate": 0.8055555820465088,
+        "preferred_match": 0.5722222328186035,
+        "optional_activity": 0.4027777910232544,
+        "optional_unacceptable": 0.1527777761220932,
+        "active_amplitude_outside": 0.6600000262260437,
+        "accepted_active_amplitude_outside": 0.5555555820465088
+      },
+      "train": {
+        "samples": 180,
+        "families": 53,
+        "forbidden_samples": 71,
+        "required_samples": 31,
+        "optional_samples": 78,
+        "forbidden_activation": 0.0,
+        "required_success": 1.0,
+        "required_any_activity": 1.0,
+        "acceptable_rate": 1.0,
+        "preferred_match": 1.0,
+        "optional_activity": 0.5641025900840759,
+        "optional_unacceptable": 0.0,
+        "active_amplitude_outside": 0.0,
+        "accepted_active_amplitude_outside": 0.0
+      },
+      "necessity_development_before": {
+        "nll": 3.2565762996673584,
+        "brier": 0.6919013261795044,
+        "accuracy": 0.6333333253860474
+      },
+      "necessity_development_after": {
+        "nll": 1.239162802696228,
+        "brier": 0.6189144849777222,
+        "accuracy": 0.6333333253860474
+      },
+      "calibrated": {
+        "config": {
+          "active_threshold": 0.7,
+          "temperature": 3.0,
+          "forbidden_threshold": 0.4,
+          "required_threshold": 0.4
+        },
+        "calibration": {
+          "samples": 60,
+          "families": 18,
+          "forbidden_samples": 28,
+          "required_samples": 9,
+          "optional_samples": 23,
+          "forbidden_activation": 0.0357142873108387,
+          "required_success": 0.3333333432674408,
+          "required_any_activity": 0.3333333432674408,
+          "acceptable_rate": 0.8500000238418579,
+          "preferred_match": 0.6833333373069763,
+          "optional_activity": 0.260869562625885,
+          "optional_unacceptable": 0.08695652335882187,
+          "active_amplitude_outside": 0.20000000298023224,
+          "accepted_active_amplitude_outside": 0.0
+        },
+        "score": 0.6401138756
+      },
+      "trainable_parameters": 480907,
+      "trace": [
+        {
+          "step": 200,
+          "loss": 0.001381667098030448
+        },
+        {
+          "step": 400,
+          "loss": 0.0006153596332296729
+        },
+        {
+          "step": 600,
+          "loss": 0.00023596316168550402
+        },
+        {
+          "step": 800,
+          "loss": 0.00028437678702175617
+        },
+        {
+          "step": 1000,
+          "loss": 0.00014546778402291238
+        }
+      ],
+      "elapsed_s": 4.66,
+      "checkpoint_sha256": "520c1e4f1b25ac19160f5fcb02cf5d03a248a9dbbb5fcb6aedbab85b3c071941"
+    },
+    {
+      "method": "joint_heads_only",
+      "seed": 1741,
+      "development": {
+        "samples": 60,
+        "families": 18,
+        "forbidden_samples": 23,
+        "required_samples": 13,
+        "optional_samples": 24,
+        "forbidden_activation": 0.0,
+        "required_success": 0.1538461595773697,
+        "required_any_activity": 0.23076923191547394,
+        "acceptable_rate": 0.75,
+        "preferred_match": 0.5666666626930237,
+        "optional_activity": 0.2916666567325592,
+        "optional_unacceptable": 0.1666666716337204,
+        "active_amplitude_outside": 1.0,
+        "accepted_active_amplitude_outside": 1.0
+      },
+      "development_raw": {
+        "samples": 60,
+        "families": 18,
+        "forbidden_samples": 23,
+        "required_samples": 13,
+        "optional_samples": 24,
+        "forbidden_activation": 0.0,
+        "required_success": 0.1538461595773697,
+        "required_any_activity": 0.23076923191547394,
+        "acceptable_rate": 0.7166666388511658,
+        "preferred_match": 0.550000011920929,
+        "optional_activity": 0.375,
+        "optional_unacceptable": 0.25,
+        "active_amplitude_outside": 0.9166666865348816,
+        "accepted_active_amplitude_outside": 0.800000011920929
+      },
+      "development_all_histories": {
+        "samples": 180,
+        "families": 18,
+        "forbidden_samples": 69,
+        "required_samples": 39,
+        "optional_samples": 72,
+        "forbidden_activation": 0.0,
+        "required_success": 0.1538461595773697,
+        "required_any_activity": 0.23076923191547394,
+        "acceptable_rate": 0.7611111402511597,
+        "preferred_match": 0.5722222328186035,
+        "optional_activity": 0.2638888955116272,
+        "optional_unacceptable": 0.1388888955116272,
+        "active_amplitude_outside": 0.9642857313156128,
+        "accepted_active_amplitude_outside": 0.9333333373069763
+      },
+      "train": {
+        "samples": 180,
+        "families": 53,
+        "forbidden_samples": 71,
+        "required_samples": 31,
+        "optional_samples": 78,
+        "forbidden_activation": 0.0,
+        "required_success": 1.0,
+        "required_any_activity": 1.0,
+        "acceptable_rate": 1.0,
+        "preferred_match": 0.7444444298744202,
+        "optional_activity": 0.08974359184503555,
+        "optional_unacceptable": 0.0,
+        "active_amplitude_outside": 0.8421052694320679,
+        "accepted_active_amplitude_outside": 0.8421052694320679
+      },
+      "necessity_development_before": {
+        "nll": 3.675340175628662,
+        "brier": 0.8983688950538635,
+        "accuracy": 0.46666666865348816
+      },
+      "necessity_development_after": {
+        "nll": 1.5074321031570435,
+        "brier": 0.7021673321723938,
+        "accuracy": 0.46666666865348816
+      },
+      "calibrated": {
+        "config": {
+          "active_threshold": 0.7,
+          "temperature": 3.0,
+          "forbidden_threshold": 0.4,
+          "required_threshold": 0.4
+        },
+        "calibration": {
+          "samples": 60,
+          "families": 18,
+          "forbidden_samples": 28,
+          "required_samples": 9,
+          "optional_samples": 23,
+          "forbidden_activation": 0.0357142873108387,
+          "required_success": 0.2222222238779068,
+          "required_any_activity": 0.3333333432674408,
+          "acceptable_rate": 0.800000011920929,
+          "preferred_match": 0.6333333253860474,
+          "optional_activity": 0.3478260934352875,
+          "optional_unacceptable": 0.17391304671764374,
+          "active_amplitude_outside": 0.9166666865348816,
+          "accepted_active_amplitude_outside": 0.8333333134651184
+        },
+        "score": 0.5758626636
+      },
+      "trainable_parameters": 9483,
+      "trace": [
+        {
+          "step": 200,
+          "loss": 1.0739810466766357
+        },
+        {
+          "step": 400,
+          "loss": 0.5990780591964722
+        },
+        {
+          "step": 600,
+          "loss": 0.6498622298240662
+        },
+        {
+          "step": 800,
+          "loss": 0.7380607724189758
+        },
+        {
+          "step": 1000,
+          "loss": 0.4411453604698181
+        }
+      ],
+      "elapsed_s": 2.18,
+      "checkpoint_sha256": "2711542347832dccc35c39692cc892e3fefbeeb772563c0cc42917388d6b5e69"
+    },
+    {
+      "method": "joint_body_adapter",
+      "seed": 1741,
+      "development": {
+        "samples": 60,
+        "families": 18,
+        "forbidden_samples": 23,
+        "required_samples": 13,
+        "optional_samples": 24,
+        "forbidden_activation": 0.043478261679410934,
+        "required_success": 0.4615384638309479,
+        "required_any_activity": 0.4615384638309479,
+        "acceptable_rate": 0.800000011920929,
+        "preferred_match": 0.5666666626930237,
+        "optional_activity": 0.4583333432674408,
+        "optional_unacceptable": 0.1666666716337204,
+        "active_amplitude_outside": 0.6666666865348816,
+        "accepted_active_amplitude_outside": 0.5384615659713745
+      },
+      "development_raw": {
+        "samples": 60,
+        "families": 18,
+        "forbidden_samples": 23,
+        "required_samples": 13,
+        "optional_samples": 24,
+        "forbidden_activation": 0.08695652335882187,
+        "required_success": 0.4615384638309479,
+        "required_any_activity": 0.4615384638309479,
+        "acceptable_rate": 0.7833333611488342,
+        "preferred_match": 0.550000011920929,
+        "optional_activity": 0.4583333432674408,
+        "optional_unacceptable": 0.1666666716337204,
+        "active_amplitude_outside": 0.6842105388641357,
+        "accepted_active_amplitude_outside": 0.5384615659713745
+      },
+      "development_all_histories": {
+        "samples": 180,
+        "families": 18,
+        "forbidden_samples": 69,
+        "required_samples": 39,
+        "optional_samples": 72,
+        "forbidden_activation": 0.05797101557254791,
+        "required_success": 0.4615384638309479,
+        "required_any_activity": 0.4615384638309479,
+        "acceptable_rate": 0.800000011920929,
+        "preferred_match": 0.5666666626930237,
+        "optional_activity": 0.4444444477558136,
+        "optional_unacceptable": 0.1527777761220932,
+        "active_amplitude_outside": 0.6851851940155029,
+        "accepted_active_amplitude_outside": 0.5641025900840759
+      },
+      "train": {
+        "samples": 180,
+        "families": 53,
+        "forbidden_samples": 71,
+        "required_samples": 31,
+        "optional_samples": 78,
+        "forbidden_activation": 0.0,
+        "required_success": 1.0,
+        "required_any_activity": 1.0,
+        "acceptable_rate": 1.0,
+        "preferred_match": 1.0,
+        "optional_activity": 0.5641025900840759,
+        "optional_unacceptable": 0.0,
+        "active_amplitude_outside": 0.0,
+        "accepted_active_amplitude_outside": 0.0
+      },
+      "necessity_development_before": {
+        "nll": 3.363992929458618,
+        "brier": 0.6852582693099976,
+        "accuracy": 0.6166666746139526
+      },
+      "necessity_development_after": {
+        "nll": 1.2659517526626587,
+        "brier": 0.59731525182724,
+        "accuracy": 0.6166666746139526
+      },
+      "calibrated": {
+        "config": {
+          "active_threshold": 0.7,
+          "temperature": 3.0,
+          "forbidden_threshold": 0.4,
+          "required_threshold": 0.4
+        },
+        "calibration": {
+          "samples": 60,
+          "families": 18,
+          "forbidden_samples": 28,
+          "required_samples": 9,
+          "optional_samples": 23,
+          "forbidden_activation": 0.0714285746216774,
+          "required_success": 0.3333333432674408,
+          "required_any_activity": 0.3333333432674408,
+          "acceptable_rate": 0.8666666746139526,
+          "preferred_match": 0.6666666865348816,
+          "optional_activity": 0.17391304671764374,
+          "optional_unacceptable": 0.0,
+          "active_amplitude_outside": 0.2222222238779068,
+          "accepted_active_amplitude_outside": 0.0
+        },
+        "score": 0.6309523843
+      },
+      "trainable_parameters": 480907,
+      "trace": [
+        {
+          "step": 200,
+          "loss": 0.006662527099251747
+        },
+        {
+          "step": 400,
+          "loss": 0.0003488218644633889
+        },
+        {
+          "step": 600,
+          "loss": 0.0007330860244110227
+        },
+        {
+          "step": 800,
+          "loss": 0.0001455924939364195
+        },
+        {
+          "step": 1000,
+          "loss": 6.989539542701095e-05
+        }
+      ],
+      "elapsed_s": 4.72,
+      "checkpoint_sha256": "678ca666e05eee3d528d72002127c6b4f91f72425940bcb0b12aa0679f3ceb92"
+    },
+    {
+      "method": "joint_heads_only",
+      "seed": 9283,
+      "development": {
+        "samples": 60,
+        "families": 18,
+        "forbidden_samples": 23,
+        "required_samples": 13,
+        "optional_samples": 24,
+        "forbidden_activation": 0.0,
+        "required_success": 0.1538461595773697,
+        "required_any_activity": 0.23076923191547394,
+        "acceptable_rate": 0.7833333611488342,
+        "preferred_match": 0.6000000238418579,
+        "optional_activity": 0.125,
+        "optional_unacceptable": 0.0833333358168602,
+        "active_amplitude_outside": 1.0,
+        "accepted_active_amplitude_outside": 1.0
+      },
+      "development_raw": {
+        "samples": 60,
+        "families": 18,
+        "forbidden_samples": 23,
+        "required_samples": 13,
+        "optional_samples": 24,
+        "forbidden_activation": 0.0,
+        "required_success": 0.1538461595773697,
+        "required_any_activity": 0.23076923191547394,
+        "acceptable_rate": 0.7666666507720947,
+        "preferred_match": 0.5833333134651184,
+        "optional_activity": 0.25,
+        "optional_unacceptable": 0.125,
+        "active_amplitude_outside": 0.7777777910232544,
+        "accepted_active_amplitude_outside": 0.6000000238418579
+      },
+      "development_all_histories": {
+        "samples": 180,
+        "families": 18,
+        "forbidden_samples": 69,
+        "required_samples": 39,
+        "optional_samples": 72,
+        "forbidden_activation": 0.0,
+        "required_success": 0.1538461595773697,
+        "required_any_activity": 0.23076923191547394,
+        "acceptable_rate": 0.7888888716697693,
+        "preferred_match": 0.5944444537162781,
+        "optional_activity": 0.125,
+        "optional_unacceptable": 0.0694444477558136,
+        "active_amplitude_outside": 0.9444444179534912,
+        "accepted_active_amplitude_outside": 0.8999999761581421
+      },
+      "train": {
+        "samples": 180,
+        "families": 53,
+        "forbidden_samples": 71,
+        "required_samples": 31,
+        "optional_samples": 78,
+        "forbidden_activation": 0.0,
+        "required_success": 0.35483869910240173,
+        "required_any_activity": 0.35483869910240173,
+        "acceptable_rate": 0.8888888955116272,
+        "preferred_match": 0.6611111164093018,
+        "optional_activity": 0.10256410390138626,
+        "optional_unacceptable": 0.0,
+        "active_amplitude_outside": 0.7894737124443054,
+        "accepted_active_amplitude_outside": 0.7894737124443054
+      },
+      "necessity_development_before": {
+        "nll": 3.681252956390381,
+        "brier": 0.8874419927597046,
+        "accuracy": 0.46666666865348816
+      },
+      "necessity_development_after": {
+        "nll": 1.5011651515960693,
+        "brier": 0.7126738429069519,
+        "accuracy": 0.46666666865348816
+      },
+      "calibrated": {
+        "config": {
+          "active_threshold": 0.7,
+          "temperature": 3.0,
+          "forbidden_threshold": 0.4,
+          "required_threshold": 0.85
+        },
+        "calibration": {
+          "samples": 60,
+          "families": 18,
+          "forbidden_samples": 28,
+          "required_samples": 9,
+          "optional_samples": 23,
+          "forbidden_activation": 0.0357142873108387,
+          "required_success": 0.2222222238779068,
+          "required_any_activity": 0.3333333432674408,
+          "acceptable_rate": 0.8166666626930237,
+          "preferred_match": 0.6666666865348816,
+          "optional_activity": 0.21739129722118378,
+          "optional_unacceptable": 0.1304347813129425,
+          "active_amplitude_outside": 0.8888888955116272,
+          "accepted_active_amplitude_outside": 0.75
+        },
+        "score": 0.5802104902
+      },
+      "trainable_parameters": 9483,
+      "trace": [
+        {
+          "step": 200,
+          "loss": 0.8273624777793884
+        },
+        {
+          "step": 400,
+          "loss": 0.49818533658981323
+        },
+        {
+          "step": 600,
+          "loss": 0.506378710269928
+        },
+        {
+          "step": 800,
+          "loss": 0.5294780135154724
+        },
+        {
+          "step": 1000,
+          "loss": 0.2619134783744812
+        }
+      ],
+      "elapsed_s": 2.22,
+      "checkpoint_sha256": "0799292d263a6ed8e68423d6ebc69ead3fdab4b4047e2722450773e1fcaa31df"
+    },
+    {
+      "method": "joint_body_adapter",
+      "seed": 9283,
+      "development": {
+        "samples": 60,
+        "families": 18,
+        "forbidden_samples": 23,
+        "required_samples": 13,
+        "optional_samples": 24,
+        "forbidden_activation": 0.043478261679410934,
+        "required_success": 0.1538461595773697,
+        "required_any_activity": 0.23076923191547394,
+        "acceptable_rate": 0.7333333492279053,
+        "preferred_match": 0.550000011920929,
+        "optional_activity": 0.375,
+        "optional_unacceptable": 0.1666666716337204,
+        "active_amplitude_outside": 0.6153846383094788,
+        "accepted_active_amplitude_outside": 0.2857142984867096
+      },
+      "development_raw": {
+        "samples": 60,
+        "families": 18,
+        "forbidden_samples": 23,
+        "required_samples": 13,
+        "optional_samples": 24,
+        "forbidden_activation": 0.043478261679410934,
+        "required_success": 0.3076923191547394,
+        "required_any_activity": 0.38461539149284363,
+        "acceptable_rate": 0.75,
+        "preferred_match": 0.5333333611488342,
+        "optional_activity": 0.4166666567325592,
+        "optional_unacceptable": 0.2083333283662796,
+        "active_amplitude_outside": 0.625,
+        "accepted_active_amplitude_outside": 0.4444444477558136
+      },
+      "development_all_histories": {
+        "samples": 180,
+        "families": 18,
+        "forbidden_samples": 69,
+        "required_samples": 39,
+        "optional_samples": 72,
+        "forbidden_activation": 0.043478261679410934,
+        "required_success": 0.1794871836900711,
+        "required_any_activity": 0.25641027092933655,
+        "acceptable_rate": 0.7388888597488403,
+        "preferred_match": 0.550000011920929,
+        "optional_activity": 0.375,
+        "optional_unacceptable": 0.1666666716337204,
+        "active_amplitude_outside": 0.6000000238418579,
+        "accepted_active_amplitude_outside": 0.3181818127632141
+      },
+      "train": {
+        "samples": 180,
+        "families": 53,
+        "forbidden_samples": 71,
+        "required_samples": 31,
+        "optional_samples": 78,
+        "forbidden_activation": 0.0,
+        "required_success": 1.0,
+        "required_any_activity": 1.0,
+        "acceptable_rate": 1.0,
+        "preferred_match": 1.0,
+        "optional_activity": 0.5641025900840759,
+        "optional_unacceptable": 0.0,
+        "active_amplitude_outside": 0.0,
+        "accepted_active_amplitude_outside": 0.0
+      },
+      "necessity_development_before": {
+        "nll": 4.002217769622803,
+        "brier": 0.7299773693084717,
+        "accuracy": 0.6166666746139526
+      },
+      "necessity_development_after": {
+        "nll": 1.4479008913040161,
+        "brier": 0.6163234710693359,
+        "accuracy": 0.6166666746139526
+      },
+      "calibrated": {
+        "config": {
+          "active_threshold": 0.7,
+          "temperature": 3.0,
+          "forbidden_threshold": 0.4,
+          "required_threshold": 0.4
+        },
+        "calibration": {
+          "samples": 60,
+          "families": 18,
+          "forbidden_samples": 28,
+          "required_samples": 9,
+          "optional_samples": 23,
+          "forbidden_activation": 0.0714285746216774,
+          "required_success": 0.3333333432674408,
+          "required_any_activity": 0.3333333432674408,
+          "acceptable_rate": 0.8500000238418579,
+          "preferred_match": 0.7166666388511658,
+          "optional_activity": 0.21739129722118378,
+          "optional_unacceptable": 0.043478261679410934,
+          "active_amplitude_outside": 0.4000000059604645,
+          "accepted_active_amplitude_outside": 0.1428571492433548
+        },
+        "score": 0.6266045582
+      },
+      "trainable_parameters": 480907,
+      "trace": [
+        {
+          "step": 200,
+          "loss": 0.001500187674537301
+        },
+        {
+          "step": 400,
+          "loss": 0.0017837821505963802
+        },
+        {
+          "step": 600,
+          "loss": 0.00026468621217645705
+        },
+        {
+          "step": 800,
+          "loss": 0.00012799999967683107
+        },
+        {
+          "step": 1000,
+          "loss": 1.390763463859912e-05
+        }
+      ],
+      "elapsed_s": 4.7,
+      "checkpoint_sha256": "404f8a3bc62ae9b78072104d03ac817c10d80a71af7e0718341d840e0b248fcb"
+    }
+  ],
+  "summary": {
+    "joint_heads_only": {
+      "seeds": 3,
+      "metrics": {
+        "forbidden_activation": {
+          "mean": 0.0,
+          "std": 0.0
+        },
+        "required_success": {
+          "mean": 0.12820513298114142,
+          "std": 0.036261887565555276
+        },
+        "required_any_activity": {
+          "mean": 0.23076923191547394,
+          "std": 0.0
+        },
+        "acceptable_rate": {
+          "mean": 0.7555555701255798,
+          "std": 0.020786992208084294
+        },
+        "preferred_match": {
+          "mean": 0.5722222328186035,
+          "std": 0.020786992208084294
+        },
+        "optional_activity": {
+          "mean": 0.2083333283662796,
+          "std": 0.06804137768839479
+        },
+        "optional_unacceptable": {
+          "mean": 0.13888889302810034,
+          "std": 0.0392837112366651
+        },
+        "active_amplitude_outside": {
+          "mean": 0.9583333333333334,
+          "std": 0.05892556509887896
+        },
+        "accepted_active_amplitude_outside": {
+          "mean": 0.8333333333333334,
+          "std": 0.23570226039551584
+        }
+      },
+      "family_bootstrap_95": {
+        "forbidden_activation": [
+          0.0,
+          0.0
+        ],
+        "required_success": [
+          0.0,
+          0.30000001192092896
+        ],
+        "required_any_activity": [
+          0.041666666666666664,
+          0.4444444380700588
+        ],
+        "acceptable_rate": [
+          0.6499780664841335,
+          0.8499999846021334
+        ],
+        "preferred_match": [
+          0.43333333705862365,
+          0.7037439594666163
+        ],
+        "optional_activity": [
+          0.07137897141898672,
+          0.3750000049670537
+        ],
+        "optional_unacceptable": [
+          0.03999999910593033,
+          0.25761785277475907
+        ],
+        "active_amplitude_outside": [
+          0.7997916686038177,
+          1.0
+        ],
+        "accepted_active_amplitude_outside": [
+          0.6666666666666666,
+          1.0
+        ]
+      }
+    },
+    "joint_body_adapter": {
+      "seeds": 3,
+      "metrics": {
+        "forbidden_activation": {
+          "mean": 0.043478261679410934,
+          "std": 0.0
+        },
+        "required_success": {
+          "mean": 0.3589743624130885,
+          "std": 0.14504754323774632
+        },
+        "required_any_activity": {
+          "mean": 0.3846153865257899,
+          "std": 0.10878565918442844
+        },
+        "acceptable_rate": {
+          "mean": 0.7777777910232544,
+          "std": 0.03142696617954218
+        },
+        "preferred_match": {
+          "mean": 0.5611111124356588,
+          "std": 0.007856734520410793
+        },
+        "optional_activity": {
+          "mean": 0.4166666666666667,
+          "std": 0.034020694927571704
+        },
+        "optional_unacceptable": {
+          "mean": 0.1666666716337204,
+          "std": 0.0
+        },
+        "active_amplitude_outside": {
+          "mean": 0.6626445651054382,
+          "std": 0.03705485102954522
+        },
+        "accepted_active_amplitude_outside": {
+          "mean": 0.4691697259744008,
+          "std": 0.1310096404513913
+        }
+      },
+      "family_bootstrap_95": {
+        "forbidden_activation": [
+          0.0,
+          0.13636364042758942
+        ],
+        "required_success": [
+          0.14809027885397275,
+          0.5779166817665099
+        ],
+        "required_any_activity": [
+          0.15555555870135626,
+          0.5953571565449237
+        ],
+        "acceptable_rate": [
+          0.6900584896405538,
+          0.8555787026882172
+        ],
+        "preferred_match": [
+          0.4269005852440993,
+          0.6975529119372368
+        ],
+        "optional_activity": [
+          0.2061904788017273,
+          0.6377113595604896
+        ],
+        "optional_unacceptable": [
+          0.04938271641731262,
+          0.32000000290572644
+        ],
+        "active_amplitude_outside": [
+          0.45713405112425487,
+          0.8719399780035019
+        ],
+        "accepted_active_amplitude_outside": [
+          0.22023809949556986,
+          0.6905754054586092
+        ]
+      }
+    }
+  },
+  "adapter_minus_heads_paired_family_95": {
+    "forbidden_activation": [
+      0.0,
+      0.13636364042758942
+    ],
+    "required_success": [
+      0.0,
+      0.45464016472299884
+    ],
+    "required_any_activity": [
+      -0.11136363968253131,
+      0.4168055556714534
+    ],
+    "acceptable_rate": [
+      -0.06432747840881348,
+      0.09942984183629348
+    ],
+    "preferred_match": [
+      -0.09444443384806323,
+      0.06881787329912176
+    ],
+    "optional_activity": [
+      -0.06357142503062883,
+      0.4359195511167248
+    ],
+    "optional_unacceptable": [
+      -0.0864197488874197,
+      0.1666666716337204
+    ],
+    "active_amplitude_outside": [
+      -0.5008911450703939,
+      -0.07422617922226589
+    ],
+    "accepted_active_amplitude_outside": [
+      -0.7142857114473979,
+      -0.09523808931310972
+    ]
+  },
+  "old_test_loaded": false,
+  "new_final_test_created": false,
+  "caveats": [
+    "Same development set inspected in r1; no independent final test",
+    "Only draft assistant labels",
+    "Body-only copied branch; arms, faces, appearance and runtime default unchanged",
+    "No runtime stability, latency or rendered naturalness acceptance"
+  ]
+}

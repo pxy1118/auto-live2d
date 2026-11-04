@@ -1,0 +1,1231 @@
+{
+  "ok": true,
+  "runtime_version": "v4.11-cajole",
+  "groups": 14,
+  "clips": [
+    {
+      "clip": "00-A",
+      "name": "wave",
+      "category": "coordinated",
+      "frames": 271,
+      "two_raised_arm_frames": 0,
+      "inactive_arm_max": 0.0,
+      "body_peak": {
+        "AngleX": 1.56,
+        "AngleY": 1.04,
+        "AngleZ": 5.2,
+        "PositionX": 1.82,
+        "PositionY": 0.0,
+        "PositionZ": 4.425,
+        "LeanInput": 3.12
+      },
+      "physics_output_ranges": {
+        "ParamAngleX": 1.45611,
+        "ParamAngleY": 1.10942,
+        "ParamAngleZ": 4.89707,
+        "ParamBodyAngleX": 1.82013,
+        "ParamBodyAngleY": 3.78308,
+        "ParamBodyAngleZ": 3.43494,
+        "Param50": 0.10398,
+        "Param53": 0.10401
+      },
+      "body_end_max": 0.0,
+      "body_input_actual_max_error": 5.000286814382804e-06
+    },
+    {
+      "clip": "00-B",
+      "name": "wave",
+      "category": "coordinated",
+      "frames": 271,
+      "two_raised_arm_frames": 0,
+      "inactive_arm_max": 0.0,
+      "body_peak": {
+        "AngleX": 0.0,
+        "AngleY": 5.19993,
+        "AngleZ": 2.5,
+        "PositionX": 0.0,
+        "PositionY": 0.72799,
+        "PositionZ": 3.29998,
+        "LeanInput": 2.90398
+      },
+      "physics_output_ranges": {
+        "ParamAngleX": 0.0,
+        "ParamAngleY": 6.23972,
+        "ParamAngleZ": 2.3404,
+        "ParamBodyAngleX": 0.0,
+        "ParamBodyAngleY": 4.90309,
+        "ParamBodyAngleZ": 2.16391,
+        "Param50": 0.0881,
+        "Param53": 0.09669
+      },
+      "body_end_max": 0.0,
+      "body_input_actual_max_error": 4.973950806647087e-06
+    },
+    {
+      "clip": "00-C",
+      "name": "wave",
+      "category": "coordinated",
+      "frames": 271,
+      "two_raised_arm_frames": 0,
+      "inactive_arm_max": 0.0,
+      "body_peak": {
+        "AngleX": 2.45,
+        "AngleY": 1.54,
+        "AngleZ": 4.2,
+        "PositionX": 1.19,
+        "PositionY": 1.12,
+        "PositionZ": 5.95,
+        "LeanInput": 5.25
+      },
+      "physics_output_ranges": {
+        "ParamAngleX": 2.28684,
+        "ParamAngleY": 1.64279,
+        "ParamAngleZ": 3.92992,
+        "ParamBodyAngleX": 1.19009,
+        "ParamBodyAngleY": 7.33098,
+        "ParamBodyAngleZ": 4.59847,
+        "Param50": 0.17501,
+        "Param53": 0.17501
+      },
+      "body_end_max": 0.0,
+      "body_input_actual_max_error": 5.0735170367133264e-06
+    },
+    {
+      "clip": "01-A",
+      "name": "point",
+      "category": "coordinated",
+      "frames": 271,
+      "two_raised_arm_frames": 0,
+      "inactive_arm_max": 0.0,
+      "body_peak": {
+        "AngleX": 2.0,
+        "AngleY": 6.39992,
+        "AngleZ": 0.0,
+        "PositionX": 0.0,
+        "PositionY": 0.89599,
+        "PositionZ": 3.59998,
+        "LeanInput": 1.72798
+      },
+      "physics_output_ranges": {
+        "ParamAngleX": 1.8668,
+        "ParamAngleY": 7.6796500000000005,
+        "ParamAngleZ": 0.0,
+        "ParamBodyAngleX": 0.0,
+        "ParamBodyAngleY": 4.05814,
+        "ParamBodyAngleZ": 2.37827,
+        "Param50": 0.04643,
+        "Param53": 0.05746
+      },
+      "body_end_max": 0.0,
+      "body_input_actual_max_error": 4.973495560722796e-06
+    },
+    {
+      "clip": "01-B",
+      "name": "point",
+      "category": "coordinated",
+      "frames": 271,
+      "two_raised_arm_frames": 0,
+      "inactive_arm_max": 0.0,
+      "body_peak": {
+        "AngleX": 8.25,
+        "AngleY": 0.0,
+        "AngleZ": 1.125,
+        "PositionX": 2.55,
+        "PositionY": 0.0,
+        "PositionZ": 1.35,
+        "LeanInput": 1.2
+      },
+      "physics_output_ranges": {
+        "ParamAngleX": 12.70588,
+        "ParamAngleY": 0.0,
+        "ParamAngleZ": 1.74678,
+        "ParamBodyAngleX": 4.20204,
+        "ParamBodyAngleY": 3.27785,
+        "ParamBodyAngleZ": 0.4206,
+        "Param50": 0.03799,
+        "Param53": 0.04
+      },
+      "body_end_max": 0.0,
+      "body_input_actual_max_error": 5.096959998063255e-06
+    },
+    {
+      "clip": "01-C",
+      "name": "point",
+      "category": "coordinated",
+      "frames": 271,
+      "two_raised_arm_frames": 0,
+      "inactive_arm_max": 0.0,
+      "body_peak": {
+        "AngleX": 1.44,
+        "AngleY": 2.17,
+        "AngleZ": 4.8,
+        "PositionX": 1.68,
+        "PositionY": 0.88,
+        "PositionZ": 7.375,
+        "LeanInput": 7.005
+      },
+      "physics_output_ranges": {
+        "ParamAngleX": 1.3441,
+        "ParamAngleY": 2.31484,
+        "ParamAngleZ": 4.49134,
+        "ParamBodyAngleX": 1.68012,
+        "ParamBodyAngleY": 7.17031,
+        "ParamBodyAngleZ": 5.55717,
+        "Param50": 0.2335,
+        "Param53": 0.23352
+      },
+      "body_end_max": 0.0,
+      "body_input_actual_max_error": 5.118898871891986e-06
+    },
+    {
+      "clip": "02-A",
+      "name": "chest",
+      "category": "coordinated",
+      "frames": 251,
+      "two_raised_arm_frames": 0,
+      "inactive_arm_max": 0.0,
+      "body_peak": {
+        "AngleX": 0.0,
+        "AngleY": 1.43,
+        "AngleZ": 0.0,
+        "PositionX": 0.0,
+        "PositionY": 1.43193,
+        "PositionZ": 6.22488,
+        "LeanInput": 5.63087
+      },
+      "physics_output_ranges": {
+        "ParamAngleX": 0.0,
+        "ParamAngleY": 2.98561,
+        "ParamAngleZ": 0.0,
+        "ParamBodyAngleX": 0.0,
+        "ParamBodyAngleY": 7.59633,
+        "ParamBodyAngleZ": 4.56383,
+        "Param50": 0.18272,
+        "Param53": 0.18767
+      },
+      "body_end_max": 0.0,
+      "body_input_actual_max_error": 5.006143391383944e-06
+    },
+    {
+      "clip": "02-B",
+      "name": "chest",
+      "category": "coordinated",
+      "frames": 251,
+      "two_raised_arm_frames": 0,
+      "inactive_arm_max": 0.0,
+      "body_peak": {
+        "AngleX": 7.7,
+        "AngleY": 1.1,
+        "AngleZ": 1.05,
+        "PositionX": 2.38,
+        "PositionY": 0.8,
+        "PositionZ": 5.51,
+        "LeanInput": 4.87
+      },
+      "physics_output_ranges": {
+        "ParamAngleX": 7.1872,
+        "ParamAngleY": 1.17342,
+        "ParamAngleZ": 0.98311,
+        "ParamBodyAngleX": 2.38018,
+        "ParamBodyAngleY": 7.1654800000000005,
+        "ParamBodyAngleZ": 4.3905,
+        "Param50": 0.16235,
+        "Param53": 0.16235
+      },
+      "body_end_max": 0.0,
+      "body_input_actual_max_error": 5.155811511947661e-06
+    },
+    {
+      "clip": "02-C",
+      "name": "chest",
+      "category": "coordinated",
+      "frames": 251,
+      "two_raised_arm_frames": 0,
+      "inactive_arm_max": 0.0,
+      "body_peak": {
+        "AngleX": 1.92,
+        "AngleY": 3.59994,
+        "AngleZ": 6.4,
+        "PositionX": 2.24,
+        "PositionY": 0.50399,
+        "PositionZ": 3.6,
+        "LeanInput": 3.84
+      },
+      "physics_output_ranges": {
+        "ParamAngleX": 1.79213,
+        "ParamAngleY": 5.2054,
+        "ParamAngleZ": 6.03364,
+        "ParamBodyAngleX": 2.24016,
+        "ParamBodyAngleY": 4.70524,
+        "ParamBodyAngleZ": 2.67023,
+        "Param50": 0.12798,
+        "Param53": 0.12801
+      },
+      "body_end_max": 0.0,
+      "body_input_actual_max_error": 5.0035133107861895e-06
+    },
+    {
+      "clip": "03-A",
+      "name": "grass",
+      "category": "coordinated",
+      "frames": 299,
+      "two_raised_arm_frames": 0,
+      "inactive_arm_max": 0.0,
+      "body_peak": {
+        "AngleX": 1.92,
+        "AngleY": 1.5,
+        "AngleZ": 6.4,
+        "PositionX": 2.24,
+        "PositionY": 0.0,
+        "PositionZ": 0.0,
+        "LeanInput": 0.96
+      },
+      "physics_output_ranges": {
+        "ParamAngleX": 1.79213,
+        "ParamAngleY": 1.60012,
+        "ParamAngleZ": 5.98891,
+        "ParamBodyAngleX": 2.24016,
+        "ParamBodyAngleY": 3.37001,
+        "ParamBodyAngleZ": 0.224,
+        "Param50": 0.032,
+        "Param53": 0.032
+      },
+      "body_end_max": 0.0,
+      "body_input_actual_max_error": 4.988952465367902e-06
+    },
+    {
+      "clip": "03-B",
+      "name": "grass",
+      "category": "coordinated",
+      "frames": 299,
+      "two_raised_arm_frames": 0,
+      "inactive_arm_max": 0.0,
+      "body_peak": {
+        "AngleX": 1.53,
+        "AngleY": 0.0,
+        "AngleZ": 3.4,
+        "PositionX": 4.93,
+        "PositionY": 0.51,
+        "PositionZ": 0.0,
+        "LeanInput": 1.19
+      },
+      "physics_output_ranges": {
+        "ParamAngleX": 1.92794,
+        "ParamAngleY": 0.0,
+        "ParamAngleZ": 4.36137,
+        "ParamBodyAngleX": 6.64625,
+        "ParamBodyAngleY": 3.32922,
+        "ParamBodyAngleZ": 0.66557,
+        "Param50": 0.03946,
+        "Param53": 0.03967
+      },
+      "body_end_max": 0.0,
+      "body_input_actual_max_error": 4.978231482433149e-06
+    },
+    {
+      "clip": "03-C",
+      "name": "grass",
+      "category": "coordinated",
+      "frames": 299,
+      "two_raised_arm_frames": 0,
+      "inactive_arm_max": 0.0,
+      "body_peak": {
+        "AngleX": 0.0,
+        "AngleY": 1.98,
+        "AngleZ": 0.0,
+        "PositionX": 0.0,
+        "PositionY": 1.44,
+        "PositionZ": 7.65,
+        "LeanInput": 6.75
+      },
+      "physics_output_ranges": {
+        "ParamAngleX": 0.0,
+        "ParamAngleY": 2.11216,
+        "ParamAngleZ": 0.0,
+        "ParamBodyAngleX": 0.0,
+        "ParamBodyAngleY": 8.69952,
+        "ParamBodyAngleZ": 5.5709,
+        "Param50": 0.22494,
+        "Param53": 0.22502
+      },
+      "body_end_max": 0.0,
+      "body_input_actual_max_error": 5.069440971006145e-06
+    },
+    {
+      "clip": "04-A",
+      "name": "thanks",
+      "category": "coordinated",
+      "frames": 251,
+      "two_raised_arm_frames": 0,
+      "inactive_arm_max": 0.0,
+      "body_peak": {
+        "AngleX": 0.0,
+        "AngleY": 7.49999,
+        "AngleZ": 0.0,
+        "PositionX": 0.0,
+        "PositionY": 1.6,
+        "PositionZ": 6.49999,
+        "LeanInput": 7.99999
+      },
+      "physics_output_ranges": {
+        "ParamAngleX": 0.0,
+        "ParamAngleY": 8.00056,
+        "ParamAngleZ": 0.0,
+        "ParamBodyAngleX": 0.0,
+        "ParamBodyAngleY": 9.5767,
+        "ParamBodyAngleZ": 4.98758,
+        "Param50": 0.25515,
+        "Param53": 0.26665
+      },
+      "body_end_max": 0.0,
+      "body_input_actual_max_error": 5.014187463014963e-06
+    },
+    {
+      "clip": "04-B",
+      "name": "thanks",
+      "category": "coordinated",
+      "frames": 251,
+      "two_raised_arm_frames": 0,
+      "inactive_arm_max": 0.0,
+      "body_peak": {
+        "AngleX": 0.0,
+        "AngleY": 5.52889,
+        "AngleZ": 0.0,
+        "PositionX": 0.0,
+        "PositionY": 1.44184,
+        "PositionZ": 4.54972,
+        "LeanInput": 4.3257
+      },
+      "physics_output_ranges": {
+        "ParamAngleX": 0.0,
+        "ParamAngleY": 6.71762,
+        "ParamAngleZ": 0.0,
+        "ParamBodyAngleX": 0.0,
+        "ParamBodyAngleY": 6.47114,
+        "ParamBodyAngleZ": 3.44049,
+        "Param50": 0.13364,
+        "Param53": 0.14412
+      },
+      "body_end_max": 0.0,
+      "body_input_actual_max_error": 5.008566846598228e-06
+    },
+    {
+      "clip": "04-C",
+      "name": "thanks",
+      "category": "coordinated",
+      "frames": 251,
+      "two_raised_arm_frames": 0,
+      "inactive_arm_max": 0.0,
+      "body_peak": {
+        "AngleX": 1.8,
+        "AngleY": 5.19991,
+        "AngleZ": 6.0,
+        "PositionX": 2.1,
+        "PositionY": 0.72799,
+        "PositionZ": 1.29998,
+        "LeanInput": 2.30398
+      },
+      "physics_output_ranges": {
+        "ParamAngleX": 1.68012,
+        "ParamAngleY": 6.239730000000001,
+        "ParamAngleZ": 5.65653,
+        "ParamBodyAngleX": 2.10015,
+        "ParamBodyAngleY": 4.56888,
+        "ParamBodyAngleZ": 1.06563,
+        "Param50": 0.06808,
+        "Param53": 0.07669
+      },
+      "body_end_max": 0.0,
+      "body_input_actual_max_error": 5.0782413651973e-06
+    },
+    {
+      "clip": "05-A",
+      "name": "explain",
+      "category": "coordinated",
+      "frames": 251,
+      "two_raised_arm_frames": 0,
+      "inactive_arm_max": 0.0,
+      "body_peak": {
+        "AngleX": 8.25,
+        "AngleY": 1.1,
+        "AngleZ": 1.125,
+        "PositionX": 2.55,
+        "PositionY": 0.8,
+        "PositionZ": 5.6,
+        "LeanInput": 4.95
+      },
+      "physics_output_ranges": {
+        "ParamAngleX": 7.70057,
+        "ParamAngleY": 1.17342,
+        "ParamAngleZ": 1.05332,
+        "ParamBodyAngleX": 2.55019,
+        "ParamBodyAngleY": 7.17146,
+        "ParamBodyAngleZ": 4.45433,
+        "Param50": 0.16501,
+        "Param53": 0.16501
+      },
+      "body_end_max": 0.0,
+      "body_input_actual_max_error": 5.163159699783648e-06
+    },
+    {
+      "clip": "05-B",
+      "name": "explain",
+      "category": "coordinated",
+      "frames": 271,
+      "two_raised_arm_frames": 0,
+      "inactive_arm_max": 0.0,
+      "body_peak": {
+        "AngleX": 1.62,
+        "AngleY": 2.39997,
+        "AngleZ": 3.6,
+        "PositionX": 5.22,
+        "PositionY": 0.76736,
+        "PositionZ": 0.59999,
+        "LeanInput": 1.67595
+      },
+      "physics_output_ranges": {
+        "ParamAngleX": 2.04134,
+        "ParamAngleY": 2.87987,
+        "ParamAngleZ": 4.617929999999999,
+        "ParamBodyAngleX": 7.03721,
+        "ParamBodyAngleY": 3.90601,
+        "ParamBodyAngleZ": 0.70473,
+        "Param50": 0.04681,
+        "Param53": 0.05576
+      },
+      "body_end_max": 0.0,
+      "body_input_actual_max_error": 5.009765625230145e-06
+    },
+    {
+      "clip": "05-C",
+      "name": "explain",
+      "category": "coordinated",
+      "frames": 271,
+      "two_raised_arm_frames": 0,
+      "inactive_arm_max": 0.0,
+      "body_peak": {
+        "AngleX": 6.05,
+        "AngleY": 1.87,
+        "AngleZ": 0.825,
+        "PositionX": 1.87,
+        "PositionY": 1.36,
+        "PositionZ": 8.215,
+        "LeanInput": 7.255
+      },
+      "physics_output_ranges": {
+        "ParamAngleX": 5.64708,
+        "ParamAngleY": 1.99481,
+        "ParamAngleZ": 0.77199,
+        "ParamBodyAngleX": 1.87014,
+        "ParamBodyAngleY": 9.08265,
+        "ParamBodyAngleZ": 5.96718,
+        "Param50": 0.24175,
+        "Param53": 0.24185
+      },
+      "body_end_max": 0.0,
+      "body_input_actual_max_error": 5.289522563955984e-06
+    },
+    {
+      "clip": "06-A",
+      "name": "refuse",
+      "category": "coordinated",
+      "frames": 271,
+      "two_raised_arm_frames": 0,
+      "inactive_arm_max": 0.0,
+      "body_peak": {
+        "AngleX": 5.28954,
+        "AngleY": 0.8,
+        "AngleZ": 0.0,
+        "PositionX": 0.0,
+        "PositionY": 0.0,
+        "PositionZ": 0.8,
+        "LeanInput": 1.0
+      },
+      "physics_output_ranges": {
+        "ParamAngleX": 9.87356,
+        "ParamAngleY": 0.8534,
+        "ParamAngleZ": 0.0,
+        "ParamBodyAngleX": 0.0,
+        "ParamBodyAngleY": 3.58641,
+        "ParamBodyAngleZ": 0.0,
+        "Param50": 0.0,
+        "Param53": 0.0
+      },
+      "body_end_max": 0.0,
+      "body_input_actual_max_error": 4.98182898635291e-06
+    },
+    {
+      "clip": "06-B",
+      "name": "refuse",
+      "category": "coordinated",
+      "frames": 271,
+      "two_raised_arm_frames": 0,
+      "inactive_arm_max": 0.0,
+      "body_peak": {
+        "AngleX": 1.2,
+        "AngleY": 0.8,
+        "AngleZ": 4.0,
+        "PositionX": 0.0,
+        "PositionY": 0.0,
+        "PositionZ": 2.3,
+        "LeanInput": 2.1
+      },
+      "physics_output_ranges": {
+        "ParamAngleX": 1.12008,
+        "ParamAngleY": 0.8534,
+        "ParamAngleZ": 3.7455,
+        "ParamBodyAngleX": 0.0,
+        "ParamBodyAngleY": 5.74092,
+        "ParamBodyAngleZ": 0.0,
+        "Param50": 0.0,
+        "Param53": 0.0
+      },
+      "body_end_max": 0.0,
+      "body_input_actual_max_error": 5.037728610712833e-06
+    },
+    {
+      "clip": "06-C",
+      "name": "refuse",
+      "category": "coordinated",
+      "frames": 271,
+      "two_raised_arm_frames": 0,
+      "inactive_arm_max": 0.0,
+      "body_peak": {
+        "AngleX": 2.0,
+        "AngleY": 3.99958,
+        "AngleZ": 2.0,
+        "PositionX": 0.0,
+        "PositionY": 0.0,
+        "PositionZ": 0.8,
+        "LeanInput": 1.0
+      },
+      "physics_output_ranges": {
+        "ParamAngleX": 1.8668,
+        "ParamAngleY": 4.26647,
+        "ParamAngleZ": 1.9047399999999999,
+        "ParamBodyAngleX": 0.0,
+        "ParamBodyAngleY": 3.58641,
+        "ParamBodyAngleZ": 0.0,
+        "Param50": 0.0,
+        "Param53": 0.0
+      },
+      "body_end_max": 0.0,
+      "body_input_actual_max_error": 5.006350657699166e-06
+    },
+    {
+      "clip": "07-A",
+      "name": "lean",
+      "category": "body",
+      "frames": 233,
+      "two_raised_arm_frames": 0,
+      "inactive_arm_max": 0.0,
+      "body_peak": {
+        "AngleX": 0.0,
+        "AngleY": 1.98,
+        "AngleZ": 0.0,
+        "PositionX": 0.0,
+        "PositionY": 1.44,
+        "PositionZ": 7.65,
+        "LeanInput": 6.75
+      },
+      "physics_output_ranges": {
+        "ParamAngleX": 0.0,
+        "ParamAngleY": 2.11216,
+        "ParamAngleZ": 0.0,
+        "ParamBodyAngleX": 0.0,
+        "ParamBodyAngleY": 9.20894,
+        "ParamBodyAngleZ": 6.252090000000001,
+        "Param50": 0.22502,
+        "Param53": 0.22502
+      },
+      "body_end_max": 0.0,
+      "body_input_actual_max_error": 4.961755353694031e-06
+    },
+    {
+      "clip": "07-B",
+      "name": "lean",
+      "category": "body",
+      "frames": 233,
+      "two_raised_arm_frames": 0,
+      "inactive_arm_max": 0.0,
+      "body_peak": {
+        "AngleX": 0.0,
+        "AngleY": 1.98,
+        "AngleZ": 0.0,
+        "PositionX": 0.0,
+        "PositionY": 1.44,
+        "PositionZ": 7.65,
+        "LeanInput": 6.75
+      },
+      "physics_output_ranges": {
+        "ParamAngleX": 0.0,
+        "ParamAngleY": 2.11216,
+        "ParamAngleZ": 0.0,
+        "ParamBodyAngleX": 0.0,
+        "ParamBodyAngleY": 8.784839999999999,
+        "ParamBodyAngleZ": 5.921390000000001,
+        "Param50": 0.22478,
+        "Param53": 0.22502
+      },
+      "body_end_max": 0.0,
+      "body_input_actual_max_error": 4.96412584016781e-06
+    },
+    {
+      "clip": "07-C",
+      "name": "lean",
+      "category": "body",
+      "frames": 233,
+      "two_raised_arm_frames": 0,
+      "inactive_arm_max": 0.0,
+      "body_peak": {
+        "AngleX": 3.15,
+        "AngleY": 1.98,
+        "AngleZ": 5.4,
+        "PositionX": 1.53,
+        "PositionY": 1.44,
+        "PositionZ": 7.65,
+        "LeanInput": 6.75
+      },
+      "physics_output_ranges": {
+        "ParamAngleX": 2.94022,
+        "ParamAngleY": 2.11216,
+        "ParamAngleZ": 5.07811,
+        "ParamBodyAngleX": 1.53011,
+        "ParamBodyAngleY": 9.20894,
+        "ParamBodyAngleZ": 6.34067,
+        "Param50": 0.22502,
+        "Param53": 0.22502
+      },
+      "body_end_max": 0.0,
+      "body_input_actual_max_error": 5.108026923217324e-06
+    },
+    {
+      "clip": "08-A",
+      "name": "sway",
+      "category": "body",
+      "frames": 233,
+      "two_raised_arm_frames": 0,
+      "inactive_arm_max": 0.0,
+      "body_peak": {
+        "AngleX": 1.62,
+        "AngleY": 0.0,
+        "AngleZ": 3.6,
+        "PositionX": 5.21997,
+        "PositionY": 0.54,
+        "PositionZ": 0.0,
+        "LeanInput": 1.25999
+      },
+      "physics_output_ranges": {
+        "ParamAngleX": 2.72174,
+        "ParamAngleY": 0.0,
+        "ParamAngleZ": 6.100630000000001,
+        "ParamBodyAngleX": 9.34066,
+        "ParamBodyAngleY": 3.8932700000000002,
+        "ParamBodyAngleZ": 0.93963,
+        "Param50": 0.03718,
+        "Param53": 0.04199
+      },
+      "body_end_max": 0.0,
+      "body_input_actual_max_error": 5.0097656250081e-06
+    },
+    {
+      "clip": "08-B",
+      "name": "sway",
+      "category": "body",
+      "frames": 233,
+      "two_raised_arm_frames": 0,
+      "inactive_arm_max": 0.0,
+      "body_peak": {
+        "AngleX": 1.62,
+        "AngleY": 0.0,
+        "AngleZ": 3.6,
+        "PositionX": 5.22,
+        "PositionY": 0.54,
+        "PositionZ": 0.0,
+        "LeanInput": 1.26
+      },
+      "physics_output_ranges": {
+        "ParamAngleX": 2.04134,
+        "ParamAngleY": 0.0,
+        "ParamAngleZ": 4.617929999999999,
+        "ParamBodyAngleX": 7.03721,
+        "ParamBodyAngleY": 3.8975,
+        "ParamBodyAngleZ": 0.70472,
+        "Param50": 0.04178,
+        "Param53": 0.042
+      },
+      "body_end_max": 0.0,
+      "body_input_actual_max_error": 5.0097656250081e-06
+    },
+    {
+      "clip": "08-C",
+      "name": "sway",
+      "category": "body",
+      "frames": 233,
+      "two_raised_arm_frames": 0,
+      "inactive_arm_max": 0.0,
+      "body_peak": {
+        "AngleX": 1.053,
+        "AngleY": 0.0,
+        "AngleZ": 2.34,
+        "PositionX": 3.39299,
+        "PositionY": 0.351,
+        "PositionZ": 4.32,
+        "LeanInput": 4.28526
+      },
+      "physics_output_ranges": {
+        "ParamAngleX": 1.73891,
+        "ParamAngleY": 0.0,
+        "ParamAngleZ": 3.9022,
+        "ParamBodyAngleX": 5.98358,
+        "ParamBodyAngleY": 5.06049,
+        "ParamBodyAngleZ": 3.42445,
+        "Param50": 0.13612,
+        "Param53": 0.14276
+      },
+      "body_end_max": 0.0,
+      "body_input_actual_max_error": 5.0000000009209344e-06
+    },
+    {
+      "clip": "09-A",
+      "name": "nod",
+      "category": "body",
+      "frames": 233,
+      "two_raised_arm_frames": 0,
+      "inactive_arm_max": 0.0,
+      "body_peak": {
+        "AngleX": 0.0,
+        "AngleY": 7.19991,
+        "AngleZ": 0.0,
+        "PositionX": 0.0,
+        "PositionY": 1.00799,
+        "PositionZ": 1.79998,
+        "LeanInput": 1.94398
+      },
+      "physics_output_ranges": {
+        "ParamAngleX": 0.0,
+        "ParamAngleY": 8.6396,
+        "ParamAngleZ": 0.0,
+        "ParamBodyAngleX": 0.0,
+        "ParamBodyAngleY": 4.59647,
+        "ParamBodyAngleZ": 1.52772,
+        "Param50": 0.05223,
+        "Param53": 0.06465
+      },
+      "body_end_max": 0.0,
+      "body_input_actual_max_error": 5.00000000069889e-06
+    },
+    {
+      "clip": "09-B",
+      "name": "nod",
+      "category": "body",
+      "frames": 233,
+      "two_raised_arm_frames": 0,
+      "inactive_arm_max": 0.0,
+      "body_peak": {
+        "AngleX": 0.0,
+        "AngleY": 6.29871,
+        "AngleZ": 0.0,
+        "PositionX": 0.0,
+        "PositionY": 0.88182,
+        "PositionZ": 1.57468,
+        "LeanInput": 1.70065
+      },
+      "physics_output_ranges": {
+        "ParamAngleX": 0.0,
+        "ParamAngleY": 6.71787,
+        "ParamAngleZ": 0.0,
+        "ParamBodyAngleX": 0.0,
+        "ParamBodyAngleY": 4.34254,
+        "ParamBodyAngleZ": 1.18101,
+        "Param50": 0.04582,
+        "Param53": 0.05661
+      },
+      "body_end_max": 0.0,
+      "body_input_actual_max_error": 5.0304947367685315e-06
+    },
+    {
+      "clip": "09-C",
+      "name": "nod",
+      "category": "body",
+      "frames": 233,
+      "two_raised_arm_frames": 0,
+      "inactive_arm_max": 0.0,
+      "body_peak": {
+        "AngleX": 0.0,
+        "AngleY": 7.19996,
+        "AngleZ": 0.0,
+        "PositionX": 0.0,
+        "PositionY": 1.00799,
+        "PositionZ": 1.79999,
+        "LeanInput": 1.94399
+      },
+      "physics_output_ranges": {
+        "ParamAngleX": 0.0,
+        "ParamAngleY": 10.56019,
+        "ParamAngleZ": 0.0,
+        "ParamBodyAngleX": 0.0,
+        "ParamBodyAngleY": 4.50028,
+        "ParamBodyAngleZ": 1.4707000000000001,
+        "Param50": 0.05677,
+        "Param53": 0.06476
+      },
+      "body_end_max": 0.0,
+      "body_input_actual_max_error": 4.947796275578398e-06
+    },
+    {
+      "clip": "10-A",
+      "name": "tilt",
+      "category": "body",
+      "frames": 233,
+      "two_raised_arm_frames": 0,
+      "inactive_arm_max": 0.0,
+      "body_peak": {
+        "AngleX": 2.16,
+        "AngleY": 0.0,
+        "AngleZ": 7.2,
+        "PositionX": 2.52,
+        "PositionY": 0.0,
+        "PositionZ": 0.0,
+        "LeanInput": 1.08
+      },
+      "physics_output_ranges": {
+        "ParamAngleX": 2.01615,
+        "ParamAngleY": 0.0,
+        "ParamAngleZ": 6.80617,
+        "ParamBodyAngleX": 2.52019,
+        "ParamBodyAngleY": 3.51068,
+        "ParamBodyAngleZ": 0.252,
+        "Param50": 0.036,
+        "Param53": 0.036
+      },
+      "body_end_max": 0.0,
+      "body_input_actual_max_error": 5.19122323350274e-06
+    },
+    {
+      "clip": "10-B",
+      "name": "tilt",
+      "category": "body",
+      "frames": 233,
+      "two_raised_arm_frames": 0,
+      "inactive_arm_max": 0.0,
+      "body_peak": {
+        "AngleX": 2.16,
+        "AngleY": 1.44,
+        "AngleZ": 7.2,
+        "PositionX": 2.52,
+        "PositionY": 0.0,
+        "PositionZ": 4.05,
+        "LeanInput": 4.32
+      },
+      "physics_output_ranges": {
+        "ParamAngleX": 2.01615,
+        "ParamAngleY": 1.53611,
+        "ParamAngleZ": 6.80617,
+        "ParamBodyAngleX": 2.52019,
+        "ParamBodyAngleY": 6.14392,
+        "ParamBodyAngleZ": 3.27312,
+        "Param50": 0.14401,
+        "Param53": 0.14401
+      },
+      "body_end_max": 0.0,
+      "body_input_actual_max_error": 5.19122323350274e-06
+    },
+    {
+      "clip": "10-C",
+      "name": "tilt",
+      "category": "body",
+      "frames": 233,
+      "two_raised_arm_frames": 0,
+      "inactive_arm_max": 0.0,
+      "body_peak": {
+        "AngleX": 2.16,
+        "AngleY": 0.0,
+        "AngleZ": 7.2,
+        "PositionX": 2.52,
+        "PositionY": 0.0,
+        "PositionZ": 0.0,
+        "LeanInput": 1.08
+      },
+      "physics_output_ranges": {
+        "ParamAngleX": 3.42743,
+        "ParamAngleY": 0.0,
+        "ParamAngleZ": 11.53173,
+        "ParamBodyAngleX": 4.27755,
+        "ParamBodyAngleY": 3.51068,
+        "ParamBodyAngleZ": 0.4284,
+        "Param50": 0.036,
+        "Param53": 0.036
+      },
+      "body_end_max": 0.0,
+      "body_input_actual_max_error": 4.973230188165534e-06
+    },
+    {
+      "clip": "11-A",
+      "name": "turn",
+      "category": "body",
+      "frames": 233,
+      "two_raised_arm_frames": 0,
+      "inactive_arm_max": 0.0,
+      "body_peak": {
+        "AngleX": 9.9,
+        "AngleY": 0.0,
+        "AngleZ": 1.35,
+        "PositionX": 3.06,
+        "PositionY": 0.0,
+        "PositionZ": 1.62,
+        "LeanInput": 1.44
+      },
+      "physics_output_ranges": {
+        "ParamAngleX": 9.24068,
+        "ParamAngleY": 0.0,
+        "ParamAngleZ": 1.30685,
+        "ParamBodyAngleX": 3.06023,
+        "ParamBodyAngleY": 3.83158,
+        "ParamBodyAngleZ": 0.30579,
+        "Param50": 0.048,
+        "Param53": 0.048
+      },
+      "body_end_max": 0.0,
+      "body_input_actual_max_error": 4.973235321115155e-06
+    },
+    {
+      "clip": "11-B",
+      "name": "turn",
+      "category": "body",
+      "frames": 233,
+      "two_raised_arm_frames": 0,
+      "inactive_arm_max": 0.0,
+      "body_peak": {
+        "AngleX": 9.9,
+        "AngleY": 0.0,
+        "AngleZ": 1.35,
+        "PositionX": 3.06,
+        "PositionY": 0.0,
+        "PositionZ": 1.62,
+        "LeanInput": 1.44
+      },
+      "physics_output_ranges": {
+        "ParamAngleX": 9.24068,
+        "ParamAngleY": 0.0,
+        "ParamAngleZ": 1.26962,
+        "ParamBodyAngleX": 3.06023,
+        "ParamBodyAngleY": 3.73209,
+        "ParamBodyAngleZ": 0.30578,
+        "Param50": 0.04792,
+        "Param53": 0.048
+      },
+      "body_end_max": 0.0,
+      "body_input_actual_max_error": 5.006858710743245e-06
+    },
+    {
+      "clip": "11-C",
+      "name": "turn",
+      "category": "body",
+      "frames": 233,
+      "two_raised_arm_frames": 0,
+      "inactive_arm_max": 0.0,
+      "body_peak": {
+        "AngleX": 9.9,
+        "AngleY": 0.0,
+        "AngleZ": 1.35,
+        "PositionX": 3.06,
+        "PositionY": 0.0,
+        "PositionZ": 1.62,
+        "LeanInput": 1.44
+      },
+      "physics_output_ranges": {
+        "ParamAngleX": 15.24705,
+        "ParamAngleY": 0.0,
+        "ParamAngleZ": 2.09912,
+        "ParamBodyAngleX": 5.0424500000000005,
+        "ParamBodyAngleY": 3.32926,
+        "ParamBodyAngleZ": 0.50463,
+        "Param50": 0.04559,
+        "Param53": 0.048
+      },
+      "body_end_max": 0.0,
+      "body_input_actual_max_error": 5.000000000018878e-06
+    },
+    {
+      "clip": "12-A",
+      "name": "mix",
+      "category": "mix",
+      "frames": 295,
+      "two_raised_arm_frames": 0,
+      "inactive_arm_max": 0.0,
+      "body_peak": {
+        "AngleX": 4.12019,
+        "AngleY": 1.04,
+        "AngleZ": 5.2,
+        "PositionX": 1.82,
+        "PositionY": 0.0,
+        "PositionZ": 4.425,
+        "LeanInput": 3.12
+      },
+      "physics_output_ranges": {
+        "ParamAngleX": 5.30168,
+        "ParamAngleY": 1.10942,
+        "ParamAngleZ": 4.8882,
+        "ParamBodyAngleX": 2.73392,
+        "ParamBodyAngleY": 3.79215,
+        "ParamBodyAngleZ": 3.42044,
+        "Param50": 0.10401,
+        "Param53": 0.10401
+      },
+      "body_end_max": 0.0,
+      "body_input_actual_max_error": 5.078268330294122e-06
+    },
+    {
+      "clip": "12-B",
+      "name": "mix",
+      "category": "mix",
+      "frames": 274,
+      "two_raised_arm_frames": 0,
+      "inactive_arm_max": 0.0,
+      "body_peak": {
+        "AngleX": 7.7,
+        "AngleY": 3.49448,
+        "AngleZ": 1.05,
+        "PositionX": 2.38,
+        "PositionY": 1.43213,
+        "PositionZ": 6.62864,
+        "LeanInput": 6.0775
+      },
+      "physics_output_ranges": {
+        "ParamAngleX": 7.1872,
+        "ParamAngleY": 4.90024,
+        "ParamAngleZ": 0.98311,
+        "ParamBodyAngleX": 2.38018,
+        "ParamBodyAngleY": 8.20662,
+        "ParamBodyAngleZ": 5.23445,
+        "Param50": 0.18891,
+        "Param53": 0.2025
+      },
+      "body_end_max": 0.0,
+      "body_input_actual_max_error": 5.180082321309953e-06
+    },
+    {
+      "clip": "12-C",
+      "name": "mix",
+      "category": "mix",
+      "frames": 295,
+      "two_raised_arm_frames": 0,
+      "inactive_arm_max": 0.0,
+      "body_peak": {
+        "AngleX": 4.1,
+        "AngleY": 5.07992,
+        "AngleZ": 3.6,
+        "PositionX": 1.02,
+        "PositionY": 1.85599,
+        "PositionZ": 8.69998,
+        "LeanInput": 6.22798
+      },
+      "physics_output_ranges": {
+        "ParamAngleX": 3.82695,
+        "ParamAngleY": 7.6796500000000005,
+        "ParamAngleZ": 3.43824,
+        "ParamBodyAngleX": 1.02008,
+        "ParamBodyAngleY": 8.26371,
+        "ParamBodyAngleZ": 6.2982499999999995,
+        "Param50": 0.19702,
+        "Param53": 0.20747
+      },
+      "body_end_max": 0.0,
+      "body_input_actual_max_error": 5.083148042039909e-06
+    },
+    {
+      "clip": "13-A",
+      "name": "cajole",
+      "category": "body",
+      "frames": 266,
+      "two_raised_arm_frames": 0,
+      "inactive_arm_max": 0.0,
+      "body_peak": {
+        "AngleX": 2.565,
+        "AngleY": 3.04,
+        "AngleZ": 5.47188,
+        "PositionX": 6.07998,
+        "PositionY": 1.615,
+        "PositionZ": 5.20594,
+        "LeanInput": 9.31
+      },
+      "physics_output_ranges": {
+        "ParamAngleX": 4.30924,
+        "ParamAngleY": 3.24291,
+        "ParamAngleZ": 5.1038,
+        "ParamBodyAngleX": 10.86394,
+        "ParamBodyAngleY": 11.39824,
+        "ParamBodyAngleZ": 4.23311,
+        "Param50": 0.31036,
+        "Param53": 0.31036
+      },
+      "body_end_max": 0.0,
+      "body_input_actual_max_error": 5.062712701064953e-06
+    },
+    {
+      "clip": "13-B",
+      "name": "cajole",
+      "category": "body",
+      "frames": 266,
+      "two_raised_arm_frames": 0,
+      "inactive_arm_max": 0.0,
+      "body_peak": {
+        "AngleX": 2.18025,
+        "AngleY": 3.04,
+        "AngleZ": 5.54325,
+        "PositionX": 5.168,
+        "PositionY": 1.615,
+        "PositionZ": 5.28237,
+        "LeanInput": 9.31
+      },
+      "physics_output_ranges": {
+        "ParamAngleX": 2.8729899999999997,
+        "ParamAngleY": 3.2429,
+        "ParamAngleZ": 5.21279,
+        "ParamBodyAngleX": 7.27853,
+        "ParamBodyAngleY": 10.857600000000001,
+        "ParamBodyAngleZ": 4.36385,
+        "Param50": 0.30607,
+        "Param53": 0.31035
+      },
+      "body_end_max": 0.0,
+      "body_input_actual_max_error": 5.108734456804598e-06
+    },
+    {
+      "clip": "13-C",
+      "name": "cajole",
+      "category": "body",
+      "frames": 266,
+      "two_raised_arm_frames": 0,
+      "inactive_arm_max": 0.0,
+      "body_peak": {
+        "AngleX": 2.052,
+        "AngleY": 3.48141,
+        "AngleZ": 6.06182,
+        "PositionX": 4.864,
+        "PositionY": 2.31147,
+        "PositionZ": 5.17522,
+        "LeanInput": 10.7065
+      },
+      "physics_output_ranges": {
+        "ParamAngleX": 3.8306199999999997,
+        "ParamAngleY": 3.71375,
+        "ParamAngleZ": 9.29923,
+        "ParamBodyAngleX": 9.69218,
+        "ParamBodyAngleY": 11.85002,
+        "ParamBodyAngleZ": 3.90892,
+        "Param50": 0.35283,
+        "Param53": 0.3569
+      },
+      "body_end_max": 0.0,
+      "body_input_actual_max_error": 5.195356228782089e-06
+    }
+  ],
+  "total_frames": 10792,
+  "body_only_clips": 18,
+  "newly_rendered_clips": 3,
+  "reused_clips": 39,
+  "two_raised_arm_frames": 0,
+  "human_accepted": false
+}

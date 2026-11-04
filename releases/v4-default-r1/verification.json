@@ -1,0 +1,20 @@
+{
+  "created_utc": "2026-11-04T02:13:02.667754+00:00",
+  "ok": true,
+  "resource_verification_command": "python scripts/v4/release_default.py verify --resources",
+  "resource_verification_exit_code": 0,
+  "source_files": 295,
+  "resource_files": 157,
+  "zip_crc_ok": true,
+  "archive_sha256": "60a3e85ac2b4c87f01b4c7faf0bd0d8c74aaa135231ab21052473004e03a4d3a",
+  "main_health": {
+    "ok": true,
+    "runtime_ready": true,
+    "process_id": 9116,
+    "port": 8765,
+    "runtime_version": "v4.13.0-clause-plan",
+    "model": "大肥鱼",
+    "sdk": "CubismSdkForWeb-5-r.4"
+  },
+  "isolated_port_closed": true
+}

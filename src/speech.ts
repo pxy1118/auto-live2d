@@ -13,6 +13,7 @@ export class SpeechPlayer {
   private context:AudioContext|null=null;
   private session:Session|null=null;
   private lastId:string|null=null;
+  private lastPositionMs=0;
 
   async unlock(){
     this.context??=new AudioContext();
@@ -46,7 +47,7 @@ export class SpeechPlayer {
     return {id:params.speech_id,buffer,mouth:structuredClone(params.mouth),trajectory:params.trajectory?structuredClone(params.trajectory):undefined};
   }
   private create(id:string,duration:number,trajectory?:SpeechTrajectory,provisional=false):Session{
-    this.requireAudio();this.stop();this.lastId=id;
+    this.requireAudio();this.stop();this.lastId=id;this.lastPositionMs=0;
     const native=trajectory?.params.events.some((e:any)=>e.method==='motions.play'&&(e.params?.slot??'full')==='full')??false;
     return this.session={id,segments:[],sources:new Set(),anchor:null,offset:0,paused:false,finished:false,sampleRate:0,samples:0,underruns:0,
       clock:trajectory?new SpeechMotionClock(trajectory.params.duration_ms,duration,native,provisional):null};
@@ -83,7 +84,8 @@ export class SpeechPlayer {
   finish(params:any){
     const s=this.own(params?.speech_id);
     if(s.finished||!s.samples||params.total_samples!==s.samples)throw new ControlError('invalid_speech','语音流未完整接收');
-    s.clock?.finish(s.samples/s.sampleRate*1000,this.position()*1000);s.finished=true;this.complete(s);return this.info();
+    const duration=s.samples/s.sampleRate*1000;
+    s.clock?.finish(duration,this.position()*1000);s.finished=true;this.complete(s);return {...this.info(),duration_ms:duration};
   }
   private schedule(segments=this.session!.segments){
     const s=this.session!,context=this.context!;
@@ -100,7 +102,7 @@ export class SpeechPlayer {
     }
   }
   private complete(s:Session){
-    if(this.session===s&&s.finished&&!s.paused&&!s.sources.size&&this.position()>=s.samples/s.sampleRate-.005)this.session=null;
+    if(this.session===s&&s.finished&&!s.paused&&!s.sources.size&&this.position()>=s.samples/s.sampleRate-.005){this.lastPositionMs=s.samples/s.sampleRate*1000;this.session=null;}
   }
   private position(){
     const s=this.session;if(!s)return 0;
@@ -112,7 +114,7 @@ export class SpeechPlayer {
   }
   resume(){if(this.session?.paused){this.session.paused=false;this.schedule();}}
   private clearSources(s:Session){for(const source of s.sources){source.onended=null;source.stop();source.disconnect();}s.sources.clear();}
-  stop(){const s=this.session;this.session=null;if(s)this.clearSources(s);}
+  stop(){const s=this.session;if(s)this.lastPositionMs=this.position()*1000;this.session=null;if(s)this.clearSources(s);}
   private cueAt(time:number,key:'values'|'energy'|'beats'){
     const s=this.session;if(!s||time<0)return 0;
     const segment=s.segments.find(segment=>time>=segment.offset&&time<segment.offset+segment.buffer.duration);
@@ -132,7 +134,7 @@ export class SpeechPlayer {
     const s=this.session,time=this.position(),sample=this.sample();
     return {enabled:this.context?.state==='running',active:!!s,speech_id:s?.id??this.lastId,
       phase:!s?'idle':s.paused?'paused':s.anchor===null||time>=s.samples/s.sampleRate-.001&&!s.finished?'buffering':this.context!.currentTime<s.anchor+s.offset?'scheduled':'playing',
-      audio_time_ms:Math.round(time*1000),duration_ms:s&&s.sampleRate?Math.round(s.samples/s.sampleRate*1000):0,
+      audio_time_ms:Math.round(s?time*1000:this.lastPositionMs),duration_ms:s&&s.sampleRate?Math.round(s.samples/s.sampleRate*1000):0,
       complete:s?.finished??true,underruns:s?.underruns??0,mouth_open:sample.mouth??0,motion_time_ms:sample.motion_time_ms,
       rhythm:{energy:sample.energy,beat:sample.beat,body_beat:sample.bodyBeat},motion_timing:sample.motion_time_ms===null?'none':sample.native_motion?'native_speed':'audio_duration'};
   }

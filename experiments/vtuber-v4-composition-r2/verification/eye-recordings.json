@@ -1,0 +1,26 @@
+{
+  "ok": true,
+  "runtime_version": "v4.12.2-discrete-eyes",
+  "clips": [
+    {
+      "name": "10-A",
+      "frames": 239,
+      "active_eye_frames": 232,
+      "original_peak": 0.6032,
+      "corrected_peak": 1,
+      "two_special_eyes_frames": 0,
+      "fractional_special_eye_frames": 0,
+      "same_motion_and_audio": true
+    },
+    {
+      "name": "19-A",
+      "frames": 206,
+      "active_eye_frames": 194,
+      "original_peak": 0.591,
+      "corrected_peak": 1,
+      "two_special_eyes_frames": 0,
+      "fractional_special_eye_frames": 0,
+      "same_motion_and_audio": true
+    }
+  ]
+}

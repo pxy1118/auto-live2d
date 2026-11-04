@@ -1,0 +1,11 @@
+{
+  "backend": "llama.cpp",
+  "executable": "D:/Workplace/llama.cpp/build-cuda-msvc-dev/bin/llama-server.exe",
+  "source_revision": "895c045fd",
+  "model": "models/Qwen3.5-4B/semantic-Q8_0.gguf",
+  "model_source_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "quantization": "Q8_0",
+  "port": 8767,
+  "executable_sha256": "8719076d81cdc67efa33d98b67553400d0eb44cc7e1c5babd9c96aea2dbe67e7",
+  "model_sha256": "892f437cc2e504b5817b1fbcc6acc4a27a2afaad7adadfc323d5c7f33f9af208"
+}

@@ -1,0 +1,25 @@
+{
+  "ready": true,
+  "model": "Qwen3-TTS-12Hz-1.7B / fine-tuned",
+  "speaker": "da_fei_yu",
+  "language": "Chinese",
+  "max_text_length": 300,
+  "checkpoint_sha256": "b62a26f6c2ebd10582c088c318d1fe045f19861500caf7eae300b676d2f19a3d",
+  "mouth_method": "audio_rms_v1 / audio_causal_v2",
+  "streaming": true,
+  "backend": "cuda_graph",
+  "accelerator_source": {
+    "repository": "https://github.com/andimarafioti/faster-qwen3-tts",
+    "revision": "b84dc773b2199a85cb421eb76857e4475e03e8c4",
+    "version": "0.3.2"
+  },
+  "environment": {
+    "torch": "2.7.0+cu128",
+    "transformers": "4.57.3",
+    "soundfile": "0.13.1",
+    "numpy": "2.3.5",
+    "attention": "sdpa",
+    "device": "cuda"
+  },
+  "busy": false
+}

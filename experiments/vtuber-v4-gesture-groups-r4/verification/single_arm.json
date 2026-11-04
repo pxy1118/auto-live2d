@@ -1,0 +1,215 @@
+{
+  "ok": true,
+  "clips": [
+    {
+      "clip": "00-A",
+      "gesture": "wave",
+      "variant": 0,
+      "active_arm": "right",
+      "inactive_arm_max": 0,
+      "two_raised_arm_frames": 0,
+      "frames": 248,
+      "actual_sha256": "403ec866f2f6c7d90040657085221f07c5d0e5746eb0869661173f3cc6542eec"
+    },
+    {
+      "clip": "00-B",
+      "gesture": "wave",
+      "variant": 1,
+      "active_arm": "right",
+      "inactive_arm_max": 0,
+      "two_raised_arm_frames": 0,
+      "frames": 248,
+      "actual_sha256": "c4519d115b0eeae1f73352bf9e5296d5ed752fc71e84bc61c955bfb8a14cc4f7"
+    },
+    {
+      "clip": "00-C",
+      "gesture": "wave",
+      "variant": 2,
+      "active_arm": "right",
+      "inactive_arm_max": 0,
+      "two_raised_arm_frames": 0,
+      "frames": 248,
+      "actual_sha256": "c3f9355dc2a24ed3728f2039b4634f64fd531f42d6ddcc07186b18bb11b4dd7d"
+    },
+    {
+      "clip": "01-A",
+      "gesture": "point",
+      "variant": 0,
+      "active_arm": "right",
+      "inactive_arm_max": 0,
+      "two_raised_arm_frames": 0,
+      "frames": 248,
+      "actual_sha256": "27db9014141de66d1c0cc110808b26976a96f2a7e956456f5407d0fec1dba5f7"
+    },
+    {
+      "clip": "01-B",
+      "gesture": "point",
+      "variant": 1,
+      "active_arm": "right",
+      "inactive_arm_max": 0,
+      "two_raised_arm_frames": 0,
+      "frames": 248,
+      "actual_sha256": "eb10458d0f7338578fb91774fc9f082ba96c9e22d9038be82cb579d712a8bdc5"
+    },
+    {
+      "clip": "01-C",
+      "gesture": "point",
+      "variant": 2,
+      "active_arm": "right",
+      "inactive_arm_max": 0,
+      "two_raised_arm_frames": 0,
+      "frames": 248,
+      "actual_sha256": "9d08011d9392d9dc336bbd616ad83f996c9c7df209957574d52a9abde0f8c575"
+    },
+    {
+      "clip": "02-A",
+      "gesture": "chest",
+      "variant": 0,
+      "active_arm": "left",
+      "inactive_arm_max": 0,
+      "two_raised_arm_frames": 0,
+      "frames": 233,
+      "actual_sha256": "3d8fb725a36cb7caeb62bded29abfdcdfdf354f976b6de6284d1e3341d1e3d5a"
+    },
+    {
+      "clip": "02-B",
+      "gesture": "chest",
+      "variant": 1,
+      "active_arm": "left",
+      "inactive_arm_max": 0,
+      "two_raised_arm_frames": 0,
+      "frames": 233,
+      "actual_sha256": "c6055001e72be5f89d9581e79dfa691ac4cf0286122b27a8b000d58bb6cf3eda"
+    },
+    {
+      "clip": "02-C",
+      "gesture": "chest",
+      "variant": 2,
+      "active_arm": "left",
+      "inactive_arm_max": 0,
+      "two_raised_arm_frames": 0,
+      "frames": 233,
+      "actual_sha256": "40568447f78898a2f358feba05fa59ce2d496bb1f22136e2383f61f944b9e9b5"
+    },
+    {
+      "clip": "03-A",
+      "gesture": "grass",
+      "variant": 0,
+      "active_arm": "right",
+      "inactive_arm_max": 0,
+      "two_raised_arm_frames": 0,
+      "frames": 299,
+      "actual_sha256": "50748fc0adc0828e24654e37a9f0b4af4a05edc3caf6eb058a8dc1d60334400f"
+    },
+    {
+      "clip": "03-B",
+      "gesture": "grass",
+      "variant": 1,
+      "active_arm": "right",
+      "inactive_arm_max": 0,
+      "two_raised_arm_frames": 0,
+      "frames": 299,
+      "actual_sha256": "c87aa3fb77daa67433b34f5120c1c78d766b1922d6731ad314728e0017ae8e68"
+    },
+    {
+      "clip": "03-C",
+      "gesture": "grass",
+      "variant": 2,
+      "active_arm": "right",
+      "inactive_arm_max": 0,
+      "two_raised_arm_frames": 0,
+      "frames": 299,
+      "actual_sha256": "973a1d4f1cd95f24d3cc45b7cf0adb832953ad36f97e5bb30b3eed0231faf1f7"
+    },
+    {
+      "clip": "04-A",
+      "gesture": "thanks",
+      "variant": 0,
+      "active_arm": "left",
+      "inactive_arm_max": 0,
+      "two_raised_arm_frames": 0,
+      "frames": 233,
+      "actual_sha256": "5c98f865315f29648c1999e97d840680c2c9b5398a549da2d6cbcf5791b42544"
+    },
+    {
+      "clip": "04-B",
+      "gesture": "thanks",
+      "variant": 1,
+      "active_arm": "left",
+      "inactive_arm_max": 0,
+      "two_raised_arm_frames": 0,
+      "frames": 233,
+      "actual_sha256": "e7127ae379397e6eaf09917f7e18a02feb9cc6846cb5d8ae6979c21567c53011"
+    },
+    {
+      "clip": "04-C",
+      "gesture": "thanks",
+      "variant": 2,
+      "active_arm": "left",
+      "inactive_arm_max": 0,
+      "two_raised_arm_frames": 0,
+      "frames": 233,
+      "actual_sha256": "097f269b79fda0d54293497b8bc8a4947cf38c45a02e427ed31807bce41cac86"
+    },
+    {
+      "clip": "05-A",
+      "gesture": "explain",
+      "variant": 0,
+      "active_arm": "left",
+      "inactive_arm_max": 0,
+      "two_raised_arm_frames": 0,
+      "frames": 233,
+      "actual_sha256": "431e1ddb02e399e97df39faae53bc58cee256757afd89b4a1bd5d3d4ee87cd1d"
+    },
+    {
+      "clip": "05-B",
+      "gesture": "explain",
+      "variant": 1,
+      "active_arm": "right",
+      "inactive_arm_max": 0,
+      "two_raised_arm_frames": 0,
+      "frames": 248,
+      "actual_sha256": "0558537c52b8a5270673e2a17e8dc4ecd181fdc357add8684cfdc8fd136d914d"
+    },
+    {
+      "clip": "05-C",
+      "gesture": "explain",
+      "variant": 2,
+      "active_arm": "right",
+      "inactive_arm_max": 0,
+      "two_raised_arm_frames": 0,
+      "frames": 248,
+      "actual_sha256": "67d8ad7f107947bab0793ebf35d33e78c8a8f8390d3099a6bfd00d5453487dd8"
+    },
+    {
+      "clip": "06-A",
+      "gesture": "refuse",
+      "variant": 0,
+      "active_arm": "right",
+      "inactive_arm_max": 0,
+      "two_raised_arm_frames": 0,
+      "frames": 248,
+      "actual_sha256": "9a9a479185c71b70e2c1b805ccd5dfcca312acac3a1cd3d626cff6f354b45072"
+    },
+    {
+      "clip": "06-B",
+      "gesture": "refuse",
+      "variant": 1,
+      "active_arm": "right",
+      "inactive_arm_max": 0,
+      "two_raised_arm_frames": 0,
+      "frames": 248,
+      "actual_sha256": "c444db9a03f9f267ecf8ba30e6152b51b5159a9eff0e9bdbbf0c79d97b433979"
+    },
+    {
+      "clip": "06-C",
+      "gesture": "refuse",
+      "variant": 2,
+      "active_arm": "right",
+      "inactive_arm_max": 0,
+      "two_raised_arm_frames": 0,
+      "frames": 248,
+      "actual_sha256": "6191a71c8c3bbf27996a5c19d71cadedf6428e0baea8d26517847d287f674341"
+    }
+  ]
+}

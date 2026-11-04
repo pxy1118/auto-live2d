@@ -1,0 +1,99 @@
+{
+  "created_utc": "2026-11-01T11:24:03.957501+00:00",
+  "runtime_version": "v4.6-gesture-groups",
+  "engineering_checks_passed": true,
+  "promoted": false,
+  "body_human_accepted": false,
+  "new_blind_comparisons_completed": 0,
+  "action_groups": 8,
+  "variants_per_group": 3,
+  "preview_variants": 16,
+  "console_checks": {
+    "unit_tests_passed": 30,
+    "streaming_tests_passed": 4,
+    "authoring_tests_passed": 2,
+    "source": "observed test-command results supplied by operator"
+  },
+  "evidence": {
+    "continuity": {
+      "path": "test-results/v4/browser-verification-gesture-groups.json",
+      "sha256": "cc7037e2be4ab0a23b8d445ebc878b09cb3d74433e520742ec97cce77db193d9"
+    },
+    "latency": {
+      "path": "test-results/v4/latency-gesture-groups.json",
+      "sha256": "d4549b0de445eefafef988bebbee76779ab16fa31a1053c22cec318ac3d05fa9"
+    },
+    "native_co_speech": {
+      "path": "test-results/v4-groups/native-integration.json",
+      "sha256": "858c719b32a8a1094964d5978863776b14073ced67505dd8cd6e1d1b90493b82"
+    },
+    "handoff": {
+      "path": "test-results/v4/handoff-verification.json",
+      "sha256": "516348784c7708e456c17f9f93326955fa1e2bade1ab857f61b7e9147fdcae59"
+    },
+    "review": {
+      "path": "test-results/v4/review-verification.json",
+      "sha256": "a7bde0097806f8aff21026c04a508f19021ae866d39552f880933ca6e435ca5c"
+    },
+    "legacy": {
+      "path": "test-results/verification.json",
+      "sha256": "c8bcdcf601cff27de1a071d3f4bcecaa4ac8d96db9ae0bf3aa61697d1565babd"
+    },
+    "dataset": {
+      "path": "experiments/vtuber-v4-native/dataset-verification.json",
+      "sha256": "830815000aa5126d1de9eda749d21dbaa8978d1fe98c5f98873a6c434da1aa13"
+    }
+  },
+  "continuity": {
+    "wall_ms": 600239,
+    "clauses": 68,
+    "gesture_policy": {
+      "phase": "idle",
+      "used_in_clause": false,
+      "count": 0,
+      "confidence": 0,
+      "cooldown_ms": 0,
+      "style": "restrained",
+      "elapsed_ms": 0,
+      "duration_ms": 3200
+    }
+  },
+  "actual_live_wave": {
+    "maximum_upper_arm": 0.9399999976158142,
+    "visible_hand_y": 0.7694107609473186,
+    "wrist_range": 0.5224864482879639,
+    "tail_clock_used": true,
+    "count": 1
+  },
+  "latency": {
+    "baseline_median_first_audio_ms": 458.80000001192093,
+    "v4_median_first_audio_ms": 482.09999999403954,
+    "increase_ms": 23.299999982118607,
+    "baseline_including_setup_ms": 458.80000001192093,
+    "v4_including_setup_ms": 536.1999999880791,
+    "increase_including_setup_ms": 77.39999997615814,
+    "action_update_p95_ms": 42.28201200021431,
+    "action_update_samples": 27
+  },
+  "selector_validation": {
+    "samples": 116,
+    "accuracy": 0.8620689511299133,
+    "false_positive_rate": 0.0,
+    "correct_action_recall": 0.7407407164573669,
+    "threshold": 0.65
+  },
+  "selector_test": {
+    "samples": 114,
+    "accuracy": 0.8245614171028137,
+    "false_positive_rate": 0.0,
+    "correct_action_recall": 0.7160493731498718,
+    "threshold": 0.65
+  },
+  "ratings_sha256": "b8d5f467a6d6819666ab17cf470e4d3498e87a608db913b1fc8973475573bb19",
+  "pilot14_choice": "B",
+  "limitations": [
+    "synthetic semantic supervision only",
+    "continuous arm experts failed live quality checks",
+    "new action-group style and 24 blind comparisons await human review"
+  ]
+}

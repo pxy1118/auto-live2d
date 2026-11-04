@@ -20,7 +20,7 @@ class SpeechFeatures:
         duration=wave.size/sr;count=int(np.ceil(duration*self.hz))+1
         context=np.r_[self.tail,wave];base=len(self.tail)
         power=np.r_[0.,np.cumsum(context.astype(np.float64)**2)]
-        values=[];energy=[];beats=[]
+        values=[];energy=[];beats=[];motion=[];motion_times=[]
         for i in range(count):
             at=min(duration,i/self.hz);right=base+round(at*sr)
             left=max(0,right-round(sr*.03))
@@ -38,6 +38,12 @@ class SpeechFeatures:
             tau=.025 if mouth_target>self.mouth else .055
             self.mouth+=(1-np.exp(-dt/tau))*(mouth_target-self.mouth)
             values.append(round(self.mouth,5));energy.append(round(self.activity,5));beats.append(round(self.accent,5))
+            if i%3==0:
+                frame=context[max(0,right-round(sr*.04)):right]
+                spectrum=np.abs(np.fft.rfft(frame*np.hanning(len(frame)),n=1024)) if len(frame)>1 else np.zeros(513)
+                bands=[float(np.log1p(np.mean(spectrum[a:b]))/4) for a,b in zip([1,3,6,12,24,48,96,192],[3,6,12,24,48,96,192,512])]
+                motion.append([*bands,self.activity,self.accent,float(target>.1),float(rms)])
+                motion_times.append(round(at*1000,3))
         self.tail=context[-round(sr*.03):].copy();self.time+=duration
         return {'method':'audio_causal_v2','hz':self.hz,'duration_ms':round(duration*1000,3),
-                'values':values,'energy':energy,'beats':beats,'parameter':'ParamMouthOpenY','maximum':.85}
+                'values':values,'energy':energy,'beats':beats,'motion':motion,'motion_times_ms':motion_times,'parameter':'ParamMouthOpenY','maximum':.85}

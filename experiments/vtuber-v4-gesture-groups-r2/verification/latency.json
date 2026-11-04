@@ -1,0 +1,427 @@
+{
+  "ok": true,
+  "kind": "regression",
+  "runtime_version": "v4.7-choreography",
+  "setup_reported_separately": true,
+  "warmup_pairs": 1,
+  "measured_pairs": 3,
+  "summary": {
+    "baseline_median_first_audio_ms": 464.7000000178814,
+    "v4_median_first_audio_ms": 508.2999999821186,
+    "increase_ms": 43.59999996423721,
+    "baseline_including_setup_ms": 464.7000000178814,
+    "v4_including_setup_ms": 558.5999999940395,
+    "increase_including_setup_ms": 93.89999997615814,
+    "action_update_p95_ms": 47.3544730048161,
+    "action_update_samples": 28
+  },
+  "results": [
+    {
+      "pair": 0,
+      "warmup": true,
+      "mode": "v3",
+      "first_audio_ms": 492.10000002384186,
+      "setup_ms": 0,
+      "total_ms": 3891.9000000059605,
+      "metrics": []
+    },
+    {
+      "pair": 0,
+      "warmup": true,
+      "mode": "v4",
+      "first_audio_ms": 529.5999999940395,
+      "setup_ms": 64.30000001192093,
+      "total_ms": 4013.2999999821186,
+      "metrics": [
+        {
+          "clause": 0,
+          "text_wait_ms": 0,
+          "queue_wait_ms": 37
+        },
+        {
+          "clause": 0,
+          "semantic_prefill_ms": 36.21795499930158
+        },
+        {
+          "clause": 0,
+          "compute_ms": 39.14032899774611,
+          "roundtrip_ms": 74.73460000002524,
+          "accepted": true,
+          "media_ms": 0
+        },
+        {
+          "clause": 0,
+          "first_chunk_ms": 393,
+          "synthesis_to_first_chunk_ms": 323
+        },
+        {
+          "clause": 0,
+          "compute_ms": 12.02384999487549,
+          "roundtrip_ms": 51.024700000009034,
+          "accepted": true,
+          "media_ms": 50
+        },
+        {
+          "clause": 0,
+          "compute_ms": 42.50186700664926,
+          "roundtrip_ms": 104.7502000000095,
+          "accepted": true,
+          "media_ms": 480
+        },
+        {
+          "clause": 0,
+          "synthesis_ms": 1301
+        },
+        {
+          "clause": 0,
+          "compute_ms": 9.30002199311275,
+          "roundtrip_ms": 62.243799999996554,
+          "accepted": true,
+          "media_ms": 900
+        },
+        {
+          "clause": 0,
+          "compute_ms": 8.613462996436283,
+          "roundtrip_ms": 50.70450000005076,
+          "accepted": true,
+          "media_ms": 1310
+        },
+        {
+          "clause": 0,
+          "compute_ms": 8.223194992751814,
+          "roundtrip_ms": 53.23210000002291,
+          "accepted": true,
+          "media_ms": 1750
+        },
+        {
+          "clause": 0,
+          "compute_ms": 9.047300001839176,
+          "roundtrip_ms": 58.93170000001555,
+          "accepted": true,
+          "media_ms": 2160
+        },
+        {
+          "clause": 0,
+          "compute_ms": 8.470617001876235,
+          "roundtrip_ms": 64.12590000004275,
+          "accepted": true,
+          "media_ms": 2590
+        },
+        {
+          "clause": 0,
+          "compute_ms": 9.257935002096929,
+          "roundtrip_ms": 72.96370000002207,
+          "accepted": true,
+          "media_ms": 3010
+        }
+      ]
+    },
+    {
+      "pair": 1,
+      "warmup": false,
+      "mode": "v3",
+      "first_audio_ms": 464.7000000178814,
+      "setup_ms": 0,
+      "total_ms": 3843.100000023842,
+      "metrics": []
+    },
+    {
+      "pair": 1,
+      "warmup": false,
+      "mode": "v4",
+      "first_audio_ms": 521.5,
+      "setup_ms": 51,
+      "total_ms": 4143.700000017881,
+      "metrics": [
+        {
+          "clause": 0,
+          "text_wait_ms": 0,
+          "queue_wait_ms": 46
+        },
+        {
+          "clause": 0,
+          "semantic_prefill_ms": 5.642272008117288
+        },
+        {
+          "clause": 0,
+          "compute_ms": 48.077394007123075,
+          "roundtrip_ms": 101.13899999996647,
+          "accepted": true,
+          "media_ms": 0
+        },
+        {
+          "clause": 0,
+          "first_chunk_ms": 384,
+          "synthesis_to_first_chunk_ms": 350
+        },
+        {
+          "clause": 0,
+          "compute_ms": 12.02643099531997,
+          "roundtrip_ms": 78.95669999998063,
+          "accepted": true,
+          "media_ms": 30
+        },
+        {
+          "clause": 0,
+          "compute_ms": 10.628182004438713,
+          "roundtrip_ms": 70.99609999998938,
+          "accepted": true,
+          "media_ms": 450
+        },
+        {
+          "clause": 0,
+          "synthesis_ms": 1307
+        },
+        {
+          "clause": 0,
+          "compute_ms": 9.947610989911482,
+          "roundtrip_ms": 48.9892000000109,
+          "accepted": true,
+          "media_ms": 870
+        },
+        {
+          "clause": 0,
+          "compute_ms": 9.42322400806006,
+          "roundtrip_ms": 56.800200000056066,
+          "accepted": true,
+          "media_ms": 1300
+        },
+        {
+          "clause": 0,
+          "compute_ms": 8.905593000235967,
+          "roundtrip_ms": 63.63880000001518,
+          "accepted": true,
+          "media_ms": 1750
+        },
+        {
+          "clause": 0,
+          "compute_ms": 8.717478005564772,
+          "roundtrip_ms": 44.84610000002431,
+          "accepted": true,
+          "media_ms": 2170
+        },
+        {
+          "clause": 0,
+          "compute_ms": 9.245082997949794,
+          "roundtrip_ms": 57.6243999999715,
+          "accepted": true,
+          "media_ms": 2600
+        },
+        {
+          "clause": 0,
+          "compute_ms": 9.284115993068554,
+          "roundtrip_ms": 79.5395000000135,
+          "accepted": true,
+          "media_ms": 3030
+        },
+        {
+          "clause": 0,
+          "compute_ms": 8.579418004956096,
+          "roundtrip_ms": 61.043099999951664,
+          "accepted": true,
+          "media_ms": 3360
+        }
+      ]
+    },
+    {
+      "pair": 2,
+      "warmup": false,
+      "mode": "v3",
+      "first_audio_ms": 437.39999997615814,
+      "setup_ms": 0,
+      "total_ms": 3814.699999988079,
+      "metrics": []
+    },
+    {
+      "pair": 2,
+      "warmup": false,
+      "mode": "v4",
+      "first_audio_ms": 508.2999999821186,
+      "setup_ms": 50.30000001192093,
+      "total_ms": 4019.0999999940395,
+      "metrics": [
+        {
+          "clause": 0,
+          "text_wait_ms": 0,
+          "queue_wait_ms": 37
+        },
+        {
+          "clause": 0,
+          "semantic_prefill_ms": 5.49033100833185
+        },
+        {
+          "clause": 0,
+          "compute_ms": 39.626070007216185,
+          "roundtrip_ms": 79.14479999995092,
+          "accepted": true,
+          "media_ms": 0
+        },
+        {
+          "clause": 0,
+          "first_chunk_ms": 354,
+          "synthesis_to_first_chunk_ms": 325
+        },
+        {
+          "clause": 0,
+          "compute_ms": 21.888117989874445,
+          "roundtrip_ms": 65.601399999985,
+          "accepted": true,
+          "media_ms": 20
+        },
+        {
+          "clause": 0,
+          "compute_ms": 22.2925340058282,
+          "roundtrip_ms": 74.80750000005355,
+          "accepted": true,
+          "media_ms": 460
+        },
+        {
+          "clause": 0,
+          "synthesis_ms": 1271
+        },
+        {
+          "clause": 0,
+          "compute_ms": 11.430811005993746,
+          "roundtrip_ms": 49.62679999996908,
+          "accepted": true,
+          "media_ms": 870
+        },
+        {
+          "clause": 0,
+          "compute_ms": 9.396319001098163,
+          "roundtrip_ms": 58.73690000001807,
+          "accepted": true,
+          "media_ms": 1290
+        },
+        {
+          "clause": 0,
+          "compute_ms": 11.166754993610084,
+          "roundtrip_ms": 73.38349999999627,
+          "accepted": true,
+          "media_ms": 1700
+        },
+        {
+          "clause": 0,
+          "compute_ms": 9.698959009256214,
+          "roundtrip_ms": 64.35560000000987,
+          "accepted": true,
+          "media_ms": 2150
+        },
+        {
+          "clause": 0,
+          "compute_ms": 9.240117011358961,
+          "roundtrip_ms": 52.87609999999404,
+          "accepted": true,
+          "media_ms": 2580
+        },
+        {
+          "clause": 0,
+          "compute_ms": 8.992033006506972,
+          "roundtrip_ms": 50.66680000000633,
+          "accepted": true,
+          "media_ms": 3000
+        }
+      ]
+    },
+    {
+      "pair": 3,
+      "warmup": false,
+      "mode": "v3",
+      "first_audio_ms": 476.09999999403954,
+      "setup_ms": 0,
+      "total_ms": 3837.0999999940395,
+      "metrics": []
+    },
+    {
+      "pair": 3,
+      "warmup": false,
+      "mode": "v4",
+      "first_audio_ms": 493.59999999403954,
+      "setup_ms": 55.30000001192093,
+      "total_ms": 3944,
+      "metrics": [
+        {
+          "clause": 0,
+          "text_wait_ms": 0,
+          "queue_wait_ms": 41
+        },
+        {
+          "clause": 0,
+          "semantic_prefill_ms": 4.86921300762333
+        },
+        {
+          "clause": 0,
+          "compute_ms": 41.10888500872534,
+          "roundtrip_ms": 68.8173999999999,
+          "accepted": true,
+          "media_ms": 0
+        },
+        {
+          "clause": 0,
+          "first_chunk_ms": 358,
+          "synthesis_to_first_chunk_ms": 325
+        },
+        {
+          "clause": 0,
+          "compute_ms": 46.10429301101249,
+          "roundtrip_ms": 89.42930000001797,
+          "accepted": true,
+          "media_ms": 70
+        },
+        {
+          "clause": 0,
+          "compute_ms": 47.3544730048161,
+          "roundtrip_ms": 84.65499999996973,
+          "accepted": true,
+          "media_ms": 490
+        },
+        {
+          "clause": 0,
+          "synthesis_ms": 1368
+        },
+        {
+          "clause": 0,
+          "compute_ms": 8.93003300006967,
+          "roundtrip_ms": 77.33209999999963,
+          "accepted": true,
+          "media_ms": 930
+        },
+        {
+          "clause": 0,
+          "compute_ms": 9.138612993410788,
+          "roundtrip_ms": 51.65100000001257,
+          "accepted": true,
+          "media_ms": 1340
+        },
+        {
+          "clause": 0,
+          "compute_ms": 9.295773998019286,
+          "roundtrip_ms": 61.85939999995753,
+          "accepted": true,
+          "media_ms": 1770
+        },
+        {
+          "clause": 0,
+          "compute_ms": 8.937556995078921,
+          "roundtrip_ms": 49.506000000052154,
+          "accepted": true,
+          "media_ms": 2190
+        },
+        {
+          "clause": 0,
+          "compute_ms": 8.880732988473028,
+          "roundtrip_ms": 64.66930000000866,
+          "accepted": true,
+          "media_ms": 2620
+        },
+        {
+          "clause": 0,
+          "compute_ms": 10.12188800086733,
+          "roundtrip_ms": 57.835000000020955,
+          "accepted": true,
+          "media_ms": 3050
+        }
+      ]
+    }
+  ]
+}

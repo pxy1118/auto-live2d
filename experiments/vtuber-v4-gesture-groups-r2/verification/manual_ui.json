@@ -1,0 +1,8 @@
+{
+  "ok": true,
+  "runtime_version": "v4.7-choreography",
+  "mobile_no_horizontal_overflow": true,
+  "variant_descriptions": true,
+  "manual_finger_override_has_priority": true,
+  "group_release_finished": true
+}

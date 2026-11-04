@@ -1,0 +1,63 @@
+{
+  "schema": "performance.plan.v1",
+  "architecture": "ensemble",
+  "architectures": {
+    "r2": "nonlinear",
+    "r5": "body_binary",
+    "r4": "linear"
+  },
+  "head_sources": {
+    "arm": "r4",
+    "body": "r2",
+    "emotion": "r2",
+    "eye": "r5",
+    "values": "r4",
+    "arm_variant": "r4",
+    "body_variant": "r4"
+  },
+  "checkpoint": "performance-planner.pt",
+  "sha256": "c9a9851e895068b157838f97a9ed938291b02b111f3159067498944fd4f62292",
+  "dataset": "datasets/vtuber-v4-planner-v2",
+  "dataset_sha256": "18350a2ad2c32366c11b7c91b0a8739332789550e6e19acdbc8b92ed698109be",
+  "thresholds": {
+    "arm": 0.5,
+    "body": 0.4,
+    "emotion": 0.35,
+    "eye": 0.4
+  },
+  "validation": {
+    "arm": {
+      "threshold": 0.5,
+      "accuracy": 0.898888885974884,
+      "false_positive_rate": 0.03720930218696594,
+      "correct_active_recall": 0.7372549176216125
+    },
+    "body": {
+      "threshold": 0.4,
+      "accuracy": 0.8188889026641846,
+      "false_positive_rate": 0.038525961339473724,
+      "correct_active_recall": 0.537953794002533
+    },
+    "emotion": {
+      "threshold": 0.35,
+      "accuracy": 0.9111111164093018,
+      "false_positive_rate": 0.02010050229728222,
+      "correct_active_recall": 0.7755775451660156
+    },
+    "eye": {
+      "threshold": 0.4,
+      "accuracy": 0.9866666793823242,
+      "false_positive_rate": 0.002314814832061529,
+      "correct_active_recall": 0.7222222089767456
+    },
+    "regression_mae": 0.025687849149107933
+  },
+  "parameters": 771008,
+  "source": "validation-selected learned heads; synthetic authored labels; no human preference scores",
+  "test_used_for_selection": false,
+  "component_metadata_sha256": {
+    "r2": "f8d1e2ed63b075d1ac6384856798ea5ff61abcd7d54542a4de85a9924365b7cc",
+    "r5": "a2564db087ce05c8320a2d4e105a02018fd5a10280c8be88ebac4f8550b49011",
+    "r4": "33f5b024ca21bba4f30132621cf1c02c2031bb16c26edd8aa5d0f740795c84ca"
+  }
+}

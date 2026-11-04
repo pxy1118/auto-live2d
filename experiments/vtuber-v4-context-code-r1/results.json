@@ -1,0 +1,642 @@
+{
+  "schema": "context-code-results.v1",
+  "status": "adaptive_development_only",
+  "promoted": false,
+  "fingerprint": {
+    "dataset_sha256": "a858b592784faeee9cf16688e541922cbb9590a01fbd23b788e0979e3f6a5bc9",
+    "protocol_sha256": "1ee3cd32b67a2c47d397229dcac83b068be2ca6e8aa3928eb4b08351ae420089",
+    "prompt_sha256": "7d3341a25c743190d0b61a1d71139bb5769c2506c09ea45778b22357fdc63ed4",
+    "source_sha256": "df2ceae3b3f4af9e1b314305a8e4b38aa49714a461967c525e7820f4d792cc52",
+    "implementation_sha256": "ecfcea5b4312177974370647a792177b2bf712e3dc1f907c84f8cd70b5e0cd38"
+  },
+  "runs": [
+    {
+      "mapping": "7137",
+      "calibrated": {
+        "config": {
+          "active_threshold": 0.7,
+          "temperature": 3.0,
+          "forbidden_threshold": 0.4,
+          "required_threshold": 0.55
+        },
+        "calibration": {
+          "samples": 60,
+          "families": 18,
+          "forbidden_samples": 28,
+          "required_samples": 9,
+          "optional_samples": 23,
+          "forbidden_activation": 0.0,
+          "required_success": 0.1111111119389534,
+          "required_any_activity": 0.1111111119389534,
+          "acceptable_rate": 0.8666666746139526,
+          "preferred_match": 0.6666666865348816,
+          "optional_activity": 0.0,
+          "optional_unacceptable": 0.0,
+          "active_amplitude_outside": 0.0,
+          "accepted_active_amplitude_outside": 0.0
+        },
+        "score": 0.555555556
+      },
+      "development": {
+        "samples": 60,
+        "families": 18,
+        "forbidden_samples": 23,
+        "required_samples": 13,
+        "optional_samples": 24,
+        "forbidden_activation": 0.0,
+        "required_success": 0.07692307978868484,
+        "required_any_activity": 0.07692307978868484,
+        "acceptable_rate": 0.800000011920929,
+        "preferred_match": 0.5833333134651184,
+        "optional_activity": 0.0416666679084301,
+        "optional_unacceptable": 0.0,
+        "active_amplitude_outside": 0.5,
+        "accepted_active_amplitude_outside": 0.5
+      },
+      "raw_development": {
+        "samples": 60,
+        "families": 18,
+        "forbidden_samples": 23,
+        "required_samples": 13,
+        "optional_samples": 24,
+        "forbidden_activation": 0.17391304671764374,
+        "required_success": 0.7692307829856873,
+        "required_any_activity": 0.9230769276618958,
+        "acceptable_rate": 0.7666666507720947,
+        "preferred_match": 0.5333333611488342,
+        "optional_activity": 0.7916666865348816,
+        "optional_unacceptable": 0.2916666567325592,
+        "active_amplitude_outside": 0.4571428596973419,
+        "accepted_active_amplitude_outside": 0.5
+      },
+      "family_bootstrap_95": {
+        "forbidden_activation": [
+          0.0,
+          0.0
+        ],
+        "required_success": [
+          0.0,
+          0.2666666805744171
+        ],
+        "required_any_activity": [
+          0.0,
+          0.2666666805744171
+        ],
+        "acceptable_rate": [
+          0.7166666388511658,
+          0.8730158805847168
+        ],
+        "preferred_match": [
+          0.46296295523643494,
+          0.7017543911933899
+        ],
+        "optional_activity": [
+          0.0,
+          0.13636364042758942
+        ],
+        "optional_unacceptable": [
+          0.0,
+          0.0
+        ],
+        "active_amplitude_outside": [
+          0.5,
+          0.5
+        ],
+        "accepted_active_amplitude_outside": [
+          0.5,
+          0.5
+        ]
+      },
+      "contrasts": {
+        "pairs": 2,
+        "families": 2,
+        "both_acceptable": 0.0,
+        "family_mean": 0.0,
+        "details": [
+          {
+            "family": "pair-arranged",
+            "text": "这可真是安排得周到啊。",
+            "a": "63-irony-delay/t1/canonical",
+            "b": "64-genuine-praise/t1/canonical",
+            "both_acceptable": false,
+            "disjoint_sets": false,
+            "pred_a": "none",
+            "pred_b": "none"
+          },
+          {
+            "family": "pair-look",
+            "text": "你别这样看着我啦。",
+            "a": "93-pair-praise-blush/t1/canonical",
+            "b": "94-pair-praise-line/t1/canonical",
+            "both_acceptable": false,
+            "disjoint_sets": true,
+            "pred_a": "none",
+            "pred_b": "none"
+          }
+        ]
+      },
+      "prefill_ms": {
+        "p50": 93.79936899999564,
+        "p95": 105.9716947500064
+      },
+      "allowed_mass": {
+        "mean": 0.9966155836979548,
+        "min": 0.9945825934410095
+      },
+      "unconstrained_code_top_fraction": 1.0
+    },
+    {
+      "mapping": "1741",
+      "calibrated": {
+        "config": {
+          "active_threshold": 0.55,
+          "temperature": 3.0,
+          "forbidden_threshold": 0.4,
+          "required_threshold": 0.4
+        },
+        "calibration": {
+          "samples": 60,
+          "families": 18,
+          "forbidden_samples": 28,
+          "required_samples": 9,
+          "optional_samples": 23,
+          "forbidden_activation": 0.0,
+          "required_success": 0.1111111119389534,
+          "required_any_activity": 0.1111111119389534,
+          "acceptable_rate": 0.8666666746139526,
+          "preferred_match": 0.6666666865348816,
+          "optional_activity": 0.0,
+          "optional_unacceptable": 0.0,
+          "active_amplitude_outside": 0.0,
+          "accepted_active_amplitude_outside": 0.0
+        },
+        "score": 0.555555556
+      },
+      "development": {
+        "samples": 60,
+        "families": 18,
+        "forbidden_samples": 23,
+        "required_samples": 13,
+        "optional_samples": 24,
+        "forbidden_activation": 0.0,
+        "required_success": 0.07692307978868484,
+        "required_any_activity": 0.07692307978868484,
+        "acceptable_rate": 0.800000011920929,
+        "preferred_match": 0.5666666626930237,
+        "optional_activity": 0.0,
+        "optional_unacceptable": 0.0,
+        "active_amplitude_outside": 1.0,
+        "accepted_active_amplitude_outside": 1.0
+      },
+      "raw_development": {
+        "samples": 60,
+        "families": 18,
+        "forbidden_samples": 23,
+        "required_samples": 13,
+        "optional_samples": 24,
+        "forbidden_activation": 0.043478261679410934,
+        "required_success": 0.38461539149284363,
+        "required_any_activity": 0.7692307829856873,
+        "acceptable_rate": 0.800000011920929,
+        "preferred_match": 0.5833333134651184,
+        "optional_activity": 0.3333333432674408,
+        "optional_unacceptable": 0.125,
+        "active_amplitude_outside": 0.5789473652839661,
+        "accepted_active_amplitude_outside": 0.5
+      },
+      "family_bootstrap_95": {
+        "forbidden_activation": [
+          0.0,
+          0.0
+        ],
+        "required_success": [
+          0.0,
+          0.2666666805744171
+        ],
+        "required_any_activity": [
+          0.0,
+          0.2666666805744171
+        ],
+        "acceptable_rate": [
+          0.7166666388511658,
+          0.8730158805847168
+        ],
+        "preferred_match": [
+          0.4385964870452881,
+          0.6854468688368794
+        ],
+        "optional_activity": [
+          0.0,
+          0.0
+        ],
+        "optional_unacceptable": [
+          0.0,
+          0.0
+        ],
+        "active_amplitude_outside": [
+          1.0,
+          1.0
+        ],
+        "accepted_active_amplitude_outside": [
+          1.0,
+          1.0
+        ]
+      },
+      "contrasts": {
+        "pairs": 2,
+        "families": 2,
+        "both_acceptable": 0.0,
+        "family_mean": 0.0,
+        "details": [
+          {
+            "family": "pair-arranged",
+            "text": "这可真是安排得周到啊。",
+            "a": "63-irony-delay/t1/canonical",
+            "b": "64-genuine-praise/t1/canonical",
+            "both_acceptable": false,
+            "disjoint_sets": false,
+            "pred_a": "none",
+            "pred_b": "none"
+          },
+          {
+            "family": "pair-look",
+            "text": "你别这样看着我啦。",
+            "a": "93-pair-praise-blush/t1/canonical",
+            "b": "94-pair-praise-line/t1/canonical",
+            "both_acceptable": false,
+            "disjoint_sets": true,
+            "pred_a": "none",
+            "pred_b": "none"
+          }
+        ]
+      },
+      "prefill_ms": {
+        "p50": 93.36655900000324,
+        "p95": 104.86101755000945
+      },
+      "allowed_mass": {
+        "mean": 0.9971922626097997,
+        "min": 0.9955695271492004
+      },
+      "unconstrained_code_top_fraction": 1.0
+    },
+    {
+      "mapping": "9283",
+      "calibrated": {
+        "config": {
+          "active_threshold": 0.7,
+          "temperature": 3.0,
+          "forbidden_threshold": 0.4,
+          "required_threshold": 0.4
+        },
+        "calibration": {
+          "samples": 60,
+          "families": 18,
+          "forbidden_samples": 28,
+          "required_samples": 9,
+          "optional_samples": 23,
+          "forbidden_activation": 0.0357142873108387,
+          "required_success": 0.1111111119389534,
+          "required_any_activity": 0.4444444477558136,
+          "acceptable_rate": 0.7833333611488342,
+          "preferred_match": 0.6166666746139526,
+          "optional_activity": 0.260869562625885,
+          "optional_unacceptable": 0.17391304671764374,
+          "active_amplitude_outside": 0.6363636255264282,
+          "accepted_active_amplitude_outside": 0.6666666865348816
+        },
+        "score": 0.5203071076
+      },
+      "development": {
+        "samples": 60,
+        "families": 18,
+        "forbidden_samples": 23,
+        "required_samples": 13,
+        "optional_samples": 24,
+        "forbidden_activation": 0.0,
+        "required_success": 0.23076923191547394,
+        "required_any_activity": 0.4615384638309479,
+        "acceptable_rate": 0.8166666626930237,
+        "preferred_match": 0.6000000238418579,
+        "optional_activity": 0.2083333283662796,
+        "optional_unacceptable": 0.0416666679084301,
+        "active_amplitude_outside": 0.3636363744735718,
+        "accepted_active_amplitude_outside": 0.4285714328289032
+      },
+      "raw_development": {
+        "samples": 60,
+        "families": 18,
+        "forbidden_samples": 23,
+        "required_samples": 13,
+        "optional_samples": 24,
+        "forbidden_activation": 0.21739129722118378,
+        "required_success": 0.38461539149284363,
+        "required_any_activity": 0.9230769276618958,
+        "acceptable_rate": 0.550000011920929,
+        "preferred_match": 0.4166666567325592,
+        "optional_activity": 0.875,
+        "optional_unacceptable": 0.5833333134651184,
+        "active_amplitude_outside": 0.3947368562221527,
+        "accepted_active_amplitude_outside": 0.4166666567325592
+      },
+      "family_bootstrap_95": {
+        "forbidden_activation": [
+          0.0,
+          0.0
+        ],
+        "required_success": [
+          0.0,
+          0.5
+        ],
+        "required_any_activity": [
+          0.2222222238779068,
+          0.69250001758337
+        ],
+        "acceptable_rate": [
+          0.7142857313156128,
+          0.9047619104385376
+        ],
+        "preferred_match": [
+          0.48148149251937866,
+          0.7039682522416112
+        ],
+        "optional_activity": [
+          0.06896551698446274,
+          0.3811508007347582
+        ],
+        "optional_unacceptable": [
+          0.0,
+          0.13636364042758942
+        ],
+        "active_amplitude_outside": [
+          0.125,
+          0.5454545617103577
+        ],
+        "accepted_active_amplitude_outside": [
+          0.125,
+          0.6666666865348816
+        ]
+      },
+      "contrasts": {
+        "pairs": 2,
+        "families": 2,
+        "both_acceptable": 0.0,
+        "family_mean": 0.0,
+        "details": [
+          {
+            "family": "pair-arranged",
+            "text": "这可真是安排得周到啊。",
+            "a": "63-irony-delay/t1/canonical",
+            "b": "64-genuine-praise/t1/canonical",
+            "both_acceptable": false,
+            "disjoint_sets": false,
+            "pred_a": "none",
+            "pred_b": "none"
+          },
+          {
+            "family": "pair-look",
+            "text": "你别这样看着我啦。",
+            "a": "93-pair-praise-blush/t1/canonical",
+            "b": "94-pair-praise-line/t1/canonical",
+            "both_acceptable": false,
+            "disjoint_sets": true,
+            "pred_a": "none",
+            "pred_b": "none"
+          }
+        ]
+      },
+      "prefill_ms": {
+        "p50": 93.60970849999717,
+        "p95": 105.63034689999995
+      },
+      "allowed_mass": {
+        "mean": 0.9969374120235444,
+        "min": 0.995353102684021
+      },
+      "unconstrained_code_top_fraction": 1.0
+    },
+    {
+      "mapping": "ensemble",
+      "calibrated": {
+        "config": {
+          "active_threshold": 0.7,
+          "temperature": 3.0,
+          "forbidden_threshold": 0.4,
+          "required_threshold": 0.4
+        },
+        "calibration": {
+          "samples": 60,
+          "families": 18,
+          "forbidden_samples": 28,
+          "required_samples": 9,
+          "optional_samples": 23,
+          "forbidden_activation": 0.0,
+          "required_success": 0.1111111119389534,
+          "required_any_activity": 0.2222222238779068,
+          "acceptable_rate": 0.8666666746139526,
+          "preferred_match": 0.6499999761581421,
+          "optional_activity": 0.043478261679410934,
+          "optional_unacceptable": 0.0,
+          "active_amplitude_outside": 0.3333333432674408,
+          "accepted_active_amplitude_outside": 0.5
+        },
+        "score": 0.555555556
+      },
+      "development": {
+        "samples": 60,
+        "families": 18,
+        "forbidden_samples": 23,
+        "required_samples": 13,
+        "optional_samples": 24,
+        "forbidden_activation": 0.0,
+        "required_success": 0.1538461595773697,
+        "required_any_activity": 0.1538461595773697,
+        "acceptable_rate": 0.8166666626930237,
+        "preferred_match": 0.5833333134651184,
+        "optional_activity": 0.0416666679084301,
+        "optional_unacceptable": 0.0,
+        "active_amplitude_outside": 0.6666666865348816,
+        "accepted_active_amplitude_outside": 0.6666666865348816
+      },
+      "raw_development": {
+        "samples": 60,
+        "families": 18,
+        "forbidden_samples": 23,
+        "required_samples": 13,
+        "optional_samples": 24,
+        "forbidden_activation": 0.043478261679410934,
+        "required_success": 0.5384615659713745,
+        "required_any_activity": 0.8461538553237915,
+        "acceptable_rate": 0.7666666507720947,
+        "preferred_match": 0.550000011920929,
+        "optional_activity": 0.625,
+        "optional_unacceptable": 0.2916666567325592,
+        "active_amplitude_outside": 0.4444444477558136,
+        "accepted_active_amplitude_outside": 0.46666666865348816
+      },
+      "family_bootstrap_95": {
+        "forbidden_activation": [
+          0.0,
+          0.0
+        ],
+        "required_success": [
+          0.0,
+          0.38461539149284363
+        ],
+        "required_any_activity": [
+          0.0,
+          0.38461539149284363
+        ],
+        "acceptable_rate": [
+          0.7222222089767456,
+          0.8888888955116272
+        ],
+        "preferred_match": [
+          0.45614033937454224,
+          0.700043848156929
+        ],
+        "optional_activity": [
+          0.0,
+          0.1428571492433548
+        ],
+        "optional_unacceptable": [
+          0.0,
+          0.0
+        ],
+        "active_amplitude_outside": [
+          0.5,
+          1.0
+        ],
+        "accepted_active_amplitude_outside": [
+          0.5,
+          1.0
+        ]
+      },
+      "contrasts": {
+        "pairs": 2,
+        "families": 2,
+        "both_acceptable": 0.0,
+        "family_mean": 0.0,
+        "details": [
+          {
+            "family": "pair-arranged",
+            "text": "这可真是安排得周到啊。",
+            "a": "63-irony-delay/t1/canonical",
+            "b": "64-genuine-praise/t1/canonical",
+            "both_acceptable": false,
+            "disjoint_sets": false,
+            "pred_a": "none",
+            "pred_b": "none"
+          },
+          {
+            "family": "pair-look",
+            "text": "你别这样看着我啦。",
+            "a": "93-pair-praise-blush/t1/canonical",
+            "b": "94-pair-praise-line/t1/canonical",
+            "both_acceptable": false,
+            "disjoint_sets": true,
+            "pred_a": "none",
+            "pred_b": "none"
+          }
+        ]
+      },
+      "prefill_ms": {
+        "p50": 281.238126500007,
+        "p95": 316.03767064999744
+      },
+      "allowed_mass": {
+        "mean": 0.9969150861104329,
+        "min": 0.9945825934410095
+      },
+      "unconstrained_code_top_fraction": 1.0
+    }
+  ],
+  "summary": {
+    "metrics": {
+      "forbidden_activation": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "required_success": {
+        "mean": 0.12820513049761453,
+        "std": 0.07252377161887316
+      },
+      "required_any_activity": {
+        "mean": 0.20512820780277252,
+        "std": 0.1813094308033016
+      },
+      "acceptable_rate": {
+        "mean": 0.8055555621782938,
+        "std": 0.007856734520410793
+      },
+      "preferred_match": {
+        "mean": 0.5833333333333334,
+        "std": 0.013608287704433376
+      },
+      "optional_activity": {
+        "mean": 0.0833333320915699,
+        "std": 0.0900102849869796
+      },
+      "optional_unacceptable": {
+        "mean": 0.013888889302810034,
+        "std": 0.019641855618332548
+      },
+      "active_amplitude_outside": {
+        "mean": 0.6212121248245239,
+        "std": 0.2735677251634313
+      },
+      "accepted_active_amplitude_outside": {
+        "mean": 0.642857144276301,
+        "std": 0.25421614766164125
+      }
+    },
+    "family_bootstrap_95": {
+      "forbidden_activation": [
+        0.0,
+        0.0
+      ],
+      "required_success": [
+        0.0,
+        0.3116666776438549
+      ],
+      "required_any_activity": [
+        0.07692307730515797,
+        0.38461539149284363
+      ],
+      "acceptable_rate": [
+        0.7160052821040154,
+        0.8827241813143094
+      ],
+      "preferred_match": [
+        0.4666161539653937,
+        0.695969097316265
+      ],
+      "optional_activity": [
+        0.026641025083760424,
+        0.15690943350394562
+      ],
+      "optional_unacceptable": [
+        0.0,
+        0.04545454680919647
+      ],
+      "active_amplitude_outside": [
+        0.1428571492433548,
+        0.6666666666666666
+      ],
+      "accepted_active_amplitude_outside": [
+        0.125,
+        0.7222222288449606
+      ]
+    }
+  },
+  "old_test_loaded": false,
+  "new_final_test_created": false,
+  "strength_source": "unlearned editorial defaults; do not compare to learned-strength quality or actual rendering",
+  "timing_scope": "isolated prefill; ensemble is sequential sum of three calls, not a TTS or end-to-end benchmark",
+  "caveats": [
+    "New stronger quiet policy differs from JSON prompt",
+    "Restricted decoder guarantees formatting only",
+    "Three label permutations are prompt variants, not independent data or training seeds",
+    "Same inspected small draft development set"
+  ]
+}

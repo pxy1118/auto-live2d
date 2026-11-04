@@ -1,0 +1,2142 @@
+[
+  {
+    "index": 0,
+    "models": [
+      {
+        "label": "A",
+        "model": "v3"
+      },
+      {
+        "label": "B",
+        "model": "candidate"
+      }
+    ],
+    "plan": {
+      "schema": "performance.plan.v1",
+      "arm": "none",
+      "body": "none",
+      "emotion": "angry",
+      "eye": "爱心眼",
+      "arm_variant": 2,
+      "body_variant": 0,
+      "body_strength": 0.0094,
+      "expressions": {
+        "黑脸": 0.7031,
+        "流泪": 0.0175,
+        "脸红": 0.0321,
+        "加载": 0.0462,
+        "兔牙": 0.0056,
+        "流冷汗": 0.0062
+      },
+      "eye_strength": 0.32,
+      "arm_hold_ms": 1332,
+      "body_hold_ms": 2203,
+      "face_hold_ms": 4755,
+      "onset_ms": 210,
+      "confidence": {
+        "arm": 0.4199230670928955,
+        "body": 0.9981946349143982,
+        "emotion": 0.6619383096694946,
+        "eye": 0.8419928550720215
+      },
+      "clause": 0
+    },
+    "provenance": {
+      "source": "streaming_policy_v4",
+      "checkpoint_sha256": "e76c52e5ca3403b6b2da0b943bc82bd58ca7682928dc67ea2422f8625160d36d",
+      "kind": "regression",
+      "seed": 41,
+      "stage": "learned_composition_candidate"
+    },
+    "executed": [
+      {
+        "clause": 0,
+        "at_ms": 216.66666666666666,
+        "plan": {
+          "schema": "performance.plan.v1",
+          "arm": "none",
+          "body": "none",
+          "emotion": "angry",
+          "eye": "爱心眼",
+          "arm_variant": 2,
+          "body_variant": 0,
+          "body_strength": 0.0094,
+          "expressions": {
+            "黑脸": 0.7031,
+            "流泪": 0.0175,
+            "脸红": 0.0321,
+            "加载": 0.0462,
+            "兔牙": 0.0056,
+            "流冷汗": 0.0062
+          },
+          "eye_strength": 0.32,
+          "arm_hold_ms": 1332,
+          "body_hold_ms": 2203,
+          "face_hold_ms": 4755,
+          "onset_ms": 210,
+          "confidence": {
+            "arm": 0.4199230670928955,
+            "body": 0.9981946349143982,
+            "emotion": 0.6619383096694946,
+            "eye": 0.8419928550720215
+          },
+          "clause": 0
+        },
+        "arm_applied": false,
+        "body_applied": false
+      }
+    ],
+    "model_checkpoint": "c9a9851e895068b157838f97a9ed938291b02b111f3159067498944fd4f62292"
+  },
+  {
+    "index": 1,
+    "models": [
+      {
+        "label": "A",
+        "model": "v3"
+      },
+      {
+        "label": "B",
+        "model": "candidate"
+      }
+    ],
+    "plan": {
+      "schema": "performance.plan.v1",
+      "arm": "none",
+      "body": "none",
+      "emotion": "angry",
+      "eye": "normal",
+      "arm_variant": 2,
+      "body_variant": 0,
+      "body_strength": 0.0037,
+      "expressions": {
+        "黑脸": 0.3477,
+        "流泪": 0.0356,
+        "脸红": 0.0226,
+        "加载": 0.0073,
+        "兔牙": 0.0036,
+        "流冷汗": 0.0018
+      },
+      "eye_strength": 0.0084,
+      "arm_hold_ms": 1309,
+      "body_hold_ms": 2217,
+      "face_hold_ms": 4699,
+      "onset_ms": 239,
+      "confidence": {
+        "arm": 0.6065361499786377,
+        "body": 0.9988088607788086,
+        "emotion": 0.8848982453346252,
+        "eye": 0.9808844327926636
+      },
+      "clause": 0
+    },
+    "provenance": {
+      "source": "streaming_policy_v4",
+      "checkpoint_sha256": "e76c52e5ca3403b6b2da0b943bc82bd58ca7682928dc67ea2422f8625160d36d",
+      "kind": "regression",
+      "seed": 41,
+      "stage": "learned_composition_candidate"
+    },
+    "executed": [
+      {
+        "clause": 0,
+        "at_ms": 250,
+        "plan": {
+          "schema": "performance.plan.v1",
+          "arm": "none",
+          "body": "none",
+          "emotion": "angry",
+          "eye": "normal",
+          "arm_variant": 2,
+          "body_variant": 0,
+          "body_strength": 0.0037,
+          "expressions": {
+            "黑脸": 0.3477,
+            "流泪": 0.0356,
+            "脸红": 0.0226,
+            "加载": 0.0073,
+            "兔牙": 0.0036,
+            "流冷汗": 0.0018
+          },
+          "eye_strength": 0.0084,
+          "arm_hold_ms": 1309,
+          "body_hold_ms": 2217,
+          "face_hold_ms": 4699,
+          "onset_ms": 239,
+          "confidence": {
+            "arm": 0.6065361499786377,
+            "body": 0.9988088607788086,
+            "emotion": 0.8848982453346252,
+            "eye": 0.9808844327926636
+          },
+          "clause": 0
+        },
+        "arm_applied": false,
+        "body_applied": false
+      }
+    ],
+    "model_checkpoint": "c9a9851e895068b157838f97a9ed938291b02b111f3159067498944fd4f62292"
+  },
+  {
+    "index": 2,
+    "models": [
+      {
+        "label": "A",
+        "model": "v3"
+      },
+      {
+        "label": "B",
+        "model": "candidate"
+      }
+    ],
+    "plan": {
+      "schema": "performance.plan.v1",
+      "arm": "none",
+      "body": "none",
+      "emotion": "keep",
+      "eye": "normal",
+      "arm_variant": 2,
+      "body_variant": 0,
+      "body_strength": 0.0002,
+      "expressions": {
+        "黑脸": 0.0254,
+        "流泪": 0.0074,
+        "脸红": 0.0004,
+        "加载": 0.0003,
+        "兔牙": 0,
+        "流冷汗": 0
+      },
+      "eye_strength": 0.0005,
+      "arm_hold_ms": 1220,
+      "body_hold_ms": 2156,
+      "face_hold_ms": 3855,
+      "onset_ms": 151,
+      "confidence": {
+        "arm": 0.990400493144989,
+        "body": 0.999672532081604,
+        "emotion": 0.8327087759971619,
+        "eye": 0.9995110034942627
+      },
+      "clause": 0
+    },
+    "provenance": {
+      "source": "streaming_policy_v4",
+      "checkpoint_sha256": "e76c52e5ca3403b6b2da0b943bc82bd58ca7682928dc67ea2422f8625160d36d",
+      "kind": "regression",
+      "seed": 41,
+      "stage": "learned_composition_candidate"
+    },
+    "executed": [
+      {
+        "clause": 0,
+        "at_ms": 166.66666666666666,
+        "plan": {
+          "schema": "performance.plan.v1",
+          "arm": "none",
+          "body": "none",
+          "emotion": "keep",
+          "eye": "normal",
+          "arm_variant": 2,
+          "body_variant": 0,
+          "body_strength": 0.0002,
+          "expressions": {
+            "黑脸": 0.0254,
+            "流泪": 0.0074,
+            "脸红": 0.0004,
+            "加载": 0.0003,
+            "兔牙": 0,
+            "流冷汗": 0
+          },
+          "eye_strength": 0.0005,
+          "arm_hold_ms": 1220,
+          "body_hold_ms": 2156,
+          "face_hold_ms": 3855,
+          "onset_ms": 151,
+          "confidence": {
+            "arm": 0.990400493144989,
+            "body": 0.999672532081604,
+            "emotion": 0.8327087759971619,
+            "eye": 0.9995110034942627
+          },
+          "clause": 0
+        },
+        "arm_applied": false,
+        "body_applied": false
+      }
+    ],
+    "model_checkpoint": "c9a9851e895068b157838f97a9ed938291b02b111f3159067498944fd4f62292"
+  },
+  {
+    "index": 3,
+    "models": [
+      {
+        "label": "A",
+        "model": "v3"
+      },
+      {
+        "label": "B",
+        "model": "candidate"
+      }
+    ],
+    "plan": {
+      "schema": "performance.plan.v1",
+      "arm": "chest",
+      "body": "none",
+      "emotion": "keep",
+      "eye": "normal",
+      "arm_variant": 2,
+      "body_variant": 0,
+      "body_strength": 0.2773,
+      "expressions": {
+        "黑脸": 0.0225,
+        "流泪": 0.0814,
+        "脸红": 0.0464,
+        "加载": 0.0183,
+        "兔牙": 0.0114,
+        "流冷汗": 0.0087
+      },
+      "eye_strength": 0.035,
+      "arm_hold_ms": 1351,
+      "body_hold_ms": 2078,
+      "face_hold_ms": 3259,
+      "onset_ms": 267,
+      "confidence": {
+        "arm": 0.5523751378059387,
+        "body": 0.5399959683418274,
+        "emotion": 0.607653796672821,
+        "eye": 0.9631898403167725
+      },
+      "clause": 0
+    },
+    "provenance": {
+      "source": "streaming_policy_v4",
+      "checkpoint_sha256": "e76c52e5ca3403b6b2da0b943bc82bd58ca7682928dc67ea2422f8625160d36d",
+      "kind": "regression",
+      "seed": 41,
+      "stage": "learned_composition_candidate"
+    },
+    "executed": [
+      {
+        "clause": 0,
+        "at_ms": 283.3333333333333,
+        "plan": {
+          "schema": "performance.plan.v1",
+          "arm": "chest",
+          "body": "none",
+          "emotion": "keep",
+          "eye": "normal",
+          "arm_variant": 2,
+          "body_variant": 0,
+          "body_strength": 0.2773,
+          "expressions": {
+            "黑脸": 0.0225,
+            "流泪": 0.0814,
+            "脸红": 0.0464,
+            "加载": 0.0183,
+            "兔牙": 0.0114,
+            "流冷汗": 0.0087
+          },
+          "eye_strength": 0.035,
+          "arm_hold_ms": 1351,
+          "body_hold_ms": 2078,
+          "face_hold_ms": 3259,
+          "onset_ms": 267,
+          "confidence": {
+            "arm": 0.5523751378059387,
+            "body": 0.5399959683418274,
+            "emotion": 0.607653796672821,
+            "eye": 0.9631898403167725
+          },
+          "clause": 0
+        },
+        "arm_applied": false,
+        "body_applied": false,
+        "arm_skipped": "low_confidence"
+      }
+    ],
+    "model_checkpoint": "c9a9851e895068b157838f97a9ed938291b02b111f3159067498944fd4f62292"
+  },
+  {
+    "index": 4,
+    "models": [
+      {
+        "label": "A",
+        "model": "candidate"
+      },
+      {
+        "label": "B",
+        "model": "v3"
+      }
+    ],
+    "plan": {
+      "schema": "performance.plan.v1",
+      "arm": "none",
+      "body": "none",
+      "emotion": "shy",
+      "eye": "＞＜",
+      "arm_variant": 2,
+      "body_variant": 0,
+      "body_strength": 0.0229,
+      "expressions": {
+        "黑脸": 0.0215,
+        "流泪": 0.0504,
+        "脸红": 0.8464,
+        "加载": 0.0224,
+        "兔牙": 0.0086,
+        "流冷汗": 0.0081
+      },
+      "eye_strength": 0.2651,
+      "arm_hold_ms": 1285,
+      "body_hold_ms": 2065,
+      "face_hold_ms": 4069,
+      "onset_ms": 175,
+      "confidence": {
+        "arm": 0.8928475379943848,
+        "body": 0.9982141256332397,
+        "emotion": 0.9733051061630249,
+        "eye": 0.4592008590698242
+      },
+      "clause": 0
+    },
+    "provenance": {
+      "source": "streaming_policy_v4",
+      "checkpoint_sha256": "e76c52e5ca3403b6b2da0b943bc82bd58ca7682928dc67ea2422f8625160d36d",
+      "kind": "regression",
+      "seed": 41,
+      "stage": "learned_composition_candidate"
+    },
+    "executed": [
+      {
+        "clause": 0,
+        "at_ms": 183.33333333333334,
+        "plan": {
+          "schema": "performance.plan.v1",
+          "arm": "none",
+          "body": "none",
+          "emotion": "shy",
+          "eye": "＞＜",
+          "arm_variant": 2,
+          "body_variant": 0,
+          "body_strength": 0.0229,
+          "expressions": {
+            "黑脸": 0.0215,
+            "流泪": 0.0504,
+            "脸红": 0.8464,
+            "加载": 0.0224,
+            "兔牙": 0.0086,
+            "流冷汗": 0.0081
+          },
+          "eye_strength": 0.2651,
+          "arm_hold_ms": 1285,
+          "body_hold_ms": 2065,
+          "face_hold_ms": 4069,
+          "onset_ms": 175,
+          "confidence": {
+            "arm": 0.8928475379943848,
+            "body": 0.9982141256332397,
+            "emotion": 0.9733051061630249,
+            "eye": 0.4592008590698242
+          },
+          "clause": 0
+        },
+        "arm_applied": false,
+        "body_applied": false
+      }
+    ],
+    "model_checkpoint": "c9a9851e895068b157838f97a9ed938291b02b111f3159067498944fd4f62292"
+  },
+  {
+    "index": 5,
+    "models": [
+      {
+        "label": "A",
+        "model": "candidate"
+      },
+      {
+        "label": "B",
+        "model": "v3"
+      }
+    ],
+    "plan": {
+      "schema": "performance.plan.v1",
+      "arm": "grass",
+      "body": "none",
+      "emotion": "shy",
+      "eye": "normal",
+      "arm_variant": 2,
+      "body_variant": 0,
+      "body_strength": 0.0568,
+      "expressions": {
+        "黑脸": 0.0144,
+        "流泪": 0.1399,
+        "脸红": 0.6339,
+        "加载": 0.0065,
+        "兔牙": 0.0083,
+        "流冷汗": 0.0055
+      },
+      "eye_strength": 0.0997,
+      "arm_hold_ms": 1297,
+      "body_hold_ms": 2397,
+      "face_hold_ms": 3972,
+      "onset_ms": 166,
+      "confidence": {
+        "arm": 0.5225644707679749,
+        "body": 0.9981100559234619,
+        "emotion": 0.9496725797653198,
+        "eye": 0.73128741979599
+      },
+      "clause": 0
+    },
+    "provenance": {
+      "source": "streaming_policy_v4",
+      "checkpoint_sha256": "e76c52e5ca3403b6b2da0b943bc82bd58ca7682928dc67ea2422f8625160d36d",
+      "kind": "regression",
+      "seed": 41,
+      "stage": "learned_composition_candidate"
+    },
+    "executed": [
+      {
+        "clause": 0,
+        "at_ms": 166.66666666666666,
+        "plan": {
+          "schema": "performance.plan.v1",
+          "arm": "grass",
+          "body": "none",
+          "emotion": "shy",
+          "eye": "normal",
+          "arm_variant": 2,
+          "body_variant": 0,
+          "body_strength": 0.0568,
+          "expressions": {
+            "黑脸": 0.0144,
+            "流泪": 0.1399,
+            "脸红": 0.6339,
+            "加载": 0.0065,
+            "兔牙": 0.0083,
+            "流冷汗": 0.0055
+          },
+          "eye_strength": 0.0997,
+          "arm_hold_ms": 1297,
+          "body_hold_ms": 2397,
+          "face_hold_ms": 3972,
+          "onset_ms": 166,
+          "confidence": {
+            "arm": 0.5225644707679749,
+            "body": 0.9981100559234619,
+            "emotion": 0.9496725797653198,
+            "eye": 0.73128741979599
+          },
+          "clause": 0
+        },
+        "arm_applied": false,
+        "body_applied": false,
+        "arm_skipped": "low_confidence"
+      }
+    ],
+    "model_checkpoint": "c9a9851e895068b157838f97a9ed938291b02b111f3159067498944fd4f62292"
+  },
+  {
+    "index": 6,
+    "models": [
+      {
+        "label": "A",
+        "model": "v3"
+      },
+      {
+        "label": "B",
+        "model": "candidate"
+      }
+    ],
+    "plan": {
+      "schema": "performance.plan.v1",
+      "arm": "none",
+      "body": "cajole",
+      "emotion": "shy",
+      "eye": "normal",
+      "arm_variant": 0,
+      "body_variant": 0,
+      "body_strength": 0.8603,
+      "expressions": {
+        "黑脸": 0.0074,
+        "流泪": 0.0335,
+        "脸红": 0.3156,
+        "加载": 0.0126,
+        "兔牙": 0.0098,
+        "流冷汗": 0.0031
+      },
+      "eye_strength": 0.0269,
+      "arm_hold_ms": 1256,
+      "body_hold_ms": 3193,
+      "face_hold_ms": 4033,
+      "onset_ms": 167,
+      "confidence": {
+        "arm": 0.4987984001636505,
+        "body": 0.9988631010055542,
+        "emotion": 0.9916747212409973,
+        "eye": 0.8896052241325378
+      },
+      "clause": 0
+    },
+    "provenance": {
+      "source": "streaming_policy_v4",
+      "checkpoint_sha256": "e76c52e5ca3403b6b2da0b943bc82bd58ca7682928dc67ea2422f8625160d36d",
+      "kind": "regression",
+      "seed": 41,
+      "stage": "learned_composition_candidate"
+    },
+    "executed": [
+      {
+        "clause": 0,
+        "at_ms": 183.33333333333334,
+        "plan": {
+          "schema": "performance.plan.v1",
+          "arm": "none",
+          "body": "cajole",
+          "emotion": "shy",
+          "eye": "normal",
+          "arm_variant": 0,
+          "body_variant": 0,
+          "body_strength": 0.8603,
+          "expressions": {
+            "黑脸": 0.0074,
+            "流泪": 0.0335,
+            "脸红": 0.3156,
+            "加载": 0.0126,
+            "兔牙": 0.0098,
+            "流冷汗": 0.0031
+          },
+          "eye_strength": 0.0269,
+          "arm_hold_ms": 1256,
+          "body_hold_ms": 3193,
+          "face_hold_ms": 4033,
+          "onset_ms": 167,
+          "confidence": {
+            "arm": 0.4987984001636505,
+            "body": 0.9988631010055542,
+            "emotion": 0.9916747212409973,
+            "eye": 0.8896052241325378
+          },
+          "clause": 0
+        },
+        "arm_applied": false,
+        "body_applied": true
+      }
+    ],
+    "model_checkpoint": "c9a9851e895068b157838f97a9ed938291b02b111f3159067498944fd4f62292"
+  },
+  {
+    "index": 7,
+    "models": [
+      {
+        "label": "A",
+        "model": "candidate"
+      },
+      {
+        "label": "B",
+        "model": "v3"
+      }
+    ],
+    "plan": {
+      "schema": "performance.plan.v1",
+      "arm": "none",
+      "body": "none",
+      "emotion": "angry",
+      "eye": "normal",
+      "arm_variant": 2,
+      "body_variant": 0,
+      "body_strength": 0.0098,
+      "expressions": {
+        "黑脸": 0.5781,
+        "流泪": 0.0006,
+        "脸红": 0.0007,
+        "加载": 0.0049,
+        "兔牙": 0.0002,
+        "流冷汗": 0.0002
+      },
+      "eye_strength": 0.0089,
+      "arm_hold_ms": 1170,
+      "body_hold_ms": 1956,
+      "face_hold_ms": 4630,
+      "onset_ms": 181,
+      "confidence": {
+        "arm": 0.4705640971660614,
+        "body": 0.9894798398017883,
+        "emotion": 0.9048359990119934,
+        "eye": 0.9912307262420654
+      },
+      "clause": 0
+    },
+    "provenance": {
+      "source": "streaming_policy_v4",
+      "checkpoint_sha256": "e76c52e5ca3403b6b2da0b943bc82bd58ca7682928dc67ea2422f8625160d36d",
+      "kind": "regression",
+      "seed": 41,
+      "stage": "learned_composition_candidate"
+    },
+    "executed": [
+      {
+        "clause": 0,
+        "at_ms": 183.33333333333334,
+        "plan": {
+          "schema": "performance.plan.v1",
+          "arm": "none",
+          "body": "none",
+          "emotion": "angry",
+          "eye": "normal",
+          "arm_variant": 2,
+          "body_variant": 0,
+          "body_strength": 0.0098,
+          "expressions": {
+            "黑脸": 0.5781,
+            "流泪": 0.0006,
+            "脸红": 0.0007,
+            "加载": 0.0049,
+            "兔牙": 0.0002,
+            "流冷汗": 0.0002
+          },
+          "eye_strength": 0.0089,
+          "arm_hold_ms": 1170,
+          "body_hold_ms": 1956,
+          "face_hold_ms": 4630,
+          "onset_ms": 181,
+          "confidence": {
+            "arm": 0.4705640971660614,
+            "body": 0.9894798398017883,
+            "emotion": 0.9048359990119934,
+            "eye": 0.9912307262420654
+          },
+          "clause": 0
+        },
+        "arm_applied": false,
+        "body_applied": false
+      }
+    ],
+    "model_checkpoint": "c9a9851e895068b157838f97a9ed938291b02b111f3159067498944fd4f62292"
+  },
+  {
+    "index": 8,
+    "models": [
+      {
+        "label": "A",
+        "model": "candidate"
+      },
+      {
+        "label": "B",
+        "model": "v3"
+      }
+    ],
+    "plan": {
+      "schema": "performance.plan.v1",
+      "arm": "none",
+      "body": "none",
+      "emotion": "confused",
+      "eye": "圈圈眼",
+      "arm_variant": 2,
+      "body_variant": 0,
+      "body_strength": 0.0203,
+      "expressions": {
+        "黑脸": 0.0065,
+        "流泪": 0.2502,
+        "脸红": 0.0477,
+        "加载": 0.2066,
+        "兔牙": 0.0035,
+        "流冷汗": 0.0044
+      },
+      "eye_strength": 0.0225,
+      "arm_hold_ms": 1129,
+      "body_hold_ms": 1909,
+      "face_hold_ms": 2901,
+      "onset_ms": 155,
+      "confidence": {
+        "arm": 0.6448371410369873,
+        "body": 0.8326663374900818,
+        "emotion": 0.9792701005935669,
+        "eye": 0.7841591835021973
+      },
+      "clause": 0
+    },
+    "provenance": {
+      "source": "streaming_policy_v4",
+      "checkpoint_sha256": "e76c52e5ca3403b6b2da0b943bc82bd58ca7682928dc67ea2422f8625160d36d",
+      "kind": "regression",
+      "seed": 41,
+      "stage": "learned_composition_candidate"
+    },
+    "executed": [
+      {
+        "clause": 0,
+        "at_ms": 166.66666666666666,
+        "plan": {
+          "schema": "performance.plan.v1",
+          "arm": "none",
+          "body": "none",
+          "emotion": "confused",
+          "eye": "圈圈眼",
+          "arm_variant": 2,
+          "body_variant": 0,
+          "body_strength": 0.0203,
+          "expressions": {
+            "黑脸": 0.0065,
+            "流泪": 0.2502,
+            "脸红": 0.0477,
+            "加载": 0.2066,
+            "兔牙": 0.0035,
+            "流冷汗": 0.0044
+          },
+          "eye_strength": 0.0225,
+          "arm_hold_ms": 1129,
+          "body_hold_ms": 1909,
+          "face_hold_ms": 2901,
+          "onset_ms": 155,
+          "confidence": {
+            "arm": 0.6448371410369873,
+            "body": 0.8326663374900818,
+            "emotion": 0.9792701005935669,
+            "eye": 0.7841591835021973
+          },
+          "clause": 0
+        },
+        "arm_applied": false,
+        "body_applied": false
+      }
+    ],
+    "model_checkpoint": "c9a9851e895068b157838f97a9ed938291b02b111f3159067498944fd4f62292"
+  },
+  {
+    "index": 9,
+    "models": [
+      {
+        "label": "A",
+        "model": "candidate"
+      },
+      {
+        "label": "B",
+        "model": "v3"
+      }
+    ],
+    "plan": {
+      "schema": "performance.plan.v1",
+      "arm": "none",
+      "body": "none",
+      "emotion": "confused",
+      "eye": "圈圈眼",
+      "arm_variant": 2,
+      "body_variant": 0,
+      "body_strength": 0.0043,
+      "expressions": {
+        "黑脸": 0.0109,
+        "流泪": 0.0192,
+        "脸红": 0.0337,
+        "加载": 0.6924,
+        "兔牙": 0.0023,
+        "流冷汗": 0.0055
+      },
+      "eye_strength": 0.7532,
+      "arm_hold_ms": 1129,
+      "body_hold_ms": 2195,
+      "face_hold_ms": 3039,
+      "onset_ms": 141,
+      "confidence": {
+        "arm": 0.5671585202217102,
+        "body": 0.9983537197113037,
+        "emotion": 0.9846145510673523,
+        "eye": 0.9997032284736633
+      },
+      "clause": 0
+    },
+    "provenance": {
+      "source": "streaming_policy_v4",
+      "checkpoint_sha256": "e76c52e5ca3403b6b2da0b943bc82bd58ca7682928dc67ea2422f8625160d36d",
+      "kind": "regression",
+      "seed": 41,
+      "stage": "learned_composition_candidate"
+    },
+    "executed": [
+      {
+        "clause": 0,
+        "at_ms": 150,
+        "plan": {
+          "schema": "performance.plan.v1",
+          "arm": "none",
+          "body": "none",
+          "emotion": "confused",
+          "eye": "圈圈眼",
+          "arm_variant": 2,
+          "body_variant": 0,
+          "body_strength": 0.0043,
+          "expressions": {
+            "黑脸": 0.0109,
+            "流泪": 0.0192,
+            "脸红": 0.0337,
+            "加载": 0.6924,
+            "兔牙": 0.0023,
+            "流冷汗": 0.0055
+          },
+          "eye_strength": 0.7532,
+          "arm_hold_ms": 1129,
+          "body_hold_ms": 2195,
+          "face_hold_ms": 3039,
+          "onset_ms": 141,
+          "confidence": {
+            "arm": 0.5671585202217102,
+            "body": 0.9983537197113037,
+            "emotion": 0.9846145510673523,
+            "eye": 0.9997032284736633
+          },
+          "clause": 0
+        },
+        "arm_applied": false,
+        "body_applied": false
+      }
+    ],
+    "model_checkpoint": "c9a9851e895068b157838f97a9ed938291b02b111f3159067498944fd4f62292"
+  },
+  {
+    "index": 10,
+    "models": [
+      {
+        "label": "A",
+        "model": "candidate"
+      },
+      {
+        "label": "B",
+        "model": "v3"
+      }
+    ],
+    "plan": {
+      "schema": "performance.plan.v1",
+      "arm": "wave",
+      "body": "none",
+      "emotion": "shy",
+      "eye": "＞＜",
+      "arm_variant": 2,
+      "body_variant": 0,
+      "body_strength": 0.0009,
+      "expressions": {
+        "黑脸": 0.0056,
+        "流泪": 0.0072,
+        "脸红": 0.8063,
+        "加载": 0.0016,
+        "兔牙": 0.0004,
+        "流冷汗": 0.0005
+      },
+      "eye_strength": 0.6032,
+      "arm_hold_ms": 1116,
+      "body_hold_ms": 2325,
+      "face_hold_ms": 4072,
+      "onset_ms": 116,
+      "confidence": {
+        "arm": 0.7351962327957153,
+        "body": 0.9355646967887878,
+        "emotion": 0.9998182654380798,
+        "eye": 0.9969768524169922
+      },
+      "clause": 0
+    },
+    "provenance": {
+      "source": "streaming_policy_v4",
+      "checkpoint_sha256": "e76c52e5ca3403b6b2da0b943bc82bd58ca7682928dc67ea2422f8625160d36d",
+      "kind": "regression",
+      "seed": 41,
+      "stage": "learned_composition_candidate"
+    },
+    "executed": [
+      {
+        "clause": 0,
+        "at_ms": 116.66666666666667,
+        "plan": {
+          "schema": "performance.plan.v1",
+          "arm": "wave",
+          "body": "none",
+          "emotion": "shy",
+          "eye": "＞＜",
+          "arm_variant": 2,
+          "body_variant": 0,
+          "body_strength": 0.0009,
+          "expressions": {
+            "黑脸": 0.0056,
+            "流泪": 0.0072,
+            "脸红": 0.8063,
+            "加载": 0.0016,
+            "兔牙": 0.0004,
+            "流冷汗": 0.0005
+          },
+          "eye_strength": 0.6032,
+          "arm_hold_ms": 1116,
+          "body_hold_ms": 2325,
+          "face_hold_ms": 4072,
+          "onset_ms": 116,
+          "confidence": {
+            "arm": 0.7351962327957153,
+            "body": 0.9355646967887878,
+            "emotion": 0.9998182654380798,
+            "eye": 0.9969768524169922
+          },
+          "clause": 0
+        },
+        "arm_applied": false,
+        "body_applied": false,
+        "arm_skipped": "low_confidence"
+      }
+    ],
+    "model_checkpoint": "c9a9851e895068b157838f97a9ed938291b02b111f3159067498944fd4f62292"
+  },
+  {
+    "index": 11,
+    "models": [
+      {
+        "label": "A",
+        "model": "candidate"
+      },
+      {
+        "label": "B",
+        "model": "v3"
+      }
+    ],
+    "plan": {
+      "schema": "performance.plan.v1",
+      "arm": "none",
+      "body": "none",
+      "emotion": "happy",
+      "eye": "爱心眼",
+      "arm_variant": 2,
+      "body_variant": 0,
+      "body_strength": 0.018,
+      "expressions": {
+        "黑脸": 0.0008,
+        "流泪": 0.0002,
+        "脸红": 0.0084,
+        "加载": 0.0008,
+        "兔牙": 0.0001,
+        "流冷汗": 0
+      },
+      "eye_strength": 0.9159,
+      "arm_hold_ms": 977,
+      "body_hold_ms": 2187,
+      "face_hold_ms": 2576,
+      "onset_ms": 112,
+      "confidence": {
+        "arm": 0.39928993582725525,
+        "body": 0.9852102398872375,
+        "emotion": 0.9986200332641602,
+        "eye": 0.5447266697883606
+      },
+      "clause": 0
+    },
+    "provenance": {
+      "source": "streaming_policy_v4",
+      "checkpoint_sha256": "e76c52e5ca3403b6b2da0b943bc82bd58ca7682928dc67ea2422f8625160d36d",
+      "kind": "regression",
+      "seed": 41,
+      "stage": "learned_composition_candidate"
+    },
+    "executed": [
+      {
+        "clause": 0,
+        "at_ms": 116.66666666666667,
+        "plan": {
+          "schema": "performance.plan.v1",
+          "arm": "none",
+          "body": "none",
+          "emotion": "happy",
+          "eye": "爱心眼",
+          "arm_variant": 2,
+          "body_variant": 0,
+          "body_strength": 0.018,
+          "expressions": {
+            "黑脸": 0.0008,
+            "流泪": 0.0002,
+            "脸红": 0.0084,
+            "加载": 0.0008,
+            "兔牙": 0.0001,
+            "流冷汗": 0
+          },
+          "eye_strength": 0.9159,
+          "arm_hold_ms": 977,
+          "body_hold_ms": 2187,
+          "face_hold_ms": 2576,
+          "onset_ms": 112,
+          "confidence": {
+            "arm": 0.39928993582725525,
+            "body": 0.9852102398872375,
+            "emotion": 0.9986200332641602,
+            "eye": 0.5447266697883606
+          },
+          "clause": 0
+        },
+        "arm_applied": false,
+        "body_applied": false
+      }
+    ],
+    "model_checkpoint": "c9a9851e895068b157838f97a9ed938291b02b111f3159067498944fd4f62292"
+  },
+  {
+    "index": 12,
+    "models": [
+      {
+        "label": "A",
+        "model": "v3"
+      },
+      {
+        "label": "B",
+        "model": "candidate"
+      }
+    ],
+    "plan": {
+      "schema": "performance.plan.v1",
+      "arm": "thanks",
+      "body": "none",
+      "emotion": "neutral",
+      "eye": "normal",
+      "arm_variant": 2,
+      "body_variant": 0,
+      "body_strength": 0.0368,
+      "expressions": {
+        "黑脸": 0.0157,
+        "流泪": 0.5118,
+        "脸红": 0.0192,
+        "加载": 0.0191,
+        "兔牙": 0.0035,
+        "流冷汗": 0.0027
+      },
+      "eye_strength": 0.0081,
+      "arm_hold_ms": 1294,
+      "body_hold_ms": 2249,
+      "face_hold_ms": 3114,
+      "onset_ms": 200,
+      "confidence": {
+        "arm": 0.8227192163467407,
+        "body": 0.7802875638008118,
+        "emotion": 0.4857357144355774,
+        "eye": 0.995779275894165
+      },
+      "clause": 0
+    },
+    "provenance": {
+      "source": "streaming_policy_v4",
+      "checkpoint_sha256": "e76c52e5ca3403b6b2da0b943bc82bd58ca7682928dc67ea2422f8625160d36d",
+      "kind": "regression",
+      "seed": 41,
+      "stage": "learned_composition_candidate"
+    },
+    "executed": [
+      {
+        "clause": 0,
+        "at_ms": 200,
+        "plan": {
+          "schema": "performance.plan.v1",
+          "arm": "thanks",
+          "body": "none",
+          "emotion": "neutral",
+          "eye": "normal",
+          "arm_variant": 2,
+          "body_variant": 0,
+          "body_strength": 0.0368,
+          "expressions": {
+            "黑脸": 0.0157,
+            "流泪": 0.5118,
+            "脸红": 0.0192,
+            "加载": 0.0191,
+            "兔牙": 0.0035,
+            "流冷汗": 0.0027
+          },
+          "eye_strength": 0.0081,
+          "arm_hold_ms": 1294,
+          "body_hold_ms": 2249,
+          "face_hold_ms": 3114,
+          "onset_ms": 200,
+          "confidence": {
+            "arm": 0.8227192163467407,
+            "body": 0.7802875638008118,
+            "emotion": 0.4857357144355774,
+            "eye": 0.995779275894165
+          },
+          "clause": 0
+        },
+        "arm_applied": false,
+        "body_applied": false,
+        "arm_skipped": "low_confidence"
+      }
+    ],
+    "model_checkpoint": "c9a9851e895068b157838f97a9ed938291b02b111f3159067498944fd4f62292"
+  },
+  {
+    "index": 13,
+    "models": [
+      {
+        "label": "A",
+        "model": "candidate"
+      },
+      {
+        "label": "B",
+        "model": "v3"
+      }
+    ],
+    "plan": {
+      "schema": "performance.plan.v1",
+      "arm": "none",
+      "body": "none",
+      "emotion": "sad",
+      "eye": "normal",
+      "arm_variant": 2,
+      "body_variant": 0,
+      "body_strength": 0.0106,
+      "expressions": {
+        "黑脸": 0.0189,
+        "流泪": 0.7139,
+        "脸红": 0.0219,
+        "加载": 0.0235,
+        "兔牙": 0.0024,
+        "流冷汗": 0.0015
+      },
+      "eye_strength": 0.007,
+      "arm_hold_ms": 1120,
+      "body_hold_ms": 2143,
+      "face_hold_ms": 3119,
+      "onset_ms": 138,
+      "confidence": {
+        "arm": 0.9059672355651855,
+        "body": 0.9780358672142029,
+        "emotion": 0.9685307741165161,
+        "eye": 0.9877240657806396
+      },
+      "clause": 0
+    },
+    "provenance": {
+      "source": "streaming_policy_v4",
+      "checkpoint_sha256": "e76c52e5ca3403b6b2da0b943bc82bd58ca7682928dc67ea2422f8625160d36d",
+      "kind": "regression",
+      "seed": 41,
+      "stage": "learned_composition_candidate"
+    },
+    "executed": [
+      {
+        "clause": 0,
+        "at_ms": 150,
+        "plan": {
+          "schema": "performance.plan.v1",
+          "arm": "none",
+          "body": "none",
+          "emotion": "sad",
+          "eye": "normal",
+          "arm_variant": 2,
+          "body_variant": 0,
+          "body_strength": 0.0106,
+          "expressions": {
+            "黑脸": 0.0189,
+            "流泪": 0.7139,
+            "脸红": 0.0219,
+            "加载": 0.0235,
+            "兔牙": 0.0024,
+            "流冷汗": 0.0015
+          },
+          "eye_strength": 0.007,
+          "arm_hold_ms": 1120,
+          "body_hold_ms": 2143,
+          "face_hold_ms": 3119,
+          "onset_ms": 138,
+          "confidence": {
+            "arm": 0.9059672355651855,
+            "body": 0.9780358672142029,
+            "emotion": 0.9685307741165161,
+            "eye": 0.9877240657806396
+          },
+          "clause": 0
+        },
+        "arm_applied": false,
+        "body_applied": false
+      }
+    ],
+    "model_checkpoint": "c9a9851e895068b157838f97a9ed938291b02b111f3159067498944fd4f62292"
+  },
+  {
+    "index": 14,
+    "models": [
+      {
+        "label": "A",
+        "model": "candidate"
+      },
+      {
+        "label": "B",
+        "model": "v3"
+      }
+    ],
+    "plan": {
+      "schema": "performance.plan.v1",
+      "arm": "explain",
+      "body": "turn",
+      "emotion": "keep",
+      "eye": "normal",
+      "arm_variant": 2,
+      "body_variant": 0,
+      "body_strength": 0.5448,
+      "expressions": {
+        "黑脸": 0.0222,
+        "流泪": 0.0255,
+        "脸红": 0.0555,
+        "加载": 0.0232,
+        "兔牙": 0.0167,
+        "流冷汗": 0.0095
+      },
+      "eye_strength": 0.0725,
+      "arm_hold_ms": 1493,
+      "body_hold_ms": 2125,
+      "face_hold_ms": 3339,
+      "onset_ms": 265,
+      "confidence": {
+        "arm": 0.8810505867004395,
+        "body": 0.9907892346382141,
+        "emotion": 0.962356686592102,
+        "eye": 0.9686645865440369
+      },
+      "clause": 0
+    },
+    "provenance": {
+      "source": "streaming_policy_v4",
+      "checkpoint_sha256": "e76c52e5ca3403b6b2da0b943bc82bd58ca7682928dc67ea2422f8625160d36d",
+      "kind": "regression",
+      "seed": 41,
+      "stage": "learned_composition_candidate"
+    },
+    "executed": [
+      {
+        "clause": 0,
+        "at_ms": 266.6666666666667,
+        "plan": {
+          "schema": "performance.plan.v1",
+          "arm": "explain",
+          "body": "turn",
+          "emotion": "keep",
+          "eye": "normal",
+          "arm_variant": 2,
+          "body_variant": 0,
+          "body_strength": 0.5448,
+          "expressions": {
+            "黑脸": 0.0222,
+            "流泪": 0.0255,
+            "脸红": 0.0555,
+            "加载": 0.0232,
+            "兔牙": 0.0167,
+            "流冷汗": 0.0095
+          },
+          "eye_strength": 0.0725,
+          "arm_hold_ms": 1493,
+          "body_hold_ms": 2125,
+          "face_hold_ms": 3339,
+          "onset_ms": 265,
+          "confidence": {
+            "arm": 0.8810505867004395,
+            "body": 0.9907892346382141,
+            "emotion": 0.962356686592102,
+            "eye": 0.9686645865440369
+          },
+          "clause": 0
+        },
+        "arm_applied": true,
+        "body_applied": true
+      }
+    ],
+    "model_checkpoint": "c9a9851e895068b157838f97a9ed938291b02b111f3159067498944fd4f62292"
+  },
+  {
+    "index": 15,
+    "models": [
+      {
+        "label": "A",
+        "model": "candidate"
+      },
+      {
+        "label": "B",
+        "model": "v3"
+      }
+    ],
+    "plan": {
+      "schema": "performance.plan.v1",
+      "arm": "point",
+      "body": "nod",
+      "emotion": "keep",
+      "eye": "normal",
+      "arm_variant": 0,
+      "body_variant": 0,
+      "body_strength": 0.4507,
+      "expressions": {
+        "黑脸": 0.038,
+        "流泪": 0.064,
+        "脸红": 0.055,
+        "加载": 0.0715,
+        "兔牙": 0.0247,
+        "流冷汗": 0.0155
+      },
+      "eye_strength": 0.0497,
+      "arm_hold_ms": 1298,
+      "body_hold_ms": 2086,
+      "face_hold_ms": 3454,
+      "onset_ms": 296,
+      "confidence": {
+        "arm": 0.9999871253967285,
+        "body": 0.9955244064331055,
+        "emotion": 0.9934669137001038,
+        "eye": 0.939490795135498
+      },
+      "clause": 0
+    },
+    "provenance": {
+      "source": "streaming_policy_v4",
+      "checkpoint_sha256": "e76c52e5ca3403b6b2da0b943bc82bd58ca7682928dc67ea2422f8625160d36d",
+      "kind": "regression",
+      "seed": 41,
+      "stage": "learned_composition_candidate"
+    },
+    "executed": [
+      {
+        "clause": 0,
+        "at_ms": 300,
+        "plan": {
+          "schema": "performance.plan.v1",
+          "arm": "point",
+          "body": "nod",
+          "emotion": "keep",
+          "eye": "normal",
+          "arm_variant": 0,
+          "body_variant": 0,
+          "body_strength": 0.4507,
+          "expressions": {
+            "黑脸": 0.038,
+            "流泪": 0.064,
+            "脸红": 0.055,
+            "加载": 0.0715,
+            "兔牙": 0.0247,
+            "流冷汗": 0.0155
+          },
+          "eye_strength": 0.0497,
+          "arm_hold_ms": 1298,
+          "body_hold_ms": 2086,
+          "face_hold_ms": 3454,
+          "onset_ms": 296,
+          "confidence": {
+            "arm": 0.9999871253967285,
+            "body": 0.9955244064331055,
+            "emotion": 0.9934669137001038,
+            "eye": 0.939490795135498
+          },
+          "clause": 0
+        },
+        "arm_applied": true,
+        "body_applied": true
+      }
+    ],
+    "model_checkpoint": "c9a9851e895068b157838f97a9ed938291b02b111f3159067498944fd4f62292"
+  },
+  {
+    "index": 16,
+    "models": [
+      {
+        "label": "A",
+        "model": "v3"
+      },
+      {
+        "label": "B",
+        "model": "candidate"
+      }
+    ],
+    "plan": {
+      "schema": "performance.plan.v1",
+      "arm": "chest",
+      "body": "lean",
+      "emotion": "happy",
+      "eye": "normal",
+      "arm_variant": 2,
+      "body_variant": 0,
+      "body_strength": 0.518,
+      "expressions": {
+        "黑脸": 0.0367,
+        "流泪": 0.067,
+        "脸红": 0.1307,
+        "加载": 0.0181,
+        "兔牙": 0.0287,
+        "流冷汗": 0.0184
+      },
+      "eye_strength": 0.1127,
+      "arm_hold_ms": 1348,
+      "body_hold_ms": 2065,
+      "face_hold_ms": 3524,
+      "onset_ms": 293,
+      "confidence": {
+        "arm": 0.9078006148338318,
+        "body": 0.9039046168327332,
+        "emotion": 0.8307421207427979,
+        "eye": 0.9510347843170166
+      },
+      "clause": 0
+    },
+    "provenance": {
+      "source": "streaming_policy_v4",
+      "checkpoint_sha256": "e76c52e5ca3403b6b2da0b943bc82bd58ca7682928dc67ea2422f8625160d36d",
+      "kind": "regression",
+      "seed": 41,
+      "stage": "learned_composition_candidate"
+    },
+    "executed": [
+      {
+        "clause": 0,
+        "at_ms": 300,
+        "plan": {
+          "schema": "performance.plan.v1",
+          "arm": "chest",
+          "body": "lean",
+          "emotion": "happy",
+          "eye": "normal",
+          "arm_variant": 2,
+          "body_variant": 0,
+          "body_strength": 0.518,
+          "expressions": {
+            "黑脸": 0.0367,
+            "流泪": 0.067,
+            "脸红": 0.1307,
+            "加载": 0.0181,
+            "兔牙": 0.0287,
+            "流冷汗": 0.0184
+          },
+          "eye_strength": 0.1127,
+          "arm_hold_ms": 1348,
+          "body_hold_ms": 2065,
+          "face_hold_ms": 3524,
+          "onset_ms": 293,
+          "confidence": {
+            "arm": 0.9078006148338318,
+            "body": 0.9039046168327332,
+            "emotion": 0.8307421207427979,
+            "eye": 0.9510347843170166
+          },
+          "clause": 0
+        },
+        "arm_applied": true,
+        "body_applied": true
+      }
+    ],
+    "model_checkpoint": "c9a9851e895068b157838f97a9ed938291b02b111f3159067498944fd4f62292"
+  },
+  {
+    "index": 17,
+    "models": [
+      {
+        "label": "A",
+        "model": "v3"
+      },
+      {
+        "label": "B",
+        "model": "candidate"
+      }
+    ],
+    "plan": {
+      "schema": "performance.plan.v1",
+      "arm": "wave",
+      "body": "sway",
+      "emotion": "happy",
+      "eye": "normal",
+      "arm_variant": 2,
+      "body_variant": 0,
+      "body_strength": 0.3145,
+      "expressions": {
+        "黑脸": 0.003,
+        "流泪": 0.004,
+        "脸红": 0.0061,
+        "加载": 0.0005,
+        "兔牙": 0.0007,
+        "流冷汗": 0.0003
+      },
+      "eye_strength": 0.0029,
+      "arm_hold_ms": 1157,
+      "body_hold_ms": 2049,
+      "face_hold_ms": 2977,
+      "onset_ms": 192,
+      "confidence": {
+        "arm": 0.9988208413124084,
+        "body": 0.8715630769729614,
+        "emotion": 0.9994385838508606,
+        "eye": 0.9891104102134705
+      },
+      "clause": 0
+    },
+    "provenance": {
+      "source": "streaming_policy_v4",
+      "checkpoint_sha256": "e76c52e5ca3403b6b2da0b943bc82bd58ca7682928dc67ea2422f8625160d36d",
+      "kind": "regression",
+      "seed": 41,
+      "stage": "learned_composition_candidate"
+    },
+    "executed": [
+      {
+        "clause": 0,
+        "at_ms": 200,
+        "plan": {
+          "schema": "performance.plan.v1",
+          "arm": "wave",
+          "body": "sway",
+          "emotion": "happy",
+          "eye": "normal",
+          "arm_variant": 2,
+          "body_variant": 0,
+          "body_strength": 0.3145,
+          "expressions": {
+            "黑脸": 0.003,
+            "流泪": 0.004,
+            "脸红": 0.0061,
+            "加载": 0.0005,
+            "兔牙": 0.0007,
+            "流冷汗": 0.0003
+          },
+          "eye_strength": 0.0029,
+          "arm_hold_ms": 1157,
+          "body_hold_ms": 2049,
+          "face_hold_ms": 2977,
+          "onset_ms": 192,
+          "confidence": {
+            "arm": 0.9988208413124084,
+            "body": 0.8715630769729614,
+            "emotion": 0.9994385838508606,
+            "eye": 0.9891104102134705
+          },
+          "clause": 0
+        },
+        "arm_applied": true,
+        "body_applied": true
+      }
+    ],
+    "model_checkpoint": "c9a9851e895068b157838f97a9ed938291b02b111f3159067498944fd4f62292"
+  },
+  {
+    "index": 18,
+    "models": [
+      {
+        "label": "A",
+        "model": "v3"
+      },
+      {
+        "label": "B",
+        "model": "candidate"
+      }
+    ],
+    "plan": {
+      "schema": "performance.plan.v1",
+      "arm": "grass",
+      "body": "tilt",
+      "emotion": "happy",
+      "eye": "normal",
+      "arm_variant": 2,
+      "body_variant": 0,
+      "body_strength": 0.4136,
+      "expressions": {
+        "黑脸": 0.0096,
+        "流泪": 0.0136,
+        "脸红": 0.0107,
+        "加载": 0.0058,
+        "兔牙": 0.0053,
+        "流冷汗": 0.0031
+      },
+      "eye_strength": 0.0113,
+      "arm_hold_ms": 1633,
+      "body_hold_ms": 2088,
+      "face_hold_ms": 3187,
+      "onset_ms": 239,
+      "confidence": {
+        "arm": 0.9993776679039001,
+        "body": 0.5574191808700562,
+        "emotion": 0.9919809103012085,
+        "eye": 0.9930659532546997
+      },
+      "clause": 0
+    },
+    "provenance": {
+      "source": "streaming_policy_v4",
+      "checkpoint_sha256": "e76c52e5ca3403b6b2da0b943bc82bd58ca7682928dc67ea2422f8625160d36d",
+      "kind": "regression",
+      "seed": 41,
+      "stage": "learned_composition_candidate"
+    },
+    "executed": [
+      {
+        "clause": 0,
+        "at_ms": 250,
+        "plan": {
+          "schema": "performance.plan.v1",
+          "arm": "grass",
+          "body": "tilt",
+          "emotion": "happy",
+          "eye": "normal",
+          "arm_variant": 2,
+          "body_variant": 0,
+          "body_strength": 0.4136,
+          "expressions": {
+            "黑脸": 0.0096,
+            "流泪": 0.0136,
+            "脸红": 0.0107,
+            "加载": 0.0058,
+            "兔牙": 0.0053,
+            "流冷汗": 0.0031
+          },
+          "eye_strength": 0.0113,
+          "arm_hold_ms": 1633,
+          "body_hold_ms": 2088,
+          "face_hold_ms": 3187,
+          "onset_ms": 239,
+          "confidence": {
+            "arm": 0.9993776679039001,
+            "body": 0.5574191808700562,
+            "emotion": 0.9919809103012085,
+            "eye": 0.9930659532546997
+          },
+          "clause": 0
+        },
+        "arm_applied": true,
+        "body_applied": true
+      }
+    ],
+    "model_checkpoint": "c9a9851e895068b157838f97a9ed938291b02b111f3159067498944fd4f62292"
+  },
+  {
+    "index": 19,
+    "models": [
+      {
+        "label": "A",
+        "model": "candidate"
+      },
+      {
+        "label": "B",
+        "model": "v3"
+      }
+    ],
+    "plan": {
+      "schema": "performance.plan.v1",
+      "arm": "none",
+      "body": "none",
+      "emotion": "happy",
+      "eye": "屑屑眼",
+      "arm_variant": 2,
+      "body_variant": 0,
+      "body_strength": 0.0174,
+      "expressions": {
+        "黑脸": 0.2547,
+        "流泪": 0.0647,
+        "脸红": 0.1171,
+        "加载": 0.0255,
+        "兔牙": 0.0082,
+        "流冷汗": 0.0101
+      },
+      "eye_strength": 0.591,
+      "arm_hold_ms": 1315,
+      "body_hold_ms": 2021,
+      "face_hold_ms": 4160,
+      "onset_ms": 187,
+      "confidence": {
+        "arm": 0.9276946187019348,
+        "body": 0.9780277013778687,
+        "emotion": 0.9901365041732788,
+        "eye": 0.9805384874343872
+      },
+      "clause": 0
+    },
+    "provenance": {
+      "source": "streaming_policy_v4",
+      "checkpoint_sha256": "e76c52e5ca3403b6b2da0b943bc82bd58ca7682928dc67ea2422f8625160d36d",
+      "kind": "regression",
+      "seed": 41,
+      "stage": "learned_composition_candidate"
+    },
+    "executed": [
+      {
+        "clause": 0,
+        "at_ms": 200,
+        "plan": {
+          "schema": "performance.plan.v1",
+          "arm": "none",
+          "body": "none",
+          "emotion": "happy",
+          "eye": "屑屑眼",
+          "arm_variant": 2,
+          "body_variant": 0,
+          "body_strength": 0.0174,
+          "expressions": {
+            "黑脸": 0.2547,
+            "流泪": 0.0647,
+            "脸红": 0.1171,
+            "加载": 0.0255,
+            "兔牙": 0.0082,
+            "流冷汗": 0.0101
+          },
+          "eye_strength": 0.591,
+          "arm_hold_ms": 1315,
+          "body_hold_ms": 2021,
+          "face_hold_ms": 4160,
+          "onset_ms": 187,
+          "confidence": {
+            "arm": 0.9276946187019348,
+            "body": 0.9780277013778687,
+            "emotion": 0.9901365041732788,
+            "eye": 0.9805384874343872
+          },
+          "clause": 0
+        },
+        "arm_applied": false,
+        "body_applied": false
+      }
+    ],
+    "model_checkpoint": "c9a9851e895068b157838f97a9ed938291b02b111f3159067498944fd4f62292"
+  },
+  {
+    "index": 20,
+    "models": [
+      {
+        "label": "A",
+        "model": "v3"
+      },
+      {
+        "label": "B",
+        "model": "candidate"
+      }
+    ],
+    "plan": {
+      "schema": "performance.plan.v1",
+      "arm": "thanks",
+      "body": "none",
+      "emotion": "happy",
+      "eye": "爱心眼",
+      "arm_variant": 2,
+      "body_variant": 0,
+      "body_strength": 0.4979,
+      "expressions": {
+        "黑脸": 0.011,
+        "流泪": 0.0152,
+        "脸红": 0.0329,
+        "加载": 0.0055,
+        "兔牙": 0.0061,
+        "流冷汗": 0.0043
+      },
+      "eye_strength": 0.2112,
+      "arm_hold_ms": 1263,
+      "body_hold_ms": 2107,
+      "face_hold_ms": 3247,
+      "onset_ms": 241,
+      "confidence": {
+        "arm": 0.9284093379974365,
+        "body": 0.36191272735595703,
+        "emotion": 0.9999178647994995,
+        "eye": 0.975943386554718
+      },
+      "clause": 0
+    },
+    "provenance": {
+      "source": "streaming_policy_v4",
+      "checkpoint_sha256": "e76c52e5ca3403b6b2da0b943bc82bd58ca7682928dc67ea2422f8625160d36d",
+      "kind": "regression",
+      "seed": 41,
+      "stage": "learned_composition_candidate"
+    },
+    "executed": [
+      {
+        "clause": 0,
+        "at_ms": 250,
+        "plan": {
+          "schema": "performance.plan.v1",
+          "arm": "thanks",
+          "body": "none",
+          "emotion": "happy",
+          "eye": "爱心眼",
+          "arm_variant": 2,
+          "body_variant": 0,
+          "body_strength": 0.4979,
+          "expressions": {
+            "黑脸": 0.011,
+            "流泪": 0.0152,
+            "脸红": 0.0329,
+            "加载": 0.0055,
+            "兔牙": 0.0061,
+            "流冷汗": 0.0043
+          },
+          "eye_strength": 0.2112,
+          "arm_hold_ms": 1263,
+          "body_hold_ms": 2107,
+          "face_hold_ms": 3247,
+          "onset_ms": 241,
+          "confidence": {
+            "arm": 0.9284093379974365,
+            "body": 0.36191272735595703,
+            "emotion": 0.9999178647994995,
+            "eye": 0.975943386554718
+          },
+          "clause": 0
+        },
+        "arm_applied": true,
+        "body_applied": false
+      }
+    ],
+    "model_checkpoint": "c9a9851e895068b157838f97a9ed938291b02b111f3159067498944fd4f62292"
+  },
+  {
+    "index": 21,
+    "models": [
+      {
+        "label": "A",
+        "model": "v3"
+      },
+      {
+        "label": "B",
+        "model": "candidate"
+      }
+    ],
+    "plan": {
+      "schema": "performance.plan.v1",
+      "arm": "none",
+      "body": "none",
+      "emotion": "keep",
+      "eye": "normal",
+      "arm_variant": 2,
+      "body_variant": 0,
+      "body_strength": 0.001,
+      "expressions": {
+        "黑脸": 0.0023,
+        "流泪": 0.0183,
+        "脸红": 0.0314,
+        "加载": 0.0036,
+        "兔牙": 0.0002,
+        "流冷汗": 0.0001
+      },
+      "eye_strength": 0.0026,
+      "arm_hold_ms": 1198,
+      "body_hold_ms": 2194,
+      "face_hold_ms": 3347,
+      "onset_ms": 141,
+      "confidence": {
+        "arm": 0.9925439357757568,
+        "body": 0.9988253712654114,
+        "emotion": 0.9893293976783752,
+        "eye": 0.9983581900596619
+      },
+      "clause": 0
+    },
+    "provenance": {
+      "source": "streaming_policy_v4",
+      "checkpoint_sha256": "e76c52e5ca3403b6b2da0b943bc82bd58ca7682928dc67ea2422f8625160d36d",
+      "kind": "regression",
+      "seed": 41,
+      "stage": "learned_composition_candidate"
+    },
+    "executed": [
+      {
+        "clause": 0,
+        "at_ms": 150,
+        "plan": {
+          "schema": "performance.plan.v1",
+          "arm": "none",
+          "body": "none",
+          "emotion": "keep",
+          "eye": "normal",
+          "arm_variant": 2,
+          "body_variant": 0,
+          "body_strength": 0.001,
+          "expressions": {
+            "黑脸": 0.0023,
+            "流泪": 0.0183,
+            "脸红": 0.0314,
+            "加载": 0.0036,
+            "兔牙": 0.0002,
+            "流冷汗": 0.0001
+          },
+          "eye_strength": 0.0026,
+          "arm_hold_ms": 1198,
+          "body_hold_ms": 2194,
+          "face_hold_ms": 3347,
+          "onset_ms": 141,
+          "confidence": {
+            "arm": 0.9925439357757568,
+            "body": 0.9988253712654114,
+            "emotion": 0.9893293976783752,
+            "eye": 0.9983581900596619
+          },
+          "clause": 0
+        },
+        "arm_applied": false,
+        "body_applied": false
+      }
+    ],
+    "model_checkpoint": "c9a9851e895068b157838f97a9ed938291b02b111f3159067498944fd4f62292"
+  },
+  {
+    "index": 22,
+    "models": [
+      {
+        "label": "A",
+        "model": "candidate"
+      },
+      {
+        "label": "B",
+        "model": "v3"
+      }
+    ],
+    "plan": {
+      "schema": "performance.plan.v1",
+      "arm": "none",
+      "body": "none",
+      "emotion": "shy",
+      "eye": "normal",
+      "arm_variant": 2,
+      "body_variant": 0,
+      "body_strength": 0.1466,
+      "expressions": {
+        "黑脸": 0.1116,
+        "流泪": 0.1223,
+        "脸红": 0.6482,
+        "加载": 0.0802,
+        "兔牙": 0.0647,
+        "流冷汗": 0.0473
+      },
+      "eye_strength": 0.2055,
+      "arm_hold_ms": 1513,
+      "body_hold_ms": 2152,
+      "face_hold_ms": 4365,
+      "onset_ms": 220,
+      "confidence": {
+        "arm": 0.9739308953285217,
+        "body": 0.9310559034347534,
+        "emotion": 0.5028733611106873,
+        "eye": 0.324348121881485
+      },
+      "clause": 0
+    },
+    "provenance": {
+      "source": "streaming_policy_v4",
+      "checkpoint_sha256": "e76c52e5ca3403b6b2da0b943bc82bd58ca7682928dc67ea2422f8625160d36d",
+      "kind": "regression",
+      "seed": 41,
+      "stage": "learned_composition_candidate"
+    },
+    "executed": [
+      {
+        "clause": 0,
+        "at_ms": 233.33333333333334,
+        "plan": {
+          "schema": "performance.plan.v1",
+          "arm": "none",
+          "body": "none",
+          "emotion": "shy",
+          "eye": "normal",
+          "arm_variant": 2,
+          "body_variant": 0,
+          "body_strength": 0.1466,
+          "expressions": {
+            "黑脸": 0.1116,
+            "流泪": 0.1223,
+            "脸红": 0.6482,
+            "加载": 0.0802,
+            "兔牙": 0.0647,
+            "流冷汗": 0.0473
+          },
+          "eye_strength": 0.2055,
+          "arm_hold_ms": 1513,
+          "body_hold_ms": 2152,
+          "face_hold_ms": 4365,
+          "onset_ms": 220,
+          "confidence": {
+            "arm": 0.9739308953285217,
+            "body": 0.9310559034347534,
+            "emotion": 0.5028733611106873,
+            "eye": 0.324348121881485
+          },
+          "clause": 0
+        },
+        "arm_applied": false,
+        "body_applied": false
+      }
+    ],
+    "model_checkpoint": "c9a9851e895068b157838f97a9ed938291b02b111f3159067498944fd4f62292"
+  },
+  {
+    "index": 23,
+    "models": [
+      {
+        "label": "A",
+        "model": "v3"
+      },
+      {
+        "label": "B",
+        "model": "candidate"
+      }
+    ],
+    "plan": {
+      "schema": "performance.plan.v1",
+      "arm": "none",
+      "body": "none",
+      "emotion": "neutral",
+      "eye": "normal",
+      "arm_variant": 2,
+      "body_variant": 0,
+      "body_strength": 0.0009,
+      "expressions": {
+        "黑脸": 0.02,
+        "流泪": 0.017,
+        "脸红": 0.0089,
+        "加载": 0.0136,
+        "兔牙": 0.0011,
+        "流冷汗": 0.001
+      },
+      "eye_strength": 0.017,
+      "arm_hold_ms": 1209,
+      "body_hold_ms": 2335,
+      "face_hold_ms": 3364,
+      "onset_ms": 195,
+      "confidence": {
+        "arm": 0.6181758642196655,
+        "body": 0.9951529502868652,
+        "emotion": 0.9596646428108215,
+        "eye": 0.9876164793968201
+      },
+      "clause": 0
+    },
+    "provenance": {
+      "source": "streaming_policy_v4",
+      "checkpoint_sha256": "e76c52e5ca3403b6b2da0b943bc82bd58ca7682928dc67ea2422f8625160d36d",
+      "kind": "regression",
+      "seed": 41,
+      "stage": "learned_composition_candidate"
+    },
+    "executed": [
+      {
+        "clause": 0,
+        "at_ms": 200,
+        "plan": {
+          "schema": "performance.plan.v1",
+          "arm": "none",
+          "body": "none",
+          "emotion": "neutral",
+          "eye": "normal",
+          "arm_variant": 2,
+          "body_variant": 0,
+          "body_strength": 0.0009,
+          "expressions": {
+            "黑脸": 0.02,
+            "流泪": 0.017,
+            "脸红": 0.0089,
+            "加载": 0.0136,
+            "兔牙": 0.0011,
+            "流冷汗": 0.001
+          },
+          "eye_strength": 0.017,
+          "arm_hold_ms": 1209,
+          "body_hold_ms": 2335,
+          "face_hold_ms": 3364,
+          "onset_ms": 195,
+          "confidence": {
+            "arm": 0.6181758642196655,
+            "body": 0.9951529502868652,
+            "emotion": 0.9596646428108215,
+            "eye": 0.9876164793968201
+          },
+          "clause": 0
+        },
+        "arm_applied": false,
+        "body_applied": false
+      }
+    ],
+    "model_checkpoint": "c9a9851e895068b157838f97a9ed938291b02b111f3159067498944fd4f62292"
+  }
+]

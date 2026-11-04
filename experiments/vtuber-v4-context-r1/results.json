@@ -1,0 +1,1897 @@
+{
+  "schema": "context-study.v1",
+  "status": "development_only",
+  "promoted": false,
+  "dataset_sha256": "a858b592784faeee9cf16688e541922cbb9590a01fbd23b788e0979e3f6a5bc9",
+  "protocol_sha256": "0ce6ae2082b53527e1669791aac2a4a1a6badf894b9197556033a9520d9f8f2f",
+  "input_audit_sha256": "0d21a3b0f8cd165c431396bf4c3a87c056045cf127ec6f47affb14471435fbd6",
+  "prompt_sha256": "e72ad2bd62884326d5d06507428913224ecc30c7e75c4c790189dbda9383021a",
+  "matched_initializations": {
+    "7137": "7745960762f46c91b5da0f3d4f4e397ecf39350fc7b26cc00cacad9e8662f516",
+    "1741": "effb7d9e50bfa817cac7d59dae855bddc799e3ff2e360f947d0388c97f57236c",
+    "9283": "9a7ab9ccd1878ac97b8a3126ce49eeda88b237cbfd7bea1bc2e89738ae61479b"
+  },
+  "runs": [
+    {
+      "mode": "legacy_json",
+      "seed": 7137,
+      "initial_sha256": "7745960762f46c91b5da0f3d4f4e397ecf39350fc7b26cc00cacad9e8662f516",
+      "calibrated": {
+        "config": {
+          "active_threshold": 0.7,
+          "temperature": 3.0,
+          "forbidden_threshold": 0.4,
+          "required_threshold": 0.4
+        },
+        "calibration": {
+          "samples": 60,
+          "families": 18,
+          "forbidden_samples": 28,
+          "required_samples": 9,
+          "optional_samples": 23,
+          "forbidden_activation": 0.0357142873108387,
+          "required_success": 0.3333333432674408,
+          "required_any_activity": 0.3333333432674408,
+          "acceptable_rate": 0.8500000238418579,
+          "preferred_match": 0.6833333373069763,
+          "optional_activity": 0.260869562625885,
+          "optional_unacceptable": 0.08695652335882187,
+          "active_amplitude_outside": 0.20000000298023224,
+          "accepted_active_amplitude_outside": 0.0
+        },
+        "score": 0.6401138756
+      },
+      "development": {
+        "samples": 60,
+        "families": 18,
+        "forbidden_samples": 23,
+        "required_samples": 13,
+        "optional_samples": 24,
+        "forbidden_activation": 0.043478261679410934,
+        "required_success": 0.4615384638309479,
+        "required_any_activity": 0.4615384638309479,
+        "acceptable_rate": 0.800000011920929,
+        "preferred_match": 0.5666666626930237,
+        "optional_activity": 0.4166666567325592,
+        "optional_unacceptable": 0.1666666716337204,
+        "active_amplitude_outside": 0.7058823704719543,
+        "accepted_active_amplitude_outside": 0.5833333134651184
+      },
+      "development_raw": {
+        "samples": 60,
+        "families": 18,
+        "forbidden_samples": 23,
+        "required_samples": 13,
+        "optional_samples": 24,
+        "forbidden_activation": 0.043478261679410934,
+        "required_success": 0.38461539149284363,
+        "required_any_activity": 0.38461539149284363,
+        "acceptable_rate": 0.7666666507720947,
+        "preferred_match": 0.550000011920929,
+        "optional_activity": 0.4583333432674408,
+        "optional_unacceptable": 0.2083333283662796,
+        "active_amplitude_outside": 0.7058823704719543,
+        "accepted_active_amplitude_outside": 0.5454545617103577
+      },
+      "development_all_histories": {
+        "samples": 180,
+        "families": 18,
+        "forbidden_samples": 69,
+        "required_samples": 39,
+        "optional_samples": 72,
+        "forbidden_activation": 0.043478261679410934,
+        "required_success": 0.4615384638309479,
+        "required_any_activity": 0.4615384638309479,
+        "acceptable_rate": 0.8055555820465088,
+        "preferred_match": 0.5722222328186035,
+        "optional_activity": 0.4027777910232544,
+        "optional_unacceptable": 0.1527777761220932,
+        "active_amplitude_outside": 0.6600000262260437,
+        "accepted_active_amplitude_outside": 0.5555555820465088
+      },
+      "train": {
+        "samples": 180,
+        "families": 53,
+        "forbidden_samples": 71,
+        "required_samples": 31,
+        "optional_samples": 78,
+        "forbidden_activation": 0.0,
+        "required_success": 1.0,
+        "required_any_activity": 1.0,
+        "acceptable_rate": 1.0,
+        "preferred_match": 1.0,
+        "optional_activity": 0.5641025900840759,
+        "optional_unacceptable": 0.0,
+        "active_amplitude_outside": 0.0,
+        "accepted_active_amplitude_outside": 0.0
+      },
+      "contrasts": {
+        "pairs": 2,
+        "families": 2,
+        "both_acceptable": 0.5,
+        "family_mean": 0.5,
+        "details": [
+          {
+            "family": "pair-arranged",
+            "text": "这可真是安排得周到啊。",
+            "a": "63-irony-delay/t1/canonical",
+            "b": "64-genuine-praise/t1/canonical",
+            "both_acceptable": true,
+            "disjoint_sets": false,
+            "pred_a": "lean",
+            "pred_b": "lean"
+          },
+          {
+            "family": "pair-look",
+            "text": "你别这样看着我啦。",
+            "a": "93-pair-praise-blush/t1/canonical",
+            "b": "94-pair-praise-line/t1/canonical",
+            "both_acceptable": false,
+            "disjoint_sets": true,
+            "pred_a": "none",
+            "pred_b": "none"
+          }
+        ]
+      },
+      "trace": [
+        {
+          "step": 200,
+          "loss": 0.001381667098030448
+        },
+        {
+          "step": 400,
+          "loss": 0.0006153596332296729
+        },
+        {
+          "step": 600,
+          "loss": 0.00023596316168550402
+        },
+        {
+          "step": 800,
+          "loss": 0.00028437678702175617
+        },
+        {
+          "step": 1000,
+          "loss": 0.00014546778402291238
+        }
+      ],
+      "necessity_development_before": {
+        "nll": 3.2565762996673584,
+        "brier": 0.6919013261795044,
+        "accuracy": 0.6333333253860474
+      },
+      "necessity_development_after": {
+        "nll": 1.239162802696228,
+        "brier": 0.6189144849777222,
+        "accuracy": 0.6333333253860474
+      },
+      "elapsed_s": 6.14,
+      "checkpoint_sha256": "a62f2fb11da658c18fdcaf1505391542e3a922eab8b72fa17f205c49e4378172"
+    },
+    {
+      "mode": "legacy_json",
+      "seed": 1741,
+      "initial_sha256": "effb7d9e50bfa817cac7d59dae855bddc799e3ff2e360f947d0388c97f57236c",
+      "calibrated": {
+        "config": {
+          "active_threshold": 0.7,
+          "temperature": 3.0,
+          "forbidden_threshold": 0.4,
+          "required_threshold": 0.4
+        },
+        "calibration": {
+          "samples": 60,
+          "families": 18,
+          "forbidden_samples": 28,
+          "required_samples": 9,
+          "optional_samples": 23,
+          "forbidden_activation": 0.0714285746216774,
+          "required_success": 0.3333333432674408,
+          "required_any_activity": 0.3333333432674408,
+          "acceptable_rate": 0.8666666746139526,
+          "preferred_match": 0.6666666865348816,
+          "optional_activity": 0.17391304671764374,
+          "optional_unacceptable": 0.0,
+          "active_amplitude_outside": 0.2222222238779068,
+          "accepted_active_amplitude_outside": 0.0
+        },
+        "score": 0.6309523843
+      },
+      "development": {
+        "samples": 60,
+        "families": 18,
+        "forbidden_samples": 23,
+        "required_samples": 13,
+        "optional_samples": 24,
+        "forbidden_activation": 0.043478261679410934,
+        "required_success": 0.4615384638309479,
+        "required_any_activity": 0.4615384638309479,
+        "acceptable_rate": 0.800000011920929,
+        "preferred_match": 0.5666666626930237,
+        "optional_activity": 0.4583333432674408,
+        "optional_unacceptable": 0.1666666716337204,
+        "active_amplitude_outside": 0.6666666865348816,
+        "accepted_active_amplitude_outside": 0.5384615659713745
+      },
+      "development_raw": {
+        "samples": 60,
+        "families": 18,
+        "forbidden_samples": 23,
+        "required_samples": 13,
+        "optional_samples": 24,
+        "forbidden_activation": 0.08695652335882187,
+        "required_success": 0.4615384638309479,
+        "required_any_activity": 0.4615384638309479,
+        "acceptable_rate": 0.7833333611488342,
+        "preferred_match": 0.550000011920929,
+        "optional_activity": 0.4583333432674408,
+        "optional_unacceptable": 0.1666666716337204,
+        "active_amplitude_outside": 0.6842105388641357,
+        "accepted_active_amplitude_outside": 0.5384615659713745
+      },
+      "development_all_histories": {
+        "samples": 180,
+        "families": 18,
+        "forbidden_samples": 69,
+        "required_samples": 39,
+        "optional_samples": 72,
+        "forbidden_activation": 0.05797101557254791,
+        "required_success": 0.4615384638309479,
+        "required_any_activity": 0.4615384638309479,
+        "acceptable_rate": 0.800000011920929,
+        "preferred_match": 0.5666666626930237,
+        "optional_activity": 0.4444444477558136,
+        "optional_unacceptable": 0.1527777761220932,
+        "active_amplitude_outside": 0.6851851940155029,
+        "accepted_active_amplitude_outside": 0.5641025900840759
+      },
+      "train": {
+        "samples": 180,
+        "families": 53,
+        "forbidden_samples": 71,
+        "required_samples": 31,
+        "optional_samples": 78,
+        "forbidden_activation": 0.0,
+        "required_success": 1.0,
+        "required_any_activity": 1.0,
+        "acceptable_rate": 1.0,
+        "preferred_match": 1.0,
+        "optional_activity": 0.5641025900840759,
+        "optional_unacceptable": 0.0,
+        "active_amplitude_outside": 0.0,
+        "accepted_active_amplitude_outside": 0.0
+      },
+      "contrasts": {
+        "pairs": 2,
+        "families": 2,
+        "both_acceptable": 0.5,
+        "family_mean": 0.5,
+        "details": [
+          {
+            "family": "pair-arranged",
+            "text": "这可真是安排得周到啊。",
+            "a": "63-irony-delay/t1/canonical",
+            "b": "64-genuine-praise/t1/canonical",
+            "both_acceptable": true,
+            "disjoint_sets": false,
+            "pred_a": "lean",
+            "pred_b": "lean"
+          },
+          {
+            "family": "pair-look",
+            "text": "你别这样看着我啦。",
+            "a": "93-pair-praise-blush/t1/canonical",
+            "b": "94-pair-praise-line/t1/canonical",
+            "both_acceptable": false,
+            "disjoint_sets": true,
+            "pred_a": "none",
+            "pred_b": "none"
+          }
+        ]
+      },
+      "trace": [
+        {
+          "step": 200,
+          "loss": 0.006662527099251747
+        },
+        {
+          "step": 400,
+          "loss": 0.0003488218644633889
+        },
+        {
+          "step": 600,
+          "loss": 0.0007330860244110227
+        },
+        {
+          "step": 800,
+          "loss": 0.0001455924939364195
+        },
+        {
+          "step": 1000,
+          "loss": 6.989539542701095e-05
+        }
+      ],
+      "necessity_development_before": {
+        "nll": 3.363992929458618,
+        "brier": 0.6852582693099976,
+        "accuracy": 0.6166666746139526
+      },
+      "necessity_development_after": {
+        "nll": 1.2659517526626587,
+        "brier": 0.59731525182724,
+        "accuracy": 0.6166666746139526
+      },
+      "elapsed_s": 5.16,
+      "checkpoint_sha256": "4433301942c13b46b4b24cc29af82dd1afa8fe35af31fb79299ada1a686ac387"
+    },
+    {
+      "mode": "legacy_json",
+      "seed": 9283,
+      "initial_sha256": "9a7ab9ccd1878ac97b8a3126ce49eeda88b237cbfd7bea1bc2e89738ae61479b",
+      "calibrated": {
+        "config": {
+          "active_threshold": 0.7,
+          "temperature": 3.0,
+          "forbidden_threshold": 0.4,
+          "required_threshold": 0.4
+        },
+        "calibration": {
+          "samples": 60,
+          "families": 18,
+          "forbidden_samples": 28,
+          "required_samples": 9,
+          "optional_samples": 23,
+          "forbidden_activation": 0.0714285746216774,
+          "required_success": 0.3333333432674408,
+          "required_any_activity": 0.3333333432674408,
+          "acceptable_rate": 0.8500000238418579,
+          "preferred_match": 0.7166666388511658,
+          "optional_activity": 0.21739129722118378,
+          "optional_unacceptable": 0.043478261679410934,
+          "active_amplitude_outside": 0.4000000059604645,
+          "accepted_active_amplitude_outside": 0.1428571492433548
+        },
+        "score": 0.6266045582
+      },
+      "development": {
+        "samples": 60,
+        "families": 18,
+        "forbidden_samples": 23,
+        "required_samples": 13,
+        "optional_samples": 24,
+        "forbidden_activation": 0.043478261679410934,
+        "required_success": 0.1538461595773697,
+        "required_any_activity": 0.23076923191547394,
+        "acceptable_rate": 0.7333333492279053,
+        "preferred_match": 0.550000011920929,
+        "optional_activity": 0.375,
+        "optional_unacceptable": 0.1666666716337204,
+        "active_amplitude_outside": 0.6153846383094788,
+        "accepted_active_amplitude_outside": 0.2857142984867096
+      },
+      "development_raw": {
+        "samples": 60,
+        "families": 18,
+        "forbidden_samples": 23,
+        "required_samples": 13,
+        "optional_samples": 24,
+        "forbidden_activation": 0.043478261679410934,
+        "required_success": 0.3076923191547394,
+        "required_any_activity": 0.38461539149284363,
+        "acceptable_rate": 0.75,
+        "preferred_match": 0.5333333611488342,
+        "optional_activity": 0.4166666567325592,
+        "optional_unacceptable": 0.2083333283662796,
+        "active_amplitude_outside": 0.625,
+        "accepted_active_amplitude_outside": 0.4444444477558136
+      },
+      "development_all_histories": {
+        "samples": 180,
+        "families": 18,
+        "forbidden_samples": 69,
+        "required_samples": 39,
+        "optional_samples": 72,
+        "forbidden_activation": 0.043478261679410934,
+        "required_success": 0.1794871836900711,
+        "required_any_activity": 0.25641027092933655,
+        "acceptable_rate": 0.7388888597488403,
+        "preferred_match": 0.550000011920929,
+        "optional_activity": 0.375,
+        "optional_unacceptable": 0.1666666716337204,
+        "active_amplitude_outside": 0.6000000238418579,
+        "accepted_active_amplitude_outside": 0.3181818127632141
+      },
+      "train": {
+        "samples": 180,
+        "families": 53,
+        "forbidden_samples": 71,
+        "required_samples": 31,
+        "optional_samples": 78,
+        "forbidden_activation": 0.0,
+        "required_success": 1.0,
+        "required_any_activity": 1.0,
+        "acceptable_rate": 1.0,
+        "preferred_match": 1.0,
+        "optional_activity": 0.5641025900840759,
+        "optional_unacceptable": 0.0,
+        "active_amplitude_outside": 0.0,
+        "accepted_active_amplitude_outside": 0.0
+      },
+      "contrasts": {
+        "pairs": 2,
+        "families": 2,
+        "both_acceptable": 0.0,
+        "family_mean": 0.0,
+        "details": [
+          {
+            "family": "pair-arranged",
+            "text": "这可真是安排得周到啊。",
+            "a": "63-irony-delay/t1/canonical",
+            "b": "64-genuine-praise/t1/canonical",
+            "both_acceptable": false,
+            "disjoint_sets": false,
+            "pred_a": "none",
+            "pred_b": "lean"
+          },
+          {
+            "family": "pair-look",
+            "text": "你别这样看着我啦。",
+            "a": "93-pair-praise-blush/t1/canonical",
+            "b": "94-pair-praise-line/t1/canonical",
+            "both_acceptable": false,
+            "disjoint_sets": true,
+            "pred_a": "none",
+            "pred_b": "none"
+          }
+        ]
+      },
+      "trace": [
+        {
+          "step": 200,
+          "loss": 0.001500187674537301
+        },
+        {
+          "step": 400,
+          "loss": 0.0017837821505963802
+        },
+        {
+          "step": 600,
+          "loss": 0.00026468621217645705
+        },
+        {
+          "step": 800,
+          "loss": 0.00012799999967683107
+        },
+        {
+          "step": 1000,
+          "loss": 1.390763463859912e-05
+        }
+      ],
+      "necessity_development_before": {
+        "nll": 4.002217769622803,
+        "brier": 0.7299773693084717,
+        "accuracy": 0.6166666746139526
+      },
+      "necessity_development_after": {
+        "nll": 1.4479008913040161,
+        "brier": 0.6163234710693359,
+        "accuracy": 0.6166666746139526
+      },
+      "elapsed_s": 5.15,
+      "checkpoint_sha256": "3e99605c89bbf43d494ca1d8c2109c98c42977cbe1ad05579987da454fdf9bb7"
+    },
+    {
+      "mode": "context_first",
+      "seed": 7137,
+      "initial_sha256": "7745960762f46c91b5da0f3d4f4e397ecf39350fc7b26cc00cacad9e8662f516",
+      "calibrated": {
+        "config": {
+          "active_threshold": 0.7,
+          "temperature": 3.0,
+          "forbidden_threshold": 0.4,
+          "required_threshold": 0.4
+        },
+        "calibration": {
+          "samples": 60,
+          "families": 18,
+          "forbidden_samples": 28,
+          "required_samples": 9,
+          "optional_samples": 23,
+          "forbidden_activation": 0.0357142873108387,
+          "required_success": 0.3333333432674408,
+          "required_any_activity": 0.3333333432674408,
+          "acceptable_rate": 0.8833333253860474,
+          "preferred_match": 0.6333333253860474,
+          "optional_activity": 0.30434781312942505,
+          "optional_unacceptable": 0.0,
+          "active_amplitude_outside": 0.3636363744735718,
+          "accepted_active_amplitude_outside": 0.30000001192092896
+        },
+        "score": 0.648809528
+      },
+      "development": {
+        "samples": 60,
+        "families": 18,
+        "forbidden_samples": 23,
+        "required_samples": 13,
+        "optional_samples": 24,
+        "forbidden_activation": 0.043478261679410934,
+        "required_success": 0.3076923191547394,
+        "required_any_activity": 0.5384615659713745,
+        "acceptable_rate": 0.8166666626930237,
+        "preferred_match": 0.6166666746139526,
+        "optional_activity": 0.2916666567325592,
+        "optional_unacceptable": 0.0416666679084301,
+        "active_amplitude_outside": 0.7333333492279053,
+        "accepted_active_amplitude_outside": 0.699999988079071
+      },
+      "development_raw": {
+        "samples": 60,
+        "families": 18,
+        "forbidden_samples": 23,
+        "required_samples": 13,
+        "optional_samples": 24,
+        "forbidden_activation": 0.043478261679410934,
+        "required_success": 0.38461539149284363,
+        "required_any_activity": 0.6153846383094788,
+        "acceptable_rate": 0.8166666626930237,
+        "preferred_match": 0.6000000238418579,
+        "optional_activity": 0.4166666567325592,
+        "optional_unacceptable": 0.0833333358168602,
+        "active_amplitude_outside": 0.6315789222717285,
+        "accepted_active_amplitude_outside": 0.6153846383094788
+      },
+      "development_all_histories": {
+        "samples": 180,
+        "families": 18,
+        "forbidden_samples": 69,
+        "required_samples": 39,
+        "optional_samples": 72,
+        "forbidden_activation": 0.043478261679410934,
+        "required_success": 0.3076923191547394,
+        "required_any_activity": 0.5384615659713745,
+        "acceptable_rate": 0.8166666626930237,
+        "preferred_match": 0.6111111044883728,
+        "optional_activity": 0.3055555522441864,
+        "optional_unacceptable": 0.0416666679084301,
+        "active_amplitude_outside": 0.695652186870575,
+        "accepted_active_amplitude_outside": 0.6774193644523621
+      },
+      "train": {
+        "samples": 180,
+        "families": 53,
+        "forbidden_samples": 71,
+        "required_samples": 31,
+        "optional_samples": 78,
+        "forbidden_activation": 0.0,
+        "required_success": 1.0,
+        "required_any_activity": 1.0,
+        "acceptable_rate": 1.0,
+        "preferred_match": 1.0,
+        "optional_activity": 0.5641025900840759,
+        "optional_unacceptable": 0.0,
+        "active_amplitude_outside": 0.0,
+        "accepted_active_amplitude_outside": 0.0
+      },
+      "contrasts": {
+        "pairs": 2,
+        "families": 2,
+        "both_acceptable": 0.5,
+        "family_mean": 0.5,
+        "details": [
+          {
+            "family": "pair-arranged",
+            "text": "这可真是安排得周到啊。",
+            "a": "63-irony-delay/t1/canonical",
+            "b": "64-genuine-praise/t1/canonical",
+            "both_acceptable": false,
+            "disjoint_sets": false,
+            "pred_a": "none",
+            "pred_b": "lean"
+          },
+          {
+            "family": "pair-look",
+            "text": "你别这样看着我啦。",
+            "a": "93-pair-praise-blush/t1/canonical",
+            "b": "94-pair-praise-line/t1/canonical",
+            "both_acceptable": true,
+            "disjoint_sets": true,
+            "pred_a": "tilt",
+            "pred_b": "none"
+          }
+        ]
+      },
+      "trace": [
+        {
+          "step": 200,
+          "loss": 0.0014923707349225879
+        },
+        {
+          "step": 400,
+          "loss": 0.0008711597183719277
+        },
+        {
+          "step": 600,
+          "loss": 0.0006296604406088591
+        },
+        {
+          "step": 800,
+          "loss": 0.00028287048917263746
+        },
+        {
+          "step": 1000,
+          "loss": 7.849904068280011e-05
+        }
+      ],
+      "necessity_development_before": {
+        "nll": 3.134159564971924,
+        "brier": 0.631345808506012,
+        "accuracy": 0.6499999761581421
+      },
+      "necessity_development_after": {
+        "nll": 1.1671842336654663,
+        "brier": 0.5363338589668274,
+        "accuracy": 0.6499999761581421
+      },
+      "elapsed_s": 5.12,
+      "checkpoint_sha256": "1efbdcf7c3708ea6cf1735dd8e6f8f1723d784370262ba742dc80c563ce24bf8"
+    },
+    {
+      "mode": "context_first",
+      "seed": 1741,
+      "initial_sha256": "effb7d9e50bfa817cac7d59dae855bddc799e3ff2e360f947d0388c97f57236c",
+      "calibrated": {
+        "config": {
+          "active_threshold": 0.7,
+          "temperature": 3.0,
+          "forbidden_threshold": 0.4,
+          "required_threshold": 0.4
+        },
+        "calibration": {
+          "samples": 60,
+          "families": 18,
+          "forbidden_samples": 28,
+          "required_samples": 9,
+          "optional_samples": 23,
+          "forbidden_activation": 0.0357142873108387,
+          "required_success": 0.3333333432674408,
+          "required_any_activity": 0.3333333432674408,
+          "acceptable_rate": 0.8833333253860474,
+          "preferred_match": 0.6333333253860474,
+          "optional_activity": 0.30434781312942505,
+          "optional_unacceptable": 0.0,
+          "active_amplitude_outside": 0.3636363744735718,
+          "accepted_active_amplitude_outside": 0.30000001192092896
+        },
+        "score": 0.648809528
+      },
+      "development": {
+        "samples": 60,
+        "families": 18,
+        "forbidden_samples": 23,
+        "required_samples": 13,
+        "optional_samples": 24,
+        "forbidden_activation": 0.043478261679410934,
+        "required_success": 0.4615384638309479,
+        "required_any_activity": 0.6153846383094788,
+        "acceptable_rate": 0.8500000238418579,
+        "preferred_match": 0.6000000238418579,
+        "optional_activity": 0.375,
+        "optional_unacceptable": 0.0416666679084301,
+        "active_amplitude_outside": 0.5,
+        "accepted_active_amplitude_outside": 0.5714285969734192
+      },
+      "development_raw": {
+        "samples": 60,
+        "families": 18,
+        "forbidden_samples": 23,
+        "required_samples": 13,
+        "optional_samples": 24,
+        "forbidden_activation": 0.043478261679410934,
+        "required_success": 0.4615384638309479,
+        "required_any_activity": 0.6153846383094788,
+        "acceptable_rate": 0.8500000238418579,
+        "preferred_match": 0.6166666746139526,
+        "optional_activity": 0.4166666567325592,
+        "optional_unacceptable": 0.0416666679084301,
+        "active_amplitude_outside": 0.4736842215061188,
+        "accepted_active_amplitude_outside": 0.5333333611488342
+      },
+      "development_all_histories": {
+        "samples": 180,
+        "families": 18,
+        "forbidden_samples": 69,
+        "required_samples": 39,
+        "optional_samples": 72,
+        "forbidden_activation": 0.043478261679410934,
+        "required_success": 0.4615384638309479,
+        "required_any_activity": 0.6153846383094788,
+        "acceptable_rate": 0.8500000238418579,
+        "preferred_match": 0.6000000238418579,
+        "optional_activity": 0.375,
+        "optional_unacceptable": 0.0416666679084301,
+        "active_amplitude_outside": 0.48148149251937866,
+        "accepted_active_amplitude_outside": 0.5476190447807312
+      },
+      "train": {
+        "samples": 180,
+        "families": 53,
+        "forbidden_samples": 71,
+        "required_samples": 31,
+        "optional_samples": 78,
+        "forbidden_activation": 0.0,
+        "required_success": 1.0,
+        "required_any_activity": 1.0,
+        "acceptable_rate": 1.0,
+        "preferred_match": 1.0,
+        "optional_activity": 0.5641025900840759,
+        "optional_unacceptable": 0.0,
+        "active_amplitude_outside": 0.0,
+        "accepted_active_amplitude_outside": 0.0
+      },
+      "contrasts": {
+        "pairs": 2,
+        "families": 2,
+        "both_acceptable": 1.0,
+        "family_mean": 1.0,
+        "details": [
+          {
+            "family": "pair-arranged",
+            "text": "这可真是安排得周到啊。",
+            "a": "63-irony-delay/t1/canonical",
+            "b": "64-genuine-praise/t1/canonical",
+            "both_acceptable": true,
+            "disjoint_sets": false,
+            "pred_a": "lean",
+            "pred_b": "lean"
+          },
+          {
+            "family": "pair-look",
+            "text": "你别这样看着我啦。",
+            "a": "93-pair-praise-blush/t1/canonical",
+            "b": "94-pair-praise-line/t1/canonical",
+            "both_acceptable": true,
+            "disjoint_sets": true,
+            "pred_a": "tilt",
+            "pred_b": "none"
+          }
+        ]
+      },
+      "trace": [
+        {
+          "step": 200,
+          "loss": 0.001762176165357232
+        },
+        {
+          "step": 400,
+          "loss": 0.00031500536715611815
+        },
+        {
+          "step": 600,
+          "loss": 0.0001361977483611554
+        },
+        {
+          "step": 800,
+          "loss": 0.0041898395866155624
+        },
+        {
+          "step": 1000,
+          "loss": 7.849063695175573e-05
+        }
+      ],
+      "necessity_development_before": {
+        "nll": 3.7906100749969482,
+        "brier": 0.6567156910896301,
+        "accuracy": 0.6499999761581421
+      },
+      "necessity_development_after": {
+        "nll": 1.35722815990448,
+        "brier": 0.5779843926429749,
+        "accuracy": 0.6499999761581421
+      },
+      "elapsed_s": 5.23,
+      "checkpoint_sha256": "d6e6f42947d1e4c6087209d8320993097a2a8111525ef4e90e45d35d9195c49c"
+    },
+    {
+      "mode": "context_first",
+      "seed": 9283,
+      "initial_sha256": "9a7ab9ccd1878ac97b8a3126ce49eeda88b237cbfd7bea1bc2e89738ae61479b",
+      "calibrated": {
+        "config": {
+          "active_threshold": 0.7,
+          "temperature": 3.0,
+          "forbidden_threshold": 0.4,
+          "required_threshold": 0.4
+        },
+        "calibration": {
+          "samples": 60,
+          "families": 18,
+          "forbidden_samples": 28,
+          "required_samples": 9,
+          "optional_samples": 23,
+          "forbidden_activation": 0.0357142873108387,
+          "required_success": 0.3333333432674408,
+          "required_any_activity": 0.3333333432674408,
+          "acceptable_rate": 0.8833333253860474,
+          "preferred_match": 0.6666666865348816,
+          "optional_activity": 0.21739129722118378,
+          "optional_unacceptable": 0.0,
+          "active_amplitude_outside": 0.3333333432674408,
+          "accepted_active_amplitude_outside": 0.25
+        },
+        "score": 0.648809528
+      },
+      "development": {
+        "samples": 60,
+        "families": 18,
+        "forbidden_samples": 23,
+        "required_samples": 13,
+        "optional_samples": 24,
+        "forbidden_activation": 0.08695652335882187,
+        "required_success": 0.38461539149284363,
+        "required_any_activity": 0.5384615659713745,
+        "acceptable_rate": 0.8333333134651184,
+        "preferred_match": 0.6166666746139526,
+        "optional_activity": 0.4166666567325592,
+        "optional_unacceptable": 0.0,
+        "active_amplitude_outside": 0.5263158082962036,
+        "accepted_active_amplitude_outside": 0.46666666865348816
+      },
+      "development_raw": {
+        "samples": 60,
+        "families": 18,
+        "forbidden_samples": 23,
+        "required_samples": 13,
+        "optional_samples": 24,
+        "forbidden_activation": 0.08695652335882187,
+        "required_success": 0.38461539149284363,
+        "required_any_activity": 0.6153846383094788,
+        "acceptable_rate": 0.8333333134651184,
+        "preferred_match": 0.6000000238418579,
+        "optional_activity": 0.4583333432674408,
+        "optional_unacceptable": 0.0,
+        "active_amplitude_outside": 0.523809552192688,
+        "accepted_active_amplitude_outside": 0.4375
+      },
+      "development_all_histories": {
+        "samples": 180,
+        "families": 18,
+        "forbidden_samples": 69,
+        "required_samples": 39,
+        "optional_samples": 72,
+        "forbidden_activation": 0.08695652335882187,
+        "required_success": 0.38461539149284363,
+        "required_any_activity": 0.5641025900840759,
+        "acceptable_rate": 0.8333333134651184,
+        "preferred_match": 0.6000000238418579,
+        "optional_activity": 0.4305555522441864,
+        "optional_unacceptable": 0.0,
+        "active_amplitude_outside": 0.5423728823661804,
+        "accepted_active_amplitude_outside": 0.5
+      },
+      "train": {
+        "samples": 180,
+        "families": 53,
+        "forbidden_samples": 71,
+        "required_samples": 31,
+        "optional_samples": 78,
+        "forbidden_activation": 0.0,
+        "required_success": 1.0,
+        "required_any_activity": 1.0,
+        "acceptable_rate": 1.0,
+        "preferred_match": 1.0,
+        "optional_activity": 0.5641025900840759,
+        "optional_unacceptable": 0.0,
+        "active_amplitude_outside": 0.0,
+        "accepted_active_amplitude_outside": 0.0
+      },
+      "contrasts": {
+        "pairs": 2,
+        "families": 2,
+        "both_acceptable": 0.5,
+        "family_mean": 0.5,
+        "details": [
+          {
+            "family": "pair-arranged",
+            "text": "这可真是安排得周到啊。",
+            "a": "63-irony-delay/t1/canonical",
+            "b": "64-genuine-praise/t1/canonical",
+            "both_acceptable": false,
+            "disjoint_sets": false,
+            "pred_a": "none",
+            "pred_b": "lean"
+          },
+          {
+            "family": "pair-look",
+            "text": "你别这样看着我啦。",
+            "a": "93-pair-praise-blush/t1/canonical",
+            "b": "94-pair-praise-line/t1/canonical",
+            "both_acceptable": true,
+            "disjoint_sets": true,
+            "pred_a": "tilt",
+            "pred_b": "none"
+          }
+        ]
+      },
+      "trace": [
+        {
+          "step": 200,
+          "loss": 0.0034946890082210302
+        },
+        {
+          "step": 400,
+          "loss": 0.0008536517852917314
+        },
+        {
+          "step": 600,
+          "loss": 0.00011720725160557777
+        },
+        {
+          "step": 800,
+          "loss": 0.0002592998498585075
+        },
+        {
+          "step": 1000,
+          "loss": 0.000249193370109424
+        }
+      ],
+      "necessity_development_before": {
+        "nll": 3.980893135070801,
+        "brier": 0.6648076772689819,
+        "accuracy": 0.6499999761581421
+      },
+      "necessity_development_after": {
+        "nll": 1.4474036693572998,
+        "brier": 0.5859500169754028,
+        "accuracy": 0.6499999761581421
+      },
+      "elapsed_s": 5.23,
+      "checkpoint_sha256": "26b9a740ac50250526ea66b4b403b5f018aff94160ffd5c0d6220f91d1d47b70"
+    },
+    {
+      "mode": "task_context_first",
+      "seed": 7137,
+      "initial_sha256": "7745960762f46c91b5da0f3d4f4e397ecf39350fc7b26cc00cacad9e8662f516",
+      "calibrated": {
+        "config": {
+          "active_threshold": 0.4,
+          "temperature": 3.0,
+          "forbidden_threshold": 0.4,
+          "required_threshold": 0.4
+        },
+        "calibration": {
+          "samples": 60,
+          "families": 18,
+          "forbidden_samples": 28,
+          "required_samples": 9,
+          "optional_samples": 23,
+          "forbidden_activation": 0.0357142873108387,
+          "required_success": 0.5555555820465088,
+          "required_any_activity": 0.6666666865348816,
+          "acceptable_rate": 0.8833333253860474,
+          "preferred_match": 0.6499999761581421,
+          "optional_activity": 0.3913043439388275,
+          "optional_unacceptable": 0.08695652335882187,
+          "active_amplitude_outside": 0.5,
+          "accepted_active_amplitude_outside": 0.4166666567325592
+        },
+        "score": 0.751224995
+      },
+      "development": {
+        "samples": 60,
+        "families": 18,
+        "forbidden_samples": 23,
+        "required_samples": 13,
+        "optional_samples": 24,
+        "forbidden_activation": 0.043478261679410934,
+        "required_success": 0.4615384638309479,
+        "required_any_activity": 0.7692307829856873,
+        "acceptable_rate": 0.8166666626930237,
+        "preferred_match": 0.6166666746139526,
+        "optional_activity": 0.4166666567325592,
+        "optional_unacceptable": 0.125,
+        "active_amplitude_outside": 0.7142857313156128,
+        "accepted_active_amplitude_outside": 0.5384615659713745
+      },
+      "development_raw": {
+        "samples": 60,
+        "families": 18,
+        "forbidden_samples": 23,
+        "required_samples": 13,
+        "optional_samples": 24,
+        "forbidden_activation": 0.043478261679410934,
+        "required_success": 0.38461539149284363,
+        "required_any_activity": 0.692307710647583,
+        "acceptable_rate": 0.800000011920929,
+        "preferred_match": 0.6166666746139526,
+        "optional_activity": 0.4166666567325592,
+        "optional_unacceptable": 0.125,
+        "active_amplitude_outside": 0.699999988079071,
+        "accepted_active_amplitude_outside": 0.5
+      },
+      "development_all_histories": {
+        "samples": 180,
+        "families": 18,
+        "forbidden_samples": 69,
+        "required_samples": 39,
+        "optional_samples": 72,
+        "forbidden_activation": 0.043478261679410934,
+        "required_success": 0.4615384638309479,
+        "required_any_activity": 0.7435897588729858,
+        "acceptable_rate": 0.8166666626930237,
+        "preferred_match": 0.6222222447395325,
+        "optional_activity": 0.4027777910232544,
+        "optional_unacceptable": 0.125,
+        "active_amplitude_outside": 0.7049180269241333,
+        "accepted_active_amplitude_outside": 0.5526315569877625
+      },
+      "train": {
+        "samples": 180,
+        "families": 53,
+        "forbidden_samples": 71,
+        "required_samples": 31,
+        "optional_samples": 78,
+        "forbidden_activation": 0.0,
+        "required_success": 1.0,
+        "required_any_activity": 1.0,
+        "acceptable_rate": 1.0,
+        "preferred_match": 1.0,
+        "optional_activity": 0.5641025900840759,
+        "optional_unacceptable": 0.0,
+        "active_amplitude_outside": 0.03999999910593033,
+        "accepted_active_amplitude_outside": 0.03999999910593033
+      },
+      "contrasts": {
+        "pairs": 2,
+        "families": 2,
+        "both_acceptable": 0.5,
+        "family_mean": 0.5,
+        "details": [
+          {
+            "family": "pair-arranged",
+            "text": "这可真是安排得周到啊。",
+            "a": "63-irony-delay/t1/canonical",
+            "b": "64-genuine-praise/t1/canonical",
+            "both_acceptable": false,
+            "disjoint_sets": false,
+            "pred_a": "lean",
+            "pred_b": "turn"
+          },
+          {
+            "family": "pair-look",
+            "text": "你别这样看着我啦。",
+            "a": "93-pair-praise-blush/t1/canonical",
+            "b": "94-pair-praise-line/t1/canonical",
+            "both_acceptable": true,
+            "disjoint_sets": true,
+            "pred_a": "tilt",
+            "pred_b": "none"
+          }
+        ]
+      },
+      "trace": [
+        {
+          "step": 200,
+          "loss": 0.0015615766169503331
+        },
+        {
+          "step": 400,
+          "loss": 0.00047895079478621483
+        },
+        {
+          "step": 600,
+          "loss": 9.022474841913208e-05
+        },
+        {
+          "step": 800,
+          "loss": 0.00012076114217052236
+        },
+        {
+          "step": 1000,
+          "loss": 0.0018388446187600493
+        }
+      ],
+      "necessity_development_before": {
+        "nll": 4.150650501251221,
+        "brier": 0.7244083285331726,
+        "accuracy": 0.6333333253860474
+      },
+      "necessity_development_after": {
+        "nll": 1.4808170795440674,
+        "brier": 0.6545813679695129,
+        "accuracy": 0.6333333253860474
+      },
+      "elapsed_s": 9.58,
+      "checkpoint_sha256": "acf721015bb3b54d6427fed16e122415226595148298ac51c449c395cb65e769"
+    },
+    {
+      "mode": "task_context_first",
+      "seed": 1741,
+      "initial_sha256": "effb7d9e50bfa817cac7d59dae855bddc799e3ff2e360f947d0388c97f57236c",
+      "calibrated": {
+        "config": {
+          "active_threshold": 0.7,
+          "temperature": 3.0,
+          "forbidden_threshold": 0.4,
+          "required_threshold": 0.4
+        },
+        "calibration": {
+          "samples": 60,
+          "families": 18,
+          "forbidden_samples": 28,
+          "required_samples": 9,
+          "optional_samples": 23,
+          "forbidden_activation": 0.0714285746216774,
+          "required_success": 0.5555555820465088,
+          "required_any_activity": 0.6666666865348816,
+          "acceptable_rate": 0.8999999761581421,
+          "preferred_match": 0.6499999761581421,
+          "optional_activity": 0.260869562625885,
+          "optional_unacceptable": 0.0,
+          "active_amplitude_outside": 0.5714285969734192,
+          "accepted_active_amplitude_outside": 0.4545454680919647
+        },
+        "score": 0.7420635037
+      },
+      "development": {
+        "samples": 60,
+        "families": 18,
+        "forbidden_samples": 23,
+        "required_samples": 13,
+        "optional_samples": 24,
+        "forbidden_activation": 0.043478261679410934,
+        "required_success": 0.3076923191547394,
+        "required_any_activity": 0.5384615659713745,
+        "acceptable_rate": 0.8333333134651184,
+        "preferred_match": 0.6833333373069763,
+        "optional_activity": 0.375,
+        "optional_unacceptable": 0.0,
+        "active_amplitude_outside": 0.5882353186607361,
+        "accepted_active_amplitude_outside": 0.4615384638309479
+      },
+      "development_raw": {
+        "samples": 60,
+        "families": 18,
+        "forbidden_samples": 23,
+        "required_samples": 13,
+        "optional_samples": 24,
+        "forbidden_activation": 0.043478261679410934,
+        "required_success": 0.38461539149284363,
+        "required_any_activity": 0.6153846383094788,
+        "acceptable_rate": 0.8500000238418579,
+        "preferred_match": 0.6666666865348816,
+        "optional_activity": 0.4166666567325592,
+        "optional_unacceptable": 0.0,
+        "active_amplitude_outside": 0.6315789222717285,
+        "accepted_active_amplitude_outside": 0.5333333611488342
+      },
+      "development_all_histories": {
+        "samples": 180,
+        "families": 18,
+        "forbidden_samples": 69,
+        "required_samples": 39,
+        "optional_samples": 72,
+        "forbidden_activation": 0.043478261679410934,
+        "required_success": 0.3076923191547394,
+        "required_any_activity": 0.5384615659713745,
+        "acceptable_rate": 0.8333333134651184,
+        "preferred_match": 0.6777777671813965,
+        "optional_activity": 0.3611111044883728,
+        "optional_unacceptable": 0.0,
+        "active_amplitude_outside": 0.6200000047683716,
+        "accepted_active_amplitude_outside": 0.5
+      },
+      "train": {
+        "samples": 180,
+        "families": 53,
+        "forbidden_samples": 71,
+        "required_samples": 31,
+        "optional_samples": 78,
+        "forbidden_activation": 0.0,
+        "required_success": 1.0,
+        "required_any_activity": 1.0,
+        "acceptable_rate": 1.0,
+        "preferred_match": 1.0,
+        "optional_activity": 0.5641025900840759,
+        "optional_unacceptable": 0.0,
+        "active_amplitude_outside": 0.0,
+        "accepted_active_amplitude_outside": 0.0
+      },
+      "contrasts": {
+        "pairs": 2,
+        "families": 2,
+        "both_acceptable": 0.5,
+        "family_mean": 0.5,
+        "details": [
+          {
+            "family": "pair-arranged",
+            "text": "这可真是安排得周到啊。",
+            "a": "63-irony-delay/t1/canonical",
+            "b": "64-genuine-praise/t1/canonical",
+            "both_acceptable": false,
+            "disjoint_sets": false,
+            "pred_a": "none",
+            "pred_b": "lean"
+          },
+          {
+            "family": "pair-look",
+            "text": "你别这样看着我啦。",
+            "a": "93-pair-praise-blush/t1/canonical",
+            "b": "94-pair-praise-line/t1/canonical",
+            "both_acceptable": true,
+            "disjoint_sets": true,
+            "pred_a": "tilt",
+            "pred_b": "none"
+          }
+        ]
+      },
+      "trace": [
+        {
+          "step": 200,
+          "loss": 0.00649592000991106
+        },
+        {
+          "step": 400,
+          "loss": 0.0002705923980101943
+        },
+        {
+          "step": 600,
+          "loss": 0.000164351164130494
+        },
+        {
+          "step": 800,
+          "loss": 7.293563248822466e-05
+        },
+        {
+          "step": 1000,
+          "loss": 3.992888377979398e-05
+        }
+      ],
+      "necessity_development_before": {
+        "nll": 4.117617130279541,
+        "brier": 0.7574973702430725,
+        "accuracy": 0.6166666746139526
+      },
+      "necessity_development_after": {
+        "nll": 1.467950701713562,
+        "brier": 0.6559227108955383,
+        "accuracy": 0.6166666746139526
+      },
+      "elapsed_s": 9.54,
+      "checkpoint_sha256": "a6fcedf67cd4f9fa29992566506ec902350ca771445bbfccab4e8bd719dab4b9"
+    },
+    {
+      "mode": "task_context_first",
+      "seed": 9283,
+      "initial_sha256": "9a7ab9ccd1878ac97b8a3126ce49eeda88b237cbfd7bea1bc2e89738ae61479b",
+      "calibrated": {
+        "config": {
+          "active_threshold": 0.7,
+          "temperature": 3.0,
+          "forbidden_threshold": 0.4,
+          "required_threshold": 0.4
+        },
+        "calibration": {
+          "samples": 60,
+          "families": 18,
+          "forbidden_samples": 28,
+          "required_samples": 9,
+          "optional_samples": 23,
+          "forbidden_activation": 0.0357142873108387,
+          "required_success": 0.5555555820465088,
+          "required_any_activity": 0.5555555820465088,
+          "acceptable_rate": 0.9166666865348816,
+          "preferred_match": 0.6833333373069763,
+          "optional_activity": 0.3913043439388275,
+          "optional_unacceptable": 0.0,
+          "active_amplitude_outside": 0.4000000059604645,
+          "accepted_active_amplitude_outside": 0.3571428656578064
+        },
+        "score": 0.7599206474
+      },
+      "development": {
+        "samples": 60,
+        "families": 18,
+        "forbidden_samples": 23,
+        "required_samples": 13,
+        "optional_samples": 24,
+        "forbidden_activation": 0.043478261679410934,
+        "required_success": 0.4615384638309479,
+        "required_any_activity": 0.692307710647583,
+        "acceptable_rate": 0.8500000238418579,
+        "preferred_match": 0.6666666865348816,
+        "optional_activity": 0.375,
+        "optional_unacceptable": 0.0416666679084301,
+        "active_amplitude_outside": 0.6315789222717285,
+        "accepted_active_amplitude_outside": 0.6428571343421936
+      },
+      "development_raw": {
+        "samples": 60,
+        "families": 18,
+        "forbidden_samples": 23,
+        "required_samples": 13,
+        "optional_samples": 24,
+        "forbidden_activation": 0.043478261679410934,
+        "required_success": 0.4615384638309479,
+        "required_any_activity": 0.692307710647583,
+        "acceptable_rate": 0.8500000238418579,
+        "preferred_match": 0.6666666865348816,
+        "optional_activity": 0.375,
+        "optional_unacceptable": 0.0416666679084301,
+        "active_amplitude_outside": 0.6315789222717285,
+        "accepted_active_amplitude_outside": 0.6428571343421936
+      },
+      "development_all_histories": {
+        "samples": 180,
+        "families": 18,
+        "forbidden_samples": 69,
+        "required_samples": 39,
+        "optional_samples": 72,
+        "forbidden_activation": 0.043478261679410934,
+        "required_success": 0.4615384638309479,
+        "required_any_activity": 0.692307710647583,
+        "acceptable_rate": 0.8500000238418579,
+        "preferred_match": 0.6611111164093018,
+        "optional_activity": 0.3611111044883728,
+        "optional_unacceptable": 0.0416666679084301,
+        "active_amplitude_outside": 0.6428571343421936,
+        "accepted_active_amplitude_outside": 0.6585366129875183
+      },
+      "train": {
+        "samples": 180,
+        "families": 53,
+        "forbidden_samples": 71,
+        "required_samples": 31,
+        "optional_samples": 78,
+        "forbidden_activation": 0.0,
+        "required_success": 1.0,
+        "required_any_activity": 1.0,
+        "acceptable_rate": 1.0,
+        "preferred_match": 1.0,
+        "optional_activity": 0.5641025900840759,
+        "optional_unacceptable": 0.0,
+        "active_amplitude_outside": 0.0,
+        "accepted_active_amplitude_outside": 0.0
+      },
+      "contrasts": {
+        "pairs": 2,
+        "families": 2,
+        "both_acceptable": 0.5,
+        "family_mean": 0.5,
+        "details": [
+          {
+            "family": "pair-arranged",
+            "text": "这可真是安排得周到啊。",
+            "a": "63-irony-delay/t1/canonical",
+            "b": "64-genuine-praise/t1/canonical",
+            "both_acceptable": false,
+            "disjoint_sets": false,
+            "pred_a": "tilt",
+            "pred_b": "lean"
+          },
+          {
+            "family": "pair-look",
+            "text": "你别这样看着我啦。",
+            "a": "93-pair-praise-blush/t1/canonical",
+            "b": "94-pair-praise-line/t1/canonical",
+            "both_acceptable": true,
+            "disjoint_sets": true,
+            "pred_a": "tilt",
+            "pred_b": "none"
+          }
+        ]
+      },
+      "trace": [
+        {
+          "step": 200,
+          "loss": 0.01854708418250084
+        },
+        {
+          "step": 400,
+          "loss": 0.00027358572697266936
+        },
+        {
+          "step": 600,
+          "loss": 0.00013942587247584015
+        },
+        {
+          "step": 800,
+          "loss": 3.131179619231261e-05
+        },
+        {
+          "step": 1000,
+          "loss": 3.633559390436858e-05
+        }
+      ],
+      "necessity_development_before": {
+        "nll": 4.184197902679443,
+        "brier": 0.6962347626686096,
+        "accuracy": 0.6333333253860474
+      },
+      "necessity_development_after": {
+        "nll": 1.4778316020965576,
+        "brier": 0.6111758947372437,
+        "accuracy": 0.6333333253860474
+      },
+      "elapsed_s": 9.53,
+      "checkpoint_sha256": "f4d79ce97435e2623047a56798e56cf9f42ae6d473ad980998de46aaf9d89678"
+    }
+  ],
+  "summary": {
+    "legacy_json": {
+      "seeds": 3,
+      "metrics": {
+        "forbidden_activation": {
+          "mean": 0.043478261679410934,
+          "std": 0.0
+        },
+        "required_success": {
+          "mean": 0.3589743624130885,
+          "std": 0.14504754323774632
+        },
+        "required_any_activity": {
+          "mean": 0.3846153865257899,
+          "std": 0.10878565918442844
+        },
+        "acceptable_rate": {
+          "mean": 0.7777777910232544,
+          "std": 0.03142696617954218
+        },
+        "preferred_match": {
+          "mean": 0.5611111124356588,
+          "std": 0.007856734520410793
+        },
+        "optional_activity": {
+          "mean": 0.4166666666666667,
+          "std": 0.034020694927571704
+        },
+        "optional_unacceptable": {
+          "mean": 0.1666666716337204,
+          "std": 0.0
+        },
+        "active_amplitude_outside": {
+          "mean": 0.6626445651054382,
+          "std": 0.03705485102954522
+        },
+        "accepted_active_amplitude_outside": {
+          "mean": 0.4691697259744008,
+          "std": 0.1310096404513913
+        }
+      },
+      "family_bootstrap_95": {
+        "forbidden_activation": [
+          0.0,
+          0.13636364042758942
+        ],
+        "required_success": [
+          0.14809027885397275,
+          0.5779166817665099
+        ],
+        "required_any_activity": [
+          0.15555555870135626,
+          0.5953571565449237
+        ],
+        "acceptable_rate": [
+          0.6900584896405538,
+          0.8555787026882172
+        ],
+        "preferred_match": [
+          0.4269005852440993,
+          0.6975529119372368
+        ],
+        "optional_activity": [
+          0.2061904788017273,
+          0.6377113595604896
+        ],
+        "optional_unacceptable": [
+          0.04938271641731262,
+          0.32000000290572644
+        ],
+        "active_amplitude_outside": [
+          0.45713405112425487,
+          0.8719399780035019
+        ],
+        "accepted_active_amplitude_outside": [
+          0.22023809949556986,
+          0.6905754054586092
+        ]
+      }
+    },
+    "context_first": {
+      "seeds": 3,
+      "metrics": {
+        "forbidden_activation": {
+          "mean": 0.05797101557254791,
+          "std": 0.020495849111809787
+        },
+        "required_success": {
+          "mean": 0.38461539149284363,
+          "std": 0.06280742555851826
+        },
+        "required_any_activity": {
+          "mean": 0.5641025900840759,
+          "std": 0.0362618840533179
+        },
+        "acceptable_rate": {
+          "mean": 0.8333333333333334,
+          "std": 0.013608287704433375
+        },
+        "preferred_match": {
+          "mean": 0.6111111243565878,
+          "std": 0.007856734520410793
+        },
+        "optional_activity": {
+          "mean": 0.3611111044883728,
+          "std": 0.05196746459019447
+        },
+        "optional_unacceptable": {
+          "mean": 0.027777778605620067,
+          "std": 0.019641855618332548
+        },
+        "active_amplitude_outside": {
+          "mean": 0.586549719174703,
+          "std": 0.1043462376905756
+        },
+        "accepted_active_amplitude_outside": {
+          "mean": 0.5793650845686594,
+          "std": 0.09542309421746333
+        }
+      },
+      "family_bootstrap_95": {
+        "forbidden_activation": [
+          0.0,
+          0.1818181872367859
+        ],
+        "required_success": [
+          0.15378788206726313,
+          0.6410256624221802
+        ],
+        "required_any_activity": [
+          0.3333333383003871,
+          0.8125
+        ],
+        "acceptable_rate": [
+          0.7426900664965311,
+          0.9100793699423472
+        ],
+        "preferred_match": [
+          0.46910331249237064,
+          0.7525717675685881
+        ],
+        "optional_activity": [
+          0.1665123431632916,
+          0.5614709797004859
+        ],
+        "optional_unacceptable": [
+          0.0,
+          0.07575757801532745
+        ],
+        "active_amplitude_outside": [
+          0.49401480754216515,
+          0.7051282127698263
+        ],
+        "accepted_active_amplitude_outside": [
+          0.4094990370174249,
+          0.770294153690338
+        ]
+      }
+    },
+    "task_context_first": {
+      "seeds": 3,
+      "metrics": {
+        "forbidden_activation": {
+          "mean": 0.043478261679410934,
+          "std": 0.0
+        },
+        "required_success": {
+          "mean": 0.41025641560554504,
+          "std": 0.0725237681066358
+        },
+        "required_any_activity": {
+          "mean": 0.6666666865348816,
+          "std": 0.095939927275738
+        },
+        "acceptable_rate": {
+          "mean": 0.8333333333333334,
+          "std": 0.013608287704433376
+        },
+        "preferred_match": {
+          "mean": 0.6555555661519369,
+          "std": 0.028327886446392555
+        },
+        "optional_activity": {
+          "mean": 0.3888888855775197,
+          "std": 0.019641850349976488
+        },
+        "optional_unacceptable": {
+          "mean": 0.0555555559694767,
+          "std": 0.05196746359456855
+        },
+        "active_amplitude_outside": {
+          "mean": 0.6446999907493591,
+          "std": 0.0522895685015165
+        },
+        "accepted_active_amplitude_outside": {
+          "mean": 0.5476190547148386,
+          "std": 0.07430571879766468
+        }
+      },
+      "family_bootstrap_95": {
+        "forbidden_activation": [
+          0.0,
+          0.15789473056793213
+        ],
+        "required_success": [
+          0.16666666915019354,
+          0.6888889074325562
+        ],
+        "required_any_activity": [
+          0.39984849095344543,
+          0.9259920676549276
+        ],
+        "acceptable_rate": [
+          0.7484356587131817,
+          0.9047619104385376
+        ],
+        "preferred_match": [
+          0.5237698592245579,
+          0.7779040535291035
+        ],
+        "optional_activity": [
+          0.21212121844291687,
+          0.5507246255874634
+        ],
+        "optional_unacceptable": [
+          0.0,
+          0.11594202624013027
+        ],
+        "active_amplitude_outside": [
+          0.5453535067538421,
+          0.7647815639774005
+        ],
+        "accepted_active_amplitude_outside": [
+          0.4110470044116179,
+          0.7074537016451359
+        ]
+      }
+    }
+  },
+  "context_minus_legacy_family_95": {
+    "forbidden_activation": [
+      0.0,
+      0.04545454680919647
+    ],
+    "required_success": [
+      -0.1515151560306549,
+      0.24999999999999994
+    ],
+    "required_any_activity": [
+      -0.025641019269824046,
+      0.4524350532641012
+    ],
+    "acceptable_rate": [
+      0.00555556962887446,
+      0.1055682003498078
+    ],
+    "preferred_match": [
+      -0.018518497546513857,
+      0.10628525912761691
+    ],
+    "optional_activity": [
+      -0.16666667175789676,
+      0.05803689161936436
+    ],
+    "optional_unacceptable": [
+      -0.2778508765933414,
+      -0.03703703731298447
+    ],
+    "active_amplitude_outside": [
+      -0.26042422006527577,
+      0.15335139632225037
+    ],
+    "accepted_active_amplitude_outside": [
+      -0.13887083083391194,
+      0.4288585286587476
+    ]
+  },
+  "task_minus_legacy_family_95": {
+    "forbidden_activation": [
+      -0.11538461595773697,
+      0.13333334028720856
+    ],
+    "required_success": [
+      -0.16666666933645805,
+      0.33333333339542154
+    ],
+    "required_any_activity": [
+      -0.0371527853111426,
+      0.6666666641831398
+    ],
+    "acceptable_rate": [
+      -0.033333341280619266,
+      0.14814813931783033
+    ],
+    "preferred_match": [
+      0.011097892622152931,
+      0.18713448469837504
+    ],
+    "optional_activity": [
+      -0.21333332868913807,
+      0.14107142475744083
+    ],
+    "optional_unacceptable": [
+      -0.28076754088203115,
+      0.02090773809080316
+    ],
+    "active_amplitude_outside": [
+      -0.23088293025890982,
+      0.22209103132287655
+    ],
+    "accepted_active_amplitude_outside": [
+      -0.19514873760441934,
+      0.3830090240885814
+    ]
+  },
+  "direct_development": {
+    "metrics": {
+      "samples": 60,
+      "families": 18,
+      "forbidden_samples": 23,
+      "required_samples": 13,
+      "optional_samples": 24,
+      "forbidden_activation": 0.8260869383811951,
+      "required_success": 0.692307710647583,
+      "required_any_activity": 1.0,
+      "acceptable_rate": 0.44999998807907104,
+      "preferred_match": 0.25,
+      "optional_activity": 0.9166666865348816,
+      "optional_unacceptable": 0.4166666567325592,
+      "active_amplitude_outside": 0.6111111044883728,
+      "accepted_active_amplitude_outside": 0.380952388048172
+    },
+    "contract_valid_rate": 1.0,
+    "contract_and_acceptable": 0.44999998807907104,
+    "contract_and_required_success": 0.692307710647583,
+    "necessity_accuracy": 0.43333333333333335,
+    "invalid": 0,
+    "max_tokens_reached": 0,
+    "generation_ms": {
+      "p50": 1094.6666529998765,
+      "p95": 1122.9067516501345
+    },
+    "timing_scope": "isolated local generation, no TTS; not end-to-end acceptance",
+    "contrasts": {
+      "pairs": 2,
+      "families": 2,
+      "both_acceptable": 0.0,
+      "family_mean": 0.0,
+      "details": [
+        {
+          "family": "pair-arranged",
+          "text": "这可真是安排得周到啊。",
+          "a": "63-irony-delay/t1/canonical",
+          "b": "64-genuine-praise/t1/canonical",
+          "both_acceptable": false,
+          "disjoint_sets": false,
+          "pred_a": "tilt",
+          "pred_b": "tilt"
+        },
+        {
+          "family": "pair-look",
+          "text": "你别这样看着我啦。",
+          "a": "93-pair-praise-blush/t1/canonical",
+          "b": "94-pair-praise-line/t1/canonical",
+          "both_acceptable": false,
+          "disjoint_sets": true,
+          "pred_a": "tilt",
+          "pred_b": "tilt"
+        }
+      ]
+    },
+    "family_bootstrap_95": {
+      "forbidden_activation": [
+        0.6248511910438538,
+        1.0
+      ],
+      "required_success": [
+        0.4000000059604645,
+        0.9230769276618958
+      ],
+      "required_any_activity": [
+        1.0,
+        1.0
+      ],
+      "acceptable_rate": [
+        0.3333333432674408,
+        0.5926900625228881
+      ],
+      "preferred_match": [
+        0.13636364042758942,
+        0.4035087823867798
+      ],
+      "optional_activity": [
+        0.7241379022598267,
+        1.0
+      ],
+      "optional_unacceptable": [
+        0.23797619119286537,
+        0.6000000238418579
+      ],
+      "active_amplitude_outside": [
+        0.522679902613163,
+        0.7068965435028076
+      ],
+      "accepted_active_amplitude_outside": [
+        0.25,
+        0.523809552192688
+      ]
+    }
+  },
+  "direct_calibration": {
+    "metrics": {
+      "samples": 60,
+      "families": 18,
+      "forbidden_samples": 28,
+      "required_samples": 9,
+      "optional_samples": 23,
+      "forbidden_activation": 0.8928571343421936,
+      "required_success": 0.4444444477558136,
+      "required_any_activity": 0.8888888955116272,
+      "acceptable_rate": 0.36666667461395264,
+      "preferred_match": 0.21666666865348816,
+      "optional_activity": 1.0,
+      "optional_unacceptable": 0.3478260934352875,
+      "active_amplitude_outside": 0.6428571343421936,
+      "accepted_active_amplitude_outside": 0.42105263471603394
+    },
+    "contract_valid_rate": 1.0,
+    "contract_and_acceptable": 0.36666667461395264,
+    "contract_and_required_success": 0.4444444477558136,
+    "necessity_accuracy": 0.38333333333333336,
+    "invalid": 0,
+    "max_tokens_reached": 0,
+    "generation_ms": {
+      "p50": 1093.2324340001287,
+      "p95": 1134.3225874000382
+    },
+    "timing_scope": "isolated local generation, no TTS; not end-to-end acceptance",
+    "contrasts": {
+      "pairs": 2,
+      "families": 2,
+      "both_acceptable": 0.5,
+      "family_mean": 0.5,
+      "details": [
+        {
+          "family": "pair-stay",
+          "text": "再留一会儿嘛。",
+          "a": "85-pair-stay-close/t1/canonical",
+          "b": "86-pair-stay-quote/t1/canonical",
+          "both_acceptable": false,
+          "disjoint_sets": true,
+          "pred_a": "cajole",
+          "pred_b": "cajole"
+        },
+        {
+          "family": "pair-surprise",
+          "text": "你怎么已经到这里了？",
+          "a": "91-pair-surprise-arrival/t1/canonical",
+          "b": "92-pair-surprise-map/t1/canonical",
+          "both_acceptable": true,
+          "disjoint_sets": false,
+          "pred_a": "tilt",
+          "pred_b": "tilt"
+        }
+      ]
+    }
+  },
+  "old_test_loaded": false,
+  "new_final_test_created": false,
+  "caveats": [
+    "Same 18-family development set already inspected in prior study",
+    "Draft labels, not human gold",
+    "Task mode adds explicit task information; only legacy vs context_first isolates ordering",
+    "Direct generation omits the numerical history vector and is a diagnostic, not a matched architecture ablation",
+    "Isolated timing excludes concurrent TTS and runtime integration",
+    "No visual, stability or human-preference acceptance"
+  ]
+}

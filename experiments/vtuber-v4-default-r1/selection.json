@@ -1,0 +1,22 @@
+{
+  "body_source": "experiments\\vtuber-v4-context-r1\\task_context_first-7137.pt",
+  "body_seed": 7137,
+  "calibration_candidates": [
+    {
+      "seed": 1741,
+      "score": 0.7420635037
+    },
+    {
+      "seed": 7137,
+      "score": 0.751224995
+    },
+    {
+      "seed": 9283,
+      "score": 0.7599206474
+    }
+  ],
+  "rule": "median calibration objective across all three seeds; no final-test access",
+  "old_final_test_loaded": false,
+  "scientific_reports_changed": false,
+  "general_planner_sha256": "053fd98de35fa065f50fd8e86f0031fa5d1730b8544785363c4b803192d5cfa8"
+}

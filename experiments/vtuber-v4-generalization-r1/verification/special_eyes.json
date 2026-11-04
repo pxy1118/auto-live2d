@@ -1,0 +1,87 @@
+{
+  "ok": true,
+  "checked": [
+    "actual Cubism 0/1 outputs for four special eye drawings",
+    "one-frame switching and expiry with no overlap",
+    "continuous blush independent of discrete eye state",
+    "legacy expression strength/fade/exclusivity",
+    "conflicting pre/post raw parameter stages",
+    "two correction pairs load and synchronized MP4 playback advances",
+    "completed 24 human votes and failed acceptance result remain visible with correction link"
+  ],
+  "frames": [
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "runtime_version": "v4.13.0-clause-plan"
+}

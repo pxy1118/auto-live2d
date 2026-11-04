@@ -1,0 +1,27 @@
+{
+  "note": "Unverified paused online-takeover (motion coupling) candidate, preserved before restoring accepted v4-default sources on 2026-11-03. Server file line 46 mixes || and ?? and does not compile; do not treat as validated.",
+  "preserved_utc": "2026-11-03T14:26:29.0201271Z",
+  "restored_from": "research/vtuber-v4-online-coupling-r1/baseline",
+  "files": [
+    {
+      "file": "src/performance.ts",
+      "sha256": "a13b8e6b9caec5f93ca8039b68f9e2c943d3da74b07f78d9d71b5a478a12cc7a",
+      "bytes": 28950
+    },
+    {
+      "file": "src/engine.ts",
+      "sha256": "952cd00a70278d8f60833b193cefc54812ed2123898dd59af211ebd2f221db6a",
+      "bytes": 30442
+    },
+    {
+      "file": "server/performance-service.ts",
+      "sha256": "212c9a9fe06f58772e12b9915ae4e2c095dcf66ac543e6ca5662f951354795ed",
+      "bytes": 15550
+    },
+    {
+      "file": "src/performance-coupling.ts",
+      "sha256": "352e99ebfc8e4afc333470437902b42f95aeaef539e0aaa7e573a8836109c644",
+      "bytes": 12454
+    }
+  ]
+}

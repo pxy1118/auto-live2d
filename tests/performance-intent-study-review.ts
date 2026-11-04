@@ -1,0 +1,33 @@
+import assert from 'node:assert/strict';
+import {chromium} from 'playwright';
+import {readFileSync,writeFileSync,mkdirSync,existsSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+import {join} from 'node:path';
+const root=join(import.meta.dirname,'..'),out=join(root,'test-results/v4-intent-study');mkdirSync(out,{recursive:true});
+const digest=(path:string)=>createHash('sha256').update(readFileSync(path)).digest('hex');
+const ratings=join(root,'.runtime/performance/ratings.json'),ratingBefore=digest(ratings);
+const configPaths=['latent/default-run.json','latent/stream-run.json'];const configBefore=configPaths.map(p=>digest(join(root,p)));
+const executablePath=['C:/Users/Administrator/AppData/Local/ms-playwright/chromium-1208/chrome-win64/chrome.exe',process.env.BROWSER_EXECUTABLE].find(p=>p&&existsSync(p));
+const browser=await chromium.launch({headless:true,executablePath});const page=await browser.newPage({viewport:{width:1280,height:1000}});
+const errors:string[]=[],mutations:string[]=[];page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>{if(r.method()!=='GET')mutations.push(r.method()+' '+r.url());});
+const report:any={ok:false,checks:[],rating_before:ratingBefore};
+try{
+ await page.goto('http://127.0.0.1:8765/dataset/vtuber-v4/review/intent-study.html');await page.waitForSelector('[data-scene]');
+ assert.equal(await page.locator('[data-scene]').count(),100);assert.equal(await page.locator('article').count(),300);
+ assert.equal(await page.locator('#results tr').count(),6);assert.match(await page.locator('.status').innerText(),/未切换/);
+ await page.selectOption('#split','development');assert.equal(await page.locator('[data-scene]').count(),20);assert.equal(await page.locator('article').count(),60);
+ await page.selectOption('#necessity','required');assert.equal(await page.locator('article').count(),13);
+ await page.selectOption('#necessity','all');await page.selectOption('#scope','disagree');assert.ok(await page.locator('article').count()>0);
+ await page.selectOption('#scope','all');await page.fill('#search','茶才泡好');assert.equal(await page.locator('[data-scene]').count(),1);
+ await page.locator('summary').first().click();await page.screenshot({path:join(out,'desktop.png'),fullPage:true});
+ await page.setViewportSize({width:390,height:844});await page.screenshot({path:join(out,'mobile.png'),fullPage:true});
+ assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
+ const data:any=await (await fetch('http://127.0.0.1:8765/dataset/vtuber-v4/review/intent-study-report.json')).json();
+ assert.equal(data.promoted,false);assert.equal(data.old_test_loaded,false);assert.equal(data.all_runs.length,15);assert.equal(data.read_only,true);
+ for(const [path,hash] of Object.entries(data.source_hashes))assert.equal(digest(join(root,path)),hash);
+ report.checks.push('100 coherent story drafts / 300 clauses; six full result rows / 15 runs; development and necessity filters; disagreement filter; text search; desktop/mobile layout; source hashes');
+ assert.deepEqual(errors,[]);assert.deepEqual(mutations,[]);assert.equal(digest(ratings),ratingBefore);assert.deepEqual(configPaths.map(p=>digest(join(root,p))),configBefore);
+ assert.equal(ratingBefore,'7f7d6b0ae58dff2355aec7cbe93dbe0c54f741cb41d7b688177d5d4a4ba16f47');
+ report.checks.push('read-only page; original human votes and default configuration hashes unchanged; no final test in publication');report.ok=true;
+}finally{writeFileSync(join(out,'review-browser.json'),JSON.stringify(report,null,2));await browser.close();}
+console.log(JSON.stringify(report));

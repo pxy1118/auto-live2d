@@ -1,0 +1,1091 @@
+{
+  "schema": "liveliness-study-results.v1",
+  "trained": false,
+  "promoted": false,
+  "human_quality_accepted": false,
+  "default_changed": false,
+  "production_sources_unchanged": true,
+  "paused_handover_development_resumed": false,
+  "semantic_model_used": false,
+  "online_integration_tested": false,
+  "observed_unit_tests": 12,
+  "isolated_typecheck_passed": true,
+  "clips": 6,
+  "actual_cubism_frames": 5996,
+  "probe_frames": 120,
+  "true_capture_fps": 60,
+  "batching_matches_frozen_capture": true,
+  "final_policy_inputs_reproduced": true,
+  "actual_parameter_evidence": {
+    "anger_at_3s": {
+      "brow": 0,
+      "black_face": 0.7
+    },
+    "shy_at_6s": {
+      "current_blush": 0.01712,
+      "candidate_blush": 0.37846
+    },
+    "shy_glance_at_1_5s": 0.0684
+  },
+  "simulations": [
+    {
+      "mode": "idle",
+      "simulated_wall_ms": 600000,
+      "evaluated_frames": 36001,
+      "action_clock_ms": 600000.0000000679,
+      "idle_count": 44,
+      "idle_starts": [
+        {
+          "at": 16233.333333333101,
+          "kind": "idle_start",
+          "name": "glance",
+          "direction": 1
+        },
+        {
+          "at": 33333.33333333421,
+          "kind": "idle_start",
+          "name": "slow_blink",
+          "direction": -1
+        },
+        {
+          "at": 49166.66666666524,
+          "kind": "idle_start",
+          "name": "settle",
+          "direction": 1
+        },
+        {
+          "at": 63083.33333332988,
+          "kind": "idle_start",
+          "name": "glance",
+          "direction": 1
+        },
+        {
+          "at": 74649.99999999884,
+          "kind": "idle_start",
+          "name": "slow_blink",
+          "direction": -1
+        },
+        {
+          "at": 86466.66666666894,
+          "kind": "idle_start",
+          "name": "tilt",
+          "direction": -1
+        },
+        {
+          "at": 100866.66666667313,
+          "kind": "idle_start",
+          "name": "glance",
+          "direction": 1
+        },
+        {
+          "at": 111750.00000000963,
+          "kind": "idle_start",
+          "name": "settle",
+          "direction": -1
+        },
+        {
+          "at": 127166.66666668079,
+          "kind": "idle_start",
+          "name": "tilt",
+          "direction": -1
+        },
+        {
+          "at": 140200.00000000995,
+          "kind": "idle_start",
+          "name": "glance",
+          "direction": 1
+        },
+        {
+          "at": 152433.33333333617,
+          "kind": "idle_start",
+          "name": "settle",
+          "direction": -1
+        },
+        {
+          "at": 170316.6666666591,
+          "kind": "idle_start",
+          "name": "slow_blink",
+          "direction": 1
+        },
+        {
+          "at": 181333.33333331934,
+          "kind": "idle_start",
+          "name": "tilt",
+          "direction": -1
+        },
+        {
+          "at": 193683.33333331216,
+          "kind": "idle_start",
+          "name": "glance",
+          "direction": 1
+        },
+        {
+          "at": 207849.99999997058,
+          "kind": "idle_start",
+          "name": "settle",
+          "direction": -1
+        },
+        {
+          "at": 218016.66666663132,
+          "kind": "idle_start",
+          "name": "tilt",
+          "direction": 1
+        },
+        {
+          "at": 235233.33333328797,
+          "kind": "idle_start",
+          "name": "slow_blink",
+          "direction": -1
+        },
+        {
+          "at": 248366.66666661366,
+          "kind": "idle_start",
+          "name": "settle",
+          "direction": -1
+        },
+        {
+          "at": 260983.33333327298,
+          "kind": "idle_start",
+          "name": "glance",
+          "direction": -1
+        },
+        {
+          "at": 276133.3333332886,
+          "kind": "idle_start",
+          "name": "tilt",
+          "direction": -1
+        },
+        {
+          "at": 292633.3333333078,
+          "kind": "idle_start",
+          "name": "slow_blink",
+          "direction": -1
+        },
+        {
+          "at": 309099.99999999366,
+          "kind": "idle_start",
+          "name": "glance",
+          "direction": 1
+        },
+        {
+          "at": 320016.66666667303,
+          "kind": "idle_start",
+          "name": "tilt",
+          "direction": -1
+        },
+        {
+          "at": 331983.3333333536,
+          "kind": "idle_start",
+          "name": "slow_blink",
+          "direction": -1
+        },
+        {
+          "at": 346700.0000000374,
+          "kind": "idle_start",
+          "name": "glance",
+          "direction": 1
+        },
+        {
+          "at": 358666.666666718,
+          "kind": "idle_start",
+          "name": "settle",
+          "direction": -1
+        },
+        {
+          "at": 371616.6666667331,
+          "kind": "idle_start",
+          "name": "tilt",
+          "direction": -1
+        },
+        {
+          "at": 383833.333333414,
+          "kind": "idle_start",
+          "name": "slow_blink",
+          "direction": -1
+        },
+        {
+          "at": 396066.66666676156,
+          "kind": "idle_start",
+          "name": "settle",
+          "direction": 1
+        },
+        {
+          "at": 410450.00000011164,
+          "kind": "idle_start",
+          "name": "tilt",
+          "direction": 1
+        },
+        {
+          "at": 426216.66666679666,
+          "kind": "idle_start",
+          "name": "glance",
+          "direction": 1
+        },
+        {
+          "at": 442200.0000001486,
+          "kind": "idle_start",
+          "name": "slow_blink",
+          "direction": 1
+        },
+        {
+          "at": 454633.3333334964,
+          "kind": "idle_start",
+          "name": "settle",
+          "direction": 1
+        },
+        {
+          "at": 468400.0000001791,
+          "kind": "idle_start",
+          "name": "tilt",
+          "direction": 1
+        },
+        {
+          "at": 480833.3333335269,
+          "kind": "idle_start",
+          "name": "glance",
+          "direction": -1
+        },
+        {
+          "at": 492583.3333335406,
+          "kind": "idle_start",
+          "name": "slow_blink",
+          "direction": -1
+        },
+        {
+          "at": 504100.00000022067,
+          "kind": "idle_start",
+          "name": "tilt",
+          "direction": -1
+        },
+        {
+          "at": 516333.33333356824,
+          "kind": "idle_start",
+          "name": "settle",
+          "direction": 1
+        },
+        {
+          "at": 530066.6666668974,
+          "kind": "idle_start",
+          "name": "slow_blink",
+          "direction": -1
+        },
+        {
+          "at": 544683.33333353,
+          "kind": "idle_start",
+          "name": "tilt",
+          "direction": 1
+        },
+        {
+          "at": 555966.6666668371,
+          "kind": "idle_start",
+          "name": "glance",
+          "direction": -1
+        },
+        {
+          "at": 567000.0000001447,
+          "kind": "idle_start",
+          "name": "settle",
+          "direction": -1
+        },
+        {
+          "at": 578566.6666667844,
+          "kind": "idle_start",
+          "name": "slow_blink",
+          "direction": -1
+        },
+        {
+          "at": 589400.0000000926,
+          "kind": "idle_start",
+          "name": "tilt",
+          "direction": 1
+        }
+      ],
+      "emotion_events": 0,
+      "pause_comparisons": 0,
+      "buffering_frames": 0,
+      "late_result_rejected": null,
+      "bounds_violations": 0,
+      "other_owner_changes": 0,
+      "idle_starts_while_busy": 0,
+      "local_policy_compute_p95_ms": 0.001600000000010482,
+      "scope": "Offline policy simulation, not ten minutes of online Cubism/TTS/model inference."
+    },
+    {
+      "mode": "mixed",
+      "simulated_wall_ms": 600000,
+      "evaluated_frames": 36001,
+      "action_clock_ms": 567800.0000001428,
+      "idle_count": 37,
+      "idle_starts": [
+        {
+          "at": 16233.333333333101,
+          "kind": "idle_start",
+          "name": "glance",
+          "direction": 1
+        },
+        {
+          "at": 33333.33333333421,
+          "kind": "idle_start",
+          "name": "slow_blink",
+          "direction": -1
+        },
+        {
+          "at": 54399.99999999781,
+          "kind": "idle_start",
+          "name": "settle",
+          "direction": 1
+        },
+        {
+          "at": 68316.66666666366,
+          "kind": "idle_start",
+          "name": "glance",
+          "direction": 1
+        },
+        {
+          "at": 79883.33333333369,
+          "kind": "idle_start",
+          "name": "slow_blink",
+          "direction": -1
+        },
+        {
+          "at": 97083.3333333387,
+          "kind": "idle_start",
+          "name": "tilt",
+          "direction": -1
+        },
+        {
+          "at": 111483.33333334289,
+          "kind": "idle_start",
+          "name": "glance",
+          "direction": 1
+        },
+        {
+          "at": 122366.66666667939,
+          "kind": "idle_start",
+          "name": "settle",
+          "direction": -1
+        },
+        {
+          "at": 139800.0000000102,
+          "kind": "idle_start",
+          "name": "tilt",
+          "direction": -1
+        },
+        {
+          "at": 152833.33333333593,
+          "kind": "idle_start",
+          "name": "glance",
+          "direction": 1
+        },
+        {
+          "at": 165066.66666666215,
+          "kind": "idle_start",
+          "name": "settle",
+          "direction": -1
+        },
+        {
+          "at": 182949.99999998507,
+          "kind": "idle_start",
+          "name": "slow_blink",
+          "direction": 1
+        },
+        {
+          "at": 193966.66666664532,
+          "kind": "idle_start",
+          "name": "tilt",
+          "direction": -1
+        },
+        {
+          "at": 206316.66666663814,
+          "kind": "idle_start",
+          "name": "glance",
+          "direction": 1
+        },
+        {
+          "at": 225199.99999996048,
+          "kind": "idle_start",
+          "name": "settle",
+          "direction": -1
+        },
+        {
+          "at": 235366.66666662123,
+          "kind": "idle_start",
+          "name": "tilt",
+          "direction": 1
+        },
+        {
+          "at": 252583.33333327787,
+          "kind": "idle_start",
+          "name": "slow_blink",
+          "direction": -1
+        },
+        {
+          "at": 267883.333333279,
+          "kind": "idle_start",
+          "name": "settle",
+          "direction": -1
+        },
+        {
+          "at": 280499.99999996036,
+          "kind": "idle_start",
+          "name": "glance",
+          "direction": -1
+        },
+        {
+          "at": 297549.9999999802,
+          "kind": "idle_start",
+          "name": "tilt",
+          "direction": 1
+        },
+        {
+          "at": 312649.9999999978,
+          "kind": "idle_start",
+          "name": "settle",
+          "direction": 1
+        },
+        {
+          "at": 325550.0000000128,
+          "kind": "idle_start",
+          "name": "slow_blink",
+          "direction": -1
+        },
+        {
+          "at": 336566.6666666923,
+          "kind": "idle_start",
+          "name": "glance",
+          "direction": -1
+        },
+        {
+          "at": 353283.3333333784,
+          "kind": "idle_start",
+          "name": "tilt",
+          "direction": 1
+        },
+        {
+          "at": 366200.0000000601,
+          "kind": "idle_start",
+          "name": "slow_blink",
+          "direction": -1
+        },
+        {
+          "at": 383316.6666667467,
+          "kind": "idle_start",
+          "name": "glance",
+          "direction": -1
+        },
+        {
+          "at": 395983.33333342813,
+          "kind": "idle_start",
+          "name": "tilt",
+          "direction": -1
+        },
+        {
+          "at": 413450.00000011513,
+          "kind": "idle_start",
+          "name": "settle",
+          "direction": -1
+        },
+        {
+          "at": 438683.33333347784,
+          "kind": "idle_start",
+          "name": "slow_blink",
+          "direction": 1
+        },
+        {
+          "at": 453066.6666668279,
+          "kind": "idle_start",
+          "name": "tilt",
+          "direction": 1
+        },
+        {
+          "at": 465633.3333335092,
+          "kind": "idle_start",
+          "name": "settle",
+          "direction": 1
+        },
+        {
+          "at": 482750.0000001958,
+          "kind": "idle_start",
+          "name": "slow_blink",
+          "direction": -1
+        },
+        {
+          "at": 500416.66666688304,
+          "kind": "idle_start",
+          "name": "tilt",
+          "direction": -1
+        },
+        {
+          "at": 524083.33333357726,
+          "kind": "idle_start",
+          "name": "settle",
+          "direction": -1
+        },
+        {
+          "at": 535516.6666668847,
+          "kind": "idle_start",
+          "name": "glance",
+          "direction": -1
+        },
+        {
+          "at": 549600.0000001852,
+          "kind": "idle_start",
+          "name": "tilt",
+          "direction": -1
+        },
+        {
+          "at": 566800.0000001452,
+          "kind": "idle_start",
+          "name": "settle",
+          "direction": -1
+        }
+      ],
+      "emotion_events": 14,
+      "pause_comparisons": 658,
+      "buffering_frames": 1260,
+      "late_result_rejected": true,
+      "bounds_violations": 0,
+      "other_owner_changes": 0,
+      "idle_starts_while_busy": 0,
+      "local_policy_compute_p95_ms": 0.003500000000030923,
+      "scope": "Offline policy simulation, not ten minutes of online Cubism/TTS/model inference."
+    }
+  ],
+  "browser": {
+    "ok": true,
+    "browser_version": "156.0.8078.76",
+    "pacing": [
+      {
+        "mode": "current",
+        "presented_frames": 366,
+        "p95_presentation_ms": 16.90000000000009,
+        "max_gap_ms": 33.59999999999991,
+        "gaps_over_100_ms": 0,
+        "automatic_time_writes": 0,
+        "automatic_seeks": 0
+      },
+      {
+        "mode": "state_idle",
+        "presented_frames": 370,
+        "p95_presentation_ms": 16.899999999999636,
+        "max_gap_ms": 33.5,
+        "gaps_over_100_ms": 0,
+        "automatic_time_writes": 0,
+        "automatic_seeks": 0
+      }
+    ],
+    "human_votes_created": 0,
+    "checks": [
+      "three scenes, two versions, genuine 60-fps inputs and identical paired audio",
+      "one media clock; no automatic seeks; explicit switches keep time; pause and reaction jump work",
+      "desktop/mobile layout and optional actual-parameter plot",
+      "no backend writes, actor socket, human votes or protected-source changes"
+    ],
+    "errors": []
+  },
+  "clip_diagnostics": [
+    {
+      "id": "quiet-current",
+      "scene": "quiet",
+      "condition": "current",
+      "frames": 1680,
+      "image_hz": 60,
+      "arm_finger_inputs_identical": true,
+      "appearance_unchanged": true,
+      "special_eyes_unchanged": true,
+      "policy_events": [],
+      "ranges": {
+        "AngleX": {
+          "min": 6,
+          "max": 6
+        },
+        "AngleY": {
+          "min": 0,
+          "max": 0
+        },
+        "AngleZ": {
+          "min": -3,
+          "max": -3
+        },
+        "PositionX": {
+          "min": 2,
+          "max": 2
+        },
+        "PositionY": {
+          "min": 0,
+          "max": 0
+        },
+        "PositionZ": {
+          "min": 0,
+          "max": 0
+        },
+        "LeanInput": {
+          "min": -2.5,
+          "max": -2.5
+        },
+        "ParamEyeBallX": {
+          "min": 0,
+          "max": 0
+        },
+        "ParamEyeBallY": {
+          "min": 0,
+          "max": 0
+        },
+        "ParamEyeLOpen": {
+          "min": 0,
+          "max": 1
+        },
+        "ParamBrowLY": {
+          "min": 0,
+          "max": 0
+        },
+        "LEyeSquint": {
+          "min": 0,
+          "max": 0
+        },
+        "key1": {
+          "min": 0,
+          "max": 0
+        },
+        "key7": {
+          "min": 0,
+          "max": 0
+        }
+      },
+      "local_policy_compute_p95_ms": 0.012600000000020373,
+      "computation_scope": "Offline JS policy only; excludes online semantic/TTS/render/network.",
+      "input_sha256": "1435335388a1300c21b278a29f4b05a2608d69e6b26da20c56258c09ffcdc0b4",
+      "actual_sha256": "a6f1b41a92df638ba5e82e8ad49b1b7d1812125d1559ce844b9859f67f1ca8bb"
+    },
+    {
+      "id": "quiet-state_idle",
+      "scene": "quiet",
+      "condition": "state_idle",
+      "frames": 1680,
+      "image_hz": 60,
+      "arm_finger_inputs_identical": true,
+      "appearance_unchanged": true,
+      "special_eyes_unchanged": true,
+      "policy_events": [
+        {
+          "at": 16233.333333333334,
+          "kind": "idle_start",
+          "name": "glance",
+          "direction": 1
+        }
+      ],
+      "ranges": {
+        "AngleX": {
+          "min": 6,
+          "max": 7.4
+        },
+        "AngleY": {
+          "min": 0,
+          "max": 0
+        },
+        "AngleZ": {
+          "min": -3,
+          "max": -3
+        },
+        "PositionX": {
+          "min": 2,
+          "max": 2
+        },
+        "PositionY": {
+          "min": 0,
+          "max": 0
+        },
+        "PositionZ": {
+          "min": 0,
+          "max": 0
+        },
+        "LeanInput": {
+          "min": -2.5,
+          "max": -2.5
+        },
+        "ParamEyeBallX": {
+          "min": 0,
+          "max": 0.2
+        },
+        "ParamEyeBallY": {
+          "min": 0,
+          "max": 0
+        },
+        "ParamEyeLOpen": {
+          "min": 0,
+          "max": 1
+        },
+        "ParamBrowLY": {
+          "min": 0,
+          "max": 0
+        },
+        "LEyeSquint": {
+          "min": 0,
+          "max": 0
+        },
+        "key1": {
+          "min": 0,
+          "max": 0
+        },
+        "key7": {
+          "min": 0,
+          "max": 0
+        }
+      },
+      "local_policy_compute_p95_ms": 0.01329999999870779,
+      "computation_scope": "Offline JS policy only; excludes online semantic/TTS/render/network.",
+      "input_sha256": "a3db0c07906f276021586bae12bd73bf53175f4095d92b1a6cd6453fe24d2d2d",
+      "actual_sha256": "b84d87e0ee5ee58dcbe03370ef4fbf4da825a87ba1af6990ca4b0c4e356243f2"
+    },
+    {
+      "id": "shy-current",
+      "scene": "shy",
+      "condition": "current",
+      "frames": 718,
+      "image_hz": 60,
+      "arm_finger_inputs_identical": true,
+      "appearance_unchanged": true,
+      "special_eyes_unchanged": true,
+      "policy_events": [
+        {
+          "at": 500,
+          "kind": "emotion",
+          "name": "shy"
+        },
+        {
+          "at": 4450,
+          "kind": "emotion",
+          "name": "happy"
+        }
+      ],
+      "ranges": {
+        "AngleX": {
+          "min": 0,
+          "max": 8.612
+        },
+        "AngleY": {
+          "min": -2.55997,
+          "max": 1.708
+        },
+        "AngleZ": {
+          "min": -4.09,
+          "max": 0
+        },
+        "PositionX": {
+          "min": 0,
+          "max": 3.444
+        },
+        "PositionY": {
+          "min": -0.8,
+          "max": 0
+        },
+        "PositionZ": {
+          "min": -0.08,
+          "max": 7.22
+        },
+        "LeanInput": {
+          "min": -6.694,
+          "max": 0
+        },
+        "ParamEyeBallX": {
+          "min": 0,
+          "max": 0
+        },
+        "ParamEyeBallY": {
+          "min": 0,
+          "max": 0
+        },
+        "ParamEyeLOpen": {
+          "min": 0,
+          "max": 1
+        },
+        "ParamBrowLY": {
+          "min": 0,
+          "max": 0
+        },
+        "LEyeSquint": {
+          "min": 0,
+          "max": 0
+        },
+        "key1": {
+          "min": 0,
+          "max": 0
+        },
+        "key7": {
+          "min": 0,
+          "max": 0.38
+        }
+      },
+      "local_policy_compute_p95_ms": 0.017600000006495975,
+      "computation_scope": "Offline JS policy only; excludes online semantic/TTS/render/network.",
+      "input_sha256": "dcf46fc9fc04c2674ae08e1989f36983cec768695bcf87c41dc9d010f9b68f1c",
+      "actual_sha256": "0ad82325b4f87ab20edddffbeb210e727b3359f7f5e291be459ade6ee829b26a"
+    },
+    {
+      "id": "shy-state_idle",
+      "scene": "shy",
+      "condition": "state_idle",
+      "frames": 718,
+      "image_hz": 60,
+      "arm_finger_inputs_identical": true,
+      "appearance_unchanged": true,
+      "special_eyes_unchanged": true,
+      "policy_events": [
+        {
+          "at": 500,
+          "kind": "emotion",
+          "name": "shy"
+        },
+        {
+          "at": 4450,
+          "kind": "emotion",
+          "name": "happy"
+        }
+      ],
+      "ranges": {
+        "AngleX": {
+          "min": 0,
+          "max": 8.612
+        },
+        "AngleY": {
+          "min": -2.55997,
+          "max": 1.708
+        },
+        "AngleZ": {
+          "min": -4.09,
+          "max": 0
+        },
+        "PositionX": {
+          "min": 0,
+          "max": 3.444
+        },
+        "PositionY": {
+          "min": -0.8,
+          "max": 0
+        },
+        "PositionZ": {
+          "min": -0.08,
+          "max": 7.22
+        },
+        "LeanInput": {
+          "min": -6.694,
+          "max": 0
+        },
+        "ParamEyeBallX": {
+          "min": 0,
+          "max": 0.0684
+        },
+        "ParamEyeBallY": {
+          "min": -0.0304,
+          "max": 0
+        },
+        "ParamEyeLOpen": {
+          "min": 0,
+          "max": 1
+        },
+        "ParamBrowLY": {
+          "min": 0,
+          "max": 0.0456
+        },
+        "LEyeSquint": {
+          "min": 0,
+          "max": 0
+        },
+        "key1": {
+          "min": 0,
+          "max": 0
+        },
+        "key7": {
+          "min": 0,
+          "max": 0.38
+        }
+      },
+      "local_policy_compute_p95_ms": 0.030100000003585592,
+      "computation_scope": "Offline JS policy only; excludes online semantic/TTS/render/network.",
+      "input_sha256": "f15962f8d0625e0b57c6001b178193873c517e230a6d1ab595ab0425c6045688",
+      "actual_sha256": "064f21a97d75a0e214b0d3014626285770f42d1f676265b43ca9fbc8fc82a23e"
+    },
+    {
+      "id": "anger-current",
+      "scene": "anger",
+      "condition": "current",
+      "frames": 600,
+      "image_hz": 60,
+      "arm_finger_inputs_identical": true,
+      "appearance_unchanged": true,
+      "special_eyes_unchanged": true,
+      "policy_events": [
+        {
+          "at": 500,
+          "kind": "emotion",
+          "name": "angry"
+        }
+      ],
+      "ranges": {
+        "AngleX": {
+          "min": -4,
+          "max": -4
+        },
+        "AngleY": {
+          "min": -2,
+          "max": -2
+        },
+        "AngleZ": {
+          "min": 2,
+          "max": 2
+        },
+        "PositionX": {
+          "min": -1.5,
+          "max": -1.5
+        },
+        "PositionY": {
+          "min": 0,
+          "max": 0
+        },
+        "PositionZ": {
+          "min": 0,
+          "max": 0
+        },
+        "LeanInput": {
+          "min": 0,
+          "max": 0
+        },
+        "ParamEyeBallX": {
+          "min": 0,
+          "max": 0
+        },
+        "ParamEyeBallY": {
+          "min": 0,
+          "max": 0
+        },
+        "ParamEyeLOpen": {
+          "min": 0,
+          "max": 1
+        },
+        "ParamBrowLY": {
+          "min": 0,
+          "max": 0
+        },
+        "LEyeSquint": {
+          "min": 0,
+          "max": 0
+        },
+        "key1": {
+          "min": 0,
+          "max": 0.7
+        },
+        "key7": {
+          "min": 0,
+          "max": 0
+        }
+      },
+      "local_policy_compute_p95_ms": 0.013600000005681068,
+      "computation_scope": "Offline JS policy only; excludes online semantic/TTS/render/network.",
+      "input_sha256": "ca9f24d5f3360f6cc3932c9c6eb5ac9938fba666afacd1ab8599becf24eb45c7",
+      "actual_sha256": "4856fe903090931556ef63b9557dcd15c6fb77a865ceb00e3df4344f4748a367"
+    },
+    {
+      "id": "anger-state_idle",
+      "scene": "anger",
+      "condition": "state_idle",
+      "frames": 600,
+      "image_hz": 60,
+      "arm_finger_inputs_identical": true,
+      "appearance_unchanged": true,
+      "special_eyes_unchanged": true,
+      "policy_events": [
+        {
+          "at": 500,
+          "kind": "emotion",
+          "name": "angry"
+        }
+      ],
+      "ranges": {
+        "AngleX": {
+          "min": -4,
+          "max": -4
+        },
+        "AngleY": {
+          "min": -2,
+          "max": -2
+        },
+        "AngleZ": {
+          "min": 2,
+          "max": 2
+        },
+        "PositionX": {
+          "min": -1.5,
+          "max": -1.5
+        },
+        "PositionY": {
+          "min": 0,
+          "max": 0
+        },
+        "PositionZ": {
+          "min": 0,
+          "max": 0
+        },
+        "LeanInput": {
+          "min": 0,
+          "max": 0
+        },
+        "ParamEyeBallX": {
+          "min": 0,
+          "max": 0
+        },
+        "ParamEyeBallY": {
+          "min": 0,
+          "max": 0
+        },
+        "ParamEyeLOpen": {
+          "min": 0,
+          "max": 1
+        },
+        "ParamBrowLY": {
+          "min": -0.154,
+          "max": 0
+        },
+        "LEyeSquint": {
+          "min": 0,
+          "max": 0.098
+        },
+        "key1": {
+          "min": 0,
+          "max": 0.7
+        },
+        "key7": {
+          "min": 0,
+          "max": 0
+        }
+      },
+      "local_policy_compute_p95_ms": 0.015999999988707714,
+      "computation_scope": "Offline JS policy only; excludes online semantic/TTS/render/network.",
+      "input_sha256": "c02ba43657afd2f15e39f7385e3da80cf80c89d1b2994157ca407f5ccacbf9f0",
+      "actual_sha256": "3ed67254e8b6d6087d6b22fae82a999f1c43dfebbbec0649646062b0fbb79da4"
+    }
+  ],
+  "failures_retained": [
+    {
+      "stage": "initial ownership validation",
+      "finding": "ParamBrowLAngle/RAngle are native physics outputs, so the prototype rejected ownership.",
+      "resolution": "Use safe brow-height and squint inputs; preserve native physics."
+    },
+    {
+      "stage": "first capture navigation",
+      "finding": "Main server serves production dist, so a research TS page was not available there.",
+      "resolution": "Separate Vite-only research server on 8775; no main restart or action workers."
+    },
+    {
+      "stage": "initial image transfer",
+      "finding": "Returning all 1680 PNG frames at once exceeded the Node/CDP string size limit.",
+      "resolution": "90-frame transfer batches; native physics remains continuous, with 120-frame exact readback equivalence to frozen capture."
+    }
+  ],
+  "limitations": [
+    "Fixed research emotion signals, no automatic semantics or generalization result.",
+    "Three rendered scenes; no human naturalness acceptance or comparison winner.",
+    "Slow affect currently biases idle choice; body tone and long-term mood behavior are not implemented.",
+    "Offline ten-minute policy simulations, not full online stability or simultaneous model/TTS latency.",
+    "Per-region and lifecycle prototypes require online integration and more emotion-transition cases before promotion."
+  ]
+}

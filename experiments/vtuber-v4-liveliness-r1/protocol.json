@@ -1,0 +1,87 @@
+{
+  "schema": "liveliness-study.v1",
+  "created_utc": "2026-11-03T13:33:00.366133+00:00",
+  "conditions": [
+    "current",
+    "state_idle"
+  ],
+  "hz": 60,
+  "trained": false,
+  "promoted": false,
+  "scenes": [
+    {
+      "id": "quiet",
+      "title": "安静等待 · 偶尔侧看与轻歪头",
+      "duration_ms": 28000,
+      "framing": "full",
+      "initial": {
+        "AngleX": 6,
+        "AngleZ": -3,
+        "PositionX": 2,
+        "LeanInput": -2.5
+      },
+      "events": [],
+      "source": "Synthetic silent execution probe, retained non-default initial pose."
+    },
+    {
+      "id": "shy",
+      "title": "两句对话 · 害羞到开心",
+      "duration_ms": 11960,
+      "framing": "portrait",
+      "cached_scene": "datasets/vtuber-v4-mapping-r1/shy",
+      "events": [
+        {
+          "at_ms": 500,
+          "emotion": "shy",
+          "intensity": 0.38,
+          "hold_ms": 5000
+        },
+        {
+          "at_ms": 4440,
+          "emotion": "happy",
+          "intensity": 0.3,
+          "hold_ms": 4000
+        }
+      ],
+      "source": "Cached real development speech and original arm/body path; fixed research emotion signals, not semantic model output."
+    },
+    {
+      "id": "anger",
+      "title": "生气保持 · 眉眼先放松，黑脸稍后退出",
+      "duration_ms": 10000,
+      "framing": "portrait",
+      "initial": {
+        "AngleX": -4,
+        "AngleY": -2,
+        "AngleZ": 2,
+        "PositionX": -1.5
+      },
+      "events": [
+        {
+          "at_ms": 500,
+          "emotion": "angry",
+          "intensity": 0.7,
+          "hold_ms": 4000
+        }
+      ],
+      "source": "Synthetic silent execution probe with the same explicit emotion/strength/hold in both conditions."
+    }
+  ],
+  "idle": {
+    "interval_ms": [
+      10000,
+      18000
+    ],
+    "per_action_cooldown_ms": 20000,
+    "recent_history": 2,
+    "yield_ms": 300,
+    "arms_allowed": false
+  },
+  "constraints": [
+    "No production source/config/weight changes.",
+    "No online semantic or TTS inference.",
+    "No keyword-triggered motions, periodic body noise, or speech-energy retiming.",
+    "Special eye drawing switches and appearance retain existing owners.",
+    "Ten-minute checks are policy simulations, not a full online stability acceptance."
+  ]
+}

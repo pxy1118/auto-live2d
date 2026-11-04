@@ -1,0 +1,5 @@
+{
+  "path": "experiments/vtuber-v4-restrained",
+  "promoted": false,
+  "reason": "Expression preferences calibrated from 16 user choices; body and blind acceptance remain pending. Legacy default remains v3."
+}

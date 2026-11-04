@@ -5,12 +5,17 @@ import { CubismPhysics, Options } from '../vendor/cubism/Framework/src/physics/c
 import { Controller, ControlError, type Manifest, type Parameter } from './controller';
 import { SpeechPlayer, type PreparedSpeech } from './speech';
 import { speechAccents } from './speech-motion';
+import { PerformanceController } from './performance';
+import { streamChannels } from './performance-profile';
+import {gestureFingerChannels} from './gesture-library';
+import { normalizeEyeParameters } from './eye-style';
 
 const FIXED_DT = 1 / 60;
 const bytes = (value: any) => new TextEncoder().encode(JSON.stringify(value)).buffer as ArrayBuffer;
 
 export class Live2DEngine extends CubismUserModel {
   control!: Controller;
+  performance!: PerformanceController;
   gl!: WebGLRenderingContext;
   ready = false;
   framing: 'full' | 'portrait' = 'full';
@@ -105,6 +110,7 @@ export class Live2DEngine extends CubismUserModel {
       this.partDefaults.push(this._model.getPartOpacityByIndex(i));
     }
     this.control = new Controller(parameters, this.manifest, this.partIds);
+    this.performance = new PerformanceController(parameters,this.manifest.motions);
     this.resetPhysics(); this.apply(0);
     this.measureBounds();
     this.ready = true; this.onProgress('模型已就绪', 100);
@@ -123,7 +129,17 @@ export class Live2DEngine extends CubismUserModel {
     if (this.control) this.control.lastFinal = this.control.parameters.map((_, i) => this._model.getParameterValueByIndex(i));
   }
 
-  private apply(dt: number) {
+  private handLandmarks(){
+    const m=this._model,parents=m.getPartParentPartIndices(),points:{right:number[];left:number[]}={right:[],left:[]};
+    for(let i=0;i<m.getDrawableCount();i++){
+      if(m.getDrawableOpacity(i)<.05)continue;let part=m.getDrawableParentPartIndex(i),side:'right'|'left'|undefined;
+      for(let j=0;j<20&&part>=0;j++){const id=this.partIds[part];if(id==='Part130'){side='right';break;}if(id==='Part131'){side='left';break;}part=parents[part];}
+      if(side){const vertices=m.getDrawableVertexPositions(i);for(let j=1;j<vertices.length;j+=2)points[side].push(vertices[j]);}
+    }
+    return Object.fromEntries(Object.entries(points).map(([side,ys])=>[side,ys.length?{y:ys.reduce((a,b)=>a+b,0)/ys.length,max_y:Math.max(...ys),vertices:ys.length}:null]));
+  }
+
+  private apply(dt: number, updateGeometry = true) {
     const mouth=this.speech.sample();
     if(this.speechMotion&&mouth.started){this.control.time=0;this.control.execute(this.speechMotion.method,this.speechMotion.params);this.speechMotion=null;}
     const { pre, post } = this.control.evaluate(dt,this.speechOwnsMotion&&mouth.motion_time_ms!==null?mouth.motion_time_ms/1000:undefined);
@@ -134,6 +150,10 @@ export class Live2DEngine extends CubismUserModel {
       }
     }
     if(mouth.mouth!==null){const index=this.control.indices.get('ParamMouthOpenY');if(index!==undefined)pre[index]=mouth.mouth;}
+    const generated=this.performance.tick(dt,this.speech.info(),Object.fromEntries(this.control.parameters.map((p,i)=>[p.id,pre[i]])));
+    for(const [id,value] of Object.entries(generated)){const i=this.control.indices.get(id);if(i!==undefined&&(![...streamChannels,...gestureFingerChannels].includes(id)||!this.control.overrides.has(id))){pre[i]=value;if(this.control.parameters[i].physicsOutput)post[id]=value;}}
+    for(const id of ['ParamEyeLOpen','ParamEyeROpen']){const i=this.control.indices.get(id);if(i!==undefined)pre[i]=Math.min(pre[i],this.control.blinkLimit());}
+    normalizeEyeParameters(pre, this.control.indices, post);
     pre.forEach((value, i) => this._model.setParameterValueByIndex(i, value));
     this.partDefaults.forEach((value, i) => this._model.setPartOpacityByIndex(i, value));
     if (this.control.physicsEnabled && dt > 0) this._physics.evaluate(this._model, dt);
@@ -142,7 +162,7 @@ export class Live2DEngine extends CubismUserModel {
     });
     for (const [id, value] of Object.entries(post)) this._model.setParameterValueByIndex(this.control.indices.get(id)!, value);
     for (const [id, value] of this.control.partOverrides) this._model.setPartOpacityByIndex(this.partIds.indexOf(id), value);
-    this._model.update();
+    if(updateGeometry)this._model.update();
     this.control.acceptFinal(this.control.parameters.map((_, i) => this._model.getParameterValueByIndex(i)));
   }
 
@@ -230,6 +250,7 @@ export class Live2DEngine extends CubismUserModel {
     if(this.control.recording)throw new ControlError('recording_active','请先保存当前录制');
     if(!this.speech.info().enabled)throw new ControlError('audio_locked','请重新启用浏览器声音');
     this.speech.stop();
+    this.performance.detach();
     if(clip.trajectory){this.control.reset(false,true);this.accumulator=0;this.resetPhysics();}
     this.control.paused=false;this.control.execute('behavior.set',{idle:true,breath:true,blink:true,physicsEnabled:true});
     this.speechOwnsMotion=!!clip.trajectory;this.speechMotion=clip.trajectory??null;
@@ -242,9 +263,13 @@ export class Live2DEngine extends CubismUserModel {
       if(params.trajectory.method!=='trajectory.play')throw new ControlError('invalid_speech','语音动作需为模型轨迹');
       new Controller(this.control.parameters,this.manifest,this.partIds).execute('trajectory.play',params.trajectory.params);
     }
+    if(params.performance_session_id!==undefined)this.performance.require(params.performance_session_id);
+    else this.performance.detach();
     const result=this.speech.beginStream(params);this.speechRequest++;
     if(params.trajectory){this.control.reset(false,true);this.accumulator=0;this.resetPhysics();}
-    this.control.paused=false;this.control.execute('behavior.set',{idle:true,breath:true,blink:true,physicsEnabled:true});
+    if(!params.performance_session_id)this.control.paused=false;
+    else if(this.control.paused)this.speech.pause();
+    this.control.execute('behavior.set',{idle:true,breath:true,blink:true,physicsEnabled:true});
     this.speechOwnsMotion=!!params.trajectory;this.speechMotion=params.trajectory??null;return result;
   }
 
@@ -252,21 +277,67 @@ export class Live2DEngine extends CubismUserModel {
     if (!params || typeof params !== 'object' || Array.isArray(params)) throw new ControlError('invalid_argument', 'params 必须为对象');
     switch (method) {
       case 'model.describe': return this.describe();
-      case 'state.get': return { ...this.control.state(true), speech:this.speech.info(), ...(params.geometry ? { geometry: this.geometryProbe() } : {}) };
+      case 'state.get': return { ...this.control.state(true), performance:this.performance.state(), speech:this.speech.info(), ...(params.geometry ? { geometry: this.geometryProbe() } : {}),...(params.hand_landmarks?{hand_landmarks:this.handLandmarks()}:{}) };
+      case 'capabilities.get': return this.performance.capabilities();
+      case 'appearance.get': return this.performance.getAppearance();
+      case 'appearance.update': {const result=this.performance.updateAppearance(params);this.performance.appearanceOwned=true;return result;}
+      case 'performance.state': return this.performance.state();
+      case 'performance.direct': {
+        const result=this.performance.direct(params);
+        if(params.gesture){this.performance.rememberPose(Object.fromEntries(this.control.parameters.map((p,i)=>[p.id,this.control.lastFinal[i]])));this.control.playbacks.clear();this.control.timeline=null;this.speechOwnsMotion=false;this.speechMotion=null;
+          for(const group of this.performance.capabilities().action_groups)for(const id of group.owned_channels)this.control.overrides.delete(id);}
+        else if(params.body_motion)for(const body of this.performance.capabilities().body_motions)for(const id of body.owned_channels)this.control.overrides.delete(id);
+        return result;
+      }
+      case 'performance.release': return this.performance.release(params);
+      case 'performance.begin': {
+        if(this.control.recording)throw new ControlError('recording_active','请先保存当前录制');
+        this.stopSpeech();this.control.timeline=null;this.control.playbacks.clear();
+        for(const id of [...this.performance.capabilities().channels.map(p=>p.id),...gestureFingerChannels])this.control.overrides.delete(id);
+        return this.performance.start(params,this.control.state(true).driver);
+      }
+      case 'performance.segment': return this.performance.segment(params);
+      case 'performance.chunk': return this.performance.chunk(params);
+      case 'performance.end': {const result=this.performance.cancel(params.session_id);if(result.cancelled)this.stopSpeech();return result;}
+      case 'performance.capture': {
+        if(this.performance.active||this.speech.info().active||this.control.recording)throw new ControlError('capture_busy','离线采集需要空闲角色');
+        const channels=params.channels,frames=params.values;
+        if(!Array.isArray(channels)||!Array.isArray(frames)||frames.length>1800||channels.some(id=>!this.control.indices.has(id))||frames.some(row=>!Array.isArray(row)||row.length!==channels.length||row.some(v=>!Number.isFinite(v))))throw new ControlError('invalid_capture','采集轨迹不合法');
+        this.performance.reset();this.control.reset(true,false);this.resetPhysics();
+        if(params.trajectory)this.control.execute(params.trajectory.method,params.trajectory.params);
+        const hz=params.hz??20,imageHz=params.image_hz??10;
+        if(![20,60].includes(hz)||![10,20,30,60].includes(imageHz)||imageHz>hz||hz%imageHz)throw new ControlError('invalid_capture','采集帧率不合法');
+        const records:any[]=[],images:any[]=[],hands:any[]=[];
+        for(let f=0;f<frames.length;f++){
+          const values=Object.fromEntries(channels.map((id,i)=>[id,frames[f][i]]));
+          if(!params.trajectory){
+          for(const [name,key] of Object.entries({黑脸:'key1',流泪:'key2',脸红:'key7',加载:'key8',兔牙:'key9',流冷汗:'key13'})){
+            const j=['黑脸','流泪','脸红','加载','兔牙','流冷汗'].indexOf(name);values[key]=params.face?.[f]?.[j]??0;
+          }
+          for(const [index,key] of ['key5','key3','key4','key6'].entries())values[key]=(Array.isArray(params.eye)?params.eye[f]:params.eye)===index+1?1:0;
+          }
+          if(params.mouth)values.ParamMouthOpenY=params.mouth[Math.min(params.mouth.length-1,Math.round(f*60/hz))]??0;
+          this.control.execute('parameters.set',{values});for(let i=0;i<60/hz;i++)this.apply(FIXED_DT,params.full_update!==false||i===60/hz-1);
+          records.push(this.control.lastFinal.map(x=>Math.round(x*100000)/100000));
+          if(params.verify_hands)hands.push(this.handLandmarks());
+          if(params.images&&f%(hz/imageHz)===0){this.draw();images.push({frame:f,png:this.canvas.toDataURL('image/png').split(',')[1]});}
+        }
+        return {parameter_ids:this.control.parameters.map(p=>p.id),hz,image_hz:imageHz,actual:records,images,...(params.verify_hands?{hand_landmarks:hands}:{})};
+      }
       case 'speech.status':return this.speech.info();
       case 'speech.stream.begin':return this.beginSpeechStream(params);
       case 'speech.stream.append':return this.speech.append(params);
-      case 'speech.stream.finish':return this.speech.finish(params);
+      case 'speech.stream.finish':{const result=this.speech.finish(params);this.performance.finishSpeech(params.speech_id,result.duration_ms);return result;}
       case 'speech.stop':{
         if(params.speech_id!==undefined&&params.speech_id!==this.speech.info().speech_id)return {stopped:false};
-        const owned=this.speechOwnsMotion;this.stopSpeech();
+        const owned=this.speechOwnsMotion;this.performance.cancel();this.stopSpeech();
         if(owned){this.control.reset(false,true);this.accumulator=0;this.resetPhysics();}
         return {stopped:true};
       }
       case 'engine.reset': {
         if (params.paused !== undefined && typeof params.paused !== 'boolean') throw new ControlError('invalid_argument', 'paused 必须为布尔值');
         if (params.preserve_background !== undefined && typeof params.preserve_background !== 'boolean') throw new ControlError('invalid_argument', 'preserve_background 必须为布尔值');
-        this.stopSpeech();this.control.reset(params.paused ?? false, params.preserve_background ?? false); this.accumulator = 0; this.resetPhysics(); return { reset: true };
+        this.stopSpeech();this.performance.reset();this.control.reset(params.paused ?? false, params.preserve_background ?? false); this.accumulator = 0; this.resetPhysics(); return { reset: true };
       }
       case 'engine.pause': {
         if (typeof params.paused !== 'boolean') throw new ControlError('invalid_argument', 'paused 必须为布尔值');
@@ -295,7 +366,7 @@ export class Live2DEngine extends CubismUserModel {
       case 'recording.start': {
         if (params.paused !== undefined && typeof params.paused !== 'boolean') throw new ControlError('invalid_argument', 'paused 必须为布尔值');
         if (params.annotation !== undefined && (typeof params.annotation !== 'object' || !params.annotation || JSON.stringify(params.annotation).length > 16000)) throw new ControlError('invalid_argument', 'annotation 必须为不超过 16000 字符的对象');
-        this.stopSpeech();this.control.reset(params.paused ?? false); this.accumulator = 0; this.resetPhysics();
+        this.stopSpeech();this.performance.reset();this.control.reset(params.paused ?? false); this.accumulator = 0; this.resetPhysics();
         this.control.recording = { schema_version: 'live2d_recording.v1', asset_hash: this.manifest.assetHash, runtime: 'CubismSdkForWeb-5-r.4', profile_id: this.manifest.actionProfile?.id, profile_sha256: this.manifest.actionProfile?.sha256, annotation: params.annotation ? structuredClone(params.annotation) : null, initial_state: this.control.state(true), dt: FIXED_DT, parameter_ids: this.control.parameters.map(p => p.id), commands: [], frames: [] };
         return { recording: true, reset_to_defaults: true };
       }
@@ -312,11 +383,13 @@ export class Live2DEngine extends CubismUserModel {
         // Validate before resetting an otherwise healthy scene.
         const probe = new Controller(this.control.parameters, this.manifest, this.partIds);
         probe.execute('timeline.play', { events: recording.commands, duration_ms: recording.duration_ms });
-        this.stopSpeech();this.control.reset(params.paused ?? false); this.accumulator = 0; this.resetPhysics();
+        this.stopSpeech();this.performance.reset();this.control.reset(params.paused ?? false); this.accumulator = 0; this.resetPhysics();
         this.control.execute('timeline.play', { events: recording.commands, duration_ms: recording.duration_ms });
         return { replaying: true, duration_ms: recording.duration_ms };
       }
-      default: return this.control.execute(method, params);
+      default:
+        if(['motions.play','gesture.set','timeline.play','demo.play','expressions.set','expressions.clear','appearance.set'].includes(method)&&(this.performance.id||this.performance.hasActions())){this.performance.detach();this.stopSpeech();}
+        return this.control.execute(method, params);
     }
   }
 
@@ -329,6 +402,7 @@ export class Live2DEngine extends CubismUserModel {
       motions: this.manifest.motions.map(m => ({ name: m.name, file: m.file, duration: m.data.Meta.Duration, hold: m.hold })),
       physics_groups: this.manifest.physics.PhysicsSettings.length,
       action_profile: this.manifest.actionProfile,
+      performance: this.performance.capabilities(),
       drawables: this._model.getDrawableCount(), mask_buffers: this.getRenderer().getRenderTextureCount(),
       methods: ['speech.unlock','speech.play','speech.stop','speech.status','speech.stream.begin','speech.stream.append','speech.stream.finish','trajectory.play', 'model.describe', 'state.get', 'parameters.set', 'parameters.release', 'expressions.set', 'expressions.clear', 'appearance.set', 'gesture.set', 'motions.play', 'motions.stop', 'timeline.play', 'timeline.cancel', 'behavior.set', 'parts.set', 'physics.configure', 'engine.reset', 'engine.pause', 'engine.step', 'recording.start', 'recording.stop', 'recording.replay', 'demo.play'],
       limits: { recording_frames: 3000, recording_sample_hz: 10, timeline_events: 2000, fixed_dt: FIXED_DT },

@@ -1,0 +1,461 @@
+{
+  "schema_version": "live2d.tools.v4",
+  "transport": "POST /api/command or command message on /ws",
+  "envelope": {
+    "method": "method from tools",
+    "params": "parameters",
+    "request_id": "unique id, reuse exactly on retry"
+  },
+  "tools": [
+    {
+      "method": "performance.start",
+      "description": "开始持续表演会话；返回 session_id。需启用浏览器声音。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "context": {
+            "type": "string",
+            "maxLength": 800
+          },
+          "kind": {
+            "enum": [
+              "regression",
+              "flow"
+            ]
+          },
+          "seed": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 2147483647
+          },
+          "motion_style": {
+            "enum": [
+              "restrained",
+              "natural",
+              "lively"
+            ],
+            "default": "restrained"
+          },
+          "motion_backend": {
+            "enum": [
+              "groups",
+              "continuous"
+            ],
+            "default": "groups",
+            "description": "默认由模型选择协调动作组；continuous 保留连续参数研究路径。"
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      }
+    },
+    {
+      "method": "performance.append",
+      "description": "追加流式文字；遇标点形成分句。seq 必须严格递增。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "session_id": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{32}$"
+          },
+          "seq": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "text": {
+            "type": "string",
+            "maxLength": 2000
+          },
+          "flush": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "session_id",
+          "seq",
+          "text"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "method": "performance.finish",
+      "description": "结束文本输入并提交剩余文字；不取消已排队的语音。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "session_id": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{32}$"
+          },
+          "seq": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "text": {
+            "type": "string",
+            "maxLength": 2000
+          }
+        },
+        "required": [
+          "session_id",
+          "seq"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "method": "performance.cancel",
+      "description": "取消会话与音频；外观保留。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "session_id": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{32}$"
+          }
+        },
+        "required": [
+          "session_id"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "method": "performance.direct",
+      "description": "临时导演指令；手势与身体动作可组合或各自调用，不中断语音。clause 从指定分句开口时触发，省略立即生效。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "session_id": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{32}$"
+          },
+          "cue_id": {
+            "type": "string",
+            "maxLength": 128,
+            "minLength": 1
+          },
+          "clause": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "emotion": {
+            "enum": [
+              "neutral",
+              "happy",
+              "angry",
+              "shy",
+              "sad",
+              "surprised",
+              "confused"
+            ]
+          },
+          "intensity": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "hold_ms": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 600000
+          },
+          "expression": {
+            "enum": [
+              "黑脸",
+              "流泪",
+              "圈圈眼",
+              "爱心眼",
+              "＞＜",
+              "><",
+              "屑屑眼",
+              "脸红",
+              "加载",
+              "兔牙",
+              "流冷汗"
+            ]
+          },
+          "gesture_hint": {
+            "type": "string",
+            "maxLength": 300
+          },
+          "gesture": {
+            "enum": [
+              "wave",
+              "chest",
+              "grass",
+              "point",
+              "thanks",
+              "explain",
+              "refuse",
+              "rest"
+            ],
+            "description": "显式选择完整动作组，不中断语音。"
+          },
+          "gesture_hold_ms": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 15000,
+            "default": 1400,
+            "description": "进入完成后的停留时间；之后播放退出。rest 用于保持安静的时长。"
+          },
+          "variant": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 2
+          },
+          "body_motion": {
+            "enum": [
+              "lean",
+              "sway",
+              "nod",
+              "tilt",
+              "turn",
+              "cajole",
+              "rest"
+            ],
+            "description": "独立身体动作，可与 gesture 组合；仅操作头部和躯干，不重启手势。rest 只收回附加身体动作。 cajole 为前倾、轻扭躯干与歪头组成的撒娇。"
+          },
+          "body_variant": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 2
+          },
+          "body_strength": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1,
+            "default": 0.75,
+            "description": "身体动作幅度，与表情 intensity 分开。"
+          },
+          "body_hold_ms": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 15000,
+            "default": 2200,
+            "description": "700ms 进入后的停留时间，之后 700ms 退出；轻摇和点头为有限节拍，不永久循环。"
+          }
+        },
+        "required": [],
+        "additionalProperties": false,
+        "anyOf": [
+          {
+            "required": [
+              "emotion"
+            ]
+          },
+          {
+            "required": [
+              "expression"
+            ]
+          },
+          {
+            "required": [
+              "gesture_hint"
+            ]
+          },
+          {
+            "required": [
+              "gesture"
+            ]
+          },
+          {
+            "required": [
+              "body_motion"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "method": "performance.release",
+      "description": "释放指定导演指令；省略 cue_id 释放全部。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "cue_id": {
+            "type": "string"
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      }
+    },
+    {
+      "method": "appearance.update",
+      "description": "只修改显式提供的持久外观字段。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "glasses": {
+            "enum": [
+              "none",
+              "black",
+              "monocle"
+            ]
+          },
+          "skirt": {
+            "enum": [
+              "long",
+              "short"
+            ]
+          },
+          "body": {
+            "enum": [
+              "default",
+              "preset1",
+              "preset2"
+            ]
+          },
+          "shoes": {
+            "type": "boolean"
+          },
+          "tail": {
+            "type": "boolean"
+          },
+          "chest": {
+            "enum": [
+              "default",
+              "alternate"
+            ]
+          },
+          "bowl": {
+            "type": "boolean"
+          }
+        },
+        "required": [],
+        "additionalProperties": false,
+        "minProperties": 1
+      }
+    },
+    {
+      "method": "performance.state",
+      "description": "读取当前进度、动作历史、情绪与覆盖指令。",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      }
+    },
+    {
+      "method": "performance.status",
+      "description": "读取候选模型和训练来源。",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      }
+    },
+    {
+      "method": "appearance.get",
+      "description": "读取会话内保持的外观。",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      }
+    },
+    {
+      "method": "capabilities.get",
+      "description": "查询全部参数归属、可用动作通道与外观选项。",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      }
+    },
+    {
+      "method": "motions.play",
+      "description": "显式播放原生动画，手动接管并结束当前自动表演与语音。适用于独立表演；普通说话时优先使用 performance.direct。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "enum": [
+              "IDLE",
+              "脱捕",
+              "默认手切举手",
+              "举手切默认手",
+              "竖手指切出来动画",
+              "竖手指切回默认",
+              "狗尾草切换出来",
+              "狗尾草切回默认手"
+            ]
+          },
+          "loop": {
+            "type": "boolean"
+          },
+          "hold": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "method": "motions.stop",
+      "description": "停止原生动画。",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      }
+    },
+    {
+      "method": "parameters.set",
+      "description": "底层精确参数控制；先通过 capabilities.get 查询真实 ID 和范围。物理输出默认在物理后覆盖。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "values": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "number"
+            },
+            "minProperties": 1
+          },
+          "duration_ms": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 600000
+          },
+          "stage": {
+            "enum": [
+              "pre",
+              "post"
+            ]
+          }
+        },
+        "required": [
+          "values"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "method": "parameters.release",
+      "description": "释放底层参数覆盖。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  ]
+}

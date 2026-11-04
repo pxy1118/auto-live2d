@@ -1,0 +1,129 @@
+"""Read-only publication of all pilot results and draft story annotations."""
+import hashlib
+import json
+import shutil
+from pathlib import Path
+
+ROOT=Path(__file__).resolve().parents[2];STUDY=ROOT/'research/vtuber-v4-intent-study'
+PUBLIC=ROOT/'datasets/vtuber-v4/review';DATA=ROOT/'datasets/vtuber-v4-intent-v1'
+def read(path):return json.loads(path.read_text(encoding='utf-8'))
+def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
+def write(path,x):path.write_text(json.dumps(x,ensure_ascii=False,indent=2,allow_nan=False)+'\n',encoding='utf-8')
+def pct(x):return '—' if x is None else f'{100*x:.1f}%'
+
+def main():
+    r1=read(ROOT/'experiments/vtuber-v4-intent-r1/results.json');r2=read(ROOT/'experiments/vtuber-v4-intent-r2/results.json')
+    manifest=read(DATA/'manifest.json');scenes=read(DATA/'scenes.json');lookup={}
+    for split in ['train','development','calibration']:
+        for line in (DATA/f'{split}.jsonl').read_text(encoding='utf-8').splitlines():
+            row=json.loads(line)
+            if row['history_variant']=='canonical':lookup[(row['scene_id'],row['turn'])]=row
+    predicted={}
+    for folder,method in [('vtuber-v4-intent-r1','necessity'),('vtuber-v4-intent-r2','joint_body_adapter')]:
+        for seed in [7137,1741,9283]:
+            for row in read(ROOT/f'experiments/{folder}/{method}-{seed}-decisions.json'):
+                predicted.setdefault(row['id'],{}).setdefault(method,[]).append(dict(seed=seed,body=row['body'],amplitude=row['amplitude']))
+    publication=[]
+    for scene in scenes:
+        turns=[]
+        for index,t in enumerate(scene['turns']):
+            row=lookup[(scene['id'],index+1)]
+            turns.append(dict(viewer=t['viewer'],text=t['text'],annotation=row['body_annotation'],
+                              draft_emotion=t['emotion'],draft_eye=t['eye'],predictions=predicted.get(row['id'],{})))
+        publication.append(dict(id=scene['id'],family=scene['family'],split=manifest['family_splits'][scene['family']],facts=scene['facts'],turns=turns))
+    rows=[]
+    names={'frozen_r1':'冻结旧 4B 选择器','preferred':'单一推荐标签 · 最后决策头','acceptable':'多合理标签 · 最后决策头',
+           'necessity':'多合理标签＋独立必要性头','joint_heads_only':'联合训练 · 最后决策头','joint_body_adapter':'联合训练 · 身体注意力分支'}
+    for version,result,methods in [('r1',r1,['frozen_r1','preferred','acceptable','necessity']),('r2',r2,['joint_heads_only','joint_body_adapter'])]:
+        for method in methods:rows.append(dict(id=method,version=version,name=names[method],**result['summary'][method]))
+    report=dict(schema='intent-study-publication.v1',status='未通过；仅方法开发',promoted=False,read_only=True,
+        dataset=manifest,rows=rows,all_none=r1['summary']['all_none'],
+        old_test_loaded=False,new_final_test_created=False,annotation_status='助手编写草案，未测人工一致性',
+        all_runs=r1['runs']+r2['runs'],literature=read(STUDY/'literature.json'),
+        source_hashes={str(p.relative_to(ROOT)):sha(p) for p in [DATA/'manifest.json',STUDY/'protocol.json',STUDY/'adapter-protocol.json',
+            ROOT/'experiments/vtuber-v4-intent-r1/results.json',ROOT/'experiments/vtuber-v4-intent-r2/results.json']})
+    write(PUBLIC/'intent-study-report.json',report);write(PUBLIC/'intent-study-scenes.json',publication)
+    shutil.copyfile(STUDY/'review.html',PUBLIC/'intent-study.html')
+    shutil.copyfile(STUDY/'body-annotation.schema.json',PUBLIC/'body-annotation.schema.json')
+    table='\n'.join('| '+r['name']+' | '+' | '.join(pct(r['metrics'][k]['mean']) for k in ['forbidden_activation','required_success','acceptable_rate','active_amplitude_outside'])+' |' for r in rows)
+    adapter=r2['summary']['joint_body_adapter'];interval=adapter['family_bootstrap_95']['required_success']
+    delta=r2['adapter_minus_heads_paired_family_95']['required_success']
+    text=f'''# Live2D v4 身体意图研究 · 2026-11-03
+
+当前结论：优先改进语境监督、场景覆盖和动作专家的语义读取。仅增加必要性开关会漏动作；重新学习身体注意力分支有部分改善，但仍明显过拟合。还不能判断“已经具备较强泛化”，也没有证据排除更大骨干在后续的价值。本轮没有比较 7B/14B，不能从这里推断容量饱和。
+
+## 数据审计
+
+仅检查上一轮训练和开发集。新增训练台词/语境组合中 81.2% 标为启用身体组，对话增强为 88.2%；新增启用样本的身体强度全部为 0.75。此前“对话”由跨场景随机抽样组合，不能称为独立编写的完整故事。部分情境直接写出情绪标签，属于需要逐条改写的提示风险，不能当成已测定的泄漏率。具体来源和例子见 data-audit.json。
+
+本轮独立版本是 100 段三轮故事、300 个角色回答、89 个故事家族，含 11 对同句不同语境故事。语境仅由事实、历史对白和当前观众发言组成，答案的推荐动作、必要性及理由不进入编码文本。草案由助手编写，未测独立人工标注一致性；没有声称它是真实观众数据或人类金标准。
+
+按家族固定划分：训练 60 段 / 180 分句 / 53 家族，开发 20 / 60 / 18，校准 20 / 60 / 18。三种模拟动作历史扩为 900 行，不增加独立样本量。当前开发集含 23 个禁止、24 个可选、13 个必要分句；校准集对应 28 / 23 / 9。推荐 sway 仅出现在训练集，不能声称所有身体类别均已得到开发集泛化验证。
+
+## 标注和对照
+
+每个分句有必要性（不宜启动 / 可选 / 应当回应）、推荐、可接受和不合适动作集合。可选允许 none；必要不允许 none；不宜启动仅接受 none。这里的“必要”是暂定角色风格，允许多种合适动作，不是人体行为的唯一真值。none 仍保留呼吸、眨眼和物理。身体强度是独立的条件输出，不能拿分类置信度代替。强度区间尚未通过新一轮渲染校准；区间误差只衡量对草案的符合程度。
+
+固定 Qwen3.5-4B 权重和上一轮选定检查点。R1 比较单推荐、多合理集合、多合理＋必要性头，每项三个配对种子，仅拟合最后的身体类别/强度/必要性头，固定 1000 步。多合理损失为 `-log sum(p[acceptable]) + 0.25 * CE(preferred)`，条件强度损失权重 4。必要性 MLP 单独训练，B/C 类别和强度头完全相同，因此可观察开关的增量作用。
+
+R1 失败后，另冻结 R2 方案，明确属于自适应开发，已看过同一开发集。比较联合训练最后决策头和独立身体注意力分支；同一数据、损失、三种子、1000 步、校准方法，不挑最好的种子或中间检查点。身体分支复制旧动作专家的投影、历史、查询、注意力及混合层，语义骨干保持冻结。没有改写现有在线模型。
+
+温度只按校准故事 NLL 选择，动作阈值只按校准故事上必要回应/禁止启动的平衡目标选择；开发集用于报告。R1 原旧模型保留 0.4 身体阈值。所有比较在完全相同的新草案标注上进行，不能把新旧数据的得分差当作模型提升。
+
+## 全部结果
+
+表格是三个种子的均值（旧冻结模型单次）。仅评估分句级提议；忙碌、冷却、导演覆盖后的实际执行另需验证。
+
+| 方法 | 不宜场景误启动↓ | 必要场景合适回应↑ | 全部可接受决策↑ | 启用时强度越界↓ |
+|---|---:|---:|---:|---:|
+{table}
+
+“始终不启动”的可接受决策也有 {pct(r1['summary']['all_none']['metrics']['acceptable_rate']['mean'])}，但必要回应为 0，说明总准确率会掩盖漏动作。固定始终 lean 的误启动率为 100%，同样不合格。数据中的必要动作可接受集合较宽（如 lean 或 nod），故必要成功率不能当成严格动作类型准确率。
+
+R1 单推荐原始类别提议在训练集必要成功率均值为 65.6%，开发集仅 15.4%；去掉阈值也没有解决。这提示最终动作表示和场景迁移有问题，但不单独证明冻结语义骨干不理解句子。
+
+R2 身体分支训练集必要回应三个种子均为 100%；开发集分别 46.2%、46.2%、15.4%，均值 {pct(adapter['metrics']['required_success']['mean'])}。误启动均为 1/23，即 {pct(adapter['metrics']['forbidden_activation']['mean'])}。开发集强度越界均值 {pct(adapter['metrics']['active_amplitude_outside']['mean'])}，远未解决强度泛化。
+
+按 18 个故事家族聚类自助抽样，必要回应均值 95% 区间约 {pct(interval[0])}～{pct(interval[1])}；相对匹配的最后头对照，必要回应改善区间约 {pct(delta[0])}～{pct(delta[1])}，仍触及零。不能据此宣称稳定优于对照。零误触发的自助区间也不是零真实风险保证；这些家族太少，且是草案标签。
+
+## 文献如何影响设计
+
+[GENEA 2022 的完整后续评估（2024）](https://media.contentapi.ea.com/content/dam/ea/seed/presentations/seed-tog2024-evaluating-gesture-generation-paper.pdf)区分动作本身的自然度与是否贴合语音，并讨论动作多解及自动指标的局限。因此本项目把原生曲线质量和语义提议分别检查。多合理集合和本角色必要性规范是我们的方法设计，并非论文直接验证的 Live2D 方案。
+
+[Guo 等（2017）](https://proceedings.mlr.press/v70/guo17a.html)说明置信度可能失准，温度缩放可作为后处理候选。本轮温度改善了 NLL，分类排序未因此改变，不能宣称修复语义错误。[Geifman 与 El-Yaniv（2017）](https://papers.nips.cc/paper_files/paper/2017/hash/4a8423d5e91fda00bb7e46540e2b0cf1-Abstract.html)讨论拒绝与覆盖的权衡，因此同时报告误启动和漏回应；其图像分类风险保证不转用于本项目。
+
+使用 nature-academic-search 技能；学术 MCP 工具未提供，已改用技能的公开 OpenAlex 脚本发现及原始论文页核对。书目、检索记录、支持范围和不能推出的结论见 literature.json / references.bib。
+
+## 当前交付与下一轮
+
+已交付 100 段草案、家族划分与哈希、两份实验协议、15 个训练运行、冻结特征、所有失败结果、七项必要性/数据隔离/分支隔离单元测试及只读标注页。桌面和手机页面浏览器检查通过，原评分和默认配置哈希保持不变。没有为本轮伪造用户评分，没有修改既有动作曲线、眼型开关、外观控制、v3、TTS 权重或默认选择。
+
+下一轮先用少量高分歧故事校准“必要/可选”和实际渲染强度，再扩展独立场景，增加普通汇报、必要动作及同句语境反转的覆盖。需要为 sway 和少数身体类型补入新的开发与校准家族，作为新数据版本冻结，不回写本轮分数。继续训练独立身体专家时应保留旧任务回放检查，避免只记住新故事。当前 100 段意图标注不替代原计划带真实音频和 Cubism 参数的约 1200 段表演数据。
+
+风格校准完成后再采集未用于开发的新终测故事。语义检查通过后才做真实音频渲染、连续稳定性、同时 TTS 延迟和隐藏版本偏好验收。本轮未运行新的自然度盲测、10 分钟稳定性或端到端延迟测试，也没有推断此前工程结果适用于这些新分支。
+
+## 复现
+
+Windows 构建和发布：
+```powershell
+python -X utf8 scripts/v4/build_intent_data.py
+python -X utf8 scripts/v4/publish_intent_study.py
+```
+
+WSL 环境沿用项目锁文件。尚未完成的特征缓存可恢复；完成的训练结果拒绝覆盖，重跑应先指定新的实验版本路径，不能删掉既有结果：
+```bash
+cd /mnt/d/Workplace/auto-live2d
+export UV_PROJECT_ENVIRONMENT="$HOME/.local/share/auto-live2d/latent-venv"
+uv run --project latent python -m unittest discover -s latent -p "test_intent*.py" -v
+uv run --project latent python latent/cache_intent_features.py
+# 以下两份训练已完成，会拒绝覆盖；脚本给出了完整配方。
+# uv run --project latent python latent/run_intent_study.py
+# uv run --project latent python latent/cache_intent_tokens.py
+# uv run --project latent python latent/run_intent_adapter_study.py
+```
+
+旧终测本轮未加载；未创建新最终测试集；默认模型未提升。
+'''
+    (STUDY/'REPORT.md').write_text(text,encoding='utf-8')
+    print(json.dumps(dict(published=str(PUBLIC/'intent-study.html'),stories=len(publication),turns=sum(len(s['turns']) for s in publication))))
+if __name__=='__main__':main()

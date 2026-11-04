@@ -1,5 +1,5 @@
 import http from 'node:http';
-import { createReadStream, existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
+import { createReadStream, existsSync, readFileSync, readdirSync, statSync, mkdirSync, writeFileSync, renameSync } from 'node:fs';
 import { resolve, dirname, join, sep, extname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash, randomUUID } from 'node:crypto';
@@ -7,6 +7,10 @@ import { WebSocketServer, WebSocket } from 'ws';
 import type { Manifest } from '../src/controller';
 import { LatentBridge } from './latent-bridge';
 import { SpeechBridge } from './speech-bridge';
+import { PerformanceService } from './performance-service';
+import { PERFORMANCE_RUNTIME_VERSION } from '../src/performance-profile';
+import {applyReviewVote} from './review-ratings';
+import { RequestLedger } from './request-ledger';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const modelRoot = join(root, 'live2d', 'DeepSeek', 'DeepSeek');
@@ -60,19 +64,57 @@ function invoke(command: any): Promise<any> {
 function serveFile(res: http.ServerResponse, base: string, relative: string) {
   const target = resolve(base, relative);
   if (!(target === base || target.startsWith(base + sep)) || !existsSync(target) || !statSync(target).isFile()) { json(res, 404, { error: 'not_found' }); return; }
-  const types: Record<string, string> = { '.json': 'application/json', '.js': 'text/javascript', '.html': 'text/html', '.css': 'text/css', '.png': 'image/png', '.jpg': 'image/jpeg', '.webp': 'image/webp', '.moc3': 'application/octet-stream', '.wasm': 'application/wasm', '.wav':'audio/wav' };
+  const types: Record<string, string> = { '.json': 'application/json', '.js': 'text/javascript', '.html': 'text/html', '.css': 'text/css', '.png': 'image/png', '.jpg': 'image/jpeg', '.webp': 'image/webp', '.mp4':'video/mp4', '.moc3': 'application/octet-stream', '.wasm': 'application/wasm', '.wav':'audio/wav' };
   res.writeHead(200, { 'Content-Type': (types[extname(target)] ?? 'application/octet-stream') + (['.json', '.html', '.js', '.css'].includes(extname(target)) ? '; charset=utf-8' : ''), 'Content-Length': statSync(target).size, 'Cache-Control': 'no-cache' });
   createReadStream(target).pipe(res);
 }
 const latent = new LatentBridge(manifest, () => capabilities, invoke);
 const speech = new SpeechBridge(latent,invoke);
+const performanceService = new PerformanceService(invoke);
+const publicRequests=new RequestLedger();
+const publicCommand=(command:any)=>{
+  const id=command?.request_id??randomUUID();if(typeof id!=='string'||!id.length||id.length>128)return Promise.reject(new Error('request_id 不合法'));
+  const key=JSON.stringify([command?.method,command?.params??{}]);
+  return publicRequests.execute(id,key,()=>(performanceService.handles(command?.method)?performanceService.command({...command,request_id:id}):invoke({...command,request_id:id})).then(async response=>{
+    const audit=join(root,'test-results/v4/audit/capabilities.json');
+    if(command?.method==='capabilities.get'&&existsSync(audit)){
+      const evidence=readJson(audit);
+      if(evidence.asset_hash===manifest.assetHash){
+        const byId=new Map(evidence.parameters.map((p:any)=>[p.id,p]));
+        response.result.parameters=response.result.parameters.map((p:any)=>({...p,...byId.get(p.id) as any}));
+        response.result.channels=response.result.channels.map((p:any)=>({...p,...byId.get(p.id) as any}));
+        response.result.verification=evidence.visible_change_method;
+      }
+    }
+    if(command?.method==='capabilities.get'){
+      const active=await performanceService.status();
+      response.result.experimental=active.experimental??true;response.result.promoted=active.promoted??false;
+      response.result.active_performance={stage:active.stage??null,body_planner:active.run?.body_planner?.mode??null,driver:active.driver??'v4',semantic_planner:active.semantic_planner??false};
+    }
+    return response;
+  }));
+};
 const vite = !production ? await import('vite').then(v => v.createServer({ root, server: { middlewareMode: true, hmr: false }, appType: 'spa' })) : null;
 const server = http.createServer(async (req, res) => {
   try {
     const host = req.headers.host ?? `127.0.0.1:${port}`;
     if (req.headers.origin && ![`http://${host}`, `http://localhost:${port}`, `http://127.0.0.1:${port}`].includes(req.headers.origin)) { json(res, 403, { error: 'origin_not_allowed' }); return; }
     const path = decodeURIComponent(new URL(req.url!, `http://${host}`).pathname);
-    if (req.method === 'GET' && path === '/api/health') return json(res, 200, { ok: true, runtime_ready: !!capabilities, model: manifest.name, sdk: 'CubismSdkForWeb-5-r.4' });
+    if(path==='/api/performance/review'){
+      const folder=join(root,'.runtime/performance');const file=join(folder,'ratings.json');
+      const ratings=existsSync(file)?readJson(file):{pilot:{},comparison:{}};
+      if(req.method==='GET')return json(res,200,ratings);
+      if(req.method==='POST'){
+        let size=0;const chunks:Buffer[]=[];for await(const chunk of req){size+=chunk.length;if(size>8000)throw new Error('评分内容过大');chunks.push(chunk);}
+        const vote=JSON.parse(Buffer.concat(chunks).toString('utf8'));
+        const statusFile=join(root,'datasets/vtuber-v4/review/comparison-status.json'),current=existsSync(statusFile)?readJson(statusFile):{};
+        // No await between this fresh read and atomic rename: simultaneous note
+        // autosaves and choices cannot overwrite a newer review snapshot.
+        const latest=existsSync(file)?readJson(file):{pilot:{},comparison:{}};applyReviewVote(latest,vote,current);
+        mkdirSync(folder,{recursive:true});writeFileSync(file+'.tmp',JSON.stringify(latest,null,2));renameSync(file+'.tmp',file);return json(res,200,{saved:true});
+      }
+    }
+    if (req.method === 'GET' && path === '/api/health') return json(res, 200, { ok: true, runtime_ready: !!capabilities, process_id:process.pid,port,runtime_version:PERFORMANCE_RUNTIME_VERSION,model: manifest.name, sdk: 'CubismSdkForWeb-5-r.4' });
     if (req.method === 'GET' && path === '/api/manifest') return json(res, 200, manifest);
     if (req.method === 'GET' && path === '/api/capabilities') return json(res, capabilities ? 200 : 503, capabilities ?? { error: 'runtime_offline' });
     if (req.method === 'GET' && path === '/api/state') return json(res, 200, await invoke({ method: 'state.get' }));
@@ -117,10 +159,10 @@ const server = http.createServer(async (req, res) => {
       for await (const chunk of req) { total += chunk.length; if (total > 64 * 1024 * 1024) { json(res, 413, { error: 'payload_too_large' }); return; } chunks.push(chunk); }
       let command: any;
       try { command = JSON.parse(Buffer.concat(chunks).toString('utf8')); } catch { json(res, 400, { error: 'invalid_json', message: '请求内容不是有效 JSON' }); return; }
-      const response = await invoke(command); return json(res, 200, response);
+      const response = await publicCommand(command); return json(res, 200, response);
     }
     if (path.startsWith('/api/')) return json(res, 404, { error: 'unknown_endpoint' });
-    const datasetPath = /^\/dataset\/(vtuber-v[123])\/(.*)$/.exec(path);
+    const datasetPath = /^\/dataset\/(vtuber-v(?:[123]|4(?:-body(?:-float)?|-native)?))\/(.*)$/.exec(path);
     if (datasetPath) return serveFile(res, join(root, 'datasets', datasetPath[1]), datasetPath[2]);
     if (path.startsWith('/model/')) return serveFile(res, modelRoot, path.slice(7));
     if (path === '/vendor/cubism/Core/live2dcubismcore.min.js') return serveFile(res, join(root, 'vendor', 'cubism', 'Core'), 'live2dcubismcore.min.js');
@@ -139,16 +181,24 @@ sockets.on('connection', (socket, req) => {
     try {
       const message = JSON.parse(raw.toString());
       if (message.type === 'hello' && message.role === 'runtime') {
-        if (message.capabilities?.action_profile?.sha256 !== manifest.actionProfile.sha256 || !message.capabilities?.methods?.includes('speech.stream.begin')) { socket.send(JSON.stringify({ type: 'busy', message: '控制台版本已更新，请刷新页面后继续' })); return; }
-        if (runtime && runtime.readyState === WebSocket.OPEN && runtime !== socket) { socket.send(JSON.stringify({ type: 'busy', message: '另一个模型页面正在执行控制；请关闭它后重试' })); return; }
+        if (message.capabilities?.action_profile?.sha256 !== manifest.actionProfile.sha256 || !message.capabilities?.methods?.includes('speech.stream.begin') || message.capabilities?.performance?.runtime_version!==PERFORMANCE_RUNTIME_VERSION) { socket.send(JSON.stringify({ type: 'busy', message: '控制台版本已更新，请刷新页面后继续' })); return; }
+        if (runtime && runtime.readyState === WebSocket.OPEN && runtime !== socket) {
+          if(message.takeover!==true){socket.send(JSON.stringify({ type: 'busy', message: '另一个模型页面正在执行控制；点击开始表演可切换到当前窗口' }));return;}
+          const previous=runtime;
+          performanceService.disconnect();
+          for(const p of pending.values()){clearTimeout(p.timer);p.reject({code:'runtime_replaced',message:'控制权已切换到另一个角色窗口'});}
+          pending.clear();requests.clear();publicRequests.retireAll();latestState=null;
+          // Assign the new owner before the old socket's asynchronous close event.
+          runtime=socket;previous.close(1000,'runtime_transferred');
+        }
         runtime = socket; isRuntime = true; capabilities = message.capabilities;
         socket.send(JSON.stringify({ type: 'connected' })); console.log(`Runtime ready: ${capabilities.parameters.length} parameters / ${capabilities.drawables} drawables`);
-      } else if (message.type === 'result' && isRuntime) {
+      } else if (message.type === 'result' && isRuntime && runtime===socket) {
         const p = pending.get(message.request_id);
         if (p) { clearTimeout(p.timer); pending.delete(message.request_id); message.error ? p.reject(message.error) : p.resolve(message.response); }
-      } else if (message.type === 'state' && isRuntime) latestState = message.state;
+      } else if (message.type === 'state' && isRuntime && runtime===socket) latestState = message.state;
       else if (message.type === 'command' && !isRuntime) {
-        try { const response = await invoke(message); socket.send(JSON.stringify({ type: 'result', ...response })); }
+        try { const response = await publicCommand(message); socket.send(JSON.stringify({ type: 'result', ...response })); }
         catch (error: any) { socket.send(JSON.stringify({ type: 'result', request_id: message.request_id, error: { code: error.code ?? 'request_failed', message: error.message } })); }
       }
     } catch { socket.send(JSON.stringify({ type: 'error', error: 'invalid_message' })); }
@@ -158,6 +208,8 @@ sockets.on('connection', (socket, req) => {
       runtime = null; capabilities = null; latestState = null;
       for (const p of pending.values()) { clearTimeout(p.timer); p.reject({ code: 'runtime_disconnected', message: '模型页面已断开' }); }
       pending.clear(); requests.clear();
+      performanceService.disconnect();
+      publicRequests.retireAll();
     }
   });
 });

@@ -1,4 +1,5 @@
 import { decodeCurve, sampleCurve, type Curve } from './motion';
+import { normalizeEyeParameters } from './eye-style';
 
 export interface Parameter {
   id: string; label: string; group: string; min: number; max: number; default: number;
@@ -144,11 +145,12 @@ export class Controller {
         const name = params.name;
         if (!this.manifest.expressions.some(e => e.name === name)) throw new ControlError('unknown_expression', `不存在的表情：${name}`);
         if (typeof params.enabled !== 'boolean') this.fail('enabled 必须明确为 true/false');
-        const fade = this.duration(params.fade_ms, 200);
-        const strength = params.strength === undefined ? 1 : this.number(params.strength, 'strength');
+        let fade = this.duration(params.fade_ms, 200);
+        let strength = params.strength === undefined ? 1 : this.number(params.strength, 'strength');
         if (strength < 0 || strength > 1) this.fail('strength 必须为 0～1');
+        if (eyes.includes(name)) { strength = strength > 0 ? 1 : 0; fade = 0; }
         const group = eyes.includes(name) ? eyes : bodies.includes(name) ? bodies : [];
-        if (params.enabled && params.exclusive !== false) {
+        if (params.enabled && (eyes.includes(name) || params.exclusive !== false)) {
           for (const other of group) if (other !== name) this.expressions.delete(other);
         }
         if (bodies.includes(name) && params.enabled && params.exclusive !== false) this.overrides.delete('Clothes2');
@@ -298,6 +300,7 @@ export class Controller {
       const value = o.from + (o.to - o.from) * smooth(o.duration ? (this.time - o.start) / o.duration : 1);
       if (o.stage === 'post') post[id] = value; else set(id, value);
     }
+    normalizeEyeParameters(values, this.indices, post);
     this.lastActionPre = values.map((v, i) => clamp(v, this.parameters[i].min, this.parameters[i].max));
     // A model may deliberately close/wink an eye; open-eye targets must not suppress the resident blink.
     if (this.blink) {
@@ -311,6 +314,11 @@ export class Controller {
     }
     this.lastPre = values.map((v, i) => clamp(v, this.parameters[i].min, this.parameters[i].max));
     return { pre: this.lastPre, post };
+  }
+  blinkLimit(){
+    if(!this.blink)return Infinity;
+    const phase=this.backgroundTime%4.7;
+    return phase>4.25&&phase<4.55?Math.abs((phase-4.4)/.15):Infinity;
   }
   acceptFinal(values: number[]) {
     this.lastFinal = values;

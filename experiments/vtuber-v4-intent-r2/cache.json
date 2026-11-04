@@ -1,0 +1,12 @@
+{
+  "fingerprint": {
+    "dataset_sha256": "a858b592784faeee9cf16688e541922cbb9590a01fbd23b788e0979e3f6a5bc9",
+    "protocol_sha256": "20f3f10c9ac6c4b2d2347304b9172690b22cf6ecab6a0bc0bda9f899e41e364f",
+    "encoder_source_sha256": "df2ceae3b3f4af9e1b314305a8e4b38aa49714a461967c525e7820f4d792cc52",
+    "extractor_sha256": "6f0d7d7781c67c8fd74302703905e3e4d6331b3a8e2e0a59df6a482a850c60ed"
+  },
+  "cache_sha256": "26582282680273165a3b9a13fda9ba75a30d8cb878224a22bc0e97396dce1b1a",
+  "pairs": 300,
+  "old_test_loaded": false,
+  "timing_scope": "isolated backbone cache; excludes runtime TTS"
+}

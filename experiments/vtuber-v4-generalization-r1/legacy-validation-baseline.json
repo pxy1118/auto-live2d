@@ -1,0 +1,83 @@
+{
+  "source": "unchanged composition-r2 planner, original MLP/linear ensemble",
+  "checkpoint_sha256": "c9a9851e895068b157838f97a9ed938291b02b111f3159067498944fd4f62292",
+  "scope": "supplementary validation comparison only; not a candidate and not used to reselect",
+  "all": {
+    "arm": {
+      "accuracy": 0.8575899600982666,
+      "macro_f1": 0.6513179130852222,
+      "correct_active_recall": 0.5,
+      "false_positive_rate": 0.01175213698297739,
+      "active_samples": 342,
+      "threshold": 0.85
+    },
+    "body": {
+      "accuracy": 0.6948356628417969,
+      "macro_f1": 0.5310961306095123,
+      "correct_active_recall": 0.39137646555900574,
+      "false_positive_rate": 0.034074075520038605,
+      "active_samples": 603,
+      "threshold": 0.4
+    },
+    "emotion": {
+      "accuracy": 0.8348982930183411,
+      "macro_f1": 0.7399389147758484,
+      "correct_active_recall": 0.6958105564117432,
+      "false_positive_rate": 0.06035665422677994,
+      "active_samples": 549,
+      "threshold": 0.7
+    },
+    "eye": {
+      "accuracy": 0.9671361446380615,
+      "macro_f1": 0.7565351188182831,
+      "correct_active_recall": 0.625,
+      "false_positive_rate": 0.005076142027974129,
+      "active_samples": 96,
+      "threshold": 0.6
+    },
+    "regression_mae": 0.04477719962596893,
+    "active_face_mae": 0.21192669868469238,
+    "mean_macro_f1": 0.6697220193222165,
+    "mean_false_positive_rate": 0.027814752189442515
+  },
+  "new_scenarios": {
+    "arm": {
+      "accuracy": 0.7962962985038757,
+      "macro_f1": 0.4062263146042824,
+      "correct_active_recall": 0.24137930572032928,
+      "false_positive_rate": 0.03780068829655647,
+      "active_samples": 87,
+      "threshold": 0.85
+    },
+    "body": {
+      "accuracy": 0.39947089552879333,
+      "macro_f1": 0.4602575791733606,
+      "correct_active_recall": 0.2433333396911621,
+      "false_positive_rate": 0.0,
+      "active_samples": 300,
+      "threshold": 0.4
+    },
+    "emotion": {
+      "accuracy": 0.738095223903656,
+      "macro_f1": 0.7012507319450378,
+      "correct_active_recall": 0.7479674816131592,
+      "false_positive_rate": 0.280303031206131,
+      "active_samples": 246,
+      "threshold": 0.7
+    },
+    "eye": {
+      "accuracy": 0.9417989253997803,
+      "macro_f1": 0.8343418836593628,
+      "correct_active_recall": 0.699999988079071,
+      "false_positive_rate": 0.012578615918755531,
+      "active_samples": 60,
+      "threshold": 0.6
+    },
+    "regression_mae": 0.08784708380699158,
+    "active_face_mae": 0.1913706213235855,
+    "mean_macro_f1": 0.6005191273455109,
+    "mean_false_positive_rate": 0.08267058385536075
+  },
+  "test_loaded": false,
+  "selected_checkpoint_unchanged": true
+}

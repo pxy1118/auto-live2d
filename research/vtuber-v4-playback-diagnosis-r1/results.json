@@ -1,0 +1,206 @@
+{
+  "schema": "playback-diagnosis.v1",
+  "original_study": "vtuber-v4-prosody-r1",
+  "original_user_decision": "rejected",
+  "default_changed": false,
+  "motion_model_promoted": false,
+  "naturalness_accepted": false,
+  "semantic_model_trained": false,
+  "clips": [
+    {
+      "id": "welcome-fixed",
+      "title": "挥手 · 原动作库",
+      "texts": [
+        "晚上好呀，你终于来啦，快过来坐。",
+        "今天想先聊点什么呢？我在认真听哦。"
+      ],
+      "videos": {
+        "20": "prosody-r1/955230e7d31720.mp4",
+        "60": "playback-check-r1/welcome-fixed-60.mp4"
+      },
+      "video_sha256": {
+        "20": "1e9310ef75639e4fccb9dbd5aef31e7d8413254948616ad55735a1d6887dee31",
+        "60": "efe23c6649145acf0ee77f7d077345ea5015348a2c0c542f011ba280b6d86f81"
+      },
+      "same_audio_pcm": true,
+      "same_60hz_parameter_readback": true,
+      "maximum_parameter_difference": 0
+    },
+    {
+      "id": "cajole-fixed",
+      "title": "撒娇 · 原动作库",
+      "texts": [
+        "再陪我待一小会儿，好不好嘛？",
+        "就一小会儿，等这首歌放完，我们再走。"
+      ],
+      "videos": {
+        "20": "prosody-r1/450cf665ce3be9.mp4",
+        "60": "playback-check-r1/cajole-fixed-60.mp4"
+      },
+      "video_sha256": {
+        "20": "a507265d386335e462ddfccbb073c095383cf0995881c6b7e6d2a292d339c126",
+        "60": "9d70fdcbfb7bc3c81f455b647bb63cb0ab484ffc95bb01142e96e1b9d61ffd8e"
+      },
+      "same_audio_pcm": true,
+      "same_60hz_parameter_readback": true,
+      "maximum_parameter_difference": 0
+    },
+    {
+      "id": "welcome-rhythm_posture",
+      "title": "挥手 · 已否决的节奏与姿态原型",
+      "texts": [
+        "晚上好呀，你终于来啦，快过来坐。",
+        "今天想先聊点什么呢？我在认真听哦。"
+      ],
+      "videos": {
+        "20": "prosody-r1/4d24845730c58b.mp4",
+        "60": "playback-check-r1/welcome-rhythm_posture-60.mp4"
+      },
+      "video_sha256": {
+        "20": "e62ff9a8185e65d5a99a66b1d12df50674cb33951e38a95729fe509d4edd3b66",
+        "60": "4b6ec66533ce6ee693a1c365e9415be7b7985716dbfb07ffdf00466129e06844"
+      },
+      "same_audio_pcm": true,
+      "same_60hz_parameter_readback": true,
+      "maximum_parameter_difference": 0
+    }
+  ],
+  "before": {
+    "rows": [
+      {
+        "id": "original_triple_20",
+        "steady_current_time_writes": 78,
+        "total_video_time_writes": 90,
+        "video_seek_events": 90,
+        "summaries": [
+          {
+            "label": "版本 A",
+            "callbacks": 57,
+            "presentation_gap_p50_ms": 116.69599999999991,
+            "presentation_gap_p95_ms": 183.60199999999986,
+            "max_presentation_gap_ms": 266.8000000000002,
+            "source_step_p50_ms": 50.00000000000027,
+            "gaps_over_100_ms": 32
+          },
+          {
+            "label": "版本 C",
+            "callbacks": 57,
+            "presentation_gap_p50_ms": 116.69999999999982,
+            "presentation_gap_p95_ms": 183.5999999999999,
+            "max_presentation_gap_ms": 266.8000000000002,
+            "source_step_p50_ms": 50.00000000000027,
+            "gaps_over_100_ms": 35
+          },
+          {
+            "label": "版本 B",
+            "callbacks": 57,
+            "presentation_gap_p50_ms": 116.69999999999982,
+            "presentation_gap_p95_ms": 183.5999999999999,
+            "max_presentation_gap_ms": 250.26199999999972,
+            "source_step_p50_ms": 50.00000000000027,
+            "gaps_over_100_ms": 33
+          }
+        ],
+        "quality": [
+          {
+            "total": 2231,
+            "dropped": 0,
+            "time": 7.390503
+          },
+          {
+            "total": 2233,
+            "dropped": 0,
+            "time": 7.390503
+          },
+          {
+            "total": 2231,
+            "dropped": 0,
+            "time": 7.390503
+          }
+        ],
+        "browser": "156.0.8078.76",
+        "scope": "Headless system Chrome presentation; not direct measurement of the user in-app browser."
+      }
+    ]
+  },
+  "changes": [
+    "Single video decoder with its own muxed speech clock; no automatic currentTime corrections.",
+    "Genuine 60 fps re-render of the exact archived 60 Hz inputs, with identical parameter readback and speech.",
+    "The rejected motion/retiming policy is retained and not selected as a new default."
+  ],
+  "scope": "Repair presentation and isolate sampling cadence. This does not establish movement naturalness.",
+  "user_feedback_sha256": "759c76ae11b4112d24f7be60158fe9f54d3790b1a4827bb828ece05f4ecf11ca",
+  "after": {
+    "rows": [
+      {
+        "id": "single_20",
+        "steady_current_time_writes": 0,
+        "total_video_time_writes": 0,
+        "video_seek_events": 0,
+        "summaries": [
+          {
+            "label": "当前片段",
+            "callbacks": 131,
+            "presentation_gap_p50_ms": 50,
+            "presentation_gap_p95_ms": 66.66600000000017,
+            "max_presentation_gap_ms": 66.89999999999964,
+            "source_step_p50_ms": 49.99999999999982,
+            "gaps_over_100_ms": 0
+          }
+        ],
+        "quality": [
+          {
+            "total": 154,
+            "dropped": 0,
+            "time": 7.468286
+          }
+        ],
+        "browser": "156.0.8078.76",
+        "scope": "Headless system Chrome presentation; not direct measurement of the user in-app browser."
+      },
+      {
+        "id": "single_60",
+        "steady_current_time_writes": 0,
+        "total_video_time_writes": 0,
+        "video_seek_events": 0,
+        "summaries": [
+          {
+            "label": "当前片段",
+            "callbacks": 369,
+            "presentation_gap_p50_ms": 16.699999999999818,
+            "presentation_gap_p95_ms": 33.29999999999973,
+            "max_presentation_gap_ms": 33.600000000000364,
+            "source_step_p50_ms": 16.666999999999987,
+            "gaps_over_100_ms": 0
+          }
+        ],
+        "quality": [
+          {
+            "total": 452,
+            "dropped": 0,
+            "time": 7.450241
+          }
+        ],
+        "browser": "156.0.8078.76",
+        "scope": "Headless system Chrome presentation; not direct measurement of the user in-app browser."
+      }
+    ]
+  },
+  "browser_checks": [
+    "single muxed audio/video clock; no parallel decoders, no shared-audio corrections",
+    "three exact trajectories at real 60 fps; identical original readback and decoded speech",
+    "steady playback has zero currentTime writes or seek events; observed 60 fps presentation P95 below 40 ms",
+    "pause, explicit seek, frame-rate switch and scene switch work; desktop/mobile without overflow",
+    "rejected experiment clearly labeled; no new rating request; original default, weights and ratings unchanged"
+  ],
+  "old_research_artifacts_unchanged": 6171,
+  "intentional_live_page_replacement": {
+    "path": "datasets/vtuber-v4/review/prosody-study.html",
+    "original_sha256": "af9ca25ce02d743fbe1bfeb195db604570453d9b273f0420184bf7bfcfc50a54",
+    "archived_at": "datasets/vtuber-v4/review/prosody-playback-before.html",
+    "current_sha256": "ca056e972fcff0c1860995a0abfb16295a11f5f7217b84f0ecf71b47e71a1d4c"
+  },
+  "typecheck_passed": true,
+  "parameter_readback_changed": false,
+  "human_votes_generated": 0
+}

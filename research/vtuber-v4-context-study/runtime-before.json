@@ -1,0 +1,23 @@
+{
+  "files": {
+    "latent/default-run.json": "5e8dd3056b4041fa7eaa93adfa917901b62c14e9e709558061bbacd5a7efe5d9",
+    "latent/stream-run.json": "4a29361699faf0ed637e69ffd5e214c11ca02529c78d4f900453543232c8ef64",
+    ".runtime/performance/ratings.json": "7f7d6b0ae58dff2355aec7cbe93dbe0c54f741cb41d7b688177d5d4a4ba16f47",
+    "latent/encoder.py": "20655b921c2d5e6a817b19282319809addfd7e968a20dd85e53e58b92dafd8c5",
+    "latent/encoder-source.json": "0dbe5b0f8d31f63e4755767ec4deb9278238b7400e2e8aed65ab325a813d4753"
+  },
+  "latent/status": {
+    "ready": true,
+    "busy": null,
+    "encoder": "Qwen/Qwen3.5-0.8B",
+    "experiment": "experiments/vtuber-v3",
+    "checkpoint_sha256": null
+  },
+  "speech/status": {
+    "ready": true,
+    "busy": false,
+    "encoder": null,
+    "experiment": null,
+    "checkpoint_sha256": "b62a26f6c2ebd10582c088c318d1fe045f19861500caf7eae300b676d2f19a3d"
+  }
+}

@@ -1,0 +1,310 @@
+{
+  "repository": "https://github.com/Ssssshaiiko/WHALEL2D",
+  "commit": "1576fc34ddf9f061e91cbe56a37b488c0d0fcaae",
+  "branch": "main",
+  "reviewed_utc": "2026-11-03T12:13:18.064Z",
+  "review_type": "static source review",
+  "remote_code_executed": false,
+  "installed": false,
+  "native_sdk_downloaded": false,
+  "visual_comparison_performed": false,
+  "license_in_repository_metadata": null,
+  "tree": [
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d23317fbe26e7529498a71a7dae066d77327cc86",
+      "size": 339,
+      "url": "https://api.github.com/repos/Ssssshaiiko/WHALEL2D/git/blobs/d23317fbe26e7529498a71a7dae066d77327cc86"
+    },
+    {
+      "path": "AGENTS.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "78e45f6171f4d7f4bea42eb9004529fe07f6a4c2",
+      "size": 22759,
+      "url": "https://api.github.com/repos/Ssssshaiiko/WHALEL2D/git/blobs/78e45f6171f4d7f4bea42eb9004529fe07f6a4c2"
+    },
+    {
+      "path": "CLAUDE.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "87a941c51e7c94118779f63f91be917026e9a743",
+      "size": 222,
+      "url": "https://api.github.com/repos/Ssssshaiiko/WHALEL2D/git/blobs/87a941c51e7c94118779f63f91be917026e9a743"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "961eec799cff4b2ebb8df220e11a02d0ea1b7713",
+      "size": 4914,
+      "url": "https://api.github.com/repos/Ssssshaiiko/WHALEL2D/git/blobs/961eec799cff4b2ebb8df220e11a02d0ea1b7713"
+    },
+    {
+      "path": "model",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ef9af451ae23f57054d7f1764cd30abdea0a49e0",
+      "url": "https://api.github.com/repos/Ssssshaiiko/WHALEL2D/git/trees/ef9af451ae23f57054d7f1764cd30abdea0a49e0"
+    },
+    {
+      "path": "model/获取模型.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6715b4a89c1fbc3a4b9b517532bde5019d245c2f",
+      "size": 660,
+      "url": "https://api.github.com/repos/Ssssshaiiko/WHALEL2D/git/blobs/6715b4a89c1fbc3a4b9b517532bde5019d245c2f"
+    },
+    {
+      "path": "prompt",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c528279f73cb643e338184731f7602493c00eeae",
+      "url": "https://api.github.com/repos/Ssssshaiiko/WHALEL2D/git/trees/c528279f73cb643e338184731f7602493c00eeae"
+    },
+    {
+      "path": "prompt/身体说明.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8f3f1bf3bb51def78c8c4ed58b4ed4060e1e4063",
+      "size": 7569,
+      "url": "https://api.github.com/repos/Ssssshaiiko/WHALEL2D/git/blobs/8f3f1bf3bb51def78c8c4ed58b4ed4060e1e4063"
+    },
+    {
+      "path": "renderer",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6b9342e6985c49ae264891d6336db4c47ba43464",
+      "url": "https://api.github.com/repos/Ssssshaiiko/WHALEL2D/git/trees/6b9342e6985c49ae264891d6336db4c47ba43464"
+    },
+    {
+      "path": "renderer/CMakeLists.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "881a385ea5e940a19d7a8c384b0e99d3ec59acde",
+      "size": 1977,
+      "url": "https://api.github.com/repos/Ssssshaiiko/WHALEL2D/git/blobs/881a385ea5e940a19d7a8c384b0e99d3ec59acde"
+    },
+    {
+      "path": "renderer/main.cpp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3374e284e7624f0ca56096d063e34b35e77eedbe",
+      "size": 54005,
+      "url": "https://api.github.com/repos/Ssssshaiiko/WHALEL2D/git/blobs/3374e284e7624f0ca56096d063e34b35e77eedbe"
+    },
+    {
+      "path": "sdk",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3b54cf7a289025fb0c09963c9e190886fe7e5883",
+      "url": "https://api.github.com/repos/Ssssshaiiko/WHALEL2D/git/trees/3b54cf7a289025fb0c09963c9e190886fe7e5883"
+    },
+    {
+      "path": "sdk/下载SDK.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5d6937af42bae4d434845d9104110772881ff19b",
+      "size": 607,
+      "url": "https://api.github.com/repos/Ssssshaiiko/WHALEL2D/git/blobs/5d6937af42bae4d434845d9104110772881ff19b"
+    },
+    {
+      "path": "setup.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fb56c0801af9f37558920d4a8bbef809d8afb49e",
+      "size": 5538,
+      "url": "https://api.github.com/repos/Ssssshaiiko/WHALEL2D/git/blobs/fb56c0801af9f37558920d4a8bbef809d8afb49e"
+    },
+    {
+      "path": "src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "84dd793e9d70b7bf9c17d7b11c49baaed3506734",
+      "url": "https://api.github.com/repos/Ssssshaiiko/WHALEL2D/git/trees/84dd793e9d70b7bf9c17d7b11c49baaed3506734"
+    },
+    {
+      "path": "src/FishPet.Mcp",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ba20e430219d00aba99f8595f1c6aae5d83ddc4b",
+      "url": "https://api.github.com/repos/Ssssshaiiko/WHALEL2D/git/trees/ba20e430219d00aba99f8595f1c6aae5d83ddc4b"
+    },
+    {
+      "path": "src/FishPet.Mcp/Check.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f0d1081f5f42f87d465aa128b646be87e05ce7c5",
+      "size": 6806,
+      "url": "https://api.github.com/repos/Ssssshaiiko/WHALEL2D/git/blobs/f0d1081f5f42f87d465aa128b646be87e05ce7c5"
+    },
+    {
+      "path": "src/FishPet.Mcp/FishPet.Mcp.csproj",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0f1fcd7aec1fc5f1484f6353abfacf3d8b090440",
+      "size": 291,
+      "url": "https://api.github.com/repos/Ssssshaiiko/WHALEL2D/git/blobs/0f1fcd7aec1fc5f1484f6353abfacf3d8b090440"
+    },
+    {
+      "path": "src/FishPet.Mcp/Program.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e1cae8b74cc3cabeb533b70e2e628086465b7ebe",
+      "size": 8916,
+      "url": "https://api.github.com/repos/Ssssshaiiko/WHALEL2D/git/blobs/e1cae8b74cc3cabeb533b70e2e628086465b7ebe"
+    },
+    {
+      "path": "src/FishPet.Tests",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "cbdd8c9fe46391e1f140c33cd5bf879dbbe0d89b",
+      "url": "https://api.github.com/repos/Ssssshaiiko/WHALEL2D/git/trees/cbdd8c9fe46391e1f140c33cd5bf879dbbe0d89b"
+    },
+    {
+      "path": "src/FishPet.Tests/FishPet.Tests.csproj",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3c2f98b0964cc022557b29d3608ec238e2ed7c91",
+      "size": 434,
+      "url": "https://api.github.com/repos/Ssssshaiiko/WHALEL2D/git/blobs/3c2f98b0964cc022557b29d3608ec238e2ed7c91"
+    },
+    {
+      "path": "src/FishPet.Tests/Program.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d4ec25b935074280fd4712d9799ed651600acbb8",
+      "size": 16431,
+      "url": "https://api.github.com/repos/Ssssshaiiko/WHALEL2D/git/blobs/d4ec25b935074280fd4712d9799ed651600acbb8"
+    },
+    {
+      "path": "src/FishPet",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "cccf612f5521c3e360c2e6a7990bb80854481023",
+      "url": "https://api.github.com/repos/Ssssshaiiko/WHALEL2D/git/trees/cccf612f5521c3e360c2e6a7990bb80854481023"
+    },
+    {
+      "path": "src/FishPet/App.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "70a96dd32ba9c3c468b5758bb9c2507b6d7b3e05",
+      "size": 1325,
+      "url": "https://api.github.com/repos/Ssssshaiiko/WHALEL2D/git/blobs/70a96dd32ba9c3c468b5758bb9c2507b6d7b3e05"
+    },
+    {
+      "path": "src/FishPet/Behavior.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d2fa39c07c0e9fcbcdee418f8dfbd43e801c2e0b",
+      "size": 19702,
+      "url": "https://api.github.com/repos/Ssssshaiiko/WHALEL2D/git/blobs/d2fa39c07c0e9fcbcdee418f8dfbd43e801c2e0b"
+    },
+    {
+      "path": "src/FishPet/Body.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ec0cccb58871e03b8ecd2f20db30f44b925dbf9f",
+      "size": 21046,
+      "url": "https://api.github.com/repos/Ssssshaiiko/WHALEL2D/git/blobs/ec0cccb58871e03b8ecd2f20db30f44b925dbf9f"
+    },
+    {
+      "path": "src/FishPet/Bubble.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "44d12d9dce5859304d1868f45466d55ecd8a10a6",
+      "size": 6839,
+      "url": "https://api.github.com/repos/Ssssshaiiko/WHALEL2D/git/blobs/44d12d9dce5859304d1868f45466d55ecd8a10a6"
+    },
+    {
+      "path": "src/FishPet/ControlServer.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "531c2589c59c8087e24ad2d6029e93baf7c57ca2",
+      "size": 13601,
+      "url": "https://api.github.com/repos/Ssssshaiiko/WHALEL2D/git/blobs/531c2589c59c8087e24ad2d6029e93baf7c57ca2"
+    },
+    {
+      "path": "src/FishPet/FishPet.csproj",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "48b1f668fed15cd09a47b503d642b7807580301c",
+      "size": 458,
+      "url": "https://api.github.com/repos/Ssssshaiiko/WHALEL2D/git/blobs/48b1f668fed15cd09a47b503d642b7807580301c"
+    },
+    {
+      "path": "src/FishPet/Fullscreen.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "814a5545955b6dbbc9dad2ff9bbbf9592951d165",
+      "size": 1826,
+      "url": "https://api.github.com/repos/Ssssshaiiko/WHALEL2D/git/blobs/814a5545955b6dbbc9dad2ff9bbbf9592951d165"
+    },
+    {
+      "path": "src/FishPet/HttpApi.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0af1ab00c0b5e351e05d80855bbbbd963830576c",
+      "size": 10025,
+      "url": "https://api.github.com/repos/Ssssshaiiko/WHALEL2D/git/blobs/0af1ab00c0b5e351e05d80855bbbbd963830576c"
+    },
+    {
+      "path": "src/FishPet/Job.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "319b77e9aad5eae80a9b0fb5219793a7ca59f544",
+      "size": 1482,
+      "url": "https://api.github.com/repos/Ssssshaiiko/WHALEL2D/git/blobs/319b77e9aad5eae80a9b0fb5219793a7ca59f544"
+    },
+    {
+      "path": "src/FishPet/Model.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8b5c9fa75e24435c9409c1a0aa3d3943caedee31",
+      "size": 3658,
+      "url": "https://api.github.com/repos/Ssssshaiiko/WHALEL2D/git/blobs/8b5c9fa75e24435c9409c1a0aa3d3943caedee31"
+    },
+    {
+      "path": "src/FishPet/PetWindow.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "68402f5a712849fa6efed6fc82c895d2c6d6ff2d",
+      "size": 32761,
+      "url": "https://api.github.com/repos/Ssssshaiiko/WHALEL2D/git/blobs/68402f5a712849fa6efed6fc82c895d2c6d6ff2d"
+    },
+    {
+      "path": "src/FishPet/Player.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d921514ac98e4358c655fa49b164fac9c4e151e9",
+      "size": 6516,
+      "url": "https://api.github.com/repos/Ssssshaiiko/WHALEL2D/git/blobs/d921514ac98e4358c655fa49b164fac9c4e151e9"
+    },
+    {
+      "path": "src/FishPet/Settings.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3c3023558059ec7641f1e02c1678cf75708f3d6e",
+      "size": 2668,
+      "url": "https://api.github.com/repos/Ssssshaiiko/WHALEL2D/git/blobs/3c3023558059ec7641f1e02c1678cf75708f3d6e"
+    },
+    {
+      "path": "src/FishPet/Tools.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "05b94184fa8de8990704e3dcf064708797c090fa",
+      "size": 7656,
+      "url": "https://api.github.com/repos/Ssssshaiiko/WHALEL2D/git/blobs/05b94184fa8de8990704e3dcf064708797c090fa"
+    },
+    {
+      "path": "src/FishPet/app.manifest",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9e45dc11362d23a313772856263488e749705c52",
+      "size": 568,
+      "url": "https://api.github.com/repos/Ssssshaiiko/WHALEL2D/git/blobs/9e45dc11362d23a313772856263488e749705c52"
+    }
+  ]
+}

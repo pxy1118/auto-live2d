@@ -1,0 +1,21 @@
+{
+  "version": "intent-study-r2",
+  "status": "adaptive development experiment, specified after observing r1 failure",
+  "question": "Does training an independent body attention branch help more than fitting the final heads on a frozen old body representation?",
+  "data": "exact unchanged datasets/vtuber-v4-intent-v1; same split and draft annotations",
+  "base": "experiments/vtuber-v4-generalization-r1/selected-planner.pt",
+  "base_sha256": "053fd98de35fa065f50fd8e86f0031fa5d1730b8544785363c4b803192d5cfa8",
+  "encoder_source": "latent/encoders/qwen3.5-4b.json",
+  "encoder": "frozen Qwen3.5-4B, cache full tokens, no backbone finetuning",
+  "production_isolation": "independent copied body branch; no old weights/configuration/default changes or new runtime promotion",
+  "seeds": [7137, 1741, 9283],
+  "methods": ["joint_heads_only", "joint_body_adapter"],
+  "objective": "acceptable-set NLL + 0.25 preferred CE + 4 conditional interval strength squared loss + 1 necessity CE",
+  "optimizer": {"name": "AdamW", "head_lr": 0.001, "body_adapter_lr": 0.0001, "weight_decay": 0.025, "batch_size": 64, "steps": 1000},
+  "selection": "fixed last step and all three seeds; no best checkpoint or seed selection",
+  "calibration": "exact same temperatures, threshold grid and objective as r1, on calibration only",
+  "evaluate": "same 60 development clauses/18 family clusters, report raw proposals and calibrated proposals, all histories as secondary",
+  "old_final_test_loaded": false,
+  "new_final_test_created": false,
+  "limitations": "Development set already inspected in r1; this is iterative method development, not an independent final generalization claim. No human naturalness or risk bound claim."
+}

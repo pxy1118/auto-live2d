@@ -1,0 +1,47 @@
+{
+  "workflow": "nature-academic-search / multi-source-search",
+  "queried_at": "2026-11-03",
+  "discovery": "OpenAlex public API via skill script; direct primary pages for verification. Academic MCP search tools were unavailable; no private credentials used.",
+  "sources": [
+    {
+      "id": "genea2024",
+      "title": "Evaluating Gesture Generation in a Large-scale Open Challenge: The GENEA Challenge 2022",
+      "authors": ["Taras Kucherenko", "Pieter Wolfert", "Youngwoo Yoon", "Carla Viegas", "Teodor Nikolov", "Mihail Tsakov", "Gustav Eje Henter"],
+      "year": 2024,
+      "venue": "ACM Transactions on Graphics",
+      "doi": "10.1145/3656374",
+      "url": "https://doi.org/10.1145/3656374",
+      "verified_full_text": "https://media.contentapi.ea.com/content/dam/ea/seed/presentations/seed-tog2024-evaluating-gesture-generation-paper.pdf",
+      "verification": "Author-hosted 28-page PDF inspected; DOI landing page later returned 403. OpenAlex independently matched title and DOI.",
+      "locations": "Abstract; sections 2.1.3, 6 and 8",
+      "supports": "Evaluate human-likeness separately from speech appropriateness; gestures have multiple plausible realizations; conventional automatic scores do not establish perceived quality.",
+      "project_inference": "Keep native motion quality checks separate from clause intent scoring. Author acceptable action sets and evaluate all-none collapse explicitly.",
+      "limits": "Does not prescribe this project's label sets, necessity taxonomy, loss weights or Live2D thresholds; these are our experimental design."
+    },
+    {
+      "id": "guo2017",
+      "title": "On Calibration of Modern Neural Networks",
+      "authors": ["Chuan Guo", "Geoff Pleiss", "Yu Sun", "Kilian Q. Weinberger"],
+      "year": 2017,
+      "venue": "ICML / PMLR 70:1321-1330",
+      "url": "https://proceedings.mlr.press/v70/guo17a.html",
+      "verification": "Official proceedings metadata and abstract verified; OpenAlex found the corresponding arXiv record.",
+      "supports": "Classifier confidence may be miscalibrated; temperature scaling can improve confidence calibration in the studied classification settings.",
+      "project_inference": "Fit a small temperature grid on separate calibration stories and evaluate NLL/Brier on development stories; never use confidence as body strength.",
+      "limits": "Temperature scaling does not correct the class ranking and gives no guarantee for unseen dialogue domains."
+    },
+    {
+      "id": "geifman2017",
+      "title": "Selective Classification for Deep Neural Networks",
+      "authors": ["Yonatan Geifman", "Ran El-Yaniv"],
+      "year": 2017,
+      "venue": "Advances in Neural Information Processing Systems 30",
+      "url": "https://papers.nips.cc/paper_files/paper/2017/hash/4a8423d5e91fda00bb7e46540e2b0cf1-Abstract.html",
+      "verification": "Official proceedings metadata and abstract verified.",
+      "supports": "A reject option trades prediction coverage against error risk.",
+      "project_inference": "Report missed required gestures alongside forbidden activations rather than optimizing only a low false-trigger rate.",
+      "limits": "Its image-classification risk guarantees do not transfer to this small, clustered, assistant-labeled gesture study."
+    }
+  ],
+  "excluded_from_evidence": ["Search-only papers not inspected in primary sources", "Partial-label methods assuming exactly one unknown true class; that assumption differs from several genuinely acceptable actions"]
+}

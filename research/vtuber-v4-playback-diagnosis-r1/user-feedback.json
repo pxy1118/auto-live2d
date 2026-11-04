@@ -1,0 +1,10 @@
+{
+  "created_utc": "2026-11-03T11:53:45.002690+00:00",
+  "source": "user",
+  "quote": "我觉得这个方案不行，动作都很卡顿",
+  "study": "vtuber-v4-prosody-r1",
+  "decision": "rejected",
+  "scope": "Overall user rejection; not fabricated per-clip votes.",
+  "promoted": false,
+  "default_changed": false
+}

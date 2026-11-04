@@ -1,0 +1,5 @@
+{
+  "path": "experiments/vtuber-v4-gesture-groups-r4",
+  "promoted": false,
+  "reason": "All gesture variants use one primary arm; secondary-arm lifts removed. Human motion quality review pending."
+}

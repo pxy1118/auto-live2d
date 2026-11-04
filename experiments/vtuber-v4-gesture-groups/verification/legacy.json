@@ -1,0 +1,30 @@
+{
+  "base": "http://127.0.0.1:8774",
+  "checked": [
+    "raw parameter -> physics -> changed mesh geometry",
+    "post-physics lock and native bounds",
+    "all 23 original expression files, readback + rendered frames",
+    "eye mutual exclusion and body default restoration",
+    "all 8 original motions and enter-pose hold behavior",
+    "independent arms, right-hand exclusion, enter/hold/exit",
+    "atomic validation and request ID deduplication",
+    "recording export and fixed-step replay of actual parameters",
+    "10-second composed timeline finishes and returns gestures",
+    "visible controls and responsive layout",
+    "external WebSocket client and Python HTTP client"
+  ],
+  "started": "2026-11-01T11:16:57.175Z",
+  "capabilities": {
+    "parameters": 509,
+    "parts": 147,
+    "drawables": 715,
+    "expressions": 23,
+    "motions": 8,
+    "physics_groups": 131,
+    "mask_buffers": 2
+  },
+  "max_replay_parameter_error": 0,
+  "python_client": "10-second demo completed",
+  "browser_errors": [],
+  "ok": true
+}

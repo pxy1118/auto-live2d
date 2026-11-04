@@ -1,0 +1,39 @@
+{
+  "schema": "semantic.ablation.v1",
+  "created_utc": "2026-11-02T11:11:28.681851+00:00",
+  "dataset": "datasets/vtuber-v4-generalization-v1",
+  "dataset_manifest_sha256": "074eaa27a6fe13e35bff661a967ca09be188d4dc1fd0bc7c6607fe8c492ba2e2",
+  "encoders": {
+    "0.8b": "latent/encoder-source.json",
+    "4b": "latent/encoders/qwen3.5-4b.json"
+  },
+  "representations": [
+    "tail16_mean",
+    "full_attention"
+  ],
+  "seeds": [
+    7137,
+    1741,
+    9283
+  ],
+  "steps": 1600,
+  "selection": "mean across seeds: 0.65 new-scene macro-F1 + 0.35 all-development macro-F1 - 0.1 false positive rate - 0.1 regression MAE",
+  "checkpoint_selection": "same score every 200 steps, development only",
+  "execution_gates": {
+    "arm": 0.85,
+    "grass": 0.95,
+    "body": 0.4,
+    "emotion": 0.7,
+    "eye": 0.6
+  },
+  "scope": "frozen semantic backbone and matched task-query head; representation is one mean token or complete contextual tokens",
+  "test_policy": "do not cache, read or evaluate final test until the candidate has been fixed; then one evaluation",
+  "promotion_policy": "no automatic promotion; independent functional, concurrent-TTS latency and human preference acceptance required",
+  "quality_targets": {
+    "arm_active_recall": 0.8,
+    "body_active_recall": 0.75,
+    "emotion_active_recall": 0.85,
+    "eye_active_recall": 0.85,
+    "neutral_false_positive_rate": 0.04
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "seed": 7137,
+  "steps": 3200,
+  "dataset": "datasets/vtuber-v4-planner-v2",
+  "architecture": "body_binary",
+  "class_weight_exponent": 1.0,
+  "none_weight": 1.0,
+  "selection": "macro",
+  "threshold_min": 0.35,
+  "test_used": false,
+  "role": "validation candidate; selected heads listed in composition-r1/performance-planner.json"
+}

@@ -1,0 +1,19 @@
+{
+  "purpose": "Training loss only; not runtime IK or animation retrieval.",
+  "models": {
+    "right": {
+      "validation_mae": 0.008156306110322475,
+      "test_mae": 0.007433553226292133,
+      "test_p95": 0.02068759873509407,
+      "samples": 1167,
+      "checkpoint_sha256": "8e96601483736d9ac8e83ac82bf20222410322478a943ca7190418db167be028"
+    },
+    "left": {
+      "validation_mae": 0.009403341449797153,
+      "test_mae": 0.009114159271121025,
+      "test_p95": 0.02497621811926365,
+      "samples": 1167,
+      "checkpoint_sha256": "13783b9f17b055a6e332f6066c3d1d0b721c105ccf138f657cce4d2e9c9c452a"
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "path": "experiments/vtuber-v4-gesture-groups",
+  "promoted": false,
+  "reason": "User requested model-selected coordinated action groups, native frontal gestures and new authored gestures. Human motion review pending; legacy v3 default retained."
+}

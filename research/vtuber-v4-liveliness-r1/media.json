@@ -1,0 +1,106 @@
+{
+  "scenes": [
+    {
+      "id": "quiet",
+      "title": "安静等待 · 一次低频侧看",
+      "description": "从非默认姿态安静等待，候选在约 16 秒时短暂侧看，随后回到原姿态。手臂保持。",
+      "texts": [],
+      "duration_ms": 28000,
+      "highlight_ms": 16233,
+      "paired_audio_identical": true,
+      "arm_inputs_identical": true,
+      "variants": [
+        {
+          "id": "current",
+          "label": "当前执行 · 固定信号",
+          "video": "liveliness-r1/quiet-current.mp4",
+          "poster": "liveliness-r1/quiet-current.webp",
+          "trace": "liveliness-r1/quiet-current-trace.json",
+          "video_sha256": "f55bf56463ab4dce8deecd268a5c3fdb45a103ece0e96601062a07d4e3ec9412",
+          "frames": 1680,
+          "fps": 60
+        },
+        {
+          "id": "state_idle",
+          "label": "持续状态与稀疏调度候选",
+          "video": "liveliness-r1/quiet-state_idle.mp4",
+          "poster": "liveliness-r1/quiet-state_idle.webp",
+          "trace": "liveliness-r1/quiet-state_idle-trace.json",
+          "video_sha256": "c42682ffe17e15b6d39ce55646136fc16ca6ebe17d959a704e3171424dffbcdc",
+          "frames": 1680,
+          "fps": 60
+        }
+      ]
+    },
+    {
+      "id": "shy",
+      "title": "两句对话 · 害羞到开心",
+      "description": "两句间保留情绪：短暂移开视线，眉部先放松，脸红稍后退出。语音、手臂和躯干轨迹相同。",
+      "texts": [
+        "你这样认真地夸我，我会有一点不好意思的。",
+        "不过，我很开心，你能看出来就太好了。"
+      ],
+      "duration_ms": 11960,
+      "highlight_ms": 800,
+      "paired_audio_identical": true,
+      "arm_inputs_identical": true,
+      "variants": [
+        {
+          "id": "current",
+          "label": "当前执行 · 固定信号",
+          "video": "liveliness-r1/shy-current.mp4",
+          "poster": "liveliness-r1/shy-current.webp",
+          "trace": "liveliness-r1/shy-current-trace.json",
+          "video_sha256": "1397ef5a7066decad0cc8d423d1bb2695d0f77160288cc2dd95bc96cd16d4e47",
+          "frames": 718,
+          "fps": 60
+        },
+        {
+          "id": "state_idle",
+          "label": "持续状态与稀疏调度候选",
+          "video": "liveliness-r1/shy-state_idle.mp4",
+          "poster": "liveliness-r1/shy-state_idle.webp",
+          "trace": "liveliness-r1/shy-state_idle-trace.json",
+          "video_sha256": "3b0df1ea5282ad96785312b2cc96d35e6d1b9b8ae2ee855f4a955a3d1ee6f6d2",
+          "frames": 718,
+          "fps": 60
+        }
+      ]
+    },
+    {
+      "id": "anger",
+      "title": "生气保持 · 眉眼先放松，黑脸稍后退出",
+      "description": "同样的生气强度与保持指令。观察眉眼的短反应与黑脸的长保持；这是无声执行探针。",
+      "texts": [],
+      "duration_ms": 10000,
+      "highlight_ms": 800,
+      "paired_audio_identical": true,
+      "arm_inputs_identical": true,
+      "variants": [
+        {
+          "id": "current",
+          "label": "当前执行 · 固定信号",
+          "video": "liveliness-r1/anger-current.mp4",
+          "poster": "liveliness-r1/anger-current.webp",
+          "trace": "liveliness-r1/anger-current-trace.json",
+          "video_sha256": "74c4bd50f4b80193e91659bf3a071ef2229311970963907813d89bf3cbdb1648",
+          "frames": 600,
+          "fps": 60
+        },
+        {
+          "id": "state_idle",
+          "label": "持续状态与稀疏调度候选",
+          "video": "liveliness-r1/anger-state_idle.mp4",
+          "poster": "liveliness-r1/anger-state_idle.webp",
+          "trace": "liveliness-r1/anger-state_idle-trace.json",
+          "video_sha256": "d1834b9e40d2c0df023b487f1fae5c705af309947a6cbde0017729ebb8876fef",
+          "frames": 600,
+          "fps": 60
+        }
+      ]
+    }
+  ],
+  "clips": 6,
+  "true_capture_fps": 60,
+  "paired_audio_identical": true
+}

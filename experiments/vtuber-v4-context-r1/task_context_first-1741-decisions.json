@@ -1,0 +1,602 @@
+[
+  {
+    "id": "09-inventory/t1/canonical",
+    "body": "none",
+    "strength": 0.0,
+    "necessity_probabilities": [
+      0.9877877831459045,
+      0.011333075352013111,
+      0.0008790975552983582
+    ]
+  },
+  {
+    "id": "09-inventory/t2/canonical",
+    "body": "none",
+    "strength": 0.0,
+    "necessity_probabilities": [
+      0.9894790053367615,
+      0.010153209790587425,
+      0.0003677350759971887
+    ]
+  },
+  {
+    "id": "09-inventory/t3/canonical",
+    "body": "none",
+    "strength": 0.0,
+    "necessity_probabilities": [
+      0.01140930037945509,
+      0.9880883097648621,
+      0.0005023154080845416
+    ]
+  },
+  {
+    "id": "15-boundary/t1/canonical",
+    "body": "nod",
+    "strength": 0.45384830236434937,
+    "necessity_probabilities": [
+      0.026026789098978043,
+      0.3611300587654114,
+      0.6128432154655457
+    ]
+  },
+  {
+    "id": "15-boundary/t2/canonical",
+    "body": "none",
+    "strength": 0.0,
+    "necessity_probabilities": [
+      0.008718211203813553,
+      0.8991423845291138,
+      0.09213940799236298
+    ]
+  },
+  {
+    "id": "15-boundary/t3/canonical",
+    "body": "nod",
+    "strength": 0.2907508313655853,
+    "necessity_probabilities": [
+      0.001752578653395176,
+      0.9650046825408936,
+      0.03324269875884056
+    ]
+  },
+  {
+    "id": "17-stage/t1/canonical",
+    "body": "none",
+    "strength": 0.0,
+    "necessity_probabilities": [
+      0.8289638757705688,
+      0.16702225804328918,
+      0.004013838712126017
+    ]
+  },
+  {
+    "id": "17-stage/t2/canonical",
+    "body": "none",
+    "strength": 0.0,
+    "necessity_probabilities": [
+      0.7995909452438354,
+      0.1943027377128601,
+      0.006106282584369183
+    ]
+  },
+  {
+    "id": "17-stage/t3/canonical",
+    "body": "none",
+    "strength": 0.0,
+    "necessity_probabilities": [
+      0.7313926815986633,
+      0.26620081067085266,
+      0.0024065051693469286
+    ]
+  },
+  {
+    "id": "21-fineprint/t1/canonical",
+    "body": "none",
+    "strength": 0.0,
+    "necessity_probabilities": [
+      0.21283720433712006,
+      0.7682032585144043,
+      0.018959570676088333
+    ]
+  },
+  {
+    "id": "21-fineprint/t2/canonical",
+    "body": "nod",
+    "strength": 0.16014595329761505,
+    "necessity_probabilities": [
+      0.054207514971494675,
+      0.9417285323143005,
+      0.004063857719302177
+    ]
+  },
+  {
+    "id": "21-fineprint/t3/canonical",
+    "body": "none",
+    "strength": 0.0,
+    "necessity_probabilities": [
+      0.9845224618911743,
+      0.015110391192138195,
+      0.0003671025042422116
+    ]
+  },
+  {
+    "id": "26-secret-botany/t1/canonical",
+    "body": "none",
+    "strength": 0.0,
+    "necessity_probabilities": [
+      0.005846749991178513,
+      0.9818323850631714,
+      0.012320857495069504
+    ]
+  },
+  {
+    "id": "26-secret-botany/t2/canonical",
+    "body": "nod",
+    "strength": 0.26629239320755005,
+    "necessity_probabilities": [
+      0.007871816866099834,
+      0.9758352637290955,
+      0.016292834654450417
+    ]
+  },
+  {
+    "id": "26-secret-botany/t3/canonical",
+    "body": "none",
+    "strength": 0.0,
+    "necessity_probabilities": [
+      0.5377943515777588,
+      0.45938965678215027,
+      0.0028160125948488712
+    ]
+  },
+  {
+    "id": "27-quiet-support/t1/canonical",
+    "body": "nod",
+    "strength": 0.3561008870601654,
+    "necessity_probabilities": [
+      0.0036290520802140236,
+      0.9882215857505798,
+      0.008149259723722935
+    ]
+  },
+  {
+    "id": "27-quiet-support/t2/canonical",
+    "body": "none",
+    "strength": 0.0,
+    "necessity_probabilities": [
+      0.0329103022813797,
+      0.9659693241119385,
+      0.0011202800087630749
+    ]
+  },
+  {
+    "id": "27-quiet-support/t3/canonical",
+    "body": "none",
+    "strength": 0.0,
+    "necessity_probabilities": [
+      0.628680408000946,
+      0.36673566699028015,
+      0.004583921283483505
+    ]
+  },
+  {
+    "id": "29-graph/t1/canonical",
+    "body": "nod",
+    "strength": 0.501316249370575,
+    "necessity_probabilities": [
+      0.017576666548848152,
+      0.01446528173983097,
+      0.9679580330848694
+    ]
+  },
+  {
+    "id": "29-graph/t2/canonical",
+    "body": "nod",
+    "strength": 0.3115304410457611,
+    "necessity_probabilities": [
+      0.003555608680471778,
+      0.9477826356887817,
+      0.04866178706288338
+    ]
+  },
+  {
+    "id": "29-graph/t3/canonical",
+    "body": "nod",
+    "strength": 0.17722012102603912,
+    "necessity_probabilities": [
+      0.30241918563842773,
+      0.6937165260314941,
+      0.0038642724975943565
+    ]
+  },
+  {
+    "id": "32-rule-loop/t1/canonical",
+    "body": "tilt",
+    "strength": 0.23890015482902527,
+    "necessity_probabilities": [
+      0.0030184085480868816,
+      0.9961603879928589,
+      0.0008211193489842117
+    ]
+  },
+  {
+    "id": "32-rule-loop/t2/canonical",
+    "body": "none",
+    "strength": 0.0,
+    "necessity_probabilities": [
+      0.31045788526535034,
+      0.6871981620788574,
+      0.0023439780343323946
+    ]
+  },
+  {
+    "id": "32-rule-loop/t3/canonical",
+    "body": "nod",
+    "strength": 0.23471182584762573,
+    "necessity_probabilities": [
+      0.0007998297223821282,
+      0.9952538013458252,
+      0.003946380224078894
+    ]
+  },
+  {
+    "id": "39-number-read/t1/canonical",
+    "body": "none",
+    "strength": 0.0,
+    "necessity_probabilities": [
+      0.9898968935012817,
+      0.006195437163114548,
+      0.003907610662281513
+    ]
+  },
+  {
+    "id": "39-number-read/t2/canonical",
+    "body": "none",
+    "strength": 0.0,
+    "necessity_probabilities": [
+      0.9948986172676086,
+      0.0038486779667437077,
+      0.0012526820646598935
+    ]
+  },
+  {
+    "id": "39-number-read/t3/canonical",
+    "body": "none",
+    "strength": 0.0,
+    "necessity_probabilities": [
+      0.99693763256073,
+      0.0025760321877896786,
+      0.00048630175297148526
+    ]
+  },
+  {
+    "id": "41-tea-stay/t1/canonical",
+    "body": "cajole",
+    "strength": 0.5581151843070984,
+    "necessity_probabilities": [
+      0.0003985075745731592,
+      0.04504077509045601,
+      0.9545606970787048
+    ]
+  },
+  {
+    "id": "41-tea-stay/t2/canonical",
+    "body": "cajole",
+    "strength": 0.46135127544403076,
+    "necessity_probabilities": [
+      0.0003899487783201039,
+      0.07508774101734161,
+      0.924522340297699
+    ]
+  },
+  {
+    "id": "41-tea-stay/t3/canonical",
+    "body": "none",
+    "strength": 0.0,
+    "necessity_probabilities": [
+      0.014629639685153961,
+      0.9843973517417908,
+      0.0009730748133733869
+    ]
+  },
+  {
+    "id": "54-strong-blush/t1/canonical",
+    "body": "cajole",
+    "strength": 0.3968019485473633,
+    "necessity_probabilities": [
+      0.0006182965007610619,
+      0.9353711605072021,
+      0.06401050835847855
+    ]
+  },
+  {
+    "id": "54-strong-blush/t2/canonical",
+    "body": "none",
+    "strength": 0.0,
+    "necessity_probabilities": [
+      0.0008317210013046861,
+      0.9977407455444336,
+      0.0014275703579187393
+    ]
+  },
+  {
+    "id": "54-strong-blush/t3/canonical",
+    "body": "none",
+    "strength": 0.0,
+    "necessity_probabilities": [
+      0.0008417534409090877,
+      0.9989218711853027,
+      0.00023637994308955967
+    ]
+  },
+  {
+    "id": "56-surprise-work/t1/canonical",
+    "body": "turn",
+    "strength": 0.4431861937046051,
+    "necessity_probabilities": [
+      0.0007500567589886487,
+      0.3094329237937927,
+      0.6898170113563538
+    ]
+  },
+  {
+    "id": "56-surprise-work/t2/canonical",
+    "body": "none",
+    "strength": 0.0,
+    "necessity_probabilities": [
+      0.0002541859867051244,
+      0.994236946105957,
+      0.005508755799382925
+    ]
+  },
+  {
+    "id": "56-surprise-work/t3/canonical",
+    "body": "none",
+    "strength": 0.0,
+    "necessity_probabilities": [
+      0.9887449145317078,
+      0.011043181642889977,
+      0.0002119147393386811
+    ]
+  },
+  {
+    "id": "59-mild-noise/t1/canonical",
+    "body": "none",
+    "strength": 0.0,
+    "necessity_probabilities": [
+      0.0026409649290144444,
+      0.9966185092926025,
+      0.0007405402138829231
+    ]
+  },
+  {
+    "id": "59-mild-noise/t2/canonical",
+    "body": "none",
+    "strength": 0.0,
+    "necessity_probabilities": [
+      0.00016547822451684624,
+      0.9908995628356934,
+      0.008934900164604187
+    ]
+  },
+  {
+    "id": "59-mild-noise/t3/canonical",
+    "body": "none",
+    "strength": 0.0,
+    "necessity_probabilities": [
+      0.9814727306365967,
+      0.017336592078208923,
+      0.0011907591251656413
+    ]
+  },
+  {
+    "id": "63-irony-delay/t1/canonical",
+    "body": "none",
+    "strength": 0.0,
+    "necessity_probabilities": [
+      0.009267695248126984,
+      0.7840713858604431,
+      0.20666095614433289
+    ]
+  },
+  {
+    "id": "63-irony-delay/t2/canonical",
+    "body": "none",
+    "strength": 0.0,
+    "necessity_probabilities": [
+      0.0006972593837417662,
+      0.9970882534980774,
+      0.0022145018447190523
+    ]
+  },
+  {
+    "id": "63-irony-delay/t3/canonical",
+    "body": "none",
+    "strength": 0.0,
+    "necessity_probabilities": [
+      0.1211032122373581,
+      0.8775179386138916,
+      0.001378844492137432
+    ]
+  },
+  {
+    "id": "64-genuine-praise/t1/canonical",
+    "body": "lean",
+    "strength": 0.40105587244033813,
+    "necessity_probabilities": [
+      0.0005281478515826166,
+      0.12091179192066193,
+      0.8785600066184998
+    ]
+  },
+  {
+    "id": "64-genuine-praise/t2/canonical",
+    "body": "nod",
+    "strength": 0.2960733473300934,
+    "necessity_probabilities": [
+      0.0015185913071036339,
+      0.2682145833969116,
+      0.7302667498588562
+    ]
+  },
+  {
+    "id": "64-genuine-praise/t3/canonical",
+    "body": "none",
+    "strength": 0.0,
+    "necessity_probabilities": [
+      0.5046425461769104,
+      0.49305373430252075,
+      0.0023037714418023825
+    ]
+  },
+  {
+    "id": "65-not-romance/t1/canonical",
+    "body": "none",
+    "strength": 0.0,
+    "necessity_probabilities": [
+      0.013392084278166294,
+      0.9547225832939148,
+      0.03188528120517731
+    ]
+  },
+  {
+    "id": "65-not-romance/t2/canonical",
+    "body": "none",
+    "strength": 0.0,
+    "necessity_probabilities": [
+      0.8763502836227417,
+      0.11102216690778732,
+      0.012627605348825455
+    ]
+  },
+  {
+    "id": "65-not-romance/t3/canonical",
+    "body": "none",
+    "strength": 0.0,
+    "necessity_probabilities": [
+      0.0038854838348925114,
+      0.9847361445426941,
+      0.011378386989235878
+    ]
+  },
+  {
+    "id": "66-reported-success/t1/canonical",
+    "body": "none",
+    "strength": 0.0,
+    "necessity_probabilities": [
+      0.0018821550766006112,
+      0.9940134882926941,
+      0.00410428224131465
+    ]
+  },
+  {
+    "id": "66-reported-success/t2/canonical",
+    "body": "none",
+    "strength": 0.0,
+    "necessity_probabilities": [
+      0.9933589100837708,
+      0.006364399567246437,
+      0.00027674867305904627
+    ]
+  },
+  {
+    "id": "66-reported-success/t3/canonical",
+    "body": "none",
+    "strength": 0.0,
+    "necessity_probabilities": [
+      0.9837681651115417,
+      0.016000524163246155,
+      0.0002312859578523785
+    ]
+  },
+  {
+    "id": "80-normal-ending/t1/canonical",
+    "body": "none",
+    "strength": 0.0,
+    "necessity_probabilities": [
+      0.9880353808403015,
+      0.011724736541509628,
+      0.00023994848015718162
+    ]
+  },
+  {
+    "id": "80-normal-ending/t2/canonical",
+    "body": "none",
+    "strength": 0.0,
+    "necessity_probabilities": [
+      0.9922965168952942,
+      0.0074921646155416965,
+      0.0002112679649144411
+    ]
+  },
+  {
+    "id": "80-normal-ending/t3/canonical",
+    "body": "none",
+    "strength": 0.0,
+    "necessity_probabilities": [
+      0.9908292293548584,
+      0.008960576727986336,
+      0.00021020708663854748
+    ]
+  },
+  {
+    "id": "93-pair-praise-blush/t1/canonical",
+    "body": "tilt",
+    "strength": 0.35017362236976624,
+    "necessity_probabilities": [
+      0.0004134351038374007,
+      0.9600447416305542,
+      0.03954190015792847
+    ]
+  },
+  {
+    "id": "93-pair-praise-blush/t2/canonical",
+    "body": "none",
+    "strength": 0.0,
+    "necessity_probabilities": [
+      0.0016110199503600597,
+      0.9964917302131653,
+      0.001897244481369853
+    ]
+  },
+  {
+    "id": "93-pair-praise-blush/t3/canonical",
+    "body": "none",
+    "strength": 0.0,
+    "necessity_probabilities": [
+      0.02028198353946209,
+      0.978875994682312,
+      0.0008420739322900772
+    ]
+  },
+  {
+    "id": "94-pair-praise-line/t1/canonical",
+    "body": "none",
+    "strength": 0.0,
+    "necessity_probabilities": [
+      0.1290242224931717,
+      0.8663375377655029,
+      0.0046381899155676365
+    ]
+  },
+  {
+    "id": "94-pair-praise-line/t2/canonical",
+    "body": "none",
+    "strength": 0.0,
+    "necessity_probabilities": [
+      0.9944801330566406,
+      0.004668240901082754,
+      0.0008516177767887712
+    ]
+  },
+  {
+    "id": "94-pair-praise-line/t3/canonical",
+    "body": "none",
+    "strength": 0.0,
+    "necessity_probabilities": [
+      0.9892224073410034,
+      0.010543863289058208,
+      0.00023371019051410258
+    ]
+  }
+]

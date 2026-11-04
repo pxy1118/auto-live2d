@@ -1,0 +1,2750 @@
+[
+  {
+    "text": "他说他很生气，我只是在复述他的话。",
+    "context": "和观众日常聊天；角色本人情绪平静，引用别人的生气，不要黑脸",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "他说他很生气，我只是在复述他的话。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我没有生气啦，刚刚只是跟你开个玩笑。",
+    "context": "和观众日常聊天；角色笑着澄清误会",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我没有生气啦，刚刚只是跟你开个玩笑。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你可真是太会照顾人了。",
+    "context": "和观众日常聊天；反讽，对方刚刚故意捉弄角色，角色在生气",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你可真是太会照顾人了。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你突然这样夸我，我会不好意思的。",
+    "context": "和观众日常聊天",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你突然这样夸我，我会不好意思的。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我本来以为这次可以成功的，还是有点难过。",
+    "context": "和观众日常聊天",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "我本来以为这次可以成功的，还是有点难过。",
+    "context": "和观众自然聊天。",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "诶？这是真的吗，我刚才没听错吧！",
+    "context": "和观众日常聊天",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "诶？这是真的吗，我刚才没听错吧！",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "等等，你刚才说的到底是什么意思？",
+    "context": "和观众日常聊天",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "等等，你刚才说的到底是什么意思？",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "这个地方我再解释一遍，你仔细听。",
+    "context": "和观众日常聊天",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "这个地方我再解释一遍，你仔细听。",
+    "context": "和观众自然聊天。",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "谢谢你一直陪着我，我今天很开心。",
+    "context": "和观众日常聊天",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "谢谢你一直陪着我，我今天很开心。",
+    "context": "和观众自然聊天。",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "这件事真的让我很生气，请你停下来。",
+    "context": "和观众日常聊天",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "这件事真的让我很生气，请你停下来。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "别一直看着我啦，我都不知道说什么了。",
+    "context": "和观众日常聊天",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "别一直看着我啦，我都不知道说什么了。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你要走了吗？那我们下次再见吧。",
+    "context": "和观众日常聊天",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你要走了吗？那我们下次再见吧。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "等一下，你怎么突然就出现了！",
+    "context": "和观众日常聊天",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "等一下，你怎么突然就出现了！",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我有点绕晕了，让我重新理一下。",
+    "context": "和观众日常聊天",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我有点绕晕了，让我重新理一下。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我先想一想，再告诉你我的看法。",
+    "context": "和观众日常聊天",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我先想一想，再告诉你我的看法。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "来，给你看看我刚发现的好东西。",
+    "context": "和观众日常聊天",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "来，给你看看我刚发现的好东西。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你再这样捉弄我，我可真的不理你了。",
+    "context": "和观众日常聊天",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "你再这样捉弄我，我可真的不理你了。",
+    "context": "和观众自然聊天。",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "那个，其实我一直想告诉你一件事。",
+    "context": "和观众日常聊天",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "那个，其实我一直想告诉你一件事。",
+    "context": "和观众自然聊天。",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "这件事让我有点失落，不过我会慢慢调整。",
+    "context": "和观众日常聊天",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "这件事让我有点失落，不过我会慢慢调整。",
+    "context": "和观众自然聊天。",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "哇，这个礼物竟然是给我的？",
+    "context": "和观众日常聊天",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "哇，这个礼物竟然是给我的？",
+    "context": "和观众自然聊天。",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "这两件事怎么会联系到一起呢？",
+    "context": "和观众日常聊天",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "这两件事怎么会联系到一起呢？",
+    "context": "和观众自然聊天。",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "你说的这件事，我已经记下来了。",
+    "context": "和观众日常聊天",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你说的这件事，我已经记下来了。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "这次真的很顺利，我忍不住想笑。",
+    "context": "和观众日常聊天",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "这次真的很顺利，我忍不住想笑。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我现在不想开玩笑，我是认真的。",
+    "context": "和观众日常聊天",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我现在不想开玩笑，我是认真的。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我才没有害羞呢，你不要再笑了。",
+    "context": "和观众日常聊天",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "我才没有害羞呢，你不要再笑了。",
+    "context": "和观众自然聊天。",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "我想安静一会儿，可以陪着我吗？",
+    "context": "和观众日常聊天",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我想安静一会儿，可以陪着我吗？",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "什么？你已经全部做完了！",
+    "context": "和观众日常聊天",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "什么？你已经全部做完了！",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "诶，我刚才是不是又看错了？",
+    "context": "和观众日常聊天",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "诶，我刚才是不是又看错了？",
+    "context": "和观众自然聊天。",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "这不公平，我明明已经努力过了！",
+    "context": "和观众日常聊天",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "这不公平，我明明已经努力过了！",
+    "context": "和观众自然聊天。",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "谢谢你这么认真地喜欢我，我有点紧张。",
+    "context": "和观众日常聊天",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "谢谢你这么认真地喜欢我，我有点紧张。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "对不起，我没能把这件事做好。",
+    "context": "和观众日常聊天",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "对不起，我没能把这件事做好。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我完全没想到会是这样的结果。",
+    "context": "和观众日常聊天",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "我完全没想到会是这样的结果。",
+    "context": "和观众自然聊天。",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "我的脑袋快转不过来了，先等一下。",
+    "context": "和观众日常聊天",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我的脑袋快转不过来了，先等一下。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我没有生气，只是在认真说明情况。",
+    "context": "和观众日常聊天",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我没有生气，只是在认真说明情况。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "终于等到你啦，快过来坐呀。",
+    "context": "和观众日常聊天",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "终于等到你啦，快过来坐呀。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你靠得太近了，让我缓一缓。",
+    "context": "和观众日常聊天",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你靠得太近了，让我缓一缓。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我努力了很久，结果还是没有等到。",
+    "context": "和观众日常聊天",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我努力了很久，结果还是没有等到。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你也太厉害了吧，我都看呆了！",
+    "context": "和观众日常聊天",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你也太厉害了吧，我都看呆了！",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你能再说一遍吗，我还是没有明白。",
+    "context": "和观众日常聊天",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你能再说一遍吗，我还是没有明白。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "大家先坐好，今天我们慢慢聊。",
+    "context": "回应熟悉的朋友",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "大家先坐好，今天我们慢慢聊。",
+    "context": "和观众自然聊天。",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "太好了，我们终于一起做到了！",
+    "context": "回应熟悉的朋友",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "太好了，我们终于一起做到了！",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我都说了不要这样，你怎么还来！",
+    "context": "回应熟悉的朋友",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我都说了不要这样，你怎么还来！",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你突然这样夸我，我会不好意思的。",
+    "context": "回应熟悉的朋友",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我本来以为这次可以成功的，还是有点难过。",
+    "context": "回应熟悉的朋友",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "诶？这是真的吗，我刚才没听错吧！",
+    "context": "回应熟悉的朋友",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "等等，你刚才说的到底是什么意思？",
+    "context": "回应熟悉的朋友",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "这个地方我再解释一遍，你仔细听。",
+    "context": "回应熟悉的朋友",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "谢谢你一直陪着我，我今天很开心。",
+    "context": "回应熟悉的朋友",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "这件事真的让我很生气，请你停下来。",
+    "context": "回应熟悉的朋友",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "别一直看着我啦，我都不知道说什么了。",
+    "context": "回应熟悉的朋友",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你要走了吗？那我们下次再见吧。",
+    "context": "回应熟悉的朋友",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "等一下，你怎么突然就出现了！",
+    "context": "回应熟悉的朋友",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我有点绕晕了，让我重新理一下。",
+    "context": "回应熟悉的朋友",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "他说他很生气，我只是在复述他的话。",
+    "context": "回应熟悉的朋友；角色本人情绪平静，引用别人的生气，不要黑脸",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我没有生气啦，刚刚只是跟你开个玩笑。",
+    "context": "回应熟悉的朋友；角色笑着澄清误会",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你再这样捉弄我，我可真的不理你了。",
+    "context": "回应熟悉的朋友",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "那个，其实我一直想告诉你一件事。",
+    "context": "回应熟悉的朋友",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "这件事让我有点失落，不过我会慢慢调整。",
+    "context": "回应熟悉的朋友",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "哇，这个礼物竟然是给我的？",
+    "context": "回应熟悉的朋友",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "这两件事怎么会联系到一起呢？",
+    "context": "回应熟悉的朋友",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "你说的这件事，我已经记下来了。",
+    "context": "回应熟悉的朋友",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "这次真的很顺利，我忍不住想笑。",
+    "context": "回应熟悉的朋友",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我现在不想开玩笑，我是认真的。",
+    "context": "回应熟悉的朋友",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我才没有害羞呢，你不要再笑了。",
+    "context": "回应熟悉的朋友",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "我想安静一会儿，可以陪着我吗？",
+    "context": "回应熟悉的朋友",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "什么？你已经全部做完了！",
+    "context": "回应熟悉的朋友",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "诶，我刚才是不是又看错了？",
+    "context": "回应熟悉的朋友",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "先看左边，再看右边，这样就清楚了。",
+    "context": "回应熟悉的朋友",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "先看左边，再看右边，这样就清楚了。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你这句话说得真有意思，哈哈。",
+    "context": "回应熟悉的朋友",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "你这句话说得真有意思，哈哈。",
+    "context": "和观众自然聊天。",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "你可真是太会照顾人了。",
+    "context": "回应熟悉的朋友；反讽，对方刚刚故意捉弄角色，角色在生气",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "谢谢你这么认真地喜欢我，我有点紧张。",
+    "context": "回应熟悉的朋友",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "对不起，我没能把这件事做好。",
+    "context": "回应熟悉的朋友",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我完全没想到会是这样的结果。",
+    "context": "回应熟悉的朋友",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "我的脑袋快转不过来了，先等一下。",
+    "context": "回应熟悉的朋友",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我没有生气，只是在认真说明情况。",
+    "context": "回应熟悉的朋友",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "终于等到你啦，快过来坐呀。",
+    "context": "回应熟悉的朋友",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "哼，别以为说句好话我就会原谅你。",
+    "context": "回应熟悉的朋友",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "哼，别以为说句好话我就会原谅你。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你靠得太近了，让我缓一缓。",
+    "context": "回应熟悉的朋友",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我努力了很久，结果还是没有等到。",
+    "context": "回应熟悉的朋友",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你也太厉害了吧，我都看呆了！",
+    "context": "回应熟悉的朋友",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你能再说一遍吗，我还是没有明白。",
+    "context": "回应熟悉的朋友",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "他说他很生气，我只是在复述他的话。",
+    "context": "直播中解释刚才发生的事；角色本人情绪平静，引用别人的生气，不要黑脸",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我没有生气啦，刚刚只是跟你开个玩笑。",
+    "context": "直播中解释刚才发生的事；角色笑着澄清误会",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我都说了不要这样，你怎么还来！",
+    "context": "直播中解释刚才发生的事",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你突然这样夸我，我会不好意思的。",
+    "context": "直播中解释刚才发生的事",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我本来以为这次可以成功的，还是有点难过。",
+    "context": "直播中解释刚才发生的事",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "诶？这是真的吗，我刚才没听错吧！",
+    "context": "直播中解释刚才发生的事",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "等等，你刚才说的到底是什么意思？",
+    "context": "直播中解释刚才发生的事",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "这个地方我再解释一遍，你仔细听。",
+    "context": "直播中解释刚才发生的事",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "谢谢你一直陪着我，我今天很开心。",
+    "context": "直播中解释刚才发生的事",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "这件事真的让我很生气，请你停下来。",
+    "context": "直播中解释刚才发生的事",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "别一直看着我啦，我都不知道说什么了。",
+    "context": "直播中解释刚才发生的事",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你要走了吗？那我们下次再见吧。",
+    "context": "直播中解释刚才发生的事",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "等一下，你怎么突然就出现了！",
+    "context": "直播中解释刚才发生的事",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我有点绕晕了，让我重新理一下。",
+    "context": "直播中解释刚才发生的事",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我先想一想，再告诉你我的看法。",
+    "context": "直播中解释刚才发生的事",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "来，给你看看我刚发现的好东西。",
+    "context": "直播中解释刚才发生的事",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你再这样捉弄我，我可真的不理你了。",
+    "context": "直播中解释刚才发生的事",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "那个，其实我一直想告诉你一件事。",
+    "context": "直播中解释刚才发生的事",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "这件事让我有点失落，不过我会慢慢调整。",
+    "context": "直播中解释刚才发生的事",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "哇，这个礼物竟然是给我的？",
+    "context": "直播中解释刚才发生的事",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "这两件事怎么会联系到一起呢？",
+    "context": "直播中解释刚才发生的事",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "你说的这件事，我已经记下来了。",
+    "context": "直播中解释刚才发生的事",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "这次真的很顺利，我忍不住想笑。",
+    "context": "直播中解释刚才发生的事",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你可真是太会照顾人了。",
+    "context": "直播中解释刚才发生的事；反讽，对方刚刚故意捉弄角色，角色在生气",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我才没有害羞呢，你不要再笑了。",
+    "context": "直播中解释刚才发生的事",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "我想安静一会儿，可以陪着我吗？",
+    "context": "直播中解释刚才发生的事",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "什么？你已经全部做完了！",
+    "context": "直播中解释刚才发生的事",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "诶，我刚才是不是又看错了？",
+    "context": "直播中解释刚才发生的事",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "这不公平，我明明已经努力过了！",
+    "context": "直播中解释刚才发生的事",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "谢谢你这么认真地喜欢我，我有点紧张。",
+    "context": "直播中解释刚才发生的事",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "对不起，我没能把这件事做好。",
+    "context": "直播中解释刚才发生的事",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我完全没想到会是这样的结果。",
+    "context": "直播中解释刚才发生的事",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "我的脑袋快转不过来了，先等一下。",
+    "context": "直播中解释刚才发生的事",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我没有生气，只是在认真说明情况。",
+    "context": "直播中解释刚才发生的事",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "终于等到你啦，快过来坐呀。",
+    "context": "直播中解释刚才发生的事",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "哼，别以为说句好话我就会原谅你。",
+    "context": "直播中解释刚才发生的事",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你靠得太近了，让我缓一缓。",
+    "context": "直播中解释刚才发生的事",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我努力了很久，结果还是没有等到。",
+    "context": "直播中解释刚才发生的事",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你也太厉害了吧，我都看呆了！",
+    "context": "直播中解释刚才发生的事",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你能再说一遍吗，我还是没有明白。",
+    "context": "直播中解释刚才发生的事",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "大家先坐好，今天我们慢慢聊。",
+    "context": "接着上一句继续表达",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "太好了，我们终于一起做到了！",
+    "context": "接着上一句继续表达",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我都说了不要这样，你怎么还来！",
+    "context": "接着上一句继续表达",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你突然这样夸我，我会不好意思的。",
+    "context": "接着上一句继续表达",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我本来以为这次可以成功的，还是有点难过。",
+    "context": "接着上一句继续表达",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "诶？这是真的吗，我刚才没听错吧！",
+    "context": "接着上一句继续表达",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "等等，你刚才说的到底是什么意思？",
+    "context": "接着上一句继续表达",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "这个地方我再解释一遍，你仔细听。",
+    "context": "接着上一句继续表达",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "谢谢你一直陪着我，我今天很开心。",
+    "context": "接着上一句继续表达",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "这件事真的让我很生气，请你停下来。",
+    "context": "接着上一句继续表达",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "别一直看着我啦，我都不知道说什么了。",
+    "context": "接着上一句继续表达",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你要走了吗？那我们下次再见吧。",
+    "context": "接着上一句继续表达",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "等一下，你怎么突然就出现了！",
+    "context": "接着上一句继续表达",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我有点绕晕了，让我重新理一下。",
+    "context": "接着上一句继续表达",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "他说他很生气，我只是在复述他的话。",
+    "context": "接着上一句继续表达；角色本人情绪平静，引用别人的生气，不要黑脸",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我没有生气啦，刚刚只是跟你开个玩笑。",
+    "context": "接着上一句继续表达；角色笑着澄清误会",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你可真是太会照顾人了。",
+    "context": "接着上一句继续表达；反讽，对方刚刚故意捉弄角色，角色在生气",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "那个，其实我一直想告诉你一件事。",
+    "context": "接着上一句继续表达",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "这件事让我有点失落，不过我会慢慢调整。",
+    "context": "接着上一句继续表达",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "哇，这个礼物竟然是给我的？",
+    "context": "接着上一句继续表达",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "这两件事怎么会联系到一起呢？",
+    "context": "接着上一句继续表达",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "你说的这件事，我已经记下来了。",
+    "context": "接着上一句继续表达",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "这次真的很顺利，我忍不住想笑。",
+    "context": "接着上一句继续表达",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我现在不想开玩笑，我是认真的。",
+    "context": "接着上一句继续表达",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我才没有害羞呢，你不要再笑了。",
+    "context": "接着上一句继续表达",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "我想安静一会儿，可以陪着我吗？",
+    "context": "接着上一句继续表达",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "什么？你已经全部做完了！",
+    "context": "接着上一句继续表达",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "诶，我刚才是不是又看错了？",
+    "context": "接着上一句继续表达",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "先看左边，再看右边，这样就清楚了。",
+    "context": "接着上一句继续表达",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你这句话说得真有意思，哈哈。",
+    "context": "接着上一句继续表达",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "这不公平，我明明已经努力过了！",
+    "context": "接着上一句继续表达",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "谢谢你这么认真地喜欢我，我有点紧张。",
+    "context": "接着上一句继续表达",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "对不起，我没能把这件事做好。",
+    "context": "接着上一句继续表达",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我完全没想到会是这样的结果。",
+    "context": "接着上一句继续表达",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "我的脑袋快转不过来了，先等一下。",
+    "context": "接着上一句继续表达",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我没有生气，只是在认真说明情况。",
+    "context": "接着上一句继续表达",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "终于等到你啦，快过来坐呀。",
+    "context": "接着上一句继续表达",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "哼，别以为说句好话我就会原谅你。",
+    "context": "接着上一句继续表达",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你靠得太近了，让我缓一缓。",
+    "context": "接着上一句继续表达",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我努力了很久，结果还是没有等到。",
+    "context": "接着上一句继续表达",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你也太厉害了吧，我都看呆了！",
+    "context": "接着上一句继续表达",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你能再说一遍吗，我还是没有明白。",
+    "context": "接着上一句继续表达",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "他说他很生气，我只是在复述他的话。",
+    "context": "面对大家说出自己的感受；角色本人情绪平静，引用别人的生气，不要黑脸",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我没有生气啦，刚刚只是跟你开个玩笑。",
+    "context": "面对大家说出自己的感受；角色笑着澄清误会",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我都说了不要这样，你怎么还来！",
+    "context": "面对大家说出自己的感受",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你突然这样夸我，我会不好意思的。",
+    "context": "面对大家说出自己的感受",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我本来以为这次可以成功的，还是有点难过。",
+    "context": "面对大家说出自己的感受",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "诶？这是真的吗，我刚才没听错吧！",
+    "context": "面对大家说出自己的感受",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "等等，你刚才说的到底是什么意思？",
+    "context": "面对大家说出自己的感受",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "这个地方我再解释一遍，你仔细听。",
+    "context": "面对大家说出自己的感受",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "谢谢你一直陪着我，我今天很开心。",
+    "context": "面对大家说出自己的感受",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "你可真是太会照顾人了。",
+    "context": "面对大家说出自己的感受；反讽，对方刚刚故意捉弄角色，角色在生气",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "别一直看着我啦，我都不知道说什么了。",
+    "context": "面对大家说出自己的感受",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你要走了吗？那我们下次再见吧。",
+    "context": "面对大家说出自己的感受",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "等一下，你怎么突然就出现了！",
+    "context": "面对大家说出自己的感受",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我有点绕晕了，让我重新理一下。",
+    "context": "面对大家说出自己的感受",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我先想一想，再告诉你我的看法。",
+    "context": "面对大家说出自己的感受",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "来，给你看看我刚发现的好东西。",
+    "context": "面对大家说出自己的感受",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你再这样捉弄我，我可真的不理你了。",
+    "context": "面对大家说出自己的感受",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "那个，其实我一直想告诉你一件事。",
+    "context": "面对大家说出自己的感受",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "这件事让我有点失落，不过我会慢慢调整。",
+    "context": "面对大家说出自己的感受",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "哇，这个礼物竟然是给我的？",
+    "context": "面对大家说出自己的感受",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "这两件事怎么会联系到一起呢？",
+    "context": "面对大家说出自己的感受",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "你说的这件事，我已经记下来了。",
+    "context": "面对大家说出自己的感受",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "这次真的很顺利，我忍不住想笑。",
+    "context": "面对大家说出自己的感受",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我现在不想开玩笑，我是认真的。",
+    "context": "面对大家说出自己的感受",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我才没有害羞呢，你不要再笑了。",
+    "context": "面对大家说出自己的感受",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "我想安静一会儿，可以陪着我吗？",
+    "context": "面对大家说出自己的感受",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "什么？你已经全部做完了！",
+    "context": "面对大家说出自己的感受",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "诶，我刚才是不是又看错了？",
+    "context": "面对大家说出自己的感受",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "这不公平，我明明已经努力过了！",
+    "context": "面对大家说出自己的感受",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "谢谢你这么认真地喜欢我，我有点紧张。",
+    "context": "面对大家说出自己的感受",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "对不起，我没能把这件事做好。",
+    "context": "面对大家说出自己的感受",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我完全没想到会是这样的结果。",
+    "context": "面对大家说出自己的感受",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "我的脑袋快转不过来了，先等一下。",
+    "context": "面对大家说出自己的感受",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我没有生气，只是在认真说明情况。",
+    "context": "面对大家说出自己的感受",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "终于等到你啦，快过来坐呀。",
+    "context": "面对大家说出自己的感受",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "哼，别以为说句好话我就会原谅你。",
+    "context": "面对大家说出自己的感受",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你靠得太近了，让我缓一缓。",
+    "context": "面对大家说出自己的感受",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我努力了很久，结果还是没有等到。",
+    "context": "面对大家说出自己的感受",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你也太厉害了吧，我都看呆了！",
+    "context": "面对大家说出自己的感受",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你能再说一遍吗，我还是没有明白。",
+    "context": "面对大家说出自己的感受",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "大家先坐好，今天我们慢慢聊。",
+    "context": "在游戏间隙与观众互动",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "太好了，我们终于一起做到了！",
+    "context": "在游戏间隙与观众互动",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你可真是太会照顾人了。",
+    "context": "在游戏间隙与观众互动；反讽，对方刚刚故意捉弄角色，角色在生气",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你突然这样夸我，我会不好意思的。",
+    "context": "在游戏间隙与观众互动",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我本来以为这次可以成功的，还是有点难过。",
+    "context": "在游戏间隙与观众互动",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "诶？这是真的吗，我刚才没听错吧！",
+    "context": "在游戏间隙与观众互动",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "等等，你刚才说的到底是什么意思？",
+    "context": "在游戏间隙与观众互动",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "这个地方我再解释一遍，你仔细听。",
+    "context": "在游戏间隙与观众互动",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "谢谢你一直陪着我，我今天很开心。",
+    "context": "在游戏间隙与观众互动",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "这件事真的让我很生气，请你停下来。",
+    "context": "在游戏间隙与观众互动",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "别一直看着我啦，我都不知道说什么了。",
+    "context": "在游戏间隙与观众互动",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你要走了吗？那我们下次再见吧。",
+    "context": "在游戏间隙与观众互动",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "等一下，你怎么突然就出现了！",
+    "context": "在游戏间隙与观众互动",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我有点绕晕了，让我重新理一下。",
+    "context": "在游戏间隙与观众互动",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "他说他很生气，我只是在复述他的话。",
+    "context": "在游戏间隙与观众互动；角色本人情绪平静，引用别人的生气，不要黑脸",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我没有生气啦，刚刚只是跟你开个玩笑。",
+    "context": "在游戏间隙与观众互动；角色笑着澄清误会",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你再这样捉弄我，我可真的不理你了。",
+    "context": "在游戏间隙与观众互动",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "那个，其实我一直想告诉你一件事。",
+    "context": "在游戏间隙与观众互动",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "这件事让我有点失落，不过我会慢慢调整。",
+    "context": "在游戏间隙与观众互动",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "哇，这个礼物竟然是给我的？",
+    "context": "在游戏间隙与观众互动",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "这两件事怎么会联系到一起呢？",
+    "context": "在游戏间隙与观众互动",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "你说的这件事，我已经记下来了。",
+    "context": "在游戏间隙与观众互动",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "这次真的很顺利，我忍不住想笑。",
+    "context": "在游戏间隙与观众互动",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我现在不想开玩笑，我是认真的。",
+    "context": "在游戏间隙与观众互动",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我才没有害羞呢，你不要再笑了。",
+    "context": "在游戏间隙与观众互动",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "我想安静一会儿，可以陪着我吗？",
+    "context": "在游戏间隙与观众互动",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "什么？你已经全部做完了！",
+    "context": "在游戏间隙与观众互动",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "诶，我刚才是不是又看错了？",
+    "context": "在游戏间隙与观众互动",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "先看左边，再看右边，这样就清楚了。",
+    "context": "在游戏间隙与观众互动",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你这句话说得真有意思，哈哈。",
+    "context": "在游戏间隙与观众互动",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "大家好呀，我来和你们打个招呼。",
+    "context": "直播对话；动作意图：自然抬起一侧手臂挥手问候，手腕有清楚的连续变化",
+    "split": "validation",
+    "gesture": 1
+  },
+  {
+    "text": "大家好呀，我来和你们打个招呼。",
+    "context": "和观众自然聊天。",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "大家好呀，我来和你们打个招呼。",
+    "context": "直播开始，热情地欢迎观众。",
+    "split": "validation",
+    "gesture": 1
+  },
+  {
+    "text": "欢迎回来，先和大家挥挥手吧。",
+    "context": "直播对话；动作意图：自然抬起一侧手臂挥手问候，手腕有清楚的连续变化",
+    "split": "test",
+    "gesture": 1
+  },
+  {
+    "text": "欢迎回来，先和大家挥挥手吧。",
+    "context": "和观众自然聊天。",
+    "split": "test",
+    "gesture": 1
+  },
+  {
+    "text": "欢迎回来，先和大家挥挥手吧。",
+    "context": "直播开始，热情地欢迎观众。",
+    "split": "test",
+    "gesture": 1
+  },
+  {
+    "text": "嘿，能看到我吗，来打个招呼。",
+    "context": "直播对话；动作意图：自然抬起一侧手臂挥手问候，手腕有清楚的连续变化",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "嘿，能看到我吗，来打个招呼。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "嘿，能看到我吗，来打个招呼。",
+    "context": "直播开始，热情地欢迎观众。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "今天见到你们真开心，你好呀。",
+    "context": "直播对话；动作意图：自然抬起一侧手臂挥手问候，手腕有清楚的连续变化",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "今天见到你们真开心，你好呀。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "今天见到你们真开心，你好呀。",
+    "context": "直播开始，热情地欢迎观众。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "我们下次再见，拜拜啦。",
+    "context": "直播对话；动作意图：自然抬起一侧手臂挥手问候，手腕有清楚的连续变化",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "我们下次再见，拜拜啦。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我们下次再见，拜拜啦。",
+    "context": "直播开始，热情地欢迎观众。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "那我先向大家问个好。",
+    "context": "直播对话；动作意图：自然抬起一侧手臂挥手问候，手腕有清楚的连续变化",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "那我先向大家问个好。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "那我先向大家问个好。",
+    "context": "直播开始，热情地欢迎观众。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "这边这边，你看见我了吗？",
+    "context": "直播对话；动作意图：自然抬起一侧手臂挥手问候，手腕有清楚的连续变化",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "这边这边，你看见我了吗？",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "这边这边，你看见我了吗？",
+    "context": "直播开始，热情地欢迎观众。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "开播啦，大家下午好。",
+    "context": "直播对话；动作意图：自然抬起一侧手臂挥手问候，手腕有清楚的连续变化",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "开播啦，大家下午好。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "开播啦，大家下午好。",
+    "context": "直播开始，热情地欢迎观众。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "我要先和新来的朋友打声招呼。",
+    "context": "直播对话；动作意图：自然抬起一侧手臂挥手问候，手腕有清楚的连续变化",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "我要先和新来的朋友打声招呼。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我要先和新来的朋友打声招呼。",
+    "context": "直播开始，热情地欢迎观众。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "你回来了呀，好久不见。",
+    "context": "直播对话；动作意图：自然抬起一侧手臂挥手问候，手腕有清楚的连续变化",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "你回来了呀，好久不见。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你回来了呀，好久不见。",
+    "context": "直播开始，热情地欢迎观众。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "这个问题让我慢慢给你解释。",
+    "context": "直播对话；动作意图：解释时抬起手臂，前臂与手腕配合观点自然展开",
+    "split": "validation",
+    "gesture": 1
+  },
+  {
+    "text": "这个问题让我慢慢给你解释。",
+    "context": "和观众自然聊天。",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "这个问题让我慢慢给你解释。",
+    "context": "重要讲解，需要配合一次手势帮助理解。",
+    "split": "validation",
+    "gesture": 1
+  },
+  {
+    "text": "我觉得可以从这两个方面来考虑。",
+    "context": "直播对话；动作意图：解释时抬起手臂，前臂与手腕配合观点自然展开",
+    "split": "test",
+    "gesture": 1
+  },
+  {
+    "text": "我觉得可以从这两个方面来考虑。",
+    "context": "和观众自然聊天。",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "我觉得可以从这两个方面来考虑。",
+    "context": "重要讲解，需要配合一次手势帮助理解。",
+    "split": "test",
+    "gesture": 1
+  },
+  {
+    "text": "先别急，我们把事情的经过说清楚。",
+    "context": "直播对话；动作意图：解释时抬起手臂，前臂与手腕配合观点自然展开",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "先别急，我们把事情的经过说清楚。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "先别急，我们把事情的经过说清楚。",
+    "context": "重要讲解，需要配合一次手势帮助理解。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "我的意思是，这两件事可以一起做。",
+    "context": "直播对话；动作意图：解释时抬起手臂，前臂与手腕配合观点自然展开",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "我的意思是，这两件事可以一起做。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我的意思是，这两件事可以一起做。",
+    "context": "重要讲解，需要配合一次手势帮助理解。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "听我讲完，你就会明白了。",
+    "context": "直播对话；动作意图：解释时抬起手臂，前臂与手腕配合观点自然展开",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "听我讲完，你就会明白了。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "听我讲完，你就会明白了。",
+    "context": "重要讲解，需要配合一次手势帮助理解。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "我先简单说一下我的看法。",
+    "context": "直播对话；动作意图：解释时抬起手臂，前臂与手腕配合观点自然展开",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "我先简单说一下我的看法。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我先简单说一下我的看法。",
+    "context": "重要讲解，需要配合一次手势帮助理解。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "我们先把最重要的一点讲清楚。",
+    "context": "直播对话；动作意图：解释时抬起手臂，前臂与手腕配合观点自然展开",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "我们先把最重要的一点讲清楚。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我们先把最重要的一点讲清楚。",
+    "context": "重要讲解，需要配合一次手势帮助理解。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "这个办法其实还有一个好处。",
+    "context": "直播对话；动作意图：解释时抬起手臂，前臂与手腕配合观点自然展开",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "这个办法其实还有一个好处。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "这个办法其实还有一个好处。",
+    "context": "重要讲解，需要配合一次手势帮助理解。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "大概就是这样，你觉得呢？",
+    "context": "直播对话；动作意图：解释时抬起手臂，前臂与手腕配合观点自然展开",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "大概就是这样，你觉得呢？",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "大概就是这样，你觉得呢？",
+    "context": "重要讲解，需要配合一次手势帮助理解。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "我给你举一个简单的例子。",
+    "context": "直播对话；动作意图：解释时抬起手臂，前臂与手腕配合观点自然展开",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "我给你举一个简单的例子。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我给你举一个简单的例子。",
+    "context": "重要讲解，需要配合一次手势帮助理解。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "关键就是这里，你仔细看。",
+    "context": "直播对话；动作意图：抬起一侧手臂指出重点，使用食指但不播放固定动作",
+    "split": "validation",
+    "gesture": 1
+  },
+  {
+    "text": "关键就是这里，你仔细看。",
+    "context": "和观众自然聊天。",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "关键就是这里，你仔细看。",
+    "context": "强调一个关键细节，希望观众注意。",
+    "split": "validation",
+    "gesture": 1
+  },
+  {
+    "text": "我说的重点就是这一点。",
+    "context": "直播对话；动作意图：抬起一侧手臂指出重点，使用食指但不播放固定动作",
+    "split": "test",
+    "gesture": 1
+  },
+  {
+    "text": "我说的重点就是这一点。",
+    "context": "和观众自然聊天。",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "我说的重点就是这一点。",
+    "context": "强调一个关键细节，希望观众注意。",
+    "split": "test",
+    "gesture": 1
+  },
+  {
+    "text": "你看这里，这个地方很重要。",
+    "context": "直播对话；动作意图：抬起一侧手臂指出重点，使用食指但不播放固定动作",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "你看这里，这个地方很重要。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你看这里，这个地方很重要。",
+    "context": "强调一个关键细节，希望观众注意。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "答案就在这里，我指给你看。",
+    "context": "直播对话；动作意图：抬起一侧手臂指出重点，使用食指但不播放固定动作",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "答案就在这里，我指给你看。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "答案就在这里，我指给你看。",
+    "context": "强调一个关键细节，希望观众注意。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "先注意这个细节，别看漏了。",
+    "context": "直播对话；动作意图：抬起一侧手臂指出重点，使用食指但不播放固定动作",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "先注意这个细节，别看漏了。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "先注意这个细节，别看漏了。",
+    "context": "强调一个关键细节，希望观众注意。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "我们现在要看的就是这一项。",
+    "context": "直播对话；动作意图：抬起一侧手臂指出重点，使用食指但不播放固定动作",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "我们现在要看的就是这一项。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我们现在要看的就是这一项。",
+    "context": "强调一个关键细节，希望观众注意。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "这个位置才是问题所在。",
+    "context": "直播对话；动作意图：抬起一侧手臂指出重点，使用食指但不播放固定动作",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "这个位置才是问题所在。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "这个位置才是问题所在。",
+    "context": "强调一个关键细节，希望观众注意。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "你找到这里就明白了。",
+    "context": "直播对话；动作意图：抬起一侧手臂指出重点，使用食指但不播放固定动作",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "你找到这里就明白了。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你找到这里就明白了。",
+    "context": "强调一个关键细节，希望观众注意。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "先看我指的这个地方。",
+    "context": "直播对话；动作意图：抬起一侧手臂指出重点，使用食指但不播放固定动作",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "先看我指的这个地方。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "先看我指的这个地方。",
+    "context": "强调一个关键细节，希望观众注意。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "我想强调的就是这一点。",
+    "context": "直播对话；动作意图：抬起一侧手臂指出重点，使用食指但不播放固定动作",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "我想强调的就是这一点。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我想强调的就是这一点。",
+    "context": "强调一个关键细节，希望观众注意。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "这件事就交给我来完成吧。",
+    "context": "直播对话；动作意图：一只手靠近胸前表达自己的想法，前臂姿态清楚",
+    "split": "validation",
+    "gesture": 1
+  },
+  {
+    "text": "这件事就交给我来完成吧。",
+    "context": "和观众自然聊天。",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "这件事就交给我来完成吧。",
+    "context": "真诚地表达承诺，配合一次抚胸动作。",
+    "split": "validation",
+    "gesture": 1
+  },
+  {
+    "text": "我会认真对待你的信任。",
+    "context": "直播对话；动作意图：一只手靠近胸前表达自己的想法，前臂姿态清楚",
+    "split": "test",
+    "gesture": 1
+  },
+  {
+    "text": "我会认真对待你的信任。",
+    "context": "和观众自然聊天。",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "我会认真对待你的信任。",
+    "context": "真诚地表达承诺，配合一次抚胸动作。",
+    "split": "test",
+    "gesture": 1
+  },
+  {
+    "text": "我也有自己的想法，听我说吧。",
+    "context": "直播对话；动作意图：一只手靠近胸前表达自己的想法，前臂姿态清楚",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "我也有自己的想法，听我说吧。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我也有自己的想法，听我说吧。",
+    "context": "真诚地表达承诺，配合一次抚胸动作。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "这一次，我想自己试一试。",
+    "context": "直播对话；动作意图：一只手靠近胸前表达自己的想法，前臂姿态清楚",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "这一次，我想自己试一试。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "这一次，我想自己试一试。",
+    "context": "真诚地表达承诺，配合一次抚胸动作。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "我向你保证，会好好准备。",
+    "context": "直播对话；动作意图：一只手靠近胸前表达自己的想法，前臂姿态清楚",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "我向你保证，会好好准备。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我向你保证，会好好准备。",
+    "context": "真诚地表达承诺，配合一次抚胸动作。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "我是真的很感谢你们。",
+    "context": "直播对话；动作意图：一只手靠近胸前表达自己的想法，前臂姿态清楚",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "我是真的很感谢你们。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我是真的很感谢你们。",
+    "context": "真诚地表达承诺，配合一次抚胸动作。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "能得到你们的支持，我很感动。",
+    "context": "直播对话；动作意图：一只手靠近胸前表达自己的想法，前臂姿态清楚",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "能得到你们的支持，我很感动。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "能得到你们的支持，我很感动。",
+    "context": "真诚地表达承诺，配合一次抚胸动作。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "我会把这份心意记在心里。",
+    "context": "直播对话；动作意图：一只手靠近胸前表达自己的想法，前臂姿态清楚",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "我会把这份心意记在心里。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我会把这份心意记在心里。",
+    "context": "真诚地表达承诺，配合一次抚胸动作。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "这就是我自己的选择。",
+    "context": "直播对话；动作意图：一只手靠近胸前表达自己的想法，前臂姿态清楚",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "这就是我自己的选择。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "这就是我自己的选择。",
+    "context": "真诚地表达承诺，配合一次抚胸动作。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "谢谢你愿意一直陪着我。",
+    "context": "直播对话；动作意图：一只手靠近胸前表达自己的想法，前臂姿态清楚",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "谢谢你愿意一直陪着我。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "谢谢你愿意一直陪着我。",
+    "context": "真诚地表达承诺，配合一次抚胸动作。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "太好了，我们终于成功了！",
+    "context": "直播对话；动作意图：高兴地举起双臂庆祝，躯干和头部一起响应",
+    "split": "validation",
+    "gesture": 1
+  },
+  {
+    "text": "太好了，我们终于成功了！",
+    "context": "和观众自然聊天。",
+    "split": "validation",
+    "gesture": 1
+  },
+  {
+    "text": "太好了，我们终于成功了！",
+    "context": "刚刚获得胜利，情绪特别激动。",
+    "split": "validation",
+    "gesture": 1
+  },
+  {
+    "text": "这次真的赢了，太开心了！",
+    "context": "直播对话；动作意图：高兴地举起双臂庆祝，躯干和头部一起响应",
+    "split": "test",
+    "gesture": 1
+  },
+  {
+    "text": "这次真的赢了，太开心了！",
+    "context": "和观众自然聊天。",
+    "split": "test",
+    "gesture": 1
+  },
+  {
+    "text": "这次真的赢了，太开心了！",
+    "context": "刚刚获得胜利，情绪特别激动。",
+    "split": "test",
+    "gesture": 1
+  },
+  {
+    "text": "你做得太棒了，我要为你庆祝！",
+    "context": "直播对话；动作意图：高兴地举起双臂庆祝，躯干和头部一起响应",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "你做得太棒了，我要为你庆祝！",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "你做得太棒了，我要为你庆祝！",
+    "context": "刚刚获得胜利，情绪特别激动。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "终于等到这个好消息了！",
+    "context": "直播对话；动作意图：高兴地举起双臂庆祝，躯干和头部一起响应",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "终于等到这个好消息了！",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "终于等到这个好消息了！",
+    "context": "刚刚获得胜利，情绪特别激动。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "好耶，我们一起庆祝一下！",
+    "context": "直播对话；动作意图：高兴地举起双臂庆祝，躯干和头部一起响应",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "好耶，我们一起庆祝一下！",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "好耶，我们一起庆祝一下！",
+    "context": "刚刚获得胜利，情绪特别激动。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "这下终于可以放心啦！",
+    "context": "直播对话；动作意图：高兴地举起双臂庆祝，躯干和头部一起响应",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "这下终于可以放心啦！",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "这下终于可以放心啦！",
+    "context": "刚刚获得胜利，情绪特别激动。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "今天的结果比我想的还要好！",
+    "context": "直播对话；动作意图：高兴地举起双臂庆祝，躯干和头部一起响应",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "今天的结果比我想的还要好！",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "今天的结果比我想的还要好！",
+    "context": "刚刚获得胜利，情绪特别激动。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "我们真的一起完成了这件事！",
+    "context": "直播对话；动作意图：高兴地举起双臂庆祝，躯干和头部一起响应",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "我们真的一起完成了这件事！",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我们真的一起完成了这件事！",
+    "context": "刚刚获得胜利，情绪特别激动。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "我现在开心得都想跳起来了！",
+    "context": "直播对话；动作意图：高兴地举起双臂庆祝，躯干和头部一起响应",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "我现在开心得都想跳起来了！",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我现在开心得都想跳起来了！",
+    "context": "刚刚获得胜利，情绪特别激动。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "你真的做到了，太厉害啦！",
+    "context": "直播对话；动作意图：高兴地举起双臂庆祝，躯干和头部一起响应",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "你真的做到了，太厉害啦！",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "你真的做到了，太厉害啦！",
+    "context": "刚刚获得胜利，情绪特别激动。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "先等一下，这样做不合适。",
+    "context": "直播对话；动作意图：抬手表示停一下，同时轻轻摇头拒绝",
+    "split": "validation",
+    "gesture": 1
+  },
+  {
+    "text": "先等一下，这样做不合适。",
+    "context": "和观众自然聊天。",
+    "split": "validation",
+    "gesture": 0
+  },
+  {
+    "text": "先等一下，这样做不合适。",
+    "context": "对方越界，认真阻止对方继续。",
+    "split": "validation",
+    "gesture": 1
+  },
+  {
+    "text": "不可以，这件事我不能答应。",
+    "context": "直播对话；动作意图：抬手表示停一下，同时轻轻摇头拒绝",
+    "split": "test",
+    "gesture": 1
+  },
+  {
+    "text": "不可以，这件事我不能答应。",
+    "context": "和观众自然聊天。",
+    "split": "test",
+    "gesture": 0
+  },
+  {
+    "text": "不可以，这件事我不能答应。",
+    "context": "对方越界，认真阻止对方继续。",
+    "split": "test",
+    "gesture": 1
+  },
+  {
+    "text": "停一下，我们先把规则讲清楚。",
+    "context": "直播对话；动作意图：抬手表示停一下，同时轻轻摇头拒绝",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "停一下，我们先把规则讲清楚。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "停一下，我们先把规则讲清楚。",
+    "context": "对方越界，认真阻止对方继续。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "我不同意，我们应该换个办法。",
+    "context": "直播对话；动作意图：抬手表示停一下，同时轻轻摇头拒绝",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "我不同意，我们应该换个办法。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我不同意，我们应该换个办法。",
+    "context": "对方越界，认真阻止对方继续。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "别再这样捉弄我了，停下来。",
+    "context": "直播对话；动作意图：抬手表示停一下，同时轻轻摇头拒绝",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "别再这样捉弄我了，停下来。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "别再这样捉弄我了，停下来。",
+    "context": "对方越界，认真阻止对方继续。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "这件事到这里就可以了。",
+    "context": "直播对话；动作意图：抬手表示停一下，同时轻轻摇头拒绝",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "这件事到这里就可以了。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "这件事到这里就可以了。",
+    "context": "对方越界，认真阻止对方继续。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "先不要继续，我还没准备好。",
+    "context": "直播对话；动作意图：抬手表示停一下，同时轻轻摇头拒绝",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "先不要继续，我还没准备好。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "先不要继续，我还没准备好。",
+    "context": "对方越界，认真阻止对方继续。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "我们还是先冷静一下吧。",
+    "context": "直播对话；动作意图：抬手表示停一下，同时轻轻摇头拒绝",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "我们还是先冷静一下吧。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我们还是先冷静一下吧。",
+    "context": "对方越界，认真阻止对方继续。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "不是这样的，听我说完。",
+    "context": "直播对话；动作意图：抬手表示停一下，同时轻轻摇头拒绝",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "不是这样的，听我说完。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "不是这样的，听我说完。",
+    "context": "对方越界，认真阻止对方继续。",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "我想认真地拒绝这件事。",
+    "context": "直播对话；动作意图：抬手表示停一下，同时轻轻摇头拒绝",
+    "split": "train",
+    "gesture": 1
+  },
+  {
+    "text": "我想认真地拒绝这件事。",
+    "context": "和观众自然聊天。",
+    "split": "train",
+    "gesture": 0
+  },
+  {
+    "text": "我想认真地拒绝这件事。",
+    "context": "对方越界，认真阻止对方继续。",
+    "split": "train",
+    "gesture": 1
+  }
+]

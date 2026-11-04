@@ -1,0 +1,20 @@
+{
+  "version": "context-code-r1",
+  "status": "adaptive follow-up after direct JSON overactivation was observed; fixed before code-readout outputs",
+  "dataset": "datasets/vtuber-v4-intent-v1, unchanged development/calibration canonical clauses only",
+  "source": "same pinned Qwen3.5-4B, frozen, no head training or new model downloads",
+  "question": "Can constrained one-token intent readout reduce autoregressive overhead and permit activity calibration?",
+  "policy_change": "explicit quiet-default and quoted-speaker policy; a new prompt, not a pure speed optimization of the JSON method",
+  "classes": "14 valid necessity/body combinations: forbidden-none, optional-none, six optional active groups, six required active groups",
+  "permutations": [7137, 1741, 9283],
+  "mapping": "shuffle semantic classes onto single-token letters A-N; restore original semantic class ordering before comparing",
+  "selection": "report every permutation and arithmetic probability ensemble, never best permutation",
+  "readout": "one prefill, softmax of last-position LM logits restricted to the 14 valid letter IDs; record unconstrained allowed mass and top token as diagnostics",
+  "calibration": "fit marginal necessity temperature, active/forbidden/required thresholds on calibration only using unchanged prior grid/objective; report raw and calibrated results",
+  "strength": "editorial defaults 0 for none, 0.24 optional, 0.60 required; NOT learned strength; exclude from quality claims comparing learned amplitude",
+  "timing": "isolated single prefill and sum of sequential three-prefill ensemble; no TTS/concurrency or live acceptance claim",
+  "old_test_loaded": false,
+  "new_final_test_created": false,
+  "promotion": false,
+  "limitations": "Already-inspected 18-family development split, provisional assistant labels; prompt/order sensitivity is an outcome; format safety is imposed by the decoder, not proof of semantic correctness."
+}

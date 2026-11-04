@@ -1,0 +1,116 @@
+{
+  "scope": "expression_overlay_intensity_only",
+  "body_style_reviewed": false,
+  "ratings_sha256": "b8d5f467a6d6819666ab17cf470e4d3498e87a608db913b1fc8973475573bb19",
+  "preferred_intensity": 0.92,
+  "preferred_by_emotion": {
+    "neutral": 0.4,
+    "happy": 0.4,
+    "angry": 0.66,
+    "shy": 0.92,
+    "sad": 0.4,
+    "surprised": 0.92,
+    "confused": 0.92
+  },
+  "rejected_scenarios": [],
+  "votes": {
+    "0": {
+      "choice": "A",
+      "note": "",
+      "at": "2026-11-01T04:48:28.529Z",
+      "source": "user"
+    },
+    "1": {
+      "choice": "A",
+      "note": "",
+      "at": "2026-11-01T04:48:51.574Z",
+      "source": "user"
+    },
+    "2": {
+      "choice": "A",
+      "note": "",
+      "at": "2026-11-01T04:49:29.778Z",
+      "source": "user"
+    },
+    "3": {
+      "choice": "tie",
+      "note": "",
+      "at": "2026-11-01T04:50:00.703Z",
+      "source": "user"
+    },
+    "4": {
+      "choice": "tie",
+      "note": "",
+      "at": "2026-11-01T04:53:08.333Z",
+      "source": "user"
+    },
+    "5": {
+      "choice": "B",
+      "note": "",
+      "at": "2026-11-01T04:53:33.318Z",
+      "source": "user"
+    },
+    "6": {
+      "choice": "B",
+      "note": "",
+      "at": "2026-11-01T04:53:56.063Z",
+      "source": "user"
+    },
+    "7": {
+      "choice": "tie",
+      "note": "",
+      "at": "2026-11-01T04:54:36.184Z",
+      "source": "user"
+    },
+    "8": {
+      "choice": "B",
+      "note": "",
+      "at": "2026-11-01T05:27:32.368Z",
+      "source": "user"
+    },
+    "9": {
+      "choice": "B",
+      "note": "",
+      "at": "2026-11-01T05:27:48.167Z",
+      "source": "user"
+    },
+    "10": {
+      "choice": "B",
+      "note": "",
+      "at": "2026-11-01T05:28:07.149Z",
+      "source": "user"
+    },
+    "11": {
+      "choice": "A",
+      "note": "",
+      "at": "2026-11-01T05:28:24.025Z",
+      "source": "user"
+    },
+    "12": {
+      "choice": "B",
+      "note": "",
+      "at": "2026-11-01T05:28:48.214Z",
+      "source": "user"
+    },
+    "13": {
+      "choice": "B",
+      "note": "b不错就是可以再加一个加载的进度条",
+      "at": "2026-11-01T07:04:01.816482+00:00",
+      "source": "user",
+      "updated_via": "explicit_chat_reply",
+      "previous_choice": "B"
+    },
+    "14": {
+      "choice": "tie",
+      "note": "",
+      "at": "2026-11-01T05:29:42.659Z",
+      "source": "user"
+    },
+    "15": {
+      "choice": "A",
+      "note": "",
+      "at": "2026-11-01T05:29:54.544Z",
+      "source": "user"
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "schema": "prosody-mechanism-study.v1",
+  "promoted": false,
+  "trained": false,
+  "semantic_model_used": false,
+  "stage": "engineering-development",
+  "final_test_loaded": false,
+  "human_gold": false,
+  "naturalness_accepted": false,
+  "controls": "Same authored intent, variants, genuine PCM, mouth and face per scene across all three conditions. No semantic selection claim.",
+  "conditions": [
+    "fixed",
+    "rhythm",
+    "rhythm_posture"
+  ],
+  "hypotheses": [
+    "Causal audio accents can change timing without changing the native shoulder/elbow pose path.",
+    "A bounded persistent torso target can bridge short speech gaps without accumulating drift.",
+    "These mechanisms may improve perceived liveliness; automated beat/velocity diagnostics cannot establish that."
+  ],
+  "causal_contract": "Only current/past 60 Hz audio features and begin/end events already reached by the playback clock enter the controller. No word alignment or future accent access.",
+  "limitations": [
+    "Audio was fully synthesized before offline rendering, so this is not a live latency benchmark.",
+    "Authored semantic intents are controlled experimental inputs, not training labels or model predictions.",
+    "RMS-onset accents are acoustic proxies, not verified word-level semantic emphasis.",
+    "Posture continuation is restricted to small torso/head offsets; native arm handoffs remain unchanged.",
+    "No human motion ground truth; movement magnitude and lower jerk alone do not prove naturalness."
+  ],
+  "sampling": {
+    "parameter_hz": 60,
+    "physics_hz": 60,
+    "video_hz": 20
+  },
+  "constraints": {
+    "arm_time_rate": [
+      0.85,
+      1.12
+    ],
+    "one_primary_arm": true,
+    "wardrobe_outputs": false,
+    "special_eye_drawings_unchanged": true,
+    "native_arm_path_unchanged": true,
+    "no_periodic_idle_noise": true
+  },
+  "human_evaluation": {
+    "blinded_versions": true,
+    "outcomes": [
+      "naturalness",
+      "timing",
+      "emotional_readability",
+      "repetition"
+    ],
+    "includes_tie_and_neither": true,
+    "automatic_winner": false
+  },
+  "literature": [
+    {
+      "url": "https://arxiv.org/html/2604.10927v1",
+      "title": "LiveGesture",
+      "use": "Past-only audio/history and cross-region coordination, section 3.2. No imported weights."
+    },
+    {
+      "url": "https://arxiv.org/html/2401.00374v5",
+      "title": "EMAGE",
+      "use": "Separate speech content and acoustic rhythm, section 4.2. No imported weights."
+    },
+    {
+      "url": "https://arxiv.org/html/2401.04747v2",
+      "title": "DiffSHEG",
+      "use": "Evaluate agility together with smoothness and human preference, appendix D. No imported weights."
+    }
+  ]
+}

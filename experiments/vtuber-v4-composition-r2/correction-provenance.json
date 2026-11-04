@@ -1,0 +1,21 @@
+{
+  "weights_changed": false,
+  "retrained": false,
+  "test_set_reevaluated": false,
+  "replays": [
+    {
+      "group": 11,
+      "source": "datasets/vtuber-v4/review/comparisons-composition-r1/10-A.json",
+      "source_sha256": "dfd0c7d5d1187a8a7ef2aaa30a45c89edfbf216a9136e715d3d49ab0030e66c3",
+      "corrected_input_sha256": "492ddf2c15409d0263d62981b3217194443fc658fcaee00ae86b3598be8ee4a1",
+      "scope": "Same original motion, facial overlays, PCM and duration. Only replacement-eye channels become exclusive 0/1."
+    },
+    {
+      "group": 20,
+      "source": "datasets/vtuber-v4/review/comparisons-composition-r1/19-A.json",
+      "source_sha256": "81e579e2c7dd938f4372623e3068dcff0f8404e77f0a0ff9aee5500b2e5a80da",
+      "corrected_input_sha256": "3c68ba6c7d7560c2c142e6efc5c02b0e09496191981383a03e548f33ff63c60f",
+      "scope": "Same original motion, facial overlays, PCM and duration. Only replacement-eye channels become exclusive 0/1."
+    }
+  ]
+}

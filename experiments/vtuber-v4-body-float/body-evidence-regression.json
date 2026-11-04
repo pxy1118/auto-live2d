@@ -1,0 +1,290 @@
+[
+  {
+    "family": "wave",
+    "checkpoint_sha256": "f9d7b2a0a64a146b296d71c54d6c30e95bf1b38eb6faaf007e1ea37e9cfe378e",
+    "source": "streaming_policy_v4 plus real session compiler",
+    "held_out_split": "validation",
+    "motion": {
+      "Param36": {
+        "min": 0,
+        "max": 0.551356448,
+        "range": 0.551356448
+      },
+      "Param41": {
+        "min": -0.14044455644444445,
+        "max": 0,
+        "range": 0.14044455644444445
+      },
+      "Param42": {
+        "min": 0,
+        "max": 0.036756568,
+        "range": 0.036756568
+      },
+      "Param62": {
+        "min": -0.15276414933333332,
+        "max": 0,
+        "range": 0.15276414933333332
+      },
+      "Param60": {
+        "min": -0.018512130666666664,
+        "max": 0.05225328,
+        "range": 0.07076541066666667
+      },
+      "Param61": {
+        "min": -0.010704100148148146,
+        "max": 0.008355312,
+        "range": 0.019059412148148144
+      },
+      "PositionX": {
+        "min": -2.5954329439999997,
+        "max": 0,
+        "range": 2.5954329439999997
+      },
+      "PositionZ": {
+        "min": 0,
+        "max": 3.2825761119999997,
+        "range": 3.2825761119999997
+      }
+    }
+  },
+  {
+    "family": "explain",
+    "checkpoint_sha256": "f9d7b2a0a64a146b296d71c54d6c30e95bf1b38eb6faaf007e1ea37e9cfe378e",
+    "source": "streaming_policy_v4 plus real session compiler",
+    "held_out_split": "validation",
+    "motion": {
+      "Param36": {
+        "min": 0,
+        "max": 0.34833947200000004,
+        "range": 0.34833947200000004
+      },
+      "Param41": {
+        "min": 0,
+        "max": 0.20953762399999998,
+        "range": 0.20953762399999998
+      },
+      "Param42": {
+        "min": -0.002174152,
+        "max": 0.030606929777777778,
+        "range": 0.032781081777777776
+      },
+      "Param62": {
+        "min": -0.12075457333333332,
+        "max": 0,
+        "range": 0.12075457333333332
+      },
+      "Param60": {
+        "min": -0.0032299688888888893,
+        "max": 0.052833492878933186,
+        "range": 0.05606346176782208
+      },
+      "Param61": {
+        "min": -0.014635201481481482,
+        "max": 0.018914504,
+        "range": 0.03354970548148148
+      },
+      "PositionX": {
+        "min": -2.5223031280000003,
+        "max": 0,
+        "range": 2.5223031280000003
+      },
+      "PositionZ": {
+        "min": 0,
+        "max": 3.2307838399999995,
+        "range": 3.2307838399999995
+      }
+    }
+  },
+  {
+    "family": "point",
+    "checkpoint_sha256": "f9d7b2a0a64a146b296d71c54d6c30e95bf1b38eb6faaf007e1ea37e9cfe378e",
+    "source": "streaming_policy_v4 plus real session compiler",
+    "held_out_split": "validation",
+    "motion": {
+      "Param36": {
+        "min": 0,
+        "max": 0.34443604800000005,
+        "range": 0.34443604800000005
+      },
+      "Param41": {
+        "min": 0,
+        "max": 0.256895864,
+        "range": 0.256895864
+      },
+      "Param42": {
+        "min": -0.020876096,
+        "max": 0.033116056,
+        "range": 0.053992152
+      },
+      "Param62": {
+        "min": -0.10418574410251855,
+        "max": 0,
+        "range": 0.10418574410251855
+      },
+      "Param60": {
+        "min": 0,
+        "max": 0.419435624,
+        "range": 0.419435624
+      },
+      "Param61": {
+        "min": -0.043170385201777774,
+        "max": 0.012285032332918519,
+        "range": 0.055455417534696294
+      },
+      "PositionX": {
+        "min": -3.467303088,
+        "max": 0,
+        "range": 3.467303088
+      },
+      "PositionZ": {
+        "min": 0,
+        "max": 4.182087248,
+        "range": 4.182087248
+      }
+    }
+  },
+  {
+    "family": "chest",
+    "checkpoint_sha256": "f9d7b2a0a64a146b296d71c54d6c30e95bf1b38eb6faaf007e1ea37e9cfe378e",
+    "source": "streaming_policy_v4 plus real session compiler",
+    "held_out_split": "validation",
+    "motion": {
+      "Param36": {
+        "min": -0.08645212770370371,
+        "max": 0.05665992148408875,
+        "range": 0.14311204918779247
+      },
+      "Param41": {
+        "min": 0,
+        "max": 0.098542672,
+        "range": 0.098542672
+      },
+      "Param42": {
+        "min": 0,
+        "max": 0.04478073244444444,
+        "range": 0.04478073244444444
+      },
+      "Param62": {
+        "min": 0,
+        "max": 0.147264144,
+        "range": 0.147264144
+      },
+      "Param60": {
+        "min": 0,
+        "max": 0.8024898239999999,
+        "range": 0.8024898239999999
+      },
+      "Param61": {
+        "min": -0.09163474222222222,
+        "max": 0,
+        "range": 0.09163474222222222
+      },
+      "PositionX": {
+        "min": -2.7651186559999994,
+        "max": 0,
+        "range": 2.7651186559999994
+      },
+      "PositionZ": {
+        "min": -0.005291033777777776,
+        "max": 2.2658862239999995,
+        "range": 2.271177257777777
+      }
+    }
+  },
+  {
+    "family": "cheer",
+    "checkpoint_sha256": "f9d7b2a0a64a146b296d71c54d6c30e95bf1b38eb6faaf007e1ea37e9cfe378e",
+    "source": "streaming_policy_v4 plus real session compiler",
+    "held_out_split": "validation",
+    "motion": {
+      "Param36": {
+        "min": 0,
+        "max": 0.5642494098744897,
+        "range": 0.5642494098744897
+      },
+      "Param41": {
+        "min": 0,
+        "max": 0.1292751493312,
+        "range": 0.1292751493312
+      },
+      "Param42": {
+        "min": -0.003144136,
+        "max": 0.03531554629973333,
+        "range": 0.03845968229973333
+      },
+      "Param62": {
+        "min": 0,
+        "max": 0.45522934165297757,
+        "range": 0.45522934165297757
+      },
+      "Param60": {
+        "min": 0,
+        "max": 0.17178221087324436,
+        "range": 0.17178221087324436
+      },
+      "Param61": {
+        "min": -0.042744568000000004,
+        "max": 0,
+        "range": 0.042744568000000004
+      },
+      "PositionX": {
+        "min": -2.533061122801067,
+        "max": 0,
+        "range": 2.533061122801067
+      },
+      "PositionZ": {
+        "min": 0,
+        "max": 2.833076376,
+        "range": 2.833076376
+      }
+    }
+  },
+  {
+    "family": "refuse",
+    "checkpoint_sha256": "f9d7b2a0a64a146b296d71c54d6c30e95bf1b38eb6faaf007e1ea37e9cfe378e",
+    "source": "streaming_policy_v4 plus real session compiler",
+    "held_out_split": "validation",
+    "motion": {
+      "Param36": {
+        "min": -0.007663609185185189,
+        "max": 0.2637123167502221,
+        "range": 0.2713759259354073
+      },
+      "Param41": {
+        "min": 0,
+        "max": 0.349144464,
+        "range": 0.349144464
+      },
+      "Param42": {
+        "min": -0.007891463999999999,
+        "max": 0.04232328444444444,
+        "range": 0.05021474844444444
+      },
+      "Param62": {
+        "min": -0.07105871022222222,
+        "max": 0.10207290096071112,
+        "range": 0.17313161118293335
+      },
+      "Param60": {
+        "min": 0,
+        "max": 0.14513412458311112,
+        "range": 0.14513412458311112
+      },
+      "Param61": {
+        "min": -0.027544503999999997,
+        "max": 0,
+        "range": 0.027544503999999997
+      },
+      "PositionX": {
+        "min": -2.370223856,
+        "max": 0,
+        "range": 2.370223856
+      },
+      "PositionZ": {
+        "min": 0,
+        "max": 2.7309991119999997,
+        "range": 2.7309991119999997
+      }
+    }
+  }
+]

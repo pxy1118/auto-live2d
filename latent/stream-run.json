@@ -1,0 +1,7 @@
+{
+  "path": "experiments/vtuber-v4-default-r1",
+  "promoted": true,
+  "rollback_path": "experiments/vtuber-v4-composition-r2",
+  "reason": "Explicit user request: 我觉得已经可以了，加入默认方案吧",
+  "previous_configuration_sha256": "4a29361699faf0ed637e69ffd5e214c11ca02529c78d4f900453543232c8ef64"
+}

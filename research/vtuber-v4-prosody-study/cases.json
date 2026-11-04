@@ -1,0 +1,176 @@
+[
+  {
+    "id": "welcome",
+    "title": "招呼与接话",
+    "gap_ms": 400,
+    "turns": [
+      {
+        "text": "晚上好呀，你终于来啦，快过来坐。",
+        "arm": "wave",
+        "body": "tilt",
+        "variant": 0,
+        "strength": 0.45
+      },
+      {
+        "text": "今天想先聊点什么呢？我在认真听哦。",
+        "arm": "none",
+        "body": "lean",
+        "variant": 0,
+        "strength": 0.4
+      }
+    ]
+  },
+  {
+    "id": "explain",
+    "title": "强调与继续说明",
+    "gap_ms": 450,
+    "turns": [
+      {
+        "text": "先看这里，真正需要注意的是中间这一步。",
+        "arm": "point",
+        "body": "nod",
+        "variant": 0,
+        "strength": 0.45
+      },
+      {
+        "text": "对，就是这个位置，其他地方先不用着急。",
+        "arm": "point",
+        "body": "nod",
+        "variant": 1,
+        "strength": 0.4
+      }
+    ]
+  },
+  {
+    "id": "thanks",
+    "title": "感谢与情绪延续",
+    "gap_ms": 450,
+    "turns": [
+      {
+        "text": "真的谢谢你，还记得帮我把这些都准备好。",
+        "arm": "chest",
+        "body": "lean",
+        "variant": 0,
+        "strength": 0.45
+      },
+      {
+        "text": "有你陪着，我就安心多啦。",
+        "arm": "thanks",
+        "body": "tilt",
+        "variant": 0,
+        "strength": 0.4
+      }
+    ]
+  },
+  {
+    "id": "cajole",
+    "title": "撒娇与长停顿",
+    "gap_ms": 1100,
+    "turns": [
+      {
+        "text": "再陪我待一小会儿，好不好嘛？",
+        "arm": "none",
+        "body": "cajole",
+        "variant": 0,
+        "strength": 0.5
+      },
+      {
+        "text": "就一小会儿，等这首歌放完，我们再走。",
+        "arm": "none",
+        "body": "lean",
+        "variant": 0,
+        "strength": 0.35
+      }
+    ]
+  },
+  {
+    "id": "shy",
+    "title": "轻害羞与回应",
+    "gap_ms": 500,
+    "face": {
+      "blush": 0.38
+    },
+    "turns": [
+      {
+        "text": "你这样认真地夸我，我会有一点不好意思的。",
+        "arm": "chest",
+        "body": "tilt",
+        "variant": 1,
+        "strength": 0.38
+      },
+      {
+        "text": "不过，我很开心，你能看出来就太好了。",
+        "arm": "none",
+        "body": "nod",
+        "variant": 0,
+        "strength": 0.32
+      }
+    ]
+  },
+  {
+    "id": "firm",
+    "title": "认真拒绝与情绪保持",
+    "gap_ms": 700,
+    "face": {
+      "blackface": 0.5
+    },
+    "turns": [
+      {
+        "text": "这件事我已经认真说过了，请不要再这样做。",
+        "arm": "refuse",
+        "body": "nod",
+        "variant": 0,
+        "strength": 0.42
+      },
+      {
+        "text": "我们可以慢慢讨论，但是这个约定要遵守。",
+        "arm": "none",
+        "body": "none",
+        "variant": 0,
+        "strength": 0
+      }
+    ]
+  },
+  {
+    "id": "neutral",
+    "title": "中性说明与安静保持",
+    "gap_ms": 900,
+    "turns": [
+      {
+        "text": "文件已经整理好了，稍后我会继续核对。",
+        "arm": "none",
+        "body": "none",
+        "variant": 0,
+        "strength": 0
+      },
+      {
+        "text": "目前没有新的变化，我们按照原来的安排进行。",
+        "arm": "none",
+        "body": "none",
+        "variant": 0,
+        "strength": 0
+      }
+    ]
+  },
+  {
+    "id": "quoted",
+    "title": "引用动作词但保持中性",
+    "gap_ms": 650,
+    "turns": [
+      {
+        "text": "记录里写着，他挥手说，快看这边。",
+        "arm": "none",
+        "body": "none",
+        "variant": 0,
+        "strength": 0
+      },
+      {
+        "text": "我这里只是在转述那句话，现在不用做动作。",
+        "arm": "none",
+        "body": "none",
+        "variant": 0,
+        "strength": 0
+      }
+    ]
+  }
+]

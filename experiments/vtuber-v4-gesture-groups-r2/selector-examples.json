@@ -1,0 +1,5067 @@
+[
+  {
+    "text_context": "他说他很生气，我只是在复述他的话。\n和观众日常聊天；角色本人情绪平静，引用别人的生气，不要黑脸",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我没有生气啦，刚刚只是跟你开个玩笑。\n和观众日常聊天；角色笑着澄清误会",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "你可真是太会照顾人了。\n和观众日常聊天；反讽，对方刚刚故意捉弄角色，角色在生气",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "你突然这样夸我，我会不好意思的。\n和观众日常聊天",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我本来以为这次可以成功的，还是有点难过。\n和观众日常聊天",
+    "split": "test",
+    "label": "none"
+  },
+  {
+    "text_context": "诶？这是真的吗，我刚才没听错吧！\n和观众日常聊天",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "等等，你刚才说的到底是什么意思？\n和观众日常聊天",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "这个地方我再解释一遍，你仔细听。\n和观众日常聊天",
+    "split": "validation",
+    "label": "explain"
+  },
+  {
+    "text_context": "谢谢你一直陪着我，我今天很开心。\n和观众日常聊天",
+    "split": "test",
+    "label": "thanks"
+  },
+  {
+    "text_context": "这件事真的让我很生气，请你停下来。\n和观众日常聊天",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "别一直看着我啦，我都不知道说什么了。\n和观众日常聊天",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "你要走了吗？那我们下次再见吧。\n和观众日常聊天",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "等一下，你怎么突然就出现了！\n和观众日常聊天",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我有点绕晕了，让我重新理一下。\n和观众日常聊天",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我先想一想，再告诉你我的看法。\n和观众日常聊天",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "来，给你看看我刚发现的好东西。\n和观众日常聊天",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "你再这样捉弄我，我可真的不理你了。\n和观众日常聊天",
+    "split": "validation",
+    "label": "none"
+  },
+  {
+    "text_context": "那个，其实我一直想告诉你一件事。\n和观众日常聊天",
+    "split": "test",
+    "label": "none"
+  },
+  {
+    "text_context": "这件事让我有点失落，不过我会慢慢调整。\n和观众日常聊天",
+    "split": "validation",
+    "label": "none"
+  },
+  {
+    "text_context": "哇，这个礼物竟然是给我的？\n和观众日常聊天",
+    "split": "validation",
+    "label": "none"
+  },
+  {
+    "text_context": "这两件事怎么会联系到一起呢？\n和观众日常聊天",
+    "split": "test",
+    "label": "none"
+  },
+  {
+    "text_context": "你说的这件事，我已经记下来了。\n和观众日常聊天",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "这次真的很顺利，我忍不住想笑。\n和观众日常聊天",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我现在不想开玩笑，我是认真的。\n和观众日常聊天",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我才没有害羞呢，你不要再笑了。\n和观众日常聊天",
+    "split": "validation",
+    "label": "none"
+  },
+  {
+    "text_context": "我想安静一会儿，可以陪着我吗？\n和观众日常聊天",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "什么？你已经全部做完了！\n和观众日常聊天",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "诶，我刚才是不是又看错了？\n和观众日常聊天",
+    "split": "validation",
+    "label": "none"
+  },
+  {
+    "text_context": "这不公平，我明明已经努力过了！\n和观众日常聊天",
+    "split": "test",
+    "label": "none"
+  },
+  {
+    "text_context": "谢谢你这么认真地喜欢我，我有点紧张。\n和观众日常聊天",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "对不起，我没能把这件事做好。\n和观众日常聊天",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我完全没想到会是这样的结果。\n和观众日常聊天",
+    "split": "test",
+    "label": "none"
+  },
+  {
+    "text_context": "我的脑袋快转不过来了，先等一下。\n和观众日常聊天",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我没有生气，只是在认真说明情况。\n和观众日常聊天",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "终于等到你啦，快过来坐呀。\n和观众日常聊天",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "你靠得太近了，让我缓一缓。\n和观众日常聊天",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我努力了很久，结果还是没有等到。\n和观众日常聊天",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "你也太厉害了吧，我都看呆了！\n和观众日常聊天",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "你能再说一遍吗，我还是没有明白。\n和观众日常聊天",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "大家先坐好，今天我们慢慢聊。\n回应熟悉的朋友",
+    "split": "test",
+    "label": "none"
+  },
+  {
+    "text_context": "太好了，我们终于一起做到了！\n回应熟悉的朋友",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "我都说了不要这样，你怎么还来！\n回应熟悉的朋友",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "你突然这样夸我，我会不好意思的。\n回应熟悉的朋友",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我本来以为这次可以成功的，还是有点难过。\n回应熟悉的朋友",
+    "split": "test",
+    "label": "none"
+  },
+  {
+    "text_context": "诶？这是真的吗，我刚才没听错吧！\n回应熟悉的朋友",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "等等，你刚才说的到底是什么意思？\n回应熟悉的朋友",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "这个地方我再解释一遍，你仔细听。\n回应熟悉的朋友",
+    "split": "validation",
+    "label": "explain"
+  },
+  {
+    "text_context": "谢谢你一直陪着我，我今天很开心。\n回应熟悉的朋友",
+    "split": "test",
+    "label": "thanks"
+  },
+  {
+    "text_context": "这件事真的让我很生气，请你停下来。\n回应熟悉的朋友",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "别一直看着我啦，我都不知道说什么了。\n回应熟悉的朋友",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "你要走了吗？那我们下次再见吧。\n回应熟悉的朋友",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "等一下，你怎么突然就出现了！\n回应熟悉的朋友",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我有点绕晕了，让我重新理一下。\n回应熟悉的朋友",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "他说他很生气，我只是在复述他的话。\n回应熟悉的朋友；角色本人情绪平静，引用别人的生气，不要黑脸",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我没有生气啦，刚刚只是跟你开个玩笑。\n回应熟悉的朋友；角色笑着澄清误会",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "你再这样捉弄我，我可真的不理你了。\n回应熟悉的朋友",
+    "split": "validation",
+    "label": "none"
+  },
+  {
+    "text_context": "那个，其实我一直想告诉你一件事。\n回应熟悉的朋友",
+    "split": "test",
+    "label": "none"
+  },
+  {
+    "text_context": "这件事让我有点失落，不过我会慢慢调整。\n回应熟悉的朋友",
+    "split": "validation",
+    "label": "none"
+  },
+  {
+    "text_context": "哇，这个礼物竟然是给我的？\n回应熟悉的朋友",
+    "split": "validation",
+    "label": "none"
+  },
+  {
+    "text_context": "这两件事怎么会联系到一起呢？\n回应熟悉的朋友",
+    "split": "test",
+    "label": "none"
+  },
+  {
+    "text_context": "你说的这件事，我已经记下来了。\n回应熟悉的朋友",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "这次真的很顺利，我忍不住想笑。\n回应熟悉的朋友",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我现在不想开玩笑，我是认真的。\n回应熟悉的朋友",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我才没有害羞呢，你不要再笑了。\n回应熟悉的朋友",
+    "split": "validation",
+    "label": "none"
+  },
+  {
+    "text_context": "我想安静一会儿，可以陪着我吗？\n回应熟悉的朋友",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "什么？你已经全部做完了！\n回应熟悉的朋友",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "诶，我刚才是不是又看错了？\n回应熟悉的朋友",
+    "split": "validation",
+    "label": "none"
+  },
+  {
+    "text_context": "先看左边，再看右边，这样就清楚了。\n回应熟悉的朋友",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "你这句话说得真有意思，哈哈。\n回应熟悉的朋友",
+    "split": "validation",
+    "label": "none"
+  },
+  {
+    "text_context": "你可真是太会照顾人了。\n回应熟悉的朋友；反讽，对方刚刚故意捉弄角色，角色在生气",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "谢谢你这么认真地喜欢我，我有点紧张。\n回应熟悉的朋友",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "对不起，我没能把这件事做好。\n回应熟悉的朋友",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我完全没想到会是这样的结果。\n回应熟悉的朋友",
+    "split": "test",
+    "label": "none"
+  },
+  {
+    "text_context": "我的脑袋快转不过来了，先等一下。\n回应熟悉的朋友",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我没有生气，只是在认真说明情况。\n回应熟悉的朋友",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "终于等到你啦，快过来坐呀。\n回应熟悉的朋友",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "哼，别以为说句好话我就会原谅你。\n回应熟悉的朋友",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "你靠得太近了，让我缓一缓。\n回应熟悉的朋友",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我努力了很久，结果还是没有等到。\n回应熟悉的朋友",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "你也太厉害了吧，我都看呆了！\n回应熟悉的朋友",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "你能再说一遍吗，我还是没有明白。\n回应熟悉的朋友",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "他说他很生气，我只是在复述他的话。\n直播中解释刚才发生的事；角色本人情绪平静，引用别人的生气，不要黑脸",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我没有生气啦，刚刚只是跟你开个玩笑。\n直播中解释刚才发生的事；角色笑着澄清误会",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我都说了不要这样，你怎么还来！\n直播中解释刚才发生的事",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "你突然这样夸我，我会不好意思的。\n直播中解释刚才发生的事",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我本来以为这次可以成功的，还是有点难过。\n直播中解释刚才发生的事",
+    "split": "test",
+    "label": "none"
+  },
+  {
+    "text_context": "诶？这是真的吗，我刚才没听错吧！\n直播中解释刚才发生的事",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "等等，你刚才说的到底是什么意思？\n直播中解释刚才发生的事",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "这个地方我再解释一遍，你仔细听。\n直播中解释刚才发生的事",
+    "split": "validation",
+    "label": "explain"
+  },
+  {
+    "text_context": "谢谢你一直陪着我，我今天很开心。\n直播中解释刚才发生的事",
+    "split": "test",
+    "label": "thanks"
+  },
+  {
+    "text_context": "这件事真的让我很生气，请你停下来。\n直播中解释刚才发生的事",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "别一直看着我啦，我都不知道说什么了。\n直播中解释刚才发生的事",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "你要走了吗？那我们下次再见吧。\n直播中解释刚才发生的事",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "等一下，你怎么突然就出现了！\n直播中解释刚才发生的事",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我有点绕晕了，让我重新理一下。\n直播中解释刚才发生的事",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我先想一想，再告诉你我的看法。\n直播中解释刚才发生的事",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "来，给你看看我刚发现的好东西。\n直播中解释刚才发生的事",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "你再这样捉弄我，我可真的不理你了。\n直播中解释刚才发生的事",
+    "split": "validation",
+    "label": "none"
+  },
+  {
+    "text_context": "那个，其实我一直想告诉你一件事。\n直播中解释刚才发生的事",
+    "split": "test",
+    "label": "none"
+  },
+  {
+    "text_context": "这件事让我有点失落，不过我会慢慢调整。\n直播中解释刚才发生的事",
+    "split": "validation",
+    "label": "none"
+  },
+  {
+    "text_context": "哇，这个礼物竟然是给我的？\n直播中解释刚才发生的事",
+    "split": "validation",
+    "label": "none"
+  },
+  {
+    "text_context": "这两件事怎么会联系到一起呢？\n直播中解释刚才发生的事",
+    "split": "test",
+    "label": "none"
+  },
+  {
+    "text_context": "你说的这件事，我已经记下来了。\n直播中解释刚才发生的事",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "这次真的很顺利，我忍不住想笑。\n直播中解释刚才发生的事",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "你可真是太会照顾人了。\n直播中解释刚才发生的事；反讽，对方刚刚故意捉弄角色，角色在生气",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我才没有害羞呢，你不要再笑了。\n直播中解释刚才发生的事",
+    "split": "validation",
+    "label": "none"
+  },
+  {
+    "text_context": "我想安静一会儿，可以陪着我吗？\n直播中解释刚才发生的事",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "什么？你已经全部做完了！\n直播中解释刚才发生的事",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "诶，我刚才是不是又看错了？\n直播中解释刚才发生的事",
+    "split": "validation",
+    "label": "none"
+  },
+  {
+    "text_context": "这不公平，我明明已经努力过了！\n直播中解释刚才发生的事",
+    "split": "test",
+    "label": "none"
+  },
+  {
+    "text_context": "谢谢你这么认真地喜欢我，我有点紧张。\n直播中解释刚才发生的事",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "对不起，我没能把这件事做好。\n直播中解释刚才发生的事",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我完全没想到会是这样的结果。\n直播中解释刚才发生的事",
+    "split": "test",
+    "label": "none"
+  },
+  {
+    "text_context": "我的脑袋快转不过来了，先等一下。\n直播中解释刚才发生的事",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我没有生气，只是在认真说明情况。\n直播中解释刚才发生的事",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "终于等到你啦，快过来坐呀。\n直播中解释刚才发生的事",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "哼，别以为说句好话我就会原谅你。\n直播中解释刚才发生的事",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "你靠得太近了，让我缓一缓。\n直播中解释刚才发生的事",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我努力了很久，结果还是没有等到。\n直播中解释刚才发生的事",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "你也太厉害了吧，我都看呆了！\n直播中解释刚才发生的事",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "你能再说一遍吗，我还是没有明白。\n直播中解释刚才发生的事",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "大家先坐好，今天我们慢慢聊。\n接着上一句继续表达",
+    "split": "test",
+    "label": "none"
+  },
+  {
+    "text_context": "太好了，我们终于一起做到了！\n接着上一句继续表达",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "我都说了不要这样，你怎么还来！\n接着上一句继续表达",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "你突然这样夸我，我会不好意思的。\n接着上一句继续表达",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我本来以为这次可以成功的，还是有点难过。\n接着上一句继续表达",
+    "split": "test",
+    "label": "none"
+  },
+  {
+    "text_context": "诶？这是真的吗，我刚才没听错吧！\n接着上一句继续表达",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "等等，你刚才说的到底是什么意思？\n接着上一句继续表达",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "这个地方我再解释一遍，你仔细听。\n接着上一句继续表达",
+    "split": "validation",
+    "label": "explain"
+  },
+  {
+    "text_context": "谢谢你一直陪着我，我今天很开心。\n接着上一句继续表达",
+    "split": "test",
+    "label": "thanks"
+  },
+  {
+    "text_context": "这件事真的让我很生气，请你停下来。\n接着上一句继续表达",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "别一直看着我啦，我都不知道说什么了。\n接着上一句继续表达",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "你要走了吗？那我们下次再见吧。\n接着上一句继续表达",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "等一下，你怎么突然就出现了！\n接着上一句继续表达",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我有点绕晕了，让我重新理一下。\n接着上一句继续表达",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "他说他很生气，我只是在复述他的话。\n接着上一句继续表达；角色本人情绪平静，引用别人的生气，不要黑脸",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我没有生气啦，刚刚只是跟你开个玩笑。\n接着上一句继续表达；角色笑着澄清误会",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "你可真是太会照顾人了。\n接着上一句继续表达；反讽，对方刚刚故意捉弄角色，角色在生气",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "那个，其实我一直想告诉你一件事。\n接着上一句继续表达",
+    "split": "test",
+    "label": "none"
+  },
+  {
+    "text_context": "这件事让我有点失落，不过我会慢慢调整。\n接着上一句继续表达",
+    "split": "validation",
+    "label": "none"
+  },
+  {
+    "text_context": "哇，这个礼物竟然是给我的？\n接着上一句继续表达",
+    "split": "validation",
+    "label": "none"
+  },
+  {
+    "text_context": "这两件事怎么会联系到一起呢？\n接着上一句继续表达",
+    "split": "test",
+    "label": "none"
+  },
+  {
+    "text_context": "你说的这件事，我已经记下来了。\n接着上一句继续表达",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "这次真的很顺利，我忍不住想笑。\n接着上一句继续表达",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我现在不想开玩笑，我是认真的。\n接着上一句继续表达",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我才没有害羞呢，你不要再笑了。\n接着上一句继续表达",
+    "split": "validation",
+    "label": "none"
+  },
+  {
+    "text_context": "我想安静一会儿，可以陪着我吗？\n接着上一句继续表达",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "什么？你已经全部做完了！\n接着上一句继续表达",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "诶，我刚才是不是又看错了？\n接着上一句继续表达",
+    "split": "validation",
+    "label": "none"
+  },
+  {
+    "text_context": "先看左边，再看右边，这样就清楚了。\n接着上一句继续表达",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "你这句话说得真有意思，哈哈。\n接着上一句继续表达",
+    "split": "validation",
+    "label": "none"
+  },
+  {
+    "text_context": "这不公平，我明明已经努力过了！\n接着上一句继续表达",
+    "split": "test",
+    "label": "none"
+  },
+  {
+    "text_context": "谢谢你这么认真地喜欢我，我有点紧张。\n接着上一句继续表达",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "对不起，我没能把这件事做好。\n接着上一句继续表达",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我完全没想到会是这样的结果。\n接着上一句继续表达",
+    "split": "test",
+    "label": "none"
+  },
+  {
+    "text_context": "我的脑袋快转不过来了，先等一下。\n接着上一句继续表达",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我没有生气，只是在认真说明情况。\n接着上一句继续表达",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "终于等到你啦，快过来坐呀。\n接着上一句继续表达",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "哼，别以为说句好话我就会原谅你。\n接着上一句继续表达",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "你靠得太近了，让我缓一缓。\n接着上一句继续表达",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我努力了很久，结果还是没有等到。\n接着上一句继续表达",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "你也太厉害了吧，我都看呆了！\n接着上一句继续表达",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "你能再说一遍吗，我还是没有明白。\n接着上一句继续表达",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "他说他很生气，我只是在复述他的话。\n面对大家说出自己的感受；角色本人情绪平静，引用别人的生气，不要黑脸",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我没有生气啦，刚刚只是跟你开个玩笑。\n面对大家说出自己的感受；角色笑着澄清误会",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我都说了不要这样，你怎么还来！\n面对大家说出自己的感受",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "你突然这样夸我，我会不好意思的。\n面对大家说出自己的感受",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我本来以为这次可以成功的，还是有点难过。\n面对大家说出自己的感受",
+    "split": "test",
+    "label": "none"
+  },
+  {
+    "text_context": "诶？这是真的吗，我刚才没听错吧！\n面对大家说出自己的感受",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "等等，你刚才说的到底是什么意思？\n面对大家说出自己的感受",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "这个地方我再解释一遍，你仔细听。\n面对大家说出自己的感受",
+    "split": "validation",
+    "label": "explain"
+  },
+  {
+    "text_context": "谢谢你一直陪着我，我今天很开心。\n面对大家说出自己的感受",
+    "split": "test",
+    "label": "thanks"
+  },
+  {
+    "text_context": "你可真是太会照顾人了。\n面对大家说出自己的感受；反讽，对方刚刚故意捉弄角色，角色在生气",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "别一直看着我啦，我都不知道说什么了。\n面对大家说出自己的感受",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "你要走了吗？那我们下次再见吧。\n面对大家说出自己的感受",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "等一下，你怎么突然就出现了！\n面对大家说出自己的感受",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我有点绕晕了，让我重新理一下。\n面对大家说出自己的感受",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我先想一想，再告诉你我的看法。\n面对大家说出自己的感受",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "来，给你看看我刚发现的好东西。\n面对大家说出自己的感受",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "你再这样捉弄我，我可真的不理你了。\n面对大家说出自己的感受",
+    "split": "validation",
+    "label": "none"
+  },
+  {
+    "text_context": "那个，其实我一直想告诉你一件事。\n面对大家说出自己的感受",
+    "split": "test",
+    "label": "none"
+  },
+  {
+    "text_context": "这件事让我有点失落，不过我会慢慢调整。\n面对大家说出自己的感受",
+    "split": "validation",
+    "label": "none"
+  },
+  {
+    "text_context": "哇，这个礼物竟然是给我的？\n面对大家说出自己的感受",
+    "split": "validation",
+    "label": "none"
+  },
+  {
+    "text_context": "这两件事怎么会联系到一起呢？\n面对大家说出自己的感受",
+    "split": "test",
+    "label": "none"
+  },
+  {
+    "text_context": "你说的这件事，我已经记下来了。\n面对大家说出自己的感受",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "这次真的很顺利，我忍不住想笑。\n面对大家说出自己的感受",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我现在不想开玩笑，我是认真的。\n面对大家说出自己的感受",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我才没有害羞呢，你不要再笑了。\n面对大家说出自己的感受",
+    "split": "validation",
+    "label": "none"
+  },
+  {
+    "text_context": "我想安静一会儿，可以陪着我吗？\n面对大家说出自己的感受",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "什么？你已经全部做完了！\n面对大家说出自己的感受",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "诶，我刚才是不是又看错了？\n面对大家说出自己的感受",
+    "split": "validation",
+    "label": "none"
+  },
+  {
+    "text_context": "这不公平，我明明已经努力过了！\n面对大家说出自己的感受",
+    "split": "test",
+    "label": "none"
+  },
+  {
+    "text_context": "谢谢你这么认真地喜欢我，我有点紧张。\n面对大家说出自己的感受",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "对不起，我没能把这件事做好。\n面对大家说出自己的感受",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我完全没想到会是这样的结果。\n面对大家说出自己的感受",
+    "split": "test",
+    "label": "none"
+  },
+  {
+    "text_context": "我的脑袋快转不过来了，先等一下。\n面对大家说出自己的感受",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我没有生气，只是在认真说明情况。\n面对大家说出自己的感受",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "终于等到你啦，快过来坐呀。\n面对大家说出自己的感受",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "哼，别以为说句好话我就会原谅你。\n面对大家说出自己的感受",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "你靠得太近了，让我缓一缓。\n面对大家说出自己的感受",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我努力了很久，结果还是没有等到。\n面对大家说出自己的感受",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "你也太厉害了吧，我都看呆了！\n面对大家说出自己的感受",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "你能再说一遍吗，我还是没有明白。\n面对大家说出自己的感受",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "大家先坐好，今天我们慢慢聊。\n在游戏间隙与观众互动",
+    "split": "test",
+    "label": "none"
+  },
+  {
+    "text_context": "太好了，我们终于一起做到了！\n在游戏间隙与观众互动",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "你可真是太会照顾人了。\n在游戏间隙与观众互动；反讽，对方刚刚故意捉弄角色，角色在生气",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "你突然这样夸我，我会不好意思的。\n在游戏间隙与观众互动",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我本来以为这次可以成功的，还是有点难过。\n在游戏间隙与观众互动",
+    "split": "test",
+    "label": "none"
+  },
+  {
+    "text_context": "诶？这是真的吗，我刚才没听错吧！\n在游戏间隙与观众互动",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "等等，你刚才说的到底是什么意思？\n在游戏间隙与观众互动",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "这个地方我再解释一遍，你仔细听。\n在游戏间隙与观众互动",
+    "split": "validation",
+    "label": "explain"
+  },
+  {
+    "text_context": "谢谢你一直陪着我，我今天很开心。\n在游戏间隙与观众互动",
+    "split": "test",
+    "label": "thanks"
+  },
+  {
+    "text_context": "这件事真的让我很生气，请你停下来。\n在游戏间隙与观众互动",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "别一直看着我啦，我都不知道说什么了。\n在游戏间隙与观众互动",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "你要走了吗？那我们下次再见吧。\n在游戏间隙与观众互动",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "等一下，你怎么突然就出现了！\n在游戏间隙与观众互动",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我有点绕晕了，让我重新理一下。\n在游戏间隙与观众互动",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "他说他很生气，我只是在复述他的话。\n在游戏间隙与观众互动；角色本人情绪平静，引用别人的生气，不要黑脸",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我没有生气啦，刚刚只是跟你开个玩笑。\n在游戏间隙与观众互动；角色笑着澄清误会",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "你再这样捉弄我，我可真的不理你了。\n在游戏间隙与观众互动",
+    "split": "validation",
+    "label": "none"
+  },
+  {
+    "text_context": "那个，其实我一直想告诉你一件事。\n在游戏间隙与观众互动",
+    "split": "test",
+    "label": "none"
+  },
+  {
+    "text_context": "这件事让我有点失落，不过我会慢慢调整。\n在游戏间隙与观众互动",
+    "split": "validation",
+    "label": "none"
+  },
+  {
+    "text_context": "哇，这个礼物竟然是给我的？\n在游戏间隙与观众互动",
+    "split": "validation",
+    "label": "none"
+  },
+  {
+    "text_context": "这两件事怎么会联系到一起呢？\n在游戏间隙与观众互动",
+    "split": "test",
+    "label": "none"
+  },
+  {
+    "text_context": "你说的这件事，我已经记下来了。\n在游戏间隙与观众互动",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "这次真的很顺利，我忍不住想笑。\n在游戏间隙与观众互动",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我现在不想开玩笑，我是认真的。\n在游戏间隙与观众互动",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我才没有害羞呢，你不要再笑了。\n在游戏间隙与观众互动",
+    "split": "validation",
+    "label": "none"
+  },
+  {
+    "text_context": "我想安静一会儿，可以陪着我吗？\n在游戏间隙与观众互动",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "什么？你已经全部做完了！\n在游戏间隙与观众互动",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "诶，我刚才是不是又看错了？\n在游戏间隙与观众互动",
+    "split": "validation",
+    "label": "none"
+  },
+  {
+    "text_context": "先看左边，再看右边，这样就清楚了。\n在游戏间隙与观众互动",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "你这句话说得真有意思，哈哈。\n在游戏间隙与观众互动",
+    "split": "validation",
+    "label": "none"
+  },
+  {
+    "text_context": "大家好呀，我来和你们打个招呼。\n直播对话；动作意图：自然抬起一侧手臂挥手问候，手腕有清楚的连续变化",
+    "split": "validation",
+    "label": "wave"
+  },
+  {
+    "text_context": "欢迎回来，先和大家挥挥手吧。\n直播对话；动作意图：自然抬起一侧手臂挥手问候，手腕有清楚的连续变化",
+    "split": "test",
+    "label": "wave"
+  },
+  {
+    "text_context": "嘿，能看到我吗，来打个招呼。\n直播对话；动作意图：自然抬起一侧手臂挥手问候，手腕有清楚的连续变化",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "今天见到你们真开心，你好呀。\n直播对话；动作意图：自然抬起一侧手臂挥手问候，手腕有清楚的连续变化",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "我们下次再见，拜拜啦。\n直播对话；动作意图：自然抬起一侧手臂挥手问候，手腕有清楚的连续变化",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "那我先向大家问个好。\n直播对话；动作意图：自然抬起一侧手臂挥手问候，手腕有清楚的连续变化",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "这边这边，你看见我了吗？\n直播对话；动作意图：自然抬起一侧手臂挥手问候，手腕有清楚的连续变化",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "开播啦，大家下午好。\n直播对话；动作意图：自然抬起一侧手臂挥手问候，手腕有清楚的连续变化",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "我要先和新来的朋友打声招呼。\n直播对话；动作意图：自然抬起一侧手臂挥手问候，手腕有清楚的连续变化",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "你回来了呀，好久不见。\n直播对话；动作意图：自然抬起一侧手臂挥手问候，手腕有清楚的连续变化",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "这个问题让我慢慢给你解释。\n直播对话；动作意图：解释时抬起手臂，前臂与手腕配合观点自然展开",
+    "split": "validation",
+    "label": "explain"
+  },
+  {
+    "text_context": "我觉得可以从这两个方面来考虑。\n直播对话；动作意图：解释时抬起手臂，前臂与手腕配合观点自然展开",
+    "split": "test",
+    "label": "explain"
+  },
+  {
+    "text_context": "先别急，我们把事情的经过说清楚。\n直播对话；动作意图：解释时抬起手臂，前臂与手腕配合观点自然展开",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我的意思是，这两件事可以一起做。\n直播对话；动作意图：解释时抬起手臂，前臂与手腕配合观点自然展开",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "听我讲完，你就会明白了。\n直播对话；动作意图：解释时抬起手臂，前臂与手腕配合观点自然展开",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我先简单说一下我的看法。\n直播对话；动作意图：解释时抬起手臂，前臂与手腕配合观点自然展开",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我们先把最重要的一点讲清楚。\n直播对话；动作意图：解释时抬起手臂，前臂与手腕配合观点自然展开",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "这个办法其实还有一个好处。\n直播对话；动作意图：解释时抬起手臂，前臂与手腕配合观点自然展开",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "大概就是这样，你觉得呢？\n直播对话；动作意图：解释时抬起手臂，前臂与手腕配合观点自然展开",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我给你举一个简单的例子。\n直播对话；动作意图：解释时抬起手臂，前臂与手腕配合观点自然展开",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "关键就是这里，你仔细看。\n直播对话；动作意图：抬起一侧手臂指出重点，使用食指但不播放固定动作",
+    "split": "validation",
+    "label": "point"
+  },
+  {
+    "text_context": "我说的重点就是这一点。\n直播对话；动作意图：抬起一侧手臂指出重点，使用食指但不播放固定动作",
+    "split": "test",
+    "label": "point"
+  },
+  {
+    "text_context": "你看这里，这个地方很重要。\n直播对话；动作意图：抬起一侧手臂指出重点，使用食指但不播放固定动作",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "答案就在这里，我指给你看。\n直播对话；动作意图：抬起一侧手臂指出重点，使用食指但不播放固定动作",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "先注意这个细节，别看漏了。\n直播对话；动作意图：抬起一侧手臂指出重点，使用食指但不播放固定动作",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "我们现在要看的就是这一项。\n直播对话；动作意图：抬起一侧手臂指出重点，使用食指但不播放固定动作",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "这个位置才是问题所在。\n直播对话；动作意图：抬起一侧手臂指出重点，使用食指但不播放固定动作",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "你找到这里就明白了。\n直播对话；动作意图：抬起一侧手臂指出重点，使用食指但不播放固定动作",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "先看我指的这个地方。\n直播对话；动作意图：抬起一侧手臂指出重点，使用食指但不播放固定动作",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "我想强调的就是这一点。\n直播对话；动作意图：抬起一侧手臂指出重点，使用食指但不播放固定动作",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "这件事就交给我来完成吧。\n直播对话；动作意图：一只手靠近胸前表达自己的想法，前臂姿态清楚",
+    "split": "validation",
+    "label": "chest"
+  },
+  {
+    "text_context": "我会认真对待你的信任。\n直播对话；动作意图：一只手靠近胸前表达自己的想法，前臂姿态清楚",
+    "split": "test",
+    "label": "chest"
+  },
+  {
+    "text_context": "我也有自己的想法，听我说吧。\n直播对话；动作意图：一只手靠近胸前表达自己的想法，前臂姿态清楚",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "这一次，我想自己试一试。\n直播对话；动作意图：一只手靠近胸前表达自己的想法，前臂姿态清楚",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "我向你保证，会好好准备。\n直播对话；动作意图：一只手靠近胸前表达自己的想法，前臂姿态清楚",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "我是真的很感谢你们。\n直播对话；动作意图：一只手靠近胸前表达自己的想法，前臂姿态清楚",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "能得到你们的支持，我很感动。\n直播对话；动作意图：一只手靠近胸前表达自己的想法，前臂姿态清楚",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "我会把这份心意记在心里。\n直播对话；动作意图：一只手靠近胸前表达自己的想法，前臂姿态清楚",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "这就是我自己的选择。\n直播对话；动作意图：一只手靠近胸前表达自己的想法，前臂姿态清楚",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "谢谢你愿意一直陪着我。\n直播对话；动作意图：一只手靠近胸前表达自己的想法，前臂姿态清楚",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "太好了，我们终于成功了！\n直播对话；动作意图：高兴地举起双臂庆祝，躯干和头部一起响应",
+    "split": "validation",
+    "label": "cheer"
+  },
+  {
+    "text_context": "这次真的赢了，太开心了！\n直播对话；动作意图：高兴地举起双臂庆祝，躯干和头部一起响应",
+    "split": "test",
+    "label": "cheer"
+  },
+  {
+    "text_context": "你做得太棒了，我要为你庆祝！\n直播对话；动作意图：高兴地举起双臂庆祝，躯干和头部一起响应",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "终于等到这个好消息了！\n直播对话；动作意图：高兴地举起双臂庆祝，躯干和头部一起响应",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "好耶，我们一起庆祝一下！\n直播对话；动作意图：高兴地举起双臂庆祝，躯干和头部一起响应",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "这下终于可以放心啦！\n直播对话；动作意图：高兴地举起双臂庆祝，躯干和头部一起响应",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "今天的结果比我想的还要好！\n直播对话；动作意图：高兴地举起双臂庆祝，躯干和头部一起响应",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "我们真的一起完成了这件事！\n直播对话；动作意图：高兴地举起双臂庆祝，躯干和头部一起响应",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "我现在开心得都想跳起来了！\n直播对话；动作意图：高兴地举起双臂庆祝，躯干和头部一起响应",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "你真的做到了，太厉害啦！\n直播对话；动作意图：高兴地举起双臂庆祝，躯干和头部一起响应",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "先等一下，这样做不合适。\n直播对话；动作意图：抬手表示停一下，同时轻轻摇头拒绝",
+    "split": "validation",
+    "label": "refuse"
+  },
+  {
+    "text_context": "不可以，这件事我不能答应。\n直播对话；动作意图：抬手表示停一下，同时轻轻摇头拒绝",
+    "split": "test",
+    "label": "refuse"
+  },
+  {
+    "text_context": "停一下，我们先把规则讲清楚。\n直播对话；动作意图：抬手表示停一下，同时轻轻摇头拒绝",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "我不同意，我们应该换个办法。\n直播对话；动作意图：抬手表示停一下，同时轻轻摇头拒绝",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "别再这样捉弄我了，停下来。\n直播对话；动作意图：抬手表示停一下，同时轻轻摇头拒绝",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "这件事到这里就可以了。\n直播对话；动作意图：抬手表示停一下，同时轻轻摇头拒绝",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "先不要继续，我还没准备好。\n直播对话；动作意图：抬手表示停一下，同时轻轻摇头拒绝",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "我们还是先冷静一下吧。\n直播对话；动作意图：抬手表示停一下，同时轻轻摇头拒绝",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "不是这样的，听我说完。\n直播对话；动作意图：抬手表示停一下，同时轻轻摇头拒绝",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "我想认真地拒绝这件事。\n直播对话；动作意图：抬手表示停一下，同时轻轻摇头拒绝",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "今天见到你们真开心\n直播对话；动作意图：自然抬起一侧手臂挥手问候，手腕有清楚的连续变化",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "我们下次再见\n直播对话；动作意图：自然抬起一侧手臂挥手问候，手腕有清楚的连续变化",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "那我先向大家问个好\n直播对话；动作意图：自然抬起一侧手臂挥手问候，手腕有清楚的连续变化",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "这边这边\n直播对话；动作意图：自然抬起一侧手臂挥手问候，手腕有清楚的连续变化",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "开播啦\n直播对话；动作意图：自然抬起一侧手臂挥手问候，手腕有清楚的连续变化",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "我要先和新来的朋友打声招呼\n直播对话；动作意图：自然抬起一侧手臂挥手问候，手腕有清楚的连续变化",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "你回来了呀\n直播对话；动作意图：自然抬起一侧手臂挥手问候，手腕有清楚的连续变化",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "先别急\n直播对话；动作意图：解释时抬起手臂，前臂与手腕配合观点自然展开",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我的意思是\n直播对话；动作意图：解释时抬起手臂，前臂与手腕配合观点自然展开",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "听我讲完\n直播对话；动作意图：解释时抬起手臂，前臂与手腕配合观点自然展开",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我先简单说一下我的看法\n直播对话；动作意图：解释时抬起手臂，前臂与手腕配合观点自然展开",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我们先把最重要的一点讲清楚\n直播对话；动作意图：解释时抬起手臂，前臂与手腕配合观点自然展开",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "这个办法其实还有一个好处\n直播对话；动作意图：解释时抬起手臂，前臂与手腕配合观点自然展开",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "大概就是这样\n直播对话；动作意图：解释时抬起手臂，前臂与手腕配合观点自然展开",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我给你举一个简单的例子\n直播对话；动作意图：解释时抬起手臂，前臂与手腕配合观点自然展开",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "你看这里\n直播对话；动作意图：抬起一侧手臂指出重点，使用食指但不播放固定动作",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "答案就在这里\n直播对话；动作意图：抬起一侧手臂指出重点，使用食指但不播放固定动作",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "先注意这个细节\n直播对话；动作意图：抬起一侧手臂指出重点，使用食指但不播放固定动作",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "我们现在要看的就是这一项\n直播对话；动作意图：抬起一侧手臂指出重点，使用食指但不播放固定动作",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "这个位置才是问题所在\n直播对话；动作意图：抬起一侧手臂指出重点，使用食指但不播放固定动作",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "你找到这里就明白了\n直播对话；动作意图：抬起一侧手臂指出重点，使用食指但不播放固定动作",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "先看我指的这个地方\n直播对话；动作意图：抬起一侧手臂指出重点，使用食指但不播放固定动作",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "我想强调的就是这一点\n直播对话；动作意图：抬起一侧手臂指出重点，使用食指但不播放固定动作",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "我也有自己的想法\n直播对话；动作意图：一只手靠近胸前表达自己的想法，前臂姿态清楚",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "这一次\n直播对话；动作意图：一只手靠近胸前表达自己的想法，前臂姿态清楚",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "我向你保证\n直播对话；动作意图：一只手靠近胸前表达自己的想法，前臂姿态清楚",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "我是真的很感谢你们\n直播对话；动作意图：一只手靠近胸前表达自己的想法，前臂姿态清楚",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "能得到你们的支持\n直播对话；动作意图：一只手靠近胸前表达自己的想法，前臂姿态清楚",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "我会把这份心意记在心里\n直播对话；动作意图：一只手靠近胸前表达自己的想法，前臂姿态清楚",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "这就是我自己的选择\n直播对话；动作意图：一只手靠近胸前表达自己的想法，前臂姿态清楚",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "谢谢你愿意一直陪着我\n直播对话；动作意图：一只手靠近胸前表达自己的想法，前臂姿态清楚",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "你做得太棒了\n直播对话；动作意图：高兴地举起双臂庆祝，躯干和头部一起响应",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "终于等到这个好消息了\n直播对话；动作意图：高兴地举起双臂庆祝，躯干和头部一起响应",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "这下终于可以放心啦\n直播对话；动作意图：高兴地举起双臂庆祝，躯干和头部一起响应",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "今天的结果比我想的还要好\n直播对话；动作意图：高兴地举起双臂庆祝，躯干和头部一起响应",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "我们真的一起完成了这件事\n直播对话；动作意图：高兴地举起双臂庆祝，躯干和头部一起响应",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "我现在开心得都想跳起来了\n直播对话；动作意图：高兴地举起双臂庆祝，躯干和头部一起响应",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "你真的做到了\n直播对话；动作意图：高兴地举起双臂庆祝，躯干和头部一起响应",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "停一下\n直播对话；动作意图：抬手表示停一下，同时轻轻摇头拒绝",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "我不同意\n直播对话；动作意图：抬手表示停一下，同时轻轻摇头拒绝",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "别再这样捉弄我了\n直播对话；动作意图：抬手表示停一下，同时轻轻摇头拒绝",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "这件事到这里就可以了\n直播对话；动作意图：抬手表示停一下，同时轻轻摇头拒绝",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "先不要继续\n直播对话；动作意图：抬手表示停一下，同时轻轻摇头拒绝",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "我们还是先冷静一下吧\n直播对话；动作意图：抬手表示停一下，同时轻轻摇头拒绝",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "不是这样的\n直播对话；动作意图：抬手表示停一下，同时轻轻摇头拒绝",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "我想认真地拒绝这件事\n直播对话；动作意图：抬手表示停一下，同时轻轻摇头拒绝",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "大家好呀，我来和你们打个招呼。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "validation",
+    "label": "wave"
+  },
+  {
+    "text_context": "大家好呀，我来和你们打个招呼。\n刚开始直播，向新来的朋友问好。",
+    "split": "validation",
+    "label": "wave"
+  },
+  {
+    "text_context": "大家好呀，我来和你们打个招呼。\n举起一只手挥手打招呼，随后自然放下。",
+    "split": "validation",
+    "label": "wave"
+  },
+  {
+    "text_context": "大家好呀，我来和你们打个招呼。\n",
+    "split": "validation",
+    "label": "wave"
+  },
+  {
+    "text_context": "大家好呀，我来和你们打个招呼。\n刚开始直播，向新来的朋友问好。\n举起一只手挥手打招呼，随后自然放下。",
+    "split": "validation",
+    "label": "wave"
+  },
+  {
+    "text_context": "大家好呀\n直播对话；动作意图：自然抬起一侧手臂挥手问候，手腕有清楚的连续变化",
+    "split": "validation",
+    "label": "wave"
+  },
+  {
+    "text_context": "大家好呀\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "validation",
+    "label": "wave"
+  },
+  {
+    "text_context": "大家好呀\n刚开始直播，向新来的朋友问好。",
+    "split": "validation",
+    "label": "wave"
+  },
+  {
+    "text_context": "大家好呀\n举起一只手挥手打招呼，随后自然放下。",
+    "split": "validation",
+    "label": "wave"
+  },
+  {
+    "text_context": "大家好呀\n",
+    "split": "validation",
+    "label": "wave"
+  },
+  {
+    "text_context": "大家好呀\n刚开始直播，向新来的朋友问好。\n举起一只手挥手打招呼，随后自然放下。",
+    "split": "validation",
+    "label": "wave"
+  },
+  {
+    "text_context": "欢迎回来，先和大家挥挥手吧。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "test",
+    "label": "wave"
+  },
+  {
+    "text_context": "欢迎回来，先和大家挥挥手吧。\n刚开始直播，向新来的朋友问好。",
+    "split": "test",
+    "label": "wave"
+  },
+  {
+    "text_context": "欢迎回来，先和大家挥挥手吧。\n举起一只手挥手打招呼，随后自然放下。",
+    "split": "test",
+    "label": "wave"
+  },
+  {
+    "text_context": "欢迎回来，先和大家挥挥手吧。\n",
+    "split": "test",
+    "label": "wave"
+  },
+  {
+    "text_context": "欢迎回来，先和大家挥挥手吧。\n刚开始直播，向新来的朋友问好。\n举起一只手挥手打招呼，随后自然放下。",
+    "split": "test",
+    "label": "wave"
+  },
+  {
+    "text_context": "欢迎回来\n直播对话；动作意图：自然抬起一侧手臂挥手问候，手腕有清楚的连续变化",
+    "split": "test",
+    "label": "wave"
+  },
+  {
+    "text_context": "欢迎回来\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "test",
+    "label": "wave"
+  },
+  {
+    "text_context": "欢迎回来\n刚开始直播，向新来的朋友问好。",
+    "split": "test",
+    "label": "wave"
+  },
+  {
+    "text_context": "欢迎回来\n举起一只手挥手打招呼，随后自然放下。",
+    "split": "test",
+    "label": "wave"
+  },
+  {
+    "text_context": "欢迎回来\n",
+    "split": "test",
+    "label": "wave"
+  },
+  {
+    "text_context": "欢迎回来\n刚开始直播，向新来的朋友问好。\n举起一只手挥手打招呼，随后自然放下。",
+    "split": "test",
+    "label": "wave"
+  },
+  {
+    "text_context": "嘿，能看到我吗，来打个招呼。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "嘿，能看到我吗，来打个招呼。\n刚开始直播，向新来的朋友问好。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "嘿，能看到我吗，来打个招呼。\n举起一只手挥手打招呼，随后自然放下。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "嘿，能看到我吗，来打个招呼。\n",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "嘿，能看到我吗，来打个招呼。\n刚开始直播，向新来的朋友问好。\n举起一只手挥手打招呼，随后自然放下。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "今天见到你们真开心，你好呀。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "今天见到你们真开心，你好呀。\n刚开始直播，向新来的朋友问好。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "今天见到你们真开心，你好呀。\n举起一只手挥手打招呼，随后自然放下。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "今天见到你们真开心，你好呀。\n",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "今天见到你们真开心，你好呀。\n刚开始直播，向新来的朋友问好。\n举起一只手挥手打招呼，随后自然放下。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "今天见到你们真开心\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "今天见到你们真开心\n刚开始直播，向新来的朋友问好。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "今天见到你们真开心\n举起一只手挥手打招呼，随后自然放下。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "今天见到你们真开心\n",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "今天见到你们真开心\n刚开始直播，向新来的朋友问好。\n举起一只手挥手打招呼，随后自然放下。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "我们下次再见，拜拜啦。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "我们下次再见，拜拜啦。\n刚开始直播，向新来的朋友问好。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "我们下次再见，拜拜啦。\n举起一只手挥手打招呼，随后自然放下。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "我们下次再见，拜拜啦。\n",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "我们下次再见，拜拜啦。\n刚开始直播，向新来的朋友问好。\n举起一只手挥手打招呼，随后自然放下。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "我们下次再见\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "我们下次再见\n刚开始直播，向新来的朋友问好。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "我们下次再见\n举起一只手挥手打招呼，随后自然放下。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "我们下次再见\n",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "我们下次再见\n刚开始直播，向新来的朋友问好。\n举起一只手挥手打招呼，随后自然放下。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "那我先向大家问个好。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "那我先向大家问个好。\n刚开始直播，向新来的朋友问好。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "那我先向大家问个好。\n举起一只手挥手打招呼，随后自然放下。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "那我先向大家问个好。\n",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "那我先向大家问个好。\n刚开始直播，向新来的朋友问好。\n举起一只手挥手打招呼，随后自然放下。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "那我先向大家问个好\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "那我先向大家问个好\n刚开始直播，向新来的朋友问好。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "那我先向大家问个好\n举起一只手挥手打招呼，随后自然放下。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "那我先向大家问个好\n",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "那我先向大家问个好\n刚开始直播，向新来的朋友问好。\n举起一只手挥手打招呼，随后自然放下。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "这边这边，你看见我了吗？\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "这边这边，你看见我了吗？\n刚开始直播，向新来的朋友问好。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "这边这边，你看见我了吗？\n举起一只手挥手打招呼，随后自然放下。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "这边这边，你看见我了吗？\n",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "这边这边，你看见我了吗？\n刚开始直播，向新来的朋友问好。\n举起一只手挥手打招呼，随后自然放下。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "这边这边\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "这边这边\n刚开始直播，向新来的朋友问好。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "这边这边\n举起一只手挥手打招呼，随后自然放下。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "这边这边\n",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "这边这边\n刚开始直播，向新来的朋友问好。\n举起一只手挥手打招呼，随后自然放下。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "开播啦，大家下午好。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "开播啦，大家下午好。\n刚开始直播，向新来的朋友问好。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "开播啦，大家下午好。\n举起一只手挥手打招呼，随后自然放下。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "开播啦，大家下午好。\n",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "开播啦，大家下午好。\n刚开始直播，向新来的朋友问好。\n举起一只手挥手打招呼，随后自然放下。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "开播啦\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "开播啦\n刚开始直播，向新来的朋友问好。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "开播啦\n举起一只手挥手打招呼，随后自然放下。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "开播啦\n",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "开播啦\n刚开始直播，向新来的朋友问好。\n举起一只手挥手打招呼，随后自然放下。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "我要先和新来的朋友打声招呼。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "我要先和新来的朋友打声招呼。\n刚开始直播，向新来的朋友问好。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "我要先和新来的朋友打声招呼。\n举起一只手挥手打招呼，随后自然放下。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "我要先和新来的朋友打声招呼。\n",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "我要先和新来的朋友打声招呼。\n刚开始直播，向新来的朋友问好。\n举起一只手挥手打招呼，随后自然放下。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "我要先和新来的朋友打声招呼\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "我要先和新来的朋友打声招呼\n刚开始直播，向新来的朋友问好。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "我要先和新来的朋友打声招呼\n举起一只手挥手打招呼，随后自然放下。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "我要先和新来的朋友打声招呼\n",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "我要先和新来的朋友打声招呼\n刚开始直播，向新来的朋友问好。\n举起一只手挥手打招呼，随后自然放下。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "你回来了呀，好久不见。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "你回来了呀，好久不见。\n刚开始直播，向新来的朋友问好。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "你回来了呀，好久不见。\n举起一只手挥手打招呼，随后自然放下。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "你回来了呀，好久不见。\n",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "你回来了呀，好久不见。\n刚开始直播，向新来的朋友问好。\n举起一只手挥手打招呼，随后自然放下。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "你回来了呀\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "你回来了呀\n刚开始直播，向新来的朋友问好。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "你回来了呀\n举起一只手挥手打招呼，随后自然放下。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "你回来了呀\n",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "你回来了呀\n刚开始直播，向新来的朋友问好。\n举起一只手挥手打招呼，随后自然放下。",
+    "split": "train",
+    "label": "wave"
+  },
+  {
+    "text_context": "这个问题让我慢慢给你解释。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "validation",
+    "label": "explain"
+  },
+  {
+    "text_context": "这个问题让我慢慢给你解释。\n向观众解释自己的看法。",
+    "split": "validation",
+    "label": "explain"
+  },
+  {
+    "text_context": "这个问题让我慢慢给你解释。\n舒展手臂辅助说明。",
+    "split": "validation",
+    "label": "explain"
+  },
+  {
+    "text_context": "这个问题让我慢慢给你解释。\n",
+    "split": "validation",
+    "label": "explain"
+  },
+  {
+    "text_context": "这个问题让我慢慢给你解释。\n向观众解释自己的看法。\n舒展手臂辅助说明。",
+    "split": "validation",
+    "label": "explain"
+  },
+  {
+    "text_context": "这个问题让我慢慢给你解释\n直播对话；动作意图：解释时抬起手臂，前臂与手腕配合观点自然展开",
+    "split": "validation",
+    "label": "explain"
+  },
+  {
+    "text_context": "这个问题让我慢慢给你解释\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "validation",
+    "label": "explain"
+  },
+  {
+    "text_context": "这个问题让我慢慢给你解释\n向观众解释自己的看法。",
+    "split": "validation",
+    "label": "explain"
+  },
+  {
+    "text_context": "这个问题让我慢慢给你解释\n舒展手臂辅助说明。",
+    "split": "validation",
+    "label": "explain"
+  },
+  {
+    "text_context": "这个问题让我慢慢给你解释\n",
+    "split": "validation",
+    "label": "explain"
+  },
+  {
+    "text_context": "这个问题让我慢慢给你解释\n向观众解释自己的看法。\n舒展手臂辅助说明。",
+    "split": "validation",
+    "label": "explain"
+  },
+  {
+    "text_context": "我觉得可以从这两个方面来考虑。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "test",
+    "label": "explain"
+  },
+  {
+    "text_context": "我觉得可以从这两个方面来考虑。\n向观众解释自己的看法。",
+    "split": "test",
+    "label": "explain"
+  },
+  {
+    "text_context": "我觉得可以从这两个方面来考虑。\n舒展手臂辅助说明。",
+    "split": "test",
+    "label": "explain"
+  },
+  {
+    "text_context": "我觉得可以从这两个方面来考虑。\n",
+    "split": "test",
+    "label": "explain"
+  },
+  {
+    "text_context": "我觉得可以从这两个方面来考虑。\n向观众解释自己的看法。\n舒展手臂辅助说明。",
+    "split": "test",
+    "label": "explain"
+  },
+  {
+    "text_context": "我觉得可以从这两个方面来考虑\n直播对话；动作意图：解释时抬起手臂，前臂与手腕配合观点自然展开",
+    "split": "test",
+    "label": "explain"
+  },
+  {
+    "text_context": "我觉得可以从这两个方面来考虑\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "test",
+    "label": "explain"
+  },
+  {
+    "text_context": "我觉得可以从这两个方面来考虑\n向观众解释自己的看法。",
+    "split": "test",
+    "label": "explain"
+  },
+  {
+    "text_context": "我觉得可以从这两个方面来考虑\n舒展手臂辅助说明。",
+    "split": "test",
+    "label": "explain"
+  },
+  {
+    "text_context": "我觉得可以从这两个方面来考虑\n",
+    "split": "test",
+    "label": "explain"
+  },
+  {
+    "text_context": "我觉得可以从这两个方面来考虑\n向观众解释自己的看法。\n舒展手臂辅助说明。",
+    "split": "test",
+    "label": "explain"
+  },
+  {
+    "text_context": "先别急，我们把事情的经过说清楚。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "先别急，我们把事情的经过说清楚。\n向观众解释自己的看法。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "先别急，我们把事情的经过说清楚。\n舒展手臂辅助说明。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "先别急，我们把事情的经过说清楚。\n",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "先别急，我们把事情的经过说清楚。\n向观众解释自己的看法。\n舒展手臂辅助说明。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "先别急\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "先别急\n向观众解释自己的看法。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "先别急\n舒展手臂辅助说明。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "先别急\n",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "先别急\n向观众解释自己的看法。\n舒展手臂辅助说明。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我的意思是，这两件事可以一起做。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我的意思是，这两件事可以一起做。\n向观众解释自己的看法。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我的意思是，这两件事可以一起做。\n舒展手臂辅助说明。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我的意思是，这两件事可以一起做。\n",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我的意思是，这两件事可以一起做。\n向观众解释自己的看法。\n舒展手臂辅助说明。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我的意思是\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我的意思是\n向观众解释自己的看法。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我的意思是\n舒展手臂辅助说明。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我的意思是\n",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我的意思是\n向观众解释自己的看法。\n舒展手臂辅助说明。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "听我讲完，你就会明白了。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "听我讲完，你就会明白了。\n向观众解释自己的看法。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "听我讲完，你就会明白了。\n舒展手臂辅助说明。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "听我讲完，你就会明白了。\n",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "听我讲完，你就会明白了。\n向观众解释自己的看法。\n舒展手臂辅助说明。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "听我讲完\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "听我讲完\n向观众解释自己的看法。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "听我讲完\n舒展手臂辅助说明。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "听我讲完\n",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "听我讲完\n向观众解释自己的看法。\n舒展手臂辅助说明。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我先简单说一下我的看法。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我先简单说一下我的看法。\n向观众解释自己的看法。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我先简单说一下我的看法。\n舒展手臂辅助说明。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我先简单说一下我的看法。\n",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我先简单说一下我的看法。\n向观众解释自己的看法。\n舒展手臂辅助说明。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我先简单说一下我的看法\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我先简单说一下我的看法\n向观众解释自己的看法。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我先简单说一下我的看法\n舒展手臂辅助说明。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我先简单说一下我的看法\n",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我先简单说一下我的看法\n向观众解释自己的看法。\n舒展手臂辅助说明。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我们先把最重要的一点讲清楚。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我们先把最重要的一点讲清楚。\n向观众解释自己的看法。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我们先把最重要的一点讲清楚。\n舒展手臂辅助说明。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我们先把最重要的一点讲清楚。\n",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我们先把最重要的一点讲清楚。\n向观众解释自己的看法。\n舒展手臂辅助说明。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我们先把最重要的一点讲清楚\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我们先把最重要的一点讲清楚\n向观众解释自己的看法。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我们先把最重要的一点讲清楚\n舒展手臂辅助说明。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我们先把最重要的一点讲清楚\n",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我们先把最重要的一点讲清楚\n向观众解释自己的看法。\n舒展手臂辅助说明。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "这个办法其实还有一个好处。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "这个办法其实还有一个好处。\n向观众解释自己的看法。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "这个办法其实还有一个好处。\n舒展手臂辅助说明。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "这个办法其实还有一个好处。\n",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "这个办法其实还有一个好处。\n向观众解释自己的看法。\n舒展手臂辅助说明。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "这个办法其实还有一个好处\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "这个办法其实还有一个好处\n向观众解释自己的看法。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "这个办法其实还有一个好处\n舒展手臂辅助说明。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "这个办法其实还有一个好处\n",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "这个办法其实还有一个好处\n向观众解释自己的看法。\n舒展手臂辅助说明。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "大概就是这样，你觉得呢？\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "大概就是这样，你觉得呢？\n向观众解释自己的看法。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "大概就是这样，你觉得呢？\n舒展手臂辅助说明。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "大概就是这样，你觉得呢？\n",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "大概就是这样，你觉得呢？\n向观众解释自己的看法。\n舒展手臂辅助说明。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "大概就是这样\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "大概就是这样\n向观众解释自己的看法。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "大概就是这样\n舒展手臂辅助说明。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "大概就是这样\n",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "大概就是这样\n向观众解释自己的看法。\n舒展手臂辅助说明。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我给你举一个简单的例子。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我给你举一个简单的例子。\n向观众解释自己的看法。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我给你举一个简单的例子。\n舒展手臂辅助说明。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我给你举一个简单的例子。\n",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我给你举一个简单的例子。\n向观众解释自己的看法。\n舒展手臂辅助说明。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我给你举一个简单的例子\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我给你举一个简单的例子\n向观众解释自己的看法。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我给你举一个简单的例子\n舒展手臂辅助说明。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我给你举一个简单的例子\n",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "我给你举一个简单的例子\n向观众解释自己的看法。\n舒展手臂辅助说明。",
+    "split": "train",
+    "label": "explain"
+  },
+  {
+    "text_context": "关键就是这里，你仔细看。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "validation",
+    "label": "point"
+  },
+  {
+    "text_context": "关键就是这里，你仔细看。\n指向一个值得注意的地方，强调重点。",
+    "split": "validation",
+    "label": "point"
+  },
+  {
+    "text_context": "关键就是这里，你仔细看。\n抬起食指，指出重点。",
+    "split": "validation",
+    "label": "point"
+  },
+  {
+    "text_context": "关键就是这里，你仔细看。\n",
+    "split": "validation",
+    "label": "point"
+  },
+  {
+    "text_context": "关键就是这里，你仔细看。\n指向一个值得注意的地方，强调重点。\n抬起食指，指出重点。",
+    "split": "validation",
+    "label": "point"
+  },
+  {
+    "text_context": "关键就是这里\n直播对话；动作意图：抬起一侧手臂指出重点，使用食指但不播放固定动作",
+    "split": "validation",
+    "label": "point"
+  },
+  {
+    "text_context": "关键就是这里\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "validation",
+    "label": "point"
+  },
+  {
+    "text_context": "关键就是这里\n指向一个值得注意的地方，强调重点。",
+    "split": "validation",
+    "label": "point"
+  },
+  {
+    "text_context": "关键就是这里\n抬起食指，指出重点。",
+    "split": "validation",
+    "label": "point"
+  },
+  {
+    "text_context": "关键就是这里\n",
+    "split": "validation",
+    "label": "point"
+  },
+  {
+    "text_context": "关键就是这里\n指向一个值得注意的地方，强调重点。\n抬起食指，指出重点。",
+    "split": "validation",
+    "label": "point"
+  },
+  {
+    "text_context": "我说的重点就是这一点。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "test",
+    "label": "point"
+  },
+  {
+    "text_context": "我说的重点就是这一点。\n指向一个值得注意的地方，强调重点。",
+    "split": "test",
+    "label": "point"
+  },
+  {
+    "text_context": "我说的重点就是这一点。\n抬起食指，指出重点。",
+    "split": "test",
+    "label": "point"
+  },
+  {
+    "text_context": "我说的重点就是这一点。\n",
+    "split": "test",
+    "label": "point"
+  },
+  {
+    "text_context": "我说的重点就是这一点。\n指向一个值得注意的地方，强调重点。\n抬起食指，指出重点。",
+    "split": "test",
+    "label": "point"
+  },
+  {
+    "text_context": "我说的重点就是这一点\n直播对话；动作意图：抬起一侧手臂指出重点，使用食指但不播放固定动作",
+    "split": "test",
+    "label": "point"
+  },
+  {
+    "text_context": "我说的重点就是这一点\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "test",
+    "label": "point"
+  },
+  {
+    "text_context": "我说的重点就是这一点\n指向一个值得注意的地方，强调重点。",
+    "split": "test",
+    "label": "point"
+  },
+  {
+    "text_context": "我说的重点就是这一点\n抬起食指，指出重点。",
+    "split": "test",
+    "label": "point"
+  },
+  {
+    "text_context": "我说的重点就是这一点\n",
+    "split": "test",
+    "label": "point"
+  },
+  {
+    "text_context": "我说的重点就是这一点\n指向一个值得注意的地方，强调重点。\n抬起食指，指出重点。",
+    "split": "test",
+    "label": "point"
+  },
+  {
+    "text_context": "你看这里，这个地方很重要。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "你看这里，这个地方很重要。\n指向一个值得注意的地方，强调重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "你看这里，这个地方很重要。\n抬起食指，指出重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "你看这里，这个地方很重要。\n",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "你看这里，这个地方很重要。\n指向一个值得注意的地方，强调重点。\n抬起食指，指出重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "你看这里\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "你看这里\n指向一个值得注意的地方，强调重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "你看这里\n抬起食指，指出重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "你看这里\n",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "你看这里\n指向一个值得注意的地方，强调重点。\n抬起食指，指出重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "答案就在这里，我指给你看。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "答案就在这里，我指给你看。\n指向一个值得注意的地方，强调重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "答案就在这里，我指给你看。\n抬起食指，指出重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "答案就在这里，我指给你看。\n",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "答案就在这里，我指给你看。\n指向一个值得注意的地方，强调重点。\n抬起食指，指出重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "答案就在这里\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "答案就在这里\n指向一个值得注意的地方，强调重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "答案就在这里\n抬起食指，指出重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "答案就在这里\n",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "答案就在这里\n指向一个值得注意的地方，强调重点。\n抬起食指，指出重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "先注意这个细节，别看漏了。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "先注意这个细节，别看漏了。\n指向一个值得注意的地方，强调重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "先注意这个细节，别看漏了。\n抬起食指，指出重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "先注意这个细节，别看漏了。\n",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "先注意这个细节，别看漏了。\n指向一个值得注意的地方，强调重点。\n抬起食指，指出重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "先注意这个细节\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "先注意这个细节\n指向一个值得注意的地方，强调重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "先注意这个细节\n抬起食指，指出重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "先注意这个细节\n",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "先注意这个细节\n指向一个值得注意的地方，强调重点。\n抬起食指，指出重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "我们现在要看的就是这一项。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "我们现在要看的就是这一项。\n指向一个值得注意的地方，强调重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "我们现在要看的就是这一项。\n抬起食指，指出重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "我们现在要看的就是这一项。\n",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "我们现在要看的就是这一项。\n指向一个值得注意的地方，强调重点。\n抬起食指，指出重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "我们现在要看的就是这一项\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "我们现在要看的就是这一项\n指向一个值得注意的地方，强调重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "我们现在要看的就是这一项\n抬起食指，指出重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "我们现在要看的就是这一项\n",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "我们现在要看的就是这一项\n指向一个值得注意的地方，强调重点。\n抬起食指，指出重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "这个位置才是问题所在。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "这个位置才是问题所在。\n指向一个值得注意的地方，强调重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "这个位置才是问题所在。\n抬起食指，指出重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "这个位置才是问题所在。\n",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "这个位置才是问题所在。\n指向一个值得注意的地方，强调重点。\n抬起食指，指出重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "这个位置才是问题所在\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "这个位置才是问题所在\n指向一个值得注意的地方，强调重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "这个位置才是问题所在\n抬起食指，指出重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "这个位置才是问题所在\n",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "这个位置才是问题所在\n指向一个值得注意的地方，强调重点。\n抬起食指，指出重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "你找到这里就明白了。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "你找到这里就明白了。\n指向一个值得注意的地方，强调重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "你找到这里就明白了。\n抬起食指，指出重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "你找到这里就明白了。\n",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "你找到这里就明白了。\n指向一个值得注意的地方，强调重点。\n抬起食指，指出重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "你找到这里就明白了\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "你找到这里就明白了\n指向一个值得注意的地方，强调重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "你找到这里就明白了\n抬起食指，指出重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "你找到这里就明白了\n",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "你找到这里就明白了\n指向一个值得注意的地方，强调重点。\n抬起食指，指出重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "先看我指的这个地方。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "先看我指的这个地方。\n指向一个值得注意的地方，强调重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "先看我指的这个地方。\n抬起食指，指出重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "先看我指的这个地方。\n",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "先看我指的这个地方。\n指向一个值得注意的地方，强调重点。\n抬起食指，指出重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "先看我指的这个地方\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "先看我指的这个地方\n指向一个值得注意的地方，强调重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "先看我指的这个地方\n抬起食指，指出重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "先看我指的这个地方\n",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "先看我指的这个地方\n指向一个值得注意的地方，强调重点。\n抬起食指，指出重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "我想强调的就是这一点。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "我想强调的就是这一点。\n指向一个值得注意的地方，强调重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "我想强调的就是这一点。\n抬起食指，指出重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "我想强调的就是这一点。\n",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "我想强调的就是这一点。\n指向一个值得注意的地方，强调重点。\n抬起食指，指出重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "我想强调的就是这一点\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "我想强调的就是这一点\n指向一个值得注意的地方，强调重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "我想强调的就是这一点\n抬起食指，指出重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "我想强调的就是这一点\n",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "我想强调的就是这一点\n指向一个值得注意的地方，强调重点。\n抬起食指，指出重点。",
+    "split": "train",
+    "label": "point"
+  },
+  {
+    "text_context": "这件事就交给我来完成吧。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "validation",
+    "label": "chest"
+  },
+  {
+    "text_context": "这件事就交给我来完成吧。\n真诚表达自己的承诺与谢意。",
+    "split": "validation",
+    "label": "chest"
+  },
+  {
+    "text_context": "这件事就交给我来完成吧。\n将手放在胸前表达心意。",
+    "split": "validation",
+    "label": "chest"
+  },
+  {
+    "text_context": "这件事就交给我来完成吧。\n",
+    "split": "validation",
+    "label": "chest"
+  },
+  {
+    "text_context": "这件事就交给我来完成吧。\n真诚表达自己的承诺与谢意。\n将手放在胸前表达心意。",
+    "split": "validation",
+    "label": "chest"
+  },
+  {
+    "text_context": "这件事就交给我来完成吧\n直播对话；动作意图：一只手靠近胸前表达自己的想法，前臂姿态清楚",
+    "split": "validation",
+    "label": "chest"
+  },
+  {
+    "text_context": "这件事就交给我来完成吧\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "validation",
+    "label": "chest"
+  },
+  {
+    "text_context": "这件事就交给我来完成吧\n真诚表达自己的承诺与谢意。",
+    "split": "validation",
+    "label": "chest"
+  },
+  {
+    "text_context": "这件事就交给我来完成吧\n将手放在胸前表达心意。",
+    "split": "validation",
+    "label": "chest"
+  },
+  {
+    "text_context": "这件事就交给我来完成吧\n",
+    "split": "validation",
+    "label": "chest"
+  },
+  {
+    "text_context": "这件事就交给我来完成吧\n真诚表达自己的承诺与谢意。\n将手放在胸前表达心意。",
+    "split": "validation",
+    "label": "chest"
+  },
+  {
+    "text_context": "我会认真对待你的信任。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "test",
+    "label": "chest"
+  },
+  {
+    "text_context": "我会认真对待你的信任。\n真诚表达自己的承诺与谢意。",
+    "split": "test",
+    "label": "chest"
+  },
+  {
+    "text_context": "我会认真对待你的信任。\n将手放在胸前表达心意。",
+    "split": "test",
+    "label": "chest"
+  },
+  {
+    "text_context": "我会认真对待你的信任。\n",
+    "split": "test",
+    "label": "chest"
+  },
+  {
+    "text_context": "我会认真对待你的信任。\n真诚表达自己的承诺与谢意。\n将手放在胸前表达心意。",
+    "split": "test",
+    "label": "chest"
+  },
+  {
+    "text_context": "我会认真对待你的信任\n直播对话；动作意图：一只手靠近胸前表达自己的想法，前臂姿态清楚",
+    "split": "test",
+    "label": "chest"
+  },
+  {
+    "text_context": "我会认真对待你的信任\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "test",
+    "label": "chest"
+  },
+  {
+    "text_context": "我会认真对待你的信任\n真诚表达自己的承诺与谢意。",
+    "split": "test",
+    "label": "chest"
+  },
+  {
+    "text_context": "我会认真对待你的信任\n将手放在胸前表达心意。",
+    "split": "test",
+    "label": "chest"
+  },
+  {
+    "text_context": "我会认真对待你的信任\n",
+    "split": "test",
+    "label": "chest"
+  },
+  {
+    "text_context": "我会认真对待你的信任\n真诚表达自己的承诺与谢意。\n将手放在胸前表达心意。",
+    "split": "test",
+    "label": "chest"
+  },
+  {
+    "text_context": "我也有自己的想法，听我说吧。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "我也有自己的想法，听我说吧。\n真诚表达自己的承诺与谢意。",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "我也有自己的想法，听我说吧。\n将手放在胸前表达心意。",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "我也有自己的想法，听我说吧。\n",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "我也有自己的想法，听我说吧。\n真诚表达自己的承诺与谢意。\n将手放在胸前表达心意。",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "我也有自己的想法\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "我也有自己的想法\n真诚表达自己的承诺与谢意。",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "我也有自己的想法\n将手放在胸前表达心意。",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "我也有自己的想法\n",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "我也有自己的想法\n真诚表达自己的承诺与谢意。\n将手放在胸前表达心意。",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "这一次，我想自己试一试。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "这一次，我想自己试一试。\n真诚表达自己的承诺与谢意。",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "这一次，我想自己试一试。\n将手放在胸前表达心意。",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "这一次，我想自己试一试。\n",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "这一次，我想自己试一试。\n真诚表达自己的承诺与谢意。\n将手放在胸前表达心意。",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "这一次\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "这一次\n真诚表达自己的承诺与谢意。",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "这一次\n将手放在胸前表达心意。",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "这一次\n",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "这一次\n真诚表达自己的承诺与谢意。\n将手放在胸前表达心意。",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "我向你保证，会好好准备。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "我向你保证，会好好准备。\n真诚表达自己的承诺与谢意。",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "我向你保证，会好好准备。\n将手放在胸前表达心意。",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "我向你保证，会好好准备。\n",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "我向你保证，会好好准备。\n真诚表达自己的承诺与谢意。\n将手放在胸前表达心意。",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "我向你保证\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "我向你保证\n真诚表达自己的承诺与谢意。",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "我向你保证\n将手放在胸前表达心意。",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "我向你保证\n",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "我向你保证\n真诚表达自己的承诺与谢意。\n将手放在胸前表达心意。",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "我是真的很感谢你们。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "我是真的很感谢你们。\n真诚表达自己的承诺与谢意。",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "我是真的很感谢你们。\n将手放在胸前表达心意。",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "我是真的很感谢你们。\n",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "我是真的很感谢你们。\n真诚表达自己的承诺与谢意。\n将手放在胸前表达心意。",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "我是真的很感谢你们\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "我是真的很感谢你们\n真诚表达自己的承诺与谢意。",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "我是真的很感谢你们\n将手放在胸前表达心意。",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "我是真的很感谢你们\n",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "我是真的很感谢你们\n真诚表达自己的承诺与谢意。\n将手放在胸前表达心意。",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "能得到你们的支持，我很感动。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "能得到你们的支持，我很感动。\n真诚表达自己的承诺与谢意。",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "能得到你们的支持，我很感动。\n将手放在胸前表达心意。",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "能得到你们的支持，我很感动。\n",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "能得到你们的支持，我很感动。\n真诚表达自己的承诺与谢意。\n将手放在胸前表达心意。",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "能得到你们的支持\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "能得到你们的支持\n真诚表达自己的承诺与谢意。",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "能得到你们的支持\n将手放在胸前表达心意。",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "能得到你们的支持\n",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "能得到你们的支持\n真诚表达自己的承诺与谢意。\n将手放在胸前表达心意。",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "我会把这份心意记在心里。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "我会把这份心意记在心里。\n真诚表达自己的承诺与谢意。",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "我会把这份心意记在心里。\n将手放在胸前表达心意。",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "我会把这份心意记在心里。\n",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "我会把这份心意记在心里。\n真诚表达自己的承诺与谢意。\n将手放在胸前表达心意。",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "我会把这份心意记在心里\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "我会把这份心意记在心里\n真诚表达自己的承诺与谢意。",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "我会把这份心意记在心里\n将手放在胸前表达心意。",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "我会把这份心意记在心里\n",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "我会把这份心意记在心里\n真诚表达自己的承诺与谢意。\n将手放在胸前表达心意。",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "这就是我自己的选择。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "这就是我自己的选择。\n真诚表达自己的承诺与谢意。",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "这就是我自己的选择。\n将手放在胸前表达心意。",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "这就是我自己的选择。\n",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "这就是我自己的选择。\n真诚表达自己的承诺与谢意。\n将手放在胸前表达心意。",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "这就是我自己的选择\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "这就是我自己的选择\n真诚表达自己的承诺与谢意。",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "这就是我自己的选择\n将手放在胸前表达心意。",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "这就是我自己的选择\n",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "这就是我自己的选择\n真诚表达自己的承诺与谢意。\n将手放在胸前表达心意。",
+    "split": "train",
+    "label": "chest"
+  },
+  {
+    "text_context": "谢谢你愿意一直陪着我。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "谢谢你愿意一直陪着我。\n真诚表达自己的承诺与谢意。",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "谢谢你愿意一直陪着我。\n将手放在胸前表达心意。",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "谢谢你愿意一直陪着我。\n",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "谢谢你愿意一直陪着我。\n真诚表达自己的承诺与谢意。\n将手放在胸前表达心意。",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "谢谢你愿意一直陪着我\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "谢谢你愿意一直陪着我\n真诚表达自己的承诺与谢意。",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "谢谢你愿意一直陪着我\n将手放在胸前表达心意。",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "谢谢你愿意一直陪着我\n",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "谢谢你愿意一直陪着我\n真诚表达自己的承诺与谢意。\n将手放在胸前表达心意。",
+    "split": "train",
+    "label": "thanks"
+  },
+  {
+    "text_context": "太好了，我们终于成功了！\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "validation",
+    "label": "cheer"
+  },
+  {
+    "text_context": "太好了，我们终于成功了！\n刚刚取得胜利，举起双手开心地欢呼。",
+    "split": "validation",
+    "label": "cheer"
+  },
+  {
+    "text_context": "太好了，我们终于成功了！\n高举双臂庆祝，再把手收回来。",
+    "split": "validation",
+    "label": "cheer"
+  },
+  {
+    "text_context": "太好了，我们终于成功了！\n",
+    "split": "validation",
+    "label": "cheer"
+  },
+  {
+    "text_context": "太好了，我们终于成功了！\n刚刚取得胜利，举起双手开心地欢呼。\n高举双臂庆祝，再把手收回来。",
+    "split": "validation",
+    "label": "cheer"
+  },
+  {
+    "text_context": "太好了\n直播对话；动作意图：高兴地举起双臂庆祝，躯干和头部一起响应",
+    "split": "validation",
+    "label": "cheer"
+  },
+  {
+    "text_context": "太好了\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "validation",
+    "label": "cheer"
+  },
+  {
+    "text_context": "太好了\n刚刚取得胜利，举起双手开心地欢呼。",
+    "split": "validation",
+    "label": "cheer"
+  },
+  {
+    "text_context": "太好了\n高举双臂庆祝，再把手收回来。",
+    "split": "validation",
+    "label": "cheer"
+  },
+  {
+    "text_context": "太好了\n",
+    "split": "validation",
+    "label": "cheer"
+  },
+  {
+    "text_context": "太好了\n刚刚取得胜利，举起双手开心地欢呼。\n高举双臂庆祝，再把手收回来。",
+    "split": "validation",
+    "label": "cheer"
+  },
+  {
+    "text_context": "这次真的赢了，太开心了！\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "test",
+    "label": "cheer"
+  },
+  {
+    "text_context": "这次真的赢了，太开心了！\n刚刚取得胜利，举起双手开心地欢呼。",
+    "split": "test",
+    "label": "cheer"
+  },
+  {
+    "text_context": "这次真的赢了，太开心了！\n高举双臂庆祝，再把手收回来。",
+    "split": "test",
+    "label": "cheer"
+  },
+  {
+    "text_context": "这次真的赢了，太开心了！\n",
+    "split": "test",
+    "label": "cheer"
+  },
+  {
+    "text_context": "这次真的赢了，太开心了！\n刚刚取得胜利，举起双手开心地欢呼。\n高举双臂庆祝，再把手收回来。",
+    "split": "test",
+    "label": "cheer"
+  },
+  {
+    "text_context": "这次真的赢了\n直播对话；动作意图：高兴地举起双臂庆祝，躯干和头部一起响应",
+    "split": "test",
+    "label": "cheer"
+  },
+  {
+    "text_context": "这次真的赢了\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "test",
+    "label": "cheer"
+  },
+  {
+    "text_context": "这次真的赢了\n刚刚取得胜利，举起双手开心地欢呼。",
+    "split": "test",
+    "label": "cheer"
+  },
+  {
+    "text_context": "这次真的赢了\n高举双臂庆祝，再把手收回来。",
+    "split": "test",
+    "label": "cheer"
+  },
+  {
+    "text_context": "这次真的赢了\n",
+    "split": "test",
+    "label": "cheer"
+  },
+  {
+    "text_context": "这次真的赢了\n刚刚取得胜利，举起双手开心地欢呼。\n高举双臂庆祝，再把手收回来。",
+    "split": "test",
+    "label": "cheer"
+  },
+  {
+    "text_context": "你做得太棒了，我要为你庆祝！\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "你做得太棒了，我要为你庆祝！\n刚刚取得胜利，举起双手开心地欢呼。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "你做得太棒了，我要为你庆祝！\n高举双臂庆祝，再把手收回来。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "你做得太棒了，我要为你庆祝！\n",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "你做得太棒了，我要为你庆祝！\n刚刚取得胜利，举起双手开心地欢呼。\n高举双臂庆祝，再把手收回来。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "你做得太棒了\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "你做得太棒了\n刚刚取得胜利，举起双手开心地欢呼。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "你做得太棒了\n高举双臂庆祝，再把手收回来。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "你做得太棒了\n",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "你做得太棒了\n刚刚取得胜利，举起双手开心地欢呼。\n高举双臂庆祝，再把手收回来。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "终于等到这个好消息了！\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "终于等到这个好消息了！\n刚刚取得胜利，举起双手开心地欢呼。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "终于等到这个好消息了！\n高举双臂庆祝，再把手收回来。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "终于等到这个好消息了！\n",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "终于等到这个好消息了！\n刚刚取得胜利，举起双手开心地欢呼。\n高举双臂庆祝，再把手收回来。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "终于等到这个好消息了\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "终于等到这个好消息了\n刚刚取得胜利，举起双手开心地欢呼。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "终于等到这个好消息了\n高举双臂庆祝，再把手收回来。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "终于等到这个好消息了\n",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "终于等到这个好消息了\n刚刚取得胜利，举起双手开心地欢呼。\n高举双臂庆祝，再把手收回来。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "好耶，我们一起庆祝一下！\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "好耶，我们一起庆祝一下！\n刚刚取得胜利，举起双手开心地欢呼。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "好耶，我们一起庆祝一下！\n高举双臂庆祝，再把手收回来。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "好耶，我们一起庆祝一下！\n",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "好耶，我们一起庆祝一下！\n刚刚取得胜利，举起双手开心地欢呼。\n高举双臂庆祝，再把手收回来。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "这下终于可以放心啦！\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "这下终于可以放心啦！\n刚刚取得胜利，举起双手开心地欢呼。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "这下终于可以放心啦！\n高举双臂庆祝，再把手收回来。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "这下终于可以放心啦！\n",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "这下终于可以放心啦！\n刚刚取得胜利，举起双手开心地欢呼。\n高举双臂庆祝，再把手收回来。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "这下终于可以放心啦\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "这下终于可以放心啦\n刚刚取得胜利，举起双手开心地欢呼。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "这下终于可以放心啦\n高举双臂庆祝，再把手收回来。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "这下终于可以放心啦\n",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "这下终于可以放心啦\n刚刚取得胜利，举起双手开心地欢呼。\n高举双臂庆祝，再把手收回来。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "今天的结果比我想的还要好！\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "今天的结果比我想的还要好！\n刚刚取得胜利，举起双手开心地欢呼。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "今天的结果比我想的还要好！\n高举双臂庆祝，再把手收回来。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "今天的结果比我想的还要好！\n",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "今天的结果比我想的还要好！\n刚刚取得胜利，举起双手开心地欢呼。\n高举双臂庆祝，再把手收回来。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "今天的结果比我想的还要好\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "今天的结果比我想的还要好\n刚刚取得胜利，举起双手开心地欢呼。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "今天的结果比我想的还要好\n高举双臂庆祝，再把手收回来。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "今天的结果比我想的还要好\n",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "今天的结果比我想的还要好\n刚刚取得胜利，举起双手开心地欢呼。\n高举双臂庆祝，再把手收回来。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "我们真的一起完成了这件事！\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "我们真的一起完成了这件事！\n刚刚取得胜利，举起双手开心地欢呼。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "我们真的一起完成了这件事！\n高举双臂庆祝，再把手收回来。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "我们真的一起完成了这件事！\n",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "我们真的一起完成了这件事！\n刚刚取得胜利，举起双手开心地欢呼。\n高举双臂庆祝，再把手收回来。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "我们真的一起完成了这件事\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "我们真的一起完成了这件事\n刚刚取得胜利，举起双手开心地欢呼。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "我们真的一起完成了这件事\n高举双臂庆祝，再把手收回来。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "我们真的一起完成了这件事\n",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "我们真的一起完成了这件事\n刚刚取得胜利，举起双手开心地欢呼。\n高举双臂庆祝，再把手收回来。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "我现在开心得都想跳起来了！\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "我现在开心得都想跳起来了！\n刚刚取得胜利，举起双手开心地欢呼。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "我现在开心得都想跳起来了！\n高举双臂庆祝，再把手收回来。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "我现在开心得都想跳起来了！\n",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "我现在开心得都想跳起来了！\n刚刚取得胜利，举起双手开心地欢呼。\n高举双臂庆祝，再把手收回来。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "我现在开心得都想跳起来了\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "我现在开心得都想跳起来了\n刚刚取得胜利，举起双手开心地欢呼。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "我现在开心得都想跳起来了\n高举双臂庆祝，再把手收回来。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "我现在开心得都想跳起来了\n",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "我现在开心得都想跳起来了\n刚刚取得胜利，举起双手开心地欢呼。\n高举双臂庆祝，再把手收回来。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "你真的做到了，太厉害啦！\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "你真的做到了，太厉害啦！\n刚刚取得胜利，举起双手开心地欢呼。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "你真的做到了，太厉害啦！\n高举双臂庆祝，再把手收回来。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "你真的做到了，太厉害啦！\n",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "你真的做到了，太厉害啦！\n刚刚取得胜利，举起双手开心地欢呼。\n高举双臂庆祝，再把手收回来。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "你真的做到了\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "你真的做到了\n刚刚取得胜利，举起双手开心地欢呼。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "你真的做到了\n高举双臂庆祝，再把手收回来。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "你真的做到了\n",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "你真的做到了\n刚刚取得胜利，举起双手开心地欢呼。\n高举双臂庆祝，再把手收回来。",
+    "split": "train",
+    "label": "cheer"
+  },
+  {
+    "text_context": "先等一下，这样做不合适。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "validation",
+    "label": "refuse"
+  },
+  {
+    "text_context": "先等一下，这样做不合适。\n认真示意停一下，拒绝对方的请求。",
+    "split": "validation",
+    "label": "refuse"
+  },
+  {
+    "text_context": "先等一下，这样做不合适。\n抬手表示停止。",
+    "split": "validation",
+    "label": "refuse"
+  },
+  {
+    "text_context": "先等一下，这样做不合适。\n",
+    "split": "validation",
+    "label": "refuse"
+  },
+  {
+    "text_context": "先等一下，这样做不合适。\n认真示意停一下，拒绝对方的请求。\n抬手表示停止。",
+    "split": "validation",
+    "label": "refuse"
+  },
+  {
+    "text_context": "先等一下\n直播对话；动作意图：抬手表示停一下，同时轻轻摇头拒绝",
+    "split": "validation",
+    "label": "refuse"
+  },
+  {
+    "text_context": "先等一下\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "validation",
+    "label": "refuse"
+  },
+  {
+    "text_context": "先等一下\n认真示意停一下，拒绝对方的请求。",
+    "split": "validation",
+    "label": "refuse"
+  },
+  {
+    "text_context": "先等一下\n抬手表示停止。",
+    "split": "validation",
+    "label": "refuse"
+  },
+  {
+    "text_context": "先等一下\n",
+    "split": "validation",
+    "label": "refuse"
+  },
+  {
+    "text_context": "先等一下\n认真示意停一下，拒绝对方的请求。\n抬手表示停止。",
+    "split": "validation",
+    "label": "refuse"
+  },
+  {
+    "text_context": "不可以，这件事我不能答应。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "test",
+    "label": "refuse"
+  },
+  {
+    "text_context": "不可以，这件事我不能答应。\n认真示意停一下，拒绝对方的请求。",
+    "split": "test",
+    "label": "refuse"
+  },
+  {
+    "text_context": "不可以，这件事我不能答应。\n抬手表示停止。",
+    "split": "test",
+    "label": "refuse"
+  },
+  {
+    "text_context": "不可以，这件事我不能答应。\n",
+    "split": "test",
+    "label": "refuse"
+  },
+  {
+    "text_context": "不可以，这件事我不能答应。\n认真示意停一下，拒绝对方的请求。\n抬手表示停止。",
+    "split": "test",
+    "label": "refuse"
+  },
+  {
+    "text_context": "不可以\n直播对话；动作意图：抬手表示停一下，同时轻轻摇头拒绝",
+    "split": "test",
+    "label": "refuse"
+  },
+  {
+    "text_context": "不可以\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "test",
+    "label": "refuse"
+  },
+  {
+    "text_context": "不可以\n认真示意停一下，拒绝对方的请求。",
+    "split": "test",
+    "label": "refuse"
+  },
+  {
+    "text_context": "不可以\n抬手表示停止。",
+    "split": "test",
+    "label": "refuse"
+  },
+  {
+    "text_context": "不可以\n",
+    "split": "test",
+    "label": "refuse"
+  },
+  {
+    "text_context": "不可以\n认真示意停一下，拒绝对方的请求。\n抬手表示停止。",
+    "split": "test",
+    "label": "refuse"
+  },
+  {
+    "text_context": "停一下，我们先把规则讲清楚。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "停一下，我们先把规则讲清楚。\n认真示意停一下，拒绝对方的请求。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "停一下，我们先把规则讲清楚。\n抬手表示停止。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "停一下，我们先把规则讲清楚。\n",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "停一下，我们先把规则讲清楚。\n认真示意停一下，拒绝对方的请求。\n抬手表示停止。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "停一下\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "停一下\n认真示意停一下，拒绝对方的请求。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "停一下\n抬手表示停止。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "停一下\n",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "停一下\n认真示意停一下，拒绝对方的请求。\n抬手表示停止。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "我不同意，我们应该换个办法。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "我不同意，我们应该换个办法。\n认真示意停一下，拒绝对方的请求。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "我不同意，我们应该换个办法。\n抬手表示停止。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "我不同意，我们应该换个办法。\n",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "我不同意，我们应该换个办法。\n认真示意停一下，拒绝对方的请求。\n抬手表示停止。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "我不同意\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "我不同意\n认真示意停一下，拒绝对方的请求。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "我不同意\n抬手表示停止。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "我不同意\n",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "我不同意\n认真示意停一下，拒绝对方的请求。\n抬手表示停止。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "别再这样捉弄我了，停下来。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "别再这样捉弄我了，停下来。\n认真示意停一下，拒绝对方的请求。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "别再这样捉弄我了，停下来。\n抬手表示停止。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "别再这样捉弄我了，停下来。\n",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "别再这样捉弄我了，停下来。\n认真示意停一下，拒绝对方的请求。\n抬手表示停止。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "别再这样捉弄我了\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "别再这样捉弄我了\n认真示意停一下，拒绝对方的请求。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "别再这样捉弄我了\n抬手表示停止。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "别再这样捉弄我了\n",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "别再这样捉弄我了\n认真示意停一下，拒绝对方的请求。\n抬手表示停止。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "这件事到这里就可以了。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "这件事到这里就可以了。\n认真示意停一下，拒绝对方的请求。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "这件事到这里就可以了。\n抬手表示停止。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "这件事到这里就可以了。\n",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "这件事到这里就可以了。\n认真示意停一下，拒绝对方的请求。\n抬手表示停止。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "这件事到这里就可以了\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "这件事到这里就可以了\n认真示意停一下，拒绝对方的请求。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "这件事到这里就可以了\n抬手表示停止。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "这件事到这里就可以了\n",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "这件事到这里就可以了\n认真示意停一下，拒绝对方的请求。\n抬手表示停止。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "先不要继续，我还没准备好。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "先不要继续，我还没准备好。\n认真示意停一下，拒绝对方的请求。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "先不要继续，我还没准备好。\n抬手表示停止。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "先不要继续，我还没准备好。\n",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "先不要继续，我还没准备好。\n认真示意停一下，拒绝对方的请求。\n抬手表示停止。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "先不要继续\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "先不要继续\n认真示意停一下，拒绝对方的请求。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "先不要继续\n抬手表示停止。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "先不要继续\n",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "先不要继续\n认真示意停一下，拒绝对方的请求。\n抬手表示停止。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "我们还是先冷静一下吧。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "我们还是先冷静一下吧。\n认真示意停一下，拒绝对方的请求。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "我们还是先冷静一下吧。\n抬手表示停止。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "我们还是先冷静一下吧。\n",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "我们还是先冷静一下吧。\n认真示意停一下，拒绝对方的请求。\n抬手表示停止。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "我们还是先冷静一下吧\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "我们还是先冷静一下吧\n认真示意停一下，拒绝对方的请求。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "我们还是先冷静一下吧\n抬手表示停止。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "我们还是先冷静一下吧\n",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "我们还是先冷静一下吧\n认真示意停一下，拒绝对方的请求。\n抬手表示停止。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "不是这样的，听我说完。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "不是这样的，听我说完。\n认真示意停一下，拒绝对方的请求。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "不是这样的，听我说完。\n抬手表示停止。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "不是这样的，听我说完。\n",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "不是这样的，听我说完。\n认真示意停一下，拒绝对方的请求。\n抬手表示停止。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "不是这样的\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "不是这样的\n认真示意停一下，拒绝对方的请求。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "不是这样的\n抬手表示停止。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "不是这样的\n",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "不是这样的\n认真示意停一下，拒绝对方的请求。\n抬手表示停止。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "我想认真地拒绝这件事。\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "我想认真地拒绝这件事。\n认真示意停一下，拒绝对方的请求。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "我想认真地拒绝这件事。\n抬手表示停止。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "我想认真地拒绝这件事。\n",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "我想认真地拒绝这件事。\n认真示意停一下，拒绝对方的请求。\n抬手表示停止。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "我想认真地拒绝这件事\n和观众自然交谈，动作舒展但不频繁。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "我想认真地拒绝这件事\n认真示意停一下，拒绝对方的请求。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "我想认真地拒绝这件事\n抬手表示停止。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "我想认真地拒绝这件事\n",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "我想认真地拒绝这件事\n认真示意停一下，拒绝对方的请求。\n抬手表示停止。",
+    "split": "train",
+    "label": "refuse"
+  },
+  {
+    "text_context": "给你看看这根狗尾草。\n",
+    "split": "validation",
+    "label": "grass"
+  },
+  {
+    "text_context": "给你看看这根狗尾草。\n和观众自然聊天。",
+    "split": "validation",
+    "label": "grass"
+  },
+  {
+    "text_context": "给你看看这根狗尾草。\n配合台词的意思表达，动作不频繁。",
+    "split": "validation",
+    "label": "grass"
+  },
+  {
+    "text_context": "我拿了一根小草，想给你看看。\n",
+    "split": "test",
+    "label": "grass"
+  },
+  {
+    "text_context": "我拿了一根小草，想给你看看。\n和观众自然聊天。",
+    "split": "test",
+    "label": "grass"
+  },
+  {
+    "text_context": "我拿了一根小草，想给你看看。\n配合台词的意思表达，动作不频繁。",
+    "split": "test",
+    "label": "grass"
+  },
+  {
+    "text_context": "这根狗尾草看起来软软的。\n",
+    "split": "train",
+    "label": "grass"
+  },
+  {
+    "text_context": "这根狗尾草看起来软软的。\n和观众自然聊天。",
+    "split": "train",
+    "label": "grass"
+  },
+  {
+    "text_context": "这根狗尾草看起来软软的。\n配合台词的意思表达，动作不频繁。",
+    "split": "train",
+    "label": "grass"
+  },
+  {
+    "text_context": "来，看看我手里的小草。\n",
+    "split": "train",
+    "label": "grass"
+  },
+  {
+    "text_context": "来，看看我手里的小草。\n和观众自然聊天。",
+    "split": "train",
+    "label": "grass"
+  },
+  {
+    "text_context": "来，看看我手里的小草。\n配合台词的意思表达，动作不频繁。",
+    "split": "train",
+    "label": "grass"
+  },
+  {
+    "text_context": "我要把狗尾草拿到身前展示。\n",
+    "split": "train",
+    "label": "grass"
+  },
+  {
+    "text_context": "我要把狗尾草拿到身前展示。\n和观众自然聊天。",
+    "split": "train",
+    "label": "grass"
+  },
+  {
+    "text_context": "我要把狗尾草拿到身前展示。\n配合台词的意思表达，动作不频繁。",
+    "split": "train",
+    "label": "grass"
+  },
+  {
+    "text_context": "你看这根小草像不像尾巴？\n",
+    "split": "train",
+    "label": "grass"
+  },
+  {
+    "text_context": "你看这根小草像不像尾巴？\n和观众自然聊天。",
+    "split": "train",
+    "label": "grass"
+  },
+  {
+    "text_context": "你看这根小草像不像尾巴？\n配合台词的意思表达，动作不频繁。",
+    "split": "train",
+    "label": "grass"
+  },
+  {
+    "text_context": "我来轻轻晃一晃这根草。\n",
+    "split": "train",
+    "label": "grass"
+  },
+  {
+    "text_context": "我来轻轻晃一晃这根草。\n和观众自然聊天。",
+    "split": "train",
+    "label": "grass"
+  },
+  {
+    "text_context": "我来轻轻晃一晃这根草。\n配合台词的意思表达，动作不频繁。",
+    "split": "train",
+    "label": "grass"
+  },
+  {
+    "text_context": "让我展示一下手中的狗尾草。\n",
+    "split": "train",
+    "label": "grass"
+  },
+  {
+    "text_context": "让我展示一下手中的狗尾草。\n和观众自然聊天。",
+    "split": "train",
+    "label": "grass"
+  },
+  {
+    "text_context": "让我展示一下手中的狗尾草。\n配合台词的意思表达，动作不频繁。",
+    "split": "train",
+    "label": "grass"
+  },
+  {
+    "text_context": "这是一根刚拿到的狗尾草。\n",
+    "split": "train",
+    "label": "grass"
+  },
+  {
+    "text_context": "这是一根刚拿到的狗尾草。\n和观众自然聊天。",
+    "split": "train",
+    "label": "grass"
+  },
+  {
+    "text_context": "这是一根刚拿到的狗尾草。\n配合台词的意思表达，动作不频繁。",
+    "split": "train",
+    "label": "grass"
+  },
+  {
+    "text_context": "我想用这根草逗你一下。\n",
+    "split": "train",
+    "label": "grass"
+  },
+  {
+    "text_context": "我想用这根草逗你一下。\n和观众自然聊天。",
+    "split": "train",
+    "label": "grass"
+  },
+  {
+    "text_context": "我想用这根草逗你一下。\n配合台词的意思表达，动作不频繁。",
+    "split": "train",
+    "label": "grass"
+  },
+  {
+    "text_context": "看，我手里有一根小草。\n",
+    "split": "train",
+    "label": "grass"
+  },
+  {
+    "text_context": "看，我手里有一根小草。\n和观众自然聊天。",
+    "split": "train",
+    "label": "grass"
+  },
+  {
+    "text_context": "看，我手里有一根小草。\n配合台词的意思表达，动作不频繁。",
+    "split": "train",
+    "label": "grass"
+  },
+  {
+    "text_context": "先把这根狗尾草拿起来吧。\n",
+    "split": "train",
+    "label": "grass"
+  },
+  {
+    "text_context": "先把这根狗尾草拿起来吧。\n和观众自然聊天。",
+    "split": "train",
+    "label": "grass"
+  },
+  {
+    "text_context": "先把这根狗尾草拿起来吧。\n配合台词的意思表达，动作不频繁。",
+    "split": "train",
+    "label": "grass"
+  },
+  {
+    "text_context": "我只是引用他说的打招呼，没有要挥手。\n",
+    "split": "validation",
+    "label": "none"
+  },
+  {
+    "text_context": "我只是引用他说的打招呼，没有要挥手。\n和观众自然聊天。",
+    "split": "validation",
+    "label": "none"
+  },
+  {
+    "text_context": "我只是引用他说的打招呼，没有要挥手。\n配合台词的意思表达，动作不频繁。",
+    "split": "validation",
+    "label": "none"
+  },
+  {
+    "text_context": "我没有让你拿出狗尾草。\n",
+    "split": "test",
+    "label": "none"
+  },
+  {
+    "text_context": "我没有让你拿出狗尾草。\n和观众自然聊天。",
+    "split": "test",
+    "label": "none"
+  },
+  {
+    "text_context": "我没有让你拿出狗尾草。\n配合台词的意思表达，动作不频繁。",
+    "split": "test",
+    "label": "none"
+  },
+  {
+    "text_context": "他刚刚说要庆祝，我只是在转述。\n",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "他刚刚说要庆祝，我只是在转述。\n和观众自然聊天。",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "他刚刚说要庆祝，我只是在转述。\n配合台词的意思表达，动作不频繁。",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我今天没有特别开心，先安静聊一会。\n",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我今天没有特别开心，先安静聊一会。\n和观众自然聊天。",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我今天没有特别开心，先安静聊一会。\n配合台词的意思表达，动作不频繁。",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "不用表演动作，听我读一下这条消息。\n",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "不用表演动作，听我读一下这条消息。\n和观众自然聊天。",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "不用表演动作，听我读一下这条消息。\n配合台词的意思表达，动作不频繁。",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "今天的天气和昨天差不多。\n",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "今天的天气和昨天差不多。\n和观众自然聊天。",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "今天的天气和昨天差不多。\n配合台词的意思表达，动作不频繁。",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我们接着聊下一件事情。\n",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我们接着聊下一件事情。\n和观众自然聊天。",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我们接着聊下一件事情。\n配合台词的意思表达，动作不频繁。",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我还没想好该怎么回答。\n",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我还没想好该怎么回答。\n和观众自然聊天。",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我还没想好该怎么回答。\n配合台词的意思表达，动作不频繁。",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "这句话没有特别的情绪。\n",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "这句话没有特别的情绪。\n和观众自然聊天。",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "这句话没有特别的情绪。\n配合台词的意思表达，动作不频繁。",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我说的谢谢只是一段引文。\n",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我说的谢谢只是一段引文。\n和观众自然聊天。",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我说的谢谢只是一段引文。\n配合台词的意思表达，动作不频繁。",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我没有在庆祝，这只是反话。\n",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我没有在庆祝，这只是反话。\n和观众自然聊天。",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "我没有在庆祝，这只是反话。\n配合台词的意思表达，动作不频繁。",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "抚胸只是他描述的动作，和我无关。\n",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "抚胸只是他描述的动作，和我无关。\n和观众自然聊天。",
+    "split": "train",
+    "label": "none"
+  },
+  {
+    "text_context": "抚胸只是他描述的动作，和我无关。\n配合台词的意思表达，动作不频繁。",
+    "split": "train",
+    "label": "none"
+  }
+]

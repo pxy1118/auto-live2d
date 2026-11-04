@@ -1,0 +1,37 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>头身映射与细微反应 · 独立对照</title><link rel="icon" href="data:,"><style>
+*{box-sizing:border-box}body{margin:0;background:#edf2ef;color:#203b32;font:16px system-ui,"Microsoft YaHei",sans-serif}main{max-width:1020px;margin:auto;padding:24px}h1{font-size:28px;margin-bottom:12px}p{line-height:1.7}.badge{display:inline-block;padding:6px 12px;border-radius:30px;background:#dce9e1;font-size:13px}.card{background:white;padding:22px;border-radius:16px;margin:20px 0}.controls{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:16px 0}button,select{font:inherit;padding:10px 14px;border-radius:8px;border:1px solid #9bb4a6;color:inherit;background:white}button{cursor:pointer}button.primary{background:#285e47;color:white}a{color:#275b46}.muted{color:#526c5e}video{display:block;width:100%;max-width:480px;max-height:75vh;aspect-ratio:2/3;object-fit:contain;background:#edf2ef;margin:auto;border-radius:12px}#message{min-height:24px}table{border-collapse:collapse;width:100%}td,th{text-align:left;padding:10px;border-bottom:1px solid #cbdad0}.scroll{overflow:auto}summary{cursor:pointer}.caption{font-size:14px}nav{margin:16px 0}@media(max-width:650px){main{padding:16px}h1{font-size:23px}.card{padding:12px}select{max-width:100%}}
+</style></head><body><main>
+<span class="badge">独立候选 · 当前默认方案保持</span><h1>头身映射与细微反应</h1>
+<p>同一段语音、同一条手臂曲线，观察头和躯干的配合，以及眼神、眉眼的小反应。4 个场景均为真实 60 fps；害羞片段用近景，便于看清细节。</p>
+<nav><a href="/">主界面</a> · <a href="playback-check.html">此前播放诊断</a></nav>
+<div class="controls"><label for="scene">场景</label><select id="scene"></select><label for="variant">版本</label><select id="variant"><option value="current">当前动作库执行</option><option value="mapped">资产映射</option><option value="mapped_micro">映射＋细微反应</option></select></div>
+<section class="card"><h2 id="title"></h2><div id="texts"></div><p class="caption muted" id="hint"></p>
+<div class="controls"><button id="play" class="primary" disabled>播放</button><button id="pause">暂停</button><button id="restart" disabled>从头播放</button><span id="clock">0:00</span></div>
+<video id="video" aria-label="当前版本" controls playsinline preload="auto"></video><p id="message" role="status">载入片段…</p>
+<p class="muted">切换版本会尽量接着同一时刻播放。播放过程中没有自动跳转，也没有用音量反复改变动作速度。可直接反馈具体片段的感受，无需填写评分表。</p></section>
+<details><summary>本轮做了什么，尚未证明什么</summary>
+<p>“资产映射”读取本模型原有配置，将同一头部意图转换为头部和躯干输入，并分别平滑；这里验证的是 40 条配置中的 8 条头身／注视映射。“映射＋细微反应”再加入少量挑眉、移目和慢眨眼。中性场景不添加这些反应。</p>
+<p>语义意图与微反应时机是研究用固定条件，未重训模型，也未证明自动语义判断有所改善。当前候选未切换默认，自然度仍需实际观看判断。平滑强度是本轮对配置的实验解释，不声称精确复现 VTube Studio 内部实现。</p>
+<div class="scroll"><table><thead><tr><th>方向</th><th>输出参数</th><th>输入响应达到 90%</th></tr></thead><tbody id="probes"></tbody></table></div>
+<p class="caption muted">上表是参数输入响应，不是自然度分数，也不是整个身体的视觉延迟。原配置在不同方向的先后关系不同。</p>
+</details></main><script>
+const get=id=>document.getElementById(id),video=get('video');let scenes=[],serial=0,url=null,resume=null;
+const clock=x=>Math.floor(x/60)+':'+String(Math.floor(x%60)).padStart(2,'0');
+function updateClock(){get('clock').textContent=clock(video.currentTime)+' / '+clock(Number.isFinite(video.duration)?video.duration:0);}
+function show(preserve=false){const previous={at:preserve?video.currentTime:0,playing:preserve&&!video.paused};video.pause();const token=++serial;
+ const scene=scenes.find(x=>x.id===get('scene').value),v=scene?.variants.find(x=>x.id===get('variant').value);if(!v)return;
+ get('play').disabled=true;get('restart').disabled=true;get('title').textContent=scene.title+' · '+v.label;
+ get('texts').replaceChildren(...scene.texts.map(text=>{const p=document.createElement('p');p.textContent=text;return p;}));
+ get('hint').textContent=scene.id==='neutral'?'控制场景：三版不应多出动作、表情或外观变化。':scene.id==='shy'?'留意短暂移开的视线、低头时的躯干配合，以及慢眨眼。':scene.id==='welcome'?'留意头部与躯干的联动，以及早段的轻挑眉。':'留意前倾时躯干的配合，以及有限的一次慢眨眼。';
+ video.removeAttribute('src');video.load();if(url){URL.revokeObjectURL(url);url=null;}video.poster=v.poster;get('message').textContent='载入 '+v.label+'…';resume=null;
+ fetch(v.video).then(r=>{if(!r.ok)throw Error('视频载入失败');return r.blob();}).then(blob=>{if(token!==serial)return;url=URL.createObjectURL(blob);resume=previous;video.src=url;video.load();}).catch(e=>{if(token===serial)get('message').textContent=e.message;});}
+video.onloadeddata=()=>{get('play').disabled=false;get('restart').disabled=false;const r=resume;resume=null;
+ if(r?.at>0)video.currentTime=Math.min(r.at,Math.max(0,video.duration-.05));if(r?.playing)video.play().catch(()=>get('message').textContent='点击播放继续');get('message').textContent='已就绪 · 真实 60 fps';updateClock();};
+video.onloadedmetadata=updateClock;video.ontimeupdate=updateClock;
+get('play').onclick=()=>video.play().catch(e=>get('message').textContent=e.message);get('pause').onclick=()=>video.pause();get('restart').onclick=()=>{video.currentTime=0;video.play().catch(e=>get('message').textContent=e.message);};
+get('scene').onchange=()=>show(false);get('variant').onchange=()=>show(true);
+Promise.all([fetch('mapping-study-scenes.json').then(r=>r.json()),fetch('mapping-study-report.json').then(r=>r.json())]).then(([s,r])=>{
+ scenes=s;for(const scene of s){const o=document.createElement('option');o.value=scene.id;o.textContent=scene.title;get('scene').append(o);}for(const p of r.response_probes)for(const response of p.responses){const tr=document.createElement('tr');for(const value of [p.input,response.output,Math.round(response.t90_ms)+' ms']){const td=document.createElement('td');td.textContent=value;tr.append(td);}get('probes').append(tr);}show();
+}).catch(e=>get('message').textContent=e.message);
+</script></body></html>

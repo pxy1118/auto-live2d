@@ -1,0 +1,1345 @@
+{
+  "schema": "asset-mapping-results.v1",
+  "promoted": false,
+  "trained": false,
+  "semantic_model_used": false,
+  "human_quality_accepted": false,
+  "old_final_test_loaded": false,
+  "scenes": 4,
+  "clips": 12,
+  "actual_frames": 8979,
+  "protocol_sha256": "a538f9086134fa13254a7fc8ebbe5bd6fac777c874dfa97d44ae959ffb143f1b",
+  "active_mappings": 8,
+  "total_asset_mapping_entries": 40,
+  "conditions": [
+    "current",
+    "mapped",
+    "mapped_micro"
+  ],
+  "clip_diagnostics": [
+    {
+      "id": "welcome-current",
+      "scene": "welcome",
+      "condition": "current",
+      "framing": "full",
+      "frames": 808,
+      "image_hz": 60,
+      "arm_finger_inputs_identical": true,
+      "two_raised_arm_samples": 0,
+      "out_of_range_inputs": 0,
+      "special_eyes_normal": true,
+      "appearance_unchanged": true,
+      "ranges": {
+        "AngleX": {
+          "min": -0.43034,
+          "max": 0.48,
+          "range": 0.9103399999999999
+        },
+        "AngleY": {
+          "min": 0,
+          "max": 1.04,
+          "range": 1.04
+        },
+        "AngleZ": {
+          "min": -1.6,
+          "max": 1.43447,
+          "range": 3.03447
+        },
+        "PositionX": {
+          "min": -0.68068,
+          "max": 0.56,
+          "range": 1.24068
+        },
+        "PositionY": {
+          "min": -0.64,
+          "max": 0,
+          "range": 0.64
+        },
+        "PositionZ": {
+          "min": 0,
+          "max": 4.425,
+          "range": 4.425
+        },
+        "ParamEyeBallX": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "ParamEyeBallY": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "LeanInput": {
+          "min": -3.66,
+          "max": 0,
+          "range": 3.66
+        },
+        "ParamEyeLOpen": {
+          "min": 0,
+          "max": 1,
+          "range": 1
+        },
+        "ParamEyeROpen": {
+          "min": 0,
+          "max": 1,
+          "range": 1
+        },
+        "ParamBrowLY": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "ParamBrowRY": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "ParamMouthForm": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        }
+      },
+      "body_input_velocity_p95": 0.04012000000000002,
+      "body_input_acceleration_p95": 0.23999999999997357,
+      "policy_compute_p95_ms": 0.005000000000109139,
+      "timing_scope": "Local generation only; not concurrent TTS or end-to-end inference latency.",
+      "input_sha256": "07e2aa536330b30badca117b3ba7c4a8dc68ca14e04773b24b3afba51b5edbd7",
+      "recording_sha256": "a2f0630b057388cb88dba8f0eecefce734caa1543db9a89bdf00ca139fa2ef79"
+    },
+    {
+      "id": "welcome-mapped",
+      "scene": "welcome",
+      "condition": "mapped",
+      "framing": "full",
+      "frames": 808,
+      "image_hz": 60,
+      "arm_finger_inputs_identical": true,
+      "two_raised_arm_samples": 0,
+      "out_of_range_inputs": 0,
+      "special_eyes_normal": true,
+      "appearance_unchanged": true,
+      "ranges": {
+        "AngleX": {
+          "min": -0.40047,
+          "max": 0.48,
+          "range": 0.88047
+        },
+        "AngleY": {
+          "min": 0,
+          "max": 1.04,
+          "range": 1.04
+        },
+        "AngleZ": {
+          "min": -1.59998,
+          "max": 1.16931,
+          "range": 2.76929
+        },
+        "PositionX": {
+          "min": -0.38401,
+          "max": 0.48,
+          "range": 0.86401
+        },
+        "PositionY": {
+          "min": 0,
+          "max": 0.69277,
+          "range": 0.69277
+        },
+        "PositionZ": {
+          "min": -1.6,
+          "max": 1.28003,
+          "range": 2.88003
+        },
+        "ParamEyeBallX": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "ParamEyeBallY": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "LeanInput": {
+          "min": -3.66,
+          "max": 0,
+          "range": 3.66
+        },
+        "ParamEyeLOpen": {
+          "min": 0,
+          "max": 1,
+          "range": 1
+        },
+        "ParamEyeROpen": {
+          "min": 0,
+          "max": 1,
+          "range": 1
+        },
+        "ParamBrowLY": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "ParamBrowRY": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "ParamMouthForm": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        }
+      },
+      "body_input_velocity_p95": 0.02903,
+      "body_input_acceleration_p95": 0.15959999999999974,
+      "policy_compute_p95_ms": 0.005599999996775296,
+      "timing_scope": "Local generation only; not concurrent TTS or end-to-end inference latency.",
+      "input_sha256": "d712cf0595635e4c79028be563bb70c0a7156d408216152669aace75325e867b",
+      "recording_sha256": "8587713ffba1254c4e46bb4990517e668c3e05e052a22479a7d088495602765a"
+    },
+    {
+      "id": "welcome-mapped_micro",
+      "scene": "welcome",
+      "condition": "mapped_micro",
+      "framing": "full",
+      "frames": 808,
+      "image_hz": 60,
+      "arm_finger_inputs_identical": true,
+      "two_raised_arm_samples": 0,
+      "out_of_range_inputs": 0,
+      "special_eyes_normal": true,
+      "appearance_unchanged": true,
+      "ranges": {
+        "AngleX": {
+          "min": -0.40047,
+          "max": 0.48,
+          "range": 0.88047
+        },
+        "AngleY": {
+          "min": 0,
+          "max": 1.04,
+          "range": 1.04
+        },
+        "AngleZ": {
+          "min": -1.59998,
+          "max": 1.16931,
+          "range": 2.76929
+        },
+        "PositionX": {
+          "min": -0.38401,
+          "max": 0.48,
+          "range": 0.86401
+        },
+        "PositionY": {
+          "min": 0,
+          "max": 0.69277,
+          "range": 0.69277
+        },
+        "PositionZ": {
+          "min": -1.6,
+          "max": 1.28003,
+          "range": 2.88003
+        },
+        "ParamEyeBallX": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "ParamEyeBallY": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "LeanInput": {
+          "min": -3.66,
+          "max": 0,
+          "range": 3.66
+        },
+        "ParamEyeLOpen": {
+          "min": 0,
+          "max": 1,
+          "range": 1
+        },
+        "ParamEyeROpen": {
+          "min": 0,
+          "max": 1,
+          "range": 1
+        },
+        "ParamBrowLY": {
+          "min": 0,
+          "max": 0.16,
+          "range": 0.16
+        },
+        "ParamBrowRY": {
+          "min": 0,
+          "max": 0.16,
+          "range": 0.16
+        },
+        "ParamMouthForm": {
+          "min": 0,
+          "max": 0.22,
+          "range": 0.22
+        }
+      },
+      "body_input_velocity_p95": 0.02903,
+      "body_input_acceleration_p95": 0.15959999999999974,
+      "policy_compute_p95_ms": 0.006099999998696148,
+      "timing_scope": "Local generation only; not concurrent TTS or end-to-end inference latency.",
+      "input_sha256": "3a3f367423c9bc516941e689bbe80f1199a1d612acd9787cb37d9ef54f3da689",
+      "recording_sha256": "2361f230c8a3bc22361bd466a2a6000619795a98c0207f48b7f58a8c383de945"
+    },
+    {
+      "id": "shy-current",
+      "scene": "shy",
+      "condition": "current",
+      "framing": "portrait",
+      "frames": 718,
+      "image_hz": 60,
+      "arm_finger_inputs_identical": true,
+      "two_raised_arm_samples": 0,
+      "out_of_range_inputs": 0,
+      "special_eyes_normal": true,
+      "appearance_unchanged": true,
+      "ranges": {
+        "AngleX": {
+          "min": 0,
+          "max": 8.612,
+          "range": 8.612
+        },
+        "AngleY": {
+          "min": -2.55997,
+          "max": 1.708,
+          "range": 4.26797
+        },
+        "AngleZ": {
+          "min": -4.09,
+          "max": 0,
+          "range": 4.09
+        },
+        "PositionX": {
+          "min": 0,
+          "max": 3.444,
+          "range": 3.444
+        },
+        "PositionY": {
+          "min": -0.8,
+          "max": 0,
+          "range": 0.8
+        },
+        "PositionZ": {
+          "min": -0.08,
+          "max": 7.22,
+          "range": 7.3
+        },
+        "ParamEyeBallX": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "ParamEyeBallY": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "LeanInput": {
+          "min": -6.694,
+          "max": 0,
+          "range": 6.694
+        },
+        "ParamEyeLOpen": {
+          "min": 0,
+          "max": 1,
+          "range": 1
+        },
+        "ParamEyeROpen": {
+          "min": 0,
+          "max": 1,
+          "range": 1
+        },
+        "ParamBrowLY": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "ParamBrowRY": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "ParamMouthForm": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        }
+      },
+      "body_input_velocity_p95": 0.10529999999999995,
+      "body_input_acceleration_p95": 0.4386000000000223,
+      "policy_compute_p95_ms": 0.004699999997683335,
+      "timing_scope": "Local generation only; not concurrent TTS or end-to-end inference latency.",
+      "input_sha256": "230fe375cb94be73b23c9041bd0d13575b4eaf485e6c8681813df2952c8b441f",
+      "recording_sha256": "758f698df0273af68432dc6f0344902f4b6c888558081dbe123d38051bd42784"
+    },
+    {
+      "id": "shy-mapped",
+      "scene": "shy",
+      "condition": "mapped",
+      "framing": "portrait",
+      "frames": 718,
+      "image_hz": 60,
+      "arm_finger_inputs_identical": true,
+      "two_raised_arm_samples": 0,
+      "out_of_range_inputs": 0,
+      "special_eyes_normal": true,
+      "appearance_unchanged": true,
+      "ranges": {
+        "AngleX": {
+          "min": 0,
+          "max": 8.612,
+          "range": 8.612
+        },
+        "AngleY": {
+          "min": -2.54203,
+          "max": 1.708,
+          "range": 4.25003
+        },
+        "AngleZ": {
+          "min": -4.08999,
+          "max": 0,
+          "range": 4.08999
+        },
+        "PositionX": {
+          "min": 0,
+          "max": 8.612,
+          "range": 8.612
+        },
+        "PositionY": {
+          "min": -1.4112,
+          "max": 1.13866,
+          "range": 2.54986
+        },
+        "PositionZ": {
+          "min": -4.09,
+          "max": 0,
+          "range": 4.09
+        },
+        "ParamEyeBallX": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "ParamEyeBallY": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "LeanInput": {
+          "min": -6.694,
+          "max": 0,
+          "range": 6.694
+        },
+        "ParamEyeLOpen": {
+          "min": 0,
+          "max": 1,
+          "range": 1
+        },
+        "ParamEyeROpen": {
+          "min": 0,
+          "max": 1,
+          "range": 1
+        },
+        "ParamBrowLY": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "ParamBrowRY": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "ParamMouthForm": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        }
+      },
+      "body_input_velocity_p95": 0.12104999999999944,
+      "body_input_acceleration_p95": 0.44879999999998255,
+      "policy_compute_p95_ms": 0.005700000008800998,
+      "timing_scope": "Local generation only; not concurrent TTS or end-to-end inference latency.",
+      "input_sha256": "9d43eb71d035c339c5bcd7b0af335192e6beb17ea163223b31ccdeaae53c72b0",
+      "recording_sha256": "5651a7e6c96c628da896beca742ac7c7e41c64a48b4ed54754a4113d21144ff5"
+    },
+    {
+      "id": "shy-mapped_micro",
+      "scene": "shy",
+      "condition": "mapped_micro",
+      "framing": "portrait",
+      "frames": 718,
+      "image_hz": 60,
+      "arm_finger_inputs_identical": true,
+      "two_raised_arm_samples": 0,
+      "out_of_range_inputs": 0,
+      "special_eyes_normal": true,
+      "appearance_unchanged": true,
+      "ranges": {
+        "AngleX": {
+          "min": 0,
+          "max": 9.20089,
+          "range": 9.20089
+        },
+        "AngleY": {
+          "min": -2.54203,
+          "max": 1.708,
+          "range": 4.25003
+        },
+        "AngleZ": {
+          "min": -4.08999,
+          "max": 0,
+          "range": 4.08999
+        },
+        "PositionX": {
+          "min": 0,
+          "max": 9.18157,
+          "range": 9.18157
+        },
+        "PositionY": {
+          "min": -1.4112,
+          "max": 1.13866,
+          "range": 2.54986
+        },
+        "PositionZ": {
+          "min": -4.09,
+          "max": 0,
+          "range": 4.09
+        },
+        "ParamEyeBallX": {
+          "min": 0,
+          "max": 0.23,
+          "range": 0.23
+        },
+        "ParamEyeBallY": {
+          "min": -0.1,
+          "max": 0,
+          "range": 0.1
+        },
+        "LeanInput": {
+          "min": -6.694,
+          "max": 0,
+          "range": 6.694
+        },
+        "ParamEyeLOpen": {
+          "min": 0,
+          "max": 1,
+          "range": 1
+        },
+        "ParamEyeROpen": {
+          "min": 0,
+          "max": 1,
+          "range": 1
+        },
+        "ParamBrowLY": {
+          "min": 0,
+          "max": 0.1,
+          "range": 0.1
+        },
+        "ParamBrowRY": {
+          "min": 0,
+          "max": 0.1,
+          "range": 0.1
+        },
+        "ParamMouthForm": {
+          "min": 0,
+          "max": 0.2,
+          "range": 0.2
+        }
+      },
+      "body_input_velocity_p95": 0.12109000000000002,
+      "body_input_acceleration_p95": 0.483600000000024,
+      "policy_compute_p95_ms": 0.006099999998696148,
+      "timing_scope": "Local generation only; not concurrent TTS or end-to-end inference latency.",
+      "input_sha256": "6398596776db70b573eed381b20e3e557a8ba6de5b3a78ba17593dd2e2589268",
+      "recording_sha256": "9b3bb9bd818c6ef561371c9e9706a25a7ff7137184c58e726b9c4cefa9edff30"
+    },
+    {
+      "id": "cajole-current",
+      "scene": "cajole",
+      "condition": "current",
+      "framing": "full",
+      "frames": 682,
+      "image_hz": 60,
+      "arm_finger_inputs_identical": true,
+      "two_raised_arm_samples": 0,
+      "out_of_range_inputs": 0,
+      "special_eyes_normal": true,
+      "appearance_unchanged": true,
+      "ranges": {
+        "AngleX": {
+          "min": -1.07992,
+          "max": 1.35,
+          "range": 2.42992
+        },
+        "AngleY": {
+          "min": 0,
+          "max": 1.6,
+          "range": 1.6
+        },
+        "AngleZ": {
+          "min": 0,
+          "max": 2.87994,
+          "range": 2.87994
+        },
+        "PositionX": {
+          "min": -3.19999,
+          "max": 2.5599,
+          "range": 5.75989
+        },
+        "PositionY": {
+          "min": -0.85,
+          "max": 0,
+          "range": 0.85
+        },
+        "PositionZ": {
+          "min": 0,
+          "max": 2.975,
+          "range": 2.975
+        },
+        "ParamEyeBallX": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "ParamEyeBallY": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "LeanInput": {
+          "min": -4.9,
+          "max": 0,
+          "range": 4.9
+        },
+        "ParamEyeLOpen": {
+          "min": 0,
+          "max": 1,
+          "range": 1
+        },
+        "ParamEyeROpen": {
+          "min": 0,
+          "max": 1,
+          "range": 1
+        },
+        "ParamBrowLY": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "ParamBrowRY": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "ParamMouthForm": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        }
+      },
+      "body_input_velocity_p95": 0.08469000000000015,
+      "body_input_acceleration_p95": 0.5093999999999799,
+      "policy_compute_p95_ms": 0.004300000000512227,
+      "timing_scope": "Local generation only; not concurrent TTS or end-to-end inference latency.",
+      "input_sha256": "eb57ecfb4dd8e27b05463dd94151775d3b197131054148d3834654fb0e90e377",
+      "recording_sha256": "5e2c80d44b9668821409f3fe8ec6ebda7134e08a84262fa91f4055ec747b0d3f"
+    },
+    {
+      "id": "cajole-mapped",
+      "scene": "cajole",
+      "condition": "mapped",
+      "framing": "full",
+      "frames": 682,
+      "image_hz": 60,
+      "arm_finger_inputs_identical": true,
+      "two_raised_arm_samples": 0,
+      "out_of_range_inputs": 0,
+      "special_eyes_normal": true,
+      "appearance_unchanged": true,
+      "ranges": {
+        "AngleX": {
+          "min": -1.013,
+          "max": 1.29209,
+          "range": 2.30509
+        },
+        "AngleY": {
+          "min": 0,
+          "max": 1.6,
+          "range": 1.6
+        },
+        "AngleZ": {
+          "min": 0,
+          "max": 2.71119,
+          "range": 2.71119
+        },
+        "PositionX": {
+          "min": -0.96886,
+          "max": 1.24274,
+          "range": 2.2116
+        },
+        "PositionY": {
+          "min": 0,
+          "max": 1.06667,
+          "range": 1.06667
+        },
+        "PositionZ": {
+          "min": 0,
+          "max": 2.79189,
+          "range": 2.79189
+        },
+        "ParamEyeBallX": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "ParamEyeBallY": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "LeanInput": {
+          "min": -4.9,
+          "max": 0,
+          "range": 4.9
+        },
+        "ParamEyeLOpen": {
+          "min": 0,
+          "max": 1,
+          "range": 1
+        },
+        "ParamEyeROpen": {
+          "min": 0,
+          "max": 1,
+          "range": 1
+        },
+        "ParamBrowLY": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "ParamBrowRY": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "ParamMouthForm": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        }
+      },
+      "body_input_velocity_p95": 0.062469999999999914,
+      "body_input_acceleration_p95": 0.30720000000000247,
+      "policy_compute_p95_ms": 0.005799999998998828,
+      "timing_scope": "Local generation only; not concurrent TTS or end-to-end inference latency.",
+      "input_sha256": "8625345922efae52a28cbbd995a19261cd350f13b3ccededcb4d15bf839892ce",
+      "recording_sha256": "9d046efbae12f214861e45b7df1aa787975e11eed53ccc83db7931a9e3619174"
+    },
+    {
+      "id": "cajole-mapped_micro",
+      "scene": "cajole",
+      "condition": "mapped_micro",
+      "framing": "full",
+      "frames": 682,
+      "image_hz": 60,
+      "arm_finger_inputs_identical": true,
+      "two_raised_arm_samples": 0,
+      "out_of_range_inputs": 0,
+      "special_eyes_normal": true,
+      "appearance_unchanged": true,
+      "ranges": {
+        "AngleX": {
+          "min": -0.84041,
+          "max": 1.36105,
+          "range": 2.20146
+        },
+        "AngleY": {
+          "min": 0,
+          "max": 1.6,
+          "range": 1.6
+        },
+        "AngleZ": {
+          "min": 0,
+          "max": 2.71119,
+          "range": 2.71119
+        },
+        "PositionX": {
+          "min": -0.80744,
+          "max": 1.31449,
+          "range": 2.12193
+        },
+        "PositionY": {
+          "min": 0,
+          "max": 1.06667,
+          "range": 1.06667
+        },
+        "PositionZ": {
+          "min": 0,
+          "max": 2.79189,
+          "range": 2.79189
+        },
+        "ParamEyeBallX": {
+          "min": 0,
+          "max": 0.12,
+          "range": 0.12
+        },
+        "ParamEyeBallY": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "LeanInput": {
+          "min": -4.9,
+          "max": 0,
+          "range": 4.9
+        },
+        "ParamEyeLOpen": {
+          "min": 0,
+          "max": 1,
+          "range": 1
+        },
+        "ParamEyeROpen": {
+          "min": 0,
+          "max": 1,
+          "range": 1
+        },
+        "ParamBrowLY": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "ParamBrowRY": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "ParamMouthForm": {
+          "min": 0,
+          "max": 0.25,
+          "range": 0.25
+        }
+      },
+      "body_input_velocity_p95": 0.062349999999999905,
+      "body_input_acceleration_p95": 0.30599999999999966,
+      "policy_compute_p95_ms": 0.005400000009103678,
+      "timing_scope": "Local generation only; not concurrent TTS or end-to-end inference latency.",
+      "input_sha256": "7274c782b7dee86cb38c0343e2622cc28e9a89e5b72e2f2f5f220e4bfbb880af",
+      "recording_sha256": "fe306d5828edcc6a0f8211433e07d2ffdf7647d91ab7b5c3f7bc08375cc787e3"
+    },
+    {
+      "id": "neutral-current",
+      "scene": "neutral",
+      "condition": "current",
+      "framing": "full",
+      "frames": 785,
+      "image_hz": 60,
+      "arm_finger_inputs_identical": true,
+      "two_raised_arm_samples": 0,
+      "out_of_range_inputs": 0,
+      "special_eyes_normal": true,
+      "appearance_unchanged": true,
+      "ranges": {
+        "AngleX": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "AngleY": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "AngleZ": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "PositionX": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "PositionY": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "PositionZ": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "ParamEyeBallX": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "ParamEyeBallY": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "LeanInput": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "ParamEyeLOpen": {
+          "min": 0,
+          "max": 1,
+          "range": 1
+        },
+        "ParamEyeROpen": {
+          "min": 0,
+          "max": 1,
+          "range": 1
+        },
+        "ParamBrowLY": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "ParamBrowRY": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "ParamMouthForm": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        }
+      },
+      "body_input_velocity_p95": 0,
+      "body_input_acceleration_p95": 0,
+      "policy_compute_p95_ms": 0.004199999995762482,
+      "timing_scope": "Local generation only; not concurrent TTS or end-to-end inference latency.",
+      "input_sha256": "ce70e1e88ec3ed06f43a8104ef04d37a840207b2beeb76360e93e7b1b3843488",
+      "recording_sha256": "7b32379d3e7962ddea27472d3dcc95b993f1bb9b5e954ebf35a062a89bf7d398"
+    },
+    {
+      "id": "neutral-mapped",
+      "scene": "neutral",
+      "condition": "mapped",
+      "framing": "full",
+      "frames": 785,
+      "image_hz": 60,
+      "arm_finger_inputs_identical": true,
+      "two_raised_arm_samples": 0,
+      "out_of_range_inputs": 0,
+      "special_eyes_normal": true,
+      "appearance_unchanged": true,
+      "ranges": {
+        "AngleX": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "AngleY": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "AngleZ": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "PositionX": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "PositionY": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "PositionZ": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "ParamEyeBallX": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "ParamEyeBallY": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "LeanInput": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "ParamEyeLOpen": {
+          "min": 0,
+          "max": 1,
+          "range": 1
+        },
+        "ParamEyeROpen": {
+          "min": 0,
+          "max": 1,
+          "range": 1
+        },
+        "ParamBrowLY": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "ParamBrowRY": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "ParamMouthForm": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        }
+      },
+      "body_input_velocity_p95": 0,
+      "body_input_acceleration_p95": 0,
+      "policy_compute_p95_ms": 0.004500000010011718,
+      "timing_scope": "Local generation only; not concurrent TTS or end-to-end inference latency.",
+      "input_sha256": "87d35f629c3e8f50dcb8d64f905e28dfbe7c28b92e630813a692c462437366fb",
+      "recording_sha256": "7b32379d3e7962ddea27472d3dcc95b993f1bb9b5e954ebf35a062a89bf7d398"
+    },
+    {
+      "id": "neutral-mapped_micro",
+      "scene": "neutral",
+      "condition": "mapped_micro",
+      "framing": "full",
+      "frames": 785,
+      "image_hz": 60,
+      "arm_finger_inputs_identical": true,
+      "two_raised_arm_samples": 0,
+      "out_of_range_inputs": 0,
+      "special_eyes_normal": true,
+      "appearance_unchanged": true,
+      "ranges": {
+        "AngleX": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "AngleY": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "AngleZ": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "PositionX": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "PositionY": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "PositionZ": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "ParamEyeBallX": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "ParamEyeBallY": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "LeanInput": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "ParamEyeLOpen": {
+          "min": 0,
+          "max": 1,
+          "range": 1
+        },
+        "ParamEyeROpen": {
+          "min": 0,
+          "max": 1,
+          "range": 1
+        },
+        "ParamBrowLY": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "ParamBrowRY": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        },
+        "ParamMouthForm": {
+          "min": 0,
+          "max": 0,
+          "range": 0
+        }
+      },
+      "body_input_velocity_p95": 0,
+      "body_input_acceleration_p95": 0,
+      "policy_compute_p95_ms": 0.004399999976158142,
+      "timing_scope": "Local generation only; not concurrent TTS or end-to-end inference latency.",
+      "input_sha256": "0ce3ba7e219b509822c202d760b4ce1d9f10080f9b427e31b3698c8649d47d2c",
+      "recording_sha256": "7b32379d3e7962ddea27472d3dcc95b993f1bb9b5e954ebf35a062a89bf7d398"
+    }
+  ],
+  "response_probes": [
+    {
+      "input": "FaceAngleX",
+      "responses": [
+        {
+          "output": "AngleX",
+          "asset_smoothing": 15,
+          "tau_ms": 75,
+          "t90_ms": 166.66666666666666,
+          "actual_target": 5
+        },
+        {
+          "output": "PositionX",
+          "asset_smoothing": 20,
+          "tau_ms": 100,
+          "t90_ms": 216.66666666666669,
+          "actual_target": 5
+        }
+      ]
+    },
+    {
+      "input": "FaceAngleY",
+      "responses": [
+        {
+          "output": "AngleY",
+          "asset_smoothing": 4,
+          "tau_ms": 20,
+          "t90_ms": 33.333333333333336,
+          "actual_target": 7.5
+        },
+        {
+          "output": "PositionY",
+          "asset_smoothing": 20,
+          "tau_ms": 100,
+          "t90_ms": 216.66666666666669,
+          "actual_target": 5
+        }
+      ]
+    },
+    {
+      "input": "FaceAngleZ",
+      "responses": [
+        {
+          "output": "AngleZ",
+          "asset_smoothing": 30,
+          "tau_ms": 150,
+          "t90_ms": 333.3333333333333,
+          "actual_target": 5
+        },
+        {
+          "output": "PositionZ",
+          "asset_smoothing": 20,
+          "tau_ms": 100,
+          "t90_ms": 216.66666666666669,
+          "actual_target": 5
+        }
+      ]
+    },
+    {
+      "input": "EyeRightX",
+      "responses": [
+        {
+          "output": "ParamEyeBallX",
+          "asset_smoothing": 8,
+          "tau_ms": 40,
+          "t90_ms": 83.33333333333333,
+          "actual_target": -0.3333333200878572
+        }
+      ]
+    },
+    {
+      "input": "EyeRightY",
+      "responses": [
+        {
+          "output": "ParamEyeBallY",
+          "asset_smoothing": 8,
+          "tau_ms": 40,
+          "t90_ms": 83.33333333333333,
+          "actual_target": 0.285714290579971
+        }
+      ]
+    }
+  ],
+  "neutral_readbacks_identical": true,
+  "source_asset_hash": "77bea8c13820edd4167ebda37c5a5bd78b782186bdf6c58a5c47bf5efff79df6",
+  "all_arm_finger_inputs_identical": true,
+  "default_changed": false,
+  "paired_audio_pcm_identical": true,
+  "micro_reaction_readbacks": [
+    {
+      "scene": "welcome",
+      "condition": "current",
+      "feature": "early_brow_raise",
+      "parameter": "ParamBrowLY",
+      "start_ms": 800,
+      "end_ms": 1410,
+      "minimum": 0,
+      "maximum": 0
+    },
+    {
+      "scene": "welcome",
+      "condition": "mapped",
+      "feature": "early_brow_raise",
+      "parameter": "ParamBrowLY",
+      "start_ms": 800,
+      "end_ms": 1410,
+      "minimum": 0,
+      "maximum": 0
+    },
+    {
+      "scene": "welcome",
+      "condition": "mapped_micro",
+      "feature": "early_brow_raise",
+      "parameter": "ParamBrowLY",
+      "start_ms": 800,
+      "end_ms": 1410,
+      "minimum": 0,
+      "maximum": 0.16
+    },
+    {
+      "scene": "shy",
+      "condition": "current",
+      "feature": "finite_side_glance",
+      "parameter": "ParamEyeBallX",
+      "start_ms": 950,
+      "end_ms": 2400,
+      "minimum": 0,
+      "maximum": 0
+    },
+    {
+      "scene": "shy",
+      "condition": "mapped",
+      "feature": "finite_side_glance",
+      "parameter": "ParamEyeBallX",
+      "start_ms": 950,
+      "end_ms": 2400,
+      "minimum": 0,
+      "maximum": 0
+    },
+    {
+      "scene": "shy",
+      "condition": "mapped_micro",
+      "feature": "finite_side_glance",
+      "parameter": "ParamEyeBallX",
+      "start_ms": 950,
+      "end_ms": 2400,
+      "minimum": 0,
+      "maximum": 0.23
+    },
+    {
+      "scene": "cajole",
+      "condition": "current",
+      "feature": "slow_blink_window",
+      "parameter": "ParamEyeLOpen",
+      "start_ms": 1150,
+      "end_ms": 1630,
+      "minimum": 1,
+      "maximum": 1
+    },
+    {
+      "scene": "cajole",
+      "condition": "mapped",
+      "feature": "slow_blink_window",
+      "parameter": "ParamEyeLOpen",
+      "start_ms": 1150,
+      "end_ms": 1630,
+      "minimum": 1,
+      "maximum": 1
+    },
+    {
+      "scene": "cajole",
+      "condition": "mapped_micro",
+      "feature": "slow_blink_window",
+      "parameter": "ParamEyeLOpen",
+      "start_ms": 1150,
+      "end_ms": 1630,
+      "minimum": 0.15,
+      "maximum": 1
+    }
+  ],
+  "status": "实际渲染与机制检查完成；自然度未验收",
+  "limitations": [
+    "This tests execution, not semantic selection or generalization.",
+    "The eight head/gaze mappings are exercised; this is not a rendering audit of all 40 entries.",
+    "Micro event timing is authored relative to known clause onsets, not automatically aligned to individual words.",
+    "Same head target does not mean equal motion energy after different filters; diagnostics cannot select naturalness winners.",
+    "Local policy time excludes TTS, semantic inference, network and renderer; no concurrent latency acceptance."
+  ],
+  "browser_checks": [
+    "12 genuine 60 fps videos; paired decoded speech and original arm/finger inputs unchanged",
+    "three conditions each played for 7.3 seconds; no steady currentTime writes or seek events; presentation P95 below 40 ms",
+    "paused clock stays fixed; explicit version switch retains position; scene switch and seek work",
+    "portrait micro-expression view; desktop/mobile without overflow or browser errors; no actor socket/backend writes",
+    "neutral readbacks identical; default runtime, weights, previous feedback and ratings unchanged"
+  ],
+  "presentation_pacing": [
+    {
+      "mode": "current",
+      "frames_presented": 330,
+      "presentation_gap_p95_ms": 33.400000000000546,
+      "maximum_presentation_gap_ms": 33.5,
+      "gaps_over_100_ms": 0,
+      "steady_current_time_writes": 0,
+      "steady_seek_events": 0
+    },
+    {
+      "mode": "mapped",
+      "frames_presented": 318,
+      "presentation_gap_p95_ms": 33.399999999999636,
+      "maximum_presentation_gap_ms": 33.599999999998545,
+      "gaps_over_100_ms": 0,
+      "steady_current_time_writes": 0,
+      "steady_seek_events": 0
+    },
+    {
+      "mode": "mapped_micro",
+      "frames_presented": 320,
+      "presentation_gap_p95_ms": 33.400000000001455,
+      "maximum_presentation_gap_ms": 33.599999999998545,
+      "gaps_over_100_ms": 0,
+      "steady_current_time_writes": 0,
+      "steady_seek_events": 0
+    }
+  ],
+  "observed_unit_tests": 6,
+  "typecheck_passed": true,
+  "previous_research_preserved": true,
+  "human_votes_generated": 0,
+  "next_validation": [
+    "Human assessment of per-axis coupling and micro-reaction readability.",
+    "Non-default initial pose handover, interruption/cancel and full-session online integration before promotion."
+  ]
+}

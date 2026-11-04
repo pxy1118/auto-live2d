@@ -1,0 +1,3 @@
+[2024] Evaluating Gesture Generation in a Large-scale Open Challenge: The GENEA Challenge 2022 | Taras Kucherenko, Pieter Wolfert, Youngwoo Yoon et al. | ACM Transactions on Graphics | DOI:10.1145/3656374 | Cited:35
+[2022] The GENEA Challenge 2022: A large evaluation of data-driven co-speech gesture generation | Youngwoo Yoon, Pieter Wolfert, Taras Kucherenko et al. | INTERNATIONAL CONFERENCE ON MULTIMODAL INTERACTION | DOI:10.1145/3536221.3558058 | Cited:87
+[2022] The ReprGesture entry to the GENEA Challenge 2022 | Sicheng Yang, Zhiyong Wu, Minglei Li et al. | INTERNATIONAL CONFERENCE ON MULTIMODAL INTERACTION | DOI:10.1145/3536221.3558066 | Cited:12

@@ -1,0 +1,121 @@
+{
+  "scope": "train and validation only",
+  "test_loaded": false,
+  "splits": {
+    "train": {
+      "file_sha256": "ec06d478e42315b061d03a73da7ee4785ad94de1196d7f17a387480d37b17d24",
+      "rows": 6627,
+      "unique_text_contexts": 2127,
+      "body_counts_unique": {
+        "none": 1297,
+        "lean": 184,
+        "tilt": 174,
+        "nod": 186,
+        "turn": 130,
+        "sway": 74,
+        "cajole": 82
+      },
+      "new_unique_pairs": 324,
+      "new_body_active_fraction": 0.8117283950617284,
+      "dialogue_unique_pairs": 211,
+      "dialogue_body_active_fraction": 0.8815165876777251,
+      "new_active_strength_point75_fraction": 1.0,
+      "new_implicit_body_none_scene_families": [
+        "generalization-broken-promise",
+        "generalization-caught-blushing",
+        "generalization-missed-chance",
+        "generalization-plain-update",
+        "generalization-slight-annoyance"
+      ],
+      "categorical_conflicts_identical_text_context": [],
+      "explicit_label_phrase_examples_for_manual_audit": [
+        {
+          "text": "下回别光顾着我，你也会淋湿的。",
+          "context": "对方冒雨把伞送给你，自己跑回去。你很感激。"
+        },
+        {
+          "text": "伞都留给我了，你自己怎么办呀。",
+          "context": "对方冒雨把伞送给你，自己跑回去。你很感激。"
+        },
+        {
+          "text": "再坐一小会儿嘛，茶还没凉呢。",
+          "context": "朋友正准备离开，你亲近地挽留，带一点撒娇。"
+        },
+        {
+          "text": "外套先别拿，我还没聊够。",
+          "context": "朋友正准备离开，你亲近地挽留，带一点撒娇。"
+        },
+        {
+          "text": "等下，你已经把最后一步也做完了？",
+          "context": "对方完成任务远超你的预期，你很惊讶。"
+        },
+        {
+          "text": "我才刚开口，你就全弄好了？",
+          "context": "对方完成任务远超你的预期，你很惊讶。"
+        }
+      ]
+    },
+    "validation": {
+      "file_sha256": "0cc80c9d1bd2eadad46ed848432425c8c58469468b760d48b32280db00708728",
+      "rows": 1278,
+      "unique_text_contexts": 411,
+      "body_counts_unique": {
+        "none": 221,
+        "lean": 39,
+        "tilt": 52,
+        "nod": 33,
+        "turn": 32,
+        "sway": 14,
+        "cajole": 20
+      },
+      "new_unique_pairs": 124,
+      "new_body_active_fraction": 0.7903225806451613,
+      "dialogue_unique_pairs": 58,
+      "dialogue_body_active_fraction": 0.8793103448275862,
+      "new_active_strength_point75_fraction": 1.0,
+      "new_implicit_body_none_scene_families": [
+        "generalization-empty-seat",
+        "generalization-routine"
+      ],
+      "categorical_conflicts_identical_text_context": [],
+      "explicit_label_phrase_examples_for_manual_audit": [
+        {
+          "text": "就让我尝一小块嘛，真的一小块。",
+          "context": "你向亲近的人软声讨一口甜点，带撒娇意味。"
+        },
+        {
+          "text": "你最好了，给我留最后那一口嘛。",
+          "context": "你向亲近的人软声讨一口甜点，带撒娇意味。"
+        },
+        {
+          "text": "我的拒绝你是没听见，还是根本不在意？",
+          "context": "明确的边界被反复侵犯，你真生气。"
+        },
+        {
+          "text": "你一直越过这条线，我真的忍够了。",
+          "context": "明确的边界被反复侵犯，你真生气。"
+        },
+        {
+          "text": "夸得这么具体，我都不知道眼睛该看哪儿了。",
+          "context": "朋友当众认真夸你，你明显害羞。"
+        },
+        {
+          "text": "当着这么多人给我写这个，我有点招架不住。",
+          "context": "朋友当众认真夸你，你明显害羞。"
+        }
+      ]
+    }
+  },
+  "sequence_builder_finding": {
+    "source": "scripts/v4/build_generalization_data.py",
+    "method": "rng.sample(eligible, 3)",
+    "meaning": "The previous sequences are randomly assembled contextual augmentations, not independently authored coherent conversations."
+  },
+  "conclusions": [
+    "High activity prior in new dialogue supervision",
+    "No amplitude diversity for newly authored active-body targets",
+    "Only one accepted body label per example",
+    "Some situations explicitly name the target affect; flag for factual-context rewrite, not a measured causal leakage estimate",
+    "History augmentation and repeated contexts are not independent samples"
+  ]
+}

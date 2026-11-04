@@ -1,0 +1,19 @@
+{
+  "schema": "asset-mapping-experiment.v1",
+  "promoted": false,
+  "trained": false,
+  "semantic_model_used": false,
+  "human_quality_accepted": false,
+  "clips": 12,
+  "actual_clip_frames": 8979,
+  "actual_probe_frames": 900,
+  "unit_tests": 6,
+  "browser_checks": [
+    "12 genuine 60 fps videos; paired decoded speech and original arm/finger inputs unchanged",
+    "three conditions each played for 7.3 seconds; no steady currentTime writes or seek events; presentation P95 below 40 ms",
+    "paused clock stays fixed; explicit version switch retains position; scene switch and seek work",
+    "portrait micro-expression view; desktop/mobile without overflow or browser errors; no actor socket/backend writes",
+    "neutral readbacks identical; default runtime, weights, previous feedback and ratings unchanged"
+  ],
+  "default_and_previous_research_unchanged": true
+}

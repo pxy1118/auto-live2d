@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "motion_groups": 13,
+  "variants": 39,
+  "body_only_groups": 5,
+  "body_filter": true,
+  "combination_filter": true,
+  "celebration_removed": true,
+  "blind_comparison_pending": true,
+  "all_media_available": true,
+  "mobile_no_horizontal_overflow": true,
+  "ratings_unchanged": true
+}

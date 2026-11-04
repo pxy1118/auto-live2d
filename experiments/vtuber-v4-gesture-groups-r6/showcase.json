@@ -1,0 +1,998 @@
+[
+  {
+    "name": "wave",
+    "category": "coordinated",
+    "variant": 0,
+    "description": "歪头轻侧倾＋屈肘张掌双挥",
+    "directive": {
+      "gesture": "wave",
+      "variant": 0,
+      "gesture_hold_ms": 1800
+    },
+    "frames": 271,
+    "capture_source": "action-groups-v5",
+    "source": "performance.direct typed tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    },
+    "body_state": {
+      "active": false,
+      "count": 0
+    }
+  },
+  {
+    "name": "wave",
+    "category": "coordinated",
+    "variant": 1,
+    "description": "点头带动躯干＋张掌短挥",
+    "directive": {
+      "gesture": "wave",
+      "variant": 1,
+      "gesture_hold_ms": 1800
+    },
+    "frames": 271,
+    "capture_source": "action-groups-v5",
+    "source": "performance.direct typed tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    },
+    "body_state": {
+      "active": false,
+      "count": 0
+    }
+  },
+  {
+    "name": "wave",
+    "category": "coordinated",
+    "variant": 2,
+    "description": "歪头前倾靠近＋慢挥",
+    "directive": {
+      "gesture": "wave",
+      "variant": 2,
+      "gesture_hold_ms": 1800
+    },
+    "frames": 271,
+    "capture_source": "action-groups-v5",
+    "source": "performance.direct typed tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    },
+    "body_state": {
+      "active": false,
+      "count": 0
+    }
+  },
+  {
+    "name": "point",
+    "category": "coordinated",
+    "variant": 0,
+    "description": "抬指点题＋头身错峰点头",
+    "directive": {
+      "gesture": "point",
+      "variant": 0,
+      "gesture_hold_ms": 1800
+    },
+    "frames": 271,
+    "capture_source": "action-groups-v5",
+    "source": "performance.direct typed tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    },
+    "body_state": {
+      "active": false,
+      "count": 0
+    }
+  },
+  {
+    "name": "point",
+    "category": "coordinated",
+    "variant": 1,
+    "description": "食指划过两侧＋侧首跟随",
+    "directive": {
+      "gesture": "point",
+      "variant": 1,
+      "gesture_hold_ms": 1800
+    },
+    "frames": 271,
+    "capture_source": "action-groups-v5",
+    "source": "performance.direct typed tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    },
+    "body_state": {
+      "active": false,
+      "count": 0
+    }
+  },
+  {
+    "name": "point",
+    "category": "coordinated",
+    "variant": 2,
+    "description": "歪头前倾＋抬指说明",
+    "directive": {
+      "gesture": "point",
+      "variant": 2,
+      "gesture_hold_ms": 1800
+    },
+    "frames": 271,
+    "capture_source": "action-groups-v5",
+    "source": "performance.direct typed tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    },
+    "body_state": {
+      "active": false,
+      "count": 0
+    }
+  },
+  {
+    "name": "chest",
+    "category": "coordinated",
+    "variant": 0,
+    "description": "抚胸前倾＋一深一浅点头",
+    "directive": {
+      "gesture": "chest",
+      "variant": 0,
+      "gesture_hold_ms": 1800
+    },
+    "frames": 251,
+    "capture_source": "action-groups-v5",
+    "source": "performance.direct typed tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    },
+    "body_state": {
+      "active": false,
+      "count": 0
+    }
+  },
+  {
+    "name": "chest",
+    "category": "coordinated",
+    "variant": 1,
+    "description": "先侧首、再倾身抚胸",
+    "directive": {
+      "gesture": "chest",
+      "variant": 1,
+      "gesture_hold_ms": 1800
+    },
+    "frames": 251,
+    "capture_source": "action-groups-v5",
+    "source": "performance.direct typed tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    },
+    "body_state": {
+      "active": false,
+      "count": 0
+    }
+  },
+  {
+    "name": "chest",
+    "category": "coordinated",
+    "variant": 2,
+    "description": "歪头侧倾＋抚胸确认",
+    "directive": {
+      "gesture": "chest",
+      "variant": 2,
+      "gesture_hold_ms": 1800
+    },
+    "frames": 251,
+    "capture_source": "action-groups-v5",
+    "source": "performance.direct typed tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    },
+    "body_state": {
+      "active": false,
+      "count": 0
+    }
+  },
+  {
+    "name": "grass",
+    "category": "coordinated",
+    "variant": 0,
+    "description": "歪头、侧倾展示草穗",
+    "directive": {
+      "gesture": "grass",
+      "variant": 0,
+      "gesture_hold_ms": 2400
+    },
+    "frames": 299,
+    "capture_source": "action-groups-v5",
+    "source": "performance.direct typed tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    },
+    "body_state": {
+      "active": false,
+      "count": 0
+    }
+  },
+  {
+    "name": "grass",
+    "category": "coordinated",
+    "variant": 1,
+    "description": "移重心停留＋草穗画弧",
+    "directive": {
+      "gesture": "grass",
+      "variant": 1,
+      "gesture_hold_ms": 2400
+    },
+    "frames": 299,
+    "capture_source": "action-groups-v5",
+    "source": "performance.direct typed tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    },
+    "body_state": {
+      "active": false,
+      "count": 0
+    }
+  },
+  {
+    "name": "grass",
+    "category": "coordinated",
+    "variant": 2,
+    "description": "前倾递出，再回身",
+    "directive": {
+      "gesture": "grass",
+      "variant": 2,
+      "gesture_hold_ms": 2400
+    },
+    "frames": 299,
+    "capture_source": "action-groups-v5",
+    "source": "performance.direct typed tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    },
+    "body_state": {
+      "active": false,
+      "count": 0
+    }
+  },
+  {
+    "name": "thanks",
+    "category": "coordinated",
+    "variant": 0,
+    "description": "抚胸小鞠躬，再自然起身",
+    "directive": {
+      "gesture": "thanks",
+      "variant": 0,
+      "gesture_hold_ms": 1800
+    },
+    "frames": 251,
+    "capture_source": "action-groups-v5",
+    "source": "performance.direct typed tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    },
+    "body_state": {
+      "active": false,
+      "count": 0
+    }
+  },
+  {
+    "name": "thanks",
+    "category": "coordinated",
+    "variant": 1,
+    "description": "抚胸＋一深一浅点头",
+    "directive": {
+      "gesture": "thanks",
+      "variant": 1,
+      "gesture_hold_ms": 1800
+    },
+    "frames": 251,
+    "capture_source": "action-groups-v5",
+    "source": "performance.direct typed tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    },
+    "body_state": {
+      "active": false,
+      "count": 0
+    }
+  },
+  {
+    "name": "thanks",
+    "category": "coordinated",
+    "variant": 2,
+    "description": "先歪头、后点头致谢",
+    "directive": {
+      "gesture": "thanks",
+      "variant": 2,
+      "gesture_hold_ms": 1800
+    },
+    "frames": 251,
+    "capture_source": "action-groups-v5",
+    "source": "performance.direct typed tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    },
+    "body_state": {
+      "active": false,
+      "count": 0
+    }
+  },
+  {
+    "name": "explain",
+    "category": "coordinated",
+    "variant": 0,
+    "description": "侧首带动躯干＋抚胸说明",
+    "directive": {
+      "gesture": "explain",
+      "variant": 0,
+      "gesture_hold_ms": 1800
+    },
+    "frames": 251,
+    "capture_source": "action-groups-v5",
+    "source": "performance.direct typed tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    },
+    "body_state": {
+      "active": false,
+      "count": 0
+    }
+  },
+  {
+    "name": "explain",
+    "category": "coordinated",
+    "variant": 1,
+    "description": "移重心轻摇＋单手张掌",
+    "directive": {
+      "gesture": "explain",
+      "variant": 1,
+      "gesture_hold_ms": 1800
+    },
+    "frames": 271,
+    "capture_source": "action-groups-v5",
+    "source": "performance.direct typed tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    },
+    "body_state": {
+      "active": false,
+      "count": 0
+    }
+  },
+  {
+    "name": "explain",
+    "category": "coordinated",
+    "variant": 2,
+    "description": "前倾点题后回身",
+    "directive": {
+      "gesture": "explain",
+      "variant": 2,
+      "gesture_hold_ms": 1800
+    },
+    "frames": 271,
+    "capture_source": "action-groups-v5",
+    "source": "performance.direct typed tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    },
+    "body_state": {
+      "active": false,
+      "count": 0
+    }
+  },
+  {
+    "name": "refuse",
+    "category": "coordinated",
+    "variant": 0,
+    "description": "抬指摇头两次",
+    "directive": {
+      "gesture": "refuse",
+      "variant": 0,
+      "gesture_hold_ms": 1800
+    },
+    "frames": 271,
+    "capture_source": "action-groups-v5",
+    "source": "performance.direct typed tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    },
+    "body_state": {
+      "active": false,
+      "count": 0
+    }
+  },
+  {
+    "name": "refuse",
+    "category": "coordinated",
+    "variant": 1,
+    "description": "张掌示意暂停＋轻退身",
+    "directive": {
+      "gesture": "refuse",
+      "variant": 1,
+      "gesture_hold_ms": 1800
+    },
+    "frames": 271,
+    "capture_source": "action-groups-v5",
+    "source": "performance.direct typed tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    },
+    "body_state": {
+      "active": false,
+      "count": 0
+    }
+  },
+  {
+    "name": "refuse",
+    "category": "coordinated",
+    "variant": 2,
+    "description": "抬指收身＋一次明确点头",
+    "directive": {
+      "gesture": "refuse",
+      "variant": 2,
+      "gesture_hold_ms": 1800
+    },
+    "frames": 271,
+    "capture_source": "action-groups-v5",
+    "source": "performance.direct typed tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    },
+    "body_state": {
+      "active": false,
+      "count": 0
+    }
+  },
+  {
+    "name": "lean",
+    "category": "body",
+    "variant": 0,
+    "description": "轻轻前倾靠近，再自然回身",
+    "directive": {
+      "body_motion": "lean",
+      "body_variant": 0,
+      "body_strength": 0.9,
+      "body_hold_ms": 2400
+    },
+    "frames": 233,
+    "capture_source": "action-groups-v5",
+    "source": "performance.direct typed tool call",
+    "state": {
+      "active": false,
+      "count": 0,
+      "pending": null
+    },
+    "body_state": {
+      "active": false,
+      "count": 1
+    }
+  },
+  {
+    "name": "lean",
+    "category": "body",
+    "variant": 1,
+    "description": "前倾停一下，再退回重心",
+    "directive": {
+      "body_motion": "lean",
+      "body_variant": 1,
+      "body_strength": 0.9,
+      "body_hold_ms": 2400
+    },
+    "frames": 233,
+    "capture_source": "action-groups-v5",
+    "source": "performance.direct typed tool call",
+    "state": {
+      "active": false,
+      "count": 0,
+      "pending": null
+    },
+    "body_state": {
+      "active": false,
+      "count": 1
+    }
+  },
+  {
+    "name": "lean",
+    "category": "body",
+    "variant": 2,
+    "description": "歪头后前倾探身",
+    "directive": {
+      "body_motion": "lean",
+      "body_variant": 2,
+      "body_strength": 0.9,
+      "body_hold_ms": 2400
+    },
+    "frames": 233,
+    "capture_source": "action-groups-v5",
+    "source": "performance.direct typed tool call",
+    "state": {
+      "active": false,
+      "count": 0,
+      "pending": null
+    },
+    "body_state": {
+      "active": false,
+      "count": 1
+    }
+  },
+  {
+    "name": "sway",
+    "category": "body",
+    "variant": 0,
+    "description": "左右轻摇，幅度逐次收小",
+    "directive": {
+      "body_motion": "sway",
+      "body_variant": 0,
+      "body_strength": 0.9,
+      "body_hold_ms": 2400
+    },
+    "frames": 233,
+    "capture_source": "action-groups-v5",
+    "source": "performance.direct typed tool call",
+    "state": {
+      "active": false,
+      "count": 0,
+      "pending": null
+    },
+    "body_state": {
+      "active": false,
+      "count": 1
+    }
+  },
+  {
+    "name": "sway",
+    "category": "body",
+    "variant": 1,
+    "description": "移重心停留，再轻轻回摆",
+    "directive": {
+      "body_motion": "sway",
+      "body_variant": 1,
+      "body_strength": 0.9,
+      "body_hold_ms": 2400
+    },
+    "frames": 233,
+    "capture_source": "action-groups-v5",
+    "source": "performance.direct typed tool call",
+    "state": {
+      "active": false,
+      "count": 0,
+      "pending": null
+    },
+    "body_state": {
+      "active": false,
+      "count": 1
+    }
+  },
+  {
+    "name": "sway",
+    "category": "body",
+    "variant": 2,
+    "description": "轻摇后向前靠近",
+    "directive": {
+      "body_motion": "sway",
+      "body_variant": 2,
+      "body_strength": 0.9,
+      "body_hold_ms": 2400
+    },
+    "frames": 233,
+    "capture_source": "action-groups-v5",
+    "source": "performance.direct typed tool call",
+    "state": {
+      "active": false,
+      "count": 0,
+      "pending": null
+    },
+    "body_state": {
+      "active": false,
+      "count": 1
+    }
+  },
+  {
+    "name": "nod",
+    "category": "body",
+    "variant": 0,
+    "description": "一次明确点头，躯干稍后跟随",
+    "directive": {
+      "body_motion": "nod",
+      "body_variant": 0,
+      "body_strength": 0.9,
+      "body_hold_ms": 2400
+    },
+    "frames": 233,
+    "capture_source": "action-groups-v5",
+    "source": "performance.direct typed tool call",
+    "state": {
+      "active": false,
+      "count": 0,
+      "pending": null
+    },
+    "body_state": {
+      "active": false,
+      "count": 1
+    }
+  },
+  {
+    "name": "nod",
+    "category": "body",
+    "variant": 1,
+    "description": "一深一浅两次点头",
+    "directive": {
+      "body_motion": "nod",
+      "body_variant": 1,
+      "body_strength": 0.9,
+      "body_hold_ms": 2400
+    },
+    "frames": 233,
+    "capture_source": "action-groups-v5",
+    "source": "performance.direct typed tool call",
+    "state": {
+      "active": false,
+      "count": 0,
+      "pending": null
+    },
+    "body_state": {
+      "active": false,
+      "count": 1
+    }
+  },
+  {
+    "name": "nod",
+    "category": "body",
+    "variant": 2,
+    "description": "稍抬下巴，再点头确认",
+    "directive": {
+      "body_motion": "nod",
+      "body_variant": 2,
+      "body_strength": 0.9,
+      "body_hold_ms": 2400
+    },
+    "frames": 233,
+    "capture_source": "action-groups-v5",
+    "source": "performance.direct typed tool call",
+    "state": {
+      "active": false,
+      "count": 0,
+      "pending": null
+    },
+    "body_state": {
+      "active": false,
+      "count": 1
+    }
+  },
+  {
+    "name": "tilt",
+    "category": "body",
+    "variant": 0,
+    "description": "先歪头，躯干稍后侧倾",
+    "directive": {
+      "body_motion": "tilt",
+      "body_variant": 0,
+      "body_strength": 0.9,
+      "body_hold_ms": 2400
+    },
+    "frames": 233,
+    "capture_source": "action-groups-v5",
+    "source": "performance.direct typed tool call",
+    "state": {
+      "active": false,
+      "count": 0,
+      "pending": null
+    },
+    "body_state": {
+      "active": false,
+      "count": 1
+    }
+  },
+  {
+    "name": "tilt",
+    "category": "body",
+    "variant": 1,
+    "description": "反向歪头，再前倾回应",
+    "directive": {
+      "body_motion": "tilt",
+      "body_variant": 1,
+      "body_strength": 0.9,
+      "body_hold_ms": 2400
+    },
+    "frames": 233,
+    "capture_source": "action-groups-v5",
+    "source": "performance.direct typed tool call",
+    "state": {
+      "active": false,
+      "count": 0,
+      "pending": null
+    },
+    "body_state": {
+      "active": false,
+      "count": 1
+    }
+  },
+  {
+    "name": "tilt",
+    "category": "body",
+    "variant": 2,
+    "description": "左右端详，最后自然回正",
+    "directive": {
+      "body_motion": "tilt",
+      "body_variant": 2,
+      "body_strength": 0.9,
+      "body_hold_ms": 2400
+    },
+    "frames": 233,
+    "capture_source": "action-groups-v5",
+    "source": "performance.direct typed tool call",
+    "state": {
+      "active": false,
+      "count": 0,
+      "pending": null
+    },
+    "body_state": {
+      "active": false,
+      "count": 1
+    }
+  },
+  {
+    "name": "turn",
+    "category": "body",
+    "variant": 0,
+    "description": "先侧首，再带动躯干",
+    "directive": {
+      "body_motion": "turn",
+      "body_variant": 0,
+      "body_strength": 0.9,
+      "body_hold_ms": 2400
+    },
+    "frames": 233,
+    "capture_source": "action-groups-v5",
+    "source": "performance.direct typed tool call",
+    "state": {
+      "active": false,
+      "count": 0,
+      "pending": null
+    },
+    "body_state": {
+      "active": false,
+      "count": 1
+    }
+  },
+  {
+    "name": "turn",
+    "category": "body",
+    "variant": 1,
+    "description": "侧首停留，再转回正面",
+    "directive": {
+      "body_motion": "turn",
+      "body_variant": 1,
+      "body_strength": 0.9,
+      "body_hold_ms": 2400
+    },
+    "frames": 233,
+    "capture_source": "action-groups-v5",
+    "source": "performance.direct typed tool call",
+    "state": {
+      "active": false,
+      "count": 0,
+      "pending": null
+    },
+    "body_state": {
+      "active": false,
+      "count": 1
+    }
+  },
+  {
+    "name": "turn",
+    "category": "body",
+    "variant": 2,
+    "description": "视线扫过两侧，身体轻轻跟随",
+    "directive": {
+      "body_motion": "turn",
+      "body_variant": 2,
+      "body_strength": 0.9,
+      "body_hold_ms": 2400
+    },
+    "frames": 233,
+    "capture_source": "action-groups-v5",
+    "source": "performance.direct typed tool call",
+    "state": {
+      "active": false,
+      "count": 0,
+      "pending": null
+    },
+    "body_state": {
+      "active": false,
+      "count": 1
+    }
+  },
+  {
+    "name": "mix",
+    "category": "mix",
+    "variant": 0,
+    "description": "张掌挥手＋侧首回看",
+    "directive": {
+      "gesture": "wave",
+      "variant": 0,
+      "gesture_hold_ms": 2200,
+      "body_motion": "turn",
+      "body_variant": 1,
+      "body_strength": 0.45,
+      "body_hold_ms": 2400
+    },
+    "frames": 295,
+    "capture_source": "action-groups-v5",
+    "source": "performance.direct typed tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    },
+    "body_state": {
+      "active": false,
+      "count": 1
+    }
+  },
+  {
+    "name": "mix",
+    "category": "mix",
+    "variant": 1,
+    "description": "抚胸说明＋两次点头",
+    "directive": {
+      "gesture": "chest",
+      "variant": 1,
+      "gesture_hold_ms": 2200,
+      "body_motion": "nod",
+      "body_variant": 1,
+      "body_strength": 0.65,
+      "body_hold_ms": 2400
+    },
+    "frames": 274,
+    "capture_source": "action-groups-v5",
+    "source": "performance.direct typed tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    },
+    "body_state": {
+      "active": false,
+      "count": 1
+    }
+  },
+  {
+    "name": "mix",
+    "category": "mix",
+    "variant": 2,
+    "description": "食指点题＋歪头前倾",
+    "directive": {
+      "gesture": "point",
+      "variant": 0,
+      "gesture_hold_ms": 2200,
+      "body_motion": "lean",
+      "body_variant": 2,
+      "body_strength": 0.6,
+      "body_hold_ms": 2400
+    },
+    "frames": 295,
+    "capture_source": "action-groups-v5",
+    "source": "performance.direct typed tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    },
+    "body_state": {
+      "active": false,
+      "count": 1
+    }
+  },
+  {
+    "name": "cajole",
+    "category": "body",
+    "variant": 0,
+    "description": "前倾歪头，左右轻扭两次",
+    "directive": {
+      "body_motion": "cajole",
+      "body_variant": 0,
+      "body_strength": 0.95,
+      "body_hold_ms": 3000
+    },
+    "frames": 266,
+    "capture_source": "action-groups-v6",
+    "source": "performance.direct typed tool call",
+    "state": {
+      "active": false,
+      "count": 0,
+      "pending": null
+    },
+    "body_state": {
+      "active": false,
+      "count": 1
+    }
+  },
+  {
+    "name": "cajole",
+    "category": "body",
+    "variant": 1,
+    "description": "先侧首，再靠近轻扭并停留",
+    "directive": {
+      "body_motion": "cajole",
+      "body_variant": 1,
+      "body_strength": 0.95,
+      "body_hold_ms": 3000
+    },
+    "frames": 266,
+    "capture_source": "action-groups-v6",
+    "source": "performance.direct typed tool call",
+    "state": {
+      "active": false,
+      "count": 0,
+      "pending": null
+    },
+    "body_state": {
+      "active": false,
+      "count": 1
+    }
+  },
+  {
+    "name": "cajole",
+    "category": "body",
+    "variant": 2,
+    "description": "前倾画小弧，再歪头望过来",
+    "directive": {
+      "body_motion": "cajole",
+      "body_variant": 2,
+      "body_strength": 0.95,
+      "body_hold_ms": 3000
+    },
+    "frames": 266,
+    "capture_source": "action-groups-v6",
+    "source": "performance.direct typed tool call",
+    "state": {
+      "active": false,
+      "count": 0,
+      "pending": null
+    },
+    "body_state": {
+      "active": false,
+      "count": 1
+    }
+  }
+]

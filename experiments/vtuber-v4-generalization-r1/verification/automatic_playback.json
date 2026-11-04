@@ -1,0 +1,1492 @@
+{
+  "ok": true,
+  "scope": "development demonstrations, not blind or final-test evidence",
+  "scenes": [
+    {
+      "index": 0,
+      "name": "welcome",
+      "title": "迎接回来与继续聊天",
+      "context": "熟悉的观众结束晚班回来，你自然地欢迎。",
+      "text": "我还以为今天等不到你了呢。今晚想听你说说近况。",
+      "arm": "wave",
+      "frames": 537,
+      "audio_sample_rate": 24000,
+      "plan_history": [
+        {
+          "clause": 0,
+          "at_ms": 1066.666666666666,
+          "plan": {
+            "schema": "performance.plan.v1",
+            "arm": "wave",
+            "body": "none",
+            "emotion": "happy",
+            "eye": "normal",
+            "arm_variant": 0,
+            "body_variant": 1,
+            "body_strength": 0.2321,
+            "expressions": {
+              "黑脸": 0.0001,
+              "流泪": 0.0028,
+              "脸红": 0.0768,
+              "加载": 0.0006,
+              "兔牙": 0.0004,
+              "流冷汗": 0.0001
+            },
+            "eye_strength": 0.0019,
+            "arm_hold_ms": 1142,
+            "body_hold_ms": 2111,
+            "face_hold_ms": 3225,
+            "onset_ms": 185,
+            "confidence": {
+              "arm": 0.9738396406173706,
+              "body": 0.999796450138092,
+              "emotion": 0.9995154142379761,
+              "eye": 0.9999707937240601
+            },
+            "clause": 0
+          },
+          "arm_applied": true,
+          "body_applied": false
+        },
+        {
+          "clause": 1,
+          "at_ms": 4870.000000000009,
+          "plan": {
+            "schema": "performance.plan.v1",
+            "arm": "wave",
+            "body": "lean",
+            "emotion": "happy",
+            "eye": "normal",
+            "arm_variant": 1,
+            "body_variant": 2,
+            "body_strength": 0.6247,
+            "expressions": {
+              "黑脸": 0,
+              "流泪": 0.0014,
+              "脸红": 0.0262,
+              "加载": 0.0002,
+              "兔牙": 0.0003,
+              "流冷汗": 0.0002
+            },
+            "eye_strength": 0.0004,
+            "arm_hold_ms": 1179,
+            "body_hold_ms": 2142,
+            "face_hold_ms": 3240,
+            "onset_ms": 225,
+            "confidence": {
+              "arm": 0.9999337196350098,
+              "body": 0.6580594182014465,
+              "emotion": 0.9999997615814209,
+              "eye": 0.9999831914901733
+            },
+            "clause": 1
+          },
+          "arm_applied": false,
+          "body_applied": true,
+          "arm_skipped": "busy_directed_or_cooldown"
+        }
+      ],
+      "metrics": [
+        {
+          "clause": 0,
+          "text_wait_ms": 0,
+          "queue_wait_ms": 52
+        },
+        {
+          "clause": 0,
+          "semantic_prefill_ms": 85.69754900008775,
+          "overlapped_with_tts": true
+        },
+        {
+          "clause": 0,
+          "compute_ms": 114.52616299993679,
+          "roundtrip_ms": 150.9386999999988,
+          "accepted": true,
+          "media_ms": 0
+        },
+        {
+          "clause": 0,
+          "first_chunk_ms": 426,
+          "synthesis_to_first_chunk_ms": 403
+        },
+        {
+          "clause": 0,
+          "compute_ms": 11.963817000150812,
+          "roundtrip_ms": 56.044800000003306,
+          "accepted": true,
+          "media_ms": 60
+        },
+        {
+          "clause": 0,
+          "compute_ms": 25.573919000180467,
+          "roundtrip_ms": 65.34249999999884,
+          "accepted": true,
+          "media_ms": 490
+        },
+        {
+          "clause": 0,
+          "synthesis_ms": 1281
+        },
+        {
+          "clause": 0,
+          "compute_ms": 10.118588999830536,
+          "roundtrip_ms": 57.42740000001504,
+          "accepted": true,
+          "media_ms": 940
+        },
+        {
+          "clause": 0,
+          "compute_ms": 9.020614999826648,
+          "roundtrip_ms": 50.26190000001225,
+          "accepted": true,
+          "media_ms": 1370
+        },
+        {
+          "clause": 0,
+          "compute_ms": 10.718165999833218,
+          "roundtrip_ms": 60.54329999999027,
+          "accepted": true,
+          "media_ms": 1800
+        },
+        {
+          "clause": 0,
+          "compute_ms": 10.164375999920594,
+          "roundtrip_ms": 65.37170000001788,
+          "accepted": true,
+          "media_ms": 2240
+        },
+        {
+          "clause": 0,
+          "compute_ms": 9.461307000037777,
+          "roundtrip_ms": 67.32629999998608,
+          "accepted": true,
+          "media_ms": 2680
+        },
+        {
+          "clause": 0,
+          "compute_ms": 9.06337300011728,
+          "roundtrip_ms": 48.81390000000829,
+          "accepted": true,
+          "media_ms": 3080
+        },
+        {
+          "clause": 1,
+          "text_wait_ms": 0,
+          "queue_wait_ms": 3830
+        },
+        {
+          "clause": 1,
+          "semantic_prefill_ms": 99.68642900003033,
+          "overlapped_with_tts": true
+        },
+        {
+          "clause": 1,
+          "compute_ms": 156.18504100007158,
+          "roundtrip_ms": 182.64550000001327,
+          "accepted": false,
+          "media_ms": 3200
+        },
+        {
+          "clause": 1,
+          "first_chunk_ms": 431,
+          "synthesis_to_first_chunk_ms": 402
+        },
+        {
+          "clause": 1,
+          "compute_ms": 25.879947999783326,
+          "roundtrip_ms": 76.875,
+          "accepted": true,
+          "media_ms": 3260
+        },
+        {
+          "clause": 1,
+          "compute_ms": 11.65836599989234,
+          "roundtrip_ms": 65.86049999998068,
+          "accepted": true,
+          "media_ms": 3680
+        },
+        {
+          "clause": 1,
+          "synthesis_ms": 1346
+        },
+        {
+          "clause": 1,
+          "compute_ms": 9.912620000022798,
+          "roundtrip_ms": 59.17929999998887,
+          "accepted": true,
+          "media_ms": 4110
+        },
+        {
+          "clause": 1,
+          "compute_ms": 11.24515300011808,
+          "roundtrip_ms": 51.15100000001257,
+          "accepted": true,
+          "media_ms": 4550
+        },
+        {
+          "clause": 1,
+          "compute_ms": 8.367602000134866,
+          "roundtrip_ms": 49.84070000000065,
+          "accepted": true,
+          "media_ms": 4970
+        },
+        {
+          "clause": 1,
+          "compute_ms": 9.461655999984941,
+          "roundtrip_ms": 57.27969999998459,
+          "accepted": true,
+          "media_ms": 5400
+        },
+        {
+          "clause": 1,
+          "compute_ms": 8.092513000065082,
+          "roundtrip_ms": 54.87279999998282,
+          "accepted": true,
+          "media_ms": 5830
+        },
+        {
+          "clause": 1,
+          "compute_ms": 7.7518820000932465,
+          "roundtrip_ms": 53.30790000001434,
+          "accepted": true,
+          "media_ms": 6260
+        },
+        {
+          "clause": 1,
+          "compute_ms": 9.881849000066723,
+          "roundtrip_ms": 65.9823000000033,
+          "accepted": true,
+          "media_ms": 6480
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "name": "positive",
+      "title": "同一句话 · 真心夸奖",
+      "context": "朋友给你准备了细致的手工礼物，你真心夸奖。",
+      "text": "你真是让我刮目相看了。这份心意我会好好收着。",
+      "emotion": "happy",
+      "frames": 524,
+      "audio_sample_rate": 24000,
+      "plan_history": [
+        {
+          "clause": 0,
+          "at_ms": 11523.333333333234,
+          "plan": {
+            "schema": "performance.plan.v1",
+            "arm": "none",
+            "body": "none",
+            "emotion": "happy",
+            "eye": "normal",
+            "arm_variant": 2,
+            "body_variant": 0,
+            "body_strength": 0.2676,
+            "expressions": {
+              "黑脸": 0.0054,
+              "流泪": 0.0041,
+              "脸红": 0.0082,
+              "加载": 0.0016,
+              "兔牙": 0.0006,
+              "流冷汗": 0.0002
+            },
+            "eye_strength": 0.03,
+            "arm_hold_ms": 1159,
+            "body_hold_ms": 2052,
+            "face_hold_ms": 3626,
+            "onset_ms": 173,
+            "confidence": {
+              "arm": 0.9623214602470398,
+              "body": 0.8889235258102417,
+              "emotion": 0.9972803592681885,
+              "eye": 0.9991455078125
+            },
+            "clause": 0
+          },
+          "arm_applied": false,
+          "body_applied": false
+        },
+        {
+          "clause": 1,
+          "at_ms": 15056.666666666548,
+          "plan": {
+            "schema": "performance.plan.v1",
+            "arm": "chest",
+            "body": "lean",
+            "emotion": "happy",
+            "eye": "normal",
+            "arm_variant": 0,
+            "body_variant": 1,
+            "body_strength": 0.7405,
+            "expressions": {
+              "黑脸": 0.0012,
+              "流泪": 0.0363,
+              "脸红": 0.0326,
+              "加载": 0.0014,
+              "兔牙": 0.0018,
+              "流冷汗": 0.0008
+            },
+            "eye_strength": 0.0002,
+            "arm_hold_ms": 1209,
+            "body_hold_ms": 2101,
+            "face_hold_ms": 3129,
+            "onset_ms": 231,
+            "confidence": {
+              "arm": 0.9883495569229126,
+              "body": 0.9999958276748657,
+              "emotion": 0.7068571448326111,
+              "eye": 0.9999387264251709
+            },
+            "clause": 1
+          },
+          "arm_applied": true,
+          "body_applied": true
+        }
+      ],
+      "metrics": [
+        {
+          "clause": 0,
+          "text_wait_ms": 0,
+          "queue_wait_ms": 43
+        },
+        {
+          "clause": 0,
+          "semantic_prefill_ms": 84.10301300000356,
+          "overlapped_with_tts": true
+        },
+        {
+          "clause": 0,
+          "compute_ms": 102.80149799996252,
+          "roundtrip_ms": 134.05379999999423,
+          "accepted": true,
+          "media_ms": 0
+        },
+        {
+          "clause": 0,
+          "first_chunk_ms": 431,
+          "synthesis_to_first_chunk_ms": 398
+        },
+        {
+          "clause": 0,
+          "compute_ms": 11.357126000120843,
+          "roundtrip_ms": 79.59110000001965,
+          "accepted": true,
+          "media_ms": 70
+        },
+        {
+          "clause": 0,
+          "compute_ms": 10.773737000135952,
+          "roundtrip_ms": 47.25119999999879,
+          "accepted": true,
+          "media_ms": 470
+        },
+        {
+          "clause": 0,
+          "synthesis_ms": 1258
+        },
+        {
+          "clause": 0,
+          "compute_ms": 10.05623699984426,
+          "roundtrip_ms": 52.10570000001462,
+          "accepted": true,
+          "media_ms": 890
+        },
+        {
+          "clause": 0,
+          "compute_ms": 7.0797749999655935,
+          "roundtrip_ms": 50.37919999996666,
+          "accepted": true,
+          "media_ms": 1300
+        },
+        {
+          "clause": 0,
+          "compute_ms": 10.600420000173472,
+          "roundtrip_ms": 53.45510000002105,
+          "accepted": true,
+          "media_ms": 1740
+        },
+        {
+          "clause": 0,
+          "compute_ms": 10.166062000052989,
+          "roundtrip_ms": 55.62839999998687,
+          "accepted": true,
+          "media_ms": 2150
+        },
+        {
+          "clause": 0,
+          "compute_ms": 8.06799899987709,
+          "roundtrip_ms": 55.24159999995027,
+          "accepted": true,
+          "media_ms": 2590
+        },
+        {
+          "clause": 1,
+          "text_wait_ms": 0,
+          "queue_wait_ms": 3583
+        },
+        {
+          "clause": 1,
+          "semantic_prefill_ms": 91.64366300001348,
+          "overlapped_with_tts": true
+        },
+        {
+          "clause": 1,
+          "compute_ms": 123.12497199991412,
+          "roundtrip_ms": 166.01959999999963,
+          "accepted": true,
+          "media_ms": 2960
+        },
+        {
+          "clause": 1,
+          "first_chunk_ms": 385,
+          "synthesis_to_first_chunk_ms": 365
+        },
+        {
+          "clause": 1,
+          "compute_ms": 23.63858000012442,
+          "roundtrip_ms": 71.89000000001397,
+          "accepted": true,
+          "media_ms": 3090
+        },
+        {
+          "clause": 1,
+          "compute_ms": 10.008115999880829,
+          "roundtrip_ms": 65.13060000003316,
+          "accepted": true,
+          "media_ms": 3500
+        },
+        {
+          "clause": 1,
+          "synthesis_ms": 1113
+        },
+        {
+          "clause": 1,
+          "compute_ms": 9.798137999950995,
+          "roundtrip_ms": 56.055400000012014,
+          "accepted": true,
+          "media_ms": 3920
+        },
+        {
+          "clause": 1,
+          "compute_ms": 10.621748999938063,
+          "roundtrip_ms": 50.241800000017975,
+          "accepted": true,
+          "media_ms": 4350
+        },
+        {
+          "clause": 1,
+          "compute_ms": 11.305146999802673,
+          "roundtrip_ms": 62.148199999995995,
+          "accepted": true,
+          "media_ms": 4780
+        },
+        {
+          "clause": 1,
+          "compute_ms": 9.922075000076802,
+          "roundtrip_ms": 60.14479999995092,
+          "accepted": true,
+          "media_ms": 5210
+        },
+        {
+          "clause": 1,
+          "compute_ms": 14.000775000113208,
+          "roundtrip_ms": 56.22279999998864,
+          "accepted": true,
+          "media_ms": 5600
+        },
+        {
+          "clause": 1,
+          "compute_ms": 12.148492000051192,
+          "roundtrip_ms": 54.040600000007544,
+          "accepted": true,
+          "media_ms": 5600
+        },
+        {
+          "clause": 1,
+          "compute_ms": 10.96895199998471,
+          "roundtrip_ms": 49.86429999995744,
+          "accepted": true,
+          "media_ms": 5600
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "name": "irony",
+      "title": "同一句话 · 生气反讽",
+      "context": "朋友再次失信，你失望而恼火地挖苦。",
+      "text": "你真是让我刮目相看了。这件事需要你认真给我一个解释。",
+      "emotion": "angry",
+      "frames": 517,
+      "audio_sample_rate": 24000,
+      "plan_history": [
+        {
+          "clause": 0,
+          "at_ms": 21623.333333333507,
+          "plan": {
+            "schema": "performance.plan.v1",
+            "arm": "none",
+            "body": "none",
+            "emotion": "angry",
+            "eye": "normal",
+            "arm_variant": 0,
+            "body_variant": 1,
+            "body_strength": 0.0852,
+            "expressions": {
+              "黑脸": 0.7111,
+              "流泪": 0.0159,
+              "脸红": 0.0112,
+              "加载": 0.0203,
+              "兔牙": 0.0011,
+              "流冷汗": 0.0003
+            },
+            "eye_strength": 0.006,
+            "arm_hold_ms": 1222,
+            "body_hold_ms": 2058,
+            "face_hold_ms": 5125,
+            "onset_ms": 179,
+            "confidence": {
+              "arm": 0.9999996423721313,
+              "body": 0.9999361038208008,
+              "emotion": 0.9985653758049011,
+              "eye": 0.9999970197677612
+            },
+            "clause": 0
+          },
+          "arm_applied": false,
+          "body_applied": false
+        },
+        {
+          "clause": 1,
+          "at_ms": 25203.33333333355,
+          "plan": {
+            "schema": "performance.plan.v1",
+            "arm": "none",
+            "body": "lean",
+            "emotion": "angry",
+            "eye": "normal",
+            "arm_variant": 0,
+            "body_variant": 1,
+            "body_strength": 0.3243,
+            "expressions": {
+              "黑脸": 0.8551,
+              "流泪": 0.0103,
+              "脸红": 0.0053,
+              "加载": 0.0195,
+              "兔牙": 0.0019,
+              "流冷汗": 0.0008
+            },
+            "eye_strength": 0.0018,
+            "arm_hold_ms": 1278,
+            "body_hold_ms": 2095,
+            "face_hold_ms": 5526,
+            "onset_ms": 202,
+            "confidence": {
+              "arm": 0.9998944997787476,
+              "body": 0.8527815341949463,
+              "emotion": 0.9999971389770508,
+              "eye": 0.9999991655349731
+            },
+            "clause": 1
+          },
+          "arm_applied": false,
+          "body_applied": true
+        }
+      ],
+      "metrics": [
+        {
+          "clause": 0,
+          "text_wait_ms": 0,
+          "queue_wait_ms": 50
+        },
+        {
+          "clause": 0,
+          "semantic_prefill_ms": 103.11649899995246,
+          "overlapped_with_tts": true
+        },
+        {
+          "clause": 0,
+          "compute_ms": 71.78372499993202,
+          "roundtrip_ms": 127.68469999998342,
+          "accepted": true,
+          "media_ms": 0
+        },
+        {
+          "clause": 0,
+          "first_chunk_ms": 405,
+          "synthesis_to_first_chunk_ms": 381
+        },
+        {
+          "clause": 0,
+          "compute_ms": 29.842516999906366,
+          "roundtrip_ms": 81.55689999996684,
+          "accepted": true,
+          "media_ms": 110
+        },
+        {
+          "clause": 0,
+          "compute_ms": 29.414389999828927,
+          "roundtrip_ms": 99.78160000004573,
+          "accepted": true,
+          "media_ms": 500
+        },
+        {
+          "clause": 0,
+          "synthesis_ms": 1198
+        },
+        {
+          "clause": 0,
+          "compute_ms": 10.004342999991422,
+          "roundtrip_ms": 64.59479999996256,
+          "accepted": true,
+          "media_ms": 920
+        },
+        {
+          "clause": 0,
+          "compute_ms": 8.249238999951558,
+          "roundtrip_ms": 57.98700000002282,
+          "accepted": true,
+          "media_ms": 1360
+        },
+        {
+          "clause": 0,
+          "compute_ms": 10.448191000023144,
+          "roundtrip_ms": 84.89729999995325,
+          "accepted": true,
+          "media_ms": 1790
+        },
+        {
+          "clause": 0,
+          "compute_ms": 9.000539999988177,
+          "roundtrip_ms": 42.76429999998072,
+          "accepted": true,
+          "media_ms": 2180
+        },
+        {
+          "clause": 0,
+          "compute_ms": 9.800938999887876,
+          "roundtrip_ms": 68.43089999997756,
+          "accepted": true,
+          "media_ms": 2620
+        },
+        {
+          "clause": 1,
+          "text_wait_ms": 0,
+          "queue_wait_ms": 3600
+        },
+        {
+          "clause": 1,
+          "semantic_prefill_ms": 102.95439700007591,
+          "overlapped_with_tts": true
+        },
+        {
+          "clause": 1,
+          "compute_ms": 152.03571099982582,
+          "roundtrip_ms": 176.65260000003036,
+          "accepted": true,
+          "media_ms": 2960
+        },
+        {
+          "clause": 1,
+          "first_chunk_ms": 400,
+          "synthesis_to_first_chunk_ms": 373
+        },
+        {
+          "clause": 1,
+          "compute_ms": 23.492093999948338,
+          "roundtrip_ms": 76.16210000001593,
+          "accepted": true,
+          "media_ms": 3030
+        },
+        {
+          "clause": 1,
+          "compute_ms": 10.117271000126493,
+          "roundtrip_ms": 61.103199999954086,
+          "accepted": true,
+          "media_ms": 3430
+        },
+        {
+          "clause": 1,
+          "synthesis_ms": 1228
+        },
+        {
+          "clause": 1,
+          "compute_ms": 10.205435999978363,
+          "roundtrip_ms": 64.86940000002505,
+          "accepted": true,
+          "media_ms": 3840
+        },
+        {
+          "clause": 1,
+          "compute_ms": 7.649377000007007,
+          "roundtrip_ms": 85.44719999999506,
+          "accepted": true,
+          "media_ms": 4300
+        },
+        {
+          "clause": 1,
+          "compute_ms": 11.320557999852099,
+          "roundtrip_ms": 56.83289999997942,
+          "accepted": true,
+          "media_ms": 4750
+        },
+        {
+          "clause": 1,
+          "compute_ms": 10.71210100008102,
+          "roundtrip_ms": 71.62099999998463,
+          "accepted": true,
+          "media_ms": 5180
+        },
+        {
+          "clause": 1,
+          "compute_ms": 9.94882999998481,
+          "roundtrip_ms": 52.15429999999469,
+          "accepted": true,
+          "media_ms": 5580
+        },
+        {
+          "clause": 1,
+          "compute_ms": 11.023183999895991,
+          "roundtrip_ms": 64.63400000002002,
+          "accepted": true,
+          "media_ms": 6000
+        },
+        {
+          "clause": 1,
+          "compute_ms": 10.614405000069382,
+          "roundtrip_ms": 59.56510000000708,
+          "accepted": true,
+          "media_ms": 6000
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "name": "cajole",
+      "title": "软声请求与情绪延续",
+      "context": "你向亲近的人软声讨一口甜点，带撒娇意味。",
+      "text": "就让我尝一小块嘛。真的只要一小块就够了。",
+      "body": "cajole",
+      "frames": 380,
+      "audio_sample_rate": 24000,
+      "plan_history": [
+        {
+          "clause": 0,
+          "at_ms": 31620.000000000466,
+          "plan": {
+            "schema": "performance.plan.v1",
+            "arm": "none",
+            "body": "cajole",
+            "emotion": "shy",
+            "eye": "normal",
+            "arm_variant": 0,
+            "body_variant": 1,
+            "body_strength": 0.7425,
+            "expressions": {
+              "黑脸": 0.0083,
+              "流泪": 0.0151,
+              "脸红": 0.417,
+              "加载": 0.0046,
+              "兔牙": 0.0012,
+              "流冷汗": 0.0023
+            },
+            "eye_strength": 0.0183,
+            "arm_hold_ms": 1275,
+            "body_hold_ms": 2847,
+            "face_hold_ms": 4522,
+            "onset_ms": 203,
+            "confidence": {
+              "arm": 0.9999986886978149,
+              "body": 0.9999083280563354,
+              "emotion": 0.9999986886978149,
+              "eye": 0.9988232254981995
+            },
+            "clause": 0
+          },
+          "arm_applied": false,
+          "body_applied": true
+        },
+        {
+          "clause": 1,
+          "at_ms": 34613.333333333714,
+          "plan": {
+            "schema": "performance.plan.v1",
+            "arm": "none",
+            "body": "cajole",
+            "emotion": "shy",
+            "eye": "normal",
+            "arm_variant": 1,
+            "body_variant": 2,
+            "body_strength": 0.8429,
+            "expressions": {
+              "黑脸": 0.0049,
+              "流泪": 0.0084,
+              "脸红": 0.2707,
+              "加载": 0.003,
+              "兔牙": 0.0006,
+              "流冷汗": 0.0011
+            },
+            "eye_strength": 0.0026,
+            "arm_hold_ms": 1215,
+            "body_hold_ms": 2880,
+            "face_hold_ms": 4157,
+            "onset_ms": 198,
+            "confidence": {
+              "arm": 0.9999973773956299,
+              "body": 0.9999939203262329,
+              "emotion": 0.9999855756759644,
+              "eye": 0.9999936819076538
+            },
+            "clause": 1
+          },
+          "arm_applied": false,
+          "body_applied": false,
+          "body_skipped": "busy_directed_or_cooldown"
+        }
+      ],
+      "metrics": [
+        {
+          "clause": 0,
+          "text_wait_ms": 0,
+          "queue_wait_ms": 42
+        },
+        {
+          "clause": 0,
+          "semantic_prefill_ms": 140.33685099980175,
+          "overlapped_with_tts": true
+        },
+        {
+          "clause": 0,
+          "compute_ms": 71.93650399995022,
+          "roundtrip_ms": 115.66709999996237,
+          "accepted": true,
+          "media_ms": 0
+        },
+        {
+          "clause": 0,
+          "first_chunk_ms": 403,
+          "synthesis_to_first_chunk_ms": 382
+        },
+        {
+          "clause": 0,
+          "compute_ms": 19.8878070000319,
+          "roundtrip_ms": 60.520100000023376,
+          "accepted": true,
+          "media_ms": 110
+        },
+        {
+          "clause": 0,
+          "synthesis_ms": 998
+        },
+        {
+          "clause": 0,
+          "compute_ms": 10.505242999897746,
+          "roundtrip_ms": 65.56620000000112,
+          "accepted": true,
+          "media_ms": 550
+        },
+        {
+          "clause": 0,
+          "compute_ms": 10.20583100012118,
+          "roundtrip_ms": 74.14909999998054,
+          "accepted": true,
+          "media_ms": 950
+        },
+        {
+          "clause": 0,
+          "compute_ms": 9.835934000193447,
+          "roundtrip_ms": 66.19949999998789,
+          "accepted": true,
+          "media_ms": 1380
+        },
+        {
+          "clause": 0,
+          "compute_ms": 9.393417999945086,
+          "roundtrip_ms": 75.97899999999208,
+          "accepted": true,
+          "media_ms": 1820
+        },
+        {
+          "clause": 0,
+          "compute_ms": 7.929659000183165,
+          "roundtrip_ms": 76.24119999998948,
+          "accepted": true,
+          "media_ms": 2230
+        },
+        {
+          "clause": 1,
+          "text_wait_ms": 0,
+          "queue_wait_ms": 3031
+        },
+        {
+          "clause": 1,
+          "semantic_prefill_ms": 131.16748400011602,
+          "overlapped_with_tts": true
+        },
+        {
+          "clause": 1,
+          "compute_ms": 73.41143200005718,
+          "roundtrip_ms": 125.0280999999959,
+          "accepted": true,
+          "media_ms": 2400
+        },
+        {
+          "clause": 1,
+          "first_chunk_ms": 405,
+          "synthesis_to_first_chunk_ms": 382
+        },
+        {
+          "clause": 1,
+          "compute_ms": 20.374563000132184,
+          "roundtrip_ms": 76.27569999999832,
+          "accepted": true,
+          "media_ms": 2500
+        },
+        {
+          "clause": 1,
+          "synthesis_ms": 890
+        },
+        {
+          "clause": 1,
+          "compute_ms": 10.4901989998325,
+          "roundtrip_ms": 73.28870000003371,
+          "accepted": true,
+          "media_ms": 2940
+        },
+        {
+          "clause": 1,
+          "compute_ms": 9.853457999952298,
+          "roundtrip_ms": 51.75270000001183,
+          "accepted": true,
+          "media_ms": 3380
+        },
+        {
+          "clause": 1,
+          "compute_ms": 8.355517000154578,
+          "roundtrip_ms": 50.758199999982025,
+          "accepted": true,
+          "media_ms": 3810
+        },
+        {
+          "clause": 1,
+          "compute_ms": 6.905477999907816,
+          "roundtrip_ms": 57.58130000001984,
+          "accepted": true,
+          "media_ms": 4240
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "name": "point",
+      "title": "强调细节与身体配合",
+      "context": "指出观众漏读的文字，是强调重点。",
+      "text": "答案其实藏在末尾那句话里。你看最后一行还有半句呢。",
+      "arm": "point",
+      "frames": 432,
+      "audio_sample_rate": 24000,
+      "plan_history": [
+        {
+          "clause": 0,
+          "at_ms": 39233.333333333336,
+          "plan": {
+            "schema": "performance.plan.v1",
+            "arm": "point",
+            "body": "nod",
+            "emotion": "keep",
+            "eye": "normal",
+            "arm_variant": 2,
+            "body_variant": 0,
+            "body_strength": 0.5393,
+            "expressions": {
+              "黑脸": 0.0134,
+              "流泪": 0.0002,
+              "脸红": 0.0003,
+              "加载": 0.0011,
+              "兔牙": 0.0088,
+              "流冷汗": 0.0006
+            },
+            "eye_strength": 0,
+            "arm_hold_ms": 1252,
+            "body_hold_ms": 2136,
+            "face_hold_ms": 3261,
+            "onset_ms": 243,
+            "confidence": {
+              "arm": 0.9999663829803467,
+              "body": 0.999884843826294,
+              "emotion": 0.9999797344207764,
+              "eye": 0.9999997615814209
+            },
+            "clause": 0
+          },
+          "arm_applied": true,
+          "body_applied": true
+        },
+        {
+          "clause": 1,
+          "at_ms": 42316.666666666584,
+          "plan": {
+            "schema": "performance.plan.v1",
+            "arm": "point",
+            "body": "nod",
+            "emotion": "keep",
+            "eye": "normal",
+            "arm_variant": 1,
+            "body_variant": 2,
+            "body_strength": 0.5118,
+            "expressions": {
+              "黑脸": 0.0044,
+              "流泪": 0.0001,
+              "脸红": 0.0002,
+              "加载": 0.0004,
+              "兔牙": 0.0007,
+              "流冷汗": 0
+            },
+            "eye_strength": 0,
+            "arm_hold_ms": 1160,
+            "body_hold_ms": 2115,
+            "face_hold_ms": 3162,
+            "onset_ms": 199,
+            "confidence": {
+              "arm": 0.9997549653053284,
+              "body": 0.9966928958892822,
+              "emotion": 0.9999998807907104,
+              "eye": 1
+            },
+            "clause": 1
+          },
+          "arm_applied": false,
+          "body_applied": false,
+          "arm_skipped": "busy_directed_or_cooldown",
+          "body_skipped": "busy_directed_or_cooldown"
+        }
+      ],
+      "metrics": [
+        {
+          "clause": 0,
+          "text_wait_ms": 0,
+          "queue_wait_ms": 53
+        },
+        {
+          "clause": 0,
+          "semantic_prefill_ms": 100.08432700010417,
+          "overlapped_with_tts": true
+        },
+        {
+          "clause": 0,
+          "compute_ms": 65.49105299995972,
+          "roundtrip_ms": 97.8239000000176,
+          "accepted": true,
+          "media_ms": 0
+        },
+        {
+          "clause": 0,
+          "first_chunk_ms": 418,
+          "synthesis_to_first_chunk_ms": 386
+        },
+        {
+          "clause": 0,
+          "compute_ms": 33.31523900010325,
+          "roundtrip_ms": 73.42709999997169,
+          "accepted": true,
+          "media_ms": 90
+        },
+        {
+          "clause": 0,
+          "compute_ms": 9.310723999988113,
+          "roundtrip_ms": 50.48120000003837,
+          "accepted": true,
+          "media_ms": 540
+        },
+        {
+          "clause": 0,
+          "synthesis_ms": 1208
+        },
+        {
+          "clause": 0,
+          "compute_ms": 9.716444999867235,
+          "roundtrip_ms": 50.7164000000339,
+          "accepted": true,
+          "media_ms": 950
+        },
+        {
+          "clause": 0,
+          "compute_ms": 8.00162299992735,
+          "roundtrip_ms": 60.0568000000203,
+          "accepted": true,
+          "media_ms": 1380
+        },
+        {
+          "clause": 0,
+          "compute_ms": 9.590206999973816,
+          "roundtrip_ms": 76.76939999999013,
+          "accepted": true,
+          "media_ms": 1820
+        },
+        {
+          "clause": 0,
+          "compute_ms": 9.752275999971971,
+          "roundtrip_ms": 51.8350999999675,
+          "accepted": true,
+          "media_ms": 2220
+        },
+        {
+          "clause": 1,
+          "text_wait_ms": 0,
+          "queue_wait_ms": 3200
+        },
+        {
+          "clause": 1,
+          "semantic_prefill_ms": 102.08019700007753,
+          "overlapped_with_tts": true
+        },
+        {
+          "clause": 1,
+          "compute_ms": 146.5680279998196,
+          "roundtrip_ms": 183.28110000002198,
+          "accepted": false,
+          "media_ms": 2560
+        },
+        {
+          "clause": 1,
+          "first_chunk_ms": 401,
+          "synthesis_to_first_chunk_ms": 381
+        },
+        {
+          "clause": 1,
+          "compute_ms": 21.445558999857894,
+          "roundtrip_ms": 74.23509999999078,
+          "accepted": true,
+          "media_ms": 2650
+        },
+        {
+          "clause": 1,
+          "compute_ms": 32.26501399990411,
+          "roundtrip_ms": 87.46260000002803,
+          "accepted": true,
+          "media_ms": 3050
+        },
+        {
+          "clause": 1,
+          "synthesis_ms": 1162
+        },
+        {
+          "clause": 1,
+          "compute_ms": 9.525974000098358,
+          "roundtrip_ms": 65.9883999999729,
+          "accepted": true,
+          "media_ms": 3450
+        },
+        {
+          "clause": 1,
+          "compute_ms": 10.683791000019482,
+          "roundtrip_ms": 56.24989999999525,
+          "accepted": true,
+          "media_ms": 3890
+        },
+        {
+          "clause": 1,
+          "compute_ms": 10.028493999925558,
+          "roundtrip_ms": 52.14319999999134,
+          "accepted": true,
+          "media_ms": 4310
+        },
+        {
+          "clause": 1,
+          "compute_ms": 9.434790999875986,
+          "roundtrip_ms": 79.18479999998817,
+          "accepted": true,
+          "media_ms": 4750
+        },
+        {
+          "clause": 1,
+          "compute_ms": 10.12630199988962,
+          "roundtrip_ms": 57.22000000003027,
+          "accepted": true,
+          "media_ms": 5150
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "name": "quote",
+      "title": "转述他人情绪",
+      "context": "正在平静读别人的发言，不代入角色，不表演引号内容。",
+      "text": "我只是转述她说的“别再拿我的家人开玩笑”，这不是我的感受。我们继续读下一条留言。",
+      "neutral": true,
+      "frames": 613,
+      "audio_sample_rate": 24000,
+      "plan_history": [
+        {
+          "clause": 0,
+          "at_ms": 47679.99999999953,
+          "plan": {
+            "schema": "performance.plan.v1",
+            "arm": "none",
+            "body": "none",
+            "emotion": "keep",
+            "eye": "normal",
+            "arm_variant": 0,
+            "body_variant": 1,
+            "body_strength": 0.0056,
+            "expressions": {
+              "黑脸": 0.0014,
+              "流泪": 0.0097,
+              "脸红": 0.0044,
+              "加载": 0.0143,
+              "兔牙": 0.0002,
+              "流冷汗": 0
+            },
+            "eye_strength": 0,
+            "arm_hold_ms": 1201,
+            "body_hold_ms": 1991,
+            "face_hold_ms": 3225,
+            "onset_ms": 171,
+            "confidence": {
+              "arm": 0.9996941089630127,
+              "body": 1,
+              "emotion": 0.9999984502792358,
+              "eye": 1
+            },
+            "clause": 0
+          },
+          "arm_applied": false,
+          "body_applied": false
+        },
+        {
+          "clause": 1,
+          "at_ms": 53416.66666666611,
+          "plan": {
+            "schema": "performance.plan.v1",
+            "arm": "none",
+            "body": "none",
+            "emotion": "keep",
+            "eye": "normal",
+            "arm_variant": 0,
+            "body_variant": 1,
+            "body_strength": 0.0113,
+            "expressions": {
+              "黑脸": 0.0008,
+              "流泪": 0.003,
+              "脸红": 0.0028,
+              "加载": 0.0058,
+              "兔牙": 0.0001,
+              "流冷汗": 0
+            },
+            "eye_strength": 0,
+            "arm_hold_ms": 1194,
+            "body_hold_ms": 2082,
+            "face_hold_ms": 3466,
+            "onset_ms": 162,
+            "confidence": {
+              "arm": 0.9999979734420776,
+              "body": 0.9999996423721313,
+              "emotion": 0.999946117401123,
+              "eye": 1
+            },
+            "clause": 1
+          },
+          "arm_applied": false,
+          "body_applied": false
+        }
+      ],
+      "metrics": [
+        {
+          "clause": 0,
+          "text_wait_ms": 0,
+          "queue_wait_ms": 53
+        },
+        {
+          "clause": 0,
+          "semantic_prefill_ms": 85.08590499991442,
+          "overlapped_with_tts": true
+        },
+        {
+          "clause": 0,
+          "compute_ms": 161.9580120000137,
+          "roundtrip_ms": 198.37020000000484,
+          "accepted": true,
+          "media_ms": 0
+        },
+        {
+          "clause": 0,
+          "first_chunk_ms": 430,
+          "synthesis_to_first_chunk_ms": 397
+        },
+        {
+          "clause": 0,
+          "compute_ms": 14.059278999866365,
+          "roundtrip_ms": 50.257000000041444,
+          "accepted": true,
+          "media_ms": 50
+        },
+        {
+          "clause": 0,
+          "compute_ms": 22.568680000176755,
+          "roundtrip_ms": 79.32419999997364,
+          "accepted": true,
+          "media_ms": 480
+        },
+        {
+          "clause": 0,
+          "compute_ms": 13.355780999972922,
+          "roundtrip_ms": 53.313700000057,
+          "accepted": true,
+          "media_ms": 880
+        },
+        {
+          "clause": 0,
+          "compute_ms": 11.702205999881699,
+          "roundtrip_ms": 62.163000000000466,
+          "accepted": true,
+          "media_ms": 1310
+        },
+        {
+          "clause": 0,
+          "synthesis_ms": 1948
+        },
+        {
+          "clause": 0,
+          "compute_ms": 9.811439999793947,
+          "roundtrip_ms": 56.9318000000203,
+          "accepted": true,
+          "media_ms": 1750
+        },
+        {
+          "clause": 0,
+          "compute_ms": 8.599435999940397,
+          "roundtrip_ms": 48.72090000001481,
+          "accepted": true,
+          "media_ms": 2190
+        },
+        {
+          "clause": 0,
+          "compute_ms": 9.447372999829895,
+          "roundtrip_ms": 63.01510000001872,
+          "accepted": true,
+          "media_ms": 2610
+        },
+        {
+          "clause": 0,
+          "compute_ms": 10.653298000079303,
+          "roundtrip_ms": 59.76130000001285,
+          "accepted": true,
+          "media_ms": 3050
+        },
+        {
+          "clause": 0,
+          "compute_ms": 10.80855899999733,
+          "roundtrip_ms": 54.32740000000922,
+          "accepted": true,
+          "media_ms": 3480
+        },
+        {
+          "clause": 0,
+          "compute_ms": 10.553191000099105,
+          "roundtrip_ms": 53.46350000001257,
+          "accepted": true,
+          "media_ms": 3910
+        },
+        {
+          "clause": 0,
+          "compute_ms": 9.972983000125168,
+          "roundtrip_ms": 49.65950000000885,
+          "accepted": true,
+          "media_ms": 4340
+        },
+        {
+          "clause": 0,
+          "compute_ms": 8.384093000131543,
+          "roundtrip_ms": 60.4098000000231,
+          "accepted": true,
+          "media_ms": 4770
+        },
+        {
+          "clause": 1,
+          "text_wait_ms": 0,
+          "queue_wait_ms": 5814
+        },
+        {
+          "clause": 1,
+          "semantic_prefill_ms": 114.58303400013392,
+          "overlapped_with_tts": true
+        },
+        {
+          "clause": 1,
+          "compute_ms": 127.51536199994007,
+          "roundtrip_ms": 180.07529999996768,
+          "accepted": true,
+          "media_ms": 5200
+        },
+        {
+          "clause": 1,
+          "first_chunk_ms": 437,
+          "synthesis_to_first_chunk_ms": 413
+        },
+        {
+          "clause": 1,
+          "compute_ms": 23.117901999967216,
+          "roundtrip_ms": 68.72880000004079,
+          "accepted": true,
+          "media_ms": 5270
+        },
+        {
+          "clause": 1,
+          "compute_ms": 13.892217000147866,
+          "roundtrip_ms": 47.7664999999688,
+          "accepted": true,
+          "media_ms": 5670
+        },
+        {
+          "clause": 1,
+          "synthesis_ms": 1296
+        },
+        {
+          "clause": 1,
+          "compute_ms": 11.365417999968486,
+          "roundtrip_ms": 58.837999999988824,
+          "accepted": true,
+          "media_ms": 6110
+        },
+        {
+          "clause": 1,
+          "compute_ms": 10.514071999978114,
+          "roundtrip_ms": 55.87279999995371,
+          "accepted": true,
+          "media_ms": 6540
+        },
+        {
+          "clause": 1,
+          "compute_ms": 9.03356500020891,
+          "roundtrip_ms": 53.44990000000689,
+          "accepted": true,
+          "media_ms": 6970
+        },
+        {
+          "clause": 1,
+          "compute_ms": 10.289459999967221,
+          "roundtrip_ms": 63.995399999956135,
+          "accepted": true,
+          "media_ms": 7400
+        },
+        {
+          "clause": 1,
+          "compute_ms": 9.281700999963505,
+          "roundtrip_ms": 63.102699999988545,
+          "accepted": true,
+          "media_ms": 7840
+        },
+        {
+          "clause": 1,
+          "compute_ms": 10.001794000118025,
+          "roundtrip_ms": 57.24660000001313,
+          "accepted": true,
+          "media_ms": 8270
+        }
+      ]
+    }
+  ],
+  "planner_checkpoint": "053fd98de35fa065f50fd8e86f0031fa5d1730b8544785363c4b803192d5cfa8",
+  "runtime_version": "v4.13.0-clause-plan",
+  "cancelled_late_results_do_not_replay": true
+}

@@ -1,0 +1,43 @@
+{
+  "runtime_version": "v4.12.2-discrete-eyes",
+  "targeted_checks_passed": true,
+  "engineering_acceptance_complete": false,
+  "human_accepted": false,
+  "promoted": false,
+  "parent_human_review": {
+    "candidate": 11,
+    "v3": 2,
+    "tie": 9,
+    "neither": 2
+  },
+  "parent_preference_gate_passed": false,
+  "unit_tests_passed": 53,
+  "new_ten_minute_test": false,
+  "new_latency_benchmark": false,
+  "model_weights_changed": false,
+  "test_set_reevaluated": false,
+  "special_eye_states": [
+    0,
+    1
+  ],
+  "eye_types_exclusive": true,
+  "actual_frames": 445,
+  "fractional_eye_frames": 0,
+  "overlapping_special_eye_frames": 0,
+  "original_human_ratings_preserved": true,
+  "original_review_media_preserved": true,
+  "evidence": {
+    "eye-browser": {
+      "path": "test-results/v4-composition-r2/eye-browser.json",
+      "sha256": "6d51e46abb0802466b164c986477ff6a18ba75ac3b99ca0adc9d734a490c470c"
+    },
+    "eye-recordings": {
+      "path": "test-results/v4-composition-r2/eye-recordings.json",
+      "sha256": "1e0a45c7d06f001f907b949e0f57253be9b5a059184dc653cb6f003f00341028"
+    },
+    "planner-browser": {
+      "path": "test-results/v4-composition-r2/planner-browser.json",
+      "sha256": "42137ad5e705222e05563851ab3f47d88f4a03c25fddfc5efe16f6914fff3855"
+    }
+  }
+}

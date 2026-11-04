@@ -1,0 +1,314 @@
+[
+  {
+    "index": 0,
+    "models": [
+      {
+        "label": "A",
+        "model": "v3"
+      },
+      {
+        "label": "B",
+        "model": "v4-regression"
+      }
+    ]
+  },
+  {
+    "index": 1,
+    "models": [
+      {
+        "label": "A",
+        "model": "v4-regression"
+      },
+      {
+        "label": "B",
+        "model": "v3"
+      }
+    ]
+  },
+  {
+    "index": 2,
+    "models": [
+      {
+        "label": "A",
+        "model": "v4-regression"
+      },
+      {
+        "label": "B",
+        "model": "v3"
+      }
+    ]
+  },
+  {
+    "index": 3,
+    "models": [
+      {
+        "label": "A",
+        "model": "v4-regression"
+      },
+      {
+        "label": "B",
+        "model": "v3"
+      }
+    ]
+  },
+  {
+    "index": 4,
+    "models": [
+      {
+        "label": "A",
+        "model": "v4-regression"
+      },
+      {
+        "label": "B",
+        "model": "v3"
+      }
+    ]
+  },
+  {
+    "index": 5,
+    "models": [
+      {
+        "label": "A",
+        "model": "v3"
+      },
+      {
+        "label": "B",
+        "model": "v4-regression"
+      }
+    ]
+  },
+  {
+    "index": 6,
+    "models": [
+      {
+        "label": "A",
+        "model": "v4-regression"
+      },
+      {
+        "label": "B",
+        "model": "v3"
+      }
+    ]
+  },
+  {
+    "index": 7,
+    "models": [
+      {
+        "label": "A",
+        "model": "v3"
+      },
+      {
+        "label": "B",
+        "model": "v4-regression"
+      }
+    ]
+  },
+  {
+    "index": 8,
+    "models": [
+      {
+        "label": "A",
+        "model": "v4-regression"
+      },
+      {
+        "label": "B",
+        "model": "v3"
+      }
+    ]
+  },
+  {
+    "index": 9,
+    "models": [
+      {
+        "label": "A",
+        "model": "v3"
+      },
+      {
+        "label": "B",
+        "model": "v4-regression"
+      }
+    ]
+  },
+  {
+    "index": 10,
+    "models": [
+      {
+        "label": "A",
+        "model": "v3"
+      },
+      {
+        "label": "B",
+        "model": "v4-regression"
+      }
+    ]
+  },
+  {
+    "index": 11,
+    "models": [
+      {
+        "label": "A",
+        "model": "v3"
+      },
+      {
+        "label": "B",
+        "model": "v4-regression"
+      }
+    ]
+  },
+  {
+    "index": 12,
+    "models": [
+      {
+        "label": "A",
+        "model": "v4-regression"
+      },
+      {
+        "label": "B",
+        "model": "v3"
+      }
+    ]
+  },
+  {
+    "index": 13,
+    "models": [
+      {
+        "label": "A",
+        "model": "v3"
+      },
+      {
+        "label": "B",
+        "model": "v4-regression"
+      }
+    ]
+  },
+  {
+    "index": 14,
+    "models": [
+      {
+        "label": "A",
+        "model": "v4-regression"
+      },
+      {
+        "label": "B",
+        "model": "v3"
+      }
+    ]
+  },
+  {
+    "index": 15,
+    "models": [
+      {
+        "label": "A",
+        "model": "v3"
+      },
+      {
+        "label": "B",
+        "model": "v4-regression"
+      }
+    ]
+  },
+  {
+    "index": 16,
+    "models": [
+      {
+        "label": "A",
+        "model": "v3"
+      },
+      {
+        "label": "B",
+        "model": "v4-regression"
+      }
+    ]
+  },
+  {
+    "index": 17,
+    "models": [
+      {
+        "label": "A",
+        "model": "v3"
+      },
+      {
+        "label": "B",
+        "model": "v4-regression"
+      }
+    ]
+  },
+  {
+    "index": 18,
+    "models": [
+      {
+        "label": "A",
+        "model": "v3"
+      },
+      {
+        "label": "B",
+        "model": "v4-regression"
+      }
+    ]
+  },
+  {
+    "index": 19,
+    "models": [
+      {
+        "label": "A",
+        "model": "v3"
+      },
+      {
+        "label": "B",
+        "model": "v4-regression"
+      }
+    ]
+  },
+  {
+    "index": 20,
+    "models": [
+      {
+        "label": "A",
+        "model": "v4-regression"
+      },
+      {
+        "label": "B",
+        "model": "v3"
+      }
+    ]
+  },
+  {
+    "index": 21,
+    "models": [
+      {
+        "label": "A",
+        "model": "v4-regression"
+      },
+      {
+        "label": "B",
+        "model": "v3"
+      }
+    ]
+  },
+  {
+    "index": 22,
+    "models": [
+      {
+        "label": "A",
+        "model": "v3"
+      },
+      {
+        "label": "B",
+        "model": "v4-regression"
+      }
+    ]
+  },
+  {
+    "index": 23,
+    "models": [
+      {
+        "label": "A",
+        "model": "v4-regression"
+      },
+      {
+        "label": "B",
+        "model": "v3"
+      }
+    ]
+  }
+]

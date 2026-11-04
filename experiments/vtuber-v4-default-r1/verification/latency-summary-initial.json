@@ -1,0 +1,17 @@
+{
+  "ok": false,
+  "summary": {
+    "baseline_first_audio_ms": 469.8999999985099,
+    "default_first_audio_ms": 615.1999999992549,
+    "increase_ms": 145.30000000074506,
+    "baseline_including_setup_ms": 469.8999999985099,
+    "default_including_setup_ms": 681.5,
+    "increase_including_setup_ms": 211.60000000149012,
+    "action_update_p95_ms": 41.673815999274666,
+    "action_updates": 42
+  },
+  "warmup_excluded": true,
+  "measured_pairs": 3,
+  "baseline": "Separate --legacy launch, original 0.8B CUDA and same TTS weights",
+  "scope": "actual PCM playback with concurrent TTS"
+}

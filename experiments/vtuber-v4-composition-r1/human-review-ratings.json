@@ -1,0 +1,172 @@
+{
+  "composition-r1": {
+    "0": {
+      "choice": "A",
+      "note": "",
+      "at": "2026-11-02T06:00:47.394Z",
+      "source": "user",
+      "dataset_version": "composition-r1"
+    },
+    "1": {
+      "choice": "B",
+      "note": "",
+      "at": "2026-11-02T08:18:54.625Z",
+      "source": "user",
+      "dataset_version": "composition-r1"
+    },
+    "2": {
+      "choice": "tie",
+      "note": "",
+      "at": "2026-11-02T08:19:16.555Z",
+      "source": "user",
+      "dataset_version": "composition-r1"
+    },
+    "3": {
+      "choice": "tie",
+      "note": "",
+      "at": "2026-11-02T08:19:37.405Z",
+      "source": "user",
+      "dataset_version": "composition-r1"
+    },
+    "4": {
+      "choice": "A",
+      "note": "",
+      "at": "2026-11-02T08:19:50.555Z",
+      "source": "user",
+      "dataset_version": "composition-r1"
+    },
+    "5": {
+      "choice": "A",
+      "note": "",
+      "at": "2026-11-02T08:20:07.089Z",
+      "source": "user",
+      "dataset_version": "composition-r1"
+    },
+    "6": {
+      "choice": "B",
+      "note": "",
+      "at": "2026-11-02T08:20:19.594Z",
+      "source": "user",
+      "dataset_version": "composition-r1"
+    },
+    "7": {
+      "choice": "A",
+      "note": "",
+      "at": "2026-11-02T08:21:04.897Z",
+      "source": "user",
+      "dataset_version": "composition-r1"
+    },
+    "8": {
+      "choice": "B",
+      "note": "",
+      "at": "2026-11-02T08:21:19.117Z",
+      "source": "user",
+      "dataset_version": "composition-r1"
+    },
+    "9": {
+      "choice": "A",
+      "note": "",
+      "at": "2026-11-02T08:21:45.338Z",
+      "source": "user",
+      "dataset_version": "composition-r1"
+    },
+    "10": {
+      "choice": "neither",
+      "note": "a两种眼睛怎么重叠了，这是不对的",
+      "at": "2026-11-02T08:22:57.854Z",
+      "source": "user",
+      "dataset_version": "composition-r1"
+    },
+    "11": {
+      "choice": "tie",
+      "note": "",
+      "at": "2026-11-02T08:23:08.413Z",
+      "source": "user",
+      "dataset_version": "composition-r1"
+    },
+    "12": {
+      "choice": "B",
+      "note": "",
+      "at": "2026-11-02T08:23:23.581Z",
+      "source": "user",
+      "dataset_version": "composition-r1"
+    },
+    "13": {
+      "choice": "tie",
+      "note": "",
+      "at": "2026-11-02T08:23:46.236Z",
+      "source": "user",
+      "dataset_version": "composition-r1"
+    },
+    "14": {
+      "choice": "A",
+      "note": "",
+      "at": "2026-11-02T08:24:08.411Z",
+      "source": "user",
+      "dataset_version": "composition-r1"
+    },
+    "15": {
+      "choice": "A",
+      "note": "",
+      "at": "2026-11-02T08:24:20.686Z",
+      "source": "user",
+      "dataset_version": "composition-r1"
+    },
+    "16": {
+      "choice": "B",
+      "note": "",
+      "at": "2026-11-02T08:24:37.771Z",
+      "source": "user",
+      "dataset_version": "composition-r1"
+    },
+    "17": {
+      "choice": "tie",
+      "note": "",
+      "at": "2026-11-02T08:24:57.824Z",
+      "source": "user",
+      "dataset_version": "composition-r1"
+    },
+    "18": {
+      "choice": "B",
+      "note": "",
+      "at": "2026-11-02T08:25:14.118Z",
+      "source": "user",
+      "dataset_version": "composition-r1"
+    },
+    "19": {
+      "choice": "neither",
+      "note": "a的屑屑眼太淡了，这些眼睛都参数是都应该拉到底，用不上就变成0。",
+      "at": "2026-11-02T08:26:43.250Z",
+      "source": "user",
+      "dataset_version": "composition-r1"
+    },
+    "20": {
+      "choice": "tie",
+      "note": "",
+      "at": "2026-11-02T08:26:56.685Z",
+      "source": "user",
+      "dataset_version": "composition-r1"
+    },
+    "21": {
+      "choice": "tie",
+      "note": "",
+      "at": "2026-11-02T08:27:20.651Z",
+      "source": "user",
+      "dataset_version": "composition-r1"
+    },
+    "22": {
+      "choice": "tie",
+      "note": "",
+      "at": "2026-11-02T08:27:37.866Z",
+      "source": "user",
+      "dataset_version": "composition-r1"
+    },
+    "23": {
+      "choice": "tie",
+      "note": "",
+      "at": "2026-11-02T08:27:53.701Z",
+      "source": "user",
+      "dataset_version": "composition-r1"
+    }
+  }
+}

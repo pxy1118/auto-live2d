@@ -1,0 +1,193 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Read-only learned performance plan carried by performance.chunk and performance.state",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema": {
+      "const": "performance.plan.v1"
+    },
+    "clause": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "arm": {
+      "enum": [
+        "none",
+        "wave",
+        "chest",
+        "grass",
+        "point",
+        "thanks",
+        "explain",
+        "refuse"
+      ]
+    },
+    "body": {
+      "enum": [
+        "none",
+        "lean",
+        "sway",
+        "nod",
+        "tilt",
+        "turn",
+        "cajole"
+      ]
+    },
+    "emotion": {
+      "enum": [
+        "keep",
+        "neutral",
+        "happy",
+        "angry",
+        "shy",
+        "sad",
+        "surprised",
+        "confused"
+      ]
+    },
+    "eye": {
+      "enum": [
+        "normal",
+        "＞＜",
+        "圈圈眼",
+        "爱心眼",
+        "屑屑眼"
+      ]
+    },
+    "arm_variant": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2
+    },
+    "body_variant": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2
+    },
+    "body_strength": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "eye_strength": {
+      "description": "Retained learned activation proposal for compatibility. Accepted special eye drawings execute as exclusive 0/1 states, never as partial opacity.",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "arm_hold_ms": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 3000
+    },
+    "body_hold_ms": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 4000
+    },
+    "face_hold_ms": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 8000
+    },
+    "onset_ms": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1000
+    },
+    "expressions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "黑脸",
+        "流泪",
+        "脸红",
+        "加载",
+        "兔牙",
+        "流冷汗"
+      ],
+      "properties": {
+        "黑脸": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "流泪": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "脸红": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "加载": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "兔牙": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "流冷汗": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "confidence": {
+      "type": "object",
+      "required": [
+        "arm",
+        "body",
+        "emotion",
+        "eye"
+      ],
+      "properties": {
+        "arm": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "body": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "emotion": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "eye": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    }
+  },
+  "required": [
+    "schema",
+    "clause",
+    "arm",
+    "body",
+    "emotion",
+    "eye",
+    "arm_variant",
+    "body_variant",
+    "body_strength",
+    "eye_strength",
+    "arm_hold_ms",
+    "body_hold_ms",
+    "face_hold_ms",
+    "onset_ms",
+    "expressions",
+    "confidence"
+  ]
+}

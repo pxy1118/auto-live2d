@@ -40,5 +40,11 @@
 
 ## 其他依赖
 
+- 本地语义规划使用 `lm-format-enforcer` 0.11.3（MIT，版权 Noam Gat），来源 <https://github.com/noamgat/lm-format-enforcer>。通过其公开的 TokenEnforcer API 与 Transformers 5 对接，约束 JSON 和动作枚举；代码不包含对方源码副本，安装版本与依赖哈希由 `latent/uv.lock` 固定。
+
 - Node 依赖（`tsx`、`vite`、`ws`、`playwright` 等）与 Python 依赖（PyTorch、transformers 等）不随源码副本分发，版本由 `package-lock.json` 与 `latent/uv.lock`（如有）锁定；各自遵循其上游许可证。
 - 角色页与文档中的商标、角色名称归各自权利人所有。
+# Local semantic inference runtime
+
+The semantic entry point uses the user's local [llama.cpp](https://github.com/ggml-org/llama.cpp) build at commit `895c045fd` (MIT license). The executable and its CUDA runtime libraries remain in the local llama.cpp installation. Qwen3.5-4B Q8_0 is converted locally from the existing Apache-2.0 Qwen weights; its source revision and checksums are recorded in `semantic/native-runtime.json`.
+

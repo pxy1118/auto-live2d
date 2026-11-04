@@ -1,0 +1,64 @@
+{
+  "seed": 113703,
+  "mapping": {
+    "welcome": {
+      "A": "rhythm",
+      "B": "rhythm_posture",
+      "C": "fixed"
+    },
+    "explain": {
+      "A": "rhythm",
+      "B": "fixed",
+      "C": "rhythm_posture"
+    },
+    "thanks": {
+      "A": "rhythm_posture",
+      "B": "fixed",
+      "C": "rhythm"
+    },
+    "cajole": {
+      "A": "rhythm_posture",
+      "B": "rhythm",
+      "C": "fixed"
+    },
+    "shy": {
+      "A": "fixed",
+      "B": "rhythm",
+      "C": "rhythm_posture"
+    },
+    "firm": {
+      "A": "fixed",
+      "B": "rhythm_posture",
+      "C": "rhythm"
+    },
+    "neutral": {
+      "A": "rhythm",
+      "B": "rhythm_posture",
+      "C": "fixed"
+    },
+    "quoted": {
+      "A": "rhythm_posture",
+      "B": "fixed",
+      "C": "rhythm"
+    }
+  },
+  "label_counts": {
+    "fixed": {
+      "A": 2,
+      "B": 3,
+      "C": 3
+    },
+    "rhythm": {
+      "A": 3,
+      "B": 2,
+      "C": 3
+    },
+    "rhythm_posture": {
+      "A": 3,
+      "B": 3,
+      "C": 2
+    }
+  },
+  "balanced_positions": true,
+  "scope": "Hidden by the review UI; not a security boundary"
+}

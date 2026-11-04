@@ -1,0 +1,67 @@
+{
+  "ok": true,
+  "checks": [
+    "ordinary startup selects promoted 4B/native-groups/context-body profile; default UI and capabilities agree",
+    "long context keeps complete spoken clause and reports body token compression; real TTS succeeds; explicit wardrobe survives speech and cancellation",
+    "desktop/mobile UI; original human ratings unchanged"
+  ],
+  "prefill": {
+    "clause": 0,
+    "semantic_prefill_ms": 327.6291600004697,
+    "overlapped_with_tts": true,
+    "context_truncated": true,
+    "planner_timing": {
+      "total_ms": 321.1213900003713,
+      "tokens": 349,
+      "context_truncated": true,
+      "body": {
+        "tokens": 512,
+        "context_truncated": true,
+        "context_chars_used": 435,
+        "encoder_ms": 139.9951620005595,
+        "total_ms": 185.59152600028028
+      }
+    }
+  },
+  "plan": {
+    "clause": 0,
+    "at_ms": 1266.6666666666658,
+    "plan": {
+      "schema": "performance.plan.v1",
+      "arm": "none",
+      "body": "none",
+      "emotion": "keep",
+      "eye": "normal",
+      "arm_variant": 0,
+      "body_variant": 1,
+      "body_strength": 0,
+      "expressions": {
+        "黑脸": 0.0035,
+        "流泪": 0.0007,
+        "脸红": 0.0027,
+        "加载": 0.0018,
+        "兔牙": 0.0001,
+        "流冷汗": 0
+      },
+      "eye_strength": 0,
+      "arm_hold_ms": 1121,
+      "body_hold_ms": 1999,
+      "face_hold_ms": 3010,
+      "onset_ms": 191,
+      "confidence": {
+        "arm": 0.9818593859672546,
+        "body": 1,
+        "emotion": 0.9999990463256836,
+        "eye": 1
+      },
+      "clause": 0
+    },
+    "arm_applied": false,
+    "body_applied": false
+  },
+  "execution": {
+    "motor_device": "cpu",
+    "planner_device": "cuda",
+    "body_encoder_shared": true
+  }
+}

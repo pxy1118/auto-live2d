@@ -1,0 +1,254 @@
+[
+  {
+    "gesture": "wave",
+    "variant": 0,
+    "description": "原生屈肘张掌双挥＋轻歪头",
+    "frames": 248,
+    "source": "performance.direct typed action-group tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    }
+  },
+  {
+    "gesture": "wave",
+    "variant": 1,
+    "description": "原生屈肘点头后短挥一次",
+    "frames": 248,
+    "source": "performance.direct typed action-group tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    }
+  },
+  {
+    "gesture": "wave",
+    "variant": 2,
+    "description": "原生屈肘张掌停留后慢挥",
+    "frames": 248,
+    "source": "performance.direct typed action-group tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    }
+  },
+  {
+    "gesture": "point",
+    "variant": 0,
+    "description": "短促点题＋一次点头",
+    "frames": 248,
+    "source": "performance.direct typed action-group tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    }
+  },
+  {
+    "gesture": "point",
+    "variant": 1,
+    "description": "食指划过两侧＋视线跟随",
+    "frames": 248,
+    "source": "performance.direct typed action-group tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    }
+  },
+  {
+    "gesture": "point",
+    "variant": 2,
+    "description": "抬指并摊开另一手说明",
+    "frames": 248,
+    "source": "performance.direct typed action-group tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    }
+  },
+  {
+    "gesture": "chest",
+    "variant": 0,
+    "description": "抚胸承诺＋轻点头",
+    "frames": 233,
+    "source": "performance.direct typed action-group tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    }
+  },
+  {
+    "gesture": "chest",
+    "variant": 1,
+    "description": "抚胸并摊手邀请",
+    "frames": 233,
+    "source": "performance.direct typed action-group tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    }
+  },
+  {
+    "gesture": "chest",
+    "variant": 2,
+    "description": "抚胸后抬指补充",
+    "frames": 233,
+    "source": "performance.direct typed action-group tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    }
+  },
+  {
+    "gesture": "grass",
+    "variant": 0,
+    "description": "身前轻扫草穗＋歪头",
+    "frames": 299,
+    "source": "performance.direct typed action-group tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    }
+  },
+  {
+    "gesture": "grass",
+    "variant": 1,
+    "description": "带着草穗画小弧＋侧倾",
+    "frames": 299,
+    "source": "performance.direct typed action-group tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    }
+  },
+  {
+    "gesture": "grass",
+    "variant": 2,
+    "description": "收近再递出＋前倾",
+    "frames": 299,
+    "source": "performance.direct typed action-group tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    }
+  },
+  {
+    "gesture": "thanks",
+    "variant": 0,
+    "description": "抚胸小鞠躬",
+    "frames": 233,
+    "source": "performance.direct typed action-group tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    }
+  },
+  {
+    "gesture": "thanks",
+    "variant": 1,
+    "description": "抚胸摊手致谢＋长点头",
+    "frames": 233,
+    "source": "performance.direct typed action-group tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    }
+  },
+  {
+    "gesture": "thanks",
+    "variant": 2,
+    "description": "抚胸后小挥手回应",
+    "frames": 233,
+    "source": "performance.direct typed action-group tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    }
+  },
+  {
+    "gesture": "explain",
+    "variant": 0,
+    "description": "抚胸侧身说明",
+    "frames": 233,
+    "source": "performance.direct typed action-group tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    }
+  },
+  {
+    "gesture": "explain",
+    "variant": 1,
+    "description": "双手低位摊开＋交替侧重",
+    "frames": 248,
+    "source": "performance.direct typed action-group tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    }
+  },
+  {
+    "gesture": "explain",
+    "variant": 2,
+    "description": "食指点题＋另一手摊开",
+    "frames": 248,
+    "source": "performance.direct typed action-group tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    }
+  },
+  {
+    "gesture": "refuse",
+    "variant": 0,
+    "description": "抬指摇头两次",
+    "frames": 248,
+    "source": "performance.direct typed action-group tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    }
+  },
+  {
+    "gesture": "refuse",
+    "variant": 1,
+    "description": "张掌示意暂停＋轻退身",
+    "frames": 248,
+    "source": "performance.direct typed action-group tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    }
+  },
+  {
+    "gesture": "refuse",
+    "variant": 2,
+    "description": "抬指收身＋一次明确点头",
+    "frames": 248,
+    "source": "performance.direct typed action-group tool call",
+    "state": {
+      "active": false,
+      "count": 1,
+      "pending": null
+    }
+  }
+]

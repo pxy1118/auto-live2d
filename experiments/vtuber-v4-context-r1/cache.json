@@ -1,0 +1,42 @@
+{
+  "fingerprint": {
+    "dataset_sha256": "a858b592784faeee9cf16688e541922cbb9590a01fbd23b788e0979e3f6a5bc9",
+    "protocol_sha256": "0ce6ae2082b53527e1669791aac2a4a1a6badf894b9197556033a9520d9f8f2f",
+    "prompt_sha256": "e72ad2bd62884326d5d06507428913224ecc30c7e75c4c790189dbda9383021a",
+    "source_sha256": "df2ceae3b3f4af9e1b314305a8e4b38aa49714a461967c525e7820f4d792cc52",
+    "extractor_sha256": "ecd5a33d154ee6b035d2682854cfed4223a5df642ec2170883a63b1ec8cb1fca"
+  },
+  "modes": {
+    "context_first": {
+      "path": "experiments/vtuber-v4-context-r1/context_first-tokens.pt",
+      "sha256": "f26dfc0531c755de2a6bc6dd767a483a6ea7e78e9cbc9cb8c9d1ac3cdc4777df",
+      "pairs": 300,
+      "fingerprint": {
+        "dataset_sha256": "a858b592784faeee9cf16688e541922cbb9590a01fbd23b788e0979e3f6a5bc9",
+        "protocol_sha256": "0ce6ae2082b53527e1669791aac2a4a1a6badf894b9197556033a9520d9f8f2f",
+        "prompt_sha256": "e72ad2bd62884326d5d06507428913224ecc30c7e75c4c790189dbda9383021a",
+        "source_sha256": "df2ceae3b3f4af9e1b314305a8e4b38aa49714a461967c525e7820f4d792cc52",
+        "extractor_sha256": "ecd5a33d154ee6b035d2682854cfed4223a5df642ec2170883a63b1ec8cb1fca"
+      }
+    },
+    "task_context_first": {
+      "path": "experiments/vtuber-v4-context-r1/task_context_first-tokens.pt",
+      "sha256": "747ddd412d909b066bc8fea6c1529fe9da4fd336b52cced210ed9fcdb9da6377",
+      "pairs": 300,
+      "fingerprint": {
+        "dataset_sha256": "a858b592784faeee9cf16688e541922cbb9590a01fbd23b788e0979e3f6a5bc9",
+        "protocol_sha256": "0ce6ae2082b53527e1669791aac2a4a1a6badf894b9197556033a9520d9f8f2f",
+        "prompt_sha256": "e72ad2bd62884326d5d06507428913224ecc30c7e75c4c790189dbda9383021a",
+        "source_sha256": "df2ceae3b3f4af9e1b314305a8e4b38aa49714a461967c525e7820f4d792cc52",
+        "extractor_sha256": "ecd5a33d154ee6b035d2682854cfed4223a5df642ec2170883a63b1ec8cb1fca"
+      }
+    },
+    "legacy_json": {
+      "path": "experiments/vtuber-v4-intent-r2/tokens.pt",
+      "sha256": "26582282680273165a3b9a13fda9ba75a30d8cb878224a22bc0e97396dce1b1a",
+      "pairs": 300
+    }
+  },
+  "old_test_loaded": false,
+  "new_final_test_created": false
+}

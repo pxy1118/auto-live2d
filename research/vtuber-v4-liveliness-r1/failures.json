@@ -1,0 +1,17 @@
+[
+  {
+    "stage": "initial ownership validation",
+    "finding": "ParamBrowLAngle/RAngle are native physics outputs, so the prototype rejected ownership.",
+    "resolution": "Use safe brow-height and squint inputs; preserve native physics."
+  },
+  {
+    "stage": "first capture navigation",
+    "finding": "Main server serves production dist, so a research TS page was not available there.",
+    "resolution": "Separate Vite-only research server on 8775; no main restart or action workers."
+  },
+  {
+    "stage": "initial image transfer",
+    "finding": "Returning all 1680 PNG frames at once exceeded the Node/CDP string size limit.",
+    "resolution": "90-frame transfer batches; native physics remains continuous, with 120-frame exact readback equivalence to frozen capture."
+  }
+]

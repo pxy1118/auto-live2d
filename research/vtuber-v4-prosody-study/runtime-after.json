@@ -1,0 +1,20 @@
+{
+  "files": {
+    "latent/stream-run.json": "f282c32dac8ff649401f79cbdf6b50e935c9d5afe74307c19aca6870a4f6ed9c",
+    "latent/default-run.json": "5e8dd3056b4041fa7eaa93adfa917901b62c14e9e709558061bbacd5a7efe5d9",
+    ".runtime/performance/ratings.json": "7f7d6b0ae58dff2355aec7cbe93dbe0c54f741cb41d7b688177d5d4a4ba16f47",
+    "src/gesture-library.ts": "f653203bd7a9d40228818913fe74c447363ddef3dabaa0ec353bef674033f36b",
+    "src/gesture-choreography.ts": "774f9ff7d021890c78ed8e12d39be51a75d49ad3615554a5314d2176e0526044",
+    "src/body-motion.ts": "4463d8dd9c5c0b8be3f0185c08ee58213f39da8d1b211bf69279f22b74f3b010",
+    "src/performance.ts": "db538ad6d3e1d00cb9067824aef480b6540a3d5dd41bd6f6540d43b786906498",
+    "src/engine.ts": "aa88f0fbe5de10a6100d05229d78bc1c478f8299a1f4c84a52588988a1487d2c",
+    "speech/features.py": "5b0d0b586d72f14891b81bb06328de69ca23e66717a3dce10baa797aa0c4ec43",
+    "main.py": "b937fa73355f5987124f5654ec446314258d16e3295bc079cdd29842a66dfd9b",
+    "server/performance-service.ts": "7aa3f4e3f1f179b54d4a992865f13c70c22b85af163f06e1cd41e4cbce4592d0",
+    "experiments/vtuber-v4-default-r1/run.json": "a3b7bdd70880eb94345bcb7f9a8a8b0503133f4440f08d81621829d7b3be6eed",
+    "experiments/vtuber-v4-default-r1/selection.json": "e69b60a016300659d8f075652467d029cbfeba80f03ecb7c9399bb4d93854e09",
+    "experiments/vtuber-v4-default-r1/performance-planner.pt": "053fd98de35fa065f50fd8e86f0031fa5d1730b8544785363c4b803192d5cfa8",
+    "experiments/vtuber-v4-default-r1/body-planner.pt": "acf721015bb3b54d6427fed16e122415226595148298ac51c449c395cb65e769"
+  },
+  "unchanged": true
+}

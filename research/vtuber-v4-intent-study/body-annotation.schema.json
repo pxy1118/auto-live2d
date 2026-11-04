@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Draft body intent annotation v1; executable cross-field constraints in build_intent_data.validate_annotation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["necessity", "preferred", "acceptable", "forbidden", "active_strength_interval"],
+  "properties": {
+    "necessity": {"enum": ["forbidden", "optional", "required"]},
+    "preferred": {"$ref": "#/$defs/body"},
+    "acceptable": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/body"}},
+    "forbidden": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/body"}},
+    "active_strength_interval": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "number", "minimum": 0, "maximum": 1}}
+  },
+  "$defs": {"body": {"enum": ["none", "lean", "sway", "nod", "tilt", "turn", "cajole"]}}
+}
