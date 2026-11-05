@@ -1,9 +1,10 @@
 export type MotionStyle='restrained'|'natural'|'lively';
+export const DEFAULT_MOTION_STYLE:MotionStyle='lively';
 const clamp=(v:number,a=0,b=1)=>Math.min(b,Math.max(a,v));
 const smooth=(v:number)=>{v=clamp(v);return v*v*v*(10+v*(-15+6*v));};
 const arms=['Param36','Param39','Param41','Param42','Param43','Param62','Param59','Param60','Param61'];
 const heads=['AngleX','AngleY','AngleZ'],bodies=['PositionX','PositionY','PositionZ','LeanInput'];
-const styles={restrained:{head:.5,body:.4,arm:1,gap:6000,duration:3200},natural:{head:.75,body:.7,arm:1,gap:5000,duration:3200},lively:{head:1,body:1,arm:1.04,gap:4000,duration:3400}};
+export const motionStyles={restrained:{head:.5,body:.4,arm:1,gap:6000,bodyGap:4000,duration:3200},natural:{head:.75,body:.7,arm:1,gap:5000,bodyGap:3200,duration:3200},lively:{head:1,body:1,arm:1.04,gap:4000,bodyGap:2600,duration:3400}};
 
 /** Frequency and execution envelope only. Every joint trajectory comes from the expert. */
 export class MotorPolicy {
@@ -12,12 +13,12 @@ export class MotorPolicy {
   private gain=0;private evidenceMs=0;private forceKey='';private intensity=1;private engagement=0;
   private initial:Record<string,number>={};private filtered:Record<string,number>={};private returnPose:Record<string,number>={};
   private firstShape:number|null=null;private mode={chest:false,point:false};private levels={chest:0,point:0};
-  constructor(public style:MotionStyle='restrained'){}
+  constructor(public style:MotionStyle=DEFAULT_MOTION_STYLE){}
   begin(values:Record<string,number>){this.initial={...values};this.filtered={...values};this.returnPose={};this.firstShape=null;this.phase='idle';this.used=false;this.count=0;this.gapUntil=0;this.gain=0;this.evidenceMs=0;this.forceKey='';this.mode={chest:false,point:false};this.levels={chest:values.Movement2??0,point:values.Movement3??0};}
   segment(){this.used=this.phase!=='idle';this.evidenceMs=0;}
   stop(actorMs:number){if(this.phase==='active'){this.phase='return';this.returnActor=actorMs;this.returnPose={...this.filtered};}}
   apply(input:Record<string,number>,dt:number,clock:{actor:number;media:number;playing:boolean;ended:boolean;confidence:number;threshold:number;forceKey?:string;forceIntensity?:number;active:boolean}){
-    const style=styles[this.style],result={...input};this.latestMedia=clock.media;this.confidence=clamp(clock.confidence);
+    const style=motionStyles[this.style],result={...input};this.latestMedia=clock.media;this.confidence=clamp(clock.confidence);
     const forced=!!clock.forceKey&&clock.forceKey!==this.forceKey;
     if(dt>0&&clock.playing&&this.confidence>=Math.max(.5,clock.threshold))this.evidenceMs+=dt*1000;else if(clock.playing)this.evidenceMs=0;
     if(dt>0&&clock.playing&&(forced||this.phase==='idle'&&!this.used&&clock.actor>=this.gapUntil&&this.evidenceMs>=90)){
@@ -53,5 +54,5 @@ export class MotorPolicy {
     return result;
   }
   state(actor:number){return {phase:this.phase,used_in_clause:this.used,count:this.count,confidence:this.confidence,cooldown_ms:Math.max(0,this.gapUntil-actor),style:this.style,
-    elapsed_ms:this.phase==='active'?Math.max(0,this.latestMedia-this.startMedia):this.phase==='return'?styles[this.style].duration+Math.max(0,actor-this.returnActor):this.used?styles[this.style].duration+750:0,duration_ms:styles[this.style].duration};}
+    elapsed_ms:this.phase==='active'?Math.max(0,this.latestMedia-this.startMedia):this.phase==='return'?motionStyles[this.style].duration+Math.max(0,actor-this.returnActor):this.used?motionStyles[this.style].duration+750:0,duration_ms:motionStyles[this.style].duration};}
 }

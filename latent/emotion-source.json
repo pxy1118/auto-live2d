@@ -1,0 +1,18 @@
+{
+  "repo_id": "Horizon-Labs/multilingual-emotions-base",
+  "revision": "4f95ad28e89def7cce33b0589de4ed369b970deb",
+  "local_path": "models/multilingual-emotions-base",
+  "license": "Apache-2.0",
+  "architecture": "ModernBertForSequenceClassification",
+  "parameter_count_reported": 308000000,
+  "multi_label": true,
+  "files": {
+    "config.json": "4d91c8af1e43346ad2253598e14109ed3001756293f9c9ddf26f595328d0a5b7",
+    "ekman_mapping.json": "b917e795f57647f9172fa0037c0a96927b35914639022761a903a32af7ea213d",
+    "special_tokens_map.json": "baec30ea10906f16adb8c18af7a34023002c1746542612b8b41c9f09e1351351",
+    "thresholds.json": "266f9b09c67f5d9b2cd313fc1c78dfdc9820545955519f96b22176f4107cea65",
+    "tokenizer_config.json": "1d2f82c1341a79748e00efe82e67690f99d00b3c2a894f2b23128fd9d3519da3",
+    "tokenizer.json": "4379fe7f4a7af10b1ac15ffc8ae90f446f92082393699e9dd54b8c3b5ec0abad",
+    "model.safetensors": "8719ba9ab4cbdf29cd2c130345f67f63262a9838ffd9cf33e84d51756b06798d"
+  }
+}

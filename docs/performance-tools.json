@@ -17,12 +17,6 @@
             "type": "string",
             "maxLength": 800
           },
-          "kind": {
-            "enum": [
-              "regression",
-              "flow"
-            ]
-          },
           "seed": {
             "type": "integer",
             "minimum": 0,
@@ -34,15 +28,7 @@
               "natural",
               "lively"
             ],
-            "default": "restrained"
-          },
-          "motion_backend": {
-            "enum": [
-              "groups",
-              "continuous"
-            ],
-            "default": "groups",
-            "description": "默认由模型选择协调动作组；continuous 保留连续参数研究路径。"
+            "default": "lively"
           }
         },
         "required": [],
@@ -51,7 +37,7 @@
     },
     {
       "method": "performance.append",
-      "description": "追加流式文字；遇标点形成分句。seq 必须严格递增。",
+      "description": "追加增量文字；完整句、长度上限或明确 flush 时形成语音单元，逗号不提交。seq 必须严格递增。",
       "parameters": {
         "type": "object",
         "properties": {

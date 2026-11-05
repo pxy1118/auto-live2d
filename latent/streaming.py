@@ -12,7 +12,7 @@ from performance_planner import load_planner,decode as decode_plan
 from planner_contract import state_vector,SCHEMA as PLAN_SCHEMA
 
 ROOT=Path(__file__).resolve().parents[1]
-PROFILE=ROOT/'datasets/vtuber-v4/profile.json'
+PROFILE=ROOT/'latent/runtime-profile.json'
 RUN=ROOT/'experiments/vtuber-v4'
 EMOTIONS=['neutral','happy','angry','shy','sad','surprised','confused']
 FACES=['黑脸','流泪','脸红','加载','兔牙','流冷汗']
@@ -78,7 +78,7 @@ class StreamingPolicy:
         run=json.loads(path.read_text(encoding='utf-8'))
         promoted=bool(run.get('promoted',False))
         planner=getattr(self,'token_planner',None);body=getattr(planner,'body_planner',None)
-        return {'ready':True,'experimental':not promoted,'promoted':promoted,'stage':run.get('stage'),'models':list(run['models']),
+        return {'ready':True,'experimental':not promoted,'promoted':promoted,'stage':run.get('stage'),'models':['regression'],
                 'execution':{'motor_device':str(self.encoder.device),'planner_device':str(self.planner_device),
                     'body_encoder_shared':body is not None and body.encoder is planner.encoder},
                 'sampling_hz':20,'horizon_ms':1200,'update_ms':400,'run':run}
@@ -93,16 +93,17 @@ class StreamingPolicy:
         self.planner=None;self.token_planner=None
         if self.run['profile_sha256']!=self.profile['sha256']:raise ValueError('v4 profile 指纹不匹配')
         for kind,item in self.run['models'].items():
+            if kind!='regression':continue
             file=folder/item['checkpoint']
             if hashlib.sha256(file.read_bytes()).hexdigest()!=item['sha256']:raise ValueError('v4 权重指纹不匹配')
             saved=torch.load(file,map_location='cpu',weights_only=True)
             if saved.get('profile_sha256')!=self.profile['sha256']:raise ValueError('v4 检查点通道契约不匹配')
             m=StreamingExpert(len(self.meta),kind,phase_conditioned=saved.get('phase_conditioned',False));m.load_state_dict(saved['state_dict']);self.models[kind]=m.to(self.encoder.device).eval()
-        if self.run.get('motor_gate'):
+        if self.run.get('motor_gate') and not self.run.get('performance_planner'):
             item=self.run['motor_gate'];file=folder/item['checkpoint']
             if hashlib.sha256(file.read_bytes()).hexdigest()!=item['sha256']:raise ValueError('语义动作门控指纹不匹配')
             self.motor_gate=MotorGate().to(self.encoder.device).eval();self.motor_gate.load_state_dict(torch.load(file,map_location=self.encoder.device,weights_only=True))
-        if self.run.get('gesture_selector'):
+        if self.run.get('gesture_selector') and not self.run.get('performance_planner'):
             item=self.run['gesture_selector'];file=folder/item['checkpoint']
             if hashlib.sha256(file.read_bytes()).hexdigest()!=item['sha256']:raise ValueError('动作组选择器指纹不匹配')
             self.gesture_selector=GestureSelector().to(self.encoder.device).eval();self.gesture_selector.load_state_dict(torch.load(file,map_location=self.encoder.device,weights_only=True))
@@ -209,7 +210,7 @@ class StreamingPolicy:
         # Classification confidence selects an eye type; intensity is separately regressed.
         idx_em=int(emotion[0].argmax());checkpoint=self.run['models'][kind]['sha256']
         return {'channels':[p['id'] for p in self.meta],'values':values.round(6).tolist(),'expressions':strengths,
-                **({'performance_plan':self.plan(feature,mask,data.get('planner_state'),text,context)} if self.planner else {}),
+                **({'performance_plan':self.plan(feature,mask,data.get('planner_state'),text,context)} if self.planner and data.get('include_plan',True) else {}),
                 'motor_probability':motor_probability,'motor_threshold':self.run.get('gesture_selector',self.run.get('motor_gate',{})).get('threshold',.8),'gesture_intent':gesture_intent,'gesture_confidence':gesture_confidence,
                 'emotion':EMOTIONS[idx_em],'hold_ms':round(2000+float(hold[0])*4000),
                 'timing':{'total_compute_ms':(time.perf_counter()-begin)*1000,'semantic_tokens':semantic_info['tokens'],'context_truncated':semantic_info['context_truncated']},'raw_out_of_range_fraction':float((np.abs(raw)>1).mean()),

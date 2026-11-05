@@ -1,7 +1,7 @@
 {
-  "path": "experiments/vtuber-v4-default-r1",
+  "path": "experiments/vtuber-v5-emotion-action-r1",
   "promoted": true,
-  "rollback_path": "experiments/vtuber-v4-composition-r2",
-  "reason": "Explicit user request: 我觉得已经可以了，加入默认方案吧",
-  "previous_configuration_sha256": "4a29361699faf0ed637e69ffd5e214c11ca02529c78d4f900453543232c8ef64"
+  "runtime": "emotion_action",
+  "reason": "用户明确要求移除4B，接入情感分类与动作模型；同时消除逗号导致的重复TTS启动。",
+  "previous_configuration_sha256": "f282c32dac8ff649401f79cbdf6b50e935c9d5afe74307c19aca6870a4f6ed9c"
 }

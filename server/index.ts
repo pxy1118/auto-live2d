@@ -1,15 +1,12 @@
 import http from 'node:http';
-import { createReadStream, existsSync, readFileSync, readdirSync, statSync, mkdirSync, writeFileSync, renameSync } from 'node:fs';
+import { createReadStream, existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { resolve, dirname, join, sep, extname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash, randomUUID } from 'node:crypto';
 import { WebSocketServer, WebSocket } from 'ws';
 import type { Manifest } from '../src/controller';
-import { LatentBridge } from './latent-bridge';
-import { SpeechBridge } from './speech-bridge';
 import { PerformanceService } from './performance-service';
 import { PERFORMANCE_RUNTIME_VERSION } from '../src/performance-profile';
-import {applyReviewVote} from './review-ratings';
 import { RequestLedger } from './request-ledger';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -27,9 +24,7 @@ const manifest: Manifest = {
   display: readJson(join(modelRoot, '大肥鱼.cdi3.json')), physics: readJson(join(modelRoot, '大肥鱼.physics3.json')), expressions, motions,
 };
 assetHasher.update(JSON.stringify(manifest)); manifest.assetHash = assetHasher.digest('hex');
-const activeExperiment = readJson(join(root, 'latent/default-run.json')).path;
-const activeProfile = process.env.LIVE2D_PROFILE ? resolve(root,process.env.LIVE2D_PROFILE) : join(root, activeExperiment, 'profile.json');
-manifest.actionProfile = readJson(existsSync(activeProfile) ? activeProfile : join(root, 'latent/profile.json'));
+manifest.actionProfile = readJson(process.env.LIVE2D_PROFILE ? resolve(root,process.env.LIVE2D_PROFILE) : join(root,'latent/runtime-profile.json'));
 const port = Number(process.env.PORT || 8765);
 const production = process.argv.includes('--production');
 let runtime: WebSocket | null = null;
@@ -68,11 +63,11 @@ function serveFile(res: http.ServerResponse, base: string, relative: string) {
   res.writeHead(200, { 'Content-Type': (types[extname(target)] ?? 'application/octet-stream') + (['.json', '.html', '.js', '.css'].includes(extname(target)) ? '; charset=utf-8' : ''), 'Content-Length': statSync(target).size, 'Cache-Control': 'no-cache' });
   createReadStream(target).pipe(res);
 }
-const latent = new LatentBridge(manifest, () => capabilities, invoke);
-const speech = new SpeechBridge(latent,invoke);
 const performanceService = new PerformanceService(invoke);
+const publicMethods=new Set(['performance.start','performance.append','performance.finish','performance.cancel','performance.state','performance.status','performance.direct','performance.release','appearance.update','appearance.get','capabilities.get','state.get','engine.pause','speech.unlock']);
 const publicRequests=new RequestLedger();
 const publicCommand=(command:any)=>{
+  if(!publicMethods.has(command?.method))return Promise.reject(Object.assign(new Error('不支持的控制方法'),{code:'unknown_method',httpStatus:404}));
   const id=command?.request_id??randomUUID();if(typeof id!=='string'||!id.length||id.length>128)return Promise.reject(new Error('request_id 不合法'));
   const key=JSON.stringify([command?.method,command?.params??{}]);
   return publicRequests.execute(id,key,()=>(performanceService.handles(command?.method)?performanceService.command({...command,request_id:id}):invoke({...command,request_id:id})).then(async response=>{
@@ -89,7 +84,7 @@ const publicCommand=(command:any)=>{
     if(command?.method==='capabilities.get'){
       const active=await performanceService.status();
       response.result.experimental=active.experimental??true;response.result.promoted=active.promoted??false;
-      response.result.active_performance={stage:active.stage??null,body_planner:active.run?.body_planner?.mode??null,driver:active.driver??'v4',semantic_planner:active.semantic_planner??false};
+      response.result.active_performance={stage:active.stage??null,body_planner:active.run?.body_planner?.mode??null,driver:active.driver??'emotion_action',uses_4b:active.uses_4b??false,emotion_classifier:active.emotion_classifier??null};
     }
     return response;
   }));
@@ -100,60 +95,10 @@ const server = http.createServer(async (req, res) => {
     const host = req.headers.host ?? `127.0.0.1:${port}`;
     if (req.headers.origin && ![`http://${host}`, `http://localhost:${port}`, `http://127.0.0.1:${port}`].includes(req.headers.origin)) { json(res, 403, { error: 'origin_not_allowed' }); return; }
     const path = decodeURIComponent(new URL(req.url!, `http://${host}`).pathname);
-    if(path==='/api/performance/review'){
-      const folder=join(root,'.runtime/performance');const file=join(folder,'ratings.json');
-      const ratings=existsSync(file)?readJson(file):{pilot:{},comparison:{}};
-      if(req.method==='GET')return json(res,200,ratings);
-      if(req.method==='POST'){
-        let size=0;const chunks:Buffer[]=[];for await(const chunk of req){size+=chunk.length;if(size>8000)throw new Error('评分内容过大');chunks.push(chunk);}
-        const vote=JSON.parse(Buffer.concat(chunks).toString('utf8'));
-        const statusFile=join(root,'datasets/vtuber-v4/review/comparison-status.json'),current=existsSync(statusFile)?readJson(statusFile):{};
-        // No await between this fresh read and atomic rename: simultaneous note
-        // autosaves and choices cannot overwrite a newer review snapshot.
-        const latest=existsSync(file)?readJson(file):{pilot:{},comparison:{}};applyReviewVote(latest,vote,current);
-        mkdirSync(folder,{recursive:true});writeFileSync(file+'.tmp',JSON.stringify(latest,null,2));renameSync(file+'.tmp',file);return json(res,200,{saved:true});
-      }
-    }
     if (req.method === 'GET' && path === '/api/health') return json(res, 200, { ok: true, runtime_ready: !!capabilities, process_id:process.pid,port,runtime_version:PERFORMANCE_RUNTIME_VERSION,model: manifest.name, sdk: 'CubismSdkForWeb-5-r.4' });
     if (req.method === 'GET' && path === '/api/manifest') return json(res, 200, manifest);
-    if (req.method === 'GET' && path === '/api/capabilities') return json(res, capabilities ? 200 : 503, capabilities ?? { error: 'runtime_offline' });
+    if (req.method === 'GET' && path === '/api/capabilities') return json(res, capabilities ? 200 : 503, capabilities ? {...capabilities,methods:[...publicMethods]} : { error: 'runtime_offline' });
     if (req.method === 'GET' && path === '/api/state') return json(res, 200, await invoke({ method: 'state.get' }));
-    if (req.method === 'GET' && path === '/api/latent/status') return json(res, 200, await latent.status());
-    if(req.method==='GET'&&path==='/api/speech/status')return json(res,200,await speech.status());
-    if(req.method==='POST'&&path==='/api/speech/perform'){
-      let total=0;const chunks:Buffer[]=[];
-      for await(const chunk of req){total+=chunk.length;if(total>16000)throw new Error('请求过大');chunks.push(chunk);}
-      const input=JSON.parse(Buffer.concat(chunks).toString('utf8')),abort=new AbortController();
-      const timer=setTimeout(()=>abort.abort(new Error('语音生成超时')),180000);
-      res.on('close',()=>{if(!res.writableEnded)abort.abort(new Error('已取消语音'));});
-      try{
-        await speech.perform(input,event=>{
-          if(!res.headersSent)res.writeHead(200,{'Content-Type':'application/x-ndjson; charset=utf-8','Cache-Control':'no-store','X-Accel-Buffering':'no'});
-          res.write(JSON.stringify(event)+'\n');
-        },abort.signal);res.end();
-      }catch(error:any){
-        if(!res.destroyed){
-          if(res.headersSent)res.end(JSON.stringify({type:'error',error:error.message??String(error)})+'\n');
-          else json(res,error.httpStatus??400,{error:error.message??String(error)});
-        }
-      }finally{clearTimeout(timer);}
-      return;
-    }
-    const audioPath=/^\/api\/speech\/audio\/([a-f0-9]{32}\.wav)$/.exec(path);
-    if(req.method==='GET'&&audioPath)return serveFile(res,join(root,'.runtime/speech/audio'),audioPath[1]);
-    if(req.method==='POST'&&['/api/speech/prepare','/api/speech/execute'].includes(path)){
-      let total=0;const chunks:Buffer[]=[];
-      for await(const chunk of req){total+=chunk.length;if(total>16000)throw new Error('请求过大');chunks.push(chunk);}
-      const input=JSON.parse(Buffer.concat(chunks).toString('utf8'));
-      return json(res,200,path.endsWith('/prepare')?await speech.prepare(input):await speech.execute(input));
-    }
-    if (req.method === 'GET' && path === '/api/profile') return json(res, 200, manifest.actionProfile);
-    if (req.method === 'POST' && ['/api/latent/predict', '/api/latent/execute'].includes(path)) {
-      let total = 0; const chunks: Buffer[] = [];
-      for await (const chunk of req) { total += chunk.length; if (total > 16000) throw new Error('请求过大'); chunks.push(chunk); }
-      const input = JSON.parse(Buffer.concat(chunks).toString('utf8'));
-      return json(res, 200, path.endsWith('/predict') ? await latent.predict(input) : await latent.execute(input));
-    }
     if (req.method === 'POST' && path === '/api/command') {
       let total = 0; const chunks: Buffer[] = [];
       for await (const chunk of req) { total += chunk.length; if (total > 64 * 1024 * 1024) { json(res, 413, { error: 'payload_too_large' }); return; } chunks.push(chunk); }
@@ -162,8 +107,6 @@ const server = http.createServer(async (req, res) => {
       const response = await publicCommand(command); return json(res, 200, response);
     }
     if (path.startsWith('/api/')) return json(res, 404, { error: 'unknown_endpoint' });
-    const datasetPath = /^\/dataset\/(vtuber-v(?:[123]|4(?:-body(?:-float)?|-native)?))\/(.*)$/.exec(path);
-    if (datasetPath) return serveFile(res, join(root, 'datasets', datasetPath[1]), datasetPath[2]);
     if (path.startsWith('/model/')) return serveFile(res, modelRoot, path.slice(7));
     if (path === '/vendor/cubism/Core/live2dcubismcore.min.js') return serveFile(res, join(root, 'vendor', 'cubism', 'Core'), 'live2dcubismcore.min.js');
     if (vite) vite.middlewares(req, res);
@@ -213,7 +156,7 @@ sockets.on('connection', (socket, req) => {
     }
   });
 });
-server.listen(port, '127.0.0.1', () => console.log(`\n  动作实验台  http://127.0.0.1:${port}/\n  API         http://127.0.0.1:${port}/api/command\n`));
+server.listen(port, '127.0.0.1', () => console.log(`\n  Live2D      http://127.0.0.1:${port}/\n  API         http://127.0.0.1:${port}/api/command\n`));
 server.on('error', error => { console.error(error.message); process.exitCode = 1; });
 async function stop() { for (const socket of sockets.clients) socket.close(); sockets.close(); await vite?.close(); server.close(() => process.exit(0)); }
 process.on('SIGINT', stop); process.on('SIGTERM', stop);

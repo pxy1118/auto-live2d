@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Read-only learned performance plan carried by performance.chunk and performance.state",
+  "title": "Read-only emotion and motion plan scheduled on the continuous audio clock",
   "type": "object",
   "additionalProperties": false,
   "properties": {
@@ -170,6 +170,18 @@
           "maximum": 1
         }
       }
+    },
+    "emotion_threshold": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Published threshold for the selected emotion label; default 0.7 for authored plans."
+    },
+    "affect_strength": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Rendering intensity, distinct from label probability."
     }
   },
   "required": [

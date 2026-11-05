@@ -75,24 +75,28 @@ test('session commands deduplicate request IDs and serialize concurrent starts',
     await assert.rejects(service.command({method:'performance.finish',params:{session_id:sid,seq:1},request_id:'late'}));
   }finally{service.disconnect();globalThis.fetch=original;}
 });
-test('TTS synthesis starts while semantic prefill is pending, with no renderer activation before the plan',async()=>{
- const original=globalThis.fetch;let requested=false,prefilling=false,release:any;
- const prefill=new Promise(resolve=>{release=resolve;});const commands:string[]=[];
- globalThis.fetch=async(url:any)=>{if(String(url).endsWith('/health'))return new Response(JSON.stringify({busy:false}));requested=true;return new Response(JSON.stringify({type:'end',speech_id:'b'.repeat(32),total_samples:0})+'\n');};
- const service:any=new PerformanceService(async c=>{commands.push(c.method);return {result:c.method==='performance.state'?{directives:[],planner_state:{}}:c.method==='state.get'?{performance:{active:true,session_id:id,motion_backend:'groups',motion_actions:{active:false},body_action:{active:false}},speech:{active:false}}:{}};});
- service.worker=async()=>{prefilling=true;return prefill;};
- const session:any={id,seq:0,buffer:'',bufferStartedAt:0,queue:[{index:0,text:'测试。',queuedAt:Date.now(),bufferWaitMs:0}],nextClause:1,finished:true,cancelled:false,abort:new AbortController(),phase:'waiting',context:'',recent:[],kind:'regression',seed:41,metrics:[],started:Date.now()};
+test('TTS synthesis starts while classification is pending, with no renderer activation before validation',async()=>{
+ const original=globalThis.fetch;let requested=false,prefilling=false,release:any;const gate=new Promise(resolve=>{release=resolve;});const commands:string[]=[];
+ const span={clause:0,text:'测试。',start:0,end:3};
+ globalThis.fetch=async(url:any)=>{if(String(url).endsWith('/health'))return new Response(JSON.stringify({busy:false}));requested=true;return new Response([{type:'start',speech_id:'b'.repeat(32),estimated_duration_ms:1000},{type:'chunk',index:0,sample_rate:24000,offset_samples:0,mouth:{motion:[],motion_times_ms:[]}},{type:'end',speech_id:'b'.repeat(32),sample_rate:24000,total_samples:24000}].map(value=>JSON.stringify(value)).join('\n')+'\n');};
+ const service:any=new PerformanceService(async c=>{commands.push(c.method);return {result:c.method==='performance.state'?{directives:[],planner_state:{}}:c.method==='state.get'?{performance:{active:true,session_id:id,motion_actions:{active:false},body_action:{active:false}},speech:{active:false}}:{media_ms:0}};});
+ service.worker=async()=>{prefilling=true;return gate;};service.motion=async()=>{};
+ const session:any={id,queue:[{index:0,text:'测试。',clauses:[span],queuedAt:Date.now(),bufferWaitMs:0}],finished:true,cancelled:false,abort:new AbortController(),context:'',recent:[],seed:41,metrics:[]};
  const running=service.pump(session);
- try{await new Promise(r=>setTimeout(r,20));assert.ok(prefilling&&requested);assert.ok(!commands.includes('speech.stream.begin'));release({semantic_ms:1});await running;assert.equal(session.phase,'finished');assert.equal(session.metrics.find((m:any)=>m.semantic_prefill_ms!==undefined).overlapped_with_tts,true);}
- finally{session.cancelled=true;session.abort.abort();release({semantic_ms:1});await running.catch(()=>{});service.disconnect();globalThis.fetch=original;}
+ try{await new Promise(r=>setTimeout(r,20));assert.ok(prefilling&&requested);assert.ok(!commands.includes('speech.stream.begin'));release({semantic_ms:1,performance_plans:[{...span,start_fraction:0,performance_plan:learnedPlan(0,{body:'none',arm:'none'})}],affect_timeline:{schema:'emotion.timeline.v1',points:[{...span,start_fraction:0,weights:{happy:0,angry:0,shy:0,sad:0,surprised:0,confused:0},tension:0,probabilities:{}}]}});await running;assert.equal(session.phase,'finished');assert.equal(session.metrics.find((m:any)=>m.semantic_prefill_ms!==undefined).overlapped_with_tts,true);}
+ finally{session.cancelled=true;session.abort.abort();await running.catch(()=>{});service.disconnect();globalThis.fetch=original;}
 });
 test('quiet speech keeps arms at rest even when the motor expert proposes a large pose',()=>{
-  const p=new MotorPolicy();p.begin({});let result:any;
-  for(let i=0;i<360;i++)result=p.apply({Param36:.8,Param42:.4,AngleX:4,PositionZ:3,Movement1:.4},1/60,{actor:i*1000/60,media:i*1000/60,playing:true,ended:false,confidence:.1,threshold:.8,active:true});
-  assert.equal(result.Param36,0);assert.equal(result.Param42,0);assert.equal(result.Movement1,0);assert.equal(p.count,0);assert.ok(result.AngleX<=2);
+  const poses:any[]=[];
+  for(const style of ['restrained','lively'] as const){
+    const p=new MotorPolicy(style);p.begin({});let result:any;
+    for(let i=0;i<360;i++)result=p.apply({Param36:.8,Param42:.4,AngleX:4,PositionZ:3,Movement1:.4},1/60,{actor:i*1000/60,media:i*1000/60,playing:true,ended:false,confidence:.1,threshold:.8,active:true});
+    assert.equal(result.Param36,0);assert.equal(result.Param42,0);assert.equal(result.Movement1,0);assert.equal(p.count,0);poses.push(result);
+  }
+  assert.ok(poses[0].AngleX<=2);assert.equal(poses[1].AngleX,4);assert.equal(poses[1].PositionZ,3);
 });
 test('a semantic gesture happens once, returns to rest, and has a gap across short clauses',()=>{
-  const p=new MotorPolicy();p.begin({});let maximum=0,atFive=1;
+  const p=new MotorPolicy('restrained');p.begin({});let maximum=0,atFive=1;
   for(let i=0;i<720;i++){
     if(i&&i%60===0)p.segment();
     const v=p.apply({Param36:.8,Param42:.4,Movement1:.4},1/60,{actor:i*1000/60,media:i*1000/60,playing:true,ended:false,confidence:1,threshold:.8,active:true});
@@ -303,6 +307,7 @@ const planChunk=(p:PerformanceController,plan:any,start=0)=>p.chunk({session_id:
 function plannerActor(){const p=new PerformanceController(params,nativeFixture as any);p.start({session_id:id},{});p.segment({session_id:id,clause:0,text:'测试',speech_id:'b'.repeat(32)});return p;}
 test('a prefetched clause plan starts on audio onset even when its first trajectory is late',()=>{
  const p=new PerformanceController(params,nativeFixture as any);p.start({session_id:id},{});
+  assert.equal(p.state().gesture_policy.style,'lively');assert.deepEqual(p.state().planner_policy,{arm:4000,body:2600});
  const request={session_id:id,clause:0,text:'测试',speech_id:'b'.repeat(32)};
  assert.throws(()=>p.segment({...request,performance_plan:learnedPlan(1)}));assert.equal(p.state().clause,-1);
  p.segment({...request,performance_plan:learnedPlan(0,{eye:'＞＜',eye_strength:.6})});

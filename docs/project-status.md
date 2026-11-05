@@ -1,6 +1,22 @@
 # 当前版本与交付边界
 
-2026-11-04：用户反馈新的生成式语义方案效果不好，已停止该方案并恢复原来的 **v4-default-r1**，启动命令为 `python main.py`，默认模型指针仍为 `latent/stream-run.json`。新方案的[说明](semantic-live2d.md)与[连续播放实验](../research/live2d-semantic-planner-v1/CONTINUOUS_SPEECH.md)保留为未采用的研究记录。当前共享控制运行时仍为 `v4.14.0-continuous-utterance`；下文保留此前 `v4.13.0-clause-plan` 收尾与冻结交付的历史记录，旧清单不代表更新后的源码校验结果。
+2026-11-04 当前版本为 **`v5.1.0-emotion-curves`**：分类器保留 28 类原始分数，并在句内短语级给出观测；音频播放器以快速反应与慢速心境构成连续情绪。表情和动作共用平滑权重，中性句承接、真实转折、暂停、预取和取消分别处理；普通情感表情统一归属连续层。默认权重包与三个 GPU 模型沿用，无新增训练。实现及量化边界见 [连续情绪说明](emotion-curves.md)。
+
+81 项 Node 检查和 9 项真实情感模型/动作接线检查通过，包含曲线连续性、短暂干扰、中性衔接、持续反转、帧率一致性、暂停/缓冲冻结、时长修正不重放和导演释放。真实浏览器验证 7 个情感观测、5 个动作语义句仍只有 1 次 TTS，实际转折、心境余韵和暂停均通过；[实测与曲线图](../test-results/emotion-curves-v1/REPORT.md)。未新增中文标注准确率或自然度盲测。
+
+同日较早版本 **`v5.0.0-emotion-action`**，默认包为 `vtuber-v5-emotion-action-r1`。按用户要求移除 4B，改用 Horizon-Labs 的约 308M 情感分类器（CUDA FP32）与既有 0.8B 动作分支（CUDA），原 Qwen TTS 音色沿用，三个模型默认均在 GPU。语音分组与语义计划解耦，短段只合成一次，长文预取下一组；连续更新不重复分类/规划。
+
+71 项 Node、3 项启动、6 项情感/动作接线、4 项连续专家检查，以及构建和真实浏览器检查通过。同句 5 次 TTS 减为 1 次；长文本 2 组、10 个计划验证通过，无 underrun。完整测量与限制见 [本次报告](../test-results/emotion-action-v1/REPORT.md)，架构见 [当前架构](architecture.md)。本次未重训动作或音色，未新增自然度盲测；下文是历史记录。
+
+2026-11-04 当前版本为 `v4.15.0-simple-ui`：按用户要求重做日常 UI，角色预览与台词并排，语境/风格折叠，只保留开始与停止。移除旧面板、旧预测/语音 HTTP 接口及低层公开兼容命令；标准启动器移除 `--legacy`、`--semantic` 与自动回退。默认不再加载 v3 整段动作头、Flow、旧门控或旧手势选择器，当前连续背景专家继续保留。模型与原 Qwen 音色沿用，尚未接入 DSH。以下内容为此前版本历史。
+
+本次验证通过：65 项 Node 检查、3 项启动参数检查、8 项 WSL 连续专家/默认模型检查、TypeScript 与生产构建。新启动流程下的真实模型与 Qwen 语音浏览器检查通过，记录在 `test-results/v4-simple-ui-20261104/`，含桌面/移动端截图、真实开始/停止、视角与风格设置、音频时钟、导演、取消及旧接口 404。
+
+2026-11-04 后续调整：用户认可现有效果，希望减少保守程度。运行时更新为 `v4.14.1-lively-default`，将已有“活泼”设为默认动作风格；模型包、Qwen TTS 和协调关节曲线继续沿用。页面与外部接口仍可显式选择“克制”。这次调整未重训模型，下文冻结交付记录与旧评分保持其历史边界。
+
+本次验证：66 项单元与接口检查、TypeScript 检查和生产构建通过；独立生产页面使用真实模型及 Qwen 语音，验证默认风格、显式克制、音频暂停/恢复、屈肘张掌挥手、身体与表情、取消及桌面/移动端显示。记录在 [`test-results/v4-lively-default-20261104/browser-smoke.json`](../test-results/v4-lively-default-20261104/browser-smoke.json)。这些是运行验证，尚无本次调整后的用户自然度评价。
+
+2026-11-04 此前恢复记录：用户反馈新的生成式语义方案效果不好，已停止该方案并恢复原来的 **v4-default-r1**，启动命令为 `python main.py`，默认模型指针仍为 `latent/stream-run.json`。新方案的[说明](semantic-live2d.md)与[连续播放实验](../research/live2d-semantic-planner-v1/CONTINUOUS_SPEECH.md)保留为未采用的研究记录。恢复时共享控制运行时为 `v4.14.0-continuous-utterance`；下文保留此前 `v4.13.0-clause-plan` 收尾与冻结交付的历史记录，旧清单不代表更新后的源码校验结果。
 
 当前日常版本为 **v4-default-r1**，模型包在 `experiments/vtuber-v4-default-r1`，控制运行时为 `v4.13.0-clause-plan`。唯一默认指针是 `latent/stream-run.json`。本次 2026-11-04 收尾整理代码、构建、说明与验证，没有训练新模型或启用新的动作实验。
 

@@ -8,14 +8,9 @@
     "start": "tsx server/index.ts --production",
     "build": "tsc --noEmit && vite build",
     "check": "tsc --noEmit",
-    "test": "tsx --test tests/controller.test.ts tests/speech-motion.test.ts tests/performance.test.ts tests/semantic-performance.test.ts tests/runtime-takeover.test.ts tests/performance-default.test.ts",
-    "test:browser": "tsx tests/browser-smoke.ts",
-    "test:latent": "tsx tests/latent-browser.ts",
-    "test:speech": "tsx tests/speech-browser.ts",
-    "test:speech:stream": "tsx tests/speech-stream-browser.ts",
-    "test:performance": "tsx tests/performance-browser.ts",
-    "test:semantic": "tsx --test tests/semantic-performance.test.ts",
-    "test:semantic:browser": "tsx tests/semantic-browser.ts"
+    "test": "tsx --test tests/controller.test.ts tests/speech-motion.test.ts tests/performance.test.ts tests/semantic-performance.test.ts tests/runtime-takeover.test.ts tests/performance-default.test.ts tests/continuous-performance.test.ts tests/emotion-curve.test.ts",
+    "test:browser": "tsx tests/release-smoke.ts",
+    "test:continuous": "tsx tests/continuous-speech-browser.ts"
   },
   "dependencies": {
     "tsx": "4.23.15",

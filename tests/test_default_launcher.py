@@ -1,28 +1,32 @@
+import subprocess
+import sys
 import unittest
 from unittest.mock import patch
 import main
 
-NEW='experiments/vtuber-v4-default-r1'
-OLD='experiments/vtuber-v4-composition-r2'
+NEW='experiments/vtuber-v5-emotion-action-r1'
 
 class DefaultLauncherTests(unittest.TestCase):
-    def test_semantic_launch_uses_generative_worker_without_old_heads(self):
-        self.assertEqual(main.latent_worker_command('python','cuda',NEW,semantic=True),['python','-m','semantic.serve','--device','cuda'])
+    def test_removed_launch_modes_are_not_accepted(self):
+        for option in ['--legacy','--semantic']:
+            with self.subTest(option=option):
+                result=subprocess.run([sys.executable,str(main.ROOT/'main.py'),option],capture_output=True,text=True)
+                self.assertEqual(result.returncode,2)
+                self.assertIn('unrecognized arguments',result.stderr)
 
-    def test_normal_launch_uses_promoted_profile_and_legacy_is_explicit(self):
-        with patch.object(main,'read',return_value=dict(path=NEW,promoted=True,rollback_path=OLD)):
+    def test_normal_launch_uses_current_profile_and_cuda(self):
+        with patch.object(main,'read',return_value=dict(path=NEW,promoted=True)):
             self.assertEqual(main.choose_stream_profile(),(NEW,'default'))
-            self.assertEqual(main.choose_stream_profile(legacy=True),(OLD,'legacy'))
-            self.assertEqual(main.choose_stream_profile(explicit=OLD),(OLD,'explicit'))
+            self.assertEqual(main.choose_stream_profile(explicit=NEW),(NEW,'explicit'))
         command=main.latent_worker_command('python','cuda',NEW)
-        self.assertEqual(command[command.index('--device')+1],'cpu')
-        self.assertEqual(command[command.index('--planner-device')+1],'cuda')
+        self.assertEqual(command[command.index('--device')+1],'cuda')
+        self.assertNotIn('--planner-device',command)
+        self.assertNotIn('semantic.serve',command)
 
-    def test_unpromoted_configuration_keeps_legacy_and_missing_default_fails(self):
+    def test_missing_or_disabled_default_fails_without_fallback(self):
         with patch.object(main,'read',return_value=dict(path=NEW,promoted=False)):
-            self.assertEqual(main.choose_stream_profile(),(None,'legacy'))
+            with self.assertRaises(ValueError):main.choose_stream_profile()
         with patch.object(main,'read',return_value=dict(path='experiments/missing',promoted=True)):
             with self.assertRaises(ValueError):main.choose_stream_profile()
-        with self.assertRaises(ValueError):main.choose_stream_profile(explicit=NEW,legacy=True)
 
 if __name__=='__main__':unittest.main()

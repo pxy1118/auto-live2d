@@ -143,7 +143,7 @@ class WindowsJob:
 class Foreground:
     def __init__(self,args):
         self.args=args;self.token=uuid.uuid4().hex;self.folder=RUNTIME/'main'/self.token
-        self.stop_event=threading.Event();self.reason='';self.job=None;self.lock=None;self.host=None;self.node=None;self.native=None;self.children=[]
+        self.stop_event=threading.Event();self.reason='';self.job=None;self.lock=None;self.host=None;self.node=None;self.children=[]
         self.stop_file=self.folder/'stop';self.worker_file=self.folder/'workers.json'
         self.console=ConsoleInput()
     def request_stop(self,number=None,frame=None):
@@ -162,7 +162,6 @@ class Foreground:
     def check(self):
         self.console.ensure()
         if self.stop_event.is_set() or self.stop_file.exists():raise Cancelled(self.reason or 'stop requested')
-        if self.native and self.native.poll() is not None:raise RuntimeError('本地语义推理引擎已退出，查看 .runtime/semantic-native.log')
     def spawn(self,command,log,stdin=None):
         with log.open('ab') as output:
             process=subprocess.Popen(command,cwd=ROOT,stdin=stdin,stdout=output,stderr=output,
@@ -196,22 +195,10 @@ class Foreground:
         print('准备依赖并构建网页…',flush=True)
         if not (ROOT/'node_modules/tsx').exists():self.command([node,str(npm),'ci','--no-fund','--no-audit'],'安装前端依赖')
         self.command([node,str(npm),'run','build'],'构建网页')
-        if self.args.semantic:
-            from semantic.native import command as native_command,settings as native_settings
-            native_port=native_settings()['port']
-            if occupied(native_port):raise RuntimeError(str(native_port)+' 已被占用，未接管已有推理服务。')
-            print('加载本地专用语义推理引擎…',flush=True)
-            self.native=self.spawn(native_command(self.args.device),RUNTIME/'semantic-native.log')
-            deadline=time.monotonic()+90
-            while not health(native_port,'/health'):
-                self.check()
-                if time.monotonic()>deadline:raise RuntimeError('专用语义推理引擎启动超时')
-                time.sleep(.1)
         # WSL accepts an explicit exec argv; no shell-built command or quoting is needed.
         drive=ROOT.drive[0].lower();linux_root='/mnt/'+drive+'/'+str(ROOT)[3:].replace('\\','/')
-        print('启动本地语义规划与 Qwen3-TTS…' if self.args.semantic else '启动动作专家与 Qwen3-TTS…',flush=True)
+        print('启动表演模型与 Qwen3-TTS…',flush=True)
         worker_args=['--worker-host',self.token,'--device',self.args.device]
-        if self.args.semantic:worker_args+=['--semantic']
         if self.args.stream_experiment:worker_args+=['--stream-experiment',self.args.stream_experiment]
         self.check();self.host=self.spawn([wsl,'--distribution',DISTRO,'--cd',linux_root,'--exec','python3',linux_root+'/main.py',
             *worker_args],RUNTIME/'worker-host.log',stdin=subprocess.PIPE)
@@ -220,7 +207,7 @@ class Foreground:
             self.check();state=read(self.worker_file)
             if state and state.get('phase')!=previous_phase:
                 previous_phase=state.get('phase')
-                labels={'dependencies':'同步模型环境…','latent':'加载本地语义模型（8768）…' if self.args.semantic else '加载动作专家（8768）…','tts':'加载大肥鱼音色（8769）…'}
+                labels={'dependencies':'同步模型环境…','latent':'加载表演模型（8768）…','tts':'加载大肥鱼音色（8769）…'}
                 if previous_phase in labels:print(labels[previous_phase],flush=True)
             if self.host.poll() is not None:raise RuntimeError('模型服务启动失败，查看 .runtime/worker-host.log 和模型日志。')
             if state and state.get('status')=='ready':break
@@ -232,13 +219,9 @@ class Foreground:
             self.check()
             if self.node.poll() is not None or time.monotonic()>deadline:raise RuntimeError('网页服务未就绪，查看 .runtime/server.log')
             time.sleep(.1)
-        state=read(STATE);state.update(status='running',node_pid=self.node.pid,**({'native_pid':self.native.pid} if self.native else {}));write(STATE,state)
-        target='http://127.0.0.1:8765/?speech=1#'+('performance-panel' if self.args.semantic or self.args.stream_experiment and self.args.runtime_mode!='legacy' else 'latent-panel')
+        state=read(STATE);state.update(status='running',node_pid=self.node.pid);write(STATE,state)
+        target='http://127.0.0.1:8765/'
         print('\n全部服务已就绪：'+target+'\n保持本终端运行；按 Ctrl+C 关闭全部服务。',flush=True)
-        if self.args.semantic:print('本地语义表演：生成式理解、连续表情、语音与协调动作。原默认模型保留。',flush=True)
-        elif self.args.runtime_mode=='default':print('默认方案：'+self.args.stream_experiment+'；旧版可用 --legacy 启动。',flush=True)
-        elif self.args.runtime_mode=='legacy':print('当前使用旧版兼容方案；默认配置保留。',flush=True)
-        elif self.args.stream_experiment:print('显式研究候选：'+self.args.stream_experiment+'；默认模型配置未修改。',flush=True)
         if not self.args.no_browser:webbrowser.open(target)
         while True:
             self.check()
@@ -290,26 +273,23 @@ def resolve_stream_experiment(value):
     return path.relative_to(ROOT).as_posix()
 
 
-def choose_stream_profile(explicit=None,legacy=False):
-    if explicit and legacy:raise ValueError('--legacy 与 --stream-experiment 不能同时使用')
+def choose_stream_profile(explicit=None):
     if explicit:return resolve_stream_experiment(explicit),'explicit'
     config=read(ROOT/'latent/stream-run.json') or {}
-    if legacy:return resolve_stream_experiment(config.get('rollback_path','experiments/vtuber-v4-composition-r2')),'legacy'
-    if config.get('promoted'):return resolve_stream_experiment(config['path']),'default'
-    return None,'legacy'
+    if not config.get('promoted'):raise ValueError('当前默认表演模型未启用；不再自动回退到旧版')
+    return resolve_stream_experiment(config['path']),'default'
 
 
-def latent_worker_command(python,device,experiment=None,semantic=False):
-    if semantic:return [str(python),'-m','semantic.serve','--device',device]
+def latent_worker_command(python,device,experiment=None):
     command=[str(python),str(ROOT/'latent/serve.py'),'--device',device]
     if experiment:
         experiment=resolve_stream_experiment(experiment);run=read(ROOT/experiment/'run.json')
-        if run.get('performance_planner',{}).get('architecture')=='token_attention' and device=='cuda':command[-1]='cpu'
-        command+=['--stream-experiment',experiment,'--planner-device',device]
+        if not run.get('emotion_classifier'):raise ValueError('默认启动只支持情感分类与轻量动作方案')
+        command+=['--stream-experiment',experiment]
     return command
 
 
-def worker_host(token,device,stream_experiment=None,semantic=False):
+def worker_host(token,device,stream_experiment=None):
     if len(token)!=32 or any(c not in '0123456789abcdef' for c in token):raise ValueError('Invalid session token')
     folder=RUNTIME/'main'/token;folder.mkdir(parents=True,exist_ok=True)
     stop_file=folder/'stop';registry=folder/'workers.json';event=threading.Event();children=[];phase='dependencies';error=None
@@ -339,13 +319,20 @@ def worker_host(token,device,stream_experiment=None,semantic=False):
         while sync.poll() is None:check();time.sleep(.1)
         if sync.returncode:raise RuntimeError('动作环境依赖同步失败。')
         python=Path(env['UV_PROJECT_ENVIRONMENT'])/'bin/python';check()
-        source=read(ROOT/('latent/encoders/qwen3.5-4b.json' if semantic else 'latent/encoder-source.json'));model=ROOT/'models'/source['repo_id'].split('/')[-1]
+        source=read(ROOT/'latent/encoder-source.json');model=ROOT/'models'/source['repo_id'].split('/')[-1]
         if any(not (model/w['file']).exists() or (model/w['file']).stat().st_size!=w['bytes'] for w in source['weights']):
-            download=spawn('encoder-prepare',[str(python),str(ROOT/('latent/prepare_research_encoder.py' if semantic else 'latent/prepare_encoder.py'))],env)
+            download=spawn('encoder-prepare',[str(python),str(ROOT/'latent/prepare_encoder.py')],env)
             while download.poll() is None:check();time.sleep(.1)
             if download.returncode:raise RuntimeError('动作编码器准备失败。')
+        run=read(ROOT/stream_experiment/'run.json')
+        if run.get('emotion_classifier'):
+            source=read(ROOT/'latent/emotion-source.json');model=ROOT/source['local_path']
+            if any(not (model/name).is_file() for name in source['files']):
+                download=spawn('emotion-prepare',[str(python),str(ROOT/'latent/prepare_emotion.py')],env)
+                while download.poll() is None:check();time.sleep(.1)
+                if download.returncode:raise RuntimeError('情感模型准备失败。')
         for name,command,port,ready,environment in [
-            ('latent',latent_worker_command(python,device,stream_experiment,semantic),8768,RUNTIME/'latent-ready.json',env),
+            ('latent',latent_worker_command(python,device,stream_experiment),8768,RUNTIME/'latent-ready.json',env),
             ('tts',[str(local_path(config['python'])),'-m','speech.serve','--device',device],config['port'],RUNTIME/'tts-ready.json',
                 {**os.environ,'HF_HUB_OFFLINE':'1','TRANSFORMERS_OFFLINE':'1','TOKENIZERS_PARALLELISM':'false'})]:
             phase=name;process=spawn(name,command,environment);deadline=time.monotonic()+180
@@ -404,19 +391,16 @@ def main():
     parser.add_argument('--device',choices=['cuda','cpu'],default='cuda')
     profiles=parser.add_mutually_exclusive_group()
     profiles.add_argument('--stream-experiment',help='显式启动 experiments 内的流式方案，不修改默认配置')
-    profiles.add_argument('--legacy',action='store_true',help='本次使用旧版 v3 与原流式方案，保留默认配置')
-    profiles.add_argument('--semantic',action='store_true',help='本次使用本地生成式语义表演，不加载旧动作决策头')
     parser.add_argument('--stop',action='store_true',help='关闭当前前台启动器及其服务')
     parser.add_argument('--worker-host',help=argparse.SUPPRESS);args=parser.parse_args()
     args.runtime_mode='explicit'
-    if args.semantic:args.runtime_mode='semantic'
-    if not args.stop and not args.worker_host and not args.semantic:
-        try:args.stream_experiment,args.runtime_mode=choose_stream_profile(args.stream_experiment,args.legacy)
+    if not args.stop and not args.worker_host:
+        try:args.stream_experiment,args.runtime_mode=choose_stream_profile(args.stream_experiment)
         except (ValueError,KeyError) as exc:parser.error(str(exc))
     elif args.stream_experiment:
         try:args.stream_experiment=resolve_stream_experiment(args.stream_experiment)
         except ValueError as exc:parser.error(str(exc))
-    if args.worker_host:return worker_host(args.worker_host,args.device,args.stream_experiment,args.semantic)
+    if args.worker_host:return worker_host(args.worker_host,args.device,args.stream_experiment)
     if os.name!='nt':parser.error('请在 Windows 终端运行 python main.py。')
     if args.stop:return stop_foreground()
     supervisor=Foreground(args);result=0

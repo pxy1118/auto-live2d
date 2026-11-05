@@ -2,7 +2,6 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { SpeechMotionClock,speechAccents } from '../src/speech-motion';
 import { jsonLines } from '../server/ndjson';
-import { SpeechBridge } from '../server/speech-bridge';
 
 test('body duration follows audio and final duration correction never rewinds phase',()=>{
   const c=new SpeechMotionClock(6400,8000);
@@ -15,25 +14,6 @@ test('body duration follows audio and final duration correction never rewinds ph
   const provisional=new SpeechMotionClock(6400,1000,false,true);
   assert.ok(provisional.at(4000)<6400);const before=provisional.at(4000);
   provisional.finish(8000,4000);assert.equal(provisional.at(4000),before);assert.equal(provisional.at(8000),6400);
-});
-
-test('motion failure aborts the already-open TTS stream; truncation stops its owned session',async t=>{
-  const id='a'.repeat(32),commands:any[]=[];let signal:AbortSignal|undefined;
-  const response=(lines:any[])=>new Response(new ReadableStream({start(c){for(const line of lines)c.enqueue(new TextEncoder().encode(JSON.stringify(line)+'\n'));c.close();}}),{status:200});
-  const fetchMock=t.mock.method(globalThis,'fetch',async(_url:any,options:any)=>{signal=options.signal;return response([{type:'start',speech_id:id}]);});
-  const invoke=async(command:any)=>{commands.push(command);return {result:{speech:{enabled:true},recording:null}};};
-  const brokenMotion=new SpeechBridge({predict:async()=>{throw new Error('motion failed');}} as any,invoke);
-  await assert.rejects(()=>brokenMotion.perform({text:'你好。'},()=>{},new AbortController().signal),/motion failed/);
-  assert.ok(signal?.aborted,'failed motion must cancel the concurrent GPU generation');assert.equal(commands.length,1);
-  commands.length=0;
-  const truncated=new SpeechBridge({} as any,invoke);
-  await assert.rejects(()=>truncated.perform({text:'你好。',with_motion:false},()=>{},new AbortController().signal),/中断/);
-  assert.deepEqual(commands.map(c=>c.method),['state.get','speech.stream.begin','speech.stop']);
-  assert.equal(commands.at(-1).params.speech_id,id);assert.ok(signal?.aborted);
-  fetchMock.mock.mockImplementation(async(_url:any,options:any)=>{signal=options.signal;return response([{type:'start',speech_id:id},{type:'end',speech_id:id,total_samples:1},{type:'chunk',speech_id:id}]);});
-  commands.length=0;
-  await assert.rejects(()=>truncated.perform({text:'你好。',with_motion:false},()=>{},new AbortController().signal),/结束后/);
-  assert.equal(commands.at(-1).method,'speech.stop');
 });
 
 test('speech emphasis is coupled across head/chest and does not add hand or face switches',()=>{

@@ -297,6 +297,7 @@ export class Live2DEngine extends CubismUserModel {
         return this.performance.start(params,this.control.state(true).driver);
       }
       case 'performance.segment': return this.performance.segment(params);
+      case 'performance.utterance': return this.performance.utterance(params);
       case 'performance.chunk': return this.performance.chunk(params);
       case 'performance.end': {const result=this.performance.cancel(params.session_id);if(result.cancelled)this.stopSpeech();return result;}
       case 'performance.capture': {

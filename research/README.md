@@ -1,5 +1,9 @@
 # 研究索引
 
+2026-11-04 最新默认权重为 `vtuber-v5-emotion-action-r1`，运行时 `v5.1.0-emotion-curves`：GPU 情感分类＋连续情绪层＋0.8B 动作，4B 分支不再加载。以下默认描述保留为历史研究来源，当前入口见主 README 与 `docs/emotion-curves.md`。
+
+2026-11-04：标准入口已简化为当前会话表演，`--legacy`、`--semantic` 与旧 HTTP 兼容接口已移除。以下涉及旧入口的命令是历史记录，不代表当前启动方式。
+
 日常入口只有 `python main.py`，加载 `experiments/vtuber-v4-default-r1`。目录的存在不表示已经启用；默认指针见 `latent/stream-run.json`，交付状态见 [当前版本](../docs/project-status.md)。以下历史目录和评分保留原路径，便于复查来源。
 
 | 研究 | 去向 | 证据入口 |

@@ -48,3 +48,7 @@
 
 The semantic entry point uses the user's local [llama.cpp](https://github.com/ggml-org/llama.cpp) build at commit `895c045fd` (MIT license). The executable and its CUDA runtime libraries remain in the local llama.cpp installation. Qwen3.5-4B Q8_0 is converted locally from the existing Apache-2.0 Qwen weights; its source revision and checksums are recorded in `semantic/native-runtime.json`.
 
+
+## Horizon-Labs multilingual-emotions-base
+
+本地情感分类使用 [Horizon-Labs/multilingual-emotions-base](https://huggingface.co/Horizon-Labs/multilingual-emotions-base)，Apache-2.0，固定 revision `4f95ad28e89def7cce33b0589de4ed369b970deb`。底座为 mmBERT-base，归属信息以发布仓库 LICENSE 与 NOTICE 为准。文件不随代码仓库分发；来源和校验值在 `latent/emotion-source.json`，准备脚本只下载标准 tokenizer、配置及 safetensors，不执行模型仓库中的 Python 代码。
