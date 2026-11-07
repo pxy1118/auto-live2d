@@ -32,6 +32,8 @@ const numberIn = (value: unknown, lo = 0, hi = 1): value is number => typeof val
 const TOP_FIELDS = new Set(['schema', 'labels', 'thresholds', 'points']);
 const POINT_FIELDS = new Set(['text', 'window_text', 'start', 'end', 'start_fraction', 'probabilities', 'policy_default', 'quoted_text_excluded']);
 const WINDOW_LIMIT = 512;
+// Match Python str.strip(): Unicode White_Space plus U+001C..001F; retain U+FEFF.
+const OBSERVATION_PADDING = /^[\p{White_Space}\u001c-\u001f]+|[\p{White_Space}\u001c-\u001f]+$/gu;
 
 /**
  * Validate an entire v2 observation timeline before any running state changes.
@@ -76,7 +78,8 @@ export function validateEmotionTimeline(value: any, text: string): EmotionTimeli
   if (!Number.isInteger(point.start) || !Number.isInteger(point.end)) fail('start/end');
   if (point.start !== cursor || point.end <= point.start || point.end > chars.length) fail('start/end 偏移');
   if (typeof point.text !== 'string' || !point.text) fail('point.text');
-  if (chars.slice(point.start, point.end).join('') !== point.text) fail('point.text 与原文不一致');
+  // Offsets cover the original text including padding; classifier text omits it.
+  if (chars.slice(point.start, point.end).join('').replace(OBSERVATION_PADDING, '') !== point.text) fail('point.text 与原文不一致');
   if (!numberIn(point.start_fraction) || Math.abs(point.start_fraction - point.start / chars.length) > 1e-6) fail('start_fraction');
 
   const windowText = point.window_text === undefined ? point.text : point.window_text;

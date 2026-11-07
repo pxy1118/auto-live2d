@@ -475,6 +475,21 @@ if (!existsSync(FIXTURE_PATH)) {
  test('python↔ts parity fixture', {skip: `缺少 ${FIXTURE_PATH}；由 latent/emotion_curve_fixture.py 生成后自动启用`}, () => {});
  console.log(`[emotion-curve] parity fixture 不存在，已跳过：${FIXTURE_PATH}`);
 } else {
+ test('Python 分段时间轴允许首尾空白，保留原文偏移并拒绝正文篡改', () => {
+  const fixture: any = JSON.parse(readFileSync(FIXTURE_PATH, 'utf8'));
+  assert.ok(fixture.observation_cases.length >= 5);
+  for (const item of fixture.observation_cases) {
+   const validated = validateEmotionTimeline(item.timeline, item.text);
+   assert.deepEqual(validated, item.timeline, item.name);
+   const chars = Array.from(item.text);
+   assert.equal(validated.points.map(point => chars.slice(point.start, point.end).join('')).join(''), item.text);
+   const changed = structuredClone(item.timeline);
+   changed.points[0].text += '改';
+   changed.points[0].window_text += '改';
+   assert.throws(() => validateEmotionTimeline(changed, item.text), /point.text 与原文不一致/, item.name);
+  }
+ });
+
  test('python↔ts parity fixture', () => {
   const fixture: any = JSON.parse(readFileSync(FIXTURE_PATH, 'utf8'));
   const cases = fixtureCases(fixture);
@@ -494,13 +509,7 @@ if (!existsSync(FIXTURE_PATH)) {
     points: rawPoints.map((point: any) => ({...point, probabilities: normalizeProbabilities(point.probabilities, labels)})),
    };
    const text = typeof item.text === 'string' ? item.text : rawPoints.map((point: any) => point.text ?? '').join('');
-   let tl: EmotionTimelineV2;
-   try {
-    tl = validateEmotionTimeline(normalized, text);
-   } catch (error) {
-    console.warn(`[emotion-curve] fixture case ${item.name ?? '?'} 的 timeline 未通过 v2 校验，退化为直接仿真：${(error as Error).message}`);
-    tl = normalized as EmotionTimelineV2;
-   }
+   const tl = validateEmotionTimeline(normalized, text);
    const ours = simulateEmotionCurve(tl, duration);
    const byTime = new Map(ours.map(sample => [sample.t, sample]));
    let caseCompared = 0;

@@ -27,6 +27,17 @@ def _spans(text):
 
 
 class ObservationTests(unittest.TestCase):
+    def test_shared_multiline_fixtures_match_backend_observations(self):
+        fixture = json.loads((ROOT / 'tests/fixtures/emotion-curve-v2.json').read_text(encoding='utf-8'))
+        self.assertGreaterEqual(len(fixture['observation_cases']), 5)
+        for case in fixture['observation_cases']:
+            with self.subTest(name=case['name']):
+                text = case['text']
+                spans, windows = _spans(text)
+                actual = build_timeline(text, spans, windows, [{} for _ in spans])
+                self.assertEqual(actual, case['timeline'])
+                self.assertEqual(''.join(text[point['start']:point['end']] for point in actual['points']), text)
+
     def test_quote_scope_is_structural_and_never_rewrites_unquoted_text(self):
         self.assertEqual(speaker_text('她说“我很生气”，我只是读留言。'), '她说，我只是读留言。')
         self.assertEqual(speaker_text('我没有生气，只是在解释。'), '我没有生气，只是在解释。')

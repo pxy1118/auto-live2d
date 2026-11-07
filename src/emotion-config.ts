@@ -80,8 +80,10 @@ const clamp01 = (x: number) => clamp(x, 0, 1);
 function clamp(x: number, lo: number, hi: number) { return Math.max(lo, Math.min(hi, Number.isFinite(x) ? x : 0)); }
 
 export type EmotionTimelinePointV2 = {
+  /** Original start/end slice with leading/trailing Python str.strip() whitespace removed. */
   text: string;
   window_text: string;
+  /** Contiguous Unicode code-point offsets in the untouched utterance, including whitespace. */
   start: number;
   end: number;
   start_fraction: number;
