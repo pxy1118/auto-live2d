@@ -1,12 +1,14 @@
 import {clauseEnd} from './semantic-clause';
-export const MAX_UTTERANCE_CHARS=240;
+/** One Qwen3-TTS streaming generation. The model wrapper limit is 400 characters
+ * (speech/config.json); semantic clauses keep their smaller 240-char budget. */
+export const MAX_UTTERANCE_CHARS=400;
 export type ClauseSpan={clause:number;text:string;start:number;end:number};
 /** Known text is packed into one speech unit; commas never commit a short unit. */
 export function utteranceEnd(text:string,flush:boolean){
   if(flush&&text.length<=MAX_UTTERANCE_CHARS)return text.length;
   let offset=0,last=0;
   while(offset<Math.min(text.length,MAX_UTTERANCE_CHARS)){
-    const end=clauseEnd(text.slice(offset),false,true);
+    const end=clauseEnd(text.slice(offset),false,true,MAX_UTTERANCE_CHARS);
     if(!end||offset+end>MAX_UTTERANCE_CHARS)break;
     offset+=end;last=offset;
   }

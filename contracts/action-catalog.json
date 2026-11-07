@@ -1,0 +1,201 @@
+{
+  "schema": "action.catalog.v1",
+  "actions": [
+    {
+      "id": "none",
+      "kind": "none",
+      "label": "无动作",
+      "emotion": null,
+      "variants": 1,
+      "default_hold_ms": 0,
+      "cooldown_group": "arm",
+      "intensity": [
+        0,
+        0
+      ],
+      "phases": []
+    },
+    {
+      "id": "wave",
+      "kind": "gesture",
+      "label": "屈肘张掌挥手",
+      "emotion": null,
+      "variants": 3,
+      "default_hold_ms": 1400,
+      "cooldown_group": "arm",
+      "intensity": [
+        0.6,
+        1
+      ],
+      "phases": []
+    },
+    {
+      "id": "chest",
+      "kind": "gesture",
+      "label": "抚胸",
+      "emotion": null,
+      "variants": 3,
+      "default_hold_ms": 1400,
+      "cooldown_group": "arm",
+      "intensity": [
+        0.6,
+        1
+      ],
+      "phases": []
+    },
+    {
+      "id": "grass",
+      "kind": "gesture",
+      "label": "狗尾草展示",
+      "emotion": null,
+      "variants": 3,
+      "default_hold_ms": 1800,
+      "cooldown_group": "arm",
+      "intensity": [
+        0.6,
+        1
+      ],
+      "phases": []
+    },
+    {
+      "id": "point",
+      "kind": "gesture",
+      "label": "指出重点",
+      "emotion": null,
+      "variants": 3,
+      "default_hold_ms": 1400,
+      "cooldown_group": "arm",
+      "intensity": [
+        0.6,
+        1
+      ],
+      "phases": []
+    },
+    {
+      "id": "thanks",
+      "kind": "gesture",
+      "label": "抚胸致谢",
+      "emotion": null,
+      "variants": 3,
+      "default_hold_ms": 1400,
+      "cooldown_group": "arm",
+      "intensity": [
+        0.6,
+        1
+      ],
+      "phases": []
+    },
+    {
+      "id": "explain",
+      "kind": "gesture",
+      "label": "身前说明",
+      "emotion": null,
+      "variants": 3,
+      "default_hold_ms": 1400,
+      "cooldown_group": "arm",
+      "intensity": [
+        0.6,
+        1
+      ],
+      "phases": []
+    },
+    {
+      "id": "refuse",
+      "kind": "gesture",
+      "label": "示意停止",
+      "emotion": null,
+      "variants": 3,
+      "default_hold_ms": 1400,
+      "cooldown_group": "arm",
+      "intensity": [
+        0.6,
+        1
+      ],
+      "phases": []
+    },
+    {
+      "id": "lean",
+      "kind": "body",
+      "label": "前倾与回身",
+      "emotion": null,
+      "variants": 3,
+      "default_hold_ms": 2200,
+      "cooldown_group": "body",
+      "intensity": [
+        0.4,
+        1
+      ],
+      "phases": []
+    },
+    {
+      "id": "sway",
+      "kind": "body",
+      "label": "躯干轻摇与重心转移",
+      "emotion": null,
+      "variants": 3,
+      "default_hold_ms": 2200,
+      "cooldown_group": "body",
+      "intensity": [
+        0.4,
+        1
+      ],
+      "phases": []
+    },
+    {
+      "id": "nod",
+      "kind": "body",
+      "label": "点头与俯身",
+      "emotion": null,
+      "variants": 3,
+      "default_hold_ms": 2200,
+      "cooldown_group": "body",
+      "intensity": [
+        0.4,
+        1
+      ],
+      "phases": []
+    },
+    {
+      "id": "tilt",
+      "kind": "body",
+      "label": "歪头与侧倾",
+      "emotion": null,
+      "variants": 3,
+      "default_hold_ms": 2200,
+      "cooldown_group": "body",
+      "intensity": [
+        0.4,
+        1
+      ],
+      "phases": []
+    },
+    {
+      "id": "turn",
+      "kind": "body",
+      "label": "侧首与转身",
+      "emotion": null,
+      "variants": 3,
+      "default_hold_ms": 2200,
+      "cooldown_group": "body",
+      "intensity": [
+        0.4,
+        1
+      ],
+      "phases": []
+    },
+    {
+      "id": "cajole",
+      "kind": "body",
+      "label": "撒娇 · 前倾轻扭",
+      "emotion": null,
+      "variants": 3,
+      "default_hold_ms": 2200,
+      "cooldown_group": "body",
+      "intensity": [
+        0.4,
+        1
+      ],
+      "phases": []
+    }
+  ]
+}

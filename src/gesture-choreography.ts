@@ -9,24 +9,14 @@ const beats=(t:number,times:number[],width=.24)=>times.reduce((s,at)=>s+pulse(t,
 const age=(t:number,enter:number)=>{const h=Math.max(0,t-enter)/1000;return h<.12?h*h/.24:h-.06;};
 const sin=(t:number,hz:number,phase=0)=>Math.sin(t*2*Math.PI*hz+phase);
 export const actingVariants:Record<string,string[]>={
- wave:['歪头轻侧倾＋屈肘张掌双挥','点头带动躯干＋张掌短挥','歪头前倾靠近＋慢挥'],
+ wave:['歪头倾身招呼','点头带动躯干招呼','歪头前倾靠近招呼'],
  chest:['抚胸前倾＋一深一浅点头','先侧首、再倾身抚胸','歪头侧倾＋抚胸确认'],
  grass:['歪头、侧倾展示草穗','移重心停留＋草穗画弧','前倾递出，再回身'],
  point:['抬指点题＋头身错峰点头','食指划过两侧＋侧首跟随','歪头前倾＋抬指说明'],
  thanks:['抚胸小鞠躬，再自然起身','抚胸＋一深一浅点头','先歪头、后点头致谢'],
- explain:['侧首带动躯干＋抚胸说明','移重心轻摇＋单手张掌','前倾点题后回身'],
- refuse:['抬指摇头两次','张掌示意暂停＋轻退身','抬指收身＋一次明确点头'],
+ explain:['侧首带动躯干＋抚胸说明','移重心轻摇＋抚胸说明','前倾点题后回身'],
+ refuse:['抬指摇头两次','抬指示意暂停＋轻退身','抬指收身＋一次明确点头'],
 };
-
-export function palmWave(variant:number,time:ActingTime){
- const {t,enter,holdEnd,exit}=time,h=age(t,enter);
- const e=ease(t/enter)*(1-ease((t-holdEnd)/exit));
- const start=variant===1?.35:variant===2?.22:0,q=Math.max(0,h-start),window=ease(q/.12)*(1-ease((q-(variant===0?1.05:variant===1?.5:1.2))/.2));
- const wrist=(variant===0?.2*sin(q,1.7):variant===1?.17*sin(q,2):.18*sin(q,.8))*window;
- // Only the wrist and finger spread change; shoulder/elbow remain on the
- // artist-authored point pose, including the original enter/exit curves.
- return {Param42:wrist*e,RHand:.65*e,RHand2:.12*e};
-}
 
 export function actingBody(name:string,variant:number,time:ActingTime){
  const {t,enter,holdEnd,exit}=time,h=age(t,enter),end=1-ease((t-holdEnd)/exit),e=ease(t/enter)*end;

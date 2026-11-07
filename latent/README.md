@@ -1,4 +1,29 @@
-# 连续动作实验
+# 原生情绪动作模型
+
+当前运行时 `v6.3.2-feedback-acting`，默认包 `experiments/vtuber-v6-native28-motion-r2`。眼神、叠图与手势资源的人工反馈修订见 [反馈处理记录](../docs/review-feedback.md)。
+
+- 分类器保留28个独立sigmoid输出，GPU FP32冻结；0.8B语义编码器GPU冻结。
+- 事件头328532参数：语义1024 + affect64 + 纯动作历史23，输出14个已有动作ID（含none）、变体、强度/保持/起始延迟。没有旧7情绪或12面部历史。
+- 连续背景头622345参数：保留9通道，r1权重按原字节复用；不重新训练、不绑定动作目录的类别数。
+- prefill只做因果情绪观测与每个分句的语义缓存；/stream/plan在实际播放时接收当前曲线和动作历史；/stream/predict复用同一分句缓存。
+
+复现事件训练（需要本机原始数据和r1语义/分类缓存；拒绝覆盖现有r2权重）：
+
+```bash
+uv run --project latent python latent/train_motion_r2.py
+```
+
+13项GPU/情绪测试：
+
+```bash
+uv run --project latent python -m unittest latent.test_emotion_catalog latent.test_emotion
+```
+
+旧r1训练器与情绪动作只作快照保留在 `research/emotion-catalog-r1-archive/`，不是当前入口。新增动作只需注册和资源绑定；模型选择词表仍固定，加入模型自动选择需另行扩展训练，不能靠改JSON扩充输出层。
+
+以下内容是 v3/v4 历史研究记录，仍可复现，但不属于 v6 默认链路。
+
+## 历史研究：并行回归与 Flow
 
 输入台词/语境/风格，经冻结 Qwen3.5-0.8B 语言骨干提取最后 16 个 token 的 1024 维特征。两个小型 Transformer 动作专家分别进行并行回归、8 步条件 flow matching 采样。当前输出 10 Hz、64 步的 16 轴轨迹、双手状态、17 类表情/外观概率、3 种体型和原始动画选择。分类头使用真实录制的开关时间监督，推理不按关键词查表。
 

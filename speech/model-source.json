@@ -1,5 +1,5 @@
 {
-  "checkpoint": "D:/Workplace/Qwen3-TTS/runs/da_fei_yu/checkpoint-best",
+  "checkpoint": "models/Qwen3-TTS-12Hz-1.7B-da_fei_yu",
   "model_type": "custom_voice",
   "files": [
     {
@@ -28,7 +28,7 @@
       "sha256": "ee65bb901c876664ab8707c487157aa1a6ee57c65969b28fb5ec9dc211e68167"
     }
   ],
-  "repository": "D:/Workplace/Qwen3-TTS",
+  "repository": "vendor/qwen3-tts",
   "speaker": "da_fei_yu",
   "repository_commit": "022e286b98fbec7e1e916cb940cdf532cd9f488e"
 }

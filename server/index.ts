@@ -8,6 +8,7 @@ import type { Manifest } from '../src/controller';
 import { PerformanceService } from './performance-service';
 import { PERFORMANCE_RUNTIME_VERSION } from '../src/performance-profile';
 import { RequestLedger } from './request-ledger';
+import {PerformanceReview} from './performance-review';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const modelRoot = join(root, 'live2d', 'DeepSeek', 'DeepSeek');
@@ -64,13 +65,17 @@ function serveFile(res: http.ServerResponse, base: string, relative: string) {
   createReadStream(target).pipe(res);
 }
 const performanceService = new PerformanceService(invoke);
-const publicMethods=new Set(['performance.start','performance.append','performance.finish','performance.cancel','performance.state','performance.status','performance.direct','performance.release','appearance.update','appearance.get','capabilities.get','state.get','engine.pause','speech.unlock']);
+const performanceReview=new PerformanceReview(performanceService,invoke,process.env.LIVE2D_REVIEW_ROOT?resolve(process.env.LIVE2D_REVIEW_ROOT):join(root,'datasets/emotion-acting-review-v1'),root);
+const reviewMethods=['review.list','review.get','review.create','review.play','review.stop','review.rate'];
+const publicMethods=new Set(['performance.start','performance.append','performance.finish','performance.cancel','performance.state','performance.status','performance.direct','performance.release','appearance.update','appearance.get','capabilities.get','state.get','engine.pause','speech.unlock',...reviewMethods]);
 const publicRequests=new RequestLedger();
 const publicCommand=(command:any)=>{
-  if(!publicMethods.has(command?.method))return Promise.reject(Object.assign(new Error('不支持的控制方法'),{code:'unknown_method',httpStatus:404}));
+  if(!publicMethods.has(command?.method)&&!reviewMethods.includes(command?.method))return Promise.reject(Object.assign(new Error('不支持的控制方法'),{code:'unknown_method',httpStatus:404}));
   const id=command?.request_id??randomUUID();if(typeof id!=='string'||!id.length||id.length>128)return Promise.reject(new Error('request_id 不合法'));
   const key=JSON.stringify([command?.method,command?.params??{}]);
-  return publicRequests.execute(id,key,()=>(performanceService.handles(command?.method)?performanceService.command({...command,request_id:id}):invoke({...command,request_id:id})).then(async response=>{
+  return publicRequests.execute(id,key,()=>{
+    if(performanceReview.busy&&['performance.start','performance.append','performance.finish','performance.direct','performance.release','appearance.update'].includes(command.method))throw Error('正在比较候选，请先停止评分播放');
+    return (reviewMethods.includes(command.method)?performanceReview.command(command.method,command.params??{}).then(result=>({status:'applied',request_id:id,result})):performanceService.handles(command?.method)?performanceService.command({...command,request_id:id}):invoke({...command,request_id:id})).then(async response=>{
     const audit=join(root,'test-results/v4/audit/capabilities.json');
     if(command?.method==='capabilities.get'&&existsSync(audit)){
       const evidence=readJson(audit);
@@ -82,12 +87,13 @@ const publicCommand=(command:any)=>{
       }
     }
     if(command?.method==='capabilities.get'){
+      response.result.methods=[...publicMethods];
       const active=await performanceService.status();
       response.result.experimental=active.experimental??true;response.result.promoted=active.promoted??false;
-      response.result.active_performance={stage:active.stage??null,body_planner:active.run?.body_planner?.mode??null,driver:active.driver??'emotion_action',uses_4b:active.uses_4b??false,emotion_classifier:active.emotion_classifier??null};
+      response.result.active_performance={stage:active.stage??null,driver:active.driver??'emotion_catalog',runtime_version:active.runtime_version??null,models:active.models??[],emotion_classifier:active.emotion_classifier??null,affect:active.affect??null,action_catalog:active.action_catalog??null};
     }
     return response;
-  }));
+  });});
 };
 const vite = !production ? await import('vite').then(v => v.createServer({ root, server: { middlewareMode: true, hmr: false }, appType: 'spa' })) : null;
 const server = http.createServer(async (req, res) => {
@@ -110,7 +116,7 @@ const server = http.createServer(async (req, res) => {
     if (path.startsWith('/model/')) return serveFile(res, modelRoot, path.slice(7));
     if (path === '/vendor/cubism/Core/live2dcubismcore.min.js') return serveFile(res, join(root, 'vendor', 'cubism', 'Core'), 'live2dcubismcore.min.js');
     if (vite) vite.middlewares(req, res);
-    else serveFile(res, join(root, 'dist'), path === '/' ? 'index.html' : path.slice(1));
+    else serveFile(res, join(root, 'dist'), path === '/'||path==='/review' ? 'index.html' : path.slice(1));
   } catch (error: any) {
     if (!res.headersSent) json(res, error.httpStatus??(['runtime_offline', 'runtime_timeout', 'runtime_disconnected'].includes(error.code) ? 503 : 400), { error: error.code ?? 'request_failed', message: error.message ?? String(error) });
     else res.end();
@@ -129,6 +135,7 @@ sockets.on('connection', (socket, req) => {
           if(message.takeover!==true){socket.send(JSON.stringify({ type: 'busy', message: '另一个模型页面正在执行控制；点击开始表演可切换到当前窗口' }));return;}
           const previous=runtime;
           performanceService.disconnect();
+          performanceReview.disconnect();
           for(const p of pending.values()){clearTimeout(p.timer);p.reject({code:'runtime_replaced',message:'控制权已切换到另一个角色窗口'});}
           pending.clear();requests.clear();publicRequests.retireAll();latestState=null;
           // Assign the new owner before the old socket's asynchronous close event.
@@ -152,6 +159,7 @@ sockets.on('connection', (socket, req) => {
       for (const p of pending.values()) { clearTimeout(p.timer); p.reject({ code: 'runtime_disconnected', message: '模型页面已断开' }); }
       pending.clear(); requests.clear();
       performanceService.disconnect();
+      performanceReview.disconnect();
       publicRequests.retireAll();
     }
   });

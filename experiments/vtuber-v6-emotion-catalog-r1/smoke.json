@@ -1,0 +1,127 @@
+{
+  "info": {
+    "ready": true,
+    "driver": "emotion_catalog",
+    "runtime_version": "v6.0.0-emotion-catalog",
+    "promoted": false,
+    "experimental": true,
+    "models": [
+      "multilingual-emotions-base",
+      "qwen3.5-0.8b"
+    ],
+    "run_path": "experiments/vtuber-v6-emotion-catalog-r1",
+    "gate_passed": true,
+    "motion": {
+      "clock": "audio",
+      "update_ms": 400,
+      "horizon": 24
+    },
+    "execution": {
+      "emotion_device": "cuda",
+      "action_encoder": "Qwen3.5-0.8B",
+      "continuous_device": "cuda",
+      "event_device": "cuda"
+    }
+  },
+  "prefill": {
+    "ready": true,
+    "semantic_ms": 446.59,
+    "planner_timing": {
+      "emotion": {
+        "total_ms": 19.002236999995148,
+        "batch_size": 2,
+        "uncached": 2
+      },
+      "action_encoder": {
+        "tokens": 44,
+        "encoder_ms": 325.2801590000445
+      },
+      "total_ms": 446.594
+    },
+    "timeline_schema": "emotion.timeline.v2",
+    "timeline_points": 2,
+    "timeline_labels": 28,
+    "plans": [
+      {
+        "clause": 0,
+        "action": {
+          "id": "emotion.disgust",
+          "variant": 0,
+          "strength": 0.4649,
+          "hold_ms": 1650.5,
+          "onset_ms": 221.3
+        },
+        "body_overlay": {
+          "id": "turn",
+          "variant": 0,
+          "strength": 0.3647,
+          "hold_ms": 1152.9
+        },
+        "confidence": {
+          "action": 0.2246,
+          "body": 0.4762
+        }
+      },
+      {
+        "clause": 1,
+        "action": {
+          "id": "emotion.love",
+          "variant": 0,
+          "strength": 0.4019,
+          "hold_ms": 1413.6,
+          "onset_ms": 200.7
+        },
+        "body_overlay": null,
+        "confidence": {
+          "action": 0.7923,
+          "body": 0.8158
+        }
+      }
+    ]
+  },
+  "predict": {
+    "channels": [
+      "AngleX",
+      "AngleY",
+      "AngleZ",
+      "PositionX",
+      "PositionY",
+      "PositionZ",
+      "LeanInput",
+      "ParamEyeBallX",
+      "ParamEyeBallY"
+    ],
+    "shape": [
+      24,
+      9
+    ],
+    "timing": {
+      "total_compute_ms": 18.001,
+      "semantic_tokens": 44,
+      "context_truncated": false
+    },
+    "raw_out_of_range_fraction": 0.0,
+    "first_frame": [
+      0.214,
+      -0.322,
+      0.214,
+      0.28,
+      -0.226,
+      -0.239,
+      -0.85,
+      -0.004,
+      -0.0
+    ],
+    "last_frame": [
+      -0.233,
+      -0.244,
+      -0.014,
+      0.171,
+      -0.147,
+      -0.074,
+      -0.699,
+      -0.003,
+      0.002
+    ]
+  }
+}

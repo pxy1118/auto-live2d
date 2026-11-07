@@ -207,7 +207,7 @@ class Foreground:
             self.check();state=read(self.worker_file)
             if state and state.get('phase')!=previous_phase:
                 previous_phase=state.get('phase')
-                labels={'dependencies':'同步模型环境…','latent':'加载表演模型（8768）…','tts':'加载大肥鱼音色（8769）…'}
+                labels={'dependencies':'同步模型环境…','latent':'加载情感模型与情绪动作专家（8768）…','tts':'加载大肥鱼音色（8769）…'}
                 if previous_phase in labels:print(labels[previous_phase],flush=True)
             if self.host.poll() is not None:raise RuntimeError('模型服务启动失败，查看 .runtime/worker-host.log 和模型日志。')
             if state and state.get('status')=='ready':break
@@ -284,7 +284,8 @@ def latent_worker_command(python,device,experiment=None):
     command=[str(python),str(ROOT/'latent/serve.py'),'--device',device]
     if experiment:
         experiment=resolve_stream_experiment(experiment);run=read(ROOT/experiment/'run.json')
-        if not run.get('emotion_classifier'):raise ValueError('默认启动只支持情感分类与轻量动作方案')
+        if not run.get('emotion_classifier') and not str(run.get('schema','')).startswith('vtuber.v6'):
+            raise ValueError('默认启动只支持情感分类与情绪动作方案')
         command+=['--stream-experiment',experiment]
     return command
 
@@ -325,12 +326,17 @@ def worker_host(token,device,stream_experiment=None):
             while download.poll() is None:check();time.sleep(.1)
             if download.returncode:raise RuntimeError('动作编码器准备失败。')
         run=read(ROOT/stream_experiment/'run.json')
-        if run.get('emotion_classifier'):
+        if run.get('emotion_classifier') or str(run.get('schema','')).startswith('vtuber.v6'):
             source=read(ROOT/'latent/emotion-source.json');model=ROOT/source['local_path']
             if any(not (model/name).is_file() for name in source['files']):
                 download=spawn('emotion-prepare',[str(python),str(ROOT/'latent/prepare_emotion.py')],env)
                 while download.poll() is None:check();time.sleep(.1)
                 if download.returncode:raise RuntimeError('情感模型准备失败。')
+        if str(run.get('schema','')).startswith('vtuber.v6'):
+            for name,spec in (run.get('models') or {}).items():
+                path=ROOT/stream_experiment/spec.get('checkpoint','')
+                if not spec.get('checkpoint') or not path.is_file():
+                    raise RuntimeError(f'情绪动作检查点缺失：{name}，请先运行训练。')
         for name,command,port,ready,environment in [
             ('latent',latent_worker_command(python,device,stream_experiment),8768,RUNTIME/'latent-ready.json',env),
             ('tts',[str(local_path(config['python'])),'-m','speech.serve','--device',device],config['port'],RUNTIME/'tts-ready.json',

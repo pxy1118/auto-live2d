@@ -1,7 +1,8 @@
 {
-  "path": "experiments/vtuber-v5-emotion-action-r1",
+  "path": "experiments/vtuber-v6-native28-motion-r2",
   "promoted": true,
-  "runtime": "emotion_action",
-  "reason": "用户明确要求移除4B，接入情感分类与动作模型；同时消除逗号导致的重复TTS启动。",
-  "previous_configuration_sha256": "f282c32dac8ff649401f79cbdf6b50e935c9d5afe74307c19aca6870a4f6ed9c"
+  "runtime": "native28_motion",
+  "runtime_version": "v6.3.2-feedback-acting",
+  "reason": "沿用 r2 检查点；依据人工反馈校准低垂/回避视线、眼睑与叠图，取消泛化 wink；保持原生手势接触姿态，撤下无掌心绑定的伪张掌路径。",
+  "previous_path": "experiments/vtuber-v6-emotion-catalog-r1"
 }

@@ -1,380 +1,170 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { PerformanceController } from '../src/performance';
-import { PerformanceService } from '../server/performance-service';
-import { streamChannels,defaultAppearance } from '../src/performance-profile';
-import { MotorPolicy } from '../src/motor';
-import { RequestLedger } from '../server/request-ledger';
-import {GestureLibrary} from '../src/gesture-library';
-import {palmWave} from '../src/gesture-choreography';
-import {BodyMotionLayer,bodyMotionNames,bodyChannels,sampleBodyMotion} from '../src/body-motion';
-import {clauseEnd} from '../server/semantic-clause';
-import {applyReviewVote} from '../server/review-ratings';
-const params=streamChannels.map(id=>({id,label:id,group:'',min:id.startsWith('ParamEye')&&id.endsWith('Open')?0:-30,max:30,default:id.endsWith('Open')?1:0,type:0,physicsInput:false,physicsOutput:false}));
-const id='a'.repeat(32),speech=(time=0)=>({speech_id:'b'.repeat(32),audio_time_ms:time});
-const nativeFixture=[
- {name:'默认手切举手',start:{},end:{Movement2:1,Param60:.86,Param56:1}},
- {name:'举手切默认手',start:{Movement2:1,Param60:.86},end:{Movement2:0,Param60:0,Param56:1}},
- {name:'竖手指切出来动画',start:{},end:{Movement3:1,Param40:1,Param39:.322,Param41:.702,Param42:0}},
- {name:'竖手指切回默认',start:{Movement3:1,Param40:1,Param39:.322,Param41:.702},end:{Movement3:0,Param40:0,Param39:0,Param41:0,Param42:0}},
- {name:'狗尾草切换出来',start:{},end:{Movement1:1,Param41:-.7,Param39:.2}},
- {name:'狗尾草切回默认手',start:{Movement1:1,Param41:-.7,Param39:.2},end:{Movement1:0,Param41:0,Param39:0}},
-].map(m=>({name:m.name,file:m.name,hold:true,data:{Meta:{Duration:1},Curves:Object.entries(m.end).map(([id,value])=>({Target:'Parameter',Id:id,Segments:[0,m.start[id]??0,0,1,value]}))}}));
-function actor(){const p=new PerformanceController(params,nativeFixture as any);p.start({session_id:id,motion_backend:'continuous'},Object.fromEntries(params.map(p=>[p.id,p.default])));p.segment({session_id:id,clause:0,text:'测试',speech_id:'b'.repeat(32)});return p;}
-function advance(p:PerformanceController,ms:number,media=0){let values:any;for(let t=0;t<ms;t+=1000/60)values=p.tick(1/60,{...speech(media),phase:'playing',speech_id:p.state().speech_id},{});return values;}
-test('appearance updates are atomic and survive speech, cancellation and new sessions',()=>{
-  const p=actor();p.appearanceOwned=true;p.updateAppearance({glasses:'black',skirt:'short',body:'preset2'});
-  assert.throws(()=>p.updateAppearance({glasses:'none',unknown:true}));assert.equal(p.getAppearance().glasses,'black');
-  p.cancel(id);let v=advance(p,100);assert.equal(v.key11,1);assert.equal(v.Clothes1,1);
-  p.start({session_id:'c'.repeat(32)},{});assert.equal(p.getAppearance().body,'preset2');p.reset();assert.deepEqual(p.getAppearance(),defaultAppearance);
-});
-test('explicit emotional intensity is independent of duration and survives clause changes',()=>{
-  const p=actor();p.direct({emotion:'angry',intensity:.85,hold_ms:4000,cue_id:'anger'});
-  assert.ok(advance(p,1000).key1>.84);assert.equal(p.state().emotion,'angry');assert.equal(p.state().automatic_emotion,'neutral');p.segment({session_id:id,clause:1,text:'下一句',speech_id:'c'.repeat(32)});
-  assert.ok(advance(p,2000).key1>.84);p.release({cue_id:'anger'});assert.equal(p.state().emotion,'neutral');assert.ok(advance(p,2500).key1<.01);
-  p.direct({emotion:'shy',intensity:.2,hold_ms:2000});assert.ok(Math.abs(advance(p,700).key7-.2)<.01);
-  p.release({});p.direct({emotion:'shy',intensity:.9,hold_ms:2000});assert.ok(Math.abs(advance(p,700).key7-.9)<.02);
-});
-test('future clause cues do not run early, eyes exclude one another and expire',()=>{
-  const p=actor();p.direct({expression:'><',intensity:.8,clause:2,hold_ms:800});assert.equal(advance(p,1000).key5,0);
-  p.segment({session_id:id,clause:2,text:'现在',speech_id:'c'.repeat(32)});
-  assert.equal(p.tick(1,{speech_id:'c'.repeat(32),phase:'buffering',audio_time_ms:0},{}).key5,0,'network start must not activate the future clause cue');
-  assert.ok(advance(p,400).key5>.7);
-  p.direct({expression:'圈圈眼',intensity:1,hold_ms:1000});const values=advance(p,700);assert.ok(values.key3>.95);assert.ok(values.key5<.2);
-  assert.ok(advance(p,3000).key3<.02);
-});
-test('special eye drawings switch atomically at full strength while blush stays continuous',()=>{
-  const p=actor();p.direct({expression:'><',intensity:.2,hold_ms:1000,cue_id:'eye'});
-  let v=advance(p,17);assert.equal(v.key5,1);assert.equal(v.key3,0);
-  p.direct({expression:'屑屑眼',intensity:.59,hold_ms:500,cue_id:'eye'});
-  v=advance(p,17);assert.equal(v.key5,0);assert.equal(v.key6,1);
-  p.direct({expression:'脸红',intensity:.35,hold_ms:1500});v=advance(p,300);assert.ok(v.key7>.2&&v.key7<.36);assert.equal(v.key6,1);
-  v=advance(p,300);for(const key of ['key3','key4','key5','key6'])assert.equal(v[key],0);
-});
-test('only future uncommitted chunks can replace tracks; cancellation rejects late chunks',()=>{
-  const p=actor();const make=(start:number,offset:number)=>({session_id:id,start_ms:start,channels:['AngleX'],values:Array.from({length:24},(_,i)=>[offset+i*.15]),expressions:{黑脸:.7},hold_ms:4000});
-  assert.equal(p.chunk(make(0,0)).accepted,true);assert.equal(p.chunk(make(200,15)).accepted,false);
-  advance(p,100,399);const before=p.state().values[0];assert.equal(p.chunk(make(400,-20)).accepted,true);
-  const boundary=advance(p,17,400).AngleX;assert.ok(Math.abs(boundary-before)<.1,'continuous at chunk replacement');
-  assert.throws(()=>p.chunk({...make(800,0),channels:['Clothes1']}));p.cancel(id);assert.throws(()=>p.chunk(make(800,0)));
-});
-test('automatic emotion respects media schedule and fades on actor time during silence',()=>{
-  const p=actor();p.chunk({session_id:id,start_ms:500,channels:['AngleX'],values:Array(24).fill([0]),expressions:{脸红:.6},hold_ms:1000});
-  assert.equal(advance(p,800,0).key7,0);assert.ok(advance(p,500,600).key7>.5);assert.ok(advance(p,4000,600).key7<.01);
-});
-test('session commands deduplicate request IDs and serialize concurrent starts',async()=>{
-  const original=globalThis.fetch;globalThis.fetch=async()=>new Response(JSON.stringify({ready:true}),{status:200});
-  let begins=0;const service=new PerformanceService(async c=>({result:c.method==='state.get'?{speech:{enabled:true}}:c.method==='performance.begin'?(begins++,{}):{}}));
-  try{
-    const first=await service.command({method:'performance.start',request_id:'start'});const sid=first.result.session_id;
-    const a={method:'performance.append',params:{session_id:sid,seq:0,text:'还没标点'},request_id:'append'};
-    assert.deepEqual(await service.command(a),await service.command(a));
-    await assert.rejects(service.command({...a,params:{...a.params,text:'不同'}}));
-    await assert.rejects(service.command({method:'performance.start',request_id:'another'}));assert.equal(begins,1);
-    await service.command({method:'performance.cancel',params:{session_id:sid},request_id:'cancel'});
-    await assert.rejects(service.command({method:'performance.finish',params:{session_id:sid,seq:1},request_id:'late'}));
-  }finally{service.disconnect();globalThis.fetch=original;}
-});
-test('TTS synthesis starts while classification is pending, with no renderer activation before validation',async()=>{
- const original=globalThis.fetch;let requested=false,prefilling=false,release:any;const gate=new Promise(resolve=>{release=resolve;});const commands:string[]=[];
- const span={clause:0,text:'测试。',start:0,end:3};
- globalThis.fetch=async(url:any)=>{if(String(url).endsWith('/health'))return new Response(JSON.stringify({busy:false}));requested=true;return new Response([{type:'start',speech_id:'b'.repeat(32),estimated_duration_ms:1000},{type:'chunk',index:0,sample_rate:24000,offset_samples:0,mouth:{motion:[],motion_times_ms:[]}},{type:'end',speech_id:'b'.repeat(32),sample_rate:24000,total_samples:24000}].map(value=>JSON.stringify(value)).join('\n')+'\n');};
- const service:any=new PerformanceService(async c=>{commands.push(c.method);return {result:c.method==='performance.state'?{directives:[],planner_state:{}}:c.method==='state.get'?{performance:{active:true,session_id:id,motion_actions:{active:false},body_action:{active:false}},speech:{active:false}}:{media_ms:0}};});
- service.worker=async()=>{prefilling=true;return gate;};service.motion=async()=>{};
- const session:any={id,queue:[{index:0,text:'测试。',clauses:[span],queuedAt:Date.now(),bufferWaitMs:0}],finished:true,cancelled:false,abort:new AbortController(),context:'',recent:[],seed:41,metrics:[]};
- const running=service.pump(session);
- try{await new Promise(r=>setTimeout(r,20));assert.ok(prefilling&&requested);assert.ok(!commands.includes('speech.stream.begin'));release({semantic_ms:1,performance_plans:[{...span,start_fraction:0,performance_plan:learnedPlan(0,{body:'none',arm:'none'})}],affect_timeline:{schema:'emotion.timeline.v1',points:[{...span,start_fraction:0,weights:{happy:0,angry:0,shy:0,sad:0,surprised:0,confused:0},tension:0,probabilities:{}}]}});await running;assert.equal(session.phase,'finished');assert.equal(session.metrics.find((m:any)=>m.semantic_prefill_ms!==undefined).overlapped_with_tts,true);}
- finally{session.cancelled=true;session.abort.abort();await running.catch(()=>{});service.disconnect();globalThis.fetch=original;}
-});
-test('quiet speech keeps arms at rest even when the motor expert proposes a large pose',()=>{
-  const poses:any[]=[];
-  for(const style of ['restrained','lively'] as const){
-    const p=new MotorPolicy(style);p.begin({});let result:any;
-    for(let i=0;i<360;i++)result=p.apply({Param36:.8,Param42:.4,AngleX:4,PositionZ:3,Movement1:.4},1/60,{actor:i*1000/60,media:i*1000/60,playing:true,ended:false,confidence:.1,threshold:.8,active:true});
-    assert.equal(result.Param36,0);assert.equal(result.Param42,0);assert.equal(result.Movement1,0);assert.equal(p.count,0);poses.push(result);
-  }
-  assert.ok(poses[0].AngleX<=2);assert.equal(poses[1].AngleX,4);assert.equal(poses[1].PositionZ,3);
-});
-test('a semantic gesture happens once, returns to rest, and has a gap across short clauses',()=>{
-  const p=new MotorPolicy('restrained');p.begin({});let maximum=0,atFive=1;
-  for(let i=0;i<720;i++){
-    if(i&&i%60===0)p.segment();
-    const v=p.apply({Param36:.8,Param42:.4,Movement1:.4},1/60,{actor:i*1000/60,media:i*1000/60,playing:true,ended:false,confidence:1,threshold:.8,active:true});
-    maximum=Math.max(maximum,v.Param36);if(i===300)atFive=v.Param36;assert.equal(v.Movement1,0);
-  }
-  assert.ok(maximum>.25);assert.ok(atFive<.01);assert.ok(p.count<=2);
-});
-test('a sustained emotional cue does not force a hand gesture',()=>{
-  const p=actor();p.chunk({session_id:id,start_ms:0,channels:['Param36'],values:Array.from({length:24},()=>[.8]),motor_probability:0});
-  p.direct({emotion:'angry',intensity:.85,hold_ms:4000});const v=advance(p,1500,800);
-  assert.ok(v.key1>.84);assert.equal(v.Param36,0);assert.equal(p.state().gesture_policy.count,0);
+import {readFileSync} from 'node:fs';
+import {join} from 'node:path';
+import {PerformanceController} from '../src/performance';
+import {streamChannels, backgroundChannels, PERFORMANCE_RUNTIME_VERSION, faceKeys} from '../src/performance-profile';
+import {EMOTION_LABELS, AFFECT_DIM} from '../src/emotion-config';
+import {ACTION_BY_ID} from '../src/action-catalog';
+
+const id = 'a'.repeat(32), speechId = 'b'.repeat(32);
+const thresholds: Record<string, number> = JSON.parse(readFileSync(join(import.meta.dirname, '..', 'models/multilingual-emotions-base/thresholds.json'), 'utf8'));
+const parameters = streamChannels.map(name => ({id: name, label: name, group: '', min: name === 'AngleX' || name === 'AngleY' || name === 'AngleZ' ? -30 : -1, max: name === 'AngleX' || name === 'AngleY' || name === 'AngleZ' ? 30 : 1, default: 0, type: 0, physicsInput: false, physicsOutput: false}));
+const base = () => Object.fromEntries(parameters.map(p => [p.id, p.default]));
+/** Minimal motion manifest so the native arm clips used by emotion segments exist. */
+const motions = [
+  {name: '默认手切举手', data: {Meta: {Duration: .5}, Curves: []}},
+  {name: '举手切默认手', data: {Meta: {Duration: .5}, Curves: []}},
+];
+function timeline(text: string, parts: { text: string; label?: string; value?: number }[], duration = 8000) {
+  let offset = 0;
+  const points = parts.map(part => {
+    const start = offset; offset += Array.from(part.text).length;
+    const probabilities: Record<string, number> = {};
+    for (const label of EMOTION_LABELS) probabilities[label] = 0;
+    probabilities.neutral = .02;
+    if (part.label) probabilities[part.label] = part.value ?? .9;
+    return {text: part.text, window_text: part.text, start, end: offset, start_fraction: start / Array.from(text).length, probabilities};
+  });
+  return {schema: 'emotion.timeline.v2', labels: EMOTION_LABELS, thresholds, points};
+}
+function session(parts: { text: string; label?: string; value?: number }[], requestExtra: any = {}, audioMs = 8000) {
+  const text = parts.map(p => p.text).join('');
+  const controller = new PerformanceController(parameters, motions as any);
+  controller.start({session_id: id}, base());
+  controller.utterance({
+    session_id: id, speech_id: speechId, text, audio_duration_ms: audioMs, audio_duration_final: true,
+    clauses: [{clause: 0, text, start_fraction: 0}],
+    affect_timeline: timeline(text, parts, audioMs), ...requestExtra,
+  });
+  return {controller, text};
+}
+const speech = (time: number, phase = 'playing') => ({speech_id: speechId, audio_time_ms: time, phase});
+function run(p: PerformanceController, from: number, to: number, step = 1000 / 60) {
+  let values: any = {};
+  for (let t = from; t <= to + 1e-6; t += step) values = p.tick(step / 1000, speech(t), base());
+  return values;
+}
+
+test('start validates input and exposes the v6 capabilities', () => {
+  const p = new PerformanceController(parameters);
+  assert.throws(() => p.start({session_id: 'nope'}, base()));
+  assert.throws(() => p.start({session_id: id, motion_style: 'wild'}, base()));
+  p.start({session_id: id, motion_style: 'natural'}, base());
+  const capabilities: any = p.capabilities();
+  assert.equal(capabilities.runtime_version, PERFORMANCE_RUNTIME_VERSION);
+  assert.equal(capabilities.plan_schema, 'performance.plan.v3');
+  assert.deepEqual(capabilities.emotion_labels, EMOTION_LABELS);
+  assert.equal(capabilities.affect.dim, AFFECT_DIM);
+  assert.equal(capabilities.action_catalog.actions.length, 14);
+  assert.ok(capabilities.action_catalog.actions.every((a: any) => a.kind !== 'segment'));
 });
 
-test('rare gestures retain their full lift and wrist excursion',()=>{
-  const p=new MotorPolicy();p.begin({});let lift=0,lo=1,hi=-1;
-  for(let i=0;i<165;i++){
-    const v=p.apply({Param36:.96,Param42:.33*Math.sin(i/60*7)},1/60,{actor:i*1000/60,media:i*1000/60,playing:true,ended:false,confidence:1,threshold:.8,active:true});
-    lift=Math.max(lift,v.Param36);lo=Math.min(lo,v.Param42);hi=Math.max(hi,v.Param42);
-  }
-  assert.ok(lift>.9,'low frequency must not shrink a deliberate raised-arm gesture');assert.ok(hi-lo>.5,'wrist must retain a visible wave');assert.equal(p.count,1);
+test('utterance validates duration, timestamps, plans and timeline atomically', () => {
+  const {controller: p, text} = session([{text: '你好呀。'}]);
+  const before = p.state();
+  const request: any = {session_id: id, speech_id: speechId, text, audio_duration_ms: 8000, audio_duration_final: true, clauses: [{clause: 0, text, start_fraction: 0}], affect_timeline: timeline(text, [{text}])};
+  assert.throws(() => p.utterance({...request, audio_duration_final: undefined}));
+  assert.throws(() => p.utterance({...request, clauses: [{clause: 0, text, start_fraction: .2}]}));
+  const legacyTimeline = {...request.affect_timeline, schema: 'emotion.timeline.v1'};
+  assert.throws(() => p.utterance({...request, affect_timeline: legacyTimeline}));
+  assert.deepEqual(p.state(), before);
 });
 
-test('a short utterance finishes its gesture on a separate motion clock and survives a clause boundary',()=>{
-  const p=actor();p.direct({gesture_hint:'打招呼',intensity:1,hold_ms:5000});
-  p.chunk({session_id:id,start_ms:0,channels:['Param36'],values:Array.from({length:24},()=>[.95])});
-  for(let i=0;i<16;i++)p.tick(1/60,{...speech(i*1000/60),phase:'playing'},{});
-  const media=p.mediaMs;
-  for(let i=0;i<50;i++)p.tick(1/60,{...speech(media),phase:'idle'},{});
-  assert.equal(p.mediaMs,media);assert.ok(p.motionMs>media+700);assert.equal(p.state().gesture_policy.phase,'active');
-  p.segment({session_id:id,clause:1,text:'接着说',speech_id:'c'.repeat(32)});
-  for(let i=0;i<12;i++)p.tick(1/60,{speech_id:'c'.repeat(32),audio_time_ms:0,phase:'buffering'},{});
-  p.tick(1/60,{speech_id:'c'.repeat(32),audio_time_ms:16,phase:'playing'},{});
-  assert.equal(p.state().gesture_policy.count,1);assert.equal(p.state().gesture_origin?.text,'测试');assert.equal(p.mediaMs,media+16);
-  for(let i=0;i<300;i++)p.tick(1/60,{speech_id:'c'.repeat(32),audio_time_ms:16,phase:'idle'},{});
-  assert.equal(p.state().gesture_policy.phase,'idle');assert.ok(p.state().values[params.findIndex(x=>x.id==='Param36')]<.01);
+test('28-label evidence drives continuous facial expressions and overlays', () => {
+  const {controller: p} = session([{text: '太开心了，真的很开心。', label: 'joy', value: .92}]);
+  const values = run(p, 100, 4000);
+  const state = p.state();
+  assert.equal(state.affect.enabled, true);
+  assert.equal(state.affect.emotion, 'joy');
+  assert.ok(state.affect.effective.joy > .4);
+  assert.ok(state.affect.intensity > .4);
+  assert.ok(values.EyeSmile > .05, 'smile offset is applied additively on the base pose');
+  assert.ok(values.ParamMouthForm > .03);
+  assert.equal(state.affect_vector.length, AFFECT_DIM);
+  const anger = session([{text: '真的太过分了。', label: 'anger', value: .9}]);
+  const angryValues = run(anger.controller, 100, 4000);
+  assert.ok(angryValues.key1 > .2, 'anger evidence raises the black-face overlay');
 });
 
-test('evicted responses and runtime reconnects never re-execute an old external request ID',async()=>{
-  const ledger=new RequestLedger(2);let effects=0;
-  const first=()=>ledger.execute('first','appearance.update',async()=>++effects);
-  assert.equal(await first(),1);assert.equal(await first(),1);assert.equal(effects,1);
-  await assert.rejects(ledger.execute('first','performance.direct',async()=>++effects),{code:'request_id_conflict'});
-  await ledger.execute('second','state.get',async()=>0);await ledger.execute('third','state.get',async()=>0);
-  await assert.rejects(first(),{code:'request_id_expired'});assert.equal(effects,1);
-  ledger.retireAll();await assert.rejects(ledger.execute('third','state.get',async()=>++effects),{code:'request_id_expired'});assert.equal(effects,1);
+test('mixed emotions blend without sum normalization and stay clamped', () => {
+  const text = '又开心又害羞。';
+  const p = new PerformanceController(parameters);
+  p.start({session_id: id}, base());
+  const probabilities: Record<string, number> = {};
+  for (const label of EMOTION_LABELS) probabilities[label] = 0;
+  probabilities.joy = .95; probabilities.embarrassment = .95;
+  p.utterance({
+    session_id: id, speech_id: speechId, text, audio_duration_ms: 6000, audio_duration_final: true,
+    clauses: [{clause: 0, text, start_fraction: 0}],
+    affect_timeline: {schema: 'emotion.timeline.v2', labels: EMOTION_LABELS, thresholds, points: [{text, window_text: text, start: 0, end: Array.from(text).length, start_fraction: 0, probabilities}]},
+  });
+  const values = run(p, 100, 5000);
+  assert.ok(values.EyeSmile > .05);
+  assert.ok(values.key7 > .1, 'embarrassment drives the blush overlay');
+  const state = p.state();
+  assert.ok(Math.min(1, state.affect.effective.joy + state.affect.effective.embarrassment) > .5);
 });
 
-test('a coordinated group owns body and arm curves while preserving voice and appearance channels',()=>{
- const p=new PerformanceController(params,nativeFixture as any);p.start({session_id:id},{});p.direct({gesture:'chest',gesture_hold_ms:600,emotion:'shy',intensity:.8});p.appearanceOwned=true;p.updateAppearance({glasses:'black'});
- let peak=0,lean=0,values:any;
- for(let i=0;i<200;i++){values=p.tick(1/60,{speech_id:null,phase:'idle',audio_time_ms:0},{});peak=Math.max(peak,values.Param60??0);lean=Math.max(lean,Math.abs(values.LeanInput??0));assert.equal(values.key11,1);assert.equal(values.ParamMouthOpenY,undefined);assert.equal(values.Param56,undefined);}
- assert.ok(peak>.8);assert.ok(lean>.5);assert.equal(p.state().motion_actions.active,false);assert.ok(Math.abs(values.Param60)<.01);
-});
-test('action group replacement completes its exit before entering the pending group',()=>{
- const g=new GestureLibrary(nativeFixture as any);assert.ok(g.request({name:'wave',source:'director',id:'one'},0,{}));g.tick(1000,{});
- assert.ok(g.request({name:'chest',source:'director',id:'two'},1000,{}));assert.equal(g.state(1000).pending,'chest');
- g.tick(2300,{});assert.equal(g.state(2300).name,'chest');assert.equal(g.state(2300).count,2);g.tick(3000,{});assert.equal(g.state(3000).name,'chest');
- assert.equal(g.request({name:'wave',source:'model',id:'old-auto'},3100,{}),false,'automatic requests cannot replace an explicit director action');
-});
-test('semantic model proposals execute an action group once per gesture opportunity',()=>{
- const p=new PerformanceController(params,nativeFixture as any);p.start({session_id:id},{});p.segment({session_id:id,clause:0,text:'你好',speech_id:'b'.repeat(32)});
- p.chunk({session_id:id,start_ms:0,channels:['Param36'],values:Array.from({length:24},()=>[.05]),motor_probability:1,motor_threshold:.65,gesture_intent:'wave',gesture_confidence:.95});
- let upper=0,bend=0;for(let i=0;i<300;i++){const v=p.tick(1/60,{...speech(i*1000/60),phase:'playing'},{});upper=Math.max(upper,v.Param36??0);bend=Math.max(bend,v.Param41??0);}
- assert.ok(bend>.65&&upper<.1,'the selected wave retains the native point shoulder/elbow pose');assert.equal(p.state().motion_actions.count,1);assert.equal(p.state().motion_actions.active,false);
+test('explicit eye drawing remains available without masking automatic deformation', () => {
+  const {controller: p} = session([{text: '我好喜欢你呀。', label: 'love', value: .95}]);
+  const auto = run(p, 100, 3000);
+  assert.equal(auto.key4, 0);
+  p.direct({expression:'爱心眼',intensity:1});
+  const values = run(p, 3020, 3300);
+  const state = p.state();
+  assert.equal(state.emotion_pose['爱心眼'], 1);
+  assert.equal(values.key4, 1, 'love-eye drawing is enabled as an exclusive expression');
+  assert.doesNotThrow(() => run(p, 3000, 3600));
+  const keys = Object.entries(faceKeys).filter(([name]) => ['＞＜', '圈圈眼', '爱心眼', '屑屑眼'].includes(name));
+  const active = keys.filter(([, key]) => values[key] > .5);
+  assert.equal(active.length, 1, 'only one special eye type is active');
 });
 
-test('releasing an exiting group cannot extend the exit or replay a queued action',()=>{
- const g=new GestureLibrary(nativeFixture as any);g.request({name:'wave',source:'director',id:'one',holdMs:500},0,{});
- g.tick(1500,{});const end=g.state(1500).duration_ms;
- g.release(1600);assert.equal(g.state(1600).duration_ms,end);g.release(1800);assert.equal(g.state(1800).duration_ms,end);
- g.tick(end!+1,{});assert.equal(g.state(end!+1).active,false);assert.equal(g.state(end!+1).count,1);
+test('background trajectory chunks only own the 9 continuous channels', () => {
+  const {controller: p} = session([{text: '继续说下去。', label: 'neutral'}]);
+  const before = run(p, 100, 500);
+  const motionMs = p.state().motion_ms;
+  assert.throws(() => p.chunk({session_id: id, start_ms: motionMs, channels: ['NotAParam'], values: [[0]]}), /动作通道不合法/);
+  const rows = Array.from({length: 24}, () => backgroundChannels.map(() => 6));
+  const accepted = p.chunk({session_id: id, start_ms: motionMs, channels: [...backgroundChannels], values: rows});
+  assert.equal(accepted.accepted, true);
+  const next = run(p, 500, 900);
+  assert.ok(Math.abs((next.AngleX ?? 0) - 6) < 1e-6, 'background track replaces the sparse output');
+  assert.ok(Math.abs((next.EyeSmile ?? 0) - (before.EyeSmile ?? 0)) < .01, 'chunk does not write face channels; the emotion layer keeps smoothing');
 });
 
-test('a body-only group follows actual audio progress and preserves existing face ownership',()=>{
- const p=new PerformanceController(params,nativeFixture as any);p.direct({gesture:'wave',gesture_hold_ms:1200});
- let v=p.tick(1/60,{...speech(100),phase:'playing'},{});assert.equal(v.key1,undefined);
- const before=p.state().motion_actions.elapsed_ms;
- for(let i=0;i<30;i++)p.tick(1/60,{...speech(100),phase:'playing'},{});
- assert.equal(p.state().motion_actions.elapsed_ms,before,'wall time must not advance a stalled audio clock');
- for(let i=0;i<30;i++)p.tick(1/60,{...speech(100),phase:'buffering'},{});
- assert.equal(p.state().motion_actions.elapsed_ms,before,'an audio underflow holds the current body pose');
- p.tick(1/60,{...speech(350),phase:'playing'},{});assert.equal(p.state().motion_actions.elapsed_ms,before+250);
+test('director cues take priority and release returns to the automatic emotion', () => {
+  const {controller: p} = session([{text: '我其实有点难过。', label: 'sadness', value: .9}]);
+  run(p, 100, 3000);
+  const cue = p.direct({session_id: id, emotion: 'anger', intensity: .8, hold_ms: 1500});
+  const values = run(p, 3000, 4500);
+  assert.ok(values.key1 > .3, 'director anger overrides the automatic sad expression');
+  p.release({cue_id: cue.cue_id});
+  const after = run(p, 4500, 7000);
+  const state = p.state();
+  assert.ok(after.key1 < .2, 'released director returns to emotion');
+  assert.equal(state.affect.emotion, 'sadness');
 });
 
-test('wave preserves native point joint coupling through entry, hold and exit, with open-palm drawing',()=>{
- for(let variant=0;variant<3;variant++){
-  const wave=new GestureLibrary(nativeFixture as any),point=new GestureLibrary(nativeFixture as any);
-  wave.request({name:'wave',source:'director',id:'w',variant},0,{});point.request({name:'point',source:'director',id:'p',variant:0},0,{});
-  for(let t=0;t<3600;t+=17){const w=wave.tick(t,{}),p=point.tick(t,{});for(const key of ['Param36','Param39','Param41'])assert.equal(w[key],p[key]);assert.equal(w.Movement3,0);assert.equal(w.Param60,0);}
- }
+test('cancel clears the emotion, scheduler and expression state', () => {
+  const {controller: p} = session([{text: '好难过。', label: 'sadness', value: .9}]);
+  run(p, 100, 2000);
+  p.cancel(id);
+  const state = p.state();
+  assert.equal(state.affect.enabled, false);
+  assert.equal(state.affect.intensity, 0);
+  assert.equal(state.action_plan.active_segment, null);
+  assert.throws(() => p.utterance({session_id: id, speech_id: speechId, text: '迟到。', audio_duration_ms: 1000, audio_duration_final: true, clauses: [], affect_timeline: timeline('迟到。', [{text: '迟到。'}])}));
 });
 
-test('retired celebration is unavailable and stale model predictions cannot trigger a replacement action',()=>{
- const p=new PerformanceController(params,nativeFixture as any);p.start({session_id:id},{});p.segment({session_id:id,clause:0,text:'太好了',speech_id:'b'.repeat(32)});
- assert.throws(()=>p.direct({gesture:'cheer'}));assert.ok(!p.capabilities().action_groups.some(g=>String(g.name)==='cheer'));
- p.chunk({session_id:id,start_ms:0,channels:['Param36'],values:Array.from({length:24},()=>[.9]),gesture_intent:'cheer',gesture_confidence:1,motor_probability:1});
- for(let i=0;i<300;i++)p.tick(1/60,{...speech(i*1000/60),phase:'playing'},{});
- assert.equal(p.state().motion_actions.count,0);assert.equal(p.state().gesture_policy.count,0);
- for(let variant=0;variant<3;variant++)assert.ok(Math.abs(palmWave(variant,{t:5000,enter:1000,holdEnd:15000,exit:1000}).Param42)<1e-9,'long holds do not wave forever');
-});
-
-test('all action variants and opposite-arm handoffs keep one arm active',()=>{
- const measure=(values:Record<string,number>)=>[
-  Math.max(...['Param36','Param39','Param41','Movement1','Movement3'].map(id=>Math.abs(values[id]??0))),
-  Math.max(...['Param62','Param59','Param60','Movement2'].map(id=>Math.abs(values[id]??0))),
- ];
- const assertOne=(values:Record<string,number>)=>{const [right,left]=measure(values);assert.ok(!(right>.05&&left>.05),'two raised arms in the same frame');};
- const cap=new GestureLibrary(nativeFixture as any).capabilities();
- for(const group of cap)for(let variant=0;variant<3;variant++){
-  const g=new GestureLibrary(nativeFixture as any);assert.ok(g.request({name:group.name,source:'director',id:'single',variant,holdMs:900},0,{}));let active=0;
-  for(let t=0;t<4000;t+=17){const v=g.tick(t,{});assertOne(v);active=Math.max(active,...measure(v));}
-  assert.ok(active>.1,'a single-arm policy must not suppress the whole gesture');assert.equal(g.active,false);
- }
- const g=new GestureLibrary(nativeFixture as any);g.request({name:'wave',source:'director',id:'right',holdMs:700},0,{});
- for(let t=0;t<6000;t+=17){if(t===1190)g.request({name:'chest',source:'director',id:'left',holdMs:700},t,{});assertOne(g.tick(t,{}));}
- assert.equal(g.state(6000).count,2);assert.equal(g.active,false);
-});
-
-test('all body variants are finite, distinct, bounded and own no arm or face channels',()=>{
- for(const name of bodyMotionNames){const signatures:string[]=[];
-  for(let variant=0;variant<3;variant++){
-   for(const t of [700,2900,3600]){
-    const time={enter:700,holdEnd:2900,exit:700},a=sampleBodyMotion(name,variant,{...time,t:t-.01}),b=sampleBodyMotion(name,variant,{...time,t}),c=sampleBodyMotion(name,variant,{...time,t:t+.01});
-    for(const id of bodyChannels)assert.ok(Math.abs((c[id]-b[id])-(b[id]-a[id]))<1e-7,`${name}/${variant} velocity discontinuity at ${t}`);
-   }
-   const g=new BodyMotionLayer();g.request({name,variant,id:'body',strength:1},0);const rows:number[][]=[];
-   for(let t=0;t<4000;t+=17){const v=g.tick(t);assert.ok(Object.keys(v).every(id=>bodyChannels.includes(id)));assert.ok(Object.values(v).every(x=>Number.isFinite(x)&&Math.abs(x)<13));if(t%170===0)rows.push(bodyChannels.map(id=>v[id]??0));}
-   assert.equal(g.active,false);assert.ok(rows.some(row=>row.some(x=>Math.abs(x)>2)));signatures.push(JSON.stringify(rows));
-  }
-  assert.equal(new Set(signatures).size,3);
- }
- for(let variant=0;variant<3;variant++){
-  const a=sampleBodyMotion('sway',variant,{t:6000,enter:700,holdEnd:15000,exit:700}),b=sampleBodyMotion('sway',variant,{t:7000,enter:700,holdEnd:15000,exit:700});
-  assert.deepEqual(a,b,'a long hold must not keep swaying in a loop');
- }
-});
-
-test('cajole maintains forward lean while twisting in both directions and settles after the short performance',()=>{
- for(let variant=0;variant<3;variant++){
-  const rows=Array.from({length:151},(_,i)=>sampleBodyMotion('cajole',variant,{t:700+i*20,enter:700,holdEnd:15000,exit:700}));
-  assert.ok(Math.min(...rows.map(v=>v.PositionX))<-1.5);assert.ok(Math.max(...rows.map(v=>v.PositionX))>3);
-  assert.ok(rows.every(v=>v.LeanInput<-3),'the twist must stay in a forward-leaning pose');
-  assert.deepEqual(sampleBodyMotion('cajole',variant,{t:6000,enter:700,holdEnd:15000,exit:700}),sampleBodyMotion('cajole',variant,{t:7000,enter:700,holdEnd:15000,exit:700}));
- }
-});
-
-test('body replacement and release preserve offset position and velocity and deduplicate requests',()=>{
- const g=new BodyMotionLayer();g.request({name:'lean',id:'a',cueId:'a'},0);
- const prior=g.tick(934.9),at=g.tick(935);assert.ok(g.request({name:'sway',id:'b',cueId:'b'},935));assert.deepEqual(g.tick(935),at);
- const next=g.tick(935.1);for(const id of bodyChannels)assert.ok(Math.abs((next[id]-at[id])-(at[id]-prior[id]))<.0001,id);
- assert.equal(g.request({name:'sway',id:'b'},940),false);g.release(1000,'a');assert.equal(g.state(1000).phase,'enter','unrelated cue release does not stop the body');
- const release=g.tick(1100);g.release(1100,'b');assert.deepEqual(g.tick(1100),release);g.release(1200);assert.equal(g.state(1200).duration_ms,600);
- g.tick(1700);assert.equal(g.active,false);assert.equal(g.request({name:'lean',id:'a'},1800),false);
-});
-
-test('body offsets do not accumulate when a session has no motion tracks and fade back to the underlay',()=>{
- const p=new PerformanceController(params,nativeFixture as any);p.start({session_id:id},{});p.direct({body_motion:'lean',body_strength:1,body_hold_ms:500});
- let peak=0,v:any;
- for(let i=0;i<240;i++){v=p.tick(1/60,{phase:'idle',audio_time_ms:0},{});peak=Math.max(peak,v.PositionZ??0);assert.ok(Math.abs(v.PositionZ??0)<9);}
- assert.ok(peak>8);assert.equal(p.state().body_action.active,false);assert.ok(Math.abs(v.PositionZ)<1e-8);assert.ok(Math.abs(v.LeanInput)<1e-8);
-});
-
-test('a body beat restores a non-default pose after hitting a parameter limit',()=>{
- const p=new PerformanceController(params,nativeFixture as any);p.start({session_id:id},{PositionZ:27,AngleX:-12});p.direct({body_motion:'lean',body_strength:1,body_hold_ms:700});
- let peak=0,v:any;for(let i=0;i<240;i++){v=p.tick(1/60,{phase:'idle',audio_time_ms:0},{});peak=Math.max(peak,v.PositionZ);assert.ok(v.PositionZ>=27&&v.PositionZ<=30);assert.equal(v.AngleX,-12);}
- assert.equal(peak,30);assert.equal(v.PositionZ,27);assert.equal(p.state().body_action.active,false);
-});
-
-test('body-only acting composes with the running native hand without restarting it or owning expression and wardrobe',()=>{
- const a=new PerformanceController(params,nativeFixture as any),b=new PerformanceController(params,nativeFixture as any);
- for(const p of [a,b])p.direct({gesture:'wave',variant:0,gesture_hold_ms:4000});
- let difference=0;
- for(let i=0;i<300;i++){
-  if(i===80)b.direct({body_motion:'sway',body_variant:1,body_strength:.8,cue_id:'body'});
-  const clock={phase:'idle',audio_time_ms:0},x=a.tick(1/60,clock,{}),y=b.tick(1/60,clock,{});
-  for(const id of ['Param36','Param39','Param41','Param42','Movement1','Movement2','Movement3'])assert.equal(x[id],y[id],id);
-  assert.equal(y.key1,undefined);assert.equal(y.Clothes1,undefined);assert.equal(y.ParamMouthOpenY,undefined);difference=Math.max(difference,Math.abs((y.PositionX??0)-(x.PositionX??0)));
- }
- assert.ok(difference>3);assert.equal(a.state().motion_actions.count,1);assert.equal(b.state().motion_actions.count,1);
-});
-
-test('body cues wait for the bound clause, use the audio clock, and cancellation prevents late activation',()=>{
- const p=actor();p.direct({body_motion:'tilt',body_variant:0,clause:1,cue_id:'future'});
- p.tick(1,{...speech(50),phase:'playing'},{});assert.equal(p.state().body_action.active,false);
- p.segment({session_id:id,clause:1,text:'这一句',speech_id:'c'.repeat(32)});
- p.tick(1,{speech_id:'c'.repeat(32),phase:'buffering',audio_time_ms:0},{});assert.equal(p.state().body_action.active,false);
- p.tick(.016,{speech_id:'c'.repeat(32),phase:'playing',audio_time_ms:16},{});assert.equal(p.state().body_action.active,true);
- p.tick(.5,{speech_id:'c'.repeat(32),phase:'playing',audio_time_ms:516},{});const before=p.state().body_action.elapsed_ms;
- for(const phase of ['paused','buffering','playing'])p.tick(.4,{speech_id:'c'.repeat(32),phase,audio_time_ms:516},{});
- assert.equal(p.state().body_action.elapsed_ms,before);
- p.direct({body_motion:'turn',clause:2});p.cancel(id);
- for(let i=0;i<60;i++)p.tick(1/60,{phase:'idle',audio_time_ms:0},{});
- assert.equal(p.state().body_action.active,false);assert.equal(p.state().body_action.count,1);assert.throws(()=>p.direct({session_id:id,body_motion:'turn'}));
-});
-
-test('body controls validate before mutation and strength is separate from facial intensity',()=>{
- const p=actor();
- for(const cue of [{body_motion:'dance'},{body_motion:'lean',body_strength:NaN},{body_motion:'lean',body_strength:1.2},{body_motion:'lean',body_hold_ms:-1},{body_motion:'lean',body_variant:3}])assert.throws(()=>p.direct(cue));
- assert.equal(p.state().directives.length,0);
- p.direct({emotion:'shy',intensity:.9,body_motion:'lean',body_strength:0});
- let v:any;for(let i=0;i<90;i++)v=p.tick(1/60,{phase:'idle',audio_time_ms:0},{});
- assert.ok(v.key7>.89);assert.equal(v.PositionZ,0);assert.ok(p.capabilities().body_motions.every(c=>c.independent_of_arm_group));
-});
-
-const learnedPlan=(clause=0,extra:any={})=>({schema:'performance.plan.v1',clause,arm:'chest',body:'lean',emotion:'shy',eye:'normal',arm_variant:0,body_variant:0,body_strength:.7,
- expressions:{黑脸:0,流泪:0,脸红:.35,加载:0,兔牙:0,流冷汗:0},eye_strength:0,arm_hold_ms:700,body_hold_ms:1000,face_hold_ms:5000,onset_ms:200,confidence:{arm:.98,body:.98,emotion:.98,eye:.98},...extra});
-const planChunk=(p:PerformanceController,plan:any,start=0)=>p.chunk({session_id:id,start_ms:start,channels:['AngleX'],values:Array.from({length:24},()=>[0]),performance_plan:plan});
-function plannerActor(){const p=new PerformanceController(params,nativeFixture as any);p.start({session_id:id},{});p.segment({session_id:id,clause:0,text:'测试',speech_id:'b'.repeat(32)});return p;}
-test('a prefetched clause plan starts on audio onset even when its first trajectory is late',()=>{
- const p=new PerformanceController(params,nativeFixture as any);p.start({session_id:id},{});
-  assert.equal(p.state().gesture_policy.style,'lively');assert.deepEqual(p.state().planner_policy,{arm:4000,body:2600});
- const request={session_id:id,clause:0,text:'测试',speech_id:'b'.repeat(32)};
- assert.throws(()=>p.segment({...request,performance_plan:learnedPlan(1)}));assert.equal(p.state().clause,-1);
- p.segment({...request,performance_plan:learnedPlan(0,{eye:'＞＜',eye_strength:.6})});
- p.tick(.5,{...speech(0),phase:'buffering'},{});assert.equal(p.state().plan_history.length,0);
- let v=p.tick(.1,{...speech(100),phase:'playing'},{});assert.equal(p.state().plan_history.length,0);
- v=p.tick(.15,{...speech(250),phase:'playing'},{});assert.equal(p.state().plan_history.length,1);assert.equal(v.key5,1);assert.equal(p.state().motion_actions.count,1);
- assert.equal(planChunk(p,learnedPlan(),0).accepted,false);p.tick(.1,{...speech(350),phase:'playing'},{});assert.equal(p.state().plan_history.length,1);
- p.cancel(id);p.tick(.2,{...speech(600),phase:'playing'},{});assert.equal(p.state().plan_history.length,1);
-});
-test('learned normal eyes clear the previous special drawing without clearing kept emotion',()=>{
- const p=plannerActor();planChunk(p,learnedPlan(0,{arm:'none',body:'none',eye:'＞＜',eye_strength:.6032}));
- let v=p.tick(.3,{...speech(300),phase:'playing'},{});assert.equal(v.key5,1);
- p.segment({session_id:id,clause:1,text:'继续说',speech_id:'c'.repeat(32)});
- planChunk(p,learnedPlan(1,{arm:'none',body:'none',emotion:'keep',eye:'normal'}),p.motionMs);
- v=p.tick(.3,{speech_id:'c'.repeat(32),phase:'playing',audio_time_ms:300},{});
- for(const key of ['key3','key4','key5','key6'])assert.equal(v[key],0);
- assert.equal(p.state().emotion,'shy');assert.ok(v.key7>.3);
-});
-test('learned composition executes once on media onset and confidence never becomes facial intensity',()=>{
- const p=plannerActor();planChunk(p,learnedPlan());p.tick(1,{...speech(0),phase:'buffering'},{});assert.equal(p.state().plan_history.length,0);
- p.tick(.1,{...speech(100),phase:'playing'},{});assert.equal(p.state().plan_history.length,0);
- for(let i=2;i<90;i++)p.tick(1/60,{...speech(i*1000/60),phase:'playing'},{});
- const s=p.state();assert.equal(s.motion_actions.count,1);assert.equal(s.body_action.count,1);assert.equal(s.body_action.source,'model');assert.equal(s.plan_history.length,1);assert.ok(Math.abs(s.expressions.脸红-.35)<.01);assert.equal(s.planner_state.last_arm,'chest');
- planChunk(p,learnedPlan(0,{arm:'wave',body:'cajole'}),Math.max(p.motionMs+70,s.committed_until_ms));
- p.tick(1,{...speech(2500),phase:'playing'},{});assert.equal(p.state().plan_history.length,1);assert.equal(p.state().motion_actions.count,1);
- p.reset();assert.equal(p.state().planner_enabled,false);assert.deepEqual(p.state().plan_history,[]);assert.deepEqual(p.state().action_history,[]);
-});
-test('learned body-only plans leave arms and appearance alone and keep emotion across ordinary clauses',()=>{
- const p=plannerActor();p.appearanceOwned=true;p.updateAppearance({glasses:'black'});planChunk(p,learnedPlan(0,{arm:'none',body:'cajole',emotion:'angry',expressions:{黑脸:.8,流泪:0,脸红:0,加载:0,兔牙:0,流冷汗:0}}));
- let v:any;for(let i=0;i<100;i++)v=p.tick(1/60,{...speech(i*1000/60),phase:'playing'},{});
- assert.equal(p.state().motion_actions.count,0);assert.equal(p.state().body_action.count,1);assert.ok(v.key1>.79);assert.equal(v.key11,1);assert.equal(v.Param36,0);assert.equal(v.Param60,0);
- p.segment({session_id:id,clause:1,text:'我们接着说',speech_id:'c'.repeat(32)});planChunk(p,learnedPlan(1,{arm:'none',body:'none',emotion:'keep'}),p.motionMs);
- for(let i=0;i<100;i++)v=p.tick(1/60,{speech_id:'c'.repeat(32),phase:'playing',audio_time_ms:i*1000/60},{});
- assert.ok(v.key1>.79);assert.equal(p.state().emotion,'angry');assert.equal(p.state().motion_actions.count,0);
-});
-test('bound explicit directors beat a learned plan arriving on the first playing frame',()=>{
- const p=plannerActor();p.direct({clause:0,gesture:'wave',body_motion:'tilt',emotion:'angry',intensity:.85,hold_ms:5000});planChunk(p,learnedPlan());
- let v:any;for(let i=0;i<100;i++)v=p.tick(1/60,{...speech(300+i*1000/60),phase:'playing'},{});
- const s=p.state();assert.equal(s.motion_actions.name,'wave');assert.equal(s.motion_actions.pending,null);assert.equal(s.body_action.name,'tilt');assert.equal(s.body_action.source,'director');assert.ok(v.key1>.84);assert.ok(v.key7<.01);assert.equal(s.plan_history[0].arm_applied,false);assert.equal(s.plan_history[0].body_applied,false);
-});
-test('learned plans reject stale clauses, wardrobe output and malformed strengths atomically',()=>{
- const p=plannerActor();for(const plan of [learnedPlan(1),learnedPlan(0,{appearance:{glasses:'black'}}),learnedPlan(0,{arm:'cheer'}),learnedPlan(0,{body_strength:NaN}),learnedPlan(0,{expressions:{黑脸:.5}})])assert.throws(()=>planChunk(p,plan));
- assert.equal(p.state().committed_until_ms,0);assert.equal(p.state().planner_enabled,false);
- planChunk(p,learnedPlan(0,{onset_ms:900}));p.cancel(id);for(let i=0;i<120;i++)p.tick(1/60,{...speech(i*1000/60),phase:'idle'},{});assert.equal(p.state().motion_actions.count,0);assert.equal(p.state().body_action.count,0);assert.throws(()=>planChunk(p,learnedPlan()));
-});
-test('automatic plans honor cooldown and do not replay skipped actions after silence',()=>{
- const p=plannerActor();planChunk(p,learnedPlan());for(let i=0;i<200;i++)p.tick(1/60,{...speech(i*1000/60),phase:'playing'},{});assert.equal(p.state().motion_actions.active,false);
- p.segment({session_id:id,clause:1,text:'接着说',speech_id:'c'.repeat(32)});planChunk(p,learnedPlan(1),p.motionMs);
- for(let i=0;i<80;i++)p.tick(1/60,{speech_id:'c'.repeat(32),phase:'playing',audio_time_ms:i*1000/60},{});
- assert.equal(p.state().motion_actions.count,1);assert.equal(p.state().plan_history.length,2);assert.equal(p.state().plan_history[1].arm_applied,false);
- for(let i=0;i<400;i++)p.tick(1/60,{phase:'idle',audio_time_ms:0},{});assert.equal(p.state().motion_actions.count,1);
-});
-test('uncertain automatic props and moods are withheld while explicit tools remain available',()=>{
- const p=plannerActor();planChunk(p,learnedPlan(0,{arm:'grass',body:'none',emotion:'shy',confidence:{arm:.53,body:.99,emotion:.5,eye:.99}}));
- let v:any;for(let i=0;i<100;i++)v=p.tick(1/60,{...speech(i*1000/60),phase:'playing'},{});
- assert.equal(p.state().motion_actions.count,0);assert.equal(p.state().plan_history[0].arm_skipped,'low_confidence');assert.ok((v.key7??0)<.01);
- p.direct({gesture:'grass',variant:0,gesture_hold_ms:600});for(let i=100;i<160;i++)p.tick(1/60,{...speech(i*1000/60),phase:'playing'},{});assert.equal(p.state().motion_actions.name,'grass');assert.equal(p.state().motion_actions.source,'director');
-});
-test('semantic splitting retains quotation and attribution through internal punctuation',()=>{
- const quote='她说“我好生气！”，我只是在读留言。';assert.equal(clauseEnd(quote,false),quote.length);assert.equal(clauseEnd('她说“你好，朋友',false),0);assert.equal(clauseEnd('普通台词，下一句。',false),5);assert.equal(clauseEnd('她说“你好。',true),'她说“你好。'.length);assert.equal(clauseEnd('好'.repeat(260),false),240);
-});
-test('blind ratings use a version namespace without changing pilot or archived comparison choices',()=>{
- const ratings:any={pilot:{13:{choice:'B',note:'existing'}},comparison:{0:{choice:'A'}}},before=JSON.stringify(ratings);
- applyReviewVote(ratings,{stage:'comparison',dataset_version:'composition-r1',index:0,choice:'B',note:'test fixture'},{dataset_version:'composition-r1',blocked:false},'fixed-time');
- assert.equal(ratings.comparisons['composition-r1'][0].choice,'B');assert.equal(JSON.stringify({pilot:ratings.pilot,comparison:ratings.comparison}),before);
- applyReviewVote(ratings,{stage:'comparison',dataset_version:'composition-r1',index:1,choice:'tie'},{dataset_version:'composition-r1',blocked:false},'fixed-time');assert.equal(Object.keys(ratings.comparisons['composition-r1']).length,2);
-});
-test('stale or unopened review versions cannot mutate ratings',()=>{
- const ratings:any={pilot:{}};for(const status of [{dataset_version:'composition-r1',blocked:true},{dataset_version:'other',blocked:false}]){assert.throws(()=>applyReviewVote(ratings,{stage:'comparison',dataset_version:'composition-r1',index:0,choice:'A'},status));assert.deepEqual(ratings,{pilot:{}});}
+test('appearance only changes on explicit update and survives cancellation', () => {
+  const {controller: p} = session([{text: '你好。', label: 'joy', value: .7}]);
+  p.updateAppearance({glasses: 'black'});
+  assert.equal(p.getAppearance().glasses, 'black');
+  assert.throws(() => p.updateAppearance({glasses: 'red'}));
+  p.cancel(id);
+  assert.equal(p.getAppearance().glasses, 'black');
+  p.detach();
+  assert.equal(p.getAppearance().glasses, 'black');
 });

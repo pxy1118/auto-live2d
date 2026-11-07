@@ -1,26 +1,32 @@
 import {DEFAULT_MOTION_STYLE} from './motor';
+import bindings from '../contracts/emotion-bindings.json';
 
 type PanelOptions={prepare:()=>Promise<void>;ready:()=>boolean;connected:()=>boolean;onState?:(state:any)=>void};
 export function mountPerformance(options:PanelOptions){
   const host=document.getElementById('performance-panel')!;
   const styles=[['lively','活泼'],['natural','自然'],['restrained','克制']].map(([value,label])=>`<option value="${value}"${value===DEFAULT_MOTION_STYLE?' selected':''}>${label}${value===DEFAULT_MOTION_STYLE?' · 默认':''}</option>`).join('');
+  const actingChoices=Object.entries(bindings.bindings).map(([key,b])=>`<option value="${key}"${key==='love'?' selected':''}>${b.title}</option>`).join('');
   host.innerHTML=`<div class="composer-heading"><span class="eyebrow">一起聊一会儿</span><h1>让她说些什么<span>。</span></h1><p>写下台词，她会伴随声音做出表情和动作。</p></div>
     <label class="script-label" for="performance-text">台词</label><textarea id="performance-text" maxlength="2000" placeholder="想说的话，直接写在这里…" spellcheck="false">大家好呀，很高兴见到你。今天也一起加油吧！</textarea>
     <div class="script-meta"><span>Ctrl / ⌘ + Enter 开始</span><span id="text-count"></span></div>
-    <details class="performance-settings"><summary>语境与表演风格<span>可选</span></summary><div class="settings-content"><label for="performance-context">语境</label><textarea id="performance-context" maxlength="800" rows="2" placeholder="例如：和观众日常聊天，刚收到一句夸奖。"></textarea><label for="performance-motion-style">表演风格</label><select id="performance-motion-style">${styles}</select></div></details>
+    <details class="performance-settings"><summary>语境、风格与试演<span>可选</span></summary><div class="settings-content"><label for="performance-context">语境</label><textarea id="performance-context" maxlength="800" rows="2" placeholder="例如：和观众日常聊天，刚收到一句夸奖。"></textarea><label for="performance-motion-style">表演风格</label><select id="performance-motion-style">${styles}</select><label for="acting-choice">情绪与表情试演</label><div class="acting-controls"><select id="acting-choice">${actingChoices}<option value="squint">眯眼笑</option><option value="wink_left">左眼 wink</option><option value="wink_right">右眼 wink</option></select><button id="acting-preview" class="secondary" disabled>试演</button><button id="acting-release" class="secondary" disabled>复位</button></div><p id="acting-description" class="acting-description" role="status"></p></div></details>
     <div class="performance-actions"><button id="performance-play" class="primary" disabled><span aria-hidden="true">▶</span>开始说话</button><button id="performance-stop" class="secondary" disabled><span aria-hidden="true">■</span>停止</button></div>
     <div id="performance-message" class="performance-message" role="status" aria-live="polite"><span class="status-dot"></span><span id="performance-status-text">正在准备角色…</span></div><p class="composer-note">表情和动作会自动配合，无需逐项设置。</p>`;
   const get=<T extends HTMLElement=HTMLElement>(id:string)=>document.getElementById(id) as T;
   const input=get<HTMLTextAreaElement>('performance-text'),play=get<HTMLButtonElement>('performance-play'),stop=get<HTMLButtonElement>('performance-stop');
+  const choice=get<HTMLSelectElement>('acting-choice'),preview=get<HTMLButtonElement>('acting-preview'),release=get<HTMLButtonElement>('acting-release');let previewPending=false;
   let session:string|null=null,serial=0,submitting=false,active=false,polling=false,modelReady=false,statusPolling=false,lastStatusAt=0,manualStatus='';
   const command=async(method:string,params:any={})=>{
     const response=await fetch('/api/command',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({method,params,request_id:crypto.randomUUID()}),signal:AbortSignal.timeout(25000)});
     const data=await response.json();if(!response.ok)throw new Error(data.message??data.error??'请求失败，请重试');return data.result;
   };
   function message(text:string,error=false){get('performance-status-text').textContent=text;get('performance-message').classList.toggle('error',error);}
-  function buttons(){play.disabled=!options.ready()||!modelReady||submitting||active||!input.value.trim();stop.disabled=!submitting&&!active;}
+  function buttons(){play.disabled=!options.ready()||!modelReady||submitting||active||previewPending||!input.value.trim();stop.disabled=!submitting&&!active;preview.disabled=release.disabled=!options.ready()||submitting||active||previewPending;}
   function showError(error:any){manualStatus=error.message??String(error);message(manualStatus,true);}
   input.oninput=()=>{get('text-count').textContent=`${input.value.length} / 2000`;buttons();};input.oninput(null);
+  const describe=()=>{get('acting-description').textContent=bindings.bindings[choice.value]?.description??'短暂闭合单眼后自然睁开；眯眼笑会保持片刻再放松。';};choice.onchange=describe;describe();
+  preview.onclick=async()=>{previewPending=true;buttons();try{await options.prepare();const label=choice.value;await command('performance.direct',{cue_id:'acting-preview',...(Object.hasOwn(bindings.bindings,label)?{emotion:label}:{expression:label}),intensity:1,hold_ms:4800});describe();}catch(error){showError(error);}finally{previewPending=false;buttons();}};
+  release.onclick=async()=>{previewPending=true;buttons();try{await command('performance.release',{cue_id:'acting-preview'});}catch(error){showError(error);}finally{previewPending=false;buttons();}};
   async function poll(){
     buttons();
     if((!modelReady||!options.connected())&&!statusPolling&&Date.now()-lastStatusAt>3000){

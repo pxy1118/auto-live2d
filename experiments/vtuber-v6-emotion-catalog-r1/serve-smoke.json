@@ -1,0 +1,71 @@
+{
+  "health": {
+    "ready": true,
+    "driver": "emotion_catalog",
+    "runtime_version": "v6.0.0-emotion-catalog",
+    "promoted": false,
+    "models": [
+      "multilingual-emotions-base",
+      "qwen3.5-0.8b"
+    ],
+    "motion": {
+      "clock": "audio",
+      "update_ms": 400,
+      "horizon": 24
+    },
+    "execution": {
+      "emotion_device": "cuda",
+      "action_encoder": "Qwen3.5-0.8B",
+      "continuous_device": "cuda",
+      "event_device": "cuda"
+    }
+  },
+  "stream_status_ready": true,
+  "prefill": {
+    "ready": true,
+    "semantic_ms": 524.5,
+    "timeline_schema": "emotion.timeline.v2",
+    "timeline_points": 2,
+    "plans": [
+      {
+        "clause": 0,
+        "action": "emotion.disgust",
+        "confidence": {
+          "action": 0.2246,
+          "body": 0.4762
+        }
+      },
+      {
+        "clause": 1,
+        "action": "emotion.love",
+        "confidence": {
+          "action": 0.7923,
+          "body": 0.8158
+        }
+      }
+    ]
+  },
+  "predict": {
+    "channels": [
+      "AngleX",
+      "AngleY",
+      "AngleZ",
+      "PositionX",
+      "PositionY",
+      "PositionZ",
+      "LeanInput",
+      "ParamEyeBallX",
+      "ParamEyeBallY"
+    ],
+    "shape": [
+      24,
+      9
+    ],
+    "timing": {
+      "total_compute_ms": 15.445751000015662,
+      "semantic_tokens": 39,
+      "context_truncated": false
+    },
+    "raw_out_of_range_fraction": 0.0
+  }
+}

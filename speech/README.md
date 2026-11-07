@@ -1,10 +1,10 @@
 # Qwen3-TTS 与 Live2D 口型
 
-当前使用 `D:/Workplace/Qwen3-TTS/runs/da_fei_yu/checkpoint-best`，1.7B CustomVoice，speaker=`da_fei_yu`。配置在 config.json，权重和 speech tokenizer 的 SHA-256 在 model-source.json，加载时校验。原有角色动作模型继续使用冻结的 VTuber v3。
+当前使用项目内权重 `models/Qwen3-TTS-12Hz-1.7B-da_fei_yu/`（1.7B CustomVoice，speaker=`da_fei_yu`），推理源码为 `vendor/qwen3-tts/` 固定副本。配置在 config.json，权重与 speech tokenizer 的 SHA-256 在 model-source.json，源码逐文件哈希在 `vendor/qwen3-tts/SOURCE.json`，加载时全部校验；不依赖 Hugging Face 缓存或外部训练仓库。原有角色动作模型继续使用冻结的 VTuber 语义编码器与两个小动作头。
 
 ## 使用
 
-在项目根目录运行 `python main.py`，同时启动页面、动作专家和 TTS。保持终端运行，按 Ctrl+C 一并关闭。进入角色页面，在台词框输入 300 字以内的文本，点击 **说话并表演**。首次点击会启用声音；CUDA 默认边生成边说。取消“同步身体动作”可仅播放语音和口型，并保留当前表情/姿态。**停止说话**会中断声音，取消尚未完成的流式解码。使用完整合成兼容接口时，取消可阻止迟到播放，该次 GPU 调用仍会完成。
+在项目根目录运行 `python main.py`，同时启动页面、动作专家和 TTS。保持终端运行，按 Ctrl+C 一并关闭。进入角色页面，在台词框输入 400 字以内的文本，点击 **说话并表演**。首次点击会启用声音；CUDA 默认边生成边说。取消“同步身体动作”可仅播放语音和口型，并保留当前表情/姿态。**停止说话**会中断声音，取消尚未完成的流式解码。使用完整合成兼容接口时，取消可阻止迟到播放，该次 GPU 调用仍会完成。
 
 声音首次启用需要浏览器用户操作。外部程序调用前，在页面点击一次 **启用声音**。另一个终端可用 `python main.py --stop` 或 root stop.ps1 关闭全部服务。
 
@@ -31,15 +31,17 @@ python examples/speak_demo.py --voice-only --text "我已经收到啦。"
 
 ## 环境与文件
 
-TTS 复用 `/home/cola/miniconda3/envs/qwen3-tts/bin/python`：Python 3.12、Torch 2.7.0+cu128、Transformers 4.57.3。CUDA Graph 使用 SDPA；可在 config.json 将 backend 改为 huggingface，恢复原 Flash Attention 2 完整推理。动作专家使用自己的 uv 环境和 Transformers 5.22.1；两个环境分开启动。未重新安装或改写训练项目。
+TTS 复用独立 conda 环境（路径在 config.json 的 `python` 字段，当前 `/home/cola/miniconda3/envs/qwen3-tts/bin/python`）：Python 3.12、Torch 2.7.0+cu128、Transformers 4.57.3。环境不属于模型资产；推理源码在项目内 `vendor/qwen3-tts/`，conda 环境已用 editable 安装指向该副本，也可从任意目录 import。CUDA Graph 使用 SDPA；可在 config.json 将 backend 改为 huggingface，恢复原 Flash Attention 2 完整推理。动作专家使用自己的 uv 环境和 Transformers 5.22.1；两个环境分开启动。未重新安装或改写训练项目。
 
 加速后端是 [faster-qwen3-tts](https://github.com/andimarafioti/faster-qwen3-tts) 0.3.2，固定 commit `b84dc773b2199a85cb421eb76857e4475e03e8c4`（MIT），保留未修改源码、协议和逐文件哈希。该版本匹配现有 Transformers 4；不向训练环境安装新版依赖。启动时校验权重与加速源码，捕获 CUDA Graph 并预热流式解码后再报告 ready。权重仍是原 checkpoint-best。
 
 | 文件 | 职责 |
 | --- | --- |
-| config.json / model-source.json | 本机路径、音色、模型来源与哈希 |
+| config.json / model-source.json | 项目相对路径、音色、权重来源与哈希 |
 | runtime.py / serve.py | 本地 Qwen3-TTS 推理，端口 8769 |
 | accelerator.py | 使用固定版本推理源码捕获 CUDA Graph |
+| ../vendor/qwen3-tts/ | Qwen3-TTS 推理源码固定副本（Apache-2.0，含逐文件 SHA-256） |
+| ../models/Qwen3-TTS-12Hz-1.7B-da_fei_yu/ | da_fei_yu 音色微调检查点，不随公开仓库分发 |
 | ../main.py | 前台管理整组服务，Ctrl+C 关闭；WSL 内按进程组清理 |
 | manage.py | 独立调试单个 TTS 服务时使用的旧管理工具 |
 | lips.py | 波形能量、静音门限和开合平滑 |

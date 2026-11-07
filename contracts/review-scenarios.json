@@ -1,0 +1,1022 @@
+{
+  "schema": "review.scenarios.v1",
+  "coverage_is_ground_truth": false,
+  "scenarios": [
+    {
+      "id": "admiration-01",
+      "title": "赞赏 · 1",
+      "text": "你居然把这么复杂的东西做出来了，真的很厉害。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "admiration"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "admiration-02",
+      "title": "赞赏 · 2",
+      "text": "刚才那个操作也太漂亮了，我还想再看一遍。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "admiration"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "admiration-03",
+      "title": "赞赏 · 3",
+      "text": "你一直坚持到现在，我打心底佩服你。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "admiration"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "amusement-01",
+      "title": "觉得有趣 · 1",
+      "text": "你这个比喻好好笑，我都忍不住了。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "amusement"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "amusement-02",
+      "title": "觉得有趣 · 2",
+      "text": "原来你偷偷准备了这一招，真有你的。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "amusement"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "amusement-03",
+      "title": "觉得有趣 · 3",
+      "text": "你一本正经说这个的样子，实在太有趣了。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "amusement"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "anger-01",
+      "title": "生气 · 1",
+      "text": "你怎么能故意破坏别人辛苦做好的东西？",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "anger"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "anger-02",
+      "title": "生气 · 2",
+      "text": "明明答应过我，却又骗我，我真的生气了。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "anger"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "anger-03",
+      "title": "生气 · 3",
+      "text": "这件事太过分了，我不能装作没发生。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "anger"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "annoyance-01",
+      "title": "不耐烦 · 1",
+      "text": "同样的问题已经说过三遍了，还要再问吗？",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "annoyance"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "annoyance-02",
+      "title": "不耐烦 · 2",
+      "text": "又卡在这里了，真让人烦躁。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "annoyance"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "annoyance-03",
+      "title": "不耐烦 · 3",
+      "text": "先别一直打断我，让我把话说完嘛。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "annoyance"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "approval-01",
+      "title": "赞同 · 1",
+      "text": "我觉得这个安排很好，就照你说的做。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "approval"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "approval-02",
+      "title": "赞同 · 2",
+      "text": "对，你刚才抓住的就是重点。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "approval"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "approval-03",
+      "title": "赞同 · 3",
+      "text": "这次处理得很妥当，我支持你的决定。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "approval"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "caring-01",
+      "title": "关心 · 1",
+      "text": "你今天是不是很累？先休息一下吧。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "caring"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "caring-02",
+      "title": "关心 · 2",
+      "text": "不用急着回答，我会在这里陪着你。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "caring"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "caring-03",
+      "title": "关心 · 3",
+      "text": "记得喝点水，别总是忙得忘记照顾自己。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "caring"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "confusion-01",
+      "title": "困惑 · 1",
+      "text": "咦，你刚才说的和前面怎么不一样？",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "confusion"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "confusion-02",
+      "title": "困惑 · 2",
+      "text": "我有点没弄明白，这两件事有什么关系呢？",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "confusion"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "confusion-03",
+      "title": "困惑 · 3",
+      "text": "这个结果为什么会这样？我越看越迷糊。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "confusion"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "curiosity-01",
+      "title": "好奇 · 1",
+      "text": "盒子里面到底是什么？我好想知道。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "curiosity"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "curiosity-02",
+      "title": "好奇 · 2",
+      "text": "后来呢？你们最后是怎么解决的？",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "curiosity"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "curiosity-03",
+      "title": "好奇 · 3",
+      "text": "这个小东西是怎么工作的，能讲给我听吗？",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "curiosity"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "desire-01",
+      "title": "期待 · 1",
+      "text": "好想尝一口那个蛋糕，看起来太好吃了。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "desire"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "desire-02",
+      "title": "期待 · 2",
+      "text": "要是能再多陪你一会儿就好了。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "desire"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "desire-03",
+      "title": "期待 · 3",
+      "text": "那个小挂件我看了好久，真的很想要。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "desire"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "disappointment-01",
+      "title": "失望 · 1",
+      "text": "原来今天还是来不了啊，我等了很久呢。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "disappointment"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "disappointment-02",
+      "title": "失望 · 2",
+      "text": "已经准备这么充分了，结果还是没赶上。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "disappointment"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "disappointment-03",
+      "title": "失望 · 3",
+      "text": "本来以为这次会不一样，看来又落空了。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "disappointment"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "disapproval-01",
+      "title": "不赞同 · 1",
+      "text": "这样把责任都推给别人，我不太认同。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "disapproval"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "disapproval-02",
+      "title": "不赞同 · 2",
+      "text": "我觉得这个做法不合适，我们换一种方式吧。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "disapproval"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "disapproval-03",
+      "title": "不赞同 · 3",
+      "text": "不能因为大家都这么做，就认为它是对的。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "disapproval"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "disgust-01",
+      "title": "厌恶 · 1",
+      "text": "这个味道太难闻了，我想离远一点。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "disgust"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "disgust-02",
+      "title": "厌恶 · 2",
+      "text": "看见这种故意欺负人的行为，我很反感。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "disgust"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "disgust-03",
+      "title": "厌恶 · 3",
+      "text": "别再给我看那个脏东西了，受不了。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "disgust"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "embarrassment-01",
+      "title": "害羞 · 1",
+      "text": "你突然这么夸我，我都不知道该说什么了。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "embarrassment"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "embarrassment-02",
+      "title": "害羞 · 2",
+      "text": "刚才竟然把名字念错了，好不好意思啊。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "embarrassment"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "embarrassment-03",
+      "title": "害羞 · 3",
+      "text": "别一直盯着我看嘛，我会害羞的。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "embarrassment"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "excitement-01",
+      "title": "兴奋 · 1",
+      "text": "成功了！我们真的把它完成了！",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "excitement"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "excitement-02",
+      "title": "兴奋 · 2",
+      "text": "终于轮到我们上场了，我已经等不及了。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "excitement"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "excitement-03",
+      "title": "兴奋 · 3",
+      "text": "这个消息太棒了，我现在特别激动。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "excitement"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "fear-01",
+      "title": "害怕 · 1",
+      "text": "刚才那个声音是什么？我有点害怕。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "fear"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "fear-02",
+      "title": "害怕 · 2",
+      "text": "这里太黑了，你能走在我旁边吗？",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "fear"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "fear-03",
+      "title": "害怕 · 3",
+      "text": "它突然靠过来的时候，我真的吓到了。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "fear"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "gratitude-01",
+      "title": "感谢 · 1",
+      "text": "谢谢你一直耐心听我说这些。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "gratitude"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "gratitude-02",
+      "title": "感谢 · 2",
+      "text": "这次多亏你帮忙，不然我真不知道怎么办。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "gratitude"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "gratitude-03",
+      "title": "感谢 · 3",
+      "text": "你特意为我准备这个，我很感激。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "gratitude"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "grief-01",
+      "title": "悲痛 · 1",
+      "text": "想到以后再也见不到它，我还是很难过。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "grief"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "grief-02",
+      "title": "悲痛 · 2",
+      "text": "那是我们最后一次见面，可当时谁也不知道。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "grief"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "grief-03",
+      "title": "悲痛 · 3",
+      "text": "这份失去太突然了，我还没有办法接受。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "grief"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "joy-01",
+      "title": "开心 · 1",
+      "text": "今天能见到你，我真的很开心。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "joy"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "joy-02",
+      "title": "开心 · 2",
+      "text": "我们一起完成了一件小事，感觉真好。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "joy"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "joy-03",
+      "title": "开心 · 3",
+      "text": "刚刚收到你的消息，我一下就高兴起来了。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "joy"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "love-01",
+      "title": "亲昵 · 1",
+      "text": "你终于回来啦，我今天很想你。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "love"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "love-02",
+      "title": "亲昵 · 2",
+      "text": "能这样和你待在一起，我就觉得很幸福。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "love"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "love-03",
+      "title": "亲昵 · 3",
+      "text": "再陪我聊一会儿，好不好嘛？",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "love"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "nervousness-01",
+      "title": "紧张 · 1",
+      "text": "马上就要轮到我了，我有点紧张。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "nervousness"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "nervousness-02",
+      "title": "紧张 · 2",
+      "text": "希望我等会儿不会说错话，你给我打打气吧。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "nervousness"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "nervousness-03",
+      "title": "紧张 · 3",
+      "text": "我准备好了，只是心里还有一点忐忑。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "nervousness"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "optimism-01",
+      "title": "乐观 · 1",
+      "text": "这次没做好也没关系，下次一定能更进一步。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "optimism"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "optimism-02",
+      "title": "乐观 · 2",
+      "text": "虽然还没看到结果，我相信我们能做到。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "optimism"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "optimism-03",
+      "title": "乐观 · 3",
+      "text": "慢慢来吧，我觉得事情正在往好的方向走。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "optimism"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "pride-01",
+      "title": "得意 · 1",
+      "text": "怎么样，这可是我自己一步一步做出来的。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "pride"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "pride-02",
+      "title": "得意 · 2",
+      "text": "这次终于拿到第一名了，我有一点小骄傲。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "pride"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "pride-03",
+      "title": "得意 · 3",
+      "text": "你看，我就说这个办法能行吧。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "pride"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "realization-01",
+      "title": "恍然大悟 · 1",
+      "text": "啊，原来是这里漏了一步，我明白了。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "realization"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "realization-02",
+      "title": "恍然大悟 · 2",
+      "text": "难怪刚才总是不对，问题出在顺序上。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "realization"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "realization-03",
+      "title": "恍然大悟 · 3",
+      "text": "哦！你说的是那个意思，我终于想通了。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "realization"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "relief-01",
+      "title": "释然 · 1",
+      "text": "呼，原来只是虚惊一场，太好了。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "relief"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "relief-02",
+      "title": "释然 · 2",
+      "text": "终于顺利结束了，我可以松口气了。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "relief"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "relief-03",
+      "title": "释然 · 3",
+      "text": "听到你平安到家，我就放心了。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "relief"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "remorse-01",
+      "title": "懊悔 · 1",
+      "text": "刚才是我说话太重了，对不起。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "remorse"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "remorse-02",
+      "title": "懊悔 · 2",
+      "text": "如果当时多听你解释一下，就不会这样了。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "remorse"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "remorse-03",
+      "title": "懊悔 · 3",
+      "text": "我不该随便下结论，现在想起来很后悔。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "remorse"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "sadness-01",
+      "title": "难过 · 1",
+      "text": "大家都离开以后，这里突然变得好安静。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "sadness"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "sadness-02",
+      "title": "难过 · 2",
+      "text": "那件珍惜了很久的东西还是弄丢了。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "sadness"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "sadness-03",
+      "title": "难过 · 3",
+      "text": "今天心情有点低落，我想安静坐一会儿。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "sadness"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "surprise-01",
+      "title": "惊讶 · 1",
+      "text": "什么？你已经把全部任务做完了？",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "surprise"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "surprise-02",
+      "title": "惊讶 · 2",
+      "text": "哇，这个礼物居然是给我的！",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "surprise"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "surprise-03",
+      "title": "惊讶 · 3",
+      "text": "你怎么突然出现在这里，吓我一跳。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "surprise"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "neutral-01",
+      "title": "平静 · 1",
+      "text": "现在是说明环节，我们先看第一部分。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "neutral"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "neutral-02",
+      "title": "平静 · 2",
+      "text": "文件已经整理好了，一共分成三个文件夹。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "neutral"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "neutral-03",
+      "title": "平静 · 3",
+      "text": "下一步先检查设置，然后再开始运行。",
+      "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+      "coverage": [
+        "neutral"
+      ],
+      "kind": "single"
+    },
+    {
+      "id": "context-01",
+      "title": "开心又害羞",
+      "text": "你真的觉得我做得很好吗？听你这么说我好开心，不过也有点不好意思。",
+      "context": "你正在和熟悉的观众聊天。注意前后情绪的延续、转折，以及转述与本人感受的区别。",
+      "coverage": [
+        "joy",
+        "embarrassment"
+      ],
+      "kind": "context"
+    },
+    {
+      "id": "context-02",
+      "title": "开心后失落",
+      "text": "我还以为今天能一起出去玩呢，原来你临时有事啊，那只好下次了。",
+      "context": "你正在和熟悉的观众聊天。注意前后情绪的延续、转折，以及转述与本人感受的区别。",
+      "coverage": [
+        "joy",
+        "disappointment"
+      ],
+      "kind": "context"
+    },
+    {
+      "id": "context-03",
+      "title": "担心后放心",
+      "text": "怎么一直没有你的消息？哦，原来你已经平安到家了，那我就放心了。",
+      "context": "你正在和熟悉的观众聊天。注意前后情绪的延续、转折，以及转述与本人感受的区别。",
+      "coverage": [
+        "nervousness",
+        "relief"
+      ],
+      "kind": "context"
+    },
+    {
+      "id": "context-04",
+      "title": "生气后理解",
+      "text": "你怎么又迟到了？原来是去帮别人了，我刚才误会你了，对不起。",
+      "context": "你正在和熟悉的观众聊天。注意前后情绪的延续、转折，以及转述与本人感受的区别。",
+      "coverage": [
+        "anger",
+        "realization",
+        "remorse"
+      ],
+      "kind": "context"
+    },
+    {
+      "id": "context-05",
+      "title": "难过后被安慰",
+      "text": "刚才那件事让我很难过。谢谢你愿意陪我聊聊，现在感觉好多了。",
+      "context": "你正在和熟悉的观众聊天。注意前后情绪的延续、转折，以及转述与本人感受的区别。",
+      "coverage": [
+        "sadness",
+        "gratitude",
+        "relief"
+      ],
+      "kind": "context"
+    },
+    {
+      "id": "context-06",
+      "title": "害羞延续",
+      "text": "你这样夸我，我都不好意思了。嗯，我知道啦。可是你别再盯着我笑嘛。",
+      "context": "你正在和熟悉的观众聊天。注意前后情绪的延续、转折，以及转述与本人感受的区别。",
+      "coverage": [
+        "embarrassment"
+      ],
+      "kind": "context"
+    },
+    {
+      "id": "context-07",
+      "title": "亲昵延续",
+      "text": "今天也想和你多待一会儿。我们慢慢聊就好。你在这里，我就很开心。",
+      "context": "你正在和熟悉的观众聊天。注意前后情绪的延续、转折，以及转述与本人感受的区别。",
+      "coverage": [
+        "love",
+        "joy"
+      ],
+      "kind": "context"
+    },
+    {
+      "id": "context-08",
+      "title": "生气延续",
+      "text": "这次的事真的让我很生气。我已经说清楚了。希望你认真对待，不要再发生。",
+      "context": "你正在和熟悉的观众聊天。注意前后情绪的延续、转折，以及转述与本人感受的区别。",
+      "coverage": [
+        "anger"
+      ],
+      "kind": "context"
+    },
+    {
+      "id": "context-09",
+      "title": "短中性过渡",
+      "text": "刚才那个故事太好笑了。接着说下一件事。想到那个画面，我还是忍不住想笑。",
+      "context": "你正在和熟悉的观众聊天。注意前后情绪的延续、转折，以及转述与本人感受的区别。",
+      "coverage": [
+        "amusement",
+        "neutral"
+      ],
+      "kind": "context"
+    },
+    {
+      "id": "context-10",
+      "title": "长期平静",
+      "text": "先打开设置页面。找到声音选项以后，确认输出设备。最后保存设置，就可以开始使用了。",
+      "context": "你正在和熟悉的观众聊天。注意前后情绪的延续、转折，以及转述与本人感受的区别。",
+      "coverage": [
+        "neutral"
+      ],
+      "kind": "context"
+    },
+    {
+      "id": "context-11",
+      "title": "转述别人的愤怒",
+      "text": "他说自己气坏了，还拍了桌子。我只是把事情经过告诉你，你先听我说完。",
+      "context": "你正在和熟悉的观众聊天。注意前后情绪的延续、转折，以及转述与本人感受的区别。",
+      "coverage": [
+        "neutral",
+        "anger"
+      ],
+      "kind": "context"
+    },
+    {
+      "id": "context-12",
+      "title": "否定快乐",
+      "text": "我没有觉得开心，刚才那个笑只是想让大家不要担心。",
+      "context": "你正在和熟悉的观众聊天。注意前后情绪的延续、转折，以及转述与本人感受的区别。",
+      "coverage": [
+        "sadness"
+      ],
+      "kind": "context"
+    },
+    {
+      "id": "context-13",
+      "title": "玩笑式抱怨",
+      "text": "你又偷偷把最后一块饼干吃掉了，真是的，下次一定要给我留一块嘛。",
+      "context": "你正在和熟悉的观众聊天。注意前后情绪的延续、转折，以及转述与本人感受的区别。",
+      "coverage": [
+        "annoyance",
+        "amusement",
+        "love"
+      ],
+      "kind": "context"
+    },
+    {
+      "id": "context-14",
+      "title": "期待转惊喜",
+      "text": "不知道你今天会不会来。咦，门口那个真的是你吗？太好了！",
+      "context": "你正在和熟悉的观众聊天。注意前后情绪的延续、转折，以及转述与本人感受的区别。",
+      "coverage": [
+        "desire",
+        "surprise",
+        "joy"
+      ],
+      "kind": "context"
+    },
+    {
+      "id": "context-15",
+      "title": "感谢夹着歉意",
+      "text": "谢谢你这么晚还来帮我。给你添了这么多麻烦，我心里真的有点过意不去。",
+      "context": "你正在和熟悉的观众聊天。注意前后情绪的延续、转折，以及转述与本人感受的区别。",
+      "coverage": [
+        "gratitude",
+        "remorse"
+      ],
+      "kind": "context"
+    },
+    {
+      "id": "context-16",
+      "title": "鼓励而不兴奋",
+      "text": "我们先休息一下。虽然还有不少困难，不过一件一件处理，总会慢慢好起来的。",
+      "context": "你正在和熟悉的观众聊天。注意前后情绪的延续、转折，以及转述与本人感受的区别。",
+      "coverage": [
+        "caring",
+        "optimism"
+      ],
+      "kind": "context"
+    }
+  ]
+}

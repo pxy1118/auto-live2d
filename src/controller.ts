@@ -1,5 +1,7 @@
 import { decodeCurve, sampleCurve, type Curve } from './motion';
 import { normalizeEyeParameters } from './eye-style';
+import {normalizeHandParameters} from './hand-style';
+import {normalizeFaceOverlays} from './face-overlays';
 
 export interface Parameter {
   id: string; label: string; group: string; min: number; max: number; default: number;
@@ -148,7 +150,7 @@ export class Controller {
         let fade = this.duration(params.fade_ms, 200);
         let strength = params.strength === undefined ? 1 : this.number(params.strength, 'strength');
         if (strength < 0 || strength > 1) this.fail('strength 必须为 0～1');
-        if (eyes.includes(name)) { strength = strength > 0 ? 1 : 0; fade = 0; }
+        if (eyes.includes(name)||name==='黑脸') { strength = strength > 0 ? 1 : 0; fade = 0; }
         const group = eyes.includes(name) ? eyes : bodies.includes(name) ? bodies : [];
         if (params.enabled && (eyes.includes(name) || params.exclusive !== false)) {
           for (const other of group) if (other !== name) this.expressions.delete(other);
@@ -301,6 +303,8 @@ export class Controller {
       if (o.stage === 'post') post[id] = value; else set(id, value);
     }
     normalizeEyeParameters(values, this.indices, post);
+    normalizeHandParameters(values,this.indices,post);
+    normalizeFaceOverlays(values,this.indices,post);
     this.lastActionPre = values.map((v, i) => clamp(v, this.parameters[i].min, this.parameters[i].max));
     // A model may deliberately close/wink an eye; open-eye targets must not suppress the resident blink.
     if (this.blink) {

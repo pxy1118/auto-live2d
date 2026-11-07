@@ -8,6 +8,7 @@
     "skipLibCheck": true,
     "strict": false,
     "noEmit": true,
+    "resolveJsonModule": true,
     "allowImportingTsExtensions": true
   },
   "include": ["src/**/*.ts", "server/**/*.ts", "tests/**/*.ts", "scripts/vtuber/**/*.ts", "vendor/cubism/Core/live2dcubismcore.d.ts"]

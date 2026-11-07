@@ -9,6 +9,8 @@ import { PerformanceController } from './performance';
 import { streamChannels } from './performance-profile';
 import {gestureFingerChannels} from './gesture-library';
 import { normalizeEyeParameters } from './eye-style';
+import {normalizeHandParameters} from './hand-style';
+import {normalizeFaceOverlays} from './face-overlays';
 
 const FIXED_DT = 1 / 60;
 const bytes = (value: any) => new TextEncoder().encode(JSON.stringify(value)).buffer as ArrayBuffer;
@@ -154,6 +156,8 @@ export class Live2DEngine extends CubismUserModel {
     for(const [id,value] of Object.entries(generated)){const i=this.control.indices.get(id);if(i!==undefined&&(![...streamChannels,...gestureFingerChannels].includes(id)||!this.control.overrides.has(id))){pre[i]=value;if(this.control.parameters[i].physicsOutput)post[id]=value;}}
     for(const id of ['ParamEyeLOpen','ParamEyeROpen']){const i=this.control.indices.get(id);if(i!==undefined)pre[i]=Math.min(pre[i],this.control.blinkLimit());}
     normalizeEyeParameters(pre, this.control.indices, post);
+    normalizeHandParameters(pre,this.control.indices,post);
+    normalizeFaceOverlays(pre,this.control.indices,post);
     pre.forEach((value, i) => this._model.setParameterValueByIndex(i, value));
     this.partDefaults.forEach((value, i) => this._model.setPartOpacityByIndex(i, value));
     if (this.control.physicsEnabled && dt > 0) this._physics.evaluate(this._model, dt);
@@ -284,9 +288,8 @@ export class Live2DEngine extends CubismUserModel {
       case 'performance.state': return this.performance.state();
       case 'performance.direct': {
         const result=this.performance.direct(params);
-        if(params.gesture){this.performance.rememberPose(Object.fromEntries(this.control.parameters.map((p,i)=>[p.id,this.control.lastFinal[i]])));this.control.playbacks.clear();this.control.timeline=null;this.speechOwnsMotion=false;this.speechMotion=null;
+        if(params.action_id&&params.action_id!=='none'||params.action_id===undefined&&params.emotion&&params.emotion!=='neutral'){this.performance.rememberPose(Object.fromEntries(this.control.parameters.map((p,i)=>[p.id,this.control.lastFinal[i]])));this.control.playbacks.clear();this.control.timeline=null;this.speechOwnsMotion=false;this.speechMotion=null;
           for(const group of this.performance.capabilities().action_groups)for(const id of group.owned_channels)this.control.overrides.delete(id);}
-        else if(params.body_motion)for(const body of this.performance.capabilities().body_motions)for(const id of body.owned_channels)this.control.overrides.delete(id);
         return result;
       }
       case 'performance.release': return this.performance.release(params);
@@ -296,8 +299,8 @@ export class Live2DEngine extends CubismUserModel {
         for(const id of [...this.performance.capabilities().channels.map(p=>p.id),...gestureFingerChannels])this.control.overrides.delete(id);
         return this.performance.start(params,this.control.state(true).driver);
       }
-      case 'performance.segment': return this.performance.segment(params);
       case 'performance.utterance': return this.performance.utterance(params);
+      case 'performance.plan.offer': return this.performance.offerPlan(params);
       case 'performance.chunk': return this.performance.chunk(params);
       case 'performance.end': {const result=this.performance.cancel(params.session_id);if(result.cancelled)this.stopSpeech();return result;}
       case 'performance.capture': {

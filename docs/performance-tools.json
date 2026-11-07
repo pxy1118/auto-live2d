@@ -1,5 +1,5 @@
 {
-  "schema_version": "live2d.tools.v4",
+  "schema_version": "live2d.tools.v6.3",
   "transport": "POST /api/command or command message on /ws",
   "envelope": {
     "method": "method from tools",
@@ -110,36 +110,68 @@
     },
     {
       "method": "performance.direct",
-      "description": "临时导演指令；手势与身体动作可组合或各自调用，不中断语音。clause 从指定分句开口时触发，省略立即生效。",
+      "description": "临时试演情绪或表情。emotion 默认附带角色身体表现；显式 action_id 优先，none 可只看表情。wink 每条指令只执行一次。",
       "parameters": {
         "type": "object",
+        "additionalProperties": false,
         "properties": {
           "session_id": {
-            "type": "string",
-            "pattern": "^[a-f0-9]{32}$"
+            "type": "string"
           },
           "cue_id": {
-            "type": "string",
-            "maxLength": 128,
-            "minLength": 1
-          },
-          "clause": {
-            "type": "integer",
-            "minimum": 0
+            "type": "string"
           },
           "emotion": {
             "enum": [
-              "neutral",
-              "happy",
-              "angry",
-              "shy",
-              "sad",
-              "surprised",
-              "confused"
+              "admiration",
+              "amusement",
+              "anger",
+              "annoyance",
+              "approval",
+              "caring",
+              "confusion",
+              "curiosity",
+              "desire",
+              "disappointment",
+              "disapproval",
+              "disgust",
+              "embarrassment",
+              "excitement",
+              "fear",
+              "gratitude",
+              "grief",
+              "joy",
+              "love",
+              "nervousness",
+              "optimism",
+              "pride",
+              "realization",
+              "relief",
+              "remorse",
+              "sadness",
+              "surprise",
+              "neutral"
+            ]
+          },
+          "expression": {
+            "enum": [
+              "normal",
+              "黑脸",
+              "流泪",
+              "圈圈眼",
+              "爱心眼",
+              "＞＜",
+              "屑屑眼",
+              "脸红",
+              "加载",
+              "兔牙",
+              "流冷汗",
+              "squint",
+              "wink_left",
+              "wink_right"
             ]
           },
           "intensity": {
-            "description": "连续表情强度。特殊眼型（＞＜、圈圈眼、爱心眼、屑屑眼）为互斥开关，非零值启用到 1，0 关闭；不做透明度渐变。",
             "type": "number",
             "minimum": 0,
             "maximum": 1
@@ -149,111 +181,30 @@
             "minimum": 0,
             "maximum": 600000
           },
-          "expression": {
-            "enum": [
-              "黑脸",
-              "流泪",
-              "圈圈眼",
-              "爱心眼",
-              "＞＜",
-              "><",
-              "屑屑眼",
-              "脸红",
-              "加载",
-              "兔牙",
-              "流冷汗"
-            ]
+          "clause": {
+            "type": "integer",
+            "minimum": 0
           },
-          "gesture_hint": {
+          "action_id": {
             "type": "string",
-            "maxLength": 300
-          },
-          "gesture": {
-            "enum": [
-              "wave",
-              "chest",
-              "grass",
-              "point",
-              "thanks",
-              "explain",
-              "refuse",
-              "rest"
-            ],
-            "description": "显式选择完整动作组，不中断语音。"
-          },
-          "gesture_hold_ms": {
-            "type": "number",
-            "minimum": 0,
-            "maximum": 15000,
-            "default": 1400,
-            "description": "进入完成后的停留时间；之后播放退出。rest 用于保持安静的时长。"
+            "description": "registered action ID; capabilities.get returns current catalog; none releases"
           },
           "variant": {
             "type": "integer",
             "minimum": 0,
             "maximum": 2
           },
-          "body_motion": {
-            "enum": [
-              "lean",
-              "sway",
-              "nod",
-              "tilt",
-              "turn",
-              "cajole",
-              "rest"
-            ],
-            "description": "独立身体动作，可与 gesture 组合；仅操作头部和躯干，不重启手势。rest 只收回附加身体动作。 cajole 为前倾、轻扭躯干与歪头组成的撒娇。"
-          },
-          "body_variant": {
-            "type": "integer",
-            "minimum": 0,
-            "maximum": 2
-          },
-          "body_strength": {
+          "action_strength": {
             "type": "number",
             "minimum": 0,
-            "maximum": 1,
-            "default": 0.75,
-            "description": "身体动作幅度，与表情 intensity 分开。"
+            "maximum": 1
           },
-          "body_hold_ms": {
+          "action_hold_ms": {
             "type": "number",
             "minimum": 0,
-            "maximum": 15000,
-            "default": 2200,
-            "description": "700ms 进入后的停留时间，之后 700ms 退出；轻摇和点头为有限节拍，不永久循环。"
+            "maximum": 6000
           }
-        },
-        "required": [],
-        "additionalProperties": false,
-        "anyOf": [
-          {
-            "required": [
-              "emotion"
-            ]
-          },
-          {
-            "required": [
-              "expression"
-            ]
-          },
-          {
-            "required": [
-              "gesture_hint"
-            ]
-          },
-          {
-            "required": [
-              "gesture"
-            ]
-          },
-          {
-            "required": [
-              "body_motion"
-            ]
-          }
-        ]
+        }
       }
     },
     {
@@ -358,90 +309,129 @@
       }
     },
     {
-      "method": "motions.play",
-      "description": "显式播放原生动画，手动接管并结束当前自动表演与语音。适用于独立表演；普通说话时优先使用 performance.direct。",
-      "parameters": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "enum": [
-              "IDLE",
-              "脱捕",
-              "默认手切举手",
-              "举手切默认手",
-              "竖手指切出来动画",
-              "竖手指切回默认",
-              "狗尾草切换出来",
-              "狗尾草切回默认手"
-            ]
-          },
-          "loop": {
-            "type": "boolean"
-          },
-          "hold": {
-            "type": "boolean"
-          }
-        },
-        "required": [
-          "name"
-        ],
-        "additionalProperties": false
-      }
-    },
-    {
-      "method": "motions.stop",
-      "description": "停止原生动画。",
+      "method": "review.list",
+      "description": "列出本地偏好样本和忙碌状态",
       "parameters": {
         "type": "object",
         "properties": {},
-        "additionalProperties": false
+        "required": []
       }
     },
     {
-      "method": "parameters.set",
-      "description": "底层精确参数控制；先通过 capabilities.get 查询真实 ID 和范围。物理输出默认在物理后覆盖。",
+      "method": "review.get",
+      "description": "读取一个样本",
       "parameters": {
         "type": "object",
         "properties": {
-          "values": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "number"
-            },
-            "minProperties": 1
+          "case_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "case_id"
+        ]
+      }
+    },
+    {
+      "method": "review.create",
+      "description": "生成一份供三个候选复用的音频",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 180
           },
-          "duration_ms": {
-            "type": "number",
-            "minimum": 0,
-            "maximum": 600000
+          "context": {
+            "type": "string",
+            "maxLength": 800
           },
-          "stage": {
+          "scenario_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "text",
+          "context"
+        ]
+      }
+    },
+    {
+      "method": "review.play",
+      "description": "播放一个候选并记录实际执行",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "case_id": {
+            "type": "string"
+          },
+          "candidate": {
             "enum": [
-              "pre",
-              "post"
+              "A",
+              "B",
+              "C"
             ]
           }
         },
         "required": [
-          "values"
-        ],
-        "additionalProperties": false
+          "case_id",
+          "candidate"
+        ]
       }
     },
     {
-      "method": "parameters.release",
-      "description": "释放底层参数覆盖。",
+      "method": "review.stop",
+      "description": "停止准备或播放；中断记录不能评分",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "method": "review.rate",
+      "description": "提交明确人工偏好，保留旧评分，不自动训练",
       "parameters": {
         "type": "object",
         "properties": {
-          "ids": {
+          "case_id": {
+            "type": "string"
+          },
+          "choice": {
+            "enum": [
+              "A",
+              "B",
+              "C",
+              "neither",
+              "tie"
+            ]
+          },
+          "takes": {
+            "type": "object"
+          },
+          "scores": {
+            "type": "object"
+          },
+          "issues": {
             "type": "array",
             "items": {
               "type": "string"
             }
+          },
+          "note": {
+            "type": "string",
+            "maxLength": 1000
           }
         },
-        "additionalProperties": false
+        "required": [
+          "case_id",
+          "choice",
+          "takes",
+          "scores",
+          "issues",
+          "note"
+        ]
       }
     }
   ]

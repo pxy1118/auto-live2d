@@ -14,6 +14,9 @@ export class SpeechPlayer {
   private session:Session|null=null;
   private lastId:string|null=null;
   private lastPositionMs=0;
+  /** Wall-clock end of the previous stream; used to chain prefetched TTS groups without
+   * the full +100 ms scheduling delay (their synthesis runs while the previous group plays). */
+  private lastEndedAt=0;
 
   async unlock(){
     this.context??=new AudioContext();
@@ -46,10 +49,13 @@ export class SpeechPlayer {
     if(Math.abs(buffer.duration*1000-params.mouth.duration_ms)>25)throw new ControlError('invalid_speech','音频与口型时长不匹配');
     return {id:params.speech_id,buffer,mouth:structuredClone(params.mouth),trajectory:params.trajectory?structuredClone(params.trajectory):undefined};
   }
-  private create(id:string,duration:number,trajectory?:SpeechTrajectory,provisional=false):Session{
-    this.requireAudio();this.stop();this.lastId=id;this.lastPositionMs=0;
+  private create(id:string,duration:number,trajectory?:SpeechTrajectory,provisional=false,follow=false):Session{
+    const context=this.requireAudio();const previousEnd=this.lastEndedAt;this.stop();this.lastId=id;this.lastPositionMs=0;
     const native=trajectory?.params.events.some((e:any)=>e.method==='motions.play'&&(e.params?.slot??'full')==='full')??false;
-    return this.session={id,segments:[],sources:new Set(),anchor:null,offset:0,paused:false,finished:false,sampleRate:0,samples:0,underruns:0,
+    // A prefetched continuation is scheduled as early as possible: reuse the previous
+    // stream's end when it is still ahead, otherwise start after a short guard gap.
+    const anchor=follow&&previousEnd>context.currentTime-1.5?Math.max(context.currentTime+.06,previousEnd):null;
+    return this.session={id,segments:[],sources:new Set(),anchor,offset:0,paused:false,finished:false,sampleRate:0,samples:0,underruns:0,
       clock:trajectory?new SpeechMotionClock(trajectory.params.duration_ms,duration,native,provisional):null};
   }
   start(clip:PreparedSpeech){
@@ -60,7 +66,7 @@ export class SpeechPlayer {
   beginStream(params:any){
     this.validateId(params?.speech_id);
     if(!Number.isFinite(params.estimated_duration_ms)||params.estimated_duration_ms<100||params.estimated_duration_ms>90000)throw new ControlError('invalid_speech','预计语音时长不合法');
-    this.create(params.speech_id,params.estimated_duration_ms,params.trajectory,true);return this.info();
+    this.create(params.speech_id,params.estimated_duration_ms,params.trajectory,true,params.follow===true);return this.info();
   }
   private own(id:any){
     if(!this.session||id!==this.session.id)throw new ControlError('speech_cancelled','该语音已经停止或被替换');
@@ -90,9 +96,11 @@ export class SpeechPlayer {
   private schedule(segments=this.session!.segments){
     const s=this.session!,context=this.context!;
     if(s.anchor===null)s.anchor=context.currentTime+.10-s.offset;
-    // On underrun, insert silence in wall time and hold the media clock/body.
+    // On underrun, insert silence in wall time and hold the media clock/body. A late
+    // first chunk of a chained continuation is only a scheduling delay, not an underrun.
     if(segments.length&&s.anchor+segments[0].offset<context.currentTime-.015&&s.offset<=segments[0].offset){
-      s.anchor=context.currentTime+.06-segments[0].offset;s.offset=segments[0].offset;s.underruns++;
+      const started=s.offset>1e-6||s.sources.size>0;
+      s.anchor=context.currentTime+.06-segments[0].offset;s.offset=segments[0].offset;if(started)s.underruns++;
     }
     for(const segment of segments){
       const end=segment.offset+segment.buffer.duration;if(end<=s.offset+1e-6)continue;
@@ -102,7 +110,7 @@ export class SpeechPlayer {
     }
   }
   private complete(s:Session){
-    if(this.session===s&&s.finished&&!s.paused&&!s.sources.size&&this.position()>=s.samples/s.sampleRate-.005){this.lastPositionMs=s.samples/s.sampleRate*1000;this.session=null;}
+    if(this.session===s&&s.finished&&!s.paused&&!s.sources.size&&this.position()>=s.samples/s.sampleRate-.005){this.lastPositionMs=s.samples/s.sampleRate*1000;this.lastEndedAt=this.context!.currentTime;this.session=null;}
   }
   private position(){
     const s=this.session;if(!s)return 0;
@@ -114,7 +122,7 @@ export class SpeechPlayer {
   }
   resume(){if(this.session?.paused){this.session.paused=false;this.schedule();}}
   private clearSources(s:Session){for(const source of s.sources){source.onended=null;source.stop();source.disconnect();}s.sources.clear();}
-  stop(){const s=this.session;if(s)this.lastPositionMs=this.position()*1000;this.session=null;if(s)this.clearSources(s);}
+  stop(){const s=this.session;if(s)this.lastPositionMs=this.position()*1000;this.session=null;this.lastEndedAt=0;if(s)this.clearSources(s);}
   private cueAt(time:number,key:'values'|'energy'|'beats'){
     const s=this.session;if(!s||time<0)return 0;
     const segment=s.segments.find(segment=>time>=segment.offset&&time<segment.offset+segment.buffer.duration);

@@ -70,9 +70,9 @@ type Active=Request&{at:number;variant:number;strength:number;enter:number;hold:
 /** Additive director layer. Replacement/release match offset position and
  * velocity; the underlying arm group keeps its own clock and continues. */
 export class BodyMotionLayer{
- private current:Active|null=null;private seen=new Set<string>();private count=0;
+ private current:Active|null=null;private count=0;
  get active(){return !!this.current;}
- clear(){this.current=null;this.seen.clear();this.count=0;}
+ clear(){this.current=null;this.count=0;}
  private raw(a:Active,elapsed:number){
   const t=Math.max(0,elapsed),end=a.enter+a.hold+a.exit;
   const v=a.release?zero():sampleBodyMotion(a.name,a.variant,{t,enter:a.enter,holdEnd:a.enter+a.hold,exit:a.exit});
@@ -84,10 +84,10 @@ export class BodyMotionLayer{
  }
  private snapshot(actor:number){const a=this.current;if(!a)return {values:zero(),velocity:zero()};const t=actor-a.at,v=this.raw(a,t),before=this.raw(a,Math.max(0,t-.1)),after=this.raw(a,t+.1);return {values:v,velocity:Object.fromEntries(bodyChannels.map(id=>[id,(after[id]-before[id])/(t<.1?.1:.2)]))};}
  request(request:Request,actor:number){
-  if(this.seen.has(request.id)||request.source==='model'&&this.current?.source==='director'&&!this.current.release)return false;
+  if(this.current)return false;
   const from=this.snapshot(actor);
   this.current={...request,source:request.source??'director',at:actor,variant:request.variant??this.count%3,strength:request.strength??.75,enter:700,hold:request.holdMs??2200,exit:700,release:false,from:from.values,velocity:from.velocity};
-  this.seen.add(request.id);this.count++;return true;
+  this.count++;return true;
  }
  release(actor:number,cueId?:string){
   const a=this.current;if(!a||a.release||cueId&&cueId!==a.cueId)return;
@@ -95,5 +95,5 @@ export class BodyMotionLayer{
  }
  tick(actor:number){const a=this.current;if(!a)return {};const t=actor-a.at,v=this.raw(a,t);if(t>=a.enter+a.hold+a.exit)this.current=null;return v;}
  state(actor:number){const a=this.current;if(!a)return {active:false,count:this.count};const t=Math.max(0,actor-a.at);return {active:true,count:this.count,name:a.name,label:bodyMotionLabels[a.name],variant:a.variant,variant_label:bodyMotionVariants[a.name][a.variant],strength:a.strength,source:a.source,cue_id:a.cueId,elapsed_ms:t,duration_ms:a.enter+a.hold+a.exit,phase:a.release?'release':t<a.enter?'enter':t<a.enter+a.hold?'hold':'exit',owned_channels:bodyChannels};}
- capabilities(){return bodyMotionNames.map(name=>({name,label:bodyMotionLabels[name],available:true,variants:3,variant_descriptions:bodyMotionVariants[name],source:'authored_continuous_body_inputs',composition:'additive_body_offset',independent_of_arm_group:true,owned_channels:bodyChannels,stops_audio:false}));}
+ capabilities(){return bodyMotionNames.map(name=>({name,label:bodyMotionLabels[name],available:true,variants:3,variant_descriptions:bodyMotionVariants[name],source:'authored_continuous_body_inputs',composition:'additive_body_offset',independent_of_arm_group:false,owned_channels:bodyChannels,stops_audio:false}));}
 }

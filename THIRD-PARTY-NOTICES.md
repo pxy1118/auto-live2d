@@ -22,10 +22,12 @@
 - 语义编码器基座：[Qwen/Qwen3.5-0.8B](https://huggingface.co/Qwen/Qwen3.5-0.8B)，Apache-2.0，固定 revision `2fc06364715b967f1860aea9cf38778875588b17`，权重 SHA-256 记录在 `latent/encoder-source.json`。
 - 本仓库不包含 `models/`。运行 `latent/prepare_encoder.py` 会按上述来源准备权重。
 
-## Qwen3-TTS（未包含）
+## Qwen3-TTS（推理源码包含固定副本，权重未包含）
 
-- 语音合成使用独立项目 Qwen3-TTS 及其训练检查点（da_fei_yu 音色），不在本仓库内，遵循其上游许可与使用条款。
-- `speech/config.json` 中的路径是原作者本机路径，使用前需改成你自己的项目/环境路径。
+- 上游项目：[QwenLM/Qwen3-TTS](https://github.com/QwenLM/Qwen3-TTS)，Apache-2.0，固定 commit `022e286b98fbec7e1e916cb940cdf532cd9f488e`。
+- 本仓库在 `vendor/qwen3-tts/` 保留 `qwen_tts` 推理源码、`LICENSE`、`pyproject.toml` 与逐文件 SHA-256（`SOURCE.json`）。TTS conda 环境通过 editable 安装指向该副本，导入不再依赖外部 `D:/Workplace/Qwen3-TTS` 路径。
+- 语音权重为本地 da_fei_yu 音色微调检查点，不放公开仓库；放置于 `models/Qwen3-TTS-12Hz-1.7B-da_fei_yu/`，逐文件 SHA-256 见 `speech/model-source.json`。运行时校验源码与权重哈希，并在 `local_files_only=True`、空 `HF_HOME` 下验证过离线加载。
+- `speech/config.json` 中的 `python` 指向本机 conda 环境；换机器时只需修改该字段与 `models/` 放置位置。
 
 ## faster-qwen3-tts 0.3.2（包含固定源码副本，MIT）
 
@@ -44,9 +46,9 @@
 
 - Node 依赖（`tsx`、`vite`、`ws`、`playwright` 等）与 Python 依赖（PyTorch、transformers 等）不随源码副本分发，版本由 `package-lock.json` 与 `latent/uv.lock`（如有）锁定；各自遵循其上游许可证。
 - 角色页与文档中的商标、角色名称归各自权利人所有。
-# Local semantic inference runtime
+# Historical local semantic inference runtime
 
-The semantic entry point uses the user's local [llama.cpp](https://github.com/ggml-org/llama.cpp) build at commit `895c045fd` (MIT license). The executable and its CUDA runtime libraries remain in the local llama.cpp installation. Qwen3.5-4B Q8_0 is converted locally from the existing Apache-2.0 Qwen weights; its source revision and checksums are recorded in `semantic/native-runtime.json`.
+The archived semantic experiment used the user's local [llama.cpp](https://github.com/ggml-org/llama.cpp) build at commit `895c045fd` (MIT license). It is not loaded by the current default launcher. The executable and its CUDA runtime libraries remain in the local llama.cpp installation. Qwen3.5-4B Q8_0 was converted locally from the existing Apache-2.0 Qwen weights; its source revision and checksums are recorded in `semantic/native-runtime.json`.
 
 
 ## Horizon-Labs multilingual-emotions-base

@@ -1,0 +1,59 @@
+{
+  "date": "2026-11-06",
+  "node_tests": 71,
+  "gpu_emotion_tests": 13,
+  "launcher_tests": 3,
+  "typecheck": true,
+  "build": true,
+  "browser_smoke": true,
+  "before_first_audio_ms": 884,
+  "after_first_audio_ms": 783,
+  "long_join_gaps_ms": [
+    207
+  ],
+  "short_tts_streams": 1,
+  "long_tts_streams": 2,
+  "first_audio_p95_comparison": {
+    "measured": false,
+    "reason": "One captured baseline; report paired observations, not a distribution or p95 improvement."
+  },
+  "motion_roundtrip_p95_ms": {
+    "before": 90.74619999999959,
+    "after": 174.72220000000016,
+    "long": 63.16049999999814,
+    "smoke": 90.75509999999485
+  },
+  "continuous_identity_to_r1": true,
+  "new_actions": 0,
+  "naturalness_user_ratings": 0,
+  "wave_variants": [
+    {
+      "variant": 0,
+      "wrist_range": 0.38137656450271606,
+      "max_palm_y": 0.46040506053082036
+    },
+    {
+      "variant": 1,
+      "wrist_range": 0.3237833231687546,
+      "max_palm_y": 0.46156878112913013
+    },
+    {
+      "variant": 2,
+      "wrist_range": 0.35552583634853363,
+      "max_palm_y": 0.45252883434295654
+    }
+  ],
+  "motion_roundtrip_under_400ms": true,
+  "audio_underruns": 0,
+  "default_final_smoke": {
+    "ok": true,
+    "first_audio_ms": 898,
+    "tts_streams": 1,
+    "plans": 2
+  },
+  "local_asset_checks": {
+    "total": 48,
+    "problems": 0
+  },
+  "default_service_ready": true
+}

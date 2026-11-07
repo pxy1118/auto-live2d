@@ -1,0 +1,85 @@
+import type { Live2DEngine } from './engine';
+import { EMOTION_LABELS } from './emotion-config';
+import { EMOTION_ACTION_BY_LABEL } from './action-catalog';
+
+const LABELS_ZH: Record<string, string> = {
+  admiration: '赞赏', amusement: '逗乐', anger: '愤怒', annoyance: '不耐烦', approval: '赞同', caring: '关切',
+  confusion: '困惑', curiosity: '好奇', desire: '渴望', disappointment: '失望', disapproval: '不赞同', disgust: '反感',
+  embarrassment: '害羞', excitement: '兴奋', fear: '害怕', gratitude: '感谢', grief: '悲痛', joy: '喜悦',
+  love: '爱意', nervousness: '紧张', optimism: '乐观', pride: '自豪', realization: '恍然大悟', relief: '释然',
+  remorse: '内疚', sadness: '难过', surprise: '惊讶', neutral: '中性',
+};
+
+/** Dev-only 28-emotion preview board. Never mounted unless ?preview=emotions. */
+export function mountEmotionPreview(engine: Live2DEngine) {
+  const panel = document.createElement('aside');
+  panel.id = 'emotion-preview';
+  panel.style.cssText = 'position:fixed;right:0;top:0;bottom:0;width:280px;overflow:auto;z-index:50;background:#101418f2;color:#e8eef3;font:12px/1.5 system-ui,sans-serif;padding:10px 12px;box-shadow:-8px 0 24px #0006';
+  panel.innerHTML = `<header style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+    <strong style="font-size:13px">28 类情绪预览</strong><button id="ep-close" style="background:none;border:1px solid #ffffff44;color:inherit;border-radius:4px;padding:2px 6px">关闭</button></header>
+    <p style="opacity:.65;margin:0 0 8px">点击标签查看持续表情 + 完整短段；Shift+点击可叠加混合情绪。</p>
+    <div id="ep-list" style="display:flex;flex-wrap:wrap;gap:6px"></div>
+    <div style="margin-top:10px;display:flex;gap:6px"><button id="ep-clear" style="flex:1;background:#ffffff14;border:1px solid #ffffff33;color:inherit;border-radius:4px;padding:4px">清除</button>
+    <button id="ep-play" style="flex:1;background:#ffffff14;border:1px solid #ffffff33;color:inherit;border-radius:4px;padding:4px">全部播放</button></div>
+    <pre id="ep-state" style="margin-top:10px;white-space:pre-wrap;opacity:.6;font-size:11px"></pre>`;
+  document.body.appendChild(panel);
+  const list = panel.querySelector('#ep-list') as HTMLDivElement;
+  const stateEl = panel.querySelector('#ep-state') as HTMLPreElement;
+  const selected = new Set<string>();
+  let sequence: ReturnType<typeof setTimeout> | null = null;
+
+  const evidence = () => {
+    const value: Record<string, number> = {};
+    for (const label of EMOTION_LABELS) value[label] = 0;
+    for (const label of selected) value[label] = Math.max(value[label], 0.9);
+    return value;
+  };
+  const apply = () => {
+    engine.performance.debugForceEmotion(selected.size ? evidence() : null);
+    const last = [...selected].at(-1);
+    if (last && EMOTION_ACTION_BY_LABEL.has(last)) engine.performance.debugRequestAction('emotion.' + last);
+    for (const button of list.querySelectorAll('button')) button.style.background = selected.has(button.dataset.label!) ? '#4b8dff88' : '#ffffff10';
+  };
+  const clear = () => { selected.clear(); engine.performance.debugForceEmotion(null); apply(); };
+  const play = (label: string, additive = false) => {
+    if (!additive) selected.clear();
+    if (selected.has(label)) selected.delete(label); else selected.add(label);
+    apply();
+  };
+  for (const label of EMOTION_LABELS) {
+    const button = document.createElement('button');
+    button.dataset.label = label;
+    button.textContent = `${LABELS_ZH[label] ?? label}`;
+    button.title = label;
+    button.style.cssText = 'background:#ffffff10;border:1px solid #ffffff2e;color:inherit;border-radius:4px;padding:4px 6px;cursor:pointer;font-size:12px';
+    button.onclick = event => play(label, event.shiftKey);
+    list.appendChild(button);
+  }
+  (panel.querySelector('#ep-clear') as HTMLButtonElement).onclick = clear;
+  (panel.querySelector('#ep-play') as HTMLButtonElement).onclick = () => {
+    clear();
+    if (sequence) clearTimeout(sequence);
+    let index = 0;
+    const next = () => {
+      if (index >= EMOTION_LABELS.length) { sequence = null; return; }
+      const label = EMOTION_LABELS[index++];
+      selected.clear(); selected.add(label); apply();
+      sequence = setTimeout(next, 2600);
+    };
+    next();
+  };
+  (panel.querySelector('#ep-close') as HTMLButtonElement).onclick = () => { clear(); panel.remove(); };
+  const timer = setInterval(() => {
+    const state: any = engine.performance.state();
+    stateEl.textContent = JSON.stringify({
+      active: state.active,
+      emotion: state.affect.emotion,
+      intensity: Number((state.affect.intensity ?? 0).toFixed(3)),
+      motion: state.motion_actions,
+      body: state.body_action,
+      action_plan: state.action_plan,
+    }, null, 1);
+  }, 400);
+  (window as any).__emotionPreview = { play, clear, labels: EMOTION_LABELS, dispose: () => { clearInterval(timer); clear(); panel.remove(); } };
+  return { dispose: () => { clearInterval(timer); clear(); panel.remove(); } };
+}

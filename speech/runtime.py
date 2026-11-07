@@ -20,6 +20,9 @@ class Voice:
         source=read(ROOT/'speech/model-source.json')
         for entry in source['files']:
             if sha(checkpoint/entry['file'])!=entry['sha256']:raise ValueError('TTS checkpoint changed: '+entry['file'])
+        vendor=read(repo/'SOURCE.json')
+        for entry in vendor['files']:
+            if sha(repo/entry['file'])!=entry['sha256']:raise ValueError('TTS inference source changed: '+entry['file'])
         sys.path.insert(0,str(repo));os.environ['HF_HUB_OFFLINE']='1';os.environ['TRANSFORMERS_OFFLINE']='1'
         import torch,transformers,soundfile,numpy
         from qwen_tts import Qwen3TTSModel

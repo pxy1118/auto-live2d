@@ -1,0 +1,755 @@
+"""Train and evaluate the v6 event + continuous experts.
+
+Data sources (all frozen, synthetic supervision only):
+* ``datasets/emotion-catalog-v1/affect-cache.pt`` - classifier scores, simulated
+  affect states, pooled/ token 0.8B features, segment candidates;
+* ``datasets/vtuber-v4`` clips - 9-channel background-motion targets and audio;
+* ``datasets/vtuber-v4-planner-v2/records.jsonl`` - legacy action targets;
+* ``datasets/emotion-catalog-v1/segment-records.jsonl`` - synthetic segment rows.
+
+Baselines: v5 ``regression.pt`` (same 9 channels, v4 test split) and v5
+``performance-planner.pt`` (same planner-v2 test split) are evaluated locally.
+
+The run is never promoted from here: ``run.json`` records the gate outcome and
+``promoted`` stays false; the Lead decides the default pointer.
+"""
+import argparse
+import hashlib
+import json
+import math
+import random
+import time
+from pathlib import Path
+
+import numpy as np
+import torch
+from torch.nn import functional as F
+
+from common import ROOT
+from catalog_contract import ACTION_BY_ID, ARM_ACTION_IDS, BODY_ACTION_IDS, SEGMENT_ACTIONS, catalog_sha256
+from emotion_config import AFFECT_DIM, LABELS, emotion_config_sha256, thresholds_sha256
+from emotion_event import EventExpert, load_event, save_event, values_target
+from emotion_expert import BACKGROUND_CHANNELS, ContinuousExpert, load_continuous, save_continuous
+from planner_contract import ARMS as LEGACY_ARMS
+from planner_contract import BODIES as LEGACY_BODIES
+
+DATA = ROOT / "datasets/vtuber-v4"
+PLANNER = ROOT / "datasets/vtuber-v4-planner-v2"
+AFFECT_DIR = ROOT / "datasets/emotion-catalog-v1"
+PROFILE_PATH = ROOT / "latent/runtime-profile.json"
+V5_DIR = ROOT / "experiments/vtuber-v5-emotion-action-r1"
+DEFAULT_OUTPUT = ROOT / "experiments/vtuber-v6-emotion-catalog-r1"
+RUN_SCHEMA = "vtuber.v6.emotion_catalog"
+RUNTIME_VERSION = "v6.0.0-emotion-catalog"
+HORIZON = 24
+AUDIO_DIM = 12
+STATE_DIM = 38
+SEED = 20261105
+
+
+def sha(path):
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def read_json(path):
+    return json.loads(Path(path).read_text(encoding="utf-8-sig"))
+
+
+def write_json(path, value):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(value, ensure_ascii=False, indent=2, allow_nan=False) + "\n", encoding="utf-8")
+
+
+def macro_f1(predictions, targets, classes):
+    scores = []
+    for name in classes:
+        true = [index for index, label in enumerate(targets) if label == name]
+        predicted = [index for index, label in enumerate(predictions) if label == name]
+        tp = sum(1 for index in predicted if index in true)
+        fp = len(predicted) - tp
+        fn = len(true) - tp
+        scores.append(2. * tp / max(1, 2 * tp + fp + fn))
+    return float(sum(scores) / len(scores))
+
+
+def false_trigger_rate(predictions, targets, none="none"):
+    negatives = [index for index, label in enumerate(targets) if label == none]
+    if not negatives:
+        return 0.
+    return float(sum(1 for index in negatives if predictions[index] != none) / len(negatives))
+
+
+# --------------------------------------------------------------------------- data
+
+def load_profile():
+    profile = read_json(PROFILE_PATH)
+    channels = profile["channels"]
+    ids = [channel["id"] for channel in channels]
+    missing = [channel for channel in BACKGROUND_CHANNELS if channel not in ids]
+    if missing:
+        raise ValueError(f"runtime-profile 缺少背景通道：{missing}")
+    indices = [ids.index(channel) for channel in BACKGROUND_CHANNELS]
+    lo = np.asarray([channel["min"] for channel in channels], np.float32)
+    hi = np.asarray([channel["max"] for channel in channels], np.float32)
+    neutral = np.asarray([channel.get("default", 0.) for channel in channels], np.float32)
+    return {"raw": profile, "ids": ids, "background_indices": indices, "lo": lo, "hi": hi, "neutral": neutral,
+            "sha256": profile["sha256"], "file_sha256": sha(PROFILE_PATH)}
+
+
+def normalize(values, profile):
+    return np.clip(2. * (np.asarray(values, np.float32) - profile["lo"]) / (profile["hi"] - profile["lo"]) - 1., -1., 1.)
+
+
+def load_audio(path):
+    data = read_json(path)
+    features = np.asarray(data["features"]["motion"], np.float32)
+    times = np.asarray(data["features"]["motion_times_ms"], np.float32)
+    return features, times
+
+
+def audio_window(audio, start):
+    features, times = audio
+    wanted = (start + np.arange(HORIZON)) * 50.
+    position = np.maximum(0, np.searchsorted(times, wanted, side="right") - 1)
+    return features[np.minimum(position, len(features) - 1)]
+
+
+def prepare_continuous(clips, cache, profile):
+    indices = profile["background_indices"]
+    audio_cache = {}
+    prepared = {}
+    for clip_id, clip in clips.items():
+        key = clip["text"] + "\n" + clip["context"]
+        tokens = cache["v4_tokens"][key]["tokens"].numpy()
+        mask = cache["v4_tokens"][key]["mask"].numpy()
+        values = np.asarray(clip["values"], np.float32)
+        normalized = normalize(values, profile)
+        audio_path = str((DATA / clip["audio"]).resolve())
+        if audio_path not in audio_cache:
+            audio_cache[audio_path] = load_audio(DATA / clip["audio"].replace(".wav", ".json"))
+        affects = np.asarray(cache["v4"][clip_id]["affect"], np.float32)
+        phase = np.asarray([0., max(300., float(clip.get("hold_ms", 3000))) / 1000.,
+                            0. if clip.get("intent") in (None, "rest") else 1., 0.], np.float32)
+        prepared[clip_id] = {
+            "semantic": tokens, "mask": mask, "values": values, "normalized": normalized,
+            "target": normalized[:, indices], "affect": affects, "audio": audio_cache[audio_path],
+            "phase": phase, "split": clip["split"], "text": clip["text"], "context": clip["context"],
+        }
+    return prepared
+
+
+def continuous_arrays(item, start, training=False, rng=None):
+    normalized = item["normalized"]
+    count = len(normalized)
+    horizon = np.minimum(start + np.arange(HORIZON), count - 1)
+    target = item["target"][horizon]
+    history_index = np.maximum(np.arange(start - 20, start), 0)
+    history = normalized[history_index]
+    state = normalized[min(start, count - 1)]
+    audio = audio_window(item["audio"], start)
+    if training:
+        available = int(rng.integers(0, HORIZON + 1))
+        audio_mask = (np.arange(HORIZON) < available).astype(np.float32)
+        audio = audio * audio_mask[:, None]
+        if rng.random() < .15:
+            history = np.clip(history + rng.normal(0, .025, history.shape), -1, 1)
+    else:
+        audio_mask = np.ones(HORIZON, np.float32)
+    affect_index = min(start, len(item["affect"]) - 1)
+    phase = item["phase"].copy()
+    phase[0] = start * .05
+    return {
+        "semantic": item["semantic"], "mask": item["mask"], "affect": item["affect"][affect_index],
+        "state": state, "history": history, "audio": audio, "audio_mask": audio_mask,
+        "phase": phase, "target": target, "current": item["target"][min(start, count - 1)],
+    }
+
+
+def stack_continuous(rows, device):
+    def tensor(key, dtype=torch.float32):
+        return torch.as_tensor(np.stack([row[key] for row in rows]), dtype=dtype, device=device)
+    return {
+        "semantic": tensor("semantic"), "mask": tensor("mask", torch.bool), "affect": tensor("affect"),
+        "state": tensor("state"), "history": tensor("history"), "audio": tensor("audio"),
+        "audio_mask": tensor("audio_mask"), "phase": tensor("phase"), "target": tensor("target"),
+        "current": tensor("current"),
+    }
+
+
+def eval_pairs(prepared, split, starts=(0., .25, .5, .75)):
+    pairs = []
+    for clip_id, item in prepared.items():
+        if item["split"] != split:
+            continue
+        count = len(item["normalized"])
+        for fraction in starts:
+            pairs.append((clip_id, int(fraction * max(1, count - HORIZON))))
+    return pairs
+
+
+@torch.inference_mode()
+def continuous_metrics(model, prepared, pairs, profile, device, legacy=None):
+    rows = []
+    if model is not None:
+        model.eval()
+    if legacy is not None:
+        legacy.eval()
+    for start in range(0, len(pairs), 32):
+        chunk = pairs[start:start + 32]
+        batch = stack_continuous([continuous_arrays(prepared[clip_id], position) for clip_id, position in chunk], device)
+        if legacy is not None:
+            legacy_output = legacy(batch["semantic"], batch["mask"], batch["state"], batch["history"],
+                                   batch["audio"], batch["audio_mask"], torch.zeros(len(chunk), 9, device=device),
+                                   face_state=torch.zeros(len(chunk), 12, device=device),
+                                   motion_phase=batch["phase"])
+            prediction = legacy_output[0][:, :, profile["background_indices"]]
+        else:
+            prediction = model(batch["semantic"], batch["mask"], batch["affect"], batch["state"], batch["history"],
+                               batch["audio"], batch["audio_mask"], batch["phase"])
+        error = (prediction - batch["target"]).abs()
+        rows.append(error.cpu().numpy())
+    errors = np.concatenate(rows, 0)
+    indices = profile["background_indices"]
+    real_scale = (profile["hi"][indices] - profile["lo"][indices]) / 2.
+    return {
+        "normalized_mae": float(errors.mean()),
+        "per_channel_normalized_mae": [float(value) for value in errors.mean(axis=(0, 1))],
+        "per_channel_real_mae": [float(value) for value in (errors * real_scale[None, None, :]).mean(axis=(0, 1))],
+        "samples": int(errors.shape[0] * errors.shape[1]),
+    }
+
+
+# ------------------------------------------------------------------------- event
+
+def prepare_event(cache, planner_rows, segments, arm_index, body_index):
+    rows = []
+    for record in planner_rows:
+        key = record["text"] + "\n" + record["context"]
+        target = record["target"]
+        arm_id = target["arm"]
+        body_id = target["body"]
+        code = ACTION_BY_ID[arm_id]
+        body_entry = ACTION_BY_ID[body_id]
+        rows.append({
+            "id": record["id"], "split": record["split"], "kind": "planner",
+            "pooled": cache["pooled"][key].numpy(), "affect": np.asarray(cache["planner"][record["id"]]["affect"], np.float32),
+            "state": np.asarray(record["state_vector"], np.float32),
+            "arm": arm_index[arm_id], "arm_name": arm_id, "legacy_arm": arm_id,
+            "body": body_index[body_id], "body_name": body_id,
+            "arm_variant": int(target.get("arm_variant", 0)) % int(code["variants"]),
+            "body_variant": int(target.get("body_variant", 0)) % int(body_entry["variants"]),
+            "values": np.asarray(values_target(target, code), np.float32),
+            "text": record["text"], "context": record["context"],
+        })
+    for record in segments:
+        key = record["text"] + "\n" + record["context"]
+        if key not in cache["pooled"]:
+            continue
+        target = record["target"]
+        arm_id = target["arm"]
+        body_id = target["body"]
+        code = ACTION_BY_ID[arm_id]
+        body_entry = ACTION_BY_ID[body_id]
+        rows.append({
+            "id": record["id"], "split": record["split"], "kind": "segment",
+            "pooled": cache["pooled"][key].numpy(), "affect": np.asarray(record["affect"], np.float32),
+            "state": np.asarray(record["state_vector"], np.float32),
+            "arm": arm_index[arm_id], "arm_name": arm_id, "legacy_arm": LEGACY_ARMS[0] if arm_id not in LEGACY_ARMS else arm_id,
+            "body": body_index[body_id], "body_name": body_id,
+            "arm_variant": int(target.get("arm_variant", 0)) % int(code["variants"]),
+            "body_variant": int(target.get("body_variant", 0)) % int(body_entry["variants"]),
+            "values": np.asarray(values_target(target, code), np.float32),
+            "text": record["text"], "context": record["context"],
+            "segment_label": record["label"], "positive": bool(record["positive"]),
+        })
+    return rows
+
+
+def event_tensors(rows, split, device):
+    selected = [row for row in rows if row["split"] == split]
+    if not selected:
+        raise ValueError(f"事件分支 {split} 为空")
+    return {
+        "pooled": torch.as_tensor(np.stack([row["pooled"] for row in selected]), dtype=torch.float32, device=device),
+        "affect": torch.as_tensor(np.stack([row["affect"] for row in selected]), dtype=torch.float32, device=device),
+        "state": torch.as_tensor(np.stack([row["state"] for row in selected]), dtype=torch.float32, device=device),
+        "arm": torch.as_tensor([row["arm"] for row in selected], dtype=torch.long, device=device),
+        "body": torch.as_tensor([row["body"] for row in selected], dtype=torch.long, device=device),
+        "arm_variant": torch.as_tensor([row["arm_variant"] for row in selected], dtype=torch.long, device=device),
+        "body_variant": torch.as_tensor([row["body_variant"] for row in selected], dtype=torch.long, device=device),
+        "values": torch.as_tensor(np.stack([row["values"] for row in selected]), dtype=torch.float32, device=device),
+        "rows": selected,
+    }
+
+
+def class_weights(counts, exponent, cap):
+    counts = np.maximum(np.asarray(counts, np.float64), 1.)
+    weights = (counts.sum() / counts) ** exponent
+    return np.minimum(weights, cap)
+
+
+def event_loss(model, tensors, weights):
+    output = model(tensors["pooled"], tensors["affect"], tensors["state"])
+    loss = F.cross_entropy(output["arm"], tensors["arm"], weight=weights["arm"])
+    loss = loss + 1.2 * F.cross_entropy(output["body"], tensors["body"], weight=weights["body"])
+    loss = loss + .35 * F.cross_entropy(output["arm_variant"], tensors["arm_variant"])
+    loss = loss + .35 * F.cross_entropy(output["body_variant"], tensors["body_variant"])
+    loss = loss + 2.0 * F.binary_cross_entropy(output["values"].clamp(1e-6, 1 - 1e-6), tensors["values"])
+    return loss, output
+
+
+def event_predictions(output, arm_threshold):
+    probabilities = torch.softmax(output["arm"], -1)
+    indices = probabilities.argmax(-1)
+    if arm_threshold:
+        suppressed = (indices > 0) & (probabilities.max(-1).values < arm_threshold)
+        indices = torch.where(suppressed, torch.zeros_like(indices), indices)
+    return indices
+
+
+def legacy_metrics(indices, rows, arm_ids):
+    names = [arm_ids[int(index)] if arm_ids[int(index)] in LEGACY_ARMS else "none" for index in indices]
+    legacy = [row["legacy_arm"] for row in rows]
+    return {"arm_macro_f1": macro_f1(names, legacy, LEGACY_ARMS),
+            "false_trigger_rate": false_trigger_rate(names, legacy),
+            "accuracy": float(np.mean([name == target for name, target in zip(names, legacy)]))}
+
+
+def segment_metrics(indices, rows, arm_ids):
+    selected = [(int(index), row) for index, row in zip(indices, rows) if row["kind"] == "segment"]
+    if not selected:
+        return {"records": 0, "accuracy": 0., "positive_recall": 0., "negative_specificity": 0.}
+    correct = sum(1 for index, row in selected if arm_ids[index] == row["arm_name"])
+    positives = [(index, row) for index, row in selected if row["positive"]]
+    negatives = [(index, row) for index, row in selected if not row["positive"]]
+    positive_hits = sum(1 for index, row in positives if arm_ids[index] == row["arm_name"])
+    negative_hits = sum(1 for index, row in negatives if arm_ids[index] == "none")
+    return {"records": len(selected), "accuracy": correct / len(selected),
+            "positive_recall": positive_hits / max(1, len(positives)),
+            "negative_specificity": negative_hits / max(1, len(negatives))}
+
+
+def tune_arm_threshold(output, rows, arm_ids, v5_false_trigger):
+    best = None
+    for threshold in [0., .05, .1, .15, .2, .25, .3, .35, .4, .45, .5, .55, .6, .65, .7, .75, .8]:
+        indices = event_predictions(output, threshold)
+        metrics = legacy_metrics(indices.cpu().tolist(), rows, arm_ids)
+        if metrics["false_trigger_rate"] > v5_false_trigger + .01:
+            continue
+        score = metrics["arm_macro_f1"] - .2 * metrics["false_trigger_rate"]
+        if best is None or score > best["score"]:
+            best = {"threshold": threshold, "score": score, **metrics}
+    if best is None:
+        indices = event_predictions(output, 0.)
+        best = {"threshold": 0., "score": 0., **legacy_metrics(indices.cpu().tolist(), rows, arm_ids)}
+    return best
+
+
+# ------------------------------------------------------------------ v5 baselines
+
+def v5_continuous(device, profile):
+    from streaming import StreamingExpert
+    saved = torch.load(V5_DIR / "regression.pt", map_location=device, weights_only=True)
+    model = StreamingExpert(len(profile["ids"]), "regression", phase_conditioned=True)
+    model.load_state_dict(saved["state_dict"])
+    return model.to(device).eval()
+
+
+def v5_planner(device):
+    from performance_planner import class_probabilities, decode, load_planner
+    saved = torch.load(V5_DIR / "performance-planner.pt", map_location=device, weights_only=True)
+    run = read_json(V5_DIR / "run.json")
+    model = load_planner(saved).to(device).eval()
+    return model, dict(run["performance_planner"].get("thresholds") or {}), class_probabilities, decode
+
+
+@torch.inference_mode()
+def v5_planner_metrics(device, cache, planner_rows):
+    from performance_planner import class_probabilities, decode, load_planner
+    model, thresholds, _, _ = v5_planner(device)
+    result = {}
+    for split in ("validation", "test"):
+        rows = [row for row in planner_rows if row["split"] == split]
+        pooled = torch.as_tensor(np.stack([cache["pooled"][row["text"] + "\n" + row["context"]].numpy() for row in rows]), dtype=torch.float32, device=device)
+        state = torch.as_tensor(np.stack([row["state_vector"] for row in rows]), dtype=torch.float32, device=device)
+        output = model(pooled, state)
+        names = []
+        for index in range(len(rows)):
+            plan = decode({key: value[index] for key, value in output.items()}, thresholds)
+            names.append(plan["arm"])
+        legacy = [row["target"]["arm"] for row in rows]
+        result[split] = {"arm_macro_f1": macro_f1(names, legacy, LEGACY_ARMS),
+                         "false_trigger_rate": false_trigger_rate(names, legacy),
+                         "accuracy": float(np.mean([name == target for name, target in zip(names, legacy)]))}
+    del model
+    torch.cuda.empty_cache()
+    return result
+
+
+# ---------------------------------------------------------------------- training
+
+def train_continuous(prepared, profile, args, device):
+    torch.manual_seed(SEED)
+    rng = np.random.default_rng(SEED)
+    train_ids = [clip_id for clip_id, item in prepared.items() if item["split"] == "train"]
+    validation_pairs = eval_pairs(prepared, "validation")
+    model = ContinuousExpert().to(device)
+    parameters = sum(parameter.numel() for parameter in model.parameters())
+    optimizer = torch.optim.AdamW(model.parameters(), lr=4e-4)
+    best = {"score": float("inf"), "step": 0, "state_dict": None, "validation": None}
+    log = []
+    started = time.perf_counter()
+    indices = profile["background_indices"]
+    for step in range(args.continuous_steps):
+        model.train()
+        chosen = [str(clip_id) for clip_id in rng.choice(train_ids, 32)]
+        rows = []
+        for clip_id in chosen:
+            count = len(prepared[clip_id]["normalized"])
+            start = int(rng.integers(0, max(1, count - HORIZON)))
+            rows.append(continuous_arrays(prepared[clip_id], start, True, rng))
+        batch = stack_continuous(rows, device)
+        prediction = model(batch["semantic"], batch["mask"], batch["affect"], batch["state"], batch["history"],
+                           batch["audio"], batch["audio_mask"], batch["phase"])
+        weight = 1. + 4. * (batch["target"] - batch["current"][:, None]).abs()
+        motion = (((prediction - batch["target"]).square()) * weight).mean()
+        smooth = ((prediction[:, 1:] - prediction[:, :-1]) - (batch["target"][:, 1:] - batch["target"][:, :-1])).square().mean()
+        loss = motion + .4 * smooth
+        optimizer.zero_grad()
+        loss.backward()
+        torch.nn.utils.clip_grad_norm_(model.parameters(), 1.)
+        optimizer.step()
+        if (step + 1) % 250 == 0 or step + 1 == args.continuous_steps:
+            validation = continuous_metrics(model, prepared, validation_pairs, profile, device)
+            score = validation["normalized_mae"]
+            row = {"step": step + 1, "loss": float(loss.detach()), "validation_mae": score,
+                   "elapsed_s": round(time.perf_counter() - started, 1)}
+            log.append(row)
+            print(json.dumps({"stage": "continuous", **row}), flush=True)
+            if score < best["score"]:
+                best = {"score": score, "step": step + 1, "state_dict": {key: value.detach().clone() for key, value in model.state_dict().items()},
+                        "validation": validation}
+    model.load_state_dict(best["state_dict"])
+    return model, parameters, best, log, round(time.perf_counter() - started, 1)
+
+
+def train_event(rows, arm_ids, body_ids, args, device):
+    torch.manual_seed(SEED + 1)
+    rng = np.random.default_rng(SEED + 1)
+    train = event_tensors(rows, "train", device)
+    validation = event_tensors(rows, "validation", device)
+    counts = torch.bincount(train["arm"], minlength=len(arm_ids)).cpu().numpy()
+    arm_weights = torch.as_tensor(class_weights(counts, .5, args.arm_weight_cap), dtype=torch.float32, device=device)
+    arm_weights[0] *= 1.15
+    body_counts = torch.bincount(train["body"], minlength=len(body_ids)).cpu().numpy()
+    body_weights = torch.as_tensor(class_weights(body_counts, .5, 8.), dtype=torch.float32, device=device)
+    weights = {"arm": arm_weights, "body": body_weights}
+    segment_positions = [index for index, row in enumerate(train["rows"]) if row["kind"] == "segment"]
+    model = EventExpert(len(arm_ids), len(body_ids)).to(device)
+    parameters = sum(parameter.numel() for parameter in model.parameters())
+    optimizer = torch.optim.AdamW(model.parameters(), lr=4e-4, weight_decay=.025)
+    best = {"score": -float("inf"), "step": 0, "state_dict": None, "validation": None}
+    log = []
+    started = time.perf_counter()
+    total = len(train["arm"])
+    for step in range(args.event_steps):
+        model.train()
+        index = torch.randint(total, (128,), device=device)
+        if args.event_segment_batch and segment_positions:
+            segment_index = torch.as_tensor(segment_positions, device=device)
+            extra = segment_index[torch.randint(len(segment_positions), (args.event_segment_batch,), device=device)]
+            index = torch.cat([index, extra])
+        selected = {key: value[index] for key, value in train.items() if key != "rows"}
+        loss, output = event_loss(model, selected, weights)
+        optimizer.zero_grad()
+        loss.backward()
+        torch.nn.utils.clip_grad_norm_(model.parameters(), 2.)
+        optimizer.step()
+        if (step + 1) % 100 == 0 or step + 1 == args.event_steps:
+            model.eval()
+            with torch.inference_mode():
+                loss_value, validation_output = event_loss(model, validation, weights)
+                indices = event_predictions(validation_output, 0.)
+            legacy = legacy_metrics(indices.cpu().tolist(), validation["rows"], arm_ids)
+            segment = segment_metrics(indices.cpu().tolist(), validation["rows"], arm_ids)
+            score = legacy["arm_macro_f1"] + .25 * segment["accuracy"] + .2 * segment["positive_recall"] - .3 * legacy["false_trigger_rate"]
+            row = {"step": step + 1, "loss": float(loss_value), "validation": {**legacy, "segment": segment},
+                   "elapsed_s": round(time.perf_counter() - started, 1)}
+            log.append(row)
+            print(json.dumps({"stage": "event", **row}), flush=True)
+            if score > best["score"]:
+                best = {"score": score, "step": step + 1,
+                        "state_dict": {key: value.detach().clone() for key, value in model.state_dict().items()},
+                        "validation": {**legacy, "segment": segment}}
+    model.load_state_dict(best["state_dict"])
+    return model, parameters, best, log, round(time.perf_counter() - started, 1), weights
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--device", default="cuda")
+    parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
+    parser.add_argument("--continuous-steps", type=int, default=4000)
+    parser.add_argument("--event-steps", type=int, default=3000)
+    parser.add_argument("--affect-cache", type=Path, default=AFFECT_DIR / "affect-cache.pt")
+    parser.add_argument("--force", action="store_true")
+    parser.add_argument("--event-segment-batch", type=int, default=0,
+                        help="extra synthetic segment rows per event batch (0 = uniform sampling)")
+    parser.add_argument("--arm-weight-cap", type=float, default=10.)
+    args = parser.parse_args()
+    output = args.output.resolve()
+    if (output / "run.json").exists() and not args.force:
+        raise RuntimeError("拒绝覆盖已训练实验，请使用新目录")
+    output.mkdir(parents=True, exist_ok=True)
+    device = args.device
+    torch.set_num_threads(4)
+    random.seed(SEED)
+    np.random.seed(SEED)
+    started = time.perf_counter()
+    profile = load_profile()
+    manifest = read_json(DATA / "manifest.json")
+    clips = {item["id"]: read_json(DATA / "clips" / f"{item['id']}.json") for item in manifest["items"]}
+    planner_manifest = read_json(PLANNER / "manifest.json")
+    planner_rows = [json.loads(line) for line in (PLANNER / "records.jsonl").read_text(encoding="utf-8").splitlines()]
+    if sha(PLANNER / "records.jsonl") != planner_manifest["records_sha256"]:
+        raise ValueError("planner 记录指纹不匹配")
+    cache = torch.load(args.affect_cache, map_location="cpu", weights_only=False)
+    if cache.get("schema") != "emotion.affect.cache.v1":
+        raise ValueError("affect-cache schema 不匹配")
+    fingerprint = cache.get("fingerprint") or {}
+    if fingerprint.get("v4_manifest_sha256") != sha(DATA / "manifest.json"):
+        raise ValueError("affect-cache 的 v4 指纹不匹配")
+    if fingerprint.get("planner_records_sha256") != sha(PLANNER / "records.jsonl"):
+        raise ValueError("affect-cache 的 planner 指纹不匹配")
+    segments_path = AFFECT_DIR / "segment-records.jsonl"
+    if not segments_path.exists():
+        raise ValueError("缺少 segment-records.jsonl，请先运行 build_affect_cache.py --segments-only")
+    segments = [json.loads(line) for line in segments_path.read_text(encoding="utf-8").splitlines()]
+    if {record["label"] for record in segments} != {action["emotion"] for action in SEGMENT_ACTIONS}:
+        raise ValueError("segment-records 未覆盖全部 catalog segment 标签")
+    arm_ids = list(ARM_ACTION_IDS)
+    body_ids = list(BODY_ACTION_IDS)
+    arm_index = {arm_id: index for index, arm_id in enumerate(arm_ids)}
+    body_index = {body_id: index for index, body_id in enumerate(body_ids)}
+    # 1) continuous branch.
+    prepared = prepare_continuous(clips, cache, profile)
+    continuous, continuous_parameters, continuous_best, continuous_log, continuous_elapsed = train_continuous(prepared, profile, args, device)
+    save_continuous(output / "continuous.pt", continuous, {
+        "profile_sha256": profile["sha256"], "catalog_sha256": catalog_sha256(),
+        "emotion_config_sha256": emotion_config_sha256(), "affect_cache_sha256": sha(args.affect_cache),
+        "dataset_sha256": sha(DATA / "manifest.json"), "step": continuous_best["step"],
+        "background_indices": profile["background_indices"], "channels": list(BACKGROUND_CHANNELS),
+    })
+    # 2) event branch.
+    event_rows = prepare_event(cache, planner_rows, segments, arm_index, body_index)
+    event, event_parameters, event_best, event_log, event_elapsed, weights = train_event(event_rows, arm_ids, body_ids, args, device)
+    # 3) held-out evaluation.
+    continuous_validation = continuous_metrics(continuous, prepared, eval_pairs(prepared, "validation"), profile, device)
+    continuous_test = continuous_metrics(continuous, prepared, eval_pairs(prepared, "test"), profile, device)
+    legacy_model = v5_continuous(device, profile)
+    v5_continuous_validation = continuous_metrics(legacy_model, prepared, eval_pairs(prepared, "validation"), profile, device, legacy=legacy_model)
+    v5_continuous_test = continuous_metrics(legacy_model, prepared, eval_pairs(prepared, "test"), profile, device, legacy=legacy_model)
+    del legacy_model
+    torch.cuda.empty_cache()
+    validation = event_tensors(event_rows, "validation", device)
+    test = event_tensors(event_rows, "test", device)
+    with torch.inference_mode():
+        event.eval()
+        validation_output = event(validation["pooled"], validation["affect"], validation["state"])
+        test_output = event(test["pooled"], test["affect"], test["state"])
+    v5_planner_result = v5_planner_metrics(device, cache, planner_rows)
+    planner_validation = [index for index, row in enumerate(validation["rows"]) if row["kind"] == "planner"]
+    planner_test = [index for index, row in enumerate(test["rows"]) if row["kind"] == "planner"]
+    threshold = tune_arm_threshold(validation_output, [validation["rows"][index] for index in planner_validation], arm_ids,
+                                   v5_planner_result["validation"]["false_trigger_rate"])
+    validation_indices = event_predictions(validation_output, threshold["threshold"])
+    test_indices = event_predictions(test_output, threshold["threshold"])
+    with torch.inference_mode():
+        validation_bodies = [body_ids[index] for index in torch.softmax(validation_output["body"], -1).argmax(-1).cpu().tolist()]
+        test_bodies = [body_ids[index] for index in torch.softmax(test_output["body"], -1).argmax(-1).cpu().tolist()]
+        validation_values = float((validation_output["values"][planner_validation] - validation["values"][planner_validation]).abs().mean())
+        test_values = float((test_output["values"][planner_test] - test["values"][planner_test]).abs().mean())
+    validation_list = validation_indices.cpu().tolist()
+    test_list = test_indices.cpu().tolist()
+    validation_planner_legacy = legacy_metrics([validation_list[index] for index in planner_validation],
+                                               [validation["rows"][index] for index in planner_validation], arm_ids)
+    event_validation = {"arm_macro_f1": validation_planner_legacy["arm_macro_f1"],
+                        "false_trigger_rate": validation_planner_legacy["false_trigger_rate"],
+                        "accuracy": validation_planner_legacy["accuracy"], "threshold": threshold["threshold"],
+                        "segment": segment_metrics(validation_list, validation["rows"], arm_ids),
+                        "body_macro_f1": macro_f1([validation_bodies[index] for index in planner_validation],
+                                                  [validation["rows"][index]["body_name"] for index in planner_validation], LEGACY_BODIES),
+                        "values_mae": validation_values}
+    test_legacy = legacy_metrics([test_list[index] for index in planner_test],
+                                 [test["rows"][index] for index in planner_test], arm_ids)
+    event_test = {"arm_macro_f1": test_legacy["arm_macro_f1"], "false_trigger_rate": test_legacy["false_trigger_rate"],
+                  "accuracy": test_legacy["accuracy"], "threshold": threshold["threshold"],
+                  "segment": segment_metrics(test_list, test["rows"], arm_ids),
+                  "body_macro_f1": macro_f1([test_bodies[index] for index in planner_test],
+                                            [test["rows"][index]["body_name"] for index in planner_test], LEGACY_BODIES),
+                  "values_mae": test_values}
+    save_event(output / "event.pt", event, {
+        "catalog_sha256": catalog_sha256(), "emotion_config_sha256": emotion_config_sha256(),
+        "affect_cache_sha256": sha(args.affect_cache), "dataset_sha256": sha(PLANNER / "records.jsonl"),
+        "arm_ids": arm_ids, "body_ids": body_ids, "arm_threshold": threshold["threshold"], "step": event_best["step"],
+    })
+    # 4) gate.
+    continuous_ratio = continuous_test["normalized_mae"] / v5_continuous_test["normalized_mae"]
+    arm_delta = event_test["arm_macro_f1"] - v5_planner_result["test"]["arm_macro_f1"]
+    false_trigger_delta = event_test["false_trigger_rate"] - v5_planner_result["test"]["false_trigger_rate"]
+    gate = {
+        "continuous_9ch_mae": continuous_test["normalized_mae"],
+        "v5_continuous_9ch_mae": v5_continuous_test["normalized_mae"],
+        "continuous_ratio": continuous_ratio,
+        "continuous_pass": bool(continuous_ratio <= 1.1),
+        "arm_macro_f1": event_test["arm_macro_f1"],
+        "v5_arm_macro_f1": v5_planner_result["test"]["arm_macro_f1"],
+        "arm_macro_f1_delta_pp": arm_delta * 100.,
+        "arm_pass": bool(arm_delta >= -.02),
+        "false_trigger_rate": event_test["false_trigger_rate"],
+        "v5_false_trigger_rate": v5_planner_result["test"]["false_trigger_rate"],
+        "false_trigger_delta_pp": false_trigger_delta * 100.,
+        "false_trigger_pass": bool(false_trigger_delta <= .01),
+    }
+    gate["passed"] = bool(gate["continuous_pass"] and gate["arm_pass"] and gate["false_trigger_pass"])
+    parameters = {"continuous": continuous_parameters, "event": event_parameters}
+    run = {
+        "schema": RUN_SCHEMA,
+        "stage": "emotion_catalog_v1",
+        "runtime_version": RUNTIME_VERSION,
+        "promoted": False,
+        "experimental": True,
+        "gate_passed": gate["passed"],
+        "created_at": time.strftime("%Y-%m-%dT%H:%M:%S%z"),
+        "models": {
+            "continuous": {"checkpoint": "continuous.pt", "sha256": sha(output / "continuous.pt"),
+                           "parameters": continuous_parameters, "selected_step": continuous_best["step"],
+                           "validation": continuous_validation, "test": continuous_test,
+                           "background_channels": list(BACKGROUND_CHANNELS),
+                           "background_indices": profile["background_indices"],
+                           "baseline_v5_test": v5_continuous_test},
+            "event": {"checkpoint": "event.pt", "sha256": sha(output / "event.pt"),
+                      "parameters": event_parameters, "selected_step": event_best["step"],
+                      "arm_classes": len(arm_ids), "body_classes": len(body_ids),
+                      "arm_ids": arm_ids, "body_ids": body_ids, "arm_threshold": threshold["threshold"],
+                      "validation": event_validation, "test": event_test,
+                      "baseline_v5_planner": v5_planner_result},
+        },
+        "emotion_classifier": {
+            "source": "latent/emotion-source.json", "device": "cuda",
+            "model": "Horizon-Labs/multilingual-emotions-base",
+            "parameters": 307551772,
+            "thresholds_sha256": thresholds_sha256(),
+        },
+        "fingerprints": {
+            "catalog_sha256": catalog_sha256(),
+            "emotion_config_sha256": emotion_config_sha256(),
+            "profile_sha256": profile["sha256"],
+            "profile_file_sha256": profile["file_sha256"],
+            "dataset_sha256": sha(DATA / "manifest.json"),
+            "planner_records_sha256": sha(PLANNER / "records.jsonl"),
+            "planner_manifest_sha256": sha(PLANNER / "manifest.json"),
+            "affect_cache_sha256": sha(args.affect_cache),
+            "segment_records_sha256": sha(segments_path),
+            "encoder_source_sha256": sha(ROOT / "latent/encoder-source.json"),
+            "classifier_source_sha256": sha(ROOT / "latent/emotion-source.json"),
+        },
+        "catalog_sha256": catalog_sha256(),
+        "emotion_config_sha256": emotion_config_sha256(),
+        "profile_sha256": profile["sha256"],
+        "dataset_sha256": sha(DATA / "manifest.json"),
+        "affect_cache_sha256": sha(args.affect_cache),
+        "evaluation": {
+            "continuous": {"ours": continuous_test, "v5": v5_continuous_test},
+            "event": {"ours": event_test, "v5": v5_planner_result["test"]},
+            "validation": {"continuous": {"ours": continuous_validation, "v5": v5_continuous_validation},
+                           "event": {"ours": event_validation, "v5": v5_planner_result["validation"]}},
+            "segment_supervision": {"validation": event_validation["segment"], "test": event_test["segment"]},
+        },
+        "gate": gate,
+        "training": {
+            "continuous": {"steps": args.continuous_steps, "elapsed_s": continuous_elapsed, "selected_step": continuous_best["step"],
+                           "log": continuous_log, "loss": "weighted MSE + 0.4 first-difference smoothness", "batch": 32,
+                           "optimizer": "AdamW lr=4e-4", "seed": SEED},
+            "event": {"steps": args.event_steps, "elapsed_s": event_elapsed, "selected_step": event_best["step"],
+                      "log": event_log, "batch": 128, "optimizer": "AdamW lr=4e-4 wd=.025", "seed": SEED + 1,
+                      "segment_oversample_per_batch": args.event_segment_batch, "arm_weight_cap": args.arm_weight_cap,
+                      "loss": "CE arm/body/variants + 2.0 BCE values", "class_weights": {"arm": weights["arm"].cpu().tolist(),
+                                                                                          "body": weights["body"].cpu().tolist()}},
+        },
+        "data": {
+            "continuous": {"dataset": "datasets/vtuber-v4", "items": len(clips), "split": {"train": 830, "validation": 190, "test": 180},
+                           "targets": "9 background channels, runtime-profile normalisation",
+                           "condition": "simulated 20 Hz affect64 from classifier windows + 60 Hz sub-step curves",
+                           "synthetic": True, "human_reviewed": False},
+            "event": {"dataset": "datasets/vtuber-v4-planner-v2/records.jsonl", "records": len(planner_rows),
+                      "splits": {"train": 5568, "validation": 900, "test": 906},
+                      "segments": {"records": len(segments), "source": "synthetic_segment_supervision",
+                                   "labels": len({record["label"] for record in segments})},
+                      "synthetic": True, "human_reviewed": False},
+        },
+        "source": {
+            "modules": {name: sha(ROOT / "latent" / name) for name in
+                        ["emotion.py", "emotion_config.py", "catalog_contract.py", "emotion_curve.py",
+                         "emotion_expert.py", "emotion_event.py", "build_affect_cache.py", "train_emotion_catalog.py"]},
+            "notes": "reuses frozen authored/writer-synthesised supervision; no human preference labels were added",
+        },
+        "elapsed_s": round(time.perf_counter() - started, 1),
+    }
+    write_json(output / "run.json", run)
+    write_report(output, run, gate, continuous_log, event_log, v5_planner_result)
+    print(json.dumps({"stage": "complete", "gate": gate, "elapsed_s": run["elapsed_s"]}, ensure_ascii=False), flush=True)
+
+
+def write_report(output, run, gate, continuous_log, event_log, v5_planner_result):
+    rows = ["# v6 emotion-catalog r1", "",
+            "schema: `vtuber.v6.emotion_catalog` · runtime: `v6.0.0-emotion-catalog` · **promoted: false**", "",
+            "数据全部来自冻结的合成/作者监督（`datasets/vtuber-v4`、`datasets/vtuber-v4-planner-v2`、`datasets/emotion-catalog-v1`），"
+            "没有新增任何真人标注；segment 监督为合成正/负例。", "",
+            "## Gate", "",
+            "| 指标 | 本实验 | v5 基线 | 允许 | 结果 |", "| --- | --- | --- | --- | --- |",
+            f"| 连续 9 通道 MAE（归一化） | {gate['continuous_9ch_mae']:.5f} | {gate['v5_continuous_9ch_mae']:.5f} | ≤ v5×1.1 ({gate['v5_continuous_9ch_mae']*1.1:.5f}) | {'PASS' if gate['continuous_pass'] else 'FAIL'} |",
+            f"| 旧动作 macro-F1（8 类） | {gate['arm_macro_f1']:.4f} | {gate['v5_arm_macro_f1']:.4f} | 掉点 ≤2pp | {'PASS' if gate['arm_pass'] else 'FAIL'}（{gate['arm_macro_f1_delta_pp']:+.2f}pp） |",
+            f"| 误触发率（target none） | {gate['false_trigger_rate']:.4f} | {gate['v5_false_trigger_rate']:.4f} | ≤ +1pp | {'PASS' if gate['false_trigger_pass'] else 'FAIL'}（{gate['false_trigger_delta_pp']:+.2f}pp） |",
+            "", f"**gate 结论：{'全部通过（仍不 promote，由 Lead 决定默认指针）' if gate['passed'] else '未通过，promoted=false，差距见上表'}**", "",
+            "## 连续分支（v4 test 划分，24 帧 × 9 背景通道，归一化 MAE）", "",
+            "| 通道 | 本实验 | v5 |", "| --- | --- | --- |"]
+    for name, ours, baseline in zip(run["models"]["continuous"]["background_channels"],
+                                    run["models"]["continuous"]["test"]["per_channel_normalized_mae"],
+                                    run["models"]["continuous"]["baseline_v5_test"]["per_channel_normalized_mae"]):
+        rows.append(f"| {name} | {ours:.5f} | {baseline:.5f} |")
+    rows += ["", f"参数量：continuous {run['models']['continuous']['parameters']:,}；event {run['models']['event']['parameters']:,}", "",
+             "## 事件分支（planner-v2 test 划分）", "",
+             "| 指标 | 本实验 | v5 planner |", "| --- | --- | --- |",
+             f"| 旧动作 macro-F1（8 类，segment 预测映射 none） | {run['evaluation']['event']['ours']['arm_macro_f1']:.4f} | {v5_planner_result['test']['arm_macro_f1']:.4f} |",
+             f"| 误触发率 | {run['evaluation']['event']['ours']['false_trigger_rate']:.4f} | {v5_planner_result['test']['false_trigger_rate']:.4f} |",
+             f"| body macro-F1（7 类） | {run['evaluation']['event']['ours']['body_macro_f1']:.4f} | — |",
+             f"| 5 维 values MAE | {run['evaluation']['event']['ours']['values_mae']:.4f} | — |",
+             f"| segment 合成监督 test 准确率 | {run['evaluation']['event']['ours']['segment']['accuracy']:.4f}（正例召回 {run['evaluation']['event']['ours']['segment']['positive_recall']:.3f} / 负例特异度 {run['evaluation']['event']['ours']['segment']['negative_specificity']:.3f}） | — |",
+             "", f"arm 阈值 {run['models']['event']['arm_threshold']}（validation 上按误触发约束选择）。", "",
+             "## 与 v5 的差异 / 未达成项", ""]
+    if not gate["passed"]:
+        differences = []
+        if not gate["continuous_pass"]:
+            differences.append(f"连续 9 通道 MAE {gate['continuous_9ch_mae']:.5f} > v5 {gate['v5_continuous_9ch_mae']:.5f} × 1.1（超出 {((gate['continuous_ratio']-1.1)*100):.1f}%）。")
+        if not gate["arm_pass"]:
+            differences.append(f"旧动作 macro-F1 掉点 {-gate['arm_macro_f1_delta_pp']:.2f}pp > 2pp。")
+        if not gate["false_trigger_pass"]:
+            differences.append(f"误触发率增加 {gate['false_trigger_delta_pp']:.2f}pp > 1pp。")
+        rows += [f"- {line}" for line in differences]
+    else:
+        rows.append("- 三项 gate 均通过；仍未 promote，默认指针由 Lead 决定。")
+    rows += ["", "## 训练摘要", "",
+             f"- continuous: {run['training']['continuous']['steps']} 步，选中 {run['models']['continuous']['selected_step']} 步，{run['training']['continuous']['elapsed_s']}s；"
+             f"最后 validation MAE {continuous_log[-1]['validation_mae']:.5f}",
+             f"- event: {run['training']['event']['steps']} 步，选中 {run['models']['event']['selected_step']} 步，{run['training']['event']['elapsed_s']}s；"
+             f"最后 validation {event_log[-1]['validation']['arm_macro_f1']:.4f}（macro-F1）",
+             "", "## 已知偏差 / 说明", "",
+             "- event 的 `action_strength` 在旧 planner 记录中没有标签，训练时用 `body_strength` 作为代理；segment 记录用 evidence 映射。",
+             "- 训练条件（affect64）来自 Python 侧 60Hz 子步仿真；浏览器侧 EmotionCurve 的整秒 parity fixture 已写入 `tests/fixtures/emotion-curve-v2.json`。",
+             "- v5 planner 的旧动作指标由本实验在相同 planner-v2 test 记录上重算（冻结权重），非其原 run.json 的数字。", ""]
+    (output / "REPORT.md").write_text("\n".join(rows), encoding="utf-8")
+
+
+if __name__ == "__main__":
+    main()

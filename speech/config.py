@@ -12,6 +12,8 @@ def write(path,data):Path(path).write_text(json.dumps(data,ensure_ascii=False,in
 def sha(path):
     with Path(path).open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
 def local_path(value):
-    if Path('/proc').is_dir() and re.match(r'^[A-Za-z]:[/\\]',value):value='/mnt/'+value[0].lower()+'/'+value[3:].replace('\\','/')
-    return Path(value)
+    """Resolve a project-relative asset path, keeping absolute Windows paths usable from WSL."""
+    if Path('/proc').is_dir() and re.match(r'^[A-Za-z]:[/\\]',value):value='/mnt/'+value[0].lower()+'/'+value[2:].lstrip('/\\').replace('\\','/')
+    path=Path(value)
+    return path if path.is_absolute() else ROOT/path
 def settings():return read(ROOT/'speech/config.json')

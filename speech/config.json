@@ -1,12 +1,12 @@
 {
-  "repository": "D:/Workplace/Qwen3-TTS",
-  "checkpoint": "D:/Workplace/Qwen3-TTS/runs/da_fei_yu/checkpoint-best",
+  "repository": "vendor/qwen3-tts",
+  "checkpoint": "models/Qwen3-TTS-12Hz-1.7B-da_fei_yu",
   "python": "/home/cola/miniconda3/envs/qwen3-tts/bin/python",
   "speaker": "da_fei_yu",
   "language": "Chinese",
   "backend": "cuda_graph",
   "stream_chunk_frames": 8,
   "port": 8769,
-  "max_text_length": 300,
+  "max_text_length": 400,
   "max_audio_seconds": 90
 }

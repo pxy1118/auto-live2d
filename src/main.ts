@@ -1,12 +1,13 @@
 import './style.css';
 import {Live2DEngine} from './engine';
 import {mountPerformance} from './performance-panel';
+import {mountReview} from './review-panel';
 
 const app=document.querySelector<HTMLDivElement>('#app')!;
 app.innerHTML=`
   <header class="app-header">
     <a class="brand" href="/" aria-label="Live2D 首页"><span class="brand-mark">a<span>↗</span></span><span>Live2D<small>让声音有表情</small></span></a>
-    <div class="connection-tools"><button id="claim-runtime" class="text-button" hidden>在此窗口使用</button><span id="connection" class="connection" role="status"><i></i><span>正在连接</span></span></div>
+    <div class="connection-tools"><a class="text-button" href="${location.pathname==='/review'?'/':'/review'}">${location.pathname==='/review'?'返回说话':'表演评分'}</a><button id="claim-runtime" class="text-button" hidden>在此窗口使用</button><span id="connection" class="connection" role="status"><i></i><span>正在连接</span></span></div>
   </header>
   <main class="workspace">
     <section class="stage-shell" aria-label="角色预览">
@@ -60,7 +61,7 @@ async function preparePerformance(){
   // Start audio activation within the user's click, before awaiting connection.
   const audio=engine.command({method:'speech.unlock'});await Promise.all([audio,claimRuntime()]);
 }
-const panel=mountPerformance({prepare:preparePerformance,ready:()=>engine.ready,connected:()=>isConnected,onState:state=>{
+const panel=(location.pathname==='/review'?mountReview:mountPerformance)({prepare:preparePerformance,ready:()=>engine.ready,connected:()=>isConnected,onState:state=>{
   get('current-line').textContent=state.queue?.phase==='playing'&&state.text?state.text:'准备好，就开始聊天吧。';
 }});
 get('claim-runtime').onclick=()=>{void preparePerformance().catch(error=>panel.showError(error));};

@@ -1,0 +1,437 @@
+"""Build ``datasets/emotion-catalog-v1/{affect-cache.pt,manifest.json}``.
+
+The cache freezes everything expensive about the v6 conditions:
+
+* raw 28-label classifier scores for every unique quote-aware window;
+* 0.8B pooled text features for the planner-v2 records (event branch input);
+* 0.8B token features for the v4 clips (reused from the fingerprinted v4 cache);
+* 20 Hz simulated affect state for every v4 clip (continuous branch condition);
+* final affect64 for every planner record (event branch condition);
+* per-label candidates for the synthetic segment supervision records.
+
+Segment records are generated separately (``--segments-only``) because the
+27 emotion segments must exist in ``contracts/action-catalog.json`` first.
+
+Run with:
+``uv run --project latent python latent/build_affect_cache.py``
+"""
+import argparse
+import hashlib
+import json
+import math
+import time
+from pathlib import Path
+
+import torch
+
+from common import ROOT, feature_message
+from emotion import EmotionClassifier, build_timeline, emotion_inputs, emotion_spans
+from emotion_config import (
+    AFFECT_DIM, LABELS, THRESHOLDS, build_affect_vector, emotion_config_sha256,
+    evidence, thresholds_sha256,
+)
+from emotion_curve import CurveSimulator, curve_policy
+
+DATA = ROOT / "datasets/vtuber-v4"
+PLANNER = ROOT / "datasets/vtuber-v4-planner-v2"
+OUTPUT = ROOT / "datasets/emotion-catalog-v1"
+V4_CACHE = ROOT / "experiments/vtuber-v4/semantic-cache.pt"
+CACHE_SCHEMA = "emotion.affect.cache.v1"
+MANIFEST_SCHEMA = "emotion.affect.manifest.v1"
+SEGMENT_SCHEMA = "emotion.segment.records.v1"
+STYLE = "natural"
+SEGMENT_SOURCE = "synthetic_segment_supervision"
+
+
+def sha(path):
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def digest(value):
+    return hashlib.sha256(json.dumps(value, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
+
+
+def write_json(path, value):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(value, ensure_ascii=False, indent=2, allow_nan=False) + "\n", encoding="utf-8")
+
+
+def read_json(path):
+    return json.loads(Path(path).read_text(encoding="utf-8-sig"))
+
+
+def unique_pairs(records, text_key="text", context_key="context"):
+    pairs = {}
+    for record in records:
+        key = (record[text_key], record.get(context_key, ""))
+        pairs.setdefault(key, record)
+    return list(pairs)
+
+
+def cache_key(text, context):
+    return text + "\n" + context
+
+
+def prompts_for(encoder, pairs):
+    for text, context in pairs:
+        content = json.dumps(feature_message(text, context, "natural"), ensure_ascii=False)
+        yield encoder.tokenizer.apply_chat_template(
+            [{"role": "user", "content": content}],
+            tokenize=False, add_generation_prompt=True, enable_thinking=False,
+        )
+
+
+@torch.inference_mode()
+def encode_batch(encoder, pairs, batch_size=12):
+    """Batched version of ``SemanticEncoder.encode``: last-16 real tokens + mask + pooled."""
+    result = {}
+    for start in range(0, len(pairs), batch_size):
+        chunk = pairs[start:start + batch_size]
+        encoded = encoder.tokenizer(list(prompts_for(encoder, chunk)), return_tensors="pt", padding=True, truncation=False).to(encoder.device)
+        if encoded.input_ids.shape[1] > 512:
+            raise ValueError("输入超过 512 token，请缩短语境")
+        hidden = encoder.backbone(**encoded, use_cache=False, return_dict=True).last_hidden_state
+        attention = encoded.attention_mask
+        for row in range(len(chunk)):
+            positions = torch.nonzero(attention[row]).flatten()
+            last = positions[-16:]
+            feature = hidden[row, last].float()
+            padding = 16 - len(last)
+            if padding:
+                feature = torch.cat([torch.zeros(padding, 1024, device=feature.device, dtype=feature.dtype), feature])
+            mask = torch.arange(16, device=feature.device) < padding
+            weights = (~mask).float()
+            pooled = (feature * weights[:, None]).sum(0) / weights.sum().clamp_min(1)
+            result[cache_key(*chunk[row])] = {
+                "tokens": feature.detach().cpu(),
+                "mask": mask.cpu(),
+                "pooled": pooled.detach().cpu(),
+            }
+        if (start // batch_size) % 20 == 0:
+            print(json.dumps({"stage": "encode", "completed": min(start + batch_size, len(pairs)), "total": len(pairs)}), flush=True)
+    return result
+
+
+def pooled_from_tokens(tokens, mask):
+    weights = (~mask).float()
+    return (tokens * weights[:, None]).sum(0) / weights.sum().clamp_min(1)
+
+
+def classify_windows(classifier, texts, context_of=None):
+    """Classify every unique quote-aware window used by ``texts``."""
+    windows = []
+    for text in texts:
+        spans = emotion_spans(text)
+        windows.extend(emotion_inputs(text, spans, ""))
+    unique = list(dict.fromkeys(windows))
+    started = time.perf_counter()
+    results = classifier.classify_many(unique)
+    lookup = dict(zip(unique, results))
+    print(json.dumps({"stage": "classify", "unique_windows": len(unique), "elapsed_s": round(time.perf_counter() - started, 2)}), flush=True)
+    return lookup
+
+
+def timeline_for(text, lookup):
+    spans = emotion_spans(text)
+    windows = emotion_inputs(text, spans, "")
+    classified = [lookup[window] for window in windows]
+    return build_timeline(text, spans, windows, classified, THRESHOLDS)
+
+
+def affect_rows(timeline, duration_ms):
+    simulator = CurveSimulator(timeline, duration_ms, THRESHOLDS)
+    simulator.advance_to(duration_ms)
+    sample = simulator.sample()
+    return build_affect_vector(dict(zip(LABELS, sample["response"])), dict(zip(LABELS, sample["mood"])),
+                               sample["tension"], sample["vad"], sample["intensity"], STYLE)
+
+
+def deterministic_duration(text):
+    value = int(hashlib.sha256(text.encode()).hexdigest()[:8], 16)
+    return 300. + (value % 501)
+
+
+def clip_affects(timeline, duration_ms):
+    simulator = CurveSimulator(timeline, duration_ms, THRESHOLDS)
+    rows = []
+    count = int(math.floor(duration_ms / 50. + 1e-9))
+    rows.append(affect_vector_of(simulator.sample()))
+    for index in range(1, count + 1):
+        simulator.advance_to(index * 50.)
+        rows.append(affect_vector_of(simulator.sample()))
+    return rows
+
+
+def affect_vector_of(sample):
+    return build_affect_vector(dict(zip(LABELS, sample["response"])), dict(zip(LABELS, sample["mood"])),
+                               sample["tension"], sample["vad"], sample["intensity"], STYLE)
+
+
+def candidate_evidence(timeline):
+    best = {label: 0. for label in LABELS}
+    for point in timeline["points"]:
+        if not point["probabilities"]:
+            continue
+        values = evidence(point["probabilities"], THRESHOLDS)
+        for label in LABELS:
+            if values[label] > best[label]:
+                best[label] = values[label]
+    return best
+
+
+def build_segment_candidates(v4_sources, planner_sources, timelines, pooled):
+    """Top per-label real lines; the segment generator samples positive/negative rows from here."""
+    by_label = {label: [] for label in LABELS if label != "neutral"}
+    seen = set()
+    for text, context, split, source, kind in v4_sources + planner_sources:
+        key = (text, context)
+        if key in seen:
+            continue
+        seen.add(key)
+        if cache_key(text, context) not in pooled or text not in timelines:
+            continue
+        timeline = timelines[text]
+        values = candidate_evidence(timeline)
+        affect = affect_rows(timeline, deterministic_duration(text))
+        for label, score in values.items():
+            if label == "neutral":
+                continue
+            by_label[label].append({
+                "text": text, "context": context, "split": split, "source": source, "kind": kind,
+                "label": label, "evidence": round(score, 5), "affect": affect,
+            })
+    for label in by_label:
+        by_label[label].sort(key=lambda item: (-item["evidence"], item["text"]))
+        by_label[label] = by_label[label][:32]
+    return by_label
+
+
+def segment_records(candidates, catalog_actions):
+    """50 % positive segment rows / 50 % negative ``none`` rows per label, split from the source."""
+    from catalog_contract import ACTION_BY_ID
+    segment_for = {action["emotion"]: action for action in catalog_actions if action["kind"] == "segment"}
+    records = []
+    for label, rows in candidates.items():
+        entry = segment_for.get(label)
+        if entry is None or not rows:
+            continue
+        chosen = rows[:8]
+        for index, row in enumerate(chosen):
+            positive = index % 2 == 0
+            if positive:
+                phases = entry.get("phases") or []
+                body = next((phase for phase in phases if phase.get("body_motion")), None)
+                strength = min(1., .45 + .55 * float(row["evidence"]))
+                target = {
+                    "arm": entry["id"], "body": body["body_motion"] if body else "none",
+                    "arm_variant": 0, "body_variant": int(body.get("body_variant", 0)) if body else 0,
+                    "action_strength": round(strength, 4),
+                    "body_strength": round(float(body.get("body_strength", 0.5)), 4) if body else 0.,
+                    "arm_hold_ms": float(entry["default_hold_ms"]),
+                    "body_hold_ms": float(body.get("body_hold_ms", 1600)) if body else 0.,
+                    "onset_ms": 180., "label": label,
+                    "confidence": {"action": round(min(.98, .55 + .4 * float(row["evidence"])), 4), "body": 0.6 if body else 0.2},
+                }
+            else:
+                target = {"arm": "none", "body": "none", "arm_variant": 0, "body_variant": 0,
+                          "action_strength": 0., "body_strength": 0., "arm_hold_ms": 0., "body_hold_ms": 0.,
+                          "onset_ms": 180., "label": "none", "confidence": {"action": .9, "body": .9}}
+            records.append({
+                "id": f"seg-{label}-{index:02d}",
+                "text": row["text"], "context": row["context"], "split": row["split"],
+                "source": SEGMENT_SOURCE, "synthetic": True, "kind": row["kind"],
+                "label": label, "evidence": row["evidence"], "positive": positive,
+                "affect": row["affect"], "state_vector": state_vector_default(), "target": target,
+            })
+    return records
+
+
+def state_vector_default():
+    from planner_contract import state_vector
+    return state_vector({})
+
+
+def generate_segments(cache, catalog_path, dataset_dir):
+    from catalog_contract import load as load_catalog
+    catalog = load_catalog(catalog_path)
+    actions = catalog["actions"]
+    candidates = cache.get("segment_candidates") or {}
+    records = segment_records(candidates, actions)
+    dataset_dir.mkdir(parents=True, exist_ok=True)
+    path = dataset_dir / "segment-records.jsonl"
+    with path.open("w", encoding="utf-8") as handle:
+        for record in records:
+            handle.write(json.dumps(record, ensure_ascii=False, allow_nan=False) + "\n")
+    present = {action["emotion"] for action in actions if action["kind"] == "segment"}
+    missing = sorted(set(LABELS) - {"neutral"} - present)
+    summary = {
+        "schema": SEGMENT_SCHEMA,
+        "file": path.name,
+        "sha256": sha(path),
+        "records": len(records),
+        "labels": sorted({record["label"] for record in records}),
+        "positive": sum(1 for record in records if record["positive"]),
+        "negative": sum(1 for record in records if not record["positive"]),
+        "synthetic": True,
+        "catalog_sha256": sha(catalog_path),
+        "missing_segment_labels": missing,
+        "splits": {split: sum(1 for record in records if record["split"] == split) for split in ["train", "validation", "test"]},
+        "source": SEGMENT_SOURCE,
+    }
+    write_json(dataset_dir / "segments.json", summary)
+    print(json.dumps({"stage": "segments", **{k: v for k, v in summary.items() if k not in ("source",)}}), flush=True)
+    return summary
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--device", default="cuda")
+    parser.add_argument("--batch", type=int, default=12)
+    parser.add_argument("--output", type=Path, default=OUTPUT)
+    parser.add_argument("--segments-only", action="store_true")
+    parser.add_argument("--catalog", type=Path, default=ROOT / "contracts/action-catalog.json")
+    args = parser.parse_args()
+    output = args.output.resolve()
+    output.mkdir(parents=True, exist_ok=True)
+    if args.segments_only:
+        cache = torch.load(output / "affect-cache.pt", map_location="cpu", weights_only=False)
+        summary = generate_segments(cache, args.catalog, output)
+        manifest_path = output / "manifest.json"
+        manifest = read_json(manifest_path)
+        manifest["segments"] = summary
+        write_json(manifest_path, manifest)
+        return
+    started = time.perf_counter()
+    manifest = read_json(DATA / "manifest.json")
+    items = manifest["items"]
+    planner_manifest = read_json(PLANNER / "manifest.json")
+    planner_rows = [json.loads(line) for line in (PLANNER / "records.jsonl").read_text(encoding="utf-8").splitlines()]
+    if sha(PLANNER / "records.jsonl") != planner_manifest["records_sha256"]:
+        raise ValueError("planner 记录指纹不匹配")
+    if not isinstance(items, list) or len(items) != 1200:
+        raise ValueError("v4 manifest items 数量不匹配")
+    clips = {item["id"]: read_json(DATA / "clips" / f"{item['id']}.json") for item in items}
+    v4_pairs = unique_pairs(list(clips.values()))
+    planner_pairs = unique_pairs(planner_rows)
+    # 1) classifier: every unique quote-aware window once.
+    classifier = EmotionClassifier(ROOT / "latent/emotion-source.json", device=args.device)
+    texts = [text for text, _ in v4_pairs] + [text for text, _ in planner_pairs]
+    lookup = classify_windows(classifier, list(dict.fromkeys(texts)))
+    classifier_files = classifier.source["files"]
+    classifier_info = {"source": "latent/emotion-source.json", "repo_id": classifier.source["repo_id"],
+                       "revision": classifier.source["revision"], "parameters": classifier.parameters,
+                       "files_sha256": classifier_files}
+    del classifier
+    torch.cuda.empty_cache() if torch.cuda.is_available() else None
+    # 2) semantic features: reuse fingerprinted v4 token cache, encode planner pairs.
+    from encoder import SemanticEncoder
+    encoder = SemanticEncoder(args.device)
+    v4_cache_sha = sha(DATA / "manifest.json")
+    cached = torch.load(V4_CACHE, map_location="cpu", weights_only=True) if V4_CACHE.exists() else {}
+    features = {}
+    v4_tokens_from_cache = cached.get("fingerprint") == v4_cache_sha
+    if v4_tokens_from_cache:
+        for key, (tokens, mask) in cached["features"].items():
+            features[key] = {"tokens": tokens, "mask": mask, "pooled": pooled_from_tokens(tokens, mask)}
+    else:
+        features.update(encode_batch(encoder, v4_pairs, args.batch))
+    encoded_planner = encode_batch(encoder, planner_pairs, args.batch)
+    for key, value in encoded_planner.items():
+        if key in features:
+            continue
+        features[key] = {"tokens": value["tokens"], "mask": value["mask"],
+                         "pooled": pooled_from_tokens(value["tokens"], value["mask"])}
+    del encoder
+    torch.cuda.empty_cache() if torch.cuda.is_available() else None
+    # 3) timelines and simulated states.
+    print(json.dumps({"stage": "timelines", "unique_texts": len(set(texts))}), flush=True)
+    timelines = {}
+    for text in dict.fromkeys(texts):
+        timelines[text] = timeline_for(text, lookup)
+    scores = {}
+    for text, timeline in timelines.items():
+        for point in timeline["points"]:
+            if point["probabilities"]:
+                scores[point["window_text"]] = point["probabilities"]
+    v4 = {}
+    for item in items:
+        clip = clips[item["id"]]
+        duration = float(clip["duration_ms"])
+        v4[item["id"]] = {
+            "duration_ms": duration,
+            "timeline": timelines[clip["text"]],
+            "affect": clip_affects(timelines[clip["text"]], duration),
+        }
+    planner = {}
+    for record in planner_rows:
+        timeline = timelines[record["text"]]
+        planner[record["id"]] = {
+            "affect": affect_rows(timeline, deterministic_duration(record["text"])),
+        }
+    v4_sources = [(clip["text"], clip["context"], clip["split"], "datasets/vtuber-v4", "v4_clip") for clip in clips.values()]
+    planner_sources = [(row["text"], row["context"], row["split"], "datasets/vtuber-v4-planner-v2", "planner_record") for row in planner_rows]
+    candidates = build_segment_candidates(v4_sources, planner_sources, timelines, {
+        cache_key(text, context): features[cache_key(text, context)]["pooled"] for text, context in list(v4_pairs) + list(planner_pairs)
+    })
+    cache = {
+        "schema": CACHE_SCHEMA,
+        "labels": list(LABELS),
+        "thresholds": dict(THRESHOLDS),
+        "affect_dim": AFFECT_DIM,
+        "style": STYLE,
+        "fingerprint": {
+            "v4_manifest_sha256": v4_cache_sha,
+            "planner_records_sha256": sha(PLANNER / "records.jsonl"),
+            "emotion_config_sha256": emotion_config_sha256(),
+            "thresholds_sha256": thresholds_sha256(),
+            "curve_policy_sha256": digest(curve_policy()),
+            "classifier_files_sha256": digest(classifier_files),
+            "v4_semantic_cache_sha256": sha(V4_CACHE) if V4_CACHE.exists() else None,
+            "v4_tokens_from_cache": v4_tokens_from_cache,
+        },
+        "scores": scores,
+        "v4": v4,
+        "planner": planner,
+        "pooled": {key: value["pooled"] for key, value in features.items() if "pooled" in value},
+        "v4_tokens": {key: {"tokens": value["tokens"], "mask": value["mask"]} for key, value in features.items()
+                      if key in {cache_key(*pair) for pair in v4_pairs}},
+        "segment_candidates": candidates,
+    }
+    path = output / "affect-cache.pt"
+    torch.save(cache, path)
+    split_counts = {split: sum(1 for clip in clips.values() if clip["split"] == split) for split in ["train", "validation", "test"]}
+    manifest_out = {
+        "schema": MANIFEST_SCHEMA,
+        "created_at": time.strftime("%Y-%m-%dT%H:%M:%S%z"),
+        "affect_cache": path.name,
+        "affect_cache_sha256": sha(path),
+        "affect_cache_bytes": path.stat().st_size,
+        "sources": {
+            "v4_manifest": {"path": "datasets/vtuber-v4/manifest.json", "sha256": v4_cache_sha, "items": len(items)},
+            "v4_clips": {"unique_text_context": len(v4_pairs), "clips": len(clips), "splits": split_counts},
+            "planner_records": {"path": "datasets/vtuber-v4-planner-v2/records.jsonl", "sha256": sha(PLANNER / "records.jsonl"), "records": len(planner_rows), "unique_text_context": len(planner_pairs), "splits": {split: sum(1 for row in planner_rows if row["split"] == split) for split in ["train", "validation", "test"]}},
+            "v4_semantic_cache": {"path": "experiments/vtuber-v4/semantic-cache.pt", "reused": v4_tokens_from_cache, "fingerprint_matches": v4_tokens_from_cache},
+        },
+        "classifier": classifier_info,
+        "thresholds_sha256": thresholds_sha256(),
+        "emotion_config_sha256": emotion_config_sha256(),
+        "curve": curve_policy(),
+        "curve_policy_sha256": digest(curve_policy()),
+        "counts": {
+            "clips": len(v4),
+            "clip_affect_rows": sum(len(row["affect"]) for row in v4.values()),
+            "planner_affect": len(planner),
+            "windows_scored": len(scores),
+            "pooled_features": len(cache["pooled"]),
+            "segment_labels": len(candidates),
+            "segment_candidates": sum(len(rows) for rows in candidates.values()),
+        },
+        "synthetic": {"segment_records": True, "supervision": "reuses authored synthetic planner-v2 targets and author-calibrated v4 clips; no human labels added", "human_reviewed": False},
+        "elapsed_s": round(time.perf_counter() - started, 1),
+    }
+    write_json(output / "manifest.json", manifest_out)
+    print(json.dumps({"stage": "complete", "cache_bytes": manifest_out["affect_cache_bytes"], "elapsed_s": manifest_out["elapsed_s"]}), flush=True)
+
+
+if __name__ == "__main__":
+    main()

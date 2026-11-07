@@ -1,0 +1,372 @@
+/**
+ * 28-emotion preview board capture (v6).
+ *
+ * Opens /?preview=emotions, plays every classifier label through
+ * window.__emotionPreview.play(label), waits ~2800 ms per label, screenshots the
+ * stage and records the actor's affect / motion / expression observation from
+ * engine.performance.state() (+ the emotion-expression layer state).
+ *
+ * This is an end-to-end script against an already-running console server. It does
+ * not start services. Use --dry-run to parse/check files only.
+ *
+ * Requires: a running server (default http://127.0.0.1:8765) built from this
+ * checkout / dist, no other console window holding the runtime, and a system
+ * Chrome (or BROWSER_EXECUTABLE). No latent/TTS worker is needed by the preview
+ * board itself, but the page only becomes ready after the runtime socket connects.
+ */
+import assert from 'node:assert/strict';
+import {existsSync, mkdirSync, writeFileSync} from 'node:fs';
+import {join, relative} from 'node:path';
+import {chromium} from 'playwright';
+import {EMOTION_LABELS} from '../src/emotion-config';
+import {PERFORMANCE_RUNTIME_VERSION} from '../src/performance-profile';
+
+const root = join(import.meta.dirname, '..');
+const defaultOut = join(root, 'test-results/emotion-catalog-v6/preview');
+const DEFAULT_BASE = process.env.LIVE2D_URL ?? 'http://127.0.0.1:8765';
+const WAIT_MS = 2800;
+const SAMPLE_MS = 350;
+const ACTION_RETRY_MS = 5000;
+const ACTION_RETRY_STEP_MS = 250;
+const VIEWPORT = {width: 1365, height: 1050};
+const EXPRESSION_THRESHOLD = .05;
+const SUSTAINED_SAMPLES = 3;
+const NEUTRAL_MAX = .12;
+const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+
+const usage = `emotion-preview-browser.ts — 28 类情绪预览板截图与观测
+  --base=<url>  控制台地址，默认 ${DEFAULT_BASE}（也可用 LIVE2D_URL）
+  --out=<dir>   输出目录，默认 test-results/emotion-catalog-v6/preview（也可用 EMOTION_PREVIEW_OUT）
+  --dry-run     只解析参数并检查本地文件；不启动服务、不连接端口、不启动浏览器
+  --help        显示本帮助
+环境变量: LIVE2D_URL / EMOTION_PREVIEW_OUT / BROWSER_EXECUTABLE
+
+真实运行前置条件:
+  1. 控制台服务已在运行（GET /api/health 可用）且 dist/ 或 dev 页面可加载
+  2. 没有其它窗口占用角色 runtime（或允许本页面点击“在此窗口使用”接管）
+  3. 系统 Chrome 或 BROWSER_EXECUTABLE
+  4. 预览不需要 latent/TTS 权重，但页面 ready 需要 runtime WebSocket 连接成功`;
+
+const argv = process.argv.slice(2);
+let base = DEFAULT_BASE;
+let out = defaultOut;
+let dryRun = false;
+for (const arg of argv) {
+  if (arg === '--help' || arg === '-h') { console.log(usage); process.exit(0); }
+  else if (arg === '--dry-run') dryRun = true;
+  else if (arg.startsWith('--base=')) base = arg.slice('--base='.length).replace(/\/+$/, '');
+  else if (arg.startsWith('--out=')) out = join(root, arg.slice('--out='.length));
+  else { console.error(`未知参数: ${arg}`); console.error(usage); process.exit(2); }
+}
+const browserCandidates = [
+  process.env.BROWSER_EXECUTABLE,
+  'C:/Program Files/Google/Chrome/Application/chrome.exe',
+  'C:/Users/Administrator/AppData/Local/ms-playwright/chromium-1208/chrome-win64/chrome.exe',
+].filter((value): value is string => !!value);
+const executablePath = browserCandidates.find(path => existsSync(path));
+
+if (dryRun) {
+  console.log(JSON.stringify({
+    dry_run: true,
+    script: 'tests/emotion-preview-browser.ts',
+    base,
+    out: relative(root, out),
+    preview_url: base + '/?preview=emotions',
+    labels: EMOTION_LABELS.length,
+    plan: {wait_ms: WAIT_MS, sample_ms: SAMPLE_MS, action_retry_ms: ACTION_RETRY_MS, viewport: VIEWPORT},
+    browser: {candidates: browserCandidates, executable_path: executablePath ?? null},
+    files: {
+      contracts_emotion_config: existsSync(join(root, 'contracts/emotion-config.json')),
+      contracts_action_catalog: existsSync(join(root, 'contracts/action-catalog.json')),
+      src_emotion_preview: existsSync(join(root, 'src/emotion-preview.ts')),
+      dist_index: existsSync(join(root, 'dist/index.html')),
+    },
+    contracts: {runtime_version: PERFORMANCE_RUNTIME_VERSION, emotion_labels: EMOTION_LABELS.length},
+    screenshots: EMOTION_LABELS.map(label => `preview/${label}.png`),
+    preconditions: [`控制台已运行: ${base}/api/health`, '页面可加载（dist 构建或 dev server）', '没有其它窗口占用 runtime', 'system Chrome 或 BROWSER_EXECUTABLE'],
+    note: '不启动服务、不连接端口、不启动浏览器',
+  }, null, 2));
+  process.exit(0);
+}
+
+mkdirSync(out, {recursive: true});
+const report: any = {
+  ok: false,
+  schema: 'emotion-preview.v6',
+  base,
+  preview_url: base + '/?preview=emotions',
+  out: relative(root, out),
+  runtime_version: PERFORMANCE_RUNTIME_VERSION,
+  labels: [] as string[],
+  expected_labels: [...EMOTION_LABELS],
+  wait_ms: WAIT_MS,
+  sample_ms: SAMPLE_MS,
+  records: [] as any[],
+  missing: {expression: [] as string[], action: [] as string[], preview_label: [] as string[]},
+  unexpected: [] as string[],
+  console_errors: [] as string[],
+  page_errors: [] as string[],
+  warnings: [] as string[],
+};
+let browser: Awaited<ReturnType<typeof chromium.launch>> | undefined;
+const startedAt = Date.now();
+
+const expressionPeak = (expression: any, faceValues: any) => {
+  if (expression && typeof expression === 'object') {
+    const face = Math.max(0, ...Object.values(expression.face ?? {}).map((value: any) => Math.abs(Number(value) || 0)));
+    const overlay = Math.max(0, ...Object.values(expression.overlay ?? {}).map((value: any) => Number(value) || 0));
+    const eye = expression.eye && expression.eye !== 'normal' ? 1 : 0;
+    return {peak: Math.max(face, overlay, eye), face, overlay, eye: expression.eye ?? 'normal', source: 'expression'};
+  }
+  const face = Math.max(0, ...Object.values(faceValues ?? {}).map((value: any) => Math.abs(Number(value) || 0)));
+  return {peak: face, face, overlay: 0, eye: 'normal', source: 'face_channels'};
+};
+const actionIds = (sample: any) => {
+  const ids = new Set<string>();
+  const plan = sample?.action_plan;
+  if (plan) {
+    if (plan.active_segment) ids.add(plan.active_segment);
+    for (const key of ['last_arm', 'last_body'] as const) if (plan[key]?.id) ids.add(plan[key].id);
+    for (const row of plan.recent ?? []) if (row?.id) ids.add(row.id);
+  }
+  for (const row of sample?.action_history ?? []) if (row?.name) ids.add(row.name);
+  return [...ids];
+};
+const expectedSegmentOf = (label: string) => 'emotion.' + label;
+const matchesExpected = (ids: string[], label: string) => {
+  const expected = expectedSegmentOf(label);
+  return ids.filter(id => id === expected || id.startsWith(expected + '@') || id.startsWith(expected + ':'));
+};
+
+try {
+  await fetch(base + '/api/health');
+  const health: any = await (await fetch(base + '/api/health')).json();
+  report.runtime_version = health.runtime_version ?? report.runtime_version;
+  assert.ok(executablePath, 'Install system Chrome or set BROWSER_EXECUTABLE');
+  browser = await chromium.launch({headless: true, executablePath, args: ['--autoplay-policy=no-user-gesture-required']});
+  report.browser = browser.version();
+  const page = await browser.newPage({viewport: VIEWPORT});
+  await page.addInitScript('window.__name=target=>target;');
+  page.on('pageerror', error => report.page_errors.push(error.message));
+  page.on('console', message => { if (message.type() === 'error') report.console_errors.push(message.text()); });
+  await page.goto(base + '/?preview=emotions', {waitUntil: 'domcontentloaded'});
+  try {
+    await page.waitForFunction(() => (window as any).live2dDemo?.ready, {timeout: 60000});
+  } catch {
+    // Another console window may hold the runtime; claim it if the page offers the button.
+    if (await page.locator('#claim-runtime').isVisible().catch(() => false)) {
+      report.warnings.push('runtime 被其它窗口占用，点击“在此窗口使用”接管');
+      await page.locator('#claim-runtime').click();
+      await page.waitForFunction(() => (window as any).live2dDemo?.ready, {timeout: 30000});
+    } else throw Error('页面未就绪：live2dDemo.ready 超时（检查服务与 runtime 连接）');
+  }
+  await page.waitForSelector('#connection.ready', {timeout: 20000});
+  await page.waitForFunction(() => {
+    const preview = (window as any).__emotionPreview;
+    return !!preview && Array.isArray(preview.labels) && typeof preview.play === 'function';
+  }, undefined, {timeout: 30000});
+  await page.waitForSelector('#emotion-preview', {timeout: 10000});
+  await page.waitForFunction(() => !!(window as any).live2dDemo?.engine?.performance, {timeout: 20000});
+
+  const labels: string[] = await page.evaluate(() => [...(window as any).__emotionPreview.labels]);
+  report.labels = [...labels];
+  assert.equal(labels.length, 28, 'preview board must expose 28 labels');
+  assert.deepEqual(labels, [...EMOTION_LABELS], 'preview labels must equal contracts/emotion-config.json order');
+
+  const readState = async () => page.evaluate(() => {
+    const demo = (window as any).live2dDemo;
+    const controller = demo?.engine?.performance;
+    let state: any = null;
+    try { state = controller?.state?.() ?? null; } catch { state = null; }
+    let expression: any = null;
+    try { expression = controller?.expression?.state?.() ?? null; } catch { expression = null; }
+    const part = (value: any) => value ? {active: !!value.active, count: value.count ?? 0, name: value.name ?? null, source: value.source ?? null, phase: value.phase ?? null} : null;
+    const faceNames = ['EyeSmile', 'ParamMouthForm', 'ParamBrowLY', 'ParamBrowRY', 'BrowInnerUp', 'LEyeSquint', 'REyeSquint', 'ParamEyeBallY'];
+    const faceValues: Record<string, number> = {};
+    if (Array.isArray(state?.channels) && Array.isArray(state?.values)) {
+      state.channels.forEach((id: string, index: number) => { if (faceNames.includes(id)) faceValues[id] = state.values[index]; });
+    }
+    return {
+      at_ms: performance.now(),
+      ready: !!demo?.ready,
+      state: state ? {
+        active: !!state.active,
+        driver: state.driver ?? null,
+        emotion: state.emotion ?? null,
+        automatic_emotion: state.automatic_emotion ?? null,
+        affect: state.affect ? {
+          schema: state.affect.schema, enabled: !!state.affect.enabled, emotion: state.affect.emotion ?? null,
+          dominant_label: state.affect.dominant_label ?? null, intensity: state.affect.intensity ?? null,
+          strength: state.affect.strength ?? null, point_index: state.affect.point_index ?? null, points: state.affect.points ?? null,
+        } : null,
+        affect_vector_length: Array.isArray(state.affect_vector) ? state.affect_vector.length : null,
+        motion_actions: part(state.motion_actions),
+        body_action: part(state.body_action),
+        action_plan: state.action_plan ? {
+          active_segment: state.action_plan.active_segment ?? null,
+          last_arm: state.action_plan.last_arm ?? null,
+          last_body: state.action_plan.last_body ?? null,
+          recent: (state.action_plan.recent ?? []).slice(-8),
+        } : null,
+        action_history: (state.action_history ?? []).slice(-8),
+        emotion_pose: state.emotion_pose ?? null,
+        face_channels: faceValues,
+        plan_history_length: Array.isArray(state.plan_history) ? state.plan_history.length : 0,
+        directives: Array.isArray(state.directives) ? state.directives.length : 0,
+      } : null,
+      expression,
+    };
+  });
+
+  const sampleOf = (sample: any) => {
+    const peak = expressionPeak(sample?.expression, sample?.state?.face_channels);
+    const legacyPose = Math.max(0, ...Object.values(sample?.state?.emotion_pose ?? {}).map((value: any) => Math.abs(Number(value) || 0)));
+    return {
+      at_ms: Math.round(sample?.at_ms ?? 0),
+      ready: !!sample?.ready,
+      emotion: sample?.state?.emotion ?? null,
+      automatic_emotion: sample?.state?.automatic_emotion ?? null,
+      affect: sample?.state?.affect ?? null,
+      affect_vector_length: sample?.state?.affect_vector_length ?? null,
+      motion_actions: sample?.state?.motion_actions ?? null,
+      body_action: sample?.state?.body_action ?? null,
+      action_plan: sample?.state?.action_plan ?? null,
+      action_history: sample?.state?.action_history ?? [],
+      expression: sample?.expression ? {face: sample.expression.face ?? {}, overlay: sample.expression.overlay ?? {}, eye: sample.expression.eye ?? 'normal'} : null,
+      expression_peak: Math.max(peak.peak, legacyPose),
+      expression_peak_source: peak.peak > 0 ? peak.source : 'emotion_pose',
+      face_channels: sample?.state?.face_channels ?? null,
+      emotion_pose: sample?.state?.emotion_pose ?? null,
+      plan_history_length: sample?.state?.plan_history_length ?? 0,
+      directives: sample?.state?.directives ?? 0,
+    };
+  };
+
+  for (const label of labels) {
+    const record: any = {
+      label, screenshot: relative(root, join(out, label + '.png')), expected: {expression: label !== 'neutral', action: label !== 'neutral'},
+      samples: [],
+    };
+    const before: any = await readState();
+    const baseMotion = before?.state?.motion_actions?.count ?? 0;
+    const baseBody = before?.state?.body_action?.count ?? 0;
+    await page.evaluate(target => (window as any).__emotionPreview.play(target), label);
+    const labelBegin = Date.now();
+    const samples: any[] = [];
+    let motionShot = false;
+    for (let index = 0; index < Math.round(WAIT_MS / SAMPLE_MS); index++) {
+      await sleep(SAMPLE_MS);
+      const sample = sampleOf(await readState());
+      samples.push(sample);
+      // Capture the acting beat (roughly mid-hold) instead of the settled tail pose.
+      if (!motionShot && index === 2) {
+        motionShot = true;
+        await page.locator('#stage').screenshot({path: join(out, label + '.png')});
+      }
+    }
+    if (!motionShot) await page.locator('#stage').screenshot({path: join(out, label + '.png')});
+    await page.locator('#stage').screenshot({path: join(out, label + '-settled.png')});
+
+    let matched = matchesExpected(actionIds(samples.at(-1)), label);
+    let materialized = matched.length > 0 || (samples.at(-1)?.action_plan?.active_segment ?? null) === expectedSegmentOf(label);
+    const retryBegin = Date.now();
+    while (!materialized && label !== 'neutral' && Date.now() - retryBegin < ACTION_RETRY_MS) {
+      await page.evaluate(target => (window as any).__emotionPreview.play(target), label);
+      await sleep(ACTION_RETRY_STEP_MS);
+      samples.push(sampleOf(await readState()));
+      matched = matchesExpected(actionIds(samples.at(-1)), label);
+      materialized = matched.length > 0 || (samples.at(-1)?.action_plan?.active_segment ?? null) === expectedSegmentOf(label);
+    }
+    const last = samples.at(-1);
+    const late = samples.slice(2);
+    const expressionPeaks = late.map(sample => sample.expression_peak);
+    const peak = Math.max(0, ...expressionPeaks);
+    const sustained = expressionPeaks.filter(value => value >= EXPRESSION_THRESHOLD).length >= SUSTAINED_SAMPLES;
+    const previewLabels = [...new Set(samples.map(sample => sample.emotion).filter(Boolean))];
+    const motionDelta = (last?.motion_actions?.count ?? 0) - baseMotion;
+    const bodyDelta = (last?.body_action?.count ?? 0) - baseBody;
+    record.samples = samples;
+    record.elapsed_ms = Date.now() - labelBegin;
+    record.expression = {
+      peak: Number(peak.toFixed(4)), threshold: EXPRESSION_THRESHOLD, sustained,
+      late_peaks: expressionPeaks.map(value => Number(value.toFixed(4))),
+      last: samples.at(-1)?.expression ?? null,
+      emotion_pose: samples.at(-1)?.emotion_pose ?? null,
+      nonzero_face: Object.fromEntries(Object.entries(samples.at(-1)?.expression?.face ?? {}).filter(([, value]) => Math.abs(Number(value) || 0) > .01)),
+      nonzero_overlay: Object.fromEntries(Object.entries(samples.at(-1)?.expression?.overlay ?? {}).filter(([, value]) => Number(value) > .01)),
+      eye: samples.at(-1)?.expression?.eye ?? 'normal',
+    };
+    record.affect = {state: last?.affect ?? null, preview_labels: previewLabels, automatic_emotion: last?.automatic_emotion ?? null};
+    record.motion = {
+      action_observed: materialized, matched_ids: matched,
+      motion_delta: motionDelta, body_delta: bodyDelta,
+      motion_actions: last?.motion_actions ?? null, body_action: last?.body_action ?? null,
+      action_plan: last?.action_plan ?? null, action_history: last?.action_history ?? [],
+      active_segment: last?.action_plan?.active_segment ?? null,
+    };
+    record.preview_label = last?.emotion ?? null;
+    report.records.push(record);
+
+    const previewOk = label === 'neutral' ? record.preview_label === 'neutral' : record.preview_label === label;
+    if (!previewOk) report.missing.preview_label.push(label);
+    if (label === 'neutral') {
+      if (peak >= NEUTRAL_MAX) report.unexpected.push(`neutral 表情峰值 ${peak.toFixed(3)} ≥ ${NEUTRAL_MAX}`);
+      if (materialized) report.unexpected.push('neutral 不应触发情绪动作');
+    } else {
+      if (!sustained) report.missing.expression.push(label);
+      if (!materialized) report.missing.action.push(label);
+    }
+    if (!sustained && label !== 'neutral') report.warnings.push(`${label}: 表情峰值 ${peak.toFixed(3)}，未达到持续阈值 ${EXPRESSION_THRESHOLD}`);
+  }
+
+  const screenshotCount = labels.filter(label => existsSync(join(out, label + '.png'))).length;
+  report.screenshot_count = screenshotCount;
+  if (screenshotCount !== labels.length) report.missing.screenshots = labels.filter(label => !existsSync(join(out, label + '.png')));
+  report.summary = {
+    total: report.records.length,
+    expression_ok: report.records.filter((record: any) => record.expected.expression ? record.expression.sustained : true).length,
+    action_ok: report.records.filter((record: any) => record.expected.action ? record.motion.action_observed : true).length,
+    screenshots: screenshotCount,
+    missing_expression: report.missing.expression,
+    missing_action: report.missing.action,
+    missing_preview_label: report.missing.preview_label,
+    unexpected: report.unexpected,
+    console_errors: report.console_errors.length,
+    page_errors: report.page_errors.length,
+  };
+  report.ok = report.records.length === labels.length && !report.missing.expression.length && !report.missing.action.length
+    && !report.missing.preview_label.length && !(report.missing.screenshots ?? []).length && !report.unexpected.length
+    && !report.console_errors.length && !report.page_errors.length;
+  if (!report.ok) {
+    const problems = [
+      ...report.missing.expression.map((label: string) => label + ': 缺少持续表情'),
+      ...report.missing.action.map((label: string) => label + ': 缺少动作'),
+      ...report.missing.preview_label.map((label: string) => label + ': 预览情绪标签不符'),
+      ...(report.missing.screenshots ?? []).map((label: string) => label + ': 缺少截图'),
+      ...report.unexpected,
+      ...report.console_errors.map((text: string) => 'console: ' + text),
+      ...report.page_errors.map((text: string) => 'pageerror: ' + text),
+    ];
+    throw Error('预览板检查失败：\n' + problems.join('\n'));
+  }
+  report.notes = report.warnings.length ? [...report.warnings] : [];
+} catch (error: any) {
+  report.error = String(error?.stack ?? error);
+  report.ok = false;
+  console.error(String(error?.message ?? error));
+} finally {
+  await browser?.close();
+  report.duration_ms = Date.now() - startedAt;
+  writeFileSync(join(out, 'report.json'), JSON.stringify(report, null, 2) + '\n');
+}
+if (!report.ok) process.exitCode = 1;
+console.log(JSON.stringify({
+  ok: report.ok,
+  base,
+  labels: report.labels.length,
+  screenshots: report.screenshot_count ?? 0,
+  records: report.records.length,
+  summary: report.summary ?? null,
+  error: report.error ? String(report.error).split('\n')[0] : undefined,
+  report: relative(root, join(out, 'report.json')),
+}, null, 2));

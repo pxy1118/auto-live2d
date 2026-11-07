@@ -4,7 +4,7 @@ import unittest
 from unittest.mock import patch
 import main
 
-NEW='experiments/vtuber-v5-emotion-action-r1'
+NEW='experiments/vtuber-v6-native28-motion-r2'
 
 class DefaultLauncherTests(unittest.TestCase):
     def test_removed_launch_modes_are_not_accepted(self):
@@ -23,10 +23,11 @@ class DefaultLauncherTests(unittest.TestCase):
         self.assertNotIn('--planner-device',command)
         self.assertNotIn('semantic.serve',command)
 
-    def test_missing_or_disabled_default_fails_without_fallback(self):
-        with patch.object(main,'read',return_value=dict(path=NEW,promoted=False)):
-            with self.assertRaises(ValueError):main.choose_stream_profile()
-        with patch.object(main,'read',return_value=dict(path='experiments/missing',promoted=True)):
-            with self.assertRaises(ValueError):main.choose_stream_profile()
+    def test_new_runtime_package_is_accepted_only_with_v6_schema(self):
+        with patch.object(main,'read',return_value={'schema':'vtuber.v6.native28_motion','promoted':False}):
+            command=main.latent_worker_command('python','cuda',NEW)
+            self.assertIn('--stream-experiment',command)
+        with patch.object(main,'read',return_value={'schema':'emotion_action.runtime.v1'}):
+            with self.assertRaises(ValueError):main.latent_worker_command('python','cuda',NEW)
 
 if __name__=='__main__':unittest.main()

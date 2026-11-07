@@ -1,0 +1,545 @@
+{
+  "schema": "action.catalog.v1",
+  "actions": [
+    {
+      "id": "none",
+      "kind": "none",
+      "label": "无动作",
+      "emotion": null,
+      "variants": 1,
+      "default_hold_ms": 0,
+      "cooldown_group": "arm",
+      "intensity": [0, 0],
+      "phases": []
+    },
+    {
+      "id": "wave",
+      "kind": "gesture",
+      "label": "屈肘张掌挥手",
+      "emotion": null,
+      "variants": 3,
+      "default_hold_ms": 1400,
+      "cooldown_group": "arm",
+      "intensity": [0.6, 1],
+      "phases": []
+    },
+    {
+      "id": "chest",
+      "kind": "gesture",
+      "label": "抚胸",
+      "emotion": null,
+      "variants": 3,
+      "default_hold_ms": 1400,
+      "cooldown_group": "arm",
+      "intensity": [0.6, 1],
+      "phases": []
+    },
+    {
+      "id": "grass",
+      "kind": "gesture",
+      "label": "狗尾草展示",
+      "emotion": null,
+      "variants": 3,
+      "default_hold_ms": 1800,
+      "cooldown_group": "arm",
+      "intensity": [0.6, 1],
+      "phases": []
+    },
+    {
+      "id": "point",
+      "kind": "gesture",
+      "label": "指出重点",
+      "emotion": null,
+      "variants": 3,
+      "default_hold_ms": 1400,
+      "cooldown_group": "arm",
+      "intensity": [0.6, 1],
+      "phases": []
+    },
+    {
+      "id": "thanks",
+      "kind": "gesture",
+      "label": "抚胸致谢",
+      "emotion": null,
+      "variants": 3,
+      "default_hold_ms": 1400,
+      "cooldown_group": "arm",
+      "intensity": [0.6, 1],
+      "phases": []
+    },
+    {
+      "id": "explain",
+      "kind": "gesture",
+      "label": "身前说明",
+      "emotion": null,
+      "variants": 3,
+      "default_hold_ms": 1400,
+      "cooldown_group": "arm",
+      "intensity": [0.6, 1],
+      "phases": []
+    },
+    {
+      "id": "refuse",
+      "kind": "gesture",
+      "label": "示意停止",
+      "emotion": null,
+      "variants": 3,
+      "default_hold_ms": 1400,
+      "cooldown_group": "arm",
+      "intensity": [0.6, 1],
+      "phases": []
+    },
+    {
+      "id": "lean",
+      "kind": "body",
+      "label": "前倾与回身",
+      "emotion": null,
+      "variants": 3,
+      "default_hold_ms": 2200,
+      "cooldown_group": "body",
+      "intensity": [0.4, 1],
+      "phases": []
+    },
+    {
+      "id": "sway",
+      "kind": "body",
+      "label": "躯干轻摇与重心转移",
+      "emotion": null,
+      "variants": 3,
+      "default_hold_ms": 2200,
+      "cooldown_group": "body",
+      "intensity": [0.4, 1],
+      "phases": []
+    },
+    {
+      "id": "nod",
+      "kind": "body",
+      "label": "点头与俯身",
+      "emotion": null,
+      "variants": 3,
+      "default_hold_ms": 2200,
+      "cooldown_group": "body",
+      "intensity": [0.4, 1],
+      "phases": []
+    },
+    {
+      "id": "tilt",
+      "kind": "body",
+      "label": "歪头与侧倾",
+      "emotion": null,
+      "variants": 3,
+      "default_hold_ms": 2200,
+      "cooldown_group": "body",
+      "intensity": [0.4, 1],
+      "phases": []
+    },
+    {
+      "id": "turn",
+      "kind": "body",
+      "label": "侧首与转身",
+      "emotion": null,
+      "variants": 3,
+      "default_hold_ms": 2200,
+      "cooldown_group": "body",
+      "intensity": [0.4, 1],
+      "phases": []
+    },
+    {
+      "id": "cajole",
+      "kind": "body",
+      "label": "撒娇 · 前倾轻扭",
+      "emotion": null,
+      "variants": 3,
+      "default_hold_ms": 2200,
+      "cooldown_group": "body",
+      "intensity": [0.4, 1],
+      "phases": []
+    },
+    {
+      "id": "emotion.admiration",
+      "kind": "segment",
+      "label": "赞赏",
+      "emotion": "admiration",
+      "variants": 2,
+      "default_hold_ms": 2400,
+      "cooldown_group": "arm",
+      "intensity": [0.4, 1],
+      "phases": [
+        {"at_ms": 0, "body_motion": "tilt", "body_variant": 0, "body_strength": 0.55, "body_hold_ms": 1600},
+        {"at_ms": 900, "body_motion": "nod", "body_variant": 0, "body_strength": 0.45, "body_hold_ms": 1200}
+      ]
+    },
+    {
+      "id": "emotion.gratitude",
+      "kind": "segment",
+      "label": "感谢",
+      "emotion": "gratitude",
+      "variants": 2,
+      "default_hold_ms": 2600,
+      "cooldown_group": "arm",
+      "intensity": [0.4, 1],
+      "phases": [
+        {"at_ms": 0, "gesture": "chest", "gesture_variant": 1, "gesture_hold_ms": 1500, "gesture_strength": 0.9},
+        {"at_ms": 0, "body_motion": "nod", "body_variant": 1, "body_strength": 0.55, "body_hold_ms": 1600},
+        {"at_ms": 1200, "body_motion": "lean", "body_variant": 0, "body_strength": 0.5, "body_hold_ms": 1400}
+      ]
+    },
+    {
+      "id": "emotion.amusement",
+      "kind": "segment",
+      "label": "逗乐",
+      "emotion": "amusement",
+      "variants": 2,
+      "default_hold_ms": 2600,
+      "cooldown_group": "arm",
+      "intensity": [0.3, 0.8],
+      "phases": [
+        {"at_ms": 0, "body_motion": "tilt", "body_variant": 0, "body_strength": 0.55, "body_hold_ms": 1400},
+        {"at_ms": 500, "body_motion": "nod", "body_variant": 0, "body_strength": 0.4, "body_hold_ms": 1100},
+        {"at_ms": 1200, "body_motion": "sway", "body_variant": 2, "body_strength": 0.35, "body_hold_ms": 1200}
+      ]
+    },
+    {
+      "id": "emotion.anger",
+      "kind": "segment",
+      "label": "愤怒",
+      "emotion": "anger",
+      "variants": 2,
+      "default_hold_ms": 2800,
+      "cooldown_group": "arm",
+      "intensity": [0.5, 1],
+      "phases": [
+        {"at_ms": 0, "body_motion": "lean", "body_variant": 0, "body_strength": 0.85, "body_hold_ms": 900},
+        {"at_ms": 700, "body_motion": "nod", "body_variant": 2, "body_strength": 0.5, "body_hold_ms": 800},
+        {"at_ms": 1500, "body_motion": "turn", "body_variant": 1, "body_strength": 0.45, "body_hold_ms": 1100}
+      ]
+    },
+    {
+      "id": "emotion.annoyance",
+      "kind": "segment",
+      "label": "不耐烦",
+      "emotion": "annoyance",
+      "variants": 2,
+      "default_hold_ms": 2400,
+      "cooldown_group": "arm",
+      "intensity": [0.25, 0.7],
+      "phases": [
+        {"at_ms": 0, "body_motion": "turn", "body_variant": 2, "body_strength": 0.6, "body_hold_ms": 1400},
+        {"at_ms": 800, "body_motion": "sway", "body_variant": 1, "body_strength": 0.4, "body_hold_ms": 1200}
+      ]
+    },
+    {
+      "id": "emotion.approval",
+      "kind": "segment",
+      "label": "赞同",
+      "emotion": "approval",
+      "variants": 2,
+      "default_hold_ms": 2200,
+      "cooldown_group": "arm",
+      "intensity": [0.2, 0.65],
+      "phases": [
+        {"at_ms": 0, "body_motion": "nod", "body_variant": 0, "body_strength": 0.45, "body_hold_ms": 1200},
+        {"at_ms": 600, "body_motion": "lean", "body_variant": 0, "body_strength": 0.3, "body_hold_ms": 1200}
+      ]
+    },
+    {
+      "id": "emotion.caring",
+      "kind": "segment",
+      "label": "关切",
+      "emotion": "caring",
+      "variants": 2,
+      "default_hold_ms": 2600,
+      "cooldown_group": "arm",
+      "intensity": [0.25, 0.7],
+      "phases": [
+        {"at_ms": 0, "body_motion": "lean", "body_variant": 0, "body_strength": 0.5, "body_hold_ms": 1600},
+        {"at_ms": 900, "body_motion": "tilt", "body_variant": 1, "body_strength": 0.45, "body_hold_ms": 1400}
+      ]
+    },
+    {
+      "id": "emotion.confusion",
+      "kind": "segment",
+      "label": "困惑",
+      "emotion": "confusion",
+      "variants": 2,
+      "default_hold_ms": 3000,
+      "cooldown_group": "arm",
+      "intensity": [0.3, 0.8],
+      "phases": [
+        {"at_ms": 0, "body_motion": "tilt", "body_variant": 2, "body_strength": 0.6, "body_hold_ms": 1800},
+        {"at_ms": 900, "gesture": "explain", "gesture_variant": 0, "gesture_hold_ms": 1500, "gesture_strength": 0.55}
+      ]
+    },
+    {
+      "id": "emotion.curiosity",
+      "kind": "segment",
+      "label": "好奇",
+      "emotion": "curiosity",
+      "variants": 2,
+      "default_hold_ms": 2800,
+      "cooldown_group": "arm",
+      "intensity": [0.25, 0.7],
+      "phases": [
+        {"at_ms": 0, "body_motion": "lean", "body_variant": 2, "body_strength": 0.55, "body_hold_ms": 1500},
+        {"at_ms": 700, "body_motion": "turn", "body_variant": 2, "body_strength": 0.4, "body_hold_ms": 1500}
+      ]
+    },
+    {
+      "id": "emotion.desire",
+      "kind": "segment",
+      "label": "渴望",
+      "emotion": "desire",
+      "variants": 2,
+      "default_hold_ms": 2600,
+      "cooldown_group": "arm",
+      "intensity": [0.4, 0.9],
+      "phases": [
+        {"at_ms": 0, "gesture": "chest", "gesture_variant": 0, "gesture_hold_ms": 1600, "gesture_strength": 0.7},
+        {"at_ms": 200, "body_motion": "lean", "body_variant": 0, "body_strength": 0.6, "body_hold_ms": 1600}
+      ]
+    },
+    {
+      "id": "emotion.disappointment",
+      "kind": "segment",
+      "label": "失望",
+      "emotion": "disappointment",
+      "variants": 2,
+      "default_hold_ms": 2800,
+      "cooldown_group": "arm",
+      "intensity": [0.3, 0.75],
+      "phases": [
+        {"at_ms": 0, "body_motion": "nod", "body_variant": 1, "body_strength": 0.5, "body_hold_ms": 1400},
+        {"at_ms": 800, "body_motion": "turn", "body_variant": 0, "body_strength": 0.5, "body_hold_ms": 1500}
+      ]
+    },
+    {
+      "id": "emotion.disapproval",
+      "kind": "segment",
+      "label": "不赞同",
+      "emotion": "disapproval",
+      "variants": 2,
+      "default_hold_ms": 2400,
+      "cooldown_group": "arm",
+      "intensity": [0.3, 0.75],
+      "phases": [
+        {"at_ms": 0, "gesture": "refuse", "gesture_variant": 0, "gesture_hold_ms": 1400, "gesture_strength": 0.7},
+        {"at_ms": 100, "body_motion": "turn", "body_variant": 0, "body_strength": 0.4, "body_hold_ms": 1400}
+      ]
+    },
+    {
+      "id": "emotion.disgust",
+      "kind": "segment",
+      "label": "反感",
+      "emotion": "disgust",
+      "variants": 2,
+      "default_hold_ms": 2400,
+      "cooldown_group": "arm",
+      "intensity": [0.35, 0.8],
+      "phases": [
+        {"at_ms": 0, "body_motion": "turn", "body_variant": 0, "body_strength": 0.55, "body_hold_ms": 1300},
+        {"at_ms": 600, "body_motion": "tilt", "body_variant": 1, "body_strength": 0.5, "body_hold_ms": 1300}
+      ]
+    },
+    {
+      "id": "emotion.embarrassment",
+      "kind": "segment",
+      "label": "害羞",
+      "emotion": "embarrassment",
+      "variants": 2,
+      "default_hold_ms": 2800,
+      "cooldown_group": "arm",
+      "intensity": [0.3, 0.8],
+      "phases": [
+        {"at_ms": 0, "body_motion": "turn", "body_variant": 0, "body_strength": 0.45, "body_hold_ms": 1500},
+        {"at_ms": 500, "body_motion": "tilt", "body_variant": 1, "body_strength": 0.5, "body_hold_ms": 1400},
+        {"at_ms": 1100, "gesture": "chest", "gesture_variant": 2, "gesture_hold_ms": 1300, "gesture_strength": 0.55, "body_motion": "lean", "body_variant": 0, "body_strength": 0.3, "body_hold_ms": 1200}
+      ]
+    },
+    {
+      "id": "emotion.excitement",
+      "kind": "segment",
+      "label": "兴奋",
+      "emotion": "excitement",
+      "variants": 2,
+      "default_hold_ms": 2600,
+      "cooldown_group": "arm",
+      "intensity": [0.5, 1],
+      "phases": [
+        {"at_ms": 0, "body_motion": "lean", "body_variant": 0, "body_strength": 0.7, "body_hold_ms": 1000},
+        {"at_ms": 600, "body_motion": "sway", "body_variant": 0, "body_strength": 0.6, "body_hold_ms": 1200},
+        {"at_ms": 1200, "body_motion": "sway", "body_variant": 1, "body_strength": 0.5, "body_hold_ms": 1000}
+      ]
+    },
+    {
+      "id": "emotion.fear",
+      "kind": "segment",
+      "label": "害怕",
+      "emotion": "fear",
+      "variants": 2,
+      "default_hold_ms": 2600,
+      "cooldown_group": "arm",
+      "intensity": [0.5, 1],
+      "phases": [
+        {"at_ms": 0, "gesture": "chest", "gesture_variant": 1, "gesture_hold_ms": 1600, "gesture_strength": 0.75},
+        {"at_ms": 100, "body_motion": "turn", "body_variant": 1, "body_strength": 0.55, "body_hold_ms": 1500}
+      ]
+    },
+    {
+      "id": "emotion.grief",
+      "kind": "segment",
+      "label": "悲痛",
+      "emotion": "grief",
+      "variants": 2,
+      "default_hold_ms": 3000,
+      "cooldown_group": "arm",
+      "intensity": [0.5, 1],
+      "phases": [
+        {"at_ms": 0, "body_motion": "nod", "body_variant": 1, "body_strength": 0.7, "body_hold_ms": 1800},
+        {"at_ms": 1000, "body_motion": "lean", "body_variant": 1, "body_strength": 0.35, "body_hold_ms": 1400}
+      ]
+    },
+    {
+      "id": "emotion.joy",
+      "kind": "segment",
+      "label": "喜悦",
+      "emotion": "joy",
+      "variants": 2,
+      "default_hold_ms": 2600,
+      "cooldown_group": "arm",
+      "intensity": [0.45, 0.95],
+      "phases": [
+        {"at_ms": 0, "body_motion": "sway", "body_variant": 0, "body_strength": 0.6, "body_hold_ms": 1400},
+        {"at_ms": 500, "body_motion": "nod", "body_variant": 0, "body_strength": 0.35, "body_hold_ms": 1000},
+        {"at_ms": 1100, "body_motion": "sway", "body_variant": 2, "body_strength": 0.45, "body_hold_ms": 1300}
+      ]
+    },
+    {
+      "id": "emotion.love",
+      "kind": "segment",
+      "label": "爱意",
+      "emotion": "love",
+      "variants": 2,
+      "default_hold_ms": 2800,
+      "cooldown_group": "arm",
+      "intensity": [0.4, 0.9],
+      "phases": [
+        {"at_ms": 0, "body_motion": "tilt", "body_variant": 0, "body_strength": 0.55, "body_hold_ms": 1800},
+        {"at_ms": 600, "gesture": "chest", "gesture_variant": 0, "gesture_hold_ms": 1500, "gesture_strength": 0.65}
+      ]
+    },
+    {
+      "id": "emotion.nervousness",
+      "kind": "segment",
+      "label": "紧张",
+      "emotion": "nervousness",
+      "variants": 2,
+      "default_hold_ms": 3000,
+      "cooldown_group": "arm",
+      "intensity": [0.3, 0.75],
+      "phases": [
+        {"at_ms": 0, "body_motion": "turn", "body_variant": 2, "body_strength": 0.5, "body_hold_ms": 1600},
+        {"at_ms": 500, "gesture": "chest", "gesture_variant": 2, "gesture_hold_ms": 1300, "gesture_strength": 0.5},
+        {"at_ms": 1400, "body_motion": "tilt", "body_variant": 2, "body_strength": 0.4, "body_hold_ms": 1200}
+      ]
+    },
+    {
+      "id": "emotion.optimism",
+      "kind": "segment",
+      "label": "乐观",
+      "emotion": "optimism",
+      "variants": 2,
+      "default_hold_ms": 2800,
+      "cooldown_group": "arm",
+      "intensity": [0.3, 0.75],
+      "phases": [
+        {"at_ms": 0, "body_motion": "nod", "body_variant": 2, "body_strength": 0.5, "body_hold_ms": 1400},
+        {"at_ms": 700, "body_motion": "sway", "body_variant": 2, "body_strength": 0.45, "body_hold_ms": 1500}
+      ]
+    },
+    {
+      "id": "emotion.pride",
+      "kind": "segment",
+      "label": "自豪",
+      "emotion": "pride",
+      "variants": 2,
+      "default_hold_ms": 2800,
+      "cooldown_group": "arm",
+      "intensity": [0.4, 0.85],
+      "phases": [
+        {"at_ms": 0, "body_motion": "turn", "body_variant": 0, "body_strength": 0.6, "body_hold_ms": 1300},
+        {"at_ms": 700, "body_motion": "nod", "body_variant": 2, "body_strength": 0.55, "body_hold_ms": 1200}
+      ]
+    },
+    {
+      "id": "emotion.realization",
+      "kind": "segment",
+      "label": "恍然大悟",
+      "emotion": "realization",
+      "variants": 2,
+      "default_hold_ms": 2400,
+      "cooldown_group": "arm",
+      "intensity": [0.35, 0.85],
+      "phases": [
+        {"at_ms": 0, "body_motion": "nod", "body_variant": 2, "body_strength": 0.6, "body_hold_ms": 1000},
+        {"at_ms": 500, "gesture": "point", "gesture_variant": 0, "gesture_hold_ms": 1200, "gesture_strength": 0.7}
+      ]
+    },
+    {
+      "id": "emotion.relief",
+      "kind": "segment",
+      "label": "释然",
+      "emotion": "relief",
+      "variants": 2,
+      "default_hold_ms": 2600,
+      "cooldown_group": "arm",
+      "intensity": [0.2, 0.6],
+      "phases": [
+        {"at_ms": 0, "body_motion": "sway", "body_variant": 1, "body_strength": 0.4, "body_hold_ms": 1500},
+        {"at_ms": 700, "body_motion": "nod", "body_variant": 0, "body_strength": 0.35, "body_hold_ms": 1200}
+      ]
+    },
+    {
+      "id": "emotion.remorse",
+      "kind": "segment",
+      "label": "内疚",
+      "emotion": "remorse",
+      "variants": 2,
+      "default_hold_ms": 2800,
+      "cooldown_group": "arm",
+      "intensity": [0.3, 0.75],
+      "phases": [
+        {"at_ms": 0, "body_motion": "nod", "body_variant": 1, "body_strength": 0.6, "body_hold_ms": 1600},
+        {"at_ms": 800, "gesture": "chest", "gesture_variant": 0, "gesture_hold_ms": 1400, "gesture_strength": 0.45}
+      ]
+    },
+    {
+      "id": "emotion.sadness",
+      "kind": "segment",
+      "label": "难过",
+      "emotion": "sadness",
+      "variants": 2,
+      "default_hold_ms": 3000,
+      "cooldown_group": "arm",
+      "intensity": [0.4, 0.9],
+      "phases": [
+        {"at_ms": 0, "body_motion": "nod", "body_variant": 1, "body_strength": 0.55, "body_hold_ms": 1600},
+        {"at_ms": 900, "body_motion": "turn", "body_variant": 0, "body_strength": 0.45, "body_hold_ms": 1400}
+      ]
+    },
+    {
+      "id": "emotion.surprise",
+      "kind": "segment",
+      "label": "惊讶",
+      "emotion": "surprise",
+      "variants": 2,
+      "default_hold_ms": 2600,
+      "cooldown_group": "arm",
+      "intensity": [0.5, 1],
+      "phases": [
+        {"at_ms": 0, "body_motion": "nod", "body_variant": 2, "body_strength": 0.65, "body_hold_ms": 900},
+        {"at_ms": 400, "gesture": "explain", "gesture_variant": 1, "gesture_hold_ms": 1200, "gesture_strength": 0.6},
+        {"at_ms": 1100, "body_motion": "turn", "body_variant": 1, "body_strength": 0.45, "body_hold_ms": 1200}
+      ]
+    }
+  ]
+}

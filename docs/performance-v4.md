@@ -11,11 +11,11 @@
 
 `performance.start` 返回 `session_id`。台词来自上游，不由表演模型改写。可选输入为 `context`（最多 800 字）、`motion_style`（lively/natural/restrained，默认 lively）和 `seed`。当前固定使用回归专家与协调动作组；不再提供 Flow 或自由连续手臂模式。
 
-增量文本通过 `performance.append({session_id,seq,text})` 追加；`seq` 从 0 严格递增，单次最多 2000 字，待处理文本最多 12000 字。`performance.finish` 提交余文并结束输入。整段已知台词可直接放在首次 finish 中。当前增量输入在完整句结束、长度上限或 finish 时提交，逗号不提交。已知文本在 240 字以内时，即使包含多个句号也只合成一次。长文在自然句边界附近按 240 字预算分组，并预取下一组；显式 flush 会强制提交当前余文。动作按语义句规划，情感按短语形成观测并由连续曲线连接，两者均不随 TTS 重启。
+增量文本通过 `performance.append({session_id,seq,text})` 追加；`seq` 从 0 严格递增，单次最多 2000 字，待处理文本最多 12000 字。`performance.finish` 提交余文并结束输入。整段已知台词可直接放在首次 finish 中。当前增量输入在完整句结束、长度上限或 finish 时提交，逗号不提交。已知文本在 400 字以内时，即使包含多个句号也只合成一次。长文在自然句边界附近按 400 字预算分组，并预取下一组；显式 flush 会强制提交当前余文。动作在实际开口后按当前曲线与历史生成 `performance.plan.v3` 事件，情感按短语形成 28 维观测并由连续曲线连接，两者均不随 TTS 重启。
 
 查询使用 `performance.state`，打断使用 `performance.cancel({session_id})`。重试必须复用同一 request_id 和相同内容。取消后的迟到输入、音频与动作不能恢复播放。
 
-`performance.state.affect` 提供当前多情绪权重、原始短语分数、快速反应、慢速心境、VAD 投影与音频驱动的曲线时钟，用于诊断与可视化。主情绪标签带迟滞，不等于把其他权重清零。暂停冻结曲线，预取不提前改变情绪，显式导演释放后回到当前自动状态。详见 [连续情绪说明](emotion-curves.md)。
+`performance.state.affect` 为 `emotion.curve.v2`：28 个标签的原始短语分数、快速反应、慢速心境、tension、VAD 投影、强度与音频驱动曲线时钟；`affect_vector` 是送进动作模型两个分支的 64 维状态。主标签带迟滞，不等于把其他证据清零。暂停冻结曲线，预取不提前改变情绪，显式导演释放后回到当前自动状态。详见 [情绪原生表演](emotion-native.md)。
 
 ## 当前控制能力
 
@@ -29,7 +29,9 @@
 | state.get / engine.pause | 完整运行状态与同步暂停 |
 | speech.unlock | 音频激活；浏览器限制仍要求用户点击 |
 
-导演可以设置 `gesture`、`body_motion`、`emotion` 或 `expression`，并通过 `clause` 绑定指定分句。手势包括 wave/chest/grass/point/thanks/explain/refuse/rest；身体包括 lean/sway/nod/tilt/turn/cajole/rest。变体取 0/1/2。强度、保持时间等具体字段见 [工具 Schema](performance-tools.json)。显式指令优先于自动选择，动作保持进入与退出过程。
+导演使用原生 `emotion`、`expression`、`action_id`，可通过 `clause` 绑定未来分句。一个动作事件：wave/chest/grass/point/thanks/explain/refuse 或 lean/sway/nod/tilt/turn/cajole，`none` 释放；变体为 0/1/2（按目录支持范围）。字段为 `variant`、`action_strength`、`action_hold_ms`；`hold_ms` 控制导演覆盖寿命。新接口不接受旧 gesture/body_motion 或 happy/sad 等别名。导演与自动模型经过同一调度器。
+
+原生形变表情可使用 `squint`、`wink_left`、`wink_right`。仅给 emotion 时默认附带情绪身体配方；显式 action_id 优先，`none` 可只看脸部。wink 每条指令只做一次。具体 28 种设计与调用见 [情绪表现](emotion-acting.md)。
 
 外观只接受显式更新；停止发言和换句保持设置。特殊眼型互斥、全开或全关。普通表情强度连续，开合嘴由真实音频驱动。音频播放时钟维护表演进度，眨眼、呼吸及原生物理持续运行。
 
@@ -37,4 +39,6 @@
 
 `/api/latent/*`、`/api/speech/*`、`/api/profile`、历史评分 HTTP 接口及旧低层公开命令不再提供，返回 404。低层参数与原始动画仍作为角色引擎的内部执行能力，不再作为兼容 API 暴露。
 
-客户端见 [`examples/performance_demo.py`](../examples/performance_demo.py)。当前默认使用约 308M 情感分类器与 0.8B 动作模型，不加载 4B；模型权重来源见 [架构说明](architecture.md)。本轮没有接入 DSH，也没有改训音色。
+客户端见 [`examples/performance_demo.py`](../examples/performance_demo.py)。当前默认使用约 308M 情感分类器、冻结的 0.8B 文本编码器与一个重训事件头和一个复用连续头，不加载 4B；v6 模型包与指标见 [验收记录](../experiments/vtuber-v6-native28-motion-r2/REPORT.md)，架构见 [情绪原生表演](emotion-native.md)。本轮没有接入 DSH，也没有改训音色。
+
+独立表演评分使用 `review.create/list/get/play/stop/rate`，共用同一请求信封和运行时；参数与数据边界见 [偏好采集接口](preference-review.md)。
