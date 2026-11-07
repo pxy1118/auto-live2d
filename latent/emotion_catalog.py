@@ -17,8 +17,8 @@ from emotion_event import decode, load_event
 from emotion_expert import BACKGROUND_CHANNELS, load_continuous
 from motion_history import STATE_DIM, state_vector
 
-DEFAULT_EXPERIMENT = ROOT / 'experiments/vtuber-v6-native28-motion-r2'
-RUNTIME_VERSION = 'v6.3.2-feedback-acting'
+DEFAULT_EXPERIMENT = ROOT / 'experiments/vtuber-v6-acting-feedback-r3-final'
+RUNTIME_VERSION = 'v6.4.0-acting-feedback'
 SCHEMA = 'vtuber.v6.native28_motion'
 
 
@@ -146,7 +146,7 @@ class EmotionCatalogPolicy:
         output = self.models['event'](saved['pooled'][None], tensor([affect]), tensor([history]))
         decoded = decode({k: v[0] for k, v in output.items()}, list(MODEL_ACTION_IDS), ACTION_BY_ID, self.run['models']['event']['threshold'])
         self.plan_calls += 1
-        return {'plan': {'schema': 'performance.plan.v3', 'clause': data['clause'], **decoded},
+        return {'plan': {'schema': 'performance.plan.v4', 'clause': data['clause'], **decoded},
                 'timing': {'total_compute_ms': (time.perf_counter() - begin) * 1000},
                 'input': {'history_dim': STATE_DIM, 'affect_dim': len(affect), 'feature_id': data['feature_id']}}
 

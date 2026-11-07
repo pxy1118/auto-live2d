@@ -7,7 +7,7 @@ import {DEFORMATION_EXPRESSIONS} from './emotion-expression';
 import {FACE_CHANNELS} from './emotion-profiles';
 
 export const STREAM_HZ = 20;
-export const PERFORMANCE_RUNTIME_VERSION = 'v6.3.2-feedback-acting';
+export const PERFORMANCE_RUNTIME_VERSION = 'v6.4.0-acting-feedback';
 export const STREAM_FRAMES = 24;
 export const STREAM_STEP_MS = 400;
 export const eyeNames = ['normal', '＞＜', '圈圈眼', '爱心眼', '屑屑眼'];
@@ -50,7 +50,7 @@ export function performanceCapabilities(parameters: Parameter[]) {
   return {
     version: 'performance.v6', runtime_version: PERFORMANCE_RUNTIME_VERSION, experimental: true,
     sampling_hz: STREAM_HZ, horizon_ms: 1200, update_ms: STREAM_STEP_MS,
-    motion_driver: 'native28_motion', plan_schema: 'performance.plan.v3',
+    motion_driver: 'native28_motion', plan_schema: 'performance.plan.v4',
     motion_styles: ['restrained', 'natural', 'lively'], default_motion_style: DEFAULT_MOTION_STYLE,
     gesture_policy: { one_per_clause: true, minimum_gap_ms: style.gap, maximum_gesture_ms: style.duration, amplitude_independent_of_frequency: true, complete_after_short_clause: true },
     channels: parameters.filter(p => streamChannels.includes(p.id)),
@@ -59,7 +59,7 @@ export function performanceCapabilities(parameters: Parameter[]) {
     action_catalog: catalogCapabilities(),
     emotion_bindings: Object.fromEntries(EMOTION_LABELS.map(label=>[label,EMOTION_BINDINGS.get(label)])),
     eye_types: eyeNames, eye_policy: { exclusive: true, values: [0, 1], fading: false, automatic: 'deformation' }, expressions: [...Object.keys(faceKeys),...DEFORMATION_EXPRESSIONS],
-    expression_channels:FACE_CHANNELS,acting_policy:{body:'style_selected_model_body',hand_gestures:'native_contact_pose',greeting:'body_until_palm_rigged',black_face:{values:[0,1],on:.2,off:.09,on_dwell_ms:120,off_dwell_ms:300},wink:{automatic_labels:EMOTION_LABELS.filter(label=>EMOTION_BINDINGS.get(label)?.wink),dwell_ms:650,duration_ms:620,cooldown_ms:8000,once_per_episode:true}},
+    expression_channels:FACE_CHANNELS,acting_policy:{body:'trained_action_owns_selection',hand_gestures:'native_contact_pose',greeting:'body_until_palm_rigged',timing:'text_fraction_on_audio_with_preparation',black_face:{values:[0,1],on:.2,off:.09,on_dwell_ms:120,off_dwell_ms:300},eye_accents:{owner:'admitted_action_variant_or_explicit_director',double_blink_ms:500,wink_ms:620,once_per_action:true}},
     appearance, limits: { intensity: [0, 1], hold_ms: [0, 600000], clause_chars: 240 },
     methods: ['performance.start', 'performance.append', 'performance.finish', 'performance.cancel', 'performance.direct', 'performance.release', 'performance.state', 'performance.status', 'appearance.update', 'appearance.get', 'capabilities.get'],
     parameters: parameters.map(p => ({

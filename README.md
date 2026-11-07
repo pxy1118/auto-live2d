@@ -2,7 +2,7 @@
 
 输入台词，让角色伴随语音做表情和动作。未来由 **DeepSeekharness（DSH）** 提供台词；语音继续使用本地 **Qwen3-TTS / da_fei_yu**。
 
-当前默认模型包为 `vtuber-v6-native28-motion-r2`，运行时 `v6.3.2-feedback-acting`。28 维情绪分别保留快响应和慢心情，表情直接读取混合曲线；轻量动作头在实际开口后读取当前情绪与纯动作历史，一次选择协调手势或独立身体动作。默认活泼。28 种情绪已有独立面部形变和身体表现配方，支持眯眼、单眼 wink、撅嘴鼓腮及前倾轻扭；7 个手势意图、6 身体原语仍共用一个调度器（招呼因缺少掌心翻转绑定，暂用点头倾身）。Qwen TTS 音色不变，神经模型全部在 GPU。
+当前默认模型包为 `vtuber-v6-acting-feedback-r3-final`，运行时 `v6.4.0-acting-feedback`。28 维情绪分别保留快响应和慢心情，表情直接读取混合曲线；轻量动作头在实际开口后读取当前情绪与纯动作历史，一次选择协调手势或独立身体动作。默认活泼。28 种情绪已有独立面部形变和身体表现配方，支持眯眼、单眼 wink、撅嘴鼓腮及前倾轻扭；7 个手势意图、9 身体原语仍共用一个调度器（招呼因缺少掌心翻转绑定，暂用点头倾身）。Qwen TTS 音色不变，神经模型全部在 GPU。
 
 ![说话与表演界面](docs/media/demo-desktop.png)
 
@@ -22,7 +22,7 @@ python main.py
 
 ## 当前运行链路
 
-- [Horizon-Labs/multilingual-emotions-base](https://huggingface.co/Horizon-Labs/multilingual-emotions-base) 默认在 GPU 上以 FP32 输出 28 类独立情感分数。28 条证据各自驱动持续面部形变与叠图，自动 wink 仅保留得意场景，按短语观测、随实际音频推进，不因逗号重启 TTS；不再合并六类、不做总和归一化。
+- [Horizon-Labs/multilingual-emotions-base](https://huggingface.co/Horizon-Labs/multilingual-emotions-base) 默认在 GPU 上以 FP32 输出 28 类独立情感分数。28 条证据各自驱动持续面部形变与叠图，眨眨眼与 wink 由已执行的动作变体触发，按短语观测、随实际音频推进，不因逗号重启 TTS；不再合并六类、不做总和归一化。
 - 当前 Qwen3.5-0.8B 编码器保持冻结；两个轻量分支（事件头已重训，连续头复用）：事件分支选择目录动作、变体、力度与时机，连续分支只生成头/躯干/注视背景轨迹。两者都消费 28 维情绪状态与文本语义特征。
 - 动作目录保留 none、7 个内容手势和6 个身体原语。28 套情绪配方调整面部形变及已选身体动作；调度器统一处理导演优先、最小间隔、同名去抖、过渡与收势，不恢复旧 27 个情感短段。
 - Qwen3-TTS 音色与 CUDA Graph 方案继续使用。400 字以内（Qwen3-TTS 单次合成上限）的已知台词合成一次，标点不反复重启；多个表演计划跟随同一音频时钟。长文按预算拆分，播放时预取下一组。
@@ -30,7 +30,7 @@ python main.py
 
 旧预测/语音面板、参数实验台、手动动作面板和历史评分入口已移除。日常服务不再提供 `/api/latent/*`、`/api/speech/*`，也不再支持 `--legacy`、`--semantic` 或自动回退。v3 整段动作头、Flow、旧门控和九类手势选择器不再随默认模型加载。历史数据、评分和研究代码保留作研究记录。
 
-现有模型包的训练与验证见 [r2 报告](experiments/vtuber-v6-native28-motion-r2/REPORT.md)，架构见 [原生情绪与动作](docs/emotion-native.md)。旧 27 情绪动作与预览仅归档在 `research/emotion-catalog-r1-archive/`，不进入默认运行。
+现有模型包的训练与验证见 [r3 报告](experiments/vtuber-v6-acting-feedback-r3-final/REPORT.md)，架构见 [原生情绪与动作](docs/emotion-native.md)。旧 27 情绪动作与预览仅归档在 `research/emotion-catalog-r1-archive/`，不进入默认运行。
 
 情绪曲线、概率与表达强度的区别，以及借鉴 SoulLink 的范围见 [连续情绪说明](docs/emotion-curves.md)。
 
@@ -57,7 +57,7 @@ python main.py
 | 大肥鱼角色 | 从原作者处获取，保持模型目录与文件名，放在 `live2d/DeepSeek/DeepSeek/`；禁止再分发原始 PSD |
 | Qwen3.5-0.8B 权重 | 运行 `latent/prepare_encoder.py`，按固定来源下载到 `models/`；当前推理不需要 4B |
 | 多语言情感模型 | 运行 `python latent/prepare_emotion.py`；固定来源与 SHA-256 见 `latent/emotion-source.json` |
-| 当前表演检查点 | `experiments/vtuber-v6-native28-motion-r2/{continuous.pt,event.pt}`，事件头由 `latent/train_motion_r2.py` 产出，连续头按原字节复用；`latent/stream-run.json` 指向当前包，通道契约是 `latent/runtime-profile.json` |
+| 当前表演检查点 | `experiments/vtuber-v6-acting-feedback-r3-final/{continuous.pt,event.pt}`，事件头由 `latent/train_acting_feedback.py` 产出，连续头按原字节复用；`latent/stream-run.json` 指向当前包，通道契约是 `latent/runtime-profile.json` |
 | Qwen3-TTS 与 da_fei_yu 音色 | 推理源码固定副本在 `vendor/qwen3-tts/`；微调权重放在 `models/Qwen3-TTS-12Hz-1.7B-da_fei_yu/`；`speech/config.json` 只需设置该目录与 `python` 环境路径；加速源码在 `vendor/faster-qwen3-tts/` |
 | 本地资产自检 | `python scripts/verify_local_assets.py` 逐文件校验全部运行时模型与源码副本，无需网络；布局与已释放的 HF 缓存见 [本地资产](docs/local-assets.md) |
 
@@ -104,3 +104,5 @@ npm run test:continuous -- --long
 手势力度与手型图层切换已分开，修复弱力度举手、指点、持草时的半透明叠影，见 [手部渲染修复](docs/hand-drawings.md)。
 
 首轮 99 份人工评分及眼神/手型修订见 [反馈处理记录](docs/review-feedback.md)。
+
+保留动作反馈的实现、训练来源与指标边界见 [动作反馈训练](docs/acting-feedback-training.md)。

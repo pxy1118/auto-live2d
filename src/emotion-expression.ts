@@ -1,12 +1,12 @@
 import {OVERLAY_ATTACK_S,OVERLAY_RELEASE_S} from './emotion-config';
 import {EMOTION_PROFILES,FACE_CHANNELS,OVERLAY_NAMES,EYE_TYPES,type FaceChannel,type OverlayName,type EyeType} from './emotion-profiles';
-import {EMOTION_BINDINGS} from './action-catalog';
-import {actingEmotion} from './emotion-acting';
+import {EMOTION_BINDINGS,type EyeAccent} from './action-catalog';
 
-export const DEFORMATION_EXPRESSIONS=['squint','wink_left','wink_right'] as const;
+export const DEFORMATION_EXPRESSIONS=['squint','wink_left','wink_right','double_blink'] as const;
 export type EyeDisplay='normal'|EyeType;
 export type BlendedExpression={face:Record<FaceChannel,number>;overlay:Record<OverlayName,number>};
-export type ExpressionResult=BlendedExpression&{eye:EyeDisplay;accent:null|{side:'left'|'right';elapsed_ms:number;closure:number}};
+export type ExpressionResult=BlendedExpression&{eye:EyeDisplay;accent:null|{side:'left'|'right'|'both';kind:EyeAccent;elapsed_ms:number;closure:number}};
+export type ActionEyeAccent={key:string;name:EyeAccent;elapsed_ms:number};
 type Director={label:string;intensity:number;serial?:number};
 type Expression={name:string;intensity:number;serial?:number};
 const clamp=(x:number,lo=0,hi=1)=>Math.max(lo,Math.min(hi,Number.isFinite(x)?x:0));
@@ -35,12 +35,12 @@ export function blendExpression(effective:Record<string,number>):BlendedExpressi
 export class EmotionExpressionLayer{
  private face=zeroFace();private overlay=zeroOverlay();private visibleEye:EyeDisplay='normal';
  private manualKey='';private transition:{face:Record<FaceChannel,number>;overlay:Record<OverlayName,number>;elapsed:number;duration:number}|null=null;
- private candidate='';private candidateMs=0;private episode='';private nextWinkMs=0;
- private wink:{side:'left'|'right';at:number;intensity:number}|null=null;
+ private actionKey='';
+ private wink:{side:'left'|'right'|'both';kind:EyeAccent;at:number;intensity:number}|null=null;
  private accent:ExpressionResult['accent']=null;
  private gazeMs=0;private blackVisible=false;private blackDwellMs=0;
 
- update(effective:Record<string,number>,dt:number,actorMs:number,director?:Director|null,expression?:Expression|null):ExpressionResult{
+ update(effective:Record<string,number>,dt:number,actorMs:number,director?:Director|null,expression?:Expression|null,action?:ActionEyeAccent|null):ExpressionResult{
   const seconds=Number.isFinite(dt)&&dt>0?dt:0;if(!seconds)return this.state();
   const validDirector=director&&Object.hasOwn(EMOTION_PROFILES,director.label)?director:null;
   const evidence=validDirector?(validDirector.label==='neutral'?{}:{[validDirector.label]:clamp(validDirector.intensity)}):effective;
@@ -63,19 +63,14 @@ export class EmotionExpressionLayer{
   const key=JSON.stringify([validDirector??null,expression??null]),automaticKey='[null,null]';
   if(key!==this.manualKey){
    if(key!==automaticKey||this.manualKey&&this.manualKey!==automaticKey)this.transition={face:{...this.face},overlay:{...this.overlay},elapsed:0,duration:key===automaticKey?OVERLAY_RELEASE_S:OVERLAY_ATTACK_S};
-   this.manualKey=key;this.wink=null;this.candidate='';this.candidateMs=0;this.episode='';
-   if(expression?.name==='wink_left'||expression?.name==='wink_right')this.wink={side:expression.name==='wink_left'?'left':'right',at:actorMs,intensity};
+   this.manualKey=key;this.wink=null;
+   if(expression&&['wink_left','wink_right','double_blink'].includes(expression.name))this.wink={side:expression.name==='double_blink'?'both':expression.name==='wink_left'?'left':'right',kind:expression.name as EyeAccent,at:actorMs,intensity};
   }
-  // One accent after 650 ms of a clear emotion, with an 8 s automatic cooldown.
-  const candidate=validDirector?{label:validDirector.label,score:validDirector.intensity}:actingEmotion(effective);
-  const label=expression?'':candidate?.label??'';
-  if(label!==this.candidate){this.candidate=label;this.candidateMs=0;}
-  this.candidateMs+=seconds*1000;
-  if(!expression&&label!==this.episode&&this.candidateMs>=650){
-   this.episode=label;const side=EMOTION_BINDINGS.get(label)?.wink;
-   if(side&&(candidate?.score??0)>=.4&&(validDirector||actorMs>=this.nextWinkMs)){
-    this.wink={side,at:actorMs,intensity:1};this.nextWinkMs=actorMs+8000;
-   }
+  // Eye accents follow an admitted action and variant, never the emotion label
+  // alone. This prevents laughter/shyness from becoming an unsolicited wink.
+  if(!expression&&action&&action.key!==this.actionKey&&action.elapsed_ms>=0){
+   this.actionKey=action.key;
+   if(action.elapsed_ms<620)this.wink={side:action.name==='double_blink'?'both':action.name==='wink_left'?'left':'right',kind:action.name,at:actorMs-action.elapsed_ms,intensity:1};
   }
   if(this.transition)this.transition.elapsed+=seconds;
   const x=this.transition?clamp(this.transition.elapsed/this.transition.duration):1,alpha=ease(x);
@@ -94,17 +89,17 @@ export class EmotionExpressionLayer{
   this.visibleEye=expression&&(expression.name==='normal'||EYE_TYPES.includes(expression.name as EyeType))?expression.name as EyeDisplay:'normal';
   this.accent=null;
   if(this.wink){
-   const elapsed=Math.max(0,actorMs-this.wink.at);
-   if(elapsed>=620)this.wink=null;
+   const elapsed=Math.max(0,actorMs-this.wink.at),double=this.wink.kind==='double_blink',duration=double?500:620;
+   if(elapsed>=duration)this.wink=null;
    else{
-    const closure=this.wink.intensity*(elapsed<120?ease(elapsed/120):elapsed<300?1:1-ease((elapsed-300)/320));
-    const lid=this.wink.side==='left'?'ParamEyeLOpen':'ParamEyeROpen';
-    this.face[lid]+=(-1-this.face[lid])*closure;
-    this.visibleEye='normal';this.accent={side:this.wink.side,elapsed_ms:elapsed,closure};
+    const blink=(t:number)=>t<0||t>=220?0:t<70?ease(t/70):t<110?1:1-ease((t-110)/110);
+    const closure=this.wink.intensity*(double?Math.max(blink(elapsed),blink(elapsed-280)):elapsed<120?ease(elapsed/120):elapsed<300?1:1-ease((elapsed-300)/320));
+    for(const lid of this.wink.side==='both'?['ParamEyeLOpen','ParamEyeROpen']:this.wink.side==='left'?['ParamEyeLOpen']:['ParamEyeROpen'])this.face[lid]+=(-1-this.face[lid])*closure;
+    this.visibleEye='normal';this.accent={side:this.wink.side,kind:this.wink.kind,elapsed_ms:elapsed,closure};
    }
   }
   return this.state();
  }
- reset(){this.face=zeroFace();this.overlay=zeroOverlay();this.visibleEye='normal';this.manualKey='';this.transition=null;this.candidate='';this.candidateMs=0;this.episode='';this.nextWinkMs=0;this.wink=null;this.accent=null;this.gazeMs=0;this.blackVisible=false;this.blackDwellMs=0;}
+ reset(){this.face=zeroFace();this.overlay=zeroOverlay();this.visibleEye='normal';this.manualKey='';this.transition=null;this.actionKey='';this.wink=null;this.accent=null;this.gazeMs=0;this.blackVisible=false;this.blackDwellMs=0;}
  state():ExpressionResult{return {face:{...this.face},overlay:{...this.overlay},eye:this.visibleEye,accent:this.accent?{...this.accent}:null};}
 }

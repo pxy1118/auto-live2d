@@ -26,7 +26,7 @@ test('candidate exploration preserves vocabulary, neutral none, and produces dis
  assert.equal(candidatePlan(plan(),Array(64).fill(0),'C').action.id,'none');
  assert.equal(candidatePlan(plan(),affect,'C').action.id,'cajole');
  const p=actor('love');run(p,20,2000);const b=plans[1];
- p.offerPlan({session_id:id,speech_id:speechId,clause:0,plan:b,authored_body:true,input:{review_candidate:'B'}});p.tick(.02,audio(2020),base());
+ p.offerPlan({session_id:id,speech_id:speechId,clause:0,plan:b,input:{review_candidate:'B'}});p.tick(.02,audio(2020),base());
  assert.equal(p.state().plan_history[0].performed_action.variant,b.action.variant,'production emotion styling must not overwrite the reviewed variant');
 });
 test('human votes require completed current takes and remain immutable across replay or revision',()=>{

@@ -9,7 +9,7 @@
 | `models/Qwen3.5-0.8B/` | 冻结文本编码器（bf16） | 1.6 GB | `latent/prepare_encoder.py`，revision 与 SHA-256 见 `latent/encoder-source.json` |
 | `models/multilingual-emotions-base/` | 28 类情感分类器（FP32） | 1.2 GB | `latent/prepare_emotion.py`，来源与逐文件 SHA-256 见 `latent/emotion-source.json` |
 | `models/Qwen3-TTS-12Hz-1.7B-da_fei_yu/` | da_fei_yu 音色微调检查点（CustomVoice 1.7B + speech tokenizer） | 4.2 GB | 原训练输出，从 `D:/Workplace/Qwen3-TTS/runs/da_fei_yu/checkpoint-best` 移入；SHA-256 见 `speech/model-source.json` |
-| `experiments/vtuber-v6-native28-motion-r2/` | v6 事件/连续分支检查点与运行元数据 | 3.9 MB | `latent/train_motion_r2.py` 训练产物；`run.json` 记录数据与契约哈希 |
+| `experiments/vtuber-v6-acting-feedback-r3-final/` | v6 事件/连续分支检查点与运行元数据 | 3.9 MB | `latent/train_acting_feedback.py` 训练产物；`run.json` 记录数据与契约哈希 |
 | `vendor/qwen3-tts/` | Qwen3-TTS 推理源码固定副本（Apache-2.0） | 0.9 MB | 上游 `QwenLM/Qwen3-TTS` commit `022e286b...`；逐文件 SHA-256 见 `SOURCE.json` |
 | `vendor/faster-qwen3-tts/` | CUDA Graph 加速源码固定副本（MIT） | <0.1 MB | 上游 commit `b84dc773...` |
 | `datasets/emotion-catalog-v1/` | affect 缓存、曲线仿真、合成监督记录 | 80.9 MB 缓存 + 269 KB 记录 | `research/emotion-catalog-r1-archive/build_affect_cache.py.snapshot`（缓存可由脚本重建，按 `.gitignore` 不随仓库分发） |

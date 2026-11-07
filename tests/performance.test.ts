@@ -53,10 +53,10 @@ test('start validates input and exposes the v6 capabilities', () => {
   p.start({session_id: id, motion_style: 'natural'}, base());
   const capabilities: any = p.capabilities();
   assert.equal(capabilities.runtime_version, PERFORMANCE_RUNTIME_VERSION);
-  assert.equal(capabilities.plan_schema, 'performance.plan.v3');
+  assert.equal(capabilities.plan_schema, 'performance.plan.v4');
   assert.deepEqual(capabilities.emotion_labels, EMOTION_LABELS);
   assert.equal(capabilities.affect.dim, AFFECT_DIM);
-  assert.equal(capabilities.action_catalog.actions.length, 14);
+  assert.equal(capabilities.action_catalog.actions.length, 17);
   assert.ok(capabilities.action_catalog.actions.every((a: any) => a.kind !== 'segment'));
 });
 

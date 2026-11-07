@@ -11,7 +11,7 @@
 
 `performance.start` 返回 `session_id`。台词来自上游，不由表演模型改写。可选输入为 `context`（最多 800 字）、`motion_style`（lively/natural/restrained，默认 lively）和 `seed`。当前固定使用回归专家与协调动作组；不再提供 Flow 或自由连续手臂模式。
 
-增量文本通过 `performance.append({session_id,seq,text})` 追加；`seq` 从 0 严格递增，单次最多 2000 字，待处理文本最多 12000 字。`performance.finish` 提交余文并结束输入。整段已知台词可直接放在首次 finish 中。当前增量输入在完整句结束、长度上限或 finish 时提交，逗号不提交。已知文本在 400 字以内时，即使包含多个句号也只合成一次。长文在自然句边界附近按 400 字预算分组，并预取下一组；显式 flush 会强制提交当前余文。动作在实际开口后按当前曲线与历史生成 `performance.plan.v3` 事件，情感按短语形成 28 维观测并由连续曲线连接，两者均不随 TTS 重启。
+增量文本通过 `performance.append({session_id,seq,text})` 追加；`seq` 从 0 严格递增，单次最多 2000 字，待处理文本最多 12000 字。`performance.finish` 提交余文并结束输入。整段已知台词可直接放在首次 finish 中。当前增量输入在完整句结束、长度上限或 finish 时提交，逗号不提交。已知文本在 400 字以内时，即使包含多个句号也只合成一次。长文在自然句边界附近按 400 字预算分组，并预取下一组；显式 flush 会强制提交当前余文。动作在实际开口后按当前曲线与历史生成 `performance.plan.v4` 事件，情感按短语形成 28 维观测并由连续曲线连接，两者均不随 TTS 重启。
 
 查询使用 `performance.state`，打断使用 `performance.cancel({session_id})`。重试必须复用同一 request_id 和相同内容。取消后的迟到输入、音频与动作不能恢复播放。
 
@@ -39,6 +39,6 @@
 
 `/api/latent/*`、`/api/speech/*`、`/api/profile`、历史评分 HTTP 接口及旧低层公开命令不再提供，返回 404。低层参数与原始动画仍作为角色引擎的内部执行能力，不再作为兼容 API 暴露。
 
-客户端见 [`examples/performance_demo.py`](../examples/performance_demo.py)。当前默认使用约 308M 情感分类器、冻结的 0.8B 文本编码器与一个重训事件头和一个复用连续头，不加载 4B；v6 模型包与指标见 [验收记录](../experiments/vtuber-v6-native28-motion-r2/REPORT.md)，架构见 [情绪原生表演](emotion-native.md)。本轮没有接入 DSH，也没有改训音色。
+客户端见 [`examples/performance_demo.py`](../examples/performance_demo.py)。当前默认使用约 308M 情感分类器、冻结的 0.8B 文本编码器与一个重训事件头和一个复用连续头，不加载 4B；v6 模型包与指标见 [验收记录](../experiments/vtuber-v6-acting-feedback-r3-final/REPORT.md)，架构见 [情绪原生表演](emotion-native.md)。本轮没有接入 DSH，也没有改训音色。
 
 独立表演评分使用 `review.create/list/get/play/stop/rate`，共用同一请求信封和运行时；参数与数据边界见 [偏好采集接口](preference-review.md)。

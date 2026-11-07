@@ -1,8 +1,8 @@
 {
-  "path": "experiments/vtuber-v6-native28-motion-r2",
+  "path": "experiments/vtuber-v6-acting-feedback-r3-final",
   "promoted": true,
   "runtime": "native28_motion",
-  "runtime_version": "v6.3.2-feedback-acting",
-  "reason": "沿用 r2 检查点；依据人工反馈校准低垂/回避视线、眼睑与叠图，取消泛化 wink；保持原生手势接触姿态，撤下无掌心绑定的伪张掌路径。",
-  "previous_path": "experiments/vtuber-v6-emotion-catalog-r1"
+  "runtime_version": "v6.4.0-acting-feedback",
+  "reason": "落实动作反馈；17 类轻量事件头学习句内锚点，26 维动作历史；跨句意图由单一调度器等待安全退出，Qwen 与连续背景权重冻结。",
+  "previous_path": "experiments/vtuber-v6-native28-motion-r2"
 }

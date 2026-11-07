@@ -15,6 +15,9 @@
     "tilt",
     "turn",
     "cajole",
+    "shake",
+    "tremble",
+    "proud",
     "<untrained>"
   ],
   "variants": [
@@ -29,5 +32,5 @@
     "exit"
   ],
   "age_scale_ms": 10000,
-  "dim": 23
+  "dim": 26
 }

@@ -1,0 +1,33 @@
+{
+  "schema": "motion.history.v1",
+  "actions": [
+    "none",
+    "wave",
+    "chest",
+    "grass",
+    "point",
+    "thanks",
+    "explain",
+    "refuse",
+    "lean",
+    "sway",
+    "nod",
+    "tilt",
+    "turn",
+    "cajole",
+    "<untrained>"
+  ],
+  "variants": [
+    0,
+    1,
+    2
+  ],
+  "phases": [
+    "idle",
+    "enter",
+    "hold",
+    "exit"
+  ],
+  "age_scale_ms": 10000,
+  "dim": 23
+}

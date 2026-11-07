@@ -8,13 +8,12 @@
       ],
       "title": "赞赏",
       "description": "抬眼、舒眉，稍向前靠近",
-      "body": {
+      "action": {
         "id": "lean",
         "variant": 0,
         "strength": 0.65,
         "hold_ms": 1700
-      },
-      "wink": null
+      }
     },
     "amusement": {
       "expression_profile": "amusement",
@@ -23,13 +22,12 @@
       ],
       "title": "觉得有趣",
       "description": "双眼眯起偏嘴笑，歪头；笑意不自动触发 wink",
-      "body": {
+      "action": {
         "id": "tilt",
         "variant": 0,
         "strength": 0.65,
         "hold_ms": 1900
-      },
-      "wink": null
+      }
     },
     "anger": {
       "expression_profile": "anger",
@@ -38,13 +36,12 @@
       ],
       "title": "生气",
       "description": "压眉抿嘴，侧首表达抗拒",
-      "body": {
+      "action": {
         "id": "turn",
         "variant": 1,
         "strength": 0.72,
         "hold_ms": 1700
-      },
-      "wink": null
+      }
     },
     "annoyance": {
       "expression_profile": "annoyance",
@@ -53,13 +50,12 @@
       ],
       "title": "不耐烦",
       "description": "半眯眼、鼓腮撅嘴，稍稍侧首",
-      "body": {
+      "action": {
         "id": "turn",
         "variant": 1,
         "strength": 0.5,
         "hold_ms": 1400
-      },
-      "wink": null
+      }
     },
     "approval": {
       "expression_profile": "approval",
@@ -68,13 +64,12 @@
       ],
       "title": "赞同",
       "description": "柔和眯眼笑，明确点头",
-      "body": {
+      "action": {
         "id": "nod",
         "variant": 0,
         "strength": 0.72,
         "hold_ms": 1400
-      },
-      "wink": null
+      }
     },
     "caring": {
       "expression_profile": "caring",
@@ -83,13 +78,12 @@
       ],
       "title": "关心",
       "description": "舒眉柔和注视，缓缓前倾",
-      "body": {
+      "action": {
         "id": "lean",
         "variant": 1,
         "strength": 0.6,
         "hold_ms": 1900
-      },
-      "wink": null
+      }
     },
     "confusion": {
       "expression_profile": "confusion",
@@ -98,13 +92,12 @@
       ],
       "title": "困惑",
       "description": "一高一低的眉眼，左右歪头端详",
-      "body": {
+      "action": {
         "id": "tilt",
         "variant": 2,
         "strength": 0.7,
         "hold_ms": 2200
-      },
-      "wink": null
+      }
     },
     "curiosity": {
       "expression_profile": "curiosity",
@@ -112,14 +105,13 @@
         "lean"
       ],
       "title": "好奇",
-      "description": "睁大双眼、看向观众，前倾歪头",
-      "body": {
+      "description": "睁大双眼，歪头前倾凝视观众",
+      "action": {
         "id": "lean",
         "variant": 2,
-        "strength": 0.7,
-        "hold_ms": 1900
-      },
-      "wink": null
+        "strength": 0.9,
+        "hold_ms": 2100
+      }
     },
     "desire": {
       "expression_profile": "desire",
@@ -127,14 +119,13 @@
         "cajole"
       ],
       "title": "期待与渴望",
-      "description": "半眯眼、微微撅嘴，靠近轻扭",
-      "body": {
+      "description": "半眯眼享受；亲近时靠近轻扭并眨眨眼",
+      "action": {
         "id": "cajole",
         "variant": 2,
-        "strength": 0.78,
-        "hold_ms": 2400
-      },
-      "wink": null
+        "strength": 0.85,
+        "hold_ms": 2300
+      }
     },
     "disappointment": {
       "expression_profile": "disappointment",
@@ -143,28 +134,26 @@
       ],
       "title": "失望",
       "description": "视线低垂、上眼睑放松，明显失落时黑脸",
-      "body": {
+      "action": {
         "id": "nod",
         "variant": 0,
         "strength": 0.4,
         "hold_ms": 1400
-      },
-      "wink": null
+      }
     },
     "disapproval": {
       "expression_profile": "disapproval",
       "action_ids": [
-        "turn"
+        "shake"
       ],
       "title": "不赞同",
-      "description": "单侧压眼、偏嘴，侧首停留",
-      "body": {
-        "id": "turn",
-        "variant": 1,
-        "strength": 0.65,
-        "hold_ms": 1700
-      },
-      "wink": null
+      "description": "侧目抿嘴，在反对语意处摇头",
+      "action": {
+        "id": "shake",
+        "variant": 0,
+        "strength": 0.75,
+        "hold_ms": 1500
+      }
     },
     "disgust": {
       "expression_profile": "disgust",
@@ -173,13 +162,12 @@
       ],
       "title": "厌恶",
       "description": "收紧眼睑、歪嘴，转开视线",
-      "body": {
+      "action": {
         "id": "turn",
         "variant": 0,
         "strength": 0.65,
         "hold_ms": 1700
-      },
-      "wink": null
+      }
     },
     "embarrassment": {
       "expression_profile": "embarrassment",
@@ -188,13 +176,12 @@
       ],
       "title": "害羞",
       "description": "侧下方避开视线，眯眼并明显脸红",
-      "body": {
+      "action": {
         "id": "cajole",
         "variant": 1,
         "strength": 0.58,
         "hold_ms": 2400
-      },
-      "wink": null
+      }
     },
     "excitement": {
       "expression_profile": "excitement",
@@ -203,28 +190,26 @@
       ],
       "title": "兴奋",
       "description": "笑眯眼，重心左右轻摇",
-      "body": {
+      "action": {
         "id": "sway",
         "variant": 0,
         "strength": 0.95,
         "hold_ms": 2400
-      },
-      "wink": null
+      }
     },
     "fear": {
       "expression_profile": "fear",
       "action_ids": [
-        "tilt"
+        "tremble"
       ],
       "title": "害怕",
-      "description": "睁眼提内眉、冷汗，紧张侧倾",
-      "body": {
-        "id": "tilt",
+      "description": "睁眼提内眉和冷汗，收身轻颤",
+      "action": {
+        "id": "tremble",
         "variant": 0,
-        "strength": 0.42,
-        "hold_ms": 1800
-      },
-      "wink": null
+        "strength": 0.7,
+        "hold_ms": 1900
+      }
     },
     "gratitude": {
       "expression_profile": "gratitude",
@@ -233,13 +218,12 @@
       ],
       "title": "感谢",
       "description": "柔和眯眼、垂视，深浅两次点头",
-      "body": {
+      "action": {
         "id": "nod",
         "variant": 1,
         "strength": 0.72,
         "hold_ms": 1600
-      },
-      "wink": null
+      }
     },
     "grief": {
       "expression_profile": "grief",
@@ -248,13 +232,12 @@
       ],
       "title": "悲痛",
       "description": "望向侧下方，低垂眼睑并流泪",
-      "body": {
+      "action": {
         "id": "nod",
         "variant": 0,
         "strength": 0.5,
         "hold_ms": 1600
-      },
-      "wink": null
+      }
     },
     "joy": {
       "expression_profile": "joy",
@@ -263,13 +246,12 @@
       ],
       "title": "开心",
       "description": "双眼弯起、嘴角上扬，轻摇后靠近",
-      "body": {
+      "action": {
         "id": "sway",
         "variant": 2,
         "strength": 0.82,
         "hold_ms": 2400
-      },
-      "wink": null
+      }
     },
     "love": {
       "expression_profile": "love",
@@ -277,29 +259,27 @@
         "cajole"
       ],
       "title": "亲昵",
-      "description": "温柔眯眼、微笑脸红，前倾歪头轻扭",
-      "body": {
+      "description": "温柔眯眼脸红，前倾并明显轻扭",
+      "action": {
         "id": "cajole",
         "variant": 0,
-        "strength": 0.88,
+        "strength": 0.95,
         "hold_ms": 2400
-      },
-      "wink": null
+      }
     },
     "nervousness": {
       "expression_profile": "nervousness",
       "action_ids": [
-        "turn"
+        "tremble"
       ],
       "title": "紧张",
-      "description": "有停留的侧向视线变化、收眉和冷汗",
-      "body": {
-        "id": "turn",
-        "variant": 2,
-        "strength": 0.4,
-        "hold_ms": 2100
-      },
-      "wink": null
+      "description": "回避视线，双手收住，身体微颤",
+      "action": {
+        "id": "tremble",
+        "variant": 1,
+        "strength": 0.55,
+        "hold_ms": 1900
+      }
     },
     "optimism": {
       "expression_profile": "optimism",
@@ -308,58 +288,54 @@
       ],
       "title": "乐观",
       "description": "抬眼微笑，抬头后点头",
-      "body": {
+      "action": {
         "id": "nod",
         "variant": 2,
         "strength": 0.7,
         "hold_ms": 1800
-      },
-      "wink": null
+      }
     },
     "pride": {
       "expression_profile": "pride",
       "action_ids": [
-        "tilt"
+        "proud"
       ],
       "title": "得意",
-      "description": "半眯眼、单侧嘴角上扬，歪头并右眼 wink",
-      "body": {
-        "id": "tilt",
-        "variant": 1,
-        "strength": 0.7,
-        "hold_ms": 1800
-      },
-      "wink": "right"
+      "description": "前倾邀功眨眨眼，或后仰昂首得意 wink",
+      "action": {
+        "id": "proud",
+        "variant": 0,
+        "strength": 0.8,
+        "hold_ms": 2100
+      }
     },
     "realization": {
       "expression_profile": "realization",
       "action_ids": [
-        "nod"
+        "point"
       ],
       "title": "恍然大悟",
-      "description": "睁眼扬眉、轻噘嘴，抬头点头",
-      "body": {
-        "id": "nod",
-        "variant": 2,
-        "strength": 0.85,
-        "hold_ms": 1800
-      },
-      "wink": null
+      "description": "睁眼扬眉，在领悟处竖起食指",
+      "action": {
+        "id": "point",
+        "variant": 0,
+        "strength": 0.8,
+        "hold_ms": 1600
+      }
     },
     "relief": {
       "expression_profile": "relief",
       "action_ids": [
-        "sway"
+        "chest"
       ],
       "title": "释然",
-      "description": "放松眼睑与眉毛，轻摇后回正",
-      "body": {
-        "id": "sway",
-        "variant": 1,
-        "strength": 0.48,
-        "hold_ms": 2400
-      },
-      "wink": null
+      "description": "放松眉眼，抚胸松一口气",
+      "action": {
+        "id": "chest",
+        "variant": 0,
+        "strength": 0.65,
+        "hold_ms": 1700
+      }
     },
     "remorse": {
       "expression_profile": "remorse",
@@ -368,13 +344,12 @@
       ],
       "title": "懊悔",
       "description": "视线避向侧下方，短暂挪动，收眉抿嘴",
-      "body": {
+      "action": {
         "id": "nod",
         "variant": 0,
         "strength": 0.42,
         "hold_ms": 1800
-      },
-      "wink": null
+      }
     },
     "sadness": {
       "expression_profile": "sadness",
@@ -383,13 +358,12 @@
       ],
       "title": "难过",
       "description": "低垂视线和眼睑，泪眼与委屈眉",
-      "body": {
+      "action": {
         "id": "tilt",
         "variant": 0,
         "strength": 0.4,
         "hold_ms": 1800
-      },
-      "wink": null
+      }
     },
     "surprise": {
       "expression_profile": "surprise",
@@ -398,21 +372,19 @@
       ],
       "title": "惊讶",
       "description": "睁大眼睛、扬眉，歪头探身",
-      "body": {
+      "action": {
         "id": "lean",
         "variant": 2,
         "strength": 0.82,
         "hold_ms": 1600
-      },
-      "wink": null
+      }
     },
     "neutral": {
       "expression_profile": "neutral",
       "action_ids": [],
       "title": "平静",
       "description": "放松眉眼，保持自然呼吸",
-      "body": null,
-      "wink": null
+      "action": null
     }
   }
 }

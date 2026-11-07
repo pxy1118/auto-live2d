@@ -16,6 +16,7 @@ export class ActionScheduler{
  constructor(private callbacks:SchedulerCallbacks,private options:{sameActionWindowMs?:number;registry?:ActionRegistry}={}){}
  private get registry(){return this.options.registry??ACTION_REGISTRY;}
  clear(){this.last=null;this.pending=null;this.seen.clear();this.recent=[];this.lastGroup={arm:-Infinity,body:-Infinity};this.segment=null;}
+ discardPendingModel(){if(this.pending?.source==='model')this.pending=null;}
  release(_clock?:SchedulerClock,cueId?:string){
   if(!cueId||this.pending?.cue_id===cueId)this.pending=null;
   if(!cueId||this.segment?.request.cue_id===cueId)this.segment=null;
@@ -25,17 +26,17 @@ export class ActionScheduler{
  request(request:ActionRequest,clock:SchedulerClock):{committed:boolean;reason?:string}{
   const action=this.registry.get(request.id);if(!action)return {committed:false,reason:'unknown'};
   if(this.seen.has(request.event_id))return {committed:false,reason:'duplicate'};
+  if(action.kind==='none'){this.seen.add(request.event_id);if(request.source==='director')this.release(clock);return {committed:true};}
   if(request.source==='model'){
    if(clock.directorBusy||this.pending?.source==='director')return {committed:false,reason:'director'};
-   if(this.callbacks.pose().active||this.segment)return {committed:false,reason:'busy'};
    const gap=this.callbacks.gaps()[action.cooldown_group];if(clock.actionMs-this.lastGroup[action.cooldown_group]<gap)return {committed:false,reason:'cooldown'};
-   if(this.recent.some(row=>row.id===request.id&&clock.actionMs-row.at<(this.options.sameActionWindowMs??0)))return {committed:false,reason:'repeat'};
+   if(this.recent.some(row=>row.id===request.id&&clock.actionMs-row.at<(action.repeat_window_ms??this.options.sameActionWindowMs??0)))return {committed:false,reason:'repeat'};
   }
   this.seen.add(request.event_id);if(this.seen.size>512)this.seen.delete(this.seen.values().next().value!);
-  if(action.kind==='none'){if(request.source==='director')this.release(clock);return {committed:true};}
-  if(request.source==='director'&&(this.callbacks.pose().active||this.segment)){
+  if(this.callbacks.pose().active||this.segment){
    this.segment=null;this.callbacks.release();this.pending=request;return {committed:true,reason:'transition'};
   }
+  if(request.source==='director')this.pending=null;
   return {committed:this.begin(request,action,clock)};
  }
  private begin(request:ActionRequest,action:CatalogAction,clock:SchedulerClock){
@@ -49,7 +50,7 @@ export class ActionScheduler{
  }
  tick(clock:SchedulerClock){
   if(!clock.playing)return;
-  if(this.pending&&!this.callbacks.pose().active){const next=this.pending;this.pending=null;this.begin(next,this.registry.get(next.id)!,clock);}
+  if(this.pending&&!this.callbacks.pose().active&&!(this.pending.source==='model'&&clock.directorBusy)){const next=this.pending;this.pending=null;this.begin(next,this.registry.get(next.id)!,clock);}
   const s=this.segment;if(!s)return;const phase=s.action.phases[s.index];
   if(!phase){if(!this.callbacks.pose().active)this.segment=null;return;}
   if(clock.actionMs-s.at<phase.at_ms)return;

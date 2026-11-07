@@ -1,16 +1,16 @@
 # 原生情绪动作模型
 
-当前运行时 `v6.3.2-feedback-acting`，默认包 `experiments/vtuber-v6-native28-motion-r2`。眼神、叠图与手势资源的人工反馈修订见 [反馈处理记录](../docs/review-feedback.md)。
+当前运行时 `v6.4.0-acting-feedback`，默认包 `experiments/vtuber-v6-acting-feedback-r3-final`。动作反馈、数据与训练见 [r3 记录](../docs/acting-feedback-training.md)。
 
 - 分类器保留28个独立sigmoid输出，GPU FP32冻结；0.8B语义编码器GPU冻结。
-- 事件头328532参数：语义1024 + affect64 + 纯动作历史23，输出14个已有动作ID（含none）、变体、强度/保持/起始延迟。没有旧7情绪或12面部历史。
+- 事件头329687参数：语义1024 + affect64 + 纯动作历史26，输出17个动作ID（含none）、变体、强度/保持/句内位置。没有旧7情绪或12面部历史。
 - 连续背景头622345参数：保留9通道，r1权重按原字节复用；不重新训练、不绑定动作目录的类别数。
 - prefill只做因果情绪观测与每个分句的语义缓存；/stream/plan在实际播放时接收当前曲线和动作历史；/stream/predict复用同一分句缓存。
 
-复现事件训练（需要本机原始数据和r1语义/分类缓存；拒绝覆盖现有r2权重）：
+复现事件训练（需要冻结的反馈数据与原r2特征；拒绝覆盖已完成实验）：
 
 ```bash
-uv run --project latent python latent/train_motion_r2.py
+uv run --project latent python latent/train_acting_feedback.py
 ```
 
 13项GPU/情绪测试：

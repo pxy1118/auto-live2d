@@ -19,7 +19,7 @@ try{
  browser=await chromium.launch({headless:true,executablePath,args:['--autoplay-policy=no-user-gesture-required']});const page=await browser.newPage({viewport:{width:1365,height:1050}});
  await page.addInitScript('window.__name=target=>target;');page.on('pageerror',(e:any)=>report.errors.push(e.message));
  await page.goto(base);await page.waitForFunction(()=>(window as any).live2dDemo?.ready,{timeout:60000});await page.waitForFunction(()=>!(document.querySelector('#performance-play') as HTMLButtonElement).disabled);
- const caps=await command('capabilities.get');assert.equal(caps.runtime_version,PERFORMANCE_RUNTIME_VERSION);assert.equal(caps.plan_schema,'performance.plan.v3');assert.equal(caps.action_catalog.actions.length,14);assert.equal(caps.emotion_labels.length,28);
+ const caps=await command('capabilities.get');assert.equal(caps.runtime_version,PERFORMANCE_RUNTIME_VERSION);assert.equal(caps.plan_schema,'performance.plan.v4');assert.equal(caps.action_catalog.actions.length,17);assert.equal(caps.emotion_labels.length,28);
  assert.equal(await page.locator('.performance-settings').evaluate((e:HTMLDetailsElement)=>e.open),false);
  await page.evaluate(()=>(window as any).live2dDemo.engine.command({method:'speech.unlock'}));
  // The asset has no verified palm-facing wave. Greeting keeps hands down and
@@ -64,12 +64,12 @@ try{
   if(p.queue?.phase==='finished'&&!state.speech.active){done=p;break;}await sleep(55);
  }
  assert.ok(done);assert.ok(paused&&neutral);assert.ok(done.plan_history.length>=2);
- for(const row of done.plan_history){assert.equal(row.plan.schema,'performance.plan.v3');assert.equal(row.input.affect.length,64);assert.deepEqual(Object.keys(row.input.planner_state).sort(),['age_ms','last_action','last_variant','phase']);}
+ for(const row of done.plan_history){assert.equal(row.plan.schema,'performance.plan.v4');assert.equal(row.input.affect.length,64);assert.deepEqual(Object.keys(row.input.planner_state).sort(),['age_ms','last_action','last_variant','phase']);}
  report.plan_history=done.plan_history;report.metrics=done.queue.metrics;
  await command('performance.cancel',{session_id:sid});const cancelled=await command('performance.state');assert.equal(cancelled.affect.intensity,0);
  await command('appearance.update',{glasses:'black'});assert.equal((await command('appearance.get')).glasses,'black');
  await sleep(700);await page.screenshot({path:join(out,'desktop.png'),fullPage:true});await page.setViewportSize({width:390,height:844});await page.screenshot({path:join(out,'mobile.png'),fullPage:true});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
- assert.deepEqual(report.errors,[]);report.checks=['14 actions / native28 / v3','3 finite greeting variants with no invalid palm substitution','real speech playback-time history and affect','pause freezes all acting state','neutral overrides eyes and face','cancel and appearance','responsive UI'];report.ok=true;
+ assert.deepEqual(report.errors,[]);report.checks=['17 actions / native28 / v4','3 finite greeting variants with no invalid palm substitution','real speech playback-time history and affect','pause freezes all acting state','neutral overrides eyes and face','cancel and appearance','responsive UI'];report.ok=true;
 }catch(error){report.error=String(error);throw error;}finally{
  await browser?.close();child.kill();for(let i=0;i<50&&child.exitCode===null&&child.signalCode===null;i++)await sleep(100);log.end();writeFileSync(join(out,'report.json'),JSON.stringify(report,null,2)+'\n');
 }

@@ -1,6 +1,6 @@
 # 当前架构
 
-`v6.3.2-feedback-acting`默认包为 `experiments/vtuber-v6-native28-motion-r2`。
+`v6.4.0-acting-feedback`默认包为 `experiments/vtuber-v6-acting-feedback-r3-final`。
 
 ```mermaid
 flowchart LR
@@ -10,13 +10,13 @@ flowchart LR
   TTS --> Clock[实际播放时钟]
   E --> Curve[28维快响应与慢心情]
   Clock --> Curve
-  Curve --> Face[28维面部形变与短暂wink]
+  Curve --> Face[28维面部形变]
   Curve --> Action[轻量单事件动作头]
   Q --> Action
-  History[纯动作历史23维] --> Action
-  Action --> Style[情绪化身体变体 保留手势语义]
-  Curve --> Style
-  Style --> Schedule[统一动作调度器]
+  History[纯动作历史26维] --> Action
+  Action --> Schedule[统一动作调度器]
+  Schedule --> Accent[动作变体眼睑点缀]
+  Accent --> Face
   Director[人工导演] --> Schedule
   Schedule --> Pose[已有协调手势或身体动作]
   Q --> Background[复用连续背景头]
@@ -34,8 +34,8 @@ Node会话API：8765；WSL模型服务：8768；Qwen语音：8769。主界面仅
 
 契约、动作扩展边界见 [原生情绪与动作](emotion-native.md)，外部调用见 [会话API](performance-v4.md)。
 
-具体形变、时序、身体配方与训练边界见 [情绪表现设计](emotion-acting.md)。模型包继续使用 r2；本次只修改运行时表演，不重训网络。
+具体形变、时序、身体配方与训练边界见 [情绪表现设计](emotion-acting.md)。本轮重训轻量事件头，连续背景头按 r2 原字节复用；动作数据与边界见 [反馈训练](acting-feedback-training.md)。
 
 独立 `/review` 页面调用同一个表演运行时，复用固定语音、记录实际执行并保存人工偏好；不加载额外模型。见 [表演偏好采集](preference-review.md)。
 
-最终组合阶段对手臂替换图层执行离散互斥处理；手势力度仅改变连续关节，见 [手部渲染修复](hand-drawings.md)。
+最终组合阶段对手臂替换图层执行离散互斥处理；手势力度只改变附加身体与腕部表演，保留原生手部接触姿态，见 [手部渲染修复](hand-drawings.md)。

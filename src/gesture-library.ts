@@ -24,6 +24,7 @@ export class GestureLibrary {
   get active(){return !!this.current;}
   clear(){this.current=null;this.count=0;}
   available(name:GestureName){return gestureNames.includes(name)&&[0,1,2].every(variant=>{const key=this.nativeKind(name,variant);return !key||native[key].every(n=>this.clips.has(n));});}
+  preparationMs(name:GestureName,variant=0){const kind=this.nativeKind(name,variant);return kind?this.clips.get(native[kind][0])?.duration??650:650;}
   // The default hand is drawn from the back. There is no verified palm-turn
   // channel: do not attach that drawing to the pointing arm to fake a palm.
   // Keep the learned greeting intent; use a body greeting until a palm is rigged.

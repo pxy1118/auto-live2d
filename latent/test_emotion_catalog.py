@@ -10,14 +10,14 @@ from emotion_catalog import EmotionCatalogPolicy,RUNTIME_VERSION
 from emotion import validate_timeline
 from motion_history import state_vector,STATE_DIM
 from emotion_config import AFFECT_DIM
-RUN='experiments/vtuber-v6-native28-motion-r2'
+RUN='experiments/vtuber-v6-acting-feedback-r3-final'
 
 class HistoryTests(unittest.TestCase):
     def test_pure_history(self):
-        self.assertEqual(STATE_DIM,23)
-        self.assertEqual(len(state_vector()),23)
+        self.assertEqual(STATE_DIM,26)
+        self.assertEqual(len(state_vector()),26)
         with self.assertRaises(ValueError):state_vector({'emotion':'happy'})
-        self.assertEqual(state_vector({'last_action':'future'})[14],1.)
+        self.assertEqual(state_vector({'last_action':'future'})[17],1.)
 
 @unittest.skipUnless(torch.cuda.is_available(),'CUDA required')
 class PolicyTests(unittest.TestCase):
@@ -38,7 +38,7 @@ class PolicyTests(unittest.TestCase):
         info=self.policy.info()
         self.assertTrue(info['ready']);self.assertEqual(info['runtime_version'],RUNTIME_VERSION)
         self.assertEqual(info['execution']['emotion_device'],'cuda')
-        self.assertEqual(len(info['action_catalog']['actions']),14)
+        self.assertEqual(len(info['action_catalog']['actions']),17)
         self.assertFalse(any(p.requires_grad for p in self.encoder.backbone.parameters()))
         a=ROOT/RUN/'continuous.pt';b=ROOT/'experiments/vtuber-v6-emotion-catalog-r1/continuous.pt'
         self.assertEqual(hashlib.sha256(a.read_bytes()).digest(),hashlib.sha256(b.read_bytes()).digest())
@@ -48,7 +48,7 @@ class PolicyTests(unittest.TestCase):
         try:
             p=self.policy.plan({**data,'planner_state':{'last_action':'wave','last_variant':1,'age_ms':1000,'phase':'idle'}})
             self.assertEqual(set(p['plan']),{'schema','clause','action','confidence'})
-            self.assertEqual(p['plan']['schema'],'performance.plan.v3')
+            self.assertEqual(p['plan']['schema'],'performance.plan.v4')
             out=self.policy.predict(data)
             self.assertEqual(len(out['channels']),9);self.assertEqual(len(out['values']),24)
             self.assertTrue(torch.isfinite(torch.tensor(out['values'])).all())

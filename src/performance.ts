@@ -7,7 +7,6 @@ import {DEFORMATION_EXPRESSIONS,EmotionExpressionLayer} from './emotion-expressi
 import {FACE_CHANNELS,OVERLAY_NAMES} from './emotion-profiles';
 import {buildAffectVector,EMOTION_LABELS,MOTION_POLICY,emotionCurvePolicy} from './emotion-config';
 import {actionById,EMOTION_BINDINGS} from './action-catalog';
-import {styleBodyPlan} from './emotion-acting';
 import {ActionScheduler} from './action-scheduler';
 import {PerformanceClock} from './performance-clock';
 import {validatePlan,type PerformancePlan} from './performance-plan';
@@ -26,7 +25,7 @@ export class PerformanceController{
  private clock=new PerformanceClock();private actionMs=0;private clockBase=0;
  private speechId:string|null=null;private playbackPhase='idle';private clauseStarted=false;private speechBase=0;
  private utterancePlan:{speechId:string;duration:number;final:boolean;index:number;clauses:Clause[]}|null=null;
- private pendingPlan:{plan:PerformancePlan;input:any;authoredBody:boolean}|null=null;private seenPlans=new Set<number>();
+ private pendingPlan:{plan:PerformancePlan;input:any}|null=null;private seenPlans=new Set<number>();
  private tracks:Track[]=[];private committed=0;private appearance={...defaultAppearance};appearanceOwned=false;
  private cues=new Map<string,Cue>();private cueSerial=0;private face:Record<string,number>={};
  private history:{at:number;values:number[]}[]=[];private lastSample=-100;
@@ -69,6 +68,7 @@ export class PerformanceController{
   const clauses:Clause[]=p.clauses.map((r:any)=>{if(!Number.isInteger(r.clause)||r.clause<0||typeof r.text!=='string'||!r.text.trim()||!p.text.includes(r.text)||typeof r.start_fraction!=='number'||!Number.isFinite(r.start_fraction)||r.start_fraction<0||r.start_fraction>=1)fail('语义分段不合法');return {clause:r.clause,text:r.text,start_fraction:r.start_fraction};});
   if(clauses[0].start_fraction!==0||clauses.some((r,i)=>i>0&&(r.clause<=clauses[i-1].clause||r.start_fraction<=clauses[i-1].start_fraction)))fail('语义分段顺序不合法');
   this.speechBase=this.mediaMs;this.speechId=p.speech_id;this.clause=clauses[0].clause;this.text=clauses[0].text;this.clauseStarted=false;
+  this.scheduler.discardPendingModel();
   this.pendingPlan=null;this.utterancePlan={speechId:p.speech_id,duration:p.audio_duration_ms,final:p.audio_duration_final,index:0,clauses};
   this.affect.bind(timeline,p.speech_id,p.audio_duration_ms);return this.state();
  }
@@ -76,7 +76,7 @@ export class PerformanceController{
  offerPlan(p:any){
   this.require(p.session_id);const plan=validatePlan(p.plan,p.clause);
   if(p.speech_id!==this.speechId||p.clause!==this.clause||!this.clauseStarted||this.seenPlans.has(p.clause))return {accepted:false,reason:'stale_or_duplicate'};
-  this.seenPlans.add(p.clause);this.pendingPlan={plan,input:p.input,authoredBody:p.authored_body===true};return {accepted:true};
+  this.seenPlans.add(p.clause);this.pendingPlan={plan,input:p.input};return {accepted:true};
  }
  cancel(id?:string){
   if(id!==undefined&&id!==this.id)return {cancelled:false};
@@ -100,7 +100,7 @@ export class PerformanceController{
   if(p.action_id!==undefined&&(p.variant??0)>=actionById(p.action_id)!.variants)fail('该动作不支持所选变体');
   if(p.clause!==undefined&&(!Number.isInteger(p.clause)||p.clause<0))fail('clause 不合法');
   const intensity=finite(p.intensity??.7,0,1,'intensity 不合法'),hold=finite(p.hold_ms??3000,0,600000,'hold_ms 不合法');
-  const body=p.action_id===undefined&&p.emotion&&intensity>0?EMOTION_BINDINGS.get(p.emotion)?.body:null;
+  const body=p.action_id===undefined&&p.emotion&&intensity>0?EMOTION_BINDINGS.get(p.emotion)?.action:null;
   const action=p.action_id??body?.id??(p.emotion==='neutral'?'none':undefined);
   const strength=finite(p.action_strength??(body?body.strength*intensity:1),0,1,'action_strength 不合法'),actionHold=finite(p.action_hold_ms??body?.hold_ms??1400,0,6000,'action_hold_ms 不合法');
   const started=p.clause===undefined||p.clause<this.clause||p.clause===this.clause&&this.clauseStarted;
@@ -130,7 +130,7 @@ export class PerformanceController{
  private directorActionBusy(){return [...this.cues.values()].some(c=>c.started&&c.action_id!==undefined&&this.actorMs<c.until);}
  private nextClause(audio:number){
   const t=this.utterancePlan;if(!t)return;
-  while(t.index+1<t.clauses.length&&audio>=t.clauses[t.index+1].start_fraction*t.duration){const c=t.clauses[++t.index];this.clause=c.clause;this.text=c.text;this.pendingPlan=null;}
+  while(t.index+1<t.clauses.length&&audio>=t.clauses[t.index+1].start_fraction*t.duration){const c=t.clauses[++t.index];this.clause=c.clause;this.text=c.text;this.pendingPlan=null;this.scheduler.discardPendingModel();}
  }
  tick(dt:number,speech:any,base:Record<string,number>){
   this.currentBase=base;this.clock.step(dt,speech);const delta=this.clock.delta/1000;
@@ -153,19 +153,19 @@ export class PerformanceController{
    }
   }
   const playing=this.active&&this.clauseStarted&&speech.phase==='playing';
+  if(this.active&&this.clauseStarted&&speech.phase==='idle')this.scheduler.discardPendingModel();
   if(this.pendingPlan&&playing){
-   const row=this.pendingPlan,t=this.utterancePlan!,clauseStart=t.clauses[t.index].start_fraction*t.duration;
-   if((speech.audio_time_ms??0)-clauseStart>=row.plan.action.onset_ms){
-    this.pendingPlan=null;const styled=row.authoredBody?row.plan:styleBodyPlan(row.plan,display),answer=this.scheduler.requestPlan(styled,{actionMs:this.actionMs,playing:true,directorBusy:this.directorActionBusy()});
-    this.planHistory.push({clause:this.clause,at_ms:this.actionMs,plan:row.plan,performed_action:styled.action,input:row.input,...answer});this.planHistory=this.planHistory.slice(-32);
+   const row=this.pendingPlan,t=this.utterancePlan!,clauseStart=t.clauses[t.index].start_fraction*t.duration,clauseEnd=(t.clauses[t.index+1]?.start_fraction??1)*t.duration;
+   const a=row.plan.action,kind=actionById(a.id)?.kind,lead=kind==='gesture'?this.gestures.preparationMs(a.id as any,a.variant):kind==='body'?700:0;
+   const anchor=clauseStart+(clauseEnd-clauseStart)*a.onset_fraction,begin=Math.max(clauseStart,anchor-lead);
+   if((speech.audio_time_ms??0)>=begin){
+    this.pendingPlan=null;const answer=this.scheduler.requestPlan(row.plan,{actionMs:this.actionMs,playing:true,directorBusy:this.directorActionBusy()});
+    this.planHistory.push({clause:this.clause,at_ms:this.actionMs,plan:row.plan,performed_action:a,input:row.input,timing:{anchor_audio_ms:anchor,start_audio_ms:speech.audio_time_ms??0,preparation_ms:lead,duration_final:t.final,method:'text_fraction_on_audio'},...answer});this.planHistory=this.planHistory.slice(-32);
    }
   }
   this.scheduler.tick({actionMs:this.actionMs,playing:delta>0,directorBusy:this.directorActionBusy()});
   const cues=[...this.cues.values()].filter(c=>c.started&&this.actorMs<c.until);
   const emotion=[...cues].reverse().find(c=>c.emotion!==undefined),expression=[...cues].reverse().find(c=>c.expression!==undefined);
-  const face=this.expression.update(display,delta,this.actorMs,emotion?{label:emotion.emotion!,intensity:emotion.intensity,serial:emotion.serial}:null,expression?{name:expression.expression!,intensity:expression.intensity,serial:expression.serial}:null);
-  for(const name of OVERLAY_NAMES)this.face[name]=face.overlay[name]??0;
-  for(const name of eyeNames.slice(1))this.face[name]=face.eye===name?1:0;
   const result:Record<string,number>={},automatic={...base};
   for(const id of backgroundChannels){const value=this.sample(this.motionMs,id),p=this.parameters.find(p=>p.id===id);if(value!==undefined&&p){result[id]=automatic[id]=clamp(value,p.min,p.max);}}
   const offset=this.body.tick(this.actionMs);
@@ -174,6 +174,11 @@ export class PerformanceController{
   const gesture=this.gestures.tick(this.actionMs,automatic);
   for(const [id,value] of Object.entries(gesture)){const p=this.parameters.find(p=>p.id===id);if(p)result[id]=clamp(value,p.min,p.max);}
   const arm=this.gestures.state(this.actionMs),body=this.body.state(this.actionMs);
+  const acting=arm.active?arm:body.active?body:null,accent=acting? actionById(acting.name!)?.eye_accents?.[acting.variant!]:null;
+  const face=this.expression.update(display,delta,this.actorMs,emotion?{label:emotion.emotion!,intensity:emotion.intensity,serial:emotion.serial}:null,expression?{name:expression.expression!,intensity:expression.intensity,serial:expression.serial}:null,
+   acting&&accent?{key:`${acting.name}:${acting.count}`,name:accent,elapsed_ms:acting.elapsed_ms!-(arm.active?this.gestures.preparationMs(arm.name!,arm.variant):700)}:null);
+  for(const name of OVERLAY_NAMES)this.face[name]=face.overlay[name]??0;
+  for(const name of eyeNames.slice(1))this.face[name]=face.eye===name?1:0;
   if(arm.active&&arm.count!==this.seenArmCount){this.actionHistory.push({part:'arm',name:arm.name,variant:arm.variant,at:this.actionMs,source:arm.source});this.seenArmCount=arm.count;}
   if(body.active&&body.count!==this.seenBodyCount){this.actionHistory.push({part:'body',name:body.name,variant:body.variant,at:this.actionMs,source:body.source});this.seenBodyCount=body.count;}
   this.actionHistory=this.actionHistory.slice(-32);
@@ -188,7 +193,7 @@ export class PerformanceController{
   return result;
  }
  rememberPose(values:Record<string,number>){for(const id of [...gestureArmChannels,...backgroundChannels])if(values[id]!==undefined)this.lastValues[id]=values[id];}
- hasActions(){return this.gestures.active||this.body.active||!!this.scheduler.state().active_segment;}
+ hasActions(){const s=this.scheduler.state();return this.gestures.active||this.body.active||!!s.active_segment||!!s.pending;}
  capabilities(){return {...performanceCapabilities(this.parameters),action_groups:this.gestures.capabilities(),body_motions:this.body.capabilities(),plan_policy:'native28_motion',minimum_gap_ms:this.gaps(),director_priority:true,motion_backends:['groups']};}
  state(){
   const a=this.affect.state(),directed=[...this.cues.values()].reverse().find(c=>c.started&&this.actorMs<c.until&&c.emotion!==undefined)?.emotion;

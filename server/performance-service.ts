@@ -26,7 +26,12 @@ export class PerformanceService{
   private async infer(s:Session,path:string,body:any){
     for(let attempt=0;;attempt++){try{return await this.worker(path,body,s.abort.signal);}catch(error:any){if(error.httpStatus!==429||s.cancelled||attempt>=200)throw error;await sleep(30);}}
   }
-  async status(){try{return await this.worker('/stream/status');}catch{return {ready:false,reason:'表演模型未连接'};}}
+  async status(){
+    const [motion,voice]=await Promise.allSettled([this.worker('/stream/status'),fetch((process.env.TTS_URL??'http://127.0.0.1:8769')+'/health',{signal:AbortSignal.timeout(2500)}).then(async r=>{if(!r.ok)throw Error('tts unavailable');return await r.json() as any;})]);
+    if(motion.status!=='fulfilled')return {ready:false,reason:'表演模型未连接'};
+    const ttsReady=voice.status==='fulfilled'&&voice.value.ready===true;
+    return {...motion.value,ready:motion.value.ready===true&&ttsReady,tts_ready:ttsReady,...(!ttsReady?{reason:'语音模型仍在准备'}:{})};
+  }
   private own(id:any){const s=this.session;if(!s||s.id!==id||s.cancelled)throw Object.assign(new Error('会话已取消或不存在'),{code:'performance_cancelled'});return s;}
   private async execute(method:string,params:any,review?:ReviewPlayback){
     if(method==='performance.status')return this.status();
@@ -133,7 +138,7 @@ export class PerformanceService{
         const prediction=await this.infer(s,'/stream/plan',{...handle,...input});
         if(s.cancelled||s.current!==current)return;
         const original=validatePlan(prediction.plan,clause.clause),plan=s.review?candidatePlan(original,state.affect_vector,s.review.candidate):original;
-        const offered=(await this.invoke({method:'performance.plan.offer',params:{session_id:s.id,speech_id:state.speech_id,clause:clause.clause,plan,input:{...input,...(s.review?{review_candidate:s.review.candidate,model_plan:original}:{})},authored_body:!!s.review}})).result;
+        const offered=(await this.invoke({method:'performance.plan.offer',params:{session_id:s.id,speech_id:state.speech_id,clause:clause.clause,plan,input:{...input,...(s.review?{review_candidate:s.review.candidate,model_plan:original}:{})}}})).result;
         s.metrics.push({utterance:current.index,clause:clause.clause,event_compute_ms:prediction.timing.total_compute_ms,offered:offered.accepted});
       }
       if(performance.now()-lastMotion<400){await sleep(30);continue;}

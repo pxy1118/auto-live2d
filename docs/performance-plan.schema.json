@@ -11,7 +11,7 @@
   ],
   "properties": {
     "schema": {
-      "const": "performance.plan.v3"
+      "const": "performance.plan.v4"
     },
     "clause": {
       "type": "integer",
@@ -25,7 +25,7 @@
         "variant",
         "strength",
         "hold_ms",
-        "onset_ms"
+        "onset_fraction"
       ],
       "properties": {
         "id": {
@@ -46,10 +46,10 @@
           "minimum": 0,
           "maximum": 6000
         },
-        "onset_ms": {
+        "onset_fraction": {
           "type": "number",
           "minimum": 0,
-          "maximum": 1000
+          "maximum": 0.95
         }
       }
     },

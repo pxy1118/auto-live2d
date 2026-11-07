@@ -111,7 +111,7 @@ function assertPlanV2(plan: any, where: string) {
  assert.ok(ACTION_BY_ID.has(plan.action.id));
  assert.ok(Number.isFinite(plan.confidence.action));
  assert.ok(plan.action.strength>=0 && plan.action.strength<=1);
- assert.ok(plan.action.onset_ms>=0 && plan.action.onset_ms<=1000);
+ assert.ok(plan.action.onset_fraction>=0 && plan.action.onset_fraction<=.95);
 }
 
 function assertAffectV2(affect: any, where: string) {
@@ -310,7 +310,7 @@ try {
   report.checks = [
     '单条 TTS 流：标点不拆分语音（长文 2 组，组间预取 join<300ms）',
     `affect=emotion.curve.v2，观测点 ${report.affect_observations.map((row: any) => row.observed + '/' + row.phrase_points).join(', ')} 覆盖全部短语，有效证据 28 车道`,
-    `plan_history=${done.plan_history.length} 条 performance.plan.v3（action.id/confidence，无 v1 emotion/expressions）`,
+    `plan_history=${done.plan_history.length} 条 performance.plan.v4（action.id/confidence，无 v1 emotion/expressions）`,
     '无 underrun；取消后 affect.intensity=0 且 action_plan.active_segment=null；无页面错误',
   ];
   report.ok = true;

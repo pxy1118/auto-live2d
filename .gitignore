@@ -38,3 +38,12 @@ experiments/**/*.stop
 Thumbs.db
 .idea/
 .vscode/
+
+# Intermediate feedback candidates remain local; the selected r3-final is versioned.
+experiments/**/*.partial
+experiments/vtuber-v6-acting-feedback-r3/
+experiments/vtuber-v6-acting-feedback-r3b/
+experiments/vtuber-v6-acting-feedback-r3c/
+experiments/vtuber-v6-acting-feedback-r3d/
+experiments/vtuber-v6-acting-feedback-r3e/
+experiments/vtuber-v6-acting-feedback-r3f/

@@ -13,7 +13,7 @@ test('initial buffering and pause freeze every performance clock, face, eyes, cu
 test('live plan uses pure history and real affect; stale replies and duplicate clauses never replay',()=>{
  const p=actor();p.tick(.02,audio(20),base());const s=p.state();
  const input={affect:s.affect_vector,planner_state:s.planner_state,motion_style:s.motion_style};
- const offer={session_id:id,speech_id:speechId,clause:0,plan:plan(0,'nod',120),input};
+ const offer={session_id:id,speech_id:speechId,clause:0,plan:plan(0,'nod',.082),input};
  assert.equal(p.offerPlan(offer).accepted,true);assert.equal(p.offerPlan(offer).accepted,false);
  p.tick(.02,audio(100),base());assert.equal(p.state().plan_history.length,0);p.tick(.02,audio(150),base());
  assert.equal(p.state().plan_history[0].committed,true);assert.deepEqual(p.state().plan_history[0].input,input);assert.equal(p.state().planner_state.last_action,'nod');

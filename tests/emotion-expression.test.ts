@@ -3,7 +3,7 @@ import test from 'node:test';
 import {blendExpression,EmotionExpressionLayer} from '../src/emotion-expression';
 import {EMOTION_PROFILES,FACE_CHANNELS,OVERLAY_NAMES} from '../src/emotion-profiles';
 import {EMOTION_LABELS} from '../src/emotion-config';
-import {actingEmotion,styleBodyPlan} from '../src/emotion-acting';
+import {actingEmotion} from '../src/emotion-acting';
 import {actor,audio,base,id,speechId,plan,run as runActor} from './performance-fixture';
 import {normalizeFaceOverlays} from '../src/face-overlays';
 const near=(a:number,b:number,t=1e-9)=>assert.ok(Math.abs(a-b)<t,`${a} != ${b}`);
@@ -52,15 +52,20 @@ test('left and right wink close only the selected eyelid, recover in 620 ms and 
  }
 });
 
-test('pride wink requires stable unambiguous emotion, fires once and ignores short evidence dips',()=>{
- const l=new EmotionExpressionLayer(),c={ms:0};
- assert.equal(run(l,c,{pride:.8},600).accent,null);
- assert.equal(run(l,c,{pride:.8},260).accent?.side,'right');
- assert.equal(run(l,c,{pride:.8},10000).accent,null);
- run(l,c,{},100);assert.equal(run(l,c,{pride:.8},1200).accent,null,'short dip must not rearm a sustained emotion');
- run(l,c,{neutral:.8},1000);assert.equal(run(l,c,{pride:.8},860).accent?.side,'right');
- const mixed=new EmotionExpressionLayer();assert.equal(run(mixed,{ms:0},{pride:.6,anger:.59},3000).accent,null);
+test('eye accents follow admitted action variants rather than an emotion label',()=>{
+ const l=new EmotionExpressionLayer(),c={ms:0};assert.equal(run(l,c,{pride:.8},3000).accent,null);
+ const action={key:'proud:1',name:'wink_right' as const,elapsed_ms:200};
+ assert.equal(l.update({},.02,c.ms+=20,null,null,action).accent?.side,'right');
+ const peak=l.state();assert.deepEqual(l.update({},0,c.ms+1000,null,null,action),peak);
+ run(l,c,{},1000);assert.equal(l.update({},.02,c.ms+=20,null,null,action).accent,null);
  assert.equal(actingEmotion({joy:.5,neutral:.7}),null);
+});
+
+test('double blink closes both lids twice, recovers and never loops',()=>{
+ const l=new EmotionExpressionLayer(),c={ms:0},cue={name:'double_blink',intensity:1,serial:1};
+ const closures=[];for(let i=0;i<45;i++)closures.push(run(l,c,{},20,null,cue).face.ParamEyeLOpen);
+ assert.ok(closures.slice(0,12).some(v=>v<-.95));assert.ok(closures.slice(14,26).some(v=>v<-.95));
+ assert.equal(run(l,c,{},2000,null,cue).accent,null);
 });
 
 test('automatic wink cooldown prevents rapid changes and manual neutral smoothly cancels a wink',()=>{
@@ -106,10 +111,9 @@ test('squint is sustained; explicit eye drawings stay exclusive and release to n
  l.reset();const state=l.state();for(const id of FACE_CHANNELS)near(state.face[id],0);for(const id of OVERLAY_NAMES)near(state.overlay[id],0);assert.equal(state.accent,null);
 });
 
-test('emotional styling only interprets selected body beats, preserving none, semantic gestures and onset',()=>{
- for(const action of ['none','wave','thanks','refuse']){const p=plan(0,action,250);assert.equal(styleBodyPlan(p,{love:1}),p);}
- const p=plan(0,'lean',250),styled=styleBodyPlan(p,{love:.9});assert.equal(styled.action.id,'cajole');assert.equal(styled.action.onset_ms,250);assert.equal(styled.action.hold_ms,2400);assert.equal(p.action.id,'lean');
- assert.equal(styleBodyPlan(p,{love:.5,anger:.49}),p);
+test('trained body selection survives a conflicting emotion recipe',()=>{
+ const p=actor('love');runActor(p,20,2200);p.offerPlan({session_id:id,speech_id:speechId,clause:0,plan:plan(0,'lean'),input:{}});p.tick(.02,audio(2220),base());
+ assert.equal(p.state().plan_history[0].performed_action.id,'lean');assert.equal(p.state().body_action.name,'lean');
 });
 
 test('manual emotional body and model body use the same owner; explicit action wins',()=>{
@@ -123,7 +127,7 @@ test('manual emotional body and model body use the same owner; explicit action w
 test('live body execution records the performed recipe; face composition preserves background gaze and lip ownership',()=>{
  const p=actor('love');runActor(p,20,2200);const before=p.state();
  p.offerPlan({session_id:id,speech_id:speechId,clause:0,plan:plan(0,'lean'),input:{}});p.tick(.02,audio(2220),base());
- assert.equal(p.state().plan_history[0].plan.action.id,'lean');assert.equal(p.state().plan_history[0].performed_action.id,'cajole');assert.equal(p.state().planner_state.last_action,'cajole');
+ assert.equal(p.state().plan_history[0].plan.action.id,'lean');assert.equal(p.state().plan_history[0].performed_action.id,'lean');assert.equal(p.state().planner_state.last_action,'lean');
  const a=actor('neutral');runActor(a,20,1000);a.chunk({session_id:id,start_ms:a.state().motion_ms,channels:['ParamEyeBallX','ParamEyeBallY'],values:Array.from({length:24},()=>[.3,.4])});
  const frame=a.tick(.02,audio(1020),{...base(),ParamMouthOpenY:.7});near(frame.ParamEyeBallX,.3);near(frame.ParamEyeBallY,.4);assert.equal(Object.hasOwn(frame,'ParamMouthOpenY'),false);
 });

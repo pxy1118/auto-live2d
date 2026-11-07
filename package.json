@@ -8,12 +8,14 @@
     "start": "tsx server/index.ts --production",
     "build": "tsc --noEmit && vite build",
     "check": "tsc --noEmit",
-    "test": "tsx --test tests/controller.test.ts tests/speech-motion.test.ts tests/performance.test.ts tests/runtime-takeover.test.ts tests/performance-default.test.ts tests/continuous-performance.test.ts tests/emotion-curve.test.ts tests/emotion-expression.test.ts tests/emotion-profiles.test.ts tests/action-scheduler.test.ts tests/emotion-native-contracts.test.ts tests/performance-clock.test.ts tests/preference-review.test.ts tests/hand-style.test.ts",
+    "test": "tsx --test tests/controller.test.ts tests/speech-motion.test.ts tests/performance.test.ts tests/runtime-takeover.test.ts tests/performance-default.test.ts tests/continuous-performance.test.ts tests/emotion-curve.test.ts tests/emotion-expression.test.ts tests/emotion-profiles.test.ts tests/action-scheduler.test.ts tests/emotion-native-contracts.test.ts tests/performance-clock.test.ts tests/preference-review.test.ts tests/hand-style.test.ts tests/acting-feedback.test.ts tests/performance-readiness.test.ts",
     "test:browser": "tsx tests/release-smoke.ts",
     "test:continuous": "tsx tests/continuous-speech-browser.ts",
     "test:acting": "tsx tests/emotion-acting-browser.ts",
     "test:review": "tsx tests/preference-review-browser.ts",
-    "test:hand": "tsx tests/hand-visibility-browser.ts"
+    "test:hand": "tsx tests/hand-visibility-browser.ts",
+    "test:feedback": "tsx tests/feedback-motion-browser.ts",
+    "test:feedback-speech": "tsx tests/feedback-speech-browser.ts"
   },
   "dependencies": {
     "tsx": "4.23.15",

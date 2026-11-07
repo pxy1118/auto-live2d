@@ -1,0 +1,63 @@
+"""Calibrate per-action admission on validation only, keeping old none controls.
+
+The already selected r3c weights are frozen. This adds no model and uses no
+test or training-replay labels to choose thresholds.
+"""
+import copy
+import json
+import shutil
+import time
+from pathlib import Path
+import torch
+from train_acting_feedback import DATA,ROOT,read,write,lines,predict,report,parent_model,metrics
+from emotion_event import load_event
+from common import sha
+from catalog_contract import MODEL_ACTION_IDS
+
+SOURCE=ROOT/'experiments/vtuber-v6-acting-feedback-r3c'
+OUT=ROOT/'experiments/vtuber-v6-acting-feedback-r3e'
+
+def main():
+    if OUT.exists():raise RuntimeError('Refusing to overwrite calibration result')
+    torch.set_num_threads(4);started=time.perf_counter();source=read(SOURCE/'run.json');data=torch.load(DATA/'features.pt',map_location='cpu',weights_only=True);rows=lines(DATA/'records.jsonl')
+    tensors={}
+    for split in ['validation','test']:
+        ix=[i for i,r in enumerate(rows) if r['split']==split];tensors[split]={k:v[ix].cuda() for k,v in data.items() if isinstance(v,torch.Tensor)}
+        tensors[split]['duration_ms']=torch.tensor([max(1000,len(rows[i]['text'])*170) for i in ix],device='cuda')
+    model,_=load_event(SOURCE/'event.pt','cuda');parent,old=parent_model();val=tensors['validation'];y=val['actions'].cpu().numpy();fb=val['feedback'].cpu().numpy()
+    pi,_,_=predict(parent,val,old['threshold'],True);parent_legacy=metrics(pi[~val['feedback']].cpu().tolist(),y[~fb],MODEL_ACTION_IDS[:14])
+    index,raw,confidence=predict(model,val);ix=index.cpu().numpy();conf=confidence.cpu().numpy();thresholds=[0.]+[source['models']['event']['threshold']]*(len(MODEL_ACTION_IDS)-1)
+    initial=report(*predict(model,val,source['models']['event']['threshold'])[:2],val)
+    def score(cuts):
+        import numpy as np
+        p=np.where((ix>0)&(conf<np.asarray(cuts)[ix]),0,ix);all_m=metrics(p,y);legacy=metrics(p[~fb],y[~fb],MODEL_ACTION_IDS[:14]);new=metrics(p[fb],y[fb])
+        if legacy['false_trigger_rate']>parent_legacy['false_trigger_rate']+.01:return -1.,None
+        if any(new['per_action_f1'][name]<.65 for name in ('shake','tremble','proud')):return -1.,None
+        if any(all_m['per_action_f1'][name]<.85*initial['per_action_f1'][name] for name in MODEL_ACTION_IDS):return -1.,None
+        return .5*all_m['macro_f1']+.5*new['macro_f1']-.2*all_m['false_trigger_rate'],{'all':all_m,'legacy':legacy,'feedback_authored':new}
+    log=[]
+    for iteration in range(5):
+        changed=False
+        for action in range(1,len(thresholds)):
+            current,_=score(thresholds);best=(current,thresholds[action])
+            for cut in [i/20 for i in range(20)]:
+                candidate=thresholds.copy();candidate[action]=cut;s,_=score(candidate)
+                if s>best[0]+1e-9:best=(s,cut)
+            if best[1]!=thresholds[action]:thresholds[action]=best[1];changed=True
+        s,m=score(thresholds);log.append({'iteration':iteration,'score':s,'thresholds':thresholds.copy(),'validation':m})
+        if not changed:break
+    ci,co,_=predict(model,tensors['test'],thresholds);test=report(ci,co,tensors['test']);bi,bo,_=predict(parent,tensors['test'],old['threshold'],True);base=report(bi,bo,tensors['test'],True)
+    replay=lines(DATA/'acceptance.jsonl');rt={k:v.cuda() for k,v in data['acceptance'].items()};ri,ro,_=predict(model,rt,thresholds)
+    replay_report=[{**r,'candidate_action':MODEL_ACTION_IDS[int(ri[i])],'variant':int(ro['variant'][i].argmax()),'predicted_anchor_fraction':float(ro['values'][i,2]*.95),'pass':MODEL_ACTION_IDS[int(ri[i])] in r['allowed_actions']} for i,r in enumerate(replay)]
+    gate={'overall_f1':test['macro_f1']>=base['macro_f1']-.04,'feedback_f1':test['feedback_authored']['macro_f1']>=base['feedback_authored']['macro_f1']+.12,
+          'false_triggers':test['false_trigger_rate']<=base['false_trigger_rate']+.015,'legacy_false_triggers':test['legacy']['false_trigger_rate']<=base['legacy']['false_trigger_rate']+.015,
+          'thanks_false_positives':test['thanks_false_positive_rate']<=base['thanks_false_positive_rate']+.005,'new_action_f1':all(test['per_action_f1'][name]>=.65 for name in ('shake','tremble','proud')),
+          'continuous_identical':sha(SOURCE/'continuous.pt')==sha(ROOT/'experiments/vtuber-v6-native28-motion-r2/continuous.pt'),'anchor_error':test['anchor_fraction_mae']<=.12};gate['passed']=all(gate.values())
+    OUT.mkdir();saved=torch.load(SOURCE/'event.pt',map_location='cpu',weights_only=True);saved['threshold']=thresholds;torch.save(saved,OUT/'event.pt');shutil.copyfile(SOURCE/'continuous.pt',OUT/'continuous.pt')
+    run=copy.deepcopy(source);run['stage']='acting_feedback_r3e_calibrated';run['models']['event'].update(threshold=thresholds,sha256=sha(OUT/'event.pt'));run['gate']=gate;run['evaluation']={'baseline_r2':base,'candidate':test,'training_replay':{'passed':sum(r['pass'] for r in replay_report),'total':len(replay_report),'independent_test':False,'selection_use':False}}
+    run['calibration']={'source':str(SOURCE.relative_to(ROOT)),'data':'validation only','thresholds_by_action':dict(zip(MODEL_ACTION_IDS,thresholds)),'log':log,'source_checkpoint_sha256':sha(SOURCE/'event.pt'),'same_model_weights':True,'elapsed_s':time.perf_counter()-started}
+    write(OUT/'training-replay.json',replay_report);write(OUT/'run.json',run)
+    print(json.dumps({'gate':gate,'test':test,'thresholds':run['calibration']['thresholds_by_action'],'training_replay':run['evaluation']['training_replay']}),flush=True)
+    if not gate['passed']:raise RuntimeError('Calibration failed gates; do not promote')
+
+if __name__=='__main__':main()

@@ -1,9 +1,9 @@
 /** Finite, coordinated acting beats. Values are offsets on the existing body
  * inputs, never arm joints or physics outputs. No perpetually looping sway. */
 export const bodyChannels=['AngleX','AngleY','AngleZ','PositionX','PositionY','PositionZ','LeanInput'];
-export const bodyMotionNames=['lean','sway','nod','tilt','turn','cajole'] as const;
+export const bodyMotionNames=['lean','sway','nod','tilt','turn','cajole','shake','tremble','proud'] as const;
 export type BodyMotionName=typeof bodyMotionNames[number];
-export const bodyMotionLabels:Record<BodyMotionName,string>={lean:'前倾与回身',sway:'躯干轻摇与重心转移',nod:'点头与俯身',tilt:'歪头与侧倾',turn:'侧首与转身',cajole:'撒娇 · 前倾轻扭'};
+export const bodyMotionLabels:Record<BodyMotionName,string>={lean:'前倾与回身',sway:'躯干轻摇与重心转移',nod:'点头与俯身',tilt:'歪头与侧倾',turn:'侧首与转身',cajole:'撒娇 · 前倾轻扭',shake:'摇头表达反对',tremble:'紧张与害怕的轻颤',proud:'得意 · 邀功与昂首'};
 export const bodyMotionVariants:Record<BodyMotionName,string[]>={
  lean:['轻轻前倾靠近，再自然回身','前倾停一下，再退回重心','歪头后前倾探身'],
  sway:['左右轻摇，幅度逐次收小','移重心停留，再轻轻回摆','轻摇后向前靠近'],
@@ -11,6 +11,9 @@ export const bodyMotionVariants:Record<BodyMotionName,string[]>={
  tilt:['先歪头，躯干稍后侧倾','反向歪头，再前倾回应','左右端详，最后自然回正'],
  turn:['先侧首，再带动躯干','侧首停留，再转回正面','视线扫过两侧，身体轻轻跟随'],
  cajole:['前倾歪头，左右轻扭两次','先侧首，再靠近轻扭并停留','前倾画小弧，再歪头望过来'],
+ shake:['轻摇头两次','先收身，再明确摇头','侧首后摇头一次'],
+ tremble:['害怕时收身轻颤','紧张时微微发抖','短暂一颤后慢慢放松'],
+ proud:['前倾邀功、轻扭并眨眨眼','后仰昂首、得意 wink','抬头挺身、自信停留'],
 };
 export type ActingTime={t:number;enter:number;holdEnd:number;exit:number};
 export const ease=(x:number)=>{x=Math.min(1,Math.max(0,x));return x*x*x*(10+x*(-15+6*x));};
@@ -53,9 +56,19 @@ export function sampleBodyMotion(name:BodyMotionName,variant:number,{t,enter,hol
   const approach=variant===1?curve(h,[[0,.35],[.3,.35],[.95,1],[2.25,.85]]):variant===2?curve(h,[[0,.7],[.3,.7],[1.05,1.15],[2.2,.8]]):1;
   const glance=variant===2?curve(h,[[0,-.6],[.25,-.6],[1.15,.85],[2.25,.4]]):variant===1?-.75:.6;
   const bounce=variant===2?curve(h,[[0,0],[.25,0],[.72,1],[1.2,0]]):0;
-  Object.assign(v,{PositionX:6.4*twist*lag(120),PositionY:(-1.7*approach-.65*bounce)*lag(180),
-   PositionZ:(3.8*approach+2.1*twist)*lag(160),LeanInput:-9.8*approach*lag(120),
+  Object.assign(v,{PositionX:8.8*twist*lag(120),PositionY:(-1.7*approach-.65*bounce)*lag(180),
+   PositionZ:(5.5*approach+2.5*twist)*lag(160),LeanInput:-11*approach*lag(120),
    AngleX:-2.7*head*e,AngleY:(3.2*approach-2*bounce)*e,AngleZ:(6.8*glance+2.1*head)*e});
+ }else if(name==='shake'){
+  const keys:[number,number][]=variant===2?[[0,0],[.16,.8],[.4,-.7],[.68,.35],[.9,0]]:[[0,0],[.15,1],[.42,-1],[.68,.7],[.94,-.55],[1.2,0]];
+  const head=curve(h,keys),body=curve(Math.max(0,h-.1),keys);
+  Object.assign(v,{AngleX:6.8*head*e,AngleY:(variant===1?-2.5:-.6)*e,AngleZ:-.8*head*e,PositionX:.65*body*lag(),PositionZ:(variant===1?-2.5:-.5)*lag(),LeanInput:(variant===1?2:0)*lag()});
+ }else if(name==='tremble'){
+  const window=variant===2?1-ease((h-.55)/.6):1-ease((h-1.45)/.5),q=Math.sin(h*2*Math.PI*(variant===1?5.2:6.3))*ease(h/.15)*window;
+  Object.assign(v,{PositionX:.55*q*e,PositionY:.18*Math.sin(h*2*Math.PI*8.2)*e*window,AngleZ:.65*q*e,AngleX:.35*q*e,AngleY:-1.8*e,PositionZ:-1.8*lag(),LeanInput:2.2*lag()});
+ }else if(name==='proud'){
+  const invite=variant===0,twist=invite?curve(h,[[0,0],[.3,.7],[.75,-.65],[1.3,.35],[1.8,0]]):0;
+  Object.assign(v,{PositionX:3.5*twist*lag(),PositionZ:(invite?10:variant===1?-5.5:-2)*lag(180),LeanInput:(invite?-11:variant===1?7:3)*lag(),AngleY:(invite?3:variant===1?8:5)*e,AngleZ:(invite?2.5*twist:-2)*e,AngleX:invite?-1.5*twist*e:1.5*e});
  }else if(name==='turn'){
   const look=variant===0?1:variant===1?curve(h,[[0,-1],[.6,-1],[1.5,0]]):curve(h,[[0,-.65],[.5,-.65],[1.2,1],[2,0]]);
   const body=variant===2?curve(Math.max(0,h-.13),[[0,-.65],[.5,-.65],[1.2,1],[2,0]]):look;

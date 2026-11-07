@@ -18,7 +18,7 @@
     {
       "id": "wave",
       "kind": "gesture",
-      "label": "屈肘张掌挥手",
+      "label": "点头倾身招呼",
       "emotion": null,
       "variants": 3,
       "default_hold_ms": 1400,
@@ -83,7 +83,8 @@
         0.6,
         1
       ],
-      "phases": []
+      "phases": [],
+      "repeat_window_ms": 24000
     },
     {
       "id": "explain",
@@ -195,7 +196,59 @@
         0.4,
         1
       ],
+      "phases": [],
+      "eye_accents": [
+        null,
+        null,
+        "double_blink"
+      ]
+    },
+    {
+      "id": "shake",
+      "kind": "body",
+      "label": "摇头表达反对",
+      "emotion": null,
+      "variants": 3,
+      "default_hold_ms": 1900,
+      "cooldown_group": "body",
+      "intensity": [
+        0.3,
+        1
+      ],
       "phases": []
+    },
+    {
+      "id": "tremble",
+      "kind": "body",
+      "label": "紧张与害怕的轻颤",
+      "emotion": null,
+      "variants": 3,
+      "default_hold_ms": 1900,
+      "cooldown_group": "body",
+      "intensity": [
+        0.3,
+        1
+      ],
+      "phases": []
+    },
+    {
+      "id": "proud",
+      "kind": "body",
+      "label": "得意 · 邀功与昂首",
+      "emotion": null,
+      "variants": 3,
+      "default_hold_ms": 1900,
+      "cooldown_group": "body",
+      "intensity": [
+        0.3,
+        1
+      ],
+      "phases": [],
+      "eye_accents": [
+        "double_blink",
+        "wink_right",
+        null
+      ]
     }
   ]
 }

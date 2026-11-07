@@ -1,0 +1,291 @@
+[
+  {
+    "id": "a6adffb8c2d44dd09d7dafc7da622431",
+    "text": "呼，原来只是虚惊一场，太好了。",
+    "full_text": "呼，原来只是虚惊一场，太好了。",
+    "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+    "allowed_actions": [
+      "chest",
+      "sway"
+    ],
+    "anchor_fraction": 0.7333333333333333,
+    "note": "两个建议，可以晃晃脑袋身体，放松下来，或者抚胸，表示后怕。",
+    "rating_file": "datasets/emotion-acting-review-v1/a6adffb8c2d44dd09d7dafc7da622431/rating-c7dccd8d7f8749208a931a2497d86edb.json",
+    "use": "training_replay_only",
+    "label_basis": "assistant interpretation of explicit user action suggestion; seen in training, not validation or blind test",
+    "baseline_action": "none",
+    "candidate_action": "chest",
+    "variant": 0,
+    "predicted_anchor_fraction": 0.7287279367446899,
+    "pass": true
+  },
+  {
+    "id": "36509c8feb66472a9bc0daf118f5defa",
+    "text": "哦，原来你已经平安到家了，那我就放心了。",
+    "full_text": "怎么一直没有你的消息？哦，原来你已经平安到家了，那我就放心了。",
+    "context": "你正在和熟悉的观众聊天。注意前后情绪的延续、转折，以及转述与本人感受的区别。\n怎么一直没有你的消息？",
+    "allowed_actions": [
+      "chest"
+    ],
+    "anchor_fraction": 0.8,
+    "note": "放心可以抚胸",
+    "rating_file": "datasets/emotion-acting-review-v1/36509c8feb66472a9bc0daf118f5defa/rating-146a824140ff4a7d8fc1b2c6eeee6757.json",
+    "use": "training_replay_only",
+    "label_basis": "assistant interpretation of explicit user action suggestion; seen in training, not validation or blind test",
+    "baseline_action": "none",
+    "candidate_action": "chest",
+    "variant": 0,
+    "predicted_anchor_fraction": 0.7669075131416321,
+    "pass": true
+  },
+  {
+    "id": "bbb25a556cb844f58ac911ca613c6901",
+    "text": "这样把责任都推给别人，我不太认同。",
+    "full_text": "这样把责任都推给别人，我不太认同。",
+    "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+    "allowed_actions": [
+      "shake",
+      "refuse"
+    ],
+    "anchor_fraction": 0.7058823529411765,
+    "note": "说到不太认同时可以摇摇头",
+    "rating_file": "datasets/emotion-acting-review-v1/bbb25a556cb844f58ac911ca613c6901/rating-d9ed51684b0a481db57366731e059ce6.json",
+    "use": "training_replay_only",
+    "label_basis": "assistant interpretation of explicit user action suggestion; seen in training, not validation or blind test",
+    "baseline_action": "none",
+    "candidate_action": "shake",
+    "variant": 0,
+    "predicted_anchor_fraction": 0.7718697190284729,
+    "pass": true
+  },
+  {
+    "id": "4ea815ffe48b45648ade5a005441426a",
+    "text": "先别一直打断我，让我把话说完嘛。",
+    "full_text": "先别一直打断我，让我把话说完嘛。",
+    "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+    "allowed_actions": [
+      "refuse"
+    ],
+    "anchor_fraction": 0.25,
+    "note": "摇头可以和抬手同时进行",
+    "rating_file": "datasets/emotion-acting-review-v1/4ea815ffe48b45648ade5a005441426a/rating-05074269616c48a8b02fc604689e9cbf.json",
+    "use": "training_replay_only",
+    "label_basis": "assistant interpretation of explicit user action suggestion; seen in training, not validation or blind test",
+    "baseline_action": "refuse",
+    "candidate_action": "refuse",
+    "variant": 0,
+    "predicted_anchor_fraction": 0.3096004128456116,
+    "pass": true
+  },
+  {
+    "id": "76157c60f4864242b852236b29e4d44a",
+    "text": "啊，原来是这里漏了一步，我明白了。",
+    "full_text": "啊，原来是这里漏了一步，我明白了。",
+    "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+    "allowed_actions": [
+      "point"
+    ],
+    "anchor_fraction": 0.7647058823529411,
+    "note": "可以竖起一根手指，表示灵光一现。",
+    "rating_file": "datasets/emotion-acting-review-v1/76157c60f4864242b852236b29e4d44a/rating-477b7855e47b48eb93785914240ea357.json",
+    "use": "training_replay_only",
+    "label_basis": "assistant interpretation of explicit user action suggestion; seen in training, not validation or blind test",
+    "baseline_action": "none",
+    "candidate_action": "point",
+    "variant": 0,
+    "predicted_anchor_fraction": 0.6206105947494507,
+    "pass": true
+  },
+  {
+    "id": "69ed5333587c4a13a63cdd9a64ec0bf7",
+    "text": "我有点害怕。",
+    "full_text": "刚才那个声音是什么？我有点害怕。",
+    "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。\n刚才那个声音是什么？",
+    "allowed_actions": [
+      "tremble"
+    ],
+    "anchor_fraction": 0.5,
+    "note": "锦上添花可以身体不由自主的颤抖",
+    "rating_file": "datasets/emotion-acting-review-v1/69ed5333587c4a13a63cdd9a64ec0bf7/rating-11689a546e4945e1a7ba1b4a0dc45f04.json",
+    "use": "training_replay_only",
+    "label_basis": "assistant interpretation of explicit user action suggestion; seen in training, not validation or blind test",
+    "baseline_action": "none",
+    "candidate_action": "tremble",
+    "variant": 0,
+    "predicted_anchor_fraction": 0.5899387001991272,
+    "pass": true
+  },
+  {
+    "id": "e57e3a3d068943528a1108d024f60e72",
+    "text": "希望我等会儿不会说错话，你给我打打气吧。",
+    "full_text": "希望我等会儿不会说错话，你给我打打气吧。",
+    "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+    "allowed_actions": [
+      "tremble"
+    ],
+    "anchor_fraction": 0.3,
+    "note": "紧张的时候手部动作可以减少一些，身体微微颤抖。或者手拿起来的时候有点颤抖。",
+    "rating_file": "datasets/emotion-acting-review-v1/e57e3a3d068943528a1108d024f60e72/rating-a633362123d6466da76f843a9455e3c0.json",
+    "use": "training_replay_only",
+    "label_basis": "assistant interpretation of explicit user action suggestion; seen in training, not validation or blind test",
+    "baseline_action": "chest",
+    "candidate_action": "tremble",
+    "variant": 1,
+    "predicted_anchor_fraction": 0.450007826089859,
+    "pass": true
+  },
+  {
+    "id": "20846f8e21e64969a634e9c70e2c1a89",
+    "text": "再陪我聊一会儿，好不好嘛？",
+    "full_text": "再陪我聊一会儿，好不好嘛？",
+    "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+    "allowed_actions": [
+      "cajole"
+    ],
+    "anchor_fraction": 0.6153846153846154,
+    "note": "撒娇的时候可以眼神更迷离一点，脸红一点，身体扭动幅度大一点",
+    "rating_file": "datasets/emotion-acting-review-v1/20846f8e21e64969a634e9c70e2c1a89/rating-d9360a907eaf4985972c5e3a3a1d2ee5.json",
+    "use": "training_replay_only",
+    "label_basis": "assistant interpretation of explicit user action suggestion; seen in training, not validation or blind test",
+    "baseline_action": "cajole",
+    "candidate_action": "cajole",
+    "variant": 0,
+    "predicted_anchor_fraction": 0.5876855254173279,
+    "pass": true
+  },
+  {
+    "id": "b9ba25a8467341a7b3247fb223e7ac67",
+    "text": "要是能再多陪你一会儿就好了。",
+    "full_text": "要是能再多陪你一会儿就好了。",
+    "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+    "allowed_actions": [
+      "cajole"
+    ],
+    "anchor_fraction": 0.2857142857142857,
+    "note": "还可以快速眨眨眼，眼巴巴看着我，放电。",
+    "rating_file": "datasets/emotion-acting-review-v1/b9ba25a8467341a7b3247fb223e7ac67/rating-7f84deaa4ca34ba591ebb652b9c9cbdf.json",
+    "use": "training_replay_only",
+    "label_basis": "assistant interpretation of explicit user action suggestion; seen in training, not validation or blind test",
+    "baseline_action": "sway",
+    "candidate_action": "cajole",
+    "variant": 2,
+    "predicted_anchor_fraction": 0.44858038425445557,
+    "pass": true
+  },
+  {
+    "id": "a6de64c32a014badb2e543e1833549bc",
+    "text": "那个小挂件我看了好久，真的很想要。",
+    "full_text": "那个小挂件我看了好久，真的很想要。",
+    "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+    "allowed_actions": [
+      "cajole"
+    ],
+    "anchor_fraction": 0.8235294117647058,
+    "note": "可以撒娇",
+    "rating_file": "datasets/emotion-acting-review-v1/a6de64c32a014badb2e543e1833549bc/rating-37ae18ed10384cb8a12af51d44ec0a88.json",
+    "use": "training_replay_only",
+    "label_basis": "assistant interpretation of explicit user action suggestion; seen in training, not validation or blind test",
+    "baseline_action": "none",
+    "candidate_action": "cajole",
+    "variant": 2,
+    "predicted_anchor_fraction": 0.7312358021736145,
+    "pass": true
+  },
+  {
+    "id": "5b0eb93788804ec785f2d3beb8b30d18",
+    "text": "怎么样，这可是我自己一步一步做出来的。",
+    "full_text": "怎么样，这可是我自己一步一步做出来的。",
+    "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+    "allowed_actions": [
+      "proud"
+    ],
+    "anchor_fraction": 0.3684210526315789,
+    "note": "我有一个想法：手不要动，身体大幅度前倾，对我眨巴眨巴眼，扭扭身子。",
+    "rating_file": "datasets/emotion-acting-review-v1/5b0eb93788804ec785f2d3beb8b30d18/rating-b6ce051883454f2aaf28367fab75e0ac.json",
+    "use": "training_replay_only",
+    "label_basis": "assistant interpretation of explicit user action suggestion; seen in training, not validation or blind test",
+    "baseline_action": "thanks",
+    "candidate_action": "proud",
+    "variant": 0,
+    "predicted_anchor_fraction": 0.5130050778388977,
+    "pass": true
+  },
+  {
+    "id": "b501b065bb6a404db7d253f109b20017",
+    "text": "这次终于拿到第一名了，我有一点小骄傲。",
+    "full_text": "这次终于拿到第一名了，我有一点小骄傲。",
+    "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+    "allowed_actions": [
+      "proud"
+    ],
+    "anchor_fraction": 0.7894736842105263,
+    "note": "wink是好的，但是我觉得也可以身体后仰，鼻孔朝天，也很可爱。哼哼哼~",
+    "rating_file": "datasets/emotion-acting-review-v1/b501b065bb6a404db7d253f109b20017/rating-844b210ee79f4fc8852aa988d2a678e5.json",
+    "use": "training_replay_only",
+    "label_basis": "assistant interpretation of explicit user action suggestion; seen in training, not validation or blind test",
+    "baseline_action": "none",
+    "candidate_action": "proud",
+    "variant": 1,
+    "predicted_anchor_fraction": 0.7642396688461304,
+    "pass": true
+  },
+  {
+    "id": "5f59e87381134311a83da663efed0431",
+    "text": "我好想知道。",
+    "full_text": "盒子里面到底是什么？我好想知道。",
+    "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。\n盒子里面到底是什么？",
+    "allowed_actions": [
+      "lean",
+      "tilt"
+    ],
+    "anchor_fraction": 0.16666666666666666,
+    "note": "可以睁大眼睛，身体大幅前倾，直勾勾盯着用户，表达很好奇。",
+    "rating_file": "datasets/emotion-acting-review-v1/5f59e87381134311a83da663efed0431/rating-5594a7aa00634bda9b0f82836b5293f6.json",
+    "use": "training_replay_only",
+    "label_basis": "assistant interpretation of explicit user action suggestion; seen in training, not validation or blind test",
+    "baseline_action": "none",
+    "candidate_action": "lean",
+    "variant": 2,
+    "predicted_anchor_fraction": 0.2763484716415405,
+    "pass": true
+  },
+  {
+    "id": "a472b11df18d4b60b43f8db6c38c36d8",
+    "text": "后来呢？",
+    "full_text": "后来呢？你们最后是怎么解决的？",
+    "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+    "allowed_actions": [
+      "tilt",
+      "lean"
+    ],
+    "anchor_fraction": 0.0,
+    "note": "可以歪歪头，表达疑问或好奇。",
+    "rating_file": "datasets/emotion-acting-review-v1/a472b11df18d4b60b43f8db6c38c36d8/rating-16c73352ce574e22a551e2ee6d233856.json",
+    "use": "training_replay_only",
+    "label_basis": "assistant interpretation of explicit user action suggestion; seen in training, not validation or blind test",
+    "baseline_action": "none",
+    "candidate_action": "tilt",
+    "variant": 2,
+    "predicted_anchor_fraction": 0.10971885919570923,
+    "pass": true
+  },
+  {
+    "id": "4bd246ca7d964d1b880b8a70306a40e8",
+    "text": "虽然还没看到结果，我相信我们能做到。",
+    "full_text": "虽然还没看到结果，我相信我们能做到。",
+    "context": "你正在和熟悉的观众聊天，下面是你接下来要说的话。",
+    "allowed_actions": [
+      "nod"
+    ],
+    "anchor_fraction": 0.7777777777777778,
+    "note": "可以点点头表示肯定。",
+    "rating_file": "datasets/emotion-acting-review-v1/4bd246ca7d964d1b880b8a70306a40e8/rating-2608d0190f384f8dabc19affa10a986c.json",
+    "use": "training_replay_only",
+    "label_basis": "assistant interpretation of explicit user action suggestion; seen in training, not validation or blind test",
+    "baseline_action": "none",
+    "candidate_action": "nod",
+    "variant": 0,
+    "predicted_anchor_fraction": 0.7843701243400574,
+    "pass": true
+  }
+]

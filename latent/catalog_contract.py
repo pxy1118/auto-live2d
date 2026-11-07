@@ -63,6 +63,11 @@ def _validate(value):
                 raise ValueError(f"action-catalog: {action_id} 缺少 phases")
         if action["kind"] == "none" and action_id != "none":
             raise ValueError("action-catalog: none 动作只能叫 none")
+        accents=action.get('eye_accents')
+        if accents is not None and (not isinstance(accents,list) or len(accents)!=variants or any(v not in (None,'wink_left','wink_right','double_blink') for v in accents)):
+            raise ValueError('action-catalog: eye accents 不合法')
+        if 'repeat_window_ms' in action and not _number(action['repeat_window_ms'],0,60000):
+            raise ValueError('action-catalog: repeat window 不合法')
         for phase in phases:
             if not isinstance(phase, dict) or not _number(phase.get("at_ms"), 0, action["default_hold_ms"] + 800):
                 raise ValueError(f"action-catalog: {action_id} phase at_ms 不合法")

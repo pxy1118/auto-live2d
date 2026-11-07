@@ -4,7 +4,7 @@ import unittest
 from unittest.mock import patch
 import main
 
-NEW='experiments/vtuber-v6-native28-motion-r2'
+NEW='experiments/vtuber-v6-acting-feedback-r3-final'
 
 class DefaultLauncherTests(unittest.TestCase):
     def test_removed_launch_modes_are_not_accepted(self):
